@@ -1,24 +1,34 @@
 {
-  "name": "srilanka-lv",
+  "name": "srilanka.lv",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-regular-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.0",
+    "@vanilla-extract/css": "^1.17.4",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "clsx": "^2.1.1",
+    "next": "15.5.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@biomejs/biome": "2.2.0"
+    "@biomejs/biome": "2.2.5",
+    "@types/node": "^24.7.2",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.1",
+    "@vanilla-extract/next-plugin": "^2.4.14",
+    "typescript": "^5.9.3"
   }
 }
