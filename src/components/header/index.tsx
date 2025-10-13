@@ -1,4 +1,4 @@
-import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 import Image from "next/image";
@@ -12,8 +12,8 @@ export const Header: FunctionComponent = () => (
       <Image
         src="/srilanka-lv_logo.png"
         alt="SriLanka.lv Logo"
-        width={160}
-        height={64}
+        width={150}
+        height={41}
       />
       <a
         href="https://payhip.com/b/2mq5J"
@@ -21,7 +21,7 @@ export const Header: FunctionComponent = () => (
         data-theme="none"
         data-product="2mq5J"
       >
-        <FontAwesomeIcon icon={faShoppingBag} />
+        <FontAwesomeIcon icon={faCartPlus} />
         Pirkt ceļvedi
       </a>
     </div>

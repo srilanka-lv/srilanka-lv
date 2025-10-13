@@ -1,9 +1,11 @@
-import { faShoppingBag, faStar } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 import Image from "next/image";
 import type { FunctionComponent } from "react";
 import {
+  chapterStyle,
+  chaptersStyle,
   contentContainerStyle,
   contentStyle,
   discountedTagTextStyle,
@@ -13,6 +15,7 @@ import {
   h1Style,
   h2Style,
   h3Style,
+  h4Style,
   imageStyle,
   imageStyles,
   mainContentStyle,
@@ -25,7 +28,6 @@ import {
   reviewStyle,
   reviewsStyle,
   strongStyle,
-  videoContainerStyle,
 } from "./styles.css";
 
 export const Main: FunctionComponent = () => {
@@ -77,13 +79,25 @@ export const Main: FunctionComponent = () => {
             <Image
               className={imageStyles}
               src="/srilanka-lv_cover.png"
-              alt="SriLanka.lv cover"
+              alt="SriLanka.lv cover "
               width={400}
               height={390}
             />
           </div>
         </div>
-        <iframe
+        <div className={previewContainerStyle}>
+          <h2 className={h2Style}>
+            Viss, kas jāzina par Šrilankas dienvidiem – ceļvedis 50+ lappuses
+          </h2>
+          <Image
+            className={imageStyles}
+            src="/srilanka-lv_inside.jpg"
+            alt="SriLanka.lv preview"
+            width={900}
+            height={834}
+          />
+        </div>
+        {/* <iframe
           className={videoContainerStyle}
           width="560"
           height="315"
@@ -93,27 +107,17 @@ export const Main: FunctionComponent = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-        ></iframe>
-        <div className={previewContainerStyle}>
-          <h2 className={h2Style}>Dienvidu Šrilankas pērles</h2>
-          <Image
-            className={imageStyles}
-            src="/srilanka-lv_inside.jpg"
-            alt="SriLanka.lv preview"
-            width={900}
-            height={834}
-          />
-        </div>
+        ></iframe> */}
         <a
           href="https://payhip.com/b/2mq5J"
           className={clsx("payhip-buy-button", payButtonLargeStyle)}
           data-theme="none"
           data-product="2mq5J"
         >
-          <FontAwesomeIcon icon={faShoppingBag} />
+          <FontAwesomeIcon icon={faCartPlus} />
           Pirkt ceļvedi
         </a>
-        <h3 className={h3Style}>Ko saka citi?</h3>
+        <h3 className={h3Style}>✨ Ko saka citi? ✨</h3>
         <div className={reviewsStyle}>
           <article className={reviewStyle}>
             <span className={reviewStarsStyle}>
@@ -124,8 +128,8 @@ export const Main: FunctionComponent = () => {
               <FontAwesomeIcon icon={faStar} />
             </span>
             <span>
-              Lielisks ceļvedis! Skaidri maršruti, noderīgi padomi par
-              autobusiem un drošību. Ieteiktu visiem, kas plāno dienvidus.
+              Lielisks ceļvedis! Noderīgi padomi par vietējo kultūru un drošību.
+              Ieteiktu visiem, kas plāno braukt uz Šrilankas dienvidiem.
             </span>{" "}
             <span className={reviewAuthorStyle}>
               <Image
@@ -236,9 +240,9 @@ export const Main: FunctionComponent = () => {
               <FontAwesomeIcon icon={faStar} />
             </span>
             <span>
-              Ceļvedis sniedz visu no A līdz Z, sākot ar ieceļošanu Šrilankā un
-              beidzot ar ieteikumiem par galamērķa pārvietošanos. Teksts ir
-              viegli lasāms un piedāvā konkrētus risinājumus visām situācijām.
+              Ceļvedis sniedz visu, sākot ar ieceļošanu Šrilankā un beidzot ar
+              ieteikumiem par vietām, kuras noteikti jāapskata. Teksts ir viegli
+              lasāms un piedāvā konkrētus risinājumus visām situācijām.
             </span>{" "}
             <span className={reviewAuthorStyle}>
               <Image
@@ -257,10 +261,122 @@ export const Main: FunctionComponent = () => {
           data-theme="none"
           data-product="2mq5J"
         >
-          <FontAwesomeIcon icon={faShoppingBag} />
+          <FontAwesomeIcon icon={faCartPlus} />
           Pirkt ceļvedi
         </a>
       </div>
+      <h4 className={h4Style}>🔖 Ceļveža saturs 🔖</h4>
+      <div className={chaptersStyle}>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>1. Ceļošanas sezona</strong>
+            <br />
+            Uzzini, kad ir vislabākais laiks, lai dotos uz Šrilanku.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>
+              2. Kas jāzina pirms ceļojuma
+            </strong>
+            <br />
+            Kultūra, valūta, kaulēšanās... viss, lai būtu gatavs pareizi reaģēt
+            uz vietējiem tūrisma slazdiem.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>3. Drošība</strong>
+            <br />
+            Galvenās lietas, kas palīdzēs tev izvairīties no nepatīkamām
+            situācijām.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>4. Ceļojuma essentials</strong>
+            <br />
+            Sagatavojies ceļojumam bez liekas bagāžas.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>5. Biļetes uz</strong>
+            <br />
+            Izdevīgākais veids, kur pirkt biļetes.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>6. Vīza</strong>
+            <br />
+            Kā pareizi aizpildīt vīzas pieteikumu soli pa solim.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>7. Transports</strong>
+            <br />
+            Aplikācijas, autobusi, tuk-tuki. apraksts par dažādiem iespējamiem
+            pārvietošanās veidiem.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>8. Kur palikt</strong>
+            <br />
+            Labākās naktsmītnes Šrilankas dienvidos.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>9. Apskates vietu ceļvedis</strong>
+            <br />
+            Iepriekš pārbaudītas lokācijas, kuras noteikti iesaku iekļaut tavā
+            ceļojumā.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>10. Pludmales</strong>
+            <br />
+            Sērfa vietas un labākās pludmales.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>11. Aktivitātes</strong>
+            <br />
+            Aktivitātes visai ģimenei, draugu lokam vai pat solo ceļotājiem.
+            kontakti, lokācijas un iepriekš pārbaudītas izklaides vietas.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>12. Kafejnīcas</strong>
+            <br />
+            Manas mīļākās kafejnīcas, piemērotas gan budžeta, gan komforta
+            ceļotājiem.
+          </span>{" "}
+        </article>
+        <article className={chapterStyle}>
+          <span>
+            <strong className={strongStyle}>13. Budžeta aprēķini</strong>
+            <br />
+            Aprēķini, kas palīdzēs saprast aptuvenās izmaksas ceļojumam uz
+            Šrilankas dienvidiem.
+          </span>{" "}
+        </article>
+      </div>
+      <a
+        href="https://payhip.com/b/2mq5J"
+        className={clsx("payhip-buy-button", payButtonLargeTwoStyle)}
+        data-theme="none"
+        data-product="2mq5J"
+      >
+        <FontAwesomeIcon icon={faCartPlus} />
+        Pirkt ceļvedi
+      </a>
     </main>
   );
 };
