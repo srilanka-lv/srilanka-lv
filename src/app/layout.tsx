@@ -29,7 +29,7 @@ type RootLayoutReturnType = Readonly<{
 // Component
 export default function RootLayout({ children }: RootLayoutReturnType) {
   return (
-    <html lang="en">
+    <html lang="lv">
       <body className={clsx(plusJakartaSans.className, bodyStyle)}>
         {children}
         <Script
