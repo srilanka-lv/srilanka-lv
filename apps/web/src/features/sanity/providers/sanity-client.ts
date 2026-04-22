@@ -1,8 +1,8 @@
 import { env } from 'next-runtime-env';
 import { createClient } from 'next-sanity';
 
-import { SANITY_API_VERSION } from '../constants/index.js';
-import type { SanityClient } from '../types/index.js';
+import { SANITY_API_VERSION } from '../constants/index';
+import type { SanityClient } from '../types/index';
 
 export function createSanityClient(): SanityClient {
   return createClient({

@@ -2,8 +2,8 @@
 
 import type { ReactNode } from 'react';
 
-import { createSanityClient } from '../providers/sanity-client.js';
-import { SanityContext } from './sanity-context.js';
+import { createSanityClient } from '../providers/sanity-client';
+import { SanityContext } from './sanity-context';
 
 const client = createSanityClient();
 
