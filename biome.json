@@ -9,10 +9,10 @@
     "ignoreUnknown": false,
     "includes": [
       "**",
-      "!.next",
-      "!build",
-      "!coverage",
-      "!dist",
+      "!**/.next",
+      "!**/build",
+      "!**/coverage",
+      "!**/dist",
       "!node_modules",
       "!storybook-static",
       "!**/_generated"
