@@ -1,3 +1,9 @@
 import type { SchemaTypeDefinition } from 'sanity';
 
-export const schemas: SchemaTypeDefinition[] = [];
+import { blogPost } from './documents/blog-post';
+import { tag } from './documents/tag';
+import { blockContent } from './objects/block-content';
+import { og } from './objects/og';
+import { seo } from './objects/seo';
+
+export const schemas: SchemaTypeDefinition[] = [blockContent, seo, og, tag, blogPost];
