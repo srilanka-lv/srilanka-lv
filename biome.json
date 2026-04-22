@@ -15,7 +15,8 @@
       "!**/dist",
       "!node_modules",
       "!storybook-static",
-      "!**/_generated"
+      "!**/_generated",
+      "!**/.sanity"
     ]
   },
   "formatter": {

@@ -6,17 +6,17 @@ export const seo = defineType({
   type: 'object',
   fields: [
     defineField({
-      title: 'Meta virsraksts',
+      title: 'Meta Title',
       name: 'metaTitle',
       type: 'string',
-      description: 'Pārraksta lapas virsrakstu meklētājprogrammās.',
+      description: 'Overrides the page title in search engines.',
     }),
     defineField({
-      title: 'Meta apraksts',
+      title: 'Meta Description',
       name: 'metaDescription',
       type: 'text',
       rows: 3,
-      description: 'Apraksts, kas parādās meklētājprogrammu rezultātos.',
+      description: 'Description shown in search engine results.',
       validation: (rule) => rule.max(160),
     }),
   ],

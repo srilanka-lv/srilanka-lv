@@ -2,6 +2,9 @@
 
 # dependencies
 node_modules
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
 
 # testing
 coverage
@@ -34,3 +37,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sanity
+.sanity/
+schema.json
+sanity.types.ts

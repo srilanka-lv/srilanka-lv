@@ -4,14 +4,9 @@ import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
 
 export default defineConfig({
-  name: 'srilanka-lv',
-  title: 'SriLanka.lv',
-
-  projectId: '<your-sanity-project-id>',
-  dataset: 'production',
-
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID as string,
+  dataset: process.env.SANITY_STUDIO_DATASET as string,
   plugins: [structureTool(), visionTool()],
-
   schema: {
     types: schemas,
   },

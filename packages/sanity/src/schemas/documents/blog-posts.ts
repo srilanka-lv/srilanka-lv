@@ -1,18 +1,18 @@
 import { defineField, defineType } from 'sanity';
 
-export const blogPost = defineType({
-  title: 'Bloga ieraksts',
-  name: 'blogPost',
+export const blogPosts = defineType({
+  title: 'Blog Posts',
+  name: 'blogPosts',
   type: 'document',
   fields: [
     defineField({
-      title: 'Virsraksts',
+      title: 'Title',
       name: 'title',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      title: 'URL',
+      title: 'Slug',
       name: 'slug',
       type: 'slug',
       options: {
@@ -22,7 +22,7 @@ export const blogPost = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      title: 'Vāka attēls',
+      title: 'Cover Image',
       name: 'coverImage',
       type: 'image',
       options: {
@@ -32,33 +32,33 @@ export const blogPost = defineType({
         {
           name: 'alt',
           type: 'string',
-          title: 'Alternatīvais teksts',
+          title: 'Alt Text',
           validation: (rule) => rule.required(),
         },
       ],
       validation: (rule) => rule.required(),
     }),
     defineField({
-      title: 'Īss apraksts',
+      title: 'Excerpt',
       name: 'excerpt',
       type: 'text',
       rows: 3,
       validation: (rule) => rule.required().max(200),
     }),
     defineField({
-      title: 'Saturs',
+      title: 'Body',
       name: 'body',
       type: 'blockContent',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      title: 'Birkas',
+      title: 'Tags',
       name: 'tags',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'tag' }] }],
+      of: [{ type: 'reference', to: [{ type: 'tags' }] }],
     }),
     defineField({
-      title: 'Publicēšanas datums',
+      title: 'Published At',
       name: 'publishedAt',
       type: 'datetime',
       validation: (rule) => rule.required(),
@@ -70,13 +70,13 @@ export const blogPost = defineType({
     }),
     defineField({
       title: 'Open Graph',
-      name: 'og',
-      type: 'og',
+      name: 'openGraph',
+      type: 'openGraph',
     }),
   ],
   orderings: [
     {
-      title: 'Publicēšanas datums (jaunākais)',
+      title: 'Published At (newest)',
       name: 'publishedAtDesc',
       by: [{ field: 'publishedAt', direction: 'desc' }],
     },
@@ -90,7 +90,7 @@ export const blogPost = defineType({
     prepare({ title, media, publishedAt }) {
       return {
         title,
-        subtitle: publishedAt ? new Date(publishedAt).toLocaleDateString('lv-LV') : 'Nav publicēts',
+        subtitle: publishedAt ? new Date(publishedAt).toLocaleDateString('lv-LV') : 'Not published',
         media,
       };
     },

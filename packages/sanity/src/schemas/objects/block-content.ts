@@ -1,30 +1,30 @@
 import { defineArrayMember, defineType } from 'sanity';
 
 export const blockContent = defineType({
-  title: 'Saturs',
+  title: 'Block Content',
   name: 'blockContent',
   type: 'array',
   of: [
     defineArrayMember({
       type: 'block',
       styles: [
-        { title: 'Normāls', value: 'normal' },
+        { title: 'Normal', value: 'normal' },
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
-        { title: 'Citāts', value: 'blockquote' },
+        { title: 'Blockquote', value: 'blockquote' },
       ],
       lists: [
-        { title: 'Saraksts', value: 'bullet' },
-        { title: 'Numurēts saraksts', value: 'number' },
+        { title: 'Bullet List', value: 'bullet' },
+        { title: 'Numbered List', value: 'number' },
       ],
       marks: {
         decorators: [
-          { title: 'Treknraksts', value: 'strong' },
-          { title: 'Slīpraksts', value: 'em' },
+          { title: 'Bold', value: 'strong' },
+          { title: 'Italic', value: 'em' },
         ],
         annotations: [
           {
-            title: 'Saite',
+            title: 'Link',
             name: 'link',
             type: 'object',
             fields: [
@@ -50,13 +50,13 @@ export const blockContent = defineType({
         {
           name: 'alt',
           type: 'string',
-          title: 'Alternatīvais teksts',
+          title: 'Alt Text',
           validation: (rule) => rule.required(),
         },
         {
           name: 'caption',
           type: 'string',
-          title: 'Paraksts',
+          title: 'Caption',
         },
       ],
     }),

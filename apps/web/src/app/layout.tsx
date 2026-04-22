@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { PublicEnvScript } from 'next-runtime-env';
 import type { ReactNode } from 'react';
 
-import { SanityContextProvider } from '@/features/sanity';
-
 export const metadata: Metadata = {
   title: 'Ceļojums uz Šrilanku | SriLanka.lv',
   description: 'Viss kas jāzina pirms ceļo uz Šrilanku',
@@ -19,9 +17,7 @@ export default function RootLayout({ children }: RootLayoutReturnType) {
       <head>
         <PublicEnvScript />
       </head>
-      <body>
-        <SanityContextProvider>{children}</SanityContextProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -1,5 +1,6 @@
 {
   "name": "srilanka-lv",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -7,9 +8,12 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:web": "bun --filter @srilanka/web dev",
-    "dev:studio": "bun --filter @srilanka/studio dev",
-    "build:web": "bun --filter @srilanka/web build",
+    "web:dev": "bun --filter @srilanka/web dev",
+    "web:build": "bun --filter @srilanka/web build",
+    "studio:dev": "bun --filter @srilanka/studio dev",
+    "studio:build": "bun --filter @srilanka/studio build",
+    "studio:deploy": "bun --filter @srilanka/studio deploy",
+    "studio:typegen": "bun --filter @srilanka/studio typegen",
     "lint": "biome check",
     "format": "biome format --write",
     "prepare": "husky"

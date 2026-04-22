@@ -1,18 +1,18 @@
 import { defineField, defineType } from 'sanity';
 
-export const tag = defineType({
-  title: 'Birka',
-  name: 'tag',
+export const tags = defineType({
+  title: 'Tags',
+  name: 'tags',
   type: 'document',
   fields: [
     defineField({
-      title: 'Nosaukums',
+      title: 'Title',
       name: 'title',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      title: 'URL',
+      title: 'Slug',
       name: 'slug',
       type: 'slug',
       options: {
@@ -20,6 +20,13 @@ export const tag = defineType({
         maxLength: 96,
       },
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      title: 'Excerpt',
+      name: 'excerpt',
+      type: 'text',
+      rows: 3,
+      validation: (rule) => rule.max(200),
     }),
   ],
 });

@@ -1,0 +1,11 @@
+node_modules
+.next
+.env*
+!.env*.example
+Dockerfile
+.dockerignore
+.git
+.claude
+.husky
+.vscode
+docs
