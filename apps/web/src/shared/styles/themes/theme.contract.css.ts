@@ -38,6 +38,14 @@ export const vars = createThemeContract({
       extrabold: null,
       black: null,
     },
+    letterSpacing: {
+      tighter: null,
+      tight: null,
+      normal: null,
+      wide: null,
+      wider: null,
+      widest: null,
+    },
     lineHeight: {
       tight: null,
       snug: null,
@@ -77,14 +85,6 @@ export const vars = createThemeContract({
       '3xl': null,
       '4xl': null,
     },
-  },
-  letterSpacing: {
-    tighter: null,
-    tight: null,
-    normal: null,
-    wide: null,
-    wider: null,
-    widest: null,
   },
   breakpoint: {
     sm: null,

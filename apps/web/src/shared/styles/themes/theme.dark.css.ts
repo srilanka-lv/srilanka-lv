@@ -14,11 +14,11 @@ export const darkTheme = createTheme(vars, {
     size: fontSizes,
     weight: fontWeights,
     lineHeight: lineHeights,
+    letterSpacing,
   },
   spacing,
   border: {
     radius: borderRadius,
   },
-  letterSpacing,
   breakpoint: breakpoints,
 });
