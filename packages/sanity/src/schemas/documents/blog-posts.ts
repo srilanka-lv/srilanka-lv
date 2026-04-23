@@ -64,6 +64,12 @@ export const blogPosts = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      title: 'FAQ',
+      name: 'faq',
+      type: 'reference',
+      to: [{ type: 'faqs' }],
+    }),
+    defineField({
       title: 'SEO',
       name: 'seo',
       type: 'seo',
