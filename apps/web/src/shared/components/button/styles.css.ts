@@ -1,12 +1,14 @@
 import { recipe } from '@vanilla-extract/recipes';
 
+import { vars } from '@/shared/styles/themes/theme.contract.css';
+
 export const buttonStyles = recipe({
   base: {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: '6px',
-    fontWeight: 500,
+    borderRadius: vars.border.radius.md,
+    fontWeight: vars.font.weight.medium,
     cursor: 'pointer',
     transition: 'background-color 150ms, border-color 150ms, color 150ms',
     border: '1px solid transparent',
@@ -22,55 +24,55 @@ export const buttonStyles = recipe({
   variants: {
     variant: {
       primary: {
-        backgroundColor: '#0f172a',
-        color: '#ffffff',
+        backgroundColor: vars.color.primary,
+        color: vars.color.primaryForeground,
         selectors: {
           '&:hover:not(:disabled)': {
-            backgroundColor: '#1e293b',
+            opacity: 0.9,
           },
         },
       },
       secondary: {
-        backgroundColor: '#f1f5f9',
-        color: '#0f172a',
+        backgroundColor: vars.color.secondary,
+        color: vars.color.secondaryForeground,
         selectors: {
           '&:hover:not(:disabled)': {
-            backgroundColor: '#e2e8f0',
+            opacity: 0.8,
           },
         },
       },
       outline: {
         backgroundColor: 'transparent',
-        color: '#0f172a',
-        borderColor: '#cbd5e1',
+        color: vars.color.foreground,
+        borderColor: vars.color.secondary,
         selectors: {
           '&:hover:not(:disabled)': {
-            backgroundColor: '#f8fafc',
+            backgroundColor: vars.color.secondary,
           },
         },
       },
       ghost: {
         backgroundColor: 'transparent',
-        color: '#0f172a',
+        color: vars.color.foreground,
         selectors: {
           '&:hover:not(:disabled)': {
-            backgroundColor: '#f1f5f9',
+            backgroundColor: vars.color.secondary,
           },
         },
       },
     },
     size: {
       small: {
-        fontSize: '13px',
-        padding: '6px 12px',
+        fontSize: vars.font.size.xs,
+        padding: `${vars.spacing[1]} ${vars.spacing[3]}`,
       },
       medium: {
-        fontSize: '14px',
-        padding: '8px 16px',
+        fontSize: vars.font.size.sm,
+        padding: `${vars.spacing[2]} ${vars.spacing[4]}`,
       },
       large: {
-        fontSize: '16px',
-        padding: '12px 24px',
+        fontSize: vars.font.size.base,
+        padding: `${vars.spacing[3]} ${vars.spacing[6]}`,
       },
     },
   },

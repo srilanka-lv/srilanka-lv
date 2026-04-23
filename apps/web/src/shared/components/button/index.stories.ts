@@ -23,20 +23,44 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const PrimaryLight: Story = {
   args: { variant: 'primary' },
+  globals: { theme: 'light' },
 };
 
-export const Secondary: Story = {
+export const PrimaryDark: Story = {
+  args: { variant: 'primary' },
+  globals: { theme: 'dark' },
+};
+
+export const SecondaryLight: Story = {
   args: { variant: 'secondary' },
+  globals: { theme: 'light' },
 };
 
-export const Outline: Story = {
+export const SecondaryDark: Story = {
+  args: { variant: 'secondary' },
+  globals: { theme: 'dark' },
+};
+
+export const OutlineLight: Story = {
   args: { variant: 'outline' },
+  globals: { theme: 'light' },
 };
 
-export const Ghost: Story = {
+export const OutlineDark: Story = {
+  args: { variant: 'outline' },
+  globals: { theme: 'dark' },
+};
+
+export const GhostLight: Story = {
   args: { variant: 'ghost' },
+  globals: { theme: 'light' },
+};
+
+export const GhostDark: Story = {
+  args: { variant: 'ghost' },
+  globals: { theme: 'dark' },
 };
 
 export const Small: Story = {
@@ -51,14 +75,14 @@ export const Large: Story = {
   args: { size: 'large' },
 };
 
-export const Disabled: Story = {
+export const Disabled = {
   args: { disabled: true },
-};
+} satisfies StoryObj;
 
-export const AsLink: Story = {
+export const AsLink = {
   args: {
     as: 'a',
     href: '/flights-calendar',
     children: 'Go to flights',
   },
-};
+} satisfies StoryObj;
