@@ -1,0 +1,1168 @@
+{
+  "search_metadata": {
+    "id": "69e9e7b47a3b05a38dec8d20",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/fTM5-lMJZ6di5ULgcw0oPw/69e9e7b47a3b05a38dec8d20.json",
+    "created_at": "2026-04-23 09:34:44 UTC",
+    "processed_at": "2026-04-23 09:34:44 UTC",
+    "google_flights_url": "https://www.google.com/travel/flights?hl=lv&gl=lv&curr=EUR&tfs=CBwQAhoeEgoyMDI2LTEyLTA3agcIARIDUklYcgcIARIDQ01CQAFIAXABmAEC&tfu=EgIIAQ",
+    "raw_html_file": "https://serpapi.com/searches/fTM5-lMJZ6di5ULgcw0oPw/69e9e7b47a3b05a38dec8d20.html",
+    "prettify_html_file": "https://serpapi.com/searches/fTM5-lMJZ6di5ULgcw0oPw/69e9e7b47a3b05a38dec8d20.prettify",
+    "total_time_taken": 4.98
+  },
+  "search_parameters": {
+    "engine": "google_flights",
+    "hl": "lv",
+    "gl": "lv",
+    "type": "2",
+    "departure_id": "RIX",
+    "arrival_id": "CMB",
+    "outbound_date": "2026-12-07",
+    "travel_class": 1,
+    "adults": 1,
+    "currency": "EUR",
+    "deep_search": true
+  },
+  "best_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 11:40" },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-12-07 15:55"
+          },
+          "duration": 195,
+          "airplane": "Boeing 737",
+          "airline": "Turkish Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+          "travel_class": "Economy",
+          "flight_number": "TK 1758",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 175 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-12-07 19:35"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 06:10"
+          },
+          "duration": 485,
+          "airplane": "Airbus A330",
+          "airline": "Turkish Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+          "travel_class": "Economy",
+          "flight_number": "TK 730",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 399 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [{ "duration": 220, "name": "Istanbul Airport", "id": "IST" }],
+      "total_duration": 900,
+      "carbon_emissions": {
+        "this_flight": 575000,
+        "typical_for_this_route": 615000,
+        "difference_percent": -7
+      },
+      "price": 493,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFZzVVU3pFM05UaDhWRXMzTXpBak1Sb0xDTkNBQXhBQ0dnTkZWVkk0SEhEdXdRTT0iLFtbIlJJWCIsIjIwMjYtMTItMDciLCJJU1QiLG51bGwsIlRLIiwiMTc1OCJdLFsiSVNUIiwiMjAyNi0xMi0wNyIsIkNNQiIsbnVsbCwiVEsiLCI3MzAiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 19:00" },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-12-07 23:15"
+          },
+          "duration": 195,
+          "airplane": "Boeing 737",
+          "airline": "Turkish Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+          "travel_class": "Economy",
+          "flight_number": "TK 1776",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 175 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-12-08 02:50"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 13:20"
+          },
+          "duration": 480,
+          "airplane": "Airbus A330",
+          "airline": "Turkish Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+          "travel_class": "Economy",
+          "flight_number": "TK 732",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 399 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [{ "duration": 215, "name": "Istanbul Airport", "id": "IST", "overnight": true }],
+      "total_duration": 890,
+      "carbon_emissions": {
+        "this_flight": 575000,
+        "typical_for_this_route": 615000,
+        "difference_percent": -7
+      },
+      "price": 493,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFZzVVU3pFM056WjhWRXMzTXpJak1Sb0xDTkNBQXhBQ0dnTkZWVkk0SEhEdXdRTT0iLFtbIlJJWCIsIjIwMjYtMTItMDciLCJJU1QiLG51bGwsIlRLIiwiMTc3NiJdLFsiSVNUIiwiMjAyNi0xMi0wOCIsIkNNQiIsbnVsbCwiVEsiLCI3MzIiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 11:40" },
+          "arrival_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-12-07 15:55"
+          },
+          "duration": 195,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Baltic",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+          "travel_class": "Economy",
+          "flight_number": "BT 711",
+          "ticket_also_sold_by": ["Turkish Airlines"],
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 174 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Istanbul Airport",
+            "id": "IST",
+            "time": "2026-12-07 19:35"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 06:10"
+          },
+          "duration": 485,
+          "airplane": "Airbus A330",
+          "airline": "Turkish Airlines",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+          "travel_class": "Economy",
+          "flight_number": "TK 730",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 399 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [{ "duration": 220, "name": "Istanbul Airport", "id": "IST" }],
+      "total_duration": 900,
+      "carbon_emissions": {
+        "this_flight": 574000,
+        "typical_for_this_route": 615000,
+        "difference_percent": -7
+      },
+      "price": 643,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFZzFDVkRjeE1YeFVTemN6TUNNeEdnc0k2UFVERUFJYUEwVlZVamdjY1BYS0JBPT0iLFtbIlJJWCIsIjIwMjYtMTItMDciLCJJU1QiLG51bGwsIkJUIiwiNzExIl0sWyJJU1QiLCIyMDI2LTEyLTA3IiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
+    }
+  ],
+  "other_flights": [
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 12:05" },
+          "arrival_airport": {
+            "name": "Romas Fjumičīno lidosta",
+            "id": "FCO",
+            "time": "2026-12-07 14:10"
+          },
+          "duration": 185,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Baltic",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+          "travel_class": "Economy",
+          "flight_number": "BT 633",
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 181 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Romas Fjumičīno lidosta",
+            "id": "FCO",
+            "time": "2026-12-07 20:50"
+          },
+          "arrival_airport": {
+            "name": "Dubaijas Starptautiskā lidosta",
+            "id": "DXB",
+            "time": "2026-12-08 05:30"
+          },
+          "duration": 340,
+          "airplane": "Boeing 777",
+          "airline": "Emirates",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+          "travel_class": "Economy",
+          "flight_number": "EK 96",
+          "legroom": "81 cm",
+          "extensions": [
+            "Above average legroom (81 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 340 kg"
+          ],
+          "overnight": true
+        },
+        {
+          "departure_airport": {
+            "name": "Dubaijas Starptautiskā lidosta",
+            "id": "DXB",
+            "time": "2026-12-08 10:05"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 15:55"
+          },
+          "duration": 260,
+          "airplane": "Airbus A350",
+          "airline": "Emirates",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+          "travel_class": "Economy",
+          "flight_number": "EK 654",
+          "legroom": "81 cm",
+          "extensions": [
+            "Above average legroom (81 cm)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 221 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        { "duration": 400, "name": "Romas Fjumičīno lidosta", "id": "FCO" },
+        { "duration": 275, "name": "Dubaijas Starptautiskā lidosta", "id": "DXB" }
+      ],
+      "total_duration": 1460,
+      "carbon_emissions": {
+        "this_flight": 743000,
+        "typical_for_this_route": 615000,
+        "difference_percent": 21
+      },
+      "price": 576,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFaEJDVkRZek0zeEZTemsyZkVWTE5qVTBHZ3NJcDhFREVBSWFBMFZWVWpnY2NNR05CQT09IixbWyJSSVgiLCIyMDI2LTEyLTA3IiwiRkNPIixudWxsLCJCVCIsIjYzMyJdLFsiRkNPIiwiMjAyNi0xMi0wNyIsIkRYQiIsbnVsbCwiRUsiLCI5NiJdLFsiRFhCIiwiMjAyNi0xMi0wOCIsIkNNQiIsbnVsbCwiRUsiLCI2NTQiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 12:05" },
+          "arrival_airport": {
+            "name": "Romas Fjumičīno lidosta",
+            "id": "FCO",
+            "time": "2026-12-07 14:10"
+          },
+          "duration": 185,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Baltic",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+          "travel_class": "Economy",
+          "flight_number": "BT 633",
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 181 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Romas Fjumičīno lidosta",
+            "id": "FCO",
+            "time": "2026-12-07 14:55"
+          },
+          "arrival_airport": {
+            "name": "Dubaijas Starptautiskā lidosta",
+            "id": "DXB",
+            "time": "2026-12-07 23:30"
+          },
+          "duration": 335,
+          "airplane": "Airbus A380",
+          "airline": "Emirates",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+          "travel_class": "Economy",
+          "flight_number": "EK 98",
+          "legroom": "81 cm",
+          "extensions": [
+            "Above average legroom (81 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 339 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Dubaijas Starptautiskā lidosta",
+            "id": "DXB",
+            "time": "2026-12-08 10:05"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 15:55"
+          },
+          "duration": 260,
+          "airplane": "Airbus A350",
+          "airline": "Emirates",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+          "travel_class": "Economy",
+          "flight_number": "EK 654",
+          "legroom": "81 cm",
+          "extensions": [
+            "Above average legroom (81 cm)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 221 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        { "duration": 45, "name": "Romas Fjumičīno lidosta", "id": "FCO" },
+        {
+          "duration": 635,
+          "name": "Dubaijas Starptautiskā lidosta",
+          "id": "DXB",
+          "overnight": true
+        }
+      ],
+      "total_duration": 1460,
+      "carbon_emissions": {
+        "this_flight": 742000,
+        "typical_for_this_route": 615000,
+        "difference_percent": 21
+      },
+      "price": 576,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFaEJDVkRZek0zeEZTems0ZkVWTE5qVTBHZ3NJcDhFREVBSWFBMFZWVWpnY2NNR05CQT09IixbWyJSSVgiLCIyMDI2LTEyLTA3IiwiRkNPIixudWxsLCJCVCIsIjYzMyJdLFsiRkNPIiwiMjAyNi0xMi0wNyIsIkRYQiIsbnVsbCwiRUsiLCI5OCJdLFsiRFhCIiwiMjAyNi0xMi0wOCIsIkNNQiIsbnVsbCwiRUsiLCI2NTQiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 23:20" },
+          "arrival_airport": {
+            "name": "Dubaijas Starptautiskā lidosta",
+            "id": "DXB",
+            "time": "2026-12-08 08:00"
+          },
+          "duration": 400,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Baltic",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+          "travel_class": "Economy",
+          "flight_number": "BT 791",
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 386 kg"
+          ],
+          "overnight": true,
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Dubaijas Starptautiskā lidosta",
+            "id": "DXB",
+            "time": "2026-12-08 18:20"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-09 00:10"
+          },
+          "duration": 260,
+          "airplane": "Airbus A320",
+          "airline": "SriLankan",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UL.png",
+          "travel_class": "Economy",
+          "flight_number": "UL 232",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 320 kg"
+          ]
+        }
+      ],
+      "layovers": [{ "duration": 620, "name": "Dubaijas Starptautiskā lidosta", "id": "DXB" }],
+      "total_duration": 1280,
+      "carbon_emissions": {
+        "this_flight": 708000,
+        "typical_for_this_route": 615000,
+        "difference_percent": 15
+      },
+      "price": 635,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFZ3RDVkRjNU1YeFZUREl6TWhvTENLN3ZBeEFDR2dORlZWSTRISEN2d3dRPSIsW1siUklYIiwiMjAyNi0xMi0wNyIsIkRYQiIsbnVsbCwiQlQiLCI3OTEiXSxbIkRYQiIsIjIwMjYtMTItMDgiLCJDTUIiLG51bGwsIlVMIiwiMjMyIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 07:40" },
+          "arrival_airport": {
+            "name": "Getvikas lidosta",
+            "id": "LGW",
+            "time": "2026-12-07 08:40"
+          },
+          "duration": 180,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Baltic",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+          "travel_class": "Economy",
+          "flight_number": "BT 651",
+          "ticket_also_sold_by": ["British Airways"],
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 164 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Getvikas lidosta",
+            "id": "LGW",
+            "time": "2026-12-07 17:30"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 09:00"
+          },
+          "duration": 600,
+          "airplane": "Boeing 777",
+          "airline": "British Airways",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BA.png",
+          "travel_class": "Economy",
+          "flight_number": "BA 2045",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 588 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [{ "duration": 530, "name": "Getvikas lidosta", "id": "LGW" }],
+      "total_duration": 1310,
+      "carbon_emissions": {
+        "this_flight": 753000,
+        "typical_for_this_route": 615000,
+        "difference_percent": 22
+      },
+      "price": 637,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFZzVDVkRZMU1YeENRVEl3TkRVak1Sb0xDS2p4QXhBQ0dnTkZWVkk0SEhEVXhRUT0iLFtbIlJJWCIsIjIwMjYtMTItMDciLCJMR1ciLG51bGwsIkJUIiwiNjUxIl0sWyJMR1ciLCIyMDI2LTEyLTA3IiwiQ01CIixudWxsLCJCQSIsIjIwNDUiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 13:45" },
+          "arrival_airport": {
+            "name": "Helsinku-Vantā lidosta",
+            "id": "HEL",
+            "time": "2026-12-07 14:45"
+          },
+          "duration": 60,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Baltic",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+          "travel_class": "Economy",
+          "flight_number": "BT 305",
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 57 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Helsinku-Vantā lidosta",
+            "id": "HEL",
+            "time": "2026-12-07 16:00"
+          },
+          "arrival_airport": {
+            "name": "Hamada Starptautiskā lidosta",
+            "id": "DOH",
+            "time": "2026-12-07 23:45"
+          },
+          "duration": 405,
+          "airplane": "Airbus A330",
+          "airline": "Finnair",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AY.png",
+          "travel_class": "Economy",
+          "flight_number": "AY 1981",
+          "ticket_also_sold_by": ["Qatar Airways"],
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 375 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Hamada Starptautiskā lidosta",
+            "id": "DOH",
+            "time": "2026-12-08 02:30"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 09:45"
+          },
+          "duration": 285,
+          "airplane": "Boeing 787",
+          "airline": "Qatar Airways",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+          "travel_class": "Economy",
+          "flight_number": "QR 660",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 254 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        { "duration": 75, "name": "Helsinku-Vantā lidosta", "id": "HEL" },
+        { "duration": 165, "name": "Hamada Starptautiskā lidosta", "id": "DOH", "overnight": true }
+      ],
+      "total_duration": 990,
+      "carbon_emissions": {
+        "this_flight": 688000,
+        "typical_for_this_route": 615000,
+        "difference_percent": 12
+      },
+      "price": 662,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFaFJDVkRNd05YeEJXVEU1T0RGOFVWSTJOakFqTVJvTENQMkVCQkFDR2dORlZWSTRISERVM0FRPSIsW1siUklYIiwiMjAyNi0xMi0wNyIsIkhFTCIsbnVsbCwiQlQiLCIzMDUiXSxbIkhFTCIsIjIwMjYtMTItMDciLCJET0giLG51bGwsIkFZIiwiMTk4MSJdLFsiRE9IIiwiMjAyNi0xMi0wOCIsIkNNQiIsbnVsbCwiUVIiLCI2NjAiXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 07:00" },
+          "arrival_airport": {
+            "name": "Šarla de Golla lidosta",
+            "id": "CDG",
+            "time": "2026-12-07 08:50"
+          },
+          "duration": 170,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Baltic",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+          "travel_class": "Economy",
+          "flight_number": "BT 691",
+          "ticket_also_sold_by": ["Air France"],
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 164 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Šarla de Golla lidosta",
+            "id": "CDG",
+            "time": "2026-12-07 10:15"
+          },
+          "arrival_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-12-08 00:15"
+          },
+          "duration": 570,
+          "airplane": "Airbus A350",
+          "airline": "Air France",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AF.png",
+          "travel_class": "Economy",
+          "flight_number": "AF 194",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 458 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Kempegowda International Airport Bengaluru",
+            "id": "BLR",
+            "time": "2026-12-08 09:40"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 11:30"
+          },
+          "duration": 110,
+          "airplane": "Airbus A320neo",
+          "airline": "IndiGo",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+          "travel_class": "Economy",
+          "flight_number": "6E 1167",
+          "ticket_also_sold_by": ["Air France"],
+          "legroom": "71 cm",
+          "extensions": ["Below average legroom (71 cm)", "Carbon emissions estimate: 61 kg"]
+        }
+      ],
+      "layovers": [
+        { "duration": 85, "name": "Šarla de Golla lidosta", "id": "CDG" },
+        {
+          "duration": 565,
+          "name": "Kempegowda International Airport Bengaluru",
+          "id": "BLR",
+          "overnight": true
+        }
+      ],
+      "total_duration": 1500,
+      "carbon_emissions": {
+        "this_flight": 684000,
+        "typical_for_this_route": 615000,
+        "difference_percent": 11
+      },
+      "price": 662,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFaFJDVkRZNU1YeEJSakU1Tkh3MlJURXhOamNqTVJvTENKT0ZCQkFDR2dORlZWSTRISER0M0FRPSIsW1siUklYIiwiMjAyNi0xMi0wNyIsIkNERyIsbnVsbCwiQlQiLCI2OTEiXSxbIkNERyIsIjIwMjYtMTItMDciLCJCTFIiLG51bGwsIkFGIiwiMTk0Il0sWyJCTFIiLCIyMDI2LTEyLTA4IiwiQ01CIixudWxsLCI2RSIsIjExNjciXV1d"
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 06:05" },
+          "arrival_airport": {
+            "name": "Varšavas Šopēna lidosta",
+            "id": "WAW",
+            "time": "2026-12-07 06:30"
+          },
+          "duration": 85,
+          "airplane": "Boeing 737MAX 8 Passenger",
+          "airline": "LOT",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LO.png",
+          "travel_class": "Economy",
+          "flight_number": "LO 794",
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat power & USB outlets",
+            "Stream media to your device",
+            "Carbon emissions estimate: 60 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Varšavas Šopēna lidosta",
+            "id": "WAW",
+            "time": "2026-12-07 09:00"
+          },
+          "arrival_airport": {
+            "name": "Hamada Starptautiskā lidosta",
+            "id": "DOH",
+            "time": "2026-12-07 16:30"
+          },
+          "duration": 330,
+          "airplane": "Airbus A330",
+          "airline": "Qatar Airways",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+          "travel_class": "Economy",
+          "flight_number": "QR 264",
+          "legroom": "86 cm",
+          "extensions": [
+            "Above average legroom (86 cm)",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 292 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Hamada Starptautiskā lidosta",
+            "id": "DOH",
+            "time": "2026-12-07 18:40"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 01:55"
+          },
+          "duration": 285,
+          "airplane": "Boeing 787",
+          "airline": "Qatar Airways",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+          "travel_class": "Economy",
+          "flight_number": "QR 658",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 254 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        { "duration": 150, "name": "Varšavas Šopēna lidosta", "id": "WAW" },
+        { "duration": 130, "name": "Hamada Starptautiskā lidosta", "id": "DOH" }
+      ],
+      "total_duration": 980,
+      "carbon_emissions": {
+        "this_flight": 608000,
+        "typical_for_this_route": 615000,
+        "difference_percent": -1
+      },
+      "price": 676,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFaEZNVHpjNU5IeFJVakkyTkh4UlVqWTFPQm9MQ1BxUEJCQUNHZ05GVlZJNEhIQy82UVE9IixbWyJSSVgiLCIyMDI2LTEyLTA3IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNi0xMi0wNyIsIkRPSCIsbnVsbCwiUVIiLCIyNjQiXSxbIkRPSCIsIjIwMjYtMTItMDciLCJDTUIiLG51bGwsIlFSIiwiNjU4Il1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 07:25" },
+          "arrival_airport": {
+            "name": "Vīnes starptautiskā lidosta",
+            "id": "VIE",
+            "time": "2026-12-07 08:25"
+          },
+          "duration": 120,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Baltic",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+          "travel_class": "Economy",
+          "flight_number": "BT 271",
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 117 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Vīnes starptautiskā lidosta",
+            "id": "VIE",
+            "time": "2026-12-07 09:00"
+          },
+          "arrival_airport": {
+            "name": "Hamada Starptautiskā lidosta",
+            "id": "DOH",
+            "time": "2026-12-07 16:30"
+          },
+          "duration": 330,
+          "airplane": "Airbus A320",
+          "airline": "Qatar Airways",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+          "travel_class": "Economy",
+          "flight_number": "QR 190",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 413 kg"
+          ]
+        },
+        {
+          "departure_airport": {
+            "name": "Hamada Starptautiskā lidosta",
+            "id": "DOH",
+            "time": "2026-12-07 18:40"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 01:55"
+          },
+          "duration": 285,
+          "airplane": "Boeing 787",
+          "airline": "Qatar Airways",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+          "travel_class": "Economy",
+          "flight_number": "QR 658",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 254 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        { "duration": 35, "name": "Vīnes starptautiskā lidosta", "id": "VIE" },
+        { "duration": 130, "name": "Hamada Starptautiskā lidosta", "id": "DOH" }
+      ],
+      "total_duration": 900,
+      "carbon_emissions": {
+        "this_flight": 785000,
+        "typical_for_this_route": 615000,
+        "difference_percent": 28
+      },
+      "price": 679,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFaE5DVkRJM01YeFJVakU1TUh4UlVqWTFPQ014R2dzSThaRUVFQUlhQTBWVlVqZ2NjT0RyQkE9PSIsW1siUklYIiwiMjAyNi0xMi0wNyIsIlZJRSIsbnVsbCwiQlQiLCIyNzEiXSxbIlZJRSIsIjIwMjYtMTItMDciLCJET0giLG51bGwsIlFSIiwiMTkwIl0sWyJET0giLCIyMDI2LTEyLTA3IiwiQ01CIixudWxsLCJRUiIsIjY1OCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 22:05" },
+          "arrival_airport": {
+            "name": "Helsinku-Vantā lidosta",
+            "id": "HEL",
+            "time": "2026-12-07 23:20"
+          },
+          "duration": 75,
+          "airplane": "ATR 72",
+          "airline": "Finnair",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AY.png",
+          "travel_class": "Economy",
+          "flight_number": "AY 1078",
+          "legroom": "79 cm",
+          "extensions": ["Average legroom (79 cm)", "Carbon emissions estimate: 57 kg"]
+        },
+        {
+          "departure_airport": {
+            "name": "Helsinku-Vantā lidosta",
+            "id": "HEL",
+            "time": "2026-12-08 00:50"
+          },
+          "arrival_airport": {
+            "name": "Honkongas starptautiskā lidosta",
+            "id": "HKG",
+            "time": "2026-12-08 19:05"
+          },
+          "duration": 735,
+          "airplane": "Airbus A350",
+          "airline": "Finnair",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AY.png",
+          "travel_class": "Economy",
+          "flight_number": "AY 99",
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 553 kg"
+          ],
+          "overnight": true
+        },
+        {
+          "departure_airport": {
+            "name": "Honkongas starptautiskā lidosta",
+            "id": "HKG",
+            "time": "2026-12-08 20:10"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 23:30"
+          },
+          "duration": 350,
+          "airplane": "Airbus A330",
+          "airline": "Cathay Pacific",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+          "travel_class": "Economy",
+          "flight_number": "CX 611",
+          "ticket_also_sold_by": ["Finnair"],
+          "legroom": "81 cm",
+          "extensions": [
+            "Above average legroom (81 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 274 kg"
+          ]
+        }
+      ],
+      "layovers": [
+        { "duration": 90, "name": "Helsinku-Vantā lidosta", "id": "HEL" },
+        { "duration": 65, "name": "Honkongas starptautiskā lidosta", "id": "HKG" }
+      ],
+      "total_duration": 1315,
+      "carbon_emissions": {
+        "this_flight": 885000,
+        "typical_for_this_route": 615000,
+        "difference_percent": 44
+      },
+      "price": 758,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFaEZCV1RFd056aDhRVms1T1h4RFdEWXhNUm9MQ0lUUUJCQUNHZ05GVlZJNEhIQzR0QVU9IixbWyJSSVgiLCIyMDI2LTEyLTA3IiwiSEVMIixudWxsLCJBWSIsIjEwNzgiXSxbIkhFTCIsIjIwMjYtMTItMDgiLCJIS0ciLG51bGwsIkFZIiwiOTkiXSxbIkhLRyIsIjIwMjYtMTItMDgiLCJDTUIiLG51bGwsIkNYIiwiNjExIl1dXQ=="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 23:20" },
+          "arrival_airport": {
+            "name": "Dubaijas Starptautiskā lidosta",
+            "id": "DXB",
+            "time": "2026-12-08 08:00"
+          },
+          "duration": 400,
+          "airplane": "Airbus A220-300 Passenger",
+          "airline": "Air Baltic",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+          "travel_class": "Economy",
+          "flight_number": "BT 791",
+          "ticket_also_sold_by": ["Emirates"],
+          "legroom": "76 cm",
+          "extensions": [
+            "Average legroom (76 cm)",
+            "In-seat USB outlet",
+            "Carbon emissions estimate: 386 kg"
+          ],
+          "overnight": true,
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Dubaijas Starptautiskā lidosta",
+            "id": "DXB",
+            "time": "2026-12-08 10:05"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 15:55"
+          },
+          "duration": 260,
+          "airplane": "Airbus A350",
+          "airline": "Emirates",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+          "travel_class": "Economy",
+          "flight_number": "EK 654",
+          "legroom": "81 cm",
+          "extensions": [
+            "Above average legroom (81 cm)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 221 kg"
+          ]
+        }
+      ],
+      "layovers": [{ "duration": 125, "name": "Dubaijas Starptautiskā lidosta", "id": "DXB" }],
+      "total_duration": 785,
+      "carbon_emissions": {
+        "this_flight": 608000,
+        "typical_for_this_route": 615000,
+        "difference_percent": -1
+      },
+      "price": 760,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFZzFDVkRjNU1YeEZTelkxTkNNeEdnc0lndEVFRUFJYUEwVlZVamdjY011MUJRPT0iLFtbIlJJWCIsIjIwMjYtMTItMDciLCJEWEIiLG51bGwsIkJUIiwiNzkxIl0sWyJEWEIiLCIyMDI2LTEyLTA4IiwiQ01CIixudWxsLCJFSyIsIjY1NCJdXV0="
+    },
+    {
+      "flights": [
+        {
+          "departure_airport": { "name": "Rīgas lidosta", "id": "RIX", "time": "2026-12-07 13:45" },
+          "arrival_airport": {
+            "name": "Helsinku-Vantā lidosta",
+            "id": "HEL",
+            "time": "2026-12-07 15:00"
+          },
+          "duration": 75,
+          "airplane": "ATR 72",
+          "airline": "Finnair",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AY.png",
+          "travel_class": "Economy",
+          "flight_number": "AY 1074",
+          "ticket_also_sold_by": ["Qatar Airways"],
+          "legroom": "79 cm",
+          "extensions": ["Average legroom (79 cm)", "Carbon emissions estimate: 57 kg"],
+          "plane_and_crew_by": "Nordic Reg for Finnair"
+        },
+        {
+          "departure_airport": {
+            "name": "Helsinku-Vantā lidosta",
+            "id": "HEL",
+            "time": "2026-12-07 16:00"
+          },
+          "arrival_airport": {
+            "name": "Hamada Starptautiskā lidosta",
+            "id": "DOH",
+            "time": "2026-12-07 23:45"
+          },
+          "duration": 405,
+          "airplane": "Airbus A330",
+          "airline": "Finnair",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AY.png",
+          "travel_class": "Economy",
+          "flight_number": "AY 1981",
+          "ticket_also_sold_by": ["Qatar Airways"],
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat USB outlet",
+            "On-demand video",
+            "Carbon emissions estimate: 375 kg"
+          ],
+          "often_delayed_by_over_30_min": true
+        },
+        {
+          "departure_airport": {
+            "name": "Hamada Starptautiskā lidosta",
+            "id": "DOH",
+            "time": "2026-12-08 01:30"
+          },
+          "arrival_airport": {
+            "name": "Bandaranaikes starptautiskā lidosta",
+            "id": "CMB",
+            "time": "2026-12-08 08:45"
+          },
+          "duration": 285,
+          "airplane": "Boeing 787",
+          "airline": "Qatar Airways",
+          "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+          "travel_class": "Economy",
+          "flight_number": "QR 664",
+          "ticket_also_sold_by": ["Finnair"],
+          "legroom": "79 cm",
+          "extensions": [
+            "Average legroom (79 cm)",
+            "Wi-Fi for a fee",
+            "In-seat power & USB outlets",
+            "On-demand video",
+            "Carbon emissions estimate: 254 kg"
+          ],
+          "overnight": true
+        }
+      ],
+      "layovers": [
+        { "duration": 60, "name": "Helsinku-Vantā lidosta", "id": "HEL" },
+        { "duration": 105, "name": "Hamada Starptautiskā lidosta", "id": "DOH" }
+      ],
+      "total_duration": 930,
+      "carbon_emissions": {
+        "this_flight": 688000,
+        "typical_for_this_route": 615000,
+        "difference_percent": 12
+      },
+      "price": 793,
+      "type": "One way",
+      "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+      "booking_token": "WyJDalJJTkhONlRUUmFkRjl2VXpSQlJWRjNaVUZDUnkwdExTMHRMUzB0TFMxdmVXTnRNMEZCUVVGQlIyNXdOVGRWVGpod09HRkJFaFZCV1RFd056UjhRVmt4T1RneGZGRlNOalkwSXpJYUN3aXA2d1FRQWhvRFJWVlNPQnh3cmRRRiIsW1siUklYIiwiMjAyNi0xMi0wNyIsIkhFTCIsbnVsbCwiQVkiLCIxMDc0Il0sWyJIRUwiLCIyMDI2LTEyLTA3IiwiRE9IIixudWxsLCJBWSIsIjE5ODEiXSxbIkRPSCIsIjIwMjYtMTItMDgiLCJDTUIiLG51bGwsIlFSIiwiNjY0Il1dXQ=="
+    }
+  ],
+  "price_insights": {
+    "lowest_price": 493,
+    "price_level": "typical",
+    "typical_price_range": [455, 860]
+  },
+  "airports": [
+    {
+      "departure": [
+        {
+          "airport": { "id": "RIX", "name": "Rīgas lidosta" },
+          "city": "Rīga",
+          "country": "Latvija",
+          "country_code": "LV",
+          "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR2hARO85l8xr59Az8kPlCgtMpI4xev4ytJ7andGITG-nD-0HuvckGEmOZxnrRJYCAADtAHDKTne_HKhg",
+          "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcReA5hcjaKQjaU_QSM__K0ujn0g86hbBiLeajA_vkoZPOb4spv-bszJbZVeyIY4OeI-0q-i2-5vQPnijAtbpzgKb2nIYrpAzZWSlXNNp4U"
+        }
+      ],
+      "arrival": [
+        {
+          "airport": { "id": "CMB", "name": "Bandaranaikes starptautiskā lidosta" },
+          "city": "Kolombo",
+          "country": "Šrilanka",
+          "country_code": "LK",
+          "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQrmt9bg0qEPLZ3Jcv0QTc_RnG17j3fXFjJXL2oP-Z8SV9uFWTtWmbRQHrmFYFnriPsqVOstR4x4FbT4w",
+          "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS8jMfrKQzJPluYHKJRyZnZcDf8zwdQbQRihMwVlLhWOWlIsQqQtt6N-22AdSW8K0zm4Ft6G-GEYa536zdagxc9q88KohKkvQpHYTEkT40"
+        }
+      ]
+    }
+  ]
+}

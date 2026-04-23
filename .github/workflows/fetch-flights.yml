@@ -24,7 +24,10 @@ jobs:
       - name: Run fetch-flights script
         env:
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
-        run: bun run apps/web/scripts/fetch-flights.ts
+        run: bun run apps/web/src/features/serpapi/scripts/fetch-flights.ts
+
+      - name: Map flight data
+        run: bun run apps/web/src/features/serpapi/scripts/map-flights.ts
 
       - name: Commit and push
         run: |

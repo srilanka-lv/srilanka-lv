@@ -9,10 +9,9 @@ export class DefaultSerpApiRepository implements SerpApiRepositoryInterface {
   }
 
   public async searchFlights(params: {
-    departureId: string;
-    arrivalId: string;
+    airportDepartureId: string;
+    airportArrivalId: string;
     outboundDate: string;
-    currency?: string;
   }) {
     return this.provider.searchFlights(params);
   }

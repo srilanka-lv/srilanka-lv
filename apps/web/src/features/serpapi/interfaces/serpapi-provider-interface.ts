@@ -1,10 +1,9 @@
-import type { SerpApiFlightResponseModel } from '../models/serp-api-flight-response-model';
+import type { SerpApiFlightResponseModel } from '../models/serpapi-flight-response-model';
 
 export interface SerpApiProviderInterface {
   searchFlights(params: {
-    departureId: string;
-    arrivalId: string;
+    airportDepartureId: string;
+    airportArrivalId: string;
     outboundDate: string;
-    currency?: string;
   }): Promise<SerpApiFlightResponseModel>;
 }

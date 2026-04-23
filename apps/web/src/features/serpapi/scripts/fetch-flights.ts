@@ -1,15 +1,8 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
-import { DefaultSerpApiProvider } from '../src/features/serpapi/providers/default-serpapi-provider';
-import { DefaultSerpApiRepository } from '../src/features/serpapi/repositories/default-serpapi-repository';
-
-const SERPAPI_API_KEY = process.env.SERPAPI_API_KEY;
-
-if (!SERPAPI_API_KEY) {
-  console.error('SERPAPI_API_KEY environment variable is required');
-  process.exit(1);
-}
+import { DefaultSerpApiProvider } from '../providers/default-serpapi-provider';
+import { DefaultSerpApiRepository } from '../repositories/default-serpapi-repository';
 
 function getMondaysForNextMonths(months: number): string[] {
   const dates: string[] = [];
@@ -35,50 +28,37 @@ function getMondaysForNextMonths(months: number): string[] {
 }
 
 async function main() {
-  const provider = new DefaultSerpApiProvider({ apiKey: SERPAPI_API_KEY! });
+  const provider = new DefaultSerpApiProvider();
   const repository = new DefaultSerpApiRepository(provider);
 
   const dates = getMondaysForNextMonths(9);
   console.log(`Fetching flights for ${dates.length} dates...`);
 
-  const flights: Record<string, unknown> = {};
+  const today = new Date();
+  const queriedOn = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+
+  const dataDir = resolve(dirname(new URL(import.meta.url).pathname), '../data');
+  mkdirSync(dataDir, { recursive: true });
 
   for (const date of dates) {
     console.log(`Fetching ${date}...`);
     try {
       const response = await repository.searchFlights({
-        departureId: 'RIX',
-        arrivalId: 'CMB',
+        airportDepartureId: 'RIX',
+        airportArrivalId: 'CMB',
         outboundDate: date,
-        currency: 'EUR',
       });
-      flights[date] = response;
+
+      const filename = `flights_queried-on-${queriedOn}_results-for-${date}.json`;
+      const outputPath = resolve(dataDir, filename);
+      writeFileSync(outputPath, JSON.stringify(response));
+      console.log(`Written ${filename}`);
     } catch (error) {
       console.error(`Failed to fetch ${date}:`, error);
-      flights[date] = null;
     }
   }
 
-  const output = {
-    fetchedAt: new Date().toISOString(),
-    flights,
-  };
-
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, '0');
-  const day = String(today.getDate()).padStart(2, '0');
-  const filename = `flights-${year}-${month}-${day}.json`;
-
-  const outputPath = resolve(
-    dirname(new URL(import.meta.url).pathname),
-    '../src/features/serpapi/data',
-    filename,
-  );
-
-  mkdirSync(dirname(outputPath), { recursive: true });
-  writeFileSync(outputPath, JSON.stringify(output, null, 2));
-  console.log(`Written to ${outputPath}`);
+  console.log(`Done. Queried ${dates.length} dates.`);
 }
 
 main();

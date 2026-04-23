@@ -1,5 +1,5 @@
-import type { SerpApiFlightModel } from './serp-api-flight-model';
-import type { SerpApiLayoverModel } from './serp-api-layover-model';
+import type { SerpApiFlightModel } from './serpapi-flight-model';
+import type { SerpApiLayoverModel } from './serpapi-layover-model';
 
 export type SerpApiFlightResultModel = {
   flights: SerpApiFlightModel[];

@@ -1,36 +1,30 @@
 import { getJson } from 'serpapi';
 
 import type { SerpApiProviderInterface } from '../interfaces/serpapi-provider-interface';
-import type { SerpApiConfigModel } from '../models/serp-api-config-model';
-import type { SerpApiFlightResponseModel } from '../models/serp-api-flight-response-model';
+import type { SerpApiFlightResponseModel } from '../models/serpapi-flight-response-model';
 
 export class DefaultSerpApiProvider implements SerpApiProviderInterface {
-  private readonly apiKey: string;
-
-  constructor(config: SerpApiConfigModel) {
-    this.apiKey = config.apiKey;
-  }
-
   public async searchFlights(params: {
-    departureId: string;
-    arrivalId: string;
+    airportDepartureId: string;
+    airportArrivalId: string;
     outboundDate: string;
-    currency?: string;
   }): Promise<SerpApiFlightResponseModel> {
-    const response = await getJson('google_flights', {
-      api_key: this.apiKey,
-      departure_id: params.departureId,
-      arrival_id: params.arrivalId,
-      outbound_date: params.outboundDate,
-      type: '2',
-      adults: 1,
-      travel_class: 1,
-      currency: params.currency ?? 'EUR',
-      gl: 'lv',
-      hl: 'en',
-      deep_search: true,
+    const { airportDepartureId, airportArrivalId, outboundDate } = params;
+
+    const data = await getJson('google_flights', {
+      api_key: process.env.SERPAPI_API_KEY,
+      departure_id: airportDepartureId,
+      arrival_id: airportArrivalId,
+      outbound_date: outboundDate,
+      type: '2', // One-way flight
+      adults: 1, // 1 adult
+      travel_class: 1, // Economy class
+      currency: 'EUR', // Euro
+      gl: 'lv', // Latvian
+      hl: 'lv', // Latvian
+      deep_search: true, // Deep search
     });
 
-    return response as unknown as SerpApiFlightResponseModel;
+    return data as unknown as SerpApiFlightResponseModel;
   }
 }
