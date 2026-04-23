@@ -12,7 +12,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@packages/sanity/*": ["./packages/sanity/src/*"]
+    }
   },
   "exclude": ["node_modules"]
 }

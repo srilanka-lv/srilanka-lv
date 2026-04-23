@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["srilanka", "turbopack", "commitlint"]
+  "cSpell.words": ["srilanka", "turbopack", "commitlint", "Serp", "serp"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

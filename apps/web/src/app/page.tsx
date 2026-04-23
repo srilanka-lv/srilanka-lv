@@ -1,4 +1,4 @@
-import { allBlogPostsQuery } from '@srilanka/sanity/queries';
+import { allBlogPostsQuery } from '@packages/sanity/queries/all-blog-posts-query';
 
 import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
 import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';

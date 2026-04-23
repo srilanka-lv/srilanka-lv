@@ -12,7 +12,7 @@ export class DefaultSanityProvider implements SanityProviderInterface {
       projectId: env('NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID'),
       dataset: env('NEXT_PUBLIC_SANITY_STUDIO_DATASET'),
       apiVersion: '2026-04-22',
-      token: env('SANITY_API_TOKEN'),
+      token: env('SANITY_API_KEY'),
       useCdn: false,
     });
   }

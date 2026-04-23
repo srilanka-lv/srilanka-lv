@@ -1,10 +1,27 @@
+import 'modern-normalize/modern-normalize.css';
+
 import type { Metadata } from 'next';
-import { PublicEnvScript } from 'next-runtime-env';
+import { PublicEnvScript, env } from 'next-runtime-env';
 import type { ReactNode } from 'react';
 
+import '@/shared/styles/global.css';
+
+import { ThemeScript } from '@/shared/components/theme-script';
+import { lora } from '@/shared/fonts/fonts';
+import { lightTheme } from '@/shared/styles/themes/theme.light.css';
+
 export const metadata: Metadata = {
-  title: 'Ceļojums uz Šrilanku | SriLanka.lv',
-  description: 'Viss kas jāzina pirms ceļo uz Šrilanku',
+  title: {
+    template: '%s | SriLanka.lv',
+    default: 'SriLanka.lv',
+  },
+  metadataBase: env('NEXT_PUBLIC_SELF_URL'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    images: '/og-image.png',
+  },
 };
 
 type RootLayoutReturnType = Readonly<{
@@ -13,9 +30,10 @@ type RootLayoutReturnType = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutReturnType) {
   return (
-    <html lang="lv">
+    <html lang="lv" className={`${lora.variable} ${lightTheme}`}>
       <head>
         <PublicEnvScript />
+        <ThemeScript />
       </head>
       <body>{children}</body>
     </html>

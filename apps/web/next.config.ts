@@ -8,6 +8,14 @@ const withVanillaExtract = createVanillaExtractPlugin({
 });
 
 const nextConfig: NextConfig = {
+  rewrites: async () => {
+    return [
+      {
+        source: '/letakie-lidojumi-uz-srilanku-no-rigas',
+        destination: '/flights-calendar',
+      },
+    ];
+  },
   output: 'standalone',
   deploymentId: `v${packageJson.version.replaceAll('.', '-')}`,
   reactCompiler: true,

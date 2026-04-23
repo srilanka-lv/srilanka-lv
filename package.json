@@ -10,6 +10,7 @@
   "scripts": {
     "web:dev": "bun --filter @srilanka/web dev",
     "web:build": "bun --filter @srilanka/web build",
+    "web:storybook": "bun --filter @srilanka/web storybook",
     "studio:dev": "bun --filter @srilanka/studio dev",
     "studio:build": "bun --filter @srilanka/studio build",
     "studio:deploy": "bun --filter @srilanka/studio deploy",
