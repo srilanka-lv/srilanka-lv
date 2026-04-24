@@ -7,7 +7,8 @@ export const buttonStyles = recipe({
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: vars.border.radius.md,
+    gap: vars.spacing[2],
+    borderRadius: vars.border.radius.medium,
     fontWeight: vars.font.weight.medium,
     cursor: 'pointer',
     transition: 'background-color 150ms, border-color 150ms, color 150ms',
@@ -75,9 +76,29 @@ export const buttonStyles = recipe({
         padding: `${vars.spacing[3]} ${vars.spacing[6]}`,
       },
     },
+    iconOnly: {
+      true: {
+        gap: 0,
+      },
+    },
   },
+  compoundVariants: [
+    {
+      variants: { iconOnly: true, size: 'small' },
+      style: { padding: vars.spacing[1] },
+    },
+    {
+      variants: { iconOnly: true, size: 'medium' },
+      style: { padding: vars.spacing[2] },
+    },
+    {
+      variants: { iconOnly: true, size: 'large' },
+      style: { padding: vars.spacing[3] },
+    },
+  ],
   defaultVariants: {
     variant: 'primary',
     size: 'medium',
+    iconOnly: false,
   },
 });
