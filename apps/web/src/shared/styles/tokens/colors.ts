@@ -1,11 +1,11 @@
 export const lightColors = {
-  background: '#ffffff',
+  background: '#f7f9f7',
   foreground: 'oklch(14.7% 0.004 49.25)',
   primary: 'oklch(21.6% 0.006 56.043)',
   primaryForeground: '#ffffff',
   secondary: 'oklch(97% 0.001 106.424)',
   secondaryForeground: 'oklch(21.6% 0.006 56.043)',
-  accent: 'oklch(84.1% 0.238 128.85)',
+  accent: 'oklch(76.8% 0.233 130.85)',
   accentForeground: 'oklch(27.4% 0.072 132.109)',
 };
 

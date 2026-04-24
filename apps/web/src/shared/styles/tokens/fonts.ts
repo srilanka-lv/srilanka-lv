@@ -1,3 +1,8 @@
+export const fontFamilies = {
+  body: 'var(--font-lora)',
+  display: 'var(--font-galindo)',
+};
+
 export const fontSizes = {
   xs: '0.75rem',
   sm: '0.875rem',
@@ -26,7 +31,17 @@ export const fontWeights = {
   black: '900',
 };
 
+export const letterSpacing = {
+  tighter: '-0.05em',
+  tight: '-0.025em',
+  normal: '0em',
+  wide: '0.025em',
+  wider: '0.05em',
+  widest: '0.1em',
+};
+
 export const lineHeights = {
+  none: '1',
   tight: '1.25',
   snug: '1.375',
   normal: '1.5',

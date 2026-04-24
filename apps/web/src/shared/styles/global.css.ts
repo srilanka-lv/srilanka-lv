@@ -5,6 +5,26 @@ import { vars } from './themes/theme.contract.css';
 globalStyle('body', {
   backgroundColor: vars.color.background,
   color: vars.color.foreground,
-  fontFamily: 'var(--font-lora)',
+  fontFamily: vars.font.family.body,
   lineHeight: vars.font.lineHeight.normal,
+});
+
+globalStyle('a:link', {
+  color: vars.color.accent,
+  textDecoration: 'none',
+});
+
+globalStyle('a:visited', {
+  color: vars.color.accent,
+  textDecoration: 'none',
+});
+
+globalStyle('a:hover', {
+  color: vars.color.accent,
+  textDecoration: 'none',
+});
+
+globalStyle('a:active', {
+  color: vars.color.accent,
+  textDecoration: 'none',
 });

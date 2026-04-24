@@ -3,14 +3,17 @@ import { createTheme } from '@vanilla-extract/css';
 import { borderRadius } from '../tokens/borders';
 import { breakpoints } from '../tokens/breakpoints';
 import { lightColors } from '../tokens/colors';
-import { fontSizes, fontWeights, lineHeights } from '../tokens/fonts';
-import { letterSpacing } from '../tokens/letter-spacing';
+import { fontFamilies, fontSizes, fontWeights, letterSpacing, lineHeights } from '../tokens/fonts';
+import { shadows } from '../tokens/shadows';
 import { spacing } from '../tokens/spacing';
+import { transitionDuration, transitionEasing } from '../tokens/transitions';
+import { zIndex } from '../tokens/z-index';
 import { vars } from './theme.contract.css';
 
 export const lightTheme = createTheme(vars, {
   color: lightColors,
   font: {
+    family: fontFamilies,
     size: fontSizes,
     weight: fontWeights,
     lineHeight: lineHeights,
@@ -20,5 +23,11 @@ export const lightTheme = createTheme(vars, {
   border: {
     radius: borderRadius,
   },
+  shadow: shadows,
+  transition: {
+    easing: transitionEasing,
+    duration: transitionDuration,
+  },
+  zIndex,
   breakpoint: breakpoints,
 });

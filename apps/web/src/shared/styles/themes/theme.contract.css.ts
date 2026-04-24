@@ -12,6 +12,10 @@ export const vars = createThemeContract({
     accentForeground: null,
   },
   font: {
+    family: {
+      body: null,
+      display: null,
+    },
     size: {
       xs: null,
       sm: null,
@@ -47,6 +51,7 @@ export const vars = createThemeContract({
       widest: null,
     },
     lineHeight: {
+      none: null,
       tight: null,
       snug: null,
       normal: null,
@@ -76,21 +81,43 @@ export const vars = createThemeContract({
   },
   border: {
     radius: {
-      xs: null,
-      sm: null,
-      md: null,
-      lg: null,
-      xl: null,
-      '2xl': null,
-      '3xl': null,
-      '4xl': null,
+      small: null,
+      medium: null,
+      large: null,
     },
   },
+  shadow: {
+    none: null,
+    small: null,
+    medium: null,
+    large: null,
+  },
+  transition: {
+    easing: {
+      easeInOut: null,
+    },
+    duration: {
+      slow: null,
+      normal: null,
+      fast: null,
+    },
+  },
+  zIndex: {
+    '0': null,
+    '10': null,
+    '20': null,
+    '30': null,
+    '40': null,
+    '50': null,
+    auto: null,
+  },
   breakpoint: {
+    xxs: null,
+    xs: null,
     sm: null,
     md: null,
     lg: null,
     xl: null,
-    '2xl': null,
+    xxl: null,
   },
 });
