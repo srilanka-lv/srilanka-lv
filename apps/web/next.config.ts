@@ -11,8 +11,20 @@ const nextConfig: NextConfig = {
   rewrites: async () => {
     return [
       {
-        source: '/letakie-lidojumi-uz-srilanku-no-rigas',
-        destination: '/flights-calendar',
+        source: '/produkti',
+        destination: '/products',
+      },
+      {
+        source: '/par-mani',
+        destination: '/about-me',
+      },
+      {
+        source: '/lidojumi-cenas',
+        destination: '/flight-tickets',
+      },
+      {
+        source: '/kontakti',
+        destination: '/contact',
       },
     ];
   },

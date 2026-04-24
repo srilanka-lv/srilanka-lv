@@ -1,19 +1,33 @@
 import 'modern-normalize/modern-normalize.css';
 
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { PublicEnvScript, env } from 'next-runtime-env';
 import type { ReactNode } from 'react';
 
 import '@/shared/styles/global.css';
 
+import { Layout } from '@/features/layout/components/layout';
 import { ThemeScript } from '@/shared/components/theme-script';
-import { lora } from '@/shared/fonts/fonts';
-import { lightTheme } from '@/shared/styles/themes/theme.light.css';
+import { galindo, lora } from '@/shared/fonts/fonts';
+import { lightTheme as theme } from '@/shared/styles/themes/theme.light.css';
+import { darkColors, lightColors } from '@/shared/styles/tokens/colors';
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: lightColors.background },
+    { media: '(prefers-color-scheme: dark)', color: darkColors.background },
+  ],
+  colorScheme: 'light dark',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | SriLanka.lv',
-    default: 'SriLanka.lv',
+    template: '%s | Šrilanka.lv',
+    default: 'Šrilanka.lv',
   },
   metadataBase: env('NEXT_PUBLIC_SELF_URL'),
   alternates: {
@@ -30,12 +44,12 @@ type RootLayoutReturnType = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutReturnType) {
   return (
-    <html lang="lv" className={`${lora.variable} ${lightTheme}`}>
+    <html lang="lv" className={`${lora.variable} ${galindo.variable} ${theme}`}>
       <head>
         <PublicEnvScript />
         <ThemeScript />
       </head>
-      <body>{children}</body>
+      <Layout>{children}</Layout>
     </html>
   );
 }

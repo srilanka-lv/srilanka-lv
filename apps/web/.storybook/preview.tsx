@@ -7,6 +7,17 @@ import { withVanillaExtractTheme } from './decorators/with-vanilla-extract-theme
 const preview: Preview = {
   parameters: {
     layout: 'centered',
+    viewport: {
+      options: {
+        xxs: { name: 'xxs (320px)', styles: { width: '320px', height: '100%' } },
+        xs: { name: 'xs (480px)', styles: { width: '480px', height: '100%' } },
+        sm: { name: 'sm (640px)', styles: { width: '640px', height: '100%' } },
+        md: { name: 'md (768px)', styles: { width: '768px', height: '100%' } },
+        lg: { name: 'lg (1024px)', styles: { width: '1024px', height: '100%' } },
+        xl: { name: 'xl (1280px)', styles: { width: '1280px', height: '100%' } },
+        xxl: { name: 'xxl (1536px)', styles: { width: '1536px', height: '100%' } },
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

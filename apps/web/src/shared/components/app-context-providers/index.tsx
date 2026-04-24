@@ -1,13 +1,21 @@
+'use client';
+
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
-import { SanityContextProvider } from '@/features/sanity/contexts/sanity-context';
-import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
-import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
-
-// Moved the instantiation of the providers and repository to the top of the file to avoid re-creating them on every render.
-const sanityProvider = new DefaultSanityProvider();
-const sanityRepository = new DefaultSanityRepository(sanityProvider);
+import { BreakpointRepositoryProvider } from '@/features/breakpoint/contexts/breakpoint-repository-context';
+import { DefaultBreakpointRepository } from '@/features/breakpoint/repositories/default-breakpoint-repository';
+import { BreakpointStoreProvider } from '@/features/breakpoint/stores/breakpoint-store';
+import { LayoutStoreProvider } from '@/features/layout/stores/layout-store';
+import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 export const AppContextProviders: FunctionComponent<PropsWithChildren> = ({ children }) => {
-  return <SanityContextProvider value={sanityRepository}>{children}</SanityContextProvider>;
+  const breakpointRepository = new DefaultBreakpointRepository({ breakpoints });
+
+  return (
+    <BreakpointRepositoryProvider value={breakpointRepository}>
+      <BreakpointStoreProvider>
+        <LayoutStoreProvider>{children}</LayoutStoreProvider>
+      </BreakpointStoreProvider>
+    </BreakpointRepositoryProvider>
+  );
 };
