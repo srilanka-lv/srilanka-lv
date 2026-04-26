@@ -7,6 +7,8 @@ export const lightColors = {
   secondaryForeground: 'oklch(21.6% 0.006 56.043)',
   accent: 'oklch(76.8% 0.233 130.85)',
   accentForeground: 'oklch(27.4% 0.072 132.109)',
+  error: 'oklch(63.7% 0.237 25.331)',
+  errorForeground: 'oklch(63.7% 0.237 25.331)',
 };
 
 export const darkColors = {
@@ -18,4 +20,6 @@ export const darkColors = {
   secondaryForeground: 'oklch(98.5% 0.001 106.423)',
   accent: 'oklch(76.8% 0.233 130.85)',
   accentForeground: 'oklch(27.4% 0.072 132.109)',
+  error: 'oklch(70.4% 0.191 22.216)',
+  errorForeground: 'oklch(70.4% 0.191 22.216)',
 };

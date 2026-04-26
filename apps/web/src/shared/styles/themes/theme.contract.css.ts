@@ -10,6 +10,8 @@ export const vars = createThemeContract({
     secondaryForeground: null,
     accent: null,
     accentForeground: null,
+    error: null,
+    errorForeground: null,
   },
   font: {
     family: {
@@ -85,6 +87,11 @@ export const vars = createThemeContract({
       medium: null,
       large: null,
     },
+  },
+  focus: {
+    color: null,
+    width: null,
+    offset: null,
   },
   shadow: {
     none: null,
