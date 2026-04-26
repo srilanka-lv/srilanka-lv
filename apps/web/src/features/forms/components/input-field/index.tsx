@@ -10,7 +10,7 @@ import {
   inputStyles,
   inputWrapperStyle,
   labelStyle,
-  rootStyles,
+  rootStyle,
   spinnerStyle,
 } from './styles.css';
 
@@ -50,7 +50,7 @@ export function InputField({
       required={required}
       disabled={disabled || loading}
       readOnly={readOnly}
-      className={clsx(rootStyles({ size }), className)}
+      className={clsx(rootStyle, className)}
     >
       <Field.Label className={labelStyle}>{label}</Field.Label>
       <div className={inputWrapperStyle}>

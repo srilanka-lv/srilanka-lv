@@ -3,28 +3,16 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
-export const rootStyles = recipe({
-  base: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: vars.spacing[1],
-    width: '100%',
-    selectors: {
-      '&[data-disabled]': {
-        opacity: 0.5,
-        cursor: 'not-allowed',
-      },
+export const rootStyle = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: vars.spacing[1],
+  width: '100%',
+  selectors: {
+    '&[data-disabled]': {
+      opacity: 0.5,
+      cursor: 'not-allowed',
     },
-  },
-  variants: {
-    size: {
-      small: {},
-      medium: {},
-      large: {},
-    },
-  },
-  defaultVariants: {
-    size: 'medium',
   },
 });
 
