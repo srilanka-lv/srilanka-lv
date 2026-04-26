@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@ark-ui/react": "^5.36.2",
+    "@hookform/resolvers": "^5.2.2",
     "@icons-pack/react-simple-icons": "^13.13.0",
     "@sanity/image-url": "^2.1.1",
     "@srilanka/sanity": "workspace:*",
@@ -28,6 +29,7 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-hook-form": "^7.74.0",
+    "resend": "^6.12.2",
     "serpapi": "^2.2.1",
     "zod": "^4.3.6"
   },
