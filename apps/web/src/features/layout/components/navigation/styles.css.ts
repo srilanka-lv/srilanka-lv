@@ -59,6 +59,7 @@ export const navigationStyles = recipe({
 
 export const navigationItemStyles = recipe({
   base: {
+    position: 'relative',
     width: '100%',
     display: 'flex',
     alignItems: 'center',
@@ -79,6 +80,32 @@ export const navigationItemStyles = recipe({
       '&:link, &:visited, &:hover, &:active': {
         color: vars.color.primary,
       },
+      '&:link::after, &:visited::after, &:hover::after, &:active::after': {
+        content: '',
+        position: 'absolute',
+        top: '100%',
+        left: 0,
+        right: 0,
+        width: '100%',
+        height: '1.5px',
+        backgroundColor: vars.color.primary,
+        borderRadius: vars.border.radius.large,
+        transform: 'scaleX(0)',
+        opacity: 0,
+        transitionProperty: 'transform, opacity, background-color',
+        transitionDuration: vars.transition.duration.fast,
+        transitionTimingFunction: vars.transition.easing.easeInOut,
+
+        '@media': {
+          [`screen and (max-width: ${breakpoints.md})`]: {
+            display: 'none',
+          },
+        },
+      },
+      '&:hover::after': {
+        opacity: 1,
+        transform: 'scaleX(1)',
+      },
     },
 
     '@media': {
@@ -98,6 +125,11 @@ export const navigationItemStyles = recipe({
           '&:link, &:visited, &:hover, &:active': {
             color: vars.color.accent,
           },
+          '&:link::after, &:visited::after, &:hover::after, &:active::after': {
+            backgroundColor: vars.color.accent,
+            opacity: 1,
+            transform: 'scaleX(1)',
+          },
         },
       },
       false: {
@@ -113,22 +145,6 @@ export const navigationItemStyles = recipe({
 
 export const navigationButtonStyle = style({
   display: 'block',
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      display: 'none',
-    },
-  },
-});
-
-export const socialMediaStyle = style({
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  gap: vars.spacing[3],
-  marginTop: vars.spacing[2],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
@@ -167,6 +183,22 @@ export const navigationBackdropStyles = recipe({
 });
 
 export const navigationItemsDividerStyle = style({
+  '@media': {
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      display: 'none',
+    },
+  },
+});
+
+export const socialMediaStyle = style({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  gap: vars.spacing[3],
+  marginTop: vars.spacing[2],
+
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
       display: 'none',
