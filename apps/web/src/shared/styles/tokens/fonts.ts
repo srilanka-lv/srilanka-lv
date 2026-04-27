@@ -1,6 +1,6 @@
 export const fontFamilies = {
   body: 'var(--font-lora)',
-  display: 'var(--font-galindo)',
+  display: 'var(--font-burchelli)',
 };
 
 export const fontSizes = {

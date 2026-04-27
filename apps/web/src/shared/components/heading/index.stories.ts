@@ -64,6 +64,6 @@ export const H1Dark: Story = {
   globals: { theme: 'dark' },
 };
 
-export const FreckeFace: Story = {
-  args: { as: 'h1', variant: 'h1', style: { fontFamily: 'var(--font-galindo)' } },
+export const Burchelli: Story = {
+  args: { as: 'h1', variant: 'h1', style: { fontFamily: 'var(--font-burchelli)' } },
 };

@@ -8,7 +8,7 @@ import '@/shared/styles/global.css';
 
 import { Layout } from '@/features/layout/components/layout';
 import { ThemeScript } from '@/shared/components/theme-script';
-import { galindo, lora } from '@/shared/fonts/fonts';
+import { burchelli, lora } from '@/shared/fonts/fonts';
 import { lightTheme as theme } from '@/shared/styles/themes/theme.light.css';
 import { darkColors, lightColors } from '@/shared/styles/tokens/colors';
 
@@ -44,7 +44,7 @@ type RootLayoutReturnType = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutReturnType) {
   return (
-    <html lang="lv" className={`${lora.variable} ${galindo.variable} ${theme}`}>
+    <html lang="lv" className={`${lora.variable} ${burchelli.variable} ${theme}`}>
       <head>
         <PublicEnvScript />
         <ThemeScript />
