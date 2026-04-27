@@ -3,6 +3,7 @@ import { createTheme } from '@vanilla-extract/css';
 import { borderRadius } from '../tokens/borders';
 import { breakpoints } from '../tokens/breakpoints';
 import { lightColors } from '../tokens/colors';
+import { focus } from '../tokens/focus';
 import { fontFamilies, fontSizes, fontWeights, letterSpacing, lineHeights } from '../tokens/fonts';
 import { shadows } from '../tokens/shadows';
 import { spacing } from '../tokens/spacing';
@@ -23,6 +24,7 @@ export const lightTheme = createTheme(vars, {
   border: {
     radius: borderRadius,
   },
+  focus,
   shadow: shadows,
   transition: {
     easing: transitionEasing,

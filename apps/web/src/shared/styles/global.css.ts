@@ -28,3 +28,9 @@ globalStyle('a:active', {
   color: vars.color.accent,
   textDecoration: 'none',
 });
+
+globalStyle('a:focus-visible, button:focus-visible', {
+  outline: `${vars.focus.width} solid ${vars.focus.color}`,
+  outlineOffset: vars.focus.offset,
+  borderRadius: vars.border.radius.small,
+});
