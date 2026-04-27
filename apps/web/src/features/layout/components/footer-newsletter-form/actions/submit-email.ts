@@ -11,7 +11,7 @@ export async function submitEmail(data: { email: string }): Promise<SubmitEmailR
   const parsed = formSchema.safeParse(data);
 
   if (!parsed.success) {
-    return { success: false, error: 'Invalid email address' };
+    return { success: false, error: 'Nederīga e-pasta adrese' };
   }
 
   try {
@@ -21,7 +21,11 @@ export async function submitEmail(data: { email: string }): Promise<SubmitEmailR
     await repository.addContact(parsed.data.email);
 
     return { success: true };
-  } catch {
-    return { success: false, error: 'Something went wrong. Please try again.' };
+  } catch (error) {
+    return {
+      success: false,
+      error:
+        error instanceof Error ? error.message : 'Kaut kas nogāja greizi. Lūdzu, mēģiniet vēlreiz.',
+    };
   }
 }
