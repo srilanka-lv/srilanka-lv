@@ -33,6 +33,10 @@ export class DefaultResendProvider implements NewsletterProviderInterface {
       throw new Error(error.message);
     }
 
-    return { id: data!.id };
+    if (!data) {
+      throw new Error('Failed to add contact to audience');
+    }
+
+    return { id: data.id };
   }
 }
