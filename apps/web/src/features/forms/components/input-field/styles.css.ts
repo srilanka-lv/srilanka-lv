@@ -33,7 +33,7 @@ export const inputStyles = recipe({
   base: {
     width: '100%',
     minWidth: 0,
-    backgroundColor: 'transparent',
+    backgroundColor: vars.color.primaryForeground,
     border: `1px solid ${vars.color.secondary}`,
     borderRadius: vars.border.radius.medium,
     color: vars.color.foreground,
@@ -112,7 +112,8 @@ export const errorTextStyle = style({
 export const spinnerStyle = style({
   position: 'absolute',
   right: vars.spacing[3],
-  top: '50%',
-  transform: 'translateY(-50%)',
+  top: 0,
+  bottom: 0,
+  margin: 'auto 0',
   pointerEvents: 'none',
 });
