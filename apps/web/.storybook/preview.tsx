@@ -1,6 +1,8 @@
 import type { Preview } from '@storybook/nextjs-vite';
 
+import { withBreakpointRepository } from './decorators/with-breakpoint-repository';
 import { withGlobalStyles } from './decorators/with-global-styles';
+import { withLayoutStore } from './decorators/with-layout-store';
 import { withNextFont } from './decorators/with-next-font';
 import { withVanillaExtractTheme } from './decorators/with-vanilla-extract-theme';
 
@@ -43,7 +45,14 @@ const preview: Preview = {
   initialGlobals: {
     theme: 'system',
   },
-  decorators: [withGlobalStyles, withNextFont, withVanillaExtractTheme],
+  // Notice the order of the decorators. We sort them from the most specific to the least specific.
+  decorators: [
+    withLayoutStore,
+    withBreakpointRepository,
+    withVanillaExtractTheme,
+    withGlobalStyles,
+    withNextFont,
+  ],
 };
 
 export default preview;
