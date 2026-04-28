@@ -1,12 +1,12 @@
 import { blogPostBySlugQuery } from '@packages/sanity/queries/blog-post-by-slug-query';
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import { PortableText } from '@/features/sanity/components/portable-text';
 import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
 import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
+import { CoverImage } from '@/shared/components/cover-image';
 import { FaqList } from '@/shared/components/faq-list';
 import { Heading } from '@/shared/components/heading';
 import { Text } from '@/shared/components/text';
@@ -41,44 +41,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     : null;
 
   return (
-    <article>
-      <Heading as="h1" variant="h1">
-        {post.title}
-      </Heading>
+    <>
+      {coverImageUrl && <CoverImage src={coverImageUrl} alt={post.coverImage?.alt ?? ''} />}
 
-      {post.excerpt && <Text>{post.excerpt}</Text>}
+      <article>
+        <Heading as="h1" variant="h1">
+          {post.title}
+        </Heading>
 
-      {post.tags && post.tags.length > 0 && (
-        <ul>
-          {post.tags.map((tag) => (
-            <li key={tag._id}>{tag.title}</li>
-          ))}
-        </ul>
-      )}
+        {post.excerpt && <Text>{post.excerpt}</Text>}
 
-      {coverImageUrl && (
-        <Image
-          src={coverImageUrl}
-          alt={post.coverImage?.alt ?? ''}
-          width={1600}
-          height={900}
-          sizes="(min-width: 1024px) 1024px, 100vw"
-          style={{ width: '100%', height: 'auto' }}
-          priority
-        />
-      )}
+        {post.tags && post.tags.length > 0 && (
+          <ul>
+            {post.tags.map((tag) => (
+              <li key={tag._id}>{tag.title}</li>
+            ))}
+          </ul>
+        )}
 
-      {post.body && <PortableText value={post.body} />}
+        {post.body && <PortableText value={post.body} />}
 
-      {post.faqs && post.faqs.length > 0 && (
-        <FaqList
-          items={post.faqs.map((faq) => ({
-            id: faq._id,
-            question: faq.question ?? '',
-            answer: faq.answer ? <PortableText value={faq.answer} /> : null,
-          }))}
-        />
-      )}
-    </article>
+        {post.faqs && post.faqs.length > 0 && (
+          <FaqList
+            items={post.faqs.map((faq) => ({
+              id: faq._id,
+              question: faq.question ?? '',
+              answer: faq.answer ? <PortableText value={faq.answer} /> : null,
+            }))}
+          />
+        )}
+      </article>
+    </>
   );
 }
