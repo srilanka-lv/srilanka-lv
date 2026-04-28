@@ -4,6 +4,8 @@ import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 export const headerStyle = style({
+  position: 'relative',
+  zIndex: vars.zIndex['20'],
   display: 'flex',
   justifyContent: 'space-between',
   flexDirection: 'row',

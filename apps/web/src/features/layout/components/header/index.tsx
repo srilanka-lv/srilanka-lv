@@ -10,11 +10,9 @@ type HeaderProps = {
   className?: string;
 };
 
-export const Header: FunctionComponent<HeaderProps> = ({ className }) => {
-  return (
-    <header className={clsx(headerStyle, className)}>
-      <Logo size="medium" />
-      <Navigation />
-    </header>
-  );
-};
+export const Header: FunctionComponent<HeaderProps> = ({ className }) => (
+  <header className={clsx(headerStyle, className)}>
+    <Logo size="medium" />
+    <Navigation />
+  </header>
+);
