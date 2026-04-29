@@ -53,6 +53,7 @@ export function FooterNewsletterForm() {
       ) : (
         <>
           <InputField
+            autoComplete="email"
             size="large"
             label="E-pasts"
             type="email"
