@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "sanity dev",
-    "build": "sanity build",
-    "deploy": "sanity deploy",
-    "schema:extract": "sanity schema extract",
-    "typegen": "sanity schema extract && sanity typegen generate"
+    "dev": "bun --bun sanity dev",
+    "build": "bun --bun sanity build",
+    "deploy": "bun --bun sanity deploy",
+    "schema:extract": "bun --bun sanity schema extract",
+    "typegen": "bun --bun sanity schema extract && bun --bun sanity typegen generate"
   },
   "dependencies": {
     "@sanity/vision": "^5.22.0",

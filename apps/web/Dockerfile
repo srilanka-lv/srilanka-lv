@@ -29,7 +29,7 @@ COPY apps/web ./apps/web
 RUN cd apps/web && bun run build
 
 # --- Production ---
-FROM node:22-alpine AS runner
+FROM oven/bun:1-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
@@ -48,4 +48,4 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["node", "apps/web/server.js"]
+CMD ["bun", "--bun", "apps/web/server.js"]

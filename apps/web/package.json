@@ -4,11 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "bun --bun next dev",
+    "build": "bun --bun next build",
+    "postbuild": "cp -R public .next/standalone/apps/web/ && cp -R .next/static .next/standalone/apps/web/.next/",
+    "start": "bun --bun .next/standalone/apps/web/server.js",
+    "sb": "bun storybook dev -p 6006",
+    "build-sb": "bun storybook build"
   },
   "dependencies": {
     "@ark-ui/react": "^5.36.2",
