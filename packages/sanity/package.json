@@ -9,6 +9,6 @@
   },
   "dependencies": {
     "groq": "^5.22.0",
-    "sanity": "^4.22.0"
+    "sanity": "^5.22.0"
   }
 }
