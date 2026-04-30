@@ -20,7 +20,7 @@ export const labelStyle = style({
   fontWeight: vars.font.weight.medium,
   fontSize: vars.font.size.sm,
   lineHeight: vars.font.lineHeight.normal,
-  color: vars.color.foreground,
+  color: 'inherit',
 });
 
 export const inputWrapperStyle = style({
