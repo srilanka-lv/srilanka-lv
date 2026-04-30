@@ -13,7 +13,7 @@ export const navigationStyles = recipe({
     alignItems: 'flex-start',
     gap: vars.spacing[2],
     top: '.5rem',
-    left: '100%',
+    left: `calc(100% + ${vars.spacing[4]})`,
     height: 'auto',
     padding: `${vars.spacing[6]} ${vars.spacing[6]}`,
     zIndex: vars.zIndex['20'],
