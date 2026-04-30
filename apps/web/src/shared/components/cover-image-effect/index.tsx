@@ -1,18 +1,25 @@
-import type { FunctionComponent } from 'react';
+import clsx from 'clsx';
+import type { FunctionComponent, SVGProps } from 'react';
 
 import { coverImageEffectStyles } from './styles.css';
 
 type CoverImageEffectProps = {
   variant: keyof typeof coverImageEffectStyles;
-};
+  className?: string;
+} & SVGProps<SVGSVGElement>;
 
-export const CoverImageEffect: FunctionComponent<CoverImageEffectProps> = ({ variant }) => (
+export const CoverImageEffect: FunctionComponent<CoverImageEffectProps> = ({
+  variant,
+  className,
+  ...props
+}) => (
   <svg
-    className={coverImageEffectStyles[variant]}
+    className={clsx(coverImageEffectStyles[variant], className)}
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     viewBox="0 0 513.73 30.96"
     role="presentation"
+    {...props}
   >
     <path d="M475.63,12.98c.19.15-.32.14-.23.27-1.39-.03-2.19.14-2.74-.11l.34-.03-.11-.08c1.44,0,1.8-.17,2.74-.05Z" />
     <path d="M436.76,15.63c1.16-.15.85.19,0,0h0Z" />
