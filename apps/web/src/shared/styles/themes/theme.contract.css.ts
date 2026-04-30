@@ -127,6 +127,11 @@ export const vars = createThemeContract({
     },
   },
   zIndex: {
+    '-50': null,
+    '-40': null,
+    '-30': null,
+    '-20': null,
+    '-10': null,
     '0': null,
     '10': null,
     '20': null,
