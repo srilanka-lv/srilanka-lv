@@ -1,6 +1,8 @@
 import {
   type PortableTextComponents,
   PortableText as PortableTextReact,
+  defaultComponents,
+  mergeComponents,
 } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -89,12 +91,20 @@ const components: PortableTextComponents = {
   },
 };
 
+const baseComponents = mergeComponents(defaultComponents, components);
+
 export type PortableTextValue = Parameters<typeof PortableTextReact>[0]['value'];
 
 type PortableTextProps = {
   value: PortableTextValue;
+  components?: PortableTextComponents;
 };
 
-export function PortableText({ value }: PortableTextProps) {
-  return <PortableTextReact value={value} components={components} />;
+export function PortableText({ value, components: overrides }: PortableTextProps) {
+  return (
+    <PortableTextReact
+      value={value}
+      components={overrides ? mergeComponents(baseComponents, overrides) : baseComponents}
+    />
+  );
 }
