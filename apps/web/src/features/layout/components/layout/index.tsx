@@ -5,7 +5,7 @@ import { AppContextProviders } from '@/shared/components/app-context-providers';
 import { Footer } from '../footer';
 import { Header } from '../header';
 import { SubFooter } from '../sub-footer';
-import { layoutStyle } from './styles.css';
+import { layoutStyle, mainStyle } from './styles.css';
 
 type LayoutProps = PropsWithChildren;
 
@@ -13,7 +13,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => (
   <AppContextProviders>
     <body className={layoutStyle}>
       <Header />
-      <main>{children}</main>
+      <main className={mainStyle}>{children}</main>
       <aside></aside>
       <Footer />
       <SubFooter />

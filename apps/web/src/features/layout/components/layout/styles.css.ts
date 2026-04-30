@@ -11,6 +11,7 @@ export const layoutStyle = style({
   marginRight: 'auto',
   paddingLeft: vars.spacing[4],
   paddingRight: vars.spacing[4],
+  overflowX: 'hidden',
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
@@ -28,4 +29,8 @@ export const layoutStyle = style({
       maxWidth: breakpoints.xl,
     },
   },
+});
+
+export const mainStyle = style({
+  isolation: 'isolate',
 });
