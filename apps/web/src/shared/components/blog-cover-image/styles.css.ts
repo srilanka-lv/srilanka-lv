@@ -18,5 +18,4 @@ export const coverImageSpacerStyle = style({
   position: 'relative',
   display: 'block',
   height: '100dvh',
-  top: vars.spacing[24],
 });

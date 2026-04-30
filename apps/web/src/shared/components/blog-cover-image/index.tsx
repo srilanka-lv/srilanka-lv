@@ -5,9 +5,9 @@ import type { FunctionComponent } from 'react';
 import { CoverImageEffect } from '../cover-image-effect';
 import { coverImageSpacerStyle, coverImageStyle, coverImageWrapperStyle } from './styles.css';
 
-type CoverImageProps = Omit<ImageProps, 'fill' | 'width' | 'height'>;
+type BlogCoverImageProps = Omit<ImageProps, 'fill' | 'width' | 'height'>;
 
-export const CoverImage: FunctionComponent<CoverImageProps> = ({
+export const BlogCoverImage: FunctionComponent<BlogCoverImageProps> = ({
   className,
   sizes = '100vw',
   ...rest

@@ -6,10 +6,10 @@ import { PortableText } from '@/features/sanity/components/portable-text';
 import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
 import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
-import { CoverImage } from '@/shared/components/cover-image';
+import { BlogCoverImage } from '@/shared/components/blog-cover-image';
+import { BlogText } from '@/shared/components/blog-text';
+import { BlogTitle } from '@/shared/components/blog-title';
 import { FaqList } from '@/shared/components/faq-list';
-import { Heading } from '@/shared/components/heading';
-import { Text } from '@/shared/components/text';
 
 const sanityProvider = new DefaultSanityProvider();
 const sanityRepository = new DefaultSanityRepository(sanityProvider);
@@ -36,20 +36,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const coverImageUrl = post.coverImage
-    ? urlForImage(post.coverImage).width(2400).quality(90).fit('max').auto('format').url()
+  const blogCoverImageUrl = post.coverImage
+    ? // biome-ignore lint/suspicious/noFocusedTests: This isn't a test - it's the Sanity image URL.
+      urlForImage(post.coverImage).width(2400).quality(90).fit('max').auto('format').url()
     : null;
 
   return (
     <>
-      {coverImageUrl && <CoverImage src={coverImageUrl} alt={post.coverImage?.alt ?? ''} />}
+      {blogCoverImageUrl && (
+        <BlogCoverImage src={blogCoverImageUrl} alt={post.coverImage?.alt ?? ''} />
+      )}
 
       <article>
-        <Heading as="h1" variant="h1">
-          {post.title}
-        </Heading>
-
-        {post.excerpt && <Text>{post.excerpt}</Text>}
+        {post.title && <BlogTitle>{post.title}</BlogTitle>}
 
         {post.tags && post.tags.length > 0 && (
           <ul>
@@ -59,7 +58,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </ul>
         )}
 
-        {post.body && <PortableText value={post.body} />}
+        {post.body && <BlogText body={post.body} />}
 
         {post.faqs && post.faqs.length > 0 && (
           <FaqList
