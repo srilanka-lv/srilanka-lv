@@ -7,6 +7,8 @@ globalStyle('body', {
   color: vars.color.foreground,
   fontFamily: vars.font.family.body,
   lineHeight: vars.font.lineHeight.normal,
+  textRendering: 'optimizeLegibility',
+  fontSmooth: 'antialiased',
 });
 
 globalStyle('a:link', {

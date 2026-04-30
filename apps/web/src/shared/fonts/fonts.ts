@@ -1,9 +1,9 @@
-import { Lora } from 'next/font/google';
+import { TikTok_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 
-export const lora = Lora({
+export const tikTokSans = TikTok_Sans({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-lora',
+  variable: '--font-tik-tok-sans',
 });
 
 export const burchelli = localFont({

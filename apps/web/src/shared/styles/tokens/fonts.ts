@@ -1,5 +1,5 @@
 export const fontFamilies = {
-  body: 'var(--font-lora)',
+  body: 'var(--font-tik-tok-sans)',
   display: 'var(--font-burchelli)',
 };
 
