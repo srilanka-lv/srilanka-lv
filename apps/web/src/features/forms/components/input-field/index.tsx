@@ -1,6 +1,6 @@
 import { Field } from '@ark-ui/react/field';
 import clsx from 'clsx';
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, Ref } from 'react';
 
 import { Spinner } from '@/shared/components/spinner/index';
 
@@ -24,7 +24,7 @@ type InputFieldOwnProps = {
   required?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
-  ref?: React.Ref<HTMLInputElement>;
+  ref?: Ref<HTMLInputElement>;
 };
 
 export type InputFieldProps = InputFieldOwnProps &
