@@ -12,5 +12,5 @@ proxy:
 env:
   clear:
     NEXT_PUBLIC_SELF_URL: https://staging.srilanka.lv
-    NEXT_PUBLIC_SANITY_STUDIO_DATASET: staging
+    NEXT_PUBLIC_SANITY_STUDIO_DATASET: production
     SENTRY_ENVIRONMENT: staging
