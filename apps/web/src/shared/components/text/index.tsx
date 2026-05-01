@@ -23,7 +23,7 @@ export function Text<T extends AllowedElement = 'p'>({
   fontStyle,
   children,
   className,
-  ...rest
+  ...props
 }: TextProps<T> & { className?: string }) {
   const Component = as ?? 'p';
 
@@ -31,7 +31,7 @@ export function Text<T extends AllowedElement = 'p'>({
     // @ts-expect-error: Generic polymorphic spread is not resolvable by TypeScript.
     <Component
       className={clsx(textStyles({ fontSize, fontWeight, fontStyle }), className)}
-      {...rest}
+      {...props}
     >
       {children}
     </Component>

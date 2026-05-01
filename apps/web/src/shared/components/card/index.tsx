@@ -23,12 +23,12 @@ export function Card<T extends AllowedElement = 'div'>({
   radius,
   children,
   className,
-  ...rest
+  ...props
 }: CardProps<T> & { className?: string }) {
   const Component = as ?? 'div';
 
   return (
-    <Component className={clsx(cardStyles({ variant, shadow, radius }), className)} {...rest}>
+    <Component className={clsx(cardStyles({ variant, shadow, radius }), className)} {...props}>
       {children}
     </Component>
   );

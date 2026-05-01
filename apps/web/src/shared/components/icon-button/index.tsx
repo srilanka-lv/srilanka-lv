@@ -17,7 +17,7 @@ export type IconButtonProps<T extends AllowedElement = 'button'> = IconButtonOwn
 
 export function IconButton<T extends AllowedElement = 'button'>({
   iconSlot,
-  ...rest
+  ...props
 }: IconButtonProps<T> & { className?: string }) {
-  return <Button iconSlot={iconSlot} {...rest} />;
+  return <Button iconSlot={iconSlot} {...props} />;
 }

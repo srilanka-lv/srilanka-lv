@@ -9,6 +9,6 @@ type DividerProps = {
   color?: 'default' | 'subtle';
 } & Omit<ComponentPropsWithoutRef<'hr'>, 'children'>;
 
-export function Divider({ variant, spacing, color, className, ...rest }: DividerProps) {
-  return <hr className={clsx(dividerStyles({ variant, spacing, color }), className)} {...rest} />;
+export function Divider({ variant, spacing, color, className, ...props }: DividerProps) {
+  return <hr className={clsx(dividerStyles({ variant, spacing, color }), className)} {...props} />;
 }

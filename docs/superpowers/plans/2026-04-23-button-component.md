@@ -155,14 +155,14 @@ export function Button<T extends ElementType = 'button'>({
   size,
   children,
   className,
-  ...rest
+  ...props
 }: ButtonProps<T> & { className?: string }) {
   const Component = as ?? 'button';
 
   return (
     <Component
       className={`${buttonStyles({ variant, size })}${className ? ` ${className}` : ''}`}
-      {...rest}
+      {...props}
     >
       {children}
     </Component>

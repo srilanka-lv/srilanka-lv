@@ -21,13 +21,13 @@ export function Heading<T extends AllowedElement = 'h2'>({
   variant,
   children,
   className,
-  ...rest
+  ...props
 }: HeadingProps<T> & { className?: string }) {
   const Component = as ?? 'h2';
   const resolvedVariant = variant ?? (Component === 'span' ? 'unstyled' : (Component as Variant));
 
   return (
-    <Component className={clsx(headingStyles({ variant: resolvedVariant }), className)} {...rest}>
+    <Component className={clsx(headingStyles({ variant: resolvedVariant }), className)} {...props}>
       {children}
     </Component>
   );

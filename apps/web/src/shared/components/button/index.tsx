@@ -31,7 +31,7 @@ export function Button<T extends AllowedElement = 'button'>({
   iconSlot,
   children,
   className,
-  ...rest
+  ...props
 }: ButtonProps<T> & { className?: string }) {
   const Component = as ?? 'button';
   const isButton = Component === 'button';
@@ -43,7 +43,7 @@ export function Button<T extends AllowedElement = 'button'>({
       {...(!isButton && { role: 'button', tabIndex: 0 })}
       {...(isButton && { type: 'button' })}
       className={clsx(buttonStyles({ variant, size, iconOnly }), className)}
-      {...rest}
+      {...props}
     >
       {iconSlot}
       {children}
