@@ -1,6 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const coverImageEffectStyle = style({
   position: 'absolute',
@@ -12,12 +13,32 @@ const coverImageEffectStyle = style({
 });
 
 export const coverImageEffectStyles = styleVariants({
-  top: [coverImageEffectStyle, { top: vars.spacing[16] }],
+  top: [
+    coverImageEffectStyle,
+    {
+      top: '52px',
+
+      '@media': {
+        [`screen and (min-width: ${breakpoints.md})`]: {
+          top: '90px',
+        },
+        [`screen and (min-width: ${breakpoints.xl})`]: {
+          top: '72px',
+        },
+      },
+    },
+  ],
   bottom: [
     coverImageEffectStyle,
     {
-      bottom: vars.spacing[-24],
+      bottom: '0',
       transform: 'rotate(180deg)',
+
+      '@media': {
+        [`screen and (min-width: ${breakpoints.xl})`]: {
+          bottom: '0',
+        },
+      },
     },
   ],
 });

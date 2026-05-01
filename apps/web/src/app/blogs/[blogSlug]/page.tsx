@@ -7,8 +7,9 @@ import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanit
 import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
 import { BlogCoverImage } from '@/shared/components/blog-cover-image';
+import { BlogHero } from '@/shared/components/blog-hero';
 import { BlogText } from '@/shared/components/blog-text';
-import { BlogTitle } from '@/shared/components/blog-title';
+import { BlogHeroTitle } from '@/shared/components/blog-title';
 import { FaqList } from '@/shared/components/faq-list';
 
 const sanityProvider = new DefaultSanityProvider();
@@ -38,7 +39,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const blogCoverImageUrl = post.coverImage
     ? // biome-ignore lint/suspicious/noFocusedTests: This isn't a test - it's the Sanity image URL.
-      urlForImage(post.coverImage).width(2400).quality(90).fit('max').auto('format').url()
+      urlForImage(post.coverImage).width(2400).quality(100).fit('max').auto('format').url()
     : null;
 
   return (
@@ -48,7 +49,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       )}
 
       <article>
-        {post.title && <BlogTitle>{post.title}</BlogTitle>}
+        <BlogHero>
+          <BlogHeroTitle>{post.title}</BlogHeroTitle>
+        </BlogHero>
 
         {post.tags && post.tags.length > 0 && (
           <ul>

@@ -75,7 +75,7 @@ const components: PortableTextComponents = {
       }
 
       // biome-ignore lint/suspicious/noFocusedTests: This isn't a test - it's the Sanity image URL.
-      const url = urlForImage(value).width(2400).quality(90).fit('max').auto('format').url();
+      const url = urlForImage(value).width(2400).quality(100).fit('max').auto('format').url();
 
       return (
         <Image

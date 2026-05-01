@@ -1,15 +1,32 @@
 import { style } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-export const blogTitleStyle = style({
-  position: 'absolute',
-  top: '30svh',
+export const blogHeroTitleStyle = style({
   color: vars.color.secondary,
   mixBlendMode: 'luminosity',
-  fontSize: vars.font.size['8xl'],
-  fontWeight: vars.font.weight.extrabold,
-  textAlign: 'left',
-  textWrap: 'balance',
+  fontSize: vars.font.size['5xl'],
+  fontWeight: vars.font.weight.semibold,
   textShadow: `0 ${vars.spacing[8]} ${vars.spacing[8]} rgba(0, 0, 0, 0.0625)`,
+  textWrap: 'balance',
+  textAlign: 'center',
+  wordBreak: 'break-word',
+  padding: 0,
+  margin: 0,
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xs})`]: {
+      fontSize: vars.font.size['6xl'],
+    },
+    [`screen and (min-width: ${breakpoints.sm})`]: {
+      fontSize: vars.font.size['7xl'],
+    },
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      fontSize: vars.font.size['8xl'],
+    },
+    [`screen and (min-width: ${breakpoints.lg})`]: {
+      fontSize: vars.font.size['9xl'],
+    },
+  },
 });

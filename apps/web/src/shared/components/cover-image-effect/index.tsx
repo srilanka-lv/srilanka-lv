@@ -19,6 +19,7 @@ export const CoverImageEffect: FunctionComponent<CoverImageEffectProps> = ({
     version="1.1"
     viewBox="0 0 513.73 30.96"
     role="presentation"
+    preserveAspectRatio="none"
     {...props}
   >
     <path d="M475.63,12.98c.19.15-.32.14-.23.27-1.39-.03-2.19.14-2.74-.11l.34-.03-.11-.08c1.44,0,1.8-.17,2.74-.05Z" />
