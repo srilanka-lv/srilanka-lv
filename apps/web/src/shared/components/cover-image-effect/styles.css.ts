@@ -31,12 +31,12 @@ export const coverImageEffectStyles = styleVariants({
   bottom: [
     coverImageEffectStyle,
     {
-      bottom: '0',
+      bottom: '-1px',
       transform: 'rotate(180deg)',
 
       '@media': {
         [`screen and (min-width: ${breakpoints.xl})`]: {
-          bottom: '0',
+          bottom: '-1px',
         },
       },
     },

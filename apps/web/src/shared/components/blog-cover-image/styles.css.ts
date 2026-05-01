@@ -13,17 +13,17 @@ export const coverImageBackgroundOverflowStyle = style({
   position: 'absolute',
   inset: 0,
   width: '100svw',
-  height: '100dvh',
+  height: '100svh',
   overflow: 'hidden',
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
       marginTop: '90px',
-      height: 'calc(100dvh - 90px)',
+      height: 'calc(100svh - 90px)',
     },
     [`screen and (min-width: ${breakpoints.xl})`]: {
       marginTop: '72px',
-      height: 'calc(100dvh - 72px)',
+      height: 'calc(100svh - 72px)',
     },
   },
 });
@@ -40,7 +40,7 @@ export const coverImageBackgroundWrapperStyle = style({
       animationName: blurOnScroll,
       animationTimeline: 'scroll(root block)',
       animationRangeStart: '0',
-      animationRangeEnd: '100vh',
+      animationRangeEnd: '100svh',
       animationFillMode: 'both',
       animationTimingFunction: 'linear',
     },
@@ -57,9 +57,9 @@ export const coverImageBackgroundStyle = style({
       position: 'absolute',
       inset: 0,
       backgroundImage: fallbackVar(coverImageBackgroundVar, 'none'),
-      backgroundAttachment: 'fixed',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
     },
   },
 });
@@ -71,5 +71,5 @@ export const coverImageEffectStyle = style({
 export const coverImageSpacerStyle = style({
   position: 'relative',
   display: 'block',
-  height: 'calc(100dvh - 72px)',
+  height: 'calc(100svh - 72px)',
 });
