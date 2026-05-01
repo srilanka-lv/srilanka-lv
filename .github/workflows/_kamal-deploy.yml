@@ -1,0 +1,49 @@
+name: Kamal deploy (reusable)
+
+on:
+  workflow_call:
+    inputs:
+      destination:
+        description: Kamal destination (development, staging, production)
+        required: true
+        type: string
+      version:
+        description: Image tag to deploy (full git SHA or release tag)
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.destination }}
+      url: ${{ inputs.destination == 'production' && 'https://srilanka.lv' || format('https://{0}.srilanka.lv', inputs.destination) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install Kamal
+        run: gem install kamal -v '~> 2'
+
+      - name: Load SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.HETZNER_SSH_KEY }}
+
+      - name: Trust the Hetzner host
+        run: ssh-keyscan -H ${{ secrets.HETZNER_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy with Kamal
+        env:
+          VERSION: ${{ inputs.version }}
+          HETZNER_HOST: ${{ secrets.HETZNER_HOST }}
+          KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          SANITY_API_KEY: ${{ secrets.SANITY_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
+          NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID }}
+        run: kamal deploy -d ${{ inputs.destination }} -c infra/kamal/deploy.yml --skip-push

@@ -1,0 +1,173 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - main
+      - development
+  workflow_dispatch:
+    inputs:
+      destination:
+        description: Destination to deploy
+        required: true
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+      version:
+        description: Image tag to deploy (e.g. v0.2.0 or full SHA). Defaults to HEAD SHA.
+        required: false
+        default: ''
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: davevanhoorn/srilanka.lv
+
+jobs:
+  # ====================================================================
+  # DEVELOPMENT FLOW
+  # Push to `development` → build with SHA tag → deploy to development env
+  # ====================================================================
+
+  build-development:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/development'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      version: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=${{ github.sha }}
+            type=raw,value=development
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy-development:
+    needs: build-development
+    if: github.event_name == 'push' && github.ref == 'refs/heads/development'
+    uses: ./.github/workflows/_kamal-deploy.yml
+    with:
+      destination: development
+      version: ${{ needs.build-development.outputs.version }}
+    secrets: inherit
+
+  # ====================================================================
+  # MAIN / RELEASE FLOW
+  # Push to `main` → release-please. If a release PR is merged →
+  #   build the version → deploy to staging → (approval) → deploy to prod
+  # Same image is deployed to both staging and production.
+  # ====================================================================
+
+  release-please:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - id: release
+        uses: googleapis/release-please-action@v4
+        with:
+          release-type: node
+
+  build-release:
+    needs: release-please
+    if: needs.release-please.outputs.release_created == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      version: ${{ needs.release-please.outputs.tag_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.release-please.outputs.tag_name }}
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,value=${{ needs.release-please.outputs.tag_name }}
+            type=raw,value=latest
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy-staging:
+    needs: [release-please, build-release]
+    if: needs.release-please.outputs.release_created == 'true'
+    uses: ./.github/workflows/_kamal-deploy.yml
+    with:
+      destination: staging
+      version: ${{ needs.release-please.outputs.tag_name }}
+    secrets: inherit
+
+  deploy-production:
+    needs: [release-please, build-release, deploy-staging]
+    if: needs.release-please.outputs.release_created == 'true'
+    uses: ./.github/workflows/_kamal-deploy.yml
+    with:
+      destination: production
+      version: ${{ needs.release-please.outputs.tag_name }}
+    secrets: inherit
+
+  # ====================================================================
+  # MANUAL DISPATCH
+  # Re-deploy any existing image tag to any destination.
+  # The production environment's "Required reviewers" rule still applies.
+  # ====================================================================
+
+  deploy-manual:
+    if: github.event_name == 'workflow_dispatch'
+    uses: ./.github/workflows/_kamal-deploy.yml
+    with:
+      destination: ${{ inputs.destination }}
+      version: ${{ inputs.version != '' && inputs.version || github.sha }}
+    secrets: inherit
