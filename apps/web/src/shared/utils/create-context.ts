@@ -1,3 +1,4 @@
+import type { Context, Provider } from 'react';
 import { createContext as createReactContext, useContext as useReactContext } from 'react';
 
 interface CreateContextOptions<T> {
@@ -8,7 +9,7 @@ interface CreateContextOptions<T> {
   defaultValue?: T | undefined;
 }
 
-type CreateContextReturn<T> = [React.Provider<T>, () => T, React.Context<T>];
+type CreateContextReturn<T> = [Provider<T>, () => T, Context<T>];
 
 function getErrorMessage(hook: string, provider: string) {
   return `${hook} returned \`undefined\`. Seems you forgot to wrap component within ${provider}`;
