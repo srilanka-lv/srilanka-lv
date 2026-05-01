@@ -60,6 +60,9 @@ export function FooterNewsletterForm() {
             placeholder="jusu@epasts.lv"
             errorMessage={errors.email?.message}
             disabled={isSubmitting}
+            data-lpignore="true"
+            data-1p-ignore
+            data-form-type="other"
             {...register('email')}
           />
           <Button type="submit" size="large" disabled={isSubmitting}>
