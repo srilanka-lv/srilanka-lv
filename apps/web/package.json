@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "bun --bun next dev",
     "build": "bun --bun next build",
-    "start": "bun --bun next start",
+    "postbuild": "cp -R public .next/standalone/apps/web/ && cp -R .next/static .next/standalone/apps/web/.next/",
+    "start": "bun --bun .next/standalone/apps/web/server.js",
     "sb": "bun storybook dev -p 6006",
     "build-sb": "bun storybook build"
   },
@@ -33,6 +34,7 @@
     "react-hook-form": "^7.74.0",
     "resend": "^6.12.2",
     "serpapi": "^2.2.1",
+    "sharp": "^0.34.5",
     "zod": "^4.4.1"
   },
   "devDependencies": {

@@ -38,6 +38,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  output: 'standalone',
   outputFileTracingRoot: path.join(import.meta.dirname, '../../'),
   deploymentId: `v${packageJson.version.replaceAll('.', '-')}`,
   reactCompiler: false,
