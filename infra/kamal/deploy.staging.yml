@@ -1,0 +1,16 @@
+service: srilanka-staging
+
+servers:
+  web:
+    hosts:
+      - <%= ENV['HETZNER_HOST'] %>
+
+proxy:
+  ssl: true
+  host: staging.srilanka.lv
+
+env:
+  clear:
+    NEXT_PUBLIC_SELF_URL: https://staging.srilanka.lv
+    NEXT_PUBLIC_SANITY_STUDIO_DATASET: staging
+    SENTRY_ENVIRONMENT: staging

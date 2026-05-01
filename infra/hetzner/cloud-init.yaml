@@ -1,0 +1,53 @@
+#cloud-config
+# Cloud-init for the Hetzner Cloud VM hosting srilanka.lv
+# (development, staging, production destinations all run on this single VM).
+#
+# Pass this as User Data when creating the server in Hetzner Cloud.
+#
+# Before applying:
+#   - Replace REPLACE_WITH_ADMIN_SSH_PUBLIC_KEY with your personal SSH public key
+#     (you'll use this for emergency / manual access).
+#   - Replace REPLACE_WITH_DEPLOY_SSH_PUBLIC_KEY with the GitHub Actions deploy
+#     key's public part (the private part goes into the HETZNER_SSH_KEY secret).
+#
+# The deploy user is sudo-enabled (passwordless) and member of the docker group.
+
+users:
+  - name: deploy
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: [docker, sudo]
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - REPLACE_WITH_ADMIN_SSH_PUBLIC_KEY
+      - REPLACE_WITH_DEPLOY_SSH_PUBLIC_KEY
+
+package_update: true
+package_upgrade: true
+
+packages:
+  - ca-certificates
+  - curl
+  - ufw
+  - unattended-upgrades
+
+runcmd:
+  # Install Docker via the official convenience script
+  - curl -fsSL https://get.docker.com | sh
+  - systemctl enable --now docker
+  - usermod -aG docker deploy
+
+  # Firewall: allow SSH + HTTP(S), deny everything else
+  - ufw default deny incoming
+  - ufw default allow outgoing
+  - ufw allow OpenSSH
+  - ufw allow 80/tcp
+  - ufw allow 443/tcp
+  - ufw --force enable
+
+  # Lock down SSH: no root login, no password auth
+  - sed -i 's/^#*PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
+  - sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+  - systemctl restart sshd
+
+  # Automatic security updates
+  - dpkg-reconfigure -f noninteractive unattended-upgrades

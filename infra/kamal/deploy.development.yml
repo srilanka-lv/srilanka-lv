@@ -1,0 +1,16 @@
+service: srilanka-development
+
+servers:
+  web:
+    hosts:
+      - <%= ENV['HETZNER_HOST'] %>
+
+proxy:
+  ssl: true
+  host: development.srilanka.lv
+
+env:
+  clear:
+    NEXT_PUBLIC_SELF_URL: https://development.srilanka.lv
+    NEXT_PUBLIC_SANITY_STUDIO_DATASET: development
+    SENTRY_ENVIRONMENT: development

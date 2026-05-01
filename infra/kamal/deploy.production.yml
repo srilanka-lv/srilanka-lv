@@ -1,0 +1,16 @@
+service: srilanka-production
+
+servers:
+  web:
+    hosts:
+      - <%= ENV['HETZNER_HOST'] %>
+
+proxy:
+  ssl: true
+  host: srilanka.lv
+
+env:
+  clear:
+    NEXT_PUBLIC_SELF_URL: https://srilanka.lv
+    NEXT_PUBLIC_SANITY_STUDIO_DATASET: production
+    SENTRY_ENVIRONMENT: production

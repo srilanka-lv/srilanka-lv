@@ -1,0 +1,45 @@
+service: srilanka
+
+image: davevanhoorn/srilanka.lv
+
+# CI builds and pushes the image. Kamal only pulls + deploys with --skip-push.
+# The arch must match what CI builds (linux/amd64 in docker-publish step).
+builder:
+  arch: amd64
+
+registry:
+  server: ghcr.io
+  username: davevanhoorn
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+ssh:
+  user: deploy
+
+# Shared, non-secret runtime env. Per-destination overrides live in
+# config/deploy.<destination>.yml.
+#
+# SENTRY_RELEASE is resolved at deploy time from the VERSION env var Kamal uses
+# to identify the image tag — so the value reported to Sentry always matches
+# the deployed artifact (full SHA on development, vX.Y.Z on staging/production).
+env:
+  clear:
+    NODE_ENV: production
+    PORT: "3000"
+    HOSTNAME: 0.0.0.0
+    SENTRY_RELEASE: <%= ENV['VERSION'] %>
+  secret:
+    - SANITY_API_KEY
+    - RESEND_API_KEY
+    - RESEND_AUDIENCE_ID
+    - SERPAPI_API_KEY
+    - NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID
+
+# kamal-proxy boots the new container, waits for /api/up to return 200,
+# then atomically switches traffic.
+proxy:
+  app_port: 3000
+  healthcheck:
+    path: /api/up
+    interval: 3
+    timeout: 30
