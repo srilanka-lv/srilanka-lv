@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "prepare": "husky",
     "web:dev": "bun --elide-lines=0 --filter @srilanka/web dev",
     "web:build": "bun --elide-lines=0 --filter @srilanka/web build",
     "web:start": "bun --elide-lines=0 --filter @srilanka/web start",
@@ -17,9 +18,9 @@
     "studio:build": "bun --elide-lines=0 --filter @srilanka/studio build",
     "studio:deploy": "bun --elide-lines=0 --filter @srilanka/studio deploy",
     "studio:typegen": "bun --elide-lines=0 --filter @srilanka/studio typegen",
-    "lint": "biome check",
-    "format": "biome format --write",
-    "prepare": "husky"
+    "repo:lint": "biome check",
+    "repo:format": "biome format --write",
+    "infra:kamal": "kamal -c infra/kamal/deploy.yml"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.13",
@@ -31,8 +32,5 @@
   },
   "overrides": {
     "vite": "^7"
-  },
-  "engines": {
-    "node": "24.x"
   }
 }
