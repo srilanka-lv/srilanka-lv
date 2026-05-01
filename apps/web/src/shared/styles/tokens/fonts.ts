@@ -1,6 +1,6 @@
 export const fontFamilies = {
-  body: 'var(--font-tik-tok-sans)',
-  display: 'var(--font-burchelli)',
+  body: 'var(--font-comme)',
+  display: 'var(--font-comme)',
 };
 
 export const fontSizes = {

@@ -1,12 +1,6 @@
-import { TikTok_Sans } from 'next/font/google';
-import localFont from 'next/font/local';
+import { Comme } from 'next/font/google';
 
-export const tikTokSans = TikTok_Sans({
+export const comme = Comme({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-tik-tok-sans',
-});
-
-export const burchelli = localFont({
-  src: './burchelli.woff2',
-  variable: '--font-burchelli',
+  variable: '--font-comme',
 });

@@ -63,7 +63,3 @@ export const H1Dark: Story = {
   args: { as: 'h1', variant: 'h1' },
   globals: { theme: 'dark' },
 };
-
-export const Burchelli: Story = {
-  args: { as: 'h1', variant: 'h1', style: { fontFamily: 'var(--font-burchelli)' } },
-};
