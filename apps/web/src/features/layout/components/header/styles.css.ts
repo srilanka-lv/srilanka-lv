@@ -14,13 +14,36 @@ export const headerStyle = style({
   paddingTop: vars.spacing[4],
   paddingBottom: vars.spacing[4],
 
+  selectors: {
+    '&::after': {
+      content: '',
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '100svw',
+      backgroundColor: vars.color.background,
+      zIndex: -1,
+
+      '@media': {
+        [`screen and (min-width: ${breakpoints.md})`]: {
+          display: 'none',
+        },
+      },
+    },
+  },
+
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
+      minHeight: '90px',
       flexDirection: 'column',
-      gap: vars.spacing[2],
+      gap: vars.spacing[4],
       paddingTop: vars.spacing[6],
+      paddingBottom: 0,
     },
     [`screen and (min-width: ${breakpoints.xl})`]: {
+      alignItems: 'baseline',
       flexDirection: 'row',
       gap: vars.spacing[0],
     },

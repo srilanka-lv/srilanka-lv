@@ -12,7 +12,7 @@ type HeaderProps = {
 
 export const Header: FunctionComponent<HeaderProps> = ({ className }) => (
   <header className={clsx(headerStyle, className)}>
-    <Logo size="medium" />
+    <Logo size="large" />
     <Navigation />
   </header>
 );
