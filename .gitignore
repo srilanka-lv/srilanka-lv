@@ -43,4 +43,3 @@ next-env.d.ts
 # sanity
 .sanity/
 schema.json
-sanity.types.ts
