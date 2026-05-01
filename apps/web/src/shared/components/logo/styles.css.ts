@@ -1,22 +1,26 @@
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
 export const logoStyles = recipe({
   base: {
-    color: vars.color.primary,
-    fontFamily: vars.font.family.display,
-    fontWeight: vars.font.weight.normal,
-    lineHeight: vars.font.lineHeight.none,
+    display: 'block',
+    fill: vars.color.primary,
+    height: 'auto',
   },
   variants: {
     size: {
-      small: { fontSize: vars.font.size['4xl'] },
-      medium: { fontSize: vars.font.size['5xl'] },
-      large: { fontSize: vars.font.size['6xl'] },
+      small: { width: vars.spacing[20] },
+      medium: { width: vars.spacing[32] },
+      large: { width: vars.spacing[48] },
     },
   },
   defaultVariants: {
     size: 'large',
   },
+});
+
+export const logoLinkStyle = style({
+  display: 'block',
 });
