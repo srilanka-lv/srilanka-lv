@@ -74,6 +74,7 @@ jobs:
             NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID }}
             NEXT_PUBLIC_SANITY_STUDIO_DATASET=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_DATASET }}
             NEXT_PUBLIC_SELF_URL=${{ vars.NEXT_PUBLIC_SELF_URL }}
+            KAMAL_SERVICE=srilanka-development
 
   deploy-development:
     needs: build-development

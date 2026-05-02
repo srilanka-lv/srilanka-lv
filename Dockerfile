@@ -42,6 +42,12 @@ ENV NEXT_TELEMETRY_DISABLED=1
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
 
+# Kamal sanity-checks each pulled image's `service` label matches the
+# destination's service name (e.g. srilanka-development). Passed via build-arg
+# from the workflow, which uses one value per environment.
+ARG KAMAL_SERVICE=srilanka
+LABEL service=${KAMAL_SERVICE}
+
 RUN groupadd --system --gid 1001 nodejs \
   && useradd --system --uid 1001 --gid nodejs nextjs
 
