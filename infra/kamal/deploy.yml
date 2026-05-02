@@ -1,6 +1,6 @@
 service: srilanka
 
-image: davevanhoorn/srilanka.lv
+image: srilanka-lv/srilanka-lv
 
 # CI builds and pushes the image. Kamal only pulls + deploys with --skip-push.
 # The arch must match what CI builds (linux/amd64 in docker-publish step).
