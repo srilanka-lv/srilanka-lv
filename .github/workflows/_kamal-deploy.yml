@@ -40,6 +40,8 @@ jobs:
         env:
           VERSION: ${{ inputs.version }}
           HETZNER_HOST: ${{ secrets.HETZNER_HOST }}
+          KAMAL_PROXY_TLS_CERT: ${{ secrets.KAMAL_PROXY_TLS_CERT }}
+          KAMAL_PROXY_TLS_KEY: ${{ secrets.KAMAL_PROXY_TLS_KEY }}
           KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           SANITY_API_KEY: ${{ secrets.SANITY_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
