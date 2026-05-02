@@ -2,12 +2,7 @@ import { globalStyle } from '@vanilla-extract/css';
 
 import { vars } from './themes/theme.contract.css';
 
-// `overflow-x: hidden` is also set on `<body>` (via layoutStyle), but iOS
-// Safari frequently ignores body-level overflow clipping during pinch-zoom —
-// the `<html>` element is what reliably clips. Without this, off-screen
-// positioned elements (e.g. the slide-in mobile nav, full-bleed `::after`
-// backgrounds) become visible when the user pinches.
-globalStyle('html, body', {
+globalStyle('html', {
   overflowX: 'hidden',
 });
 
