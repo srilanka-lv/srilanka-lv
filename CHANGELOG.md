@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/srilanka-lv/srilanka-lv/compare/v1.1.0...v1.1.1) (2026-05-02)
+
+
+### Bug Fixes
+
+* 🔄 fetch full history in backmerge job so it sees origin/development ([9e07a02](https://github.com/srilanka-lv/srilanka-lv/commit/9e07a0278228e5404b9f4c466107197a552b03f7))
+* 🔄 fetch full history in backmerge job so it sees origin/development ([2bd66d8](https://github.com/srilanka-lv/srilanka-lv/commit/2bd66d8e6d95d0b1dea2d6818114eadca0920b21))
+
 ## [1.1.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.0.0...v1.1.0) (2026-05-02)
 
 
