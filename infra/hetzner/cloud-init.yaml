@@ -30,17 +30,135 @@ packages:
   - ufw
   - unattended-upgrades
 
+write_files:
+  # Cloudflare firewall script: rebuilds UFW so 443 is only reachable from
+  # Cloudflare's published IP ranges and 80 is denied. Run manually after
+  # cutover (Phase F), then enable cloudflare-firewall.timer for weekly refresh.
+  - path: /usr/local/sbin/cloudflare-firewall.sh
+    permissions: '0755'
+    owner: root:root
+    content: |
+      #!/usr/bin/env bash
+      # cloudflare-firewall.sh
+      #
+      # Rebuilds UFW so:
+      #   - Port 22 (SSH): allowed from anywhere (managed elsewhere; we don't touch it)
+      #   - Port 80 (HTTP): denied entirely (Cloudflare handles HTTP→HTTPS redirects
+      #     at the edge; no Let's Encrypt HTTP-01 challenge needed since we use the
+      #     Cloudflare Origin Certificate)
+      #   - Port 443 (HTTPS): allowed only from Cloudflare's published IP ranges
+      #
+      # Run as root (sudo). Idempotent: deletes prior CF rules before recreating.
+      # The systemd timer (cloudflare-firewall.timer) re-runs this weekly to pick up
+      # changes to Cloudflare's IP list.
+
+      set -euo pipefail
+
+      CF_V4_URL="https://www.cloudflare.com/ips-v4"
+      CF_V6_URL="https://www.cloudflare.com/ips-v6"
+      COMMENT="cloudflare-edge"
+
+      if [[ "${EUID}" -ne 0 ]]; then
+        echo "must be run as root" >&2
+        exit 1
+      fi
+
+      if ! command -v ufw >/dev/null 2>&1; then
+        echo "ufw not installed" >&2
+        exit 1
+      fi
+
+      # Fetch CF IP ranges. Fail loudly rather than wipe the firewall on a network blip.
+      v4="$(curl -fsSL --max-time 10 "${CF_V4_URL}")"
+      v6="$(curl -fsSL --max-time 10 "${CF_V6_URL}")"
+
+      if [[ -z "${v4}" || -z "${v6}" ]]; then
+        echo "fetched empty CF IP list, aborting" >&2
+        exit 1
+      fi
+
+      # Remove prior CF-tagged rules. `ufw status numbered` lists rules with their
+      # numbers; we filter for our COMMENT and delete from the bottom up so numbers
+      # stay stable as we delete.
+      mapfile -t to_delete < <(
+        ufw status numbered | grep -E "# ${COMMENT}\$" | awk -F'[][]' '{print $2}' | sort -rn
+      )
+      for n in "${to_delete[@]}"; do
+        yes | ufw delete "${n}" >/dev/null
+      done
+
+      # Deny port 80 explicitly (and remove any prior allow rules on 80).
+      ufw delete allow 80/tcp >/dev/null 2>&1 || true
+      ufw deny 80/tcp comment "${COMMENT}-deny-80" >/dev/null
+
+      # Allow 443 only from CF ranges.
+      while IFS= read -r cidr; do
+        [[ -z "${cidr}" ]] && continue
+        ufw allow proto tcp from "${cidr}" to any port 443 comment "${COMMENT}" >/dev/null
+      done <<< "${v4}"
+
+      while IFS= read -r cidr; do
+        [[ -z "${cidr}" ]] && continue
+        ufw allow proto tcp from "${cidr}" to any port 443 comment "${COMMENT}" >/dev/null
+      done <<< "${v6}"
+
+      # Reload UFW so the changes take effect.
+      ufw reload >/dev/null
+
+      echo "cloudflare-firewall: applied $(echo "${v4}" | wc -l) IPv4 + $(echo "${v6}" | wc -l) IPv6 ranges"
+
+  - path: /etc/systemd/system/cloudflare-firewall.service
+    permissions: '0644'
+    owner: root:root
+    content: |
+      # cloudflare-firewall.service
+      #
+      # One-shot service that re-applies the UFW rules from cloudflare-firewall.sh.
+      # Triggered by cloudflare-firewall.timer (weekly) and on demand.
+
+      [Unit]
+      Description=Refresh UFW rules for Cloudflare IP ranges
+      Wants=network-online.target
+      After=network-online.target
+
+      [Service]
+      Type=oneshot
+      ExecStart=/usr/local/sbin/cloudflare-firewall.sh
+
+  - path: /etc/systemd/system/cloudflare-firewall.timer
+    permissions: '0644'
+    owner: root:root
+    content: |
+      # cloudflare-firewall.timer
+      #
+      # Runs cloudflare-firewall.service weekly, plus 5 minutes after every boot
+      # (so a freshly rebooted box catches up promptly).
+
+      [Unit]
+      Description=Weekly refresh of Cloudflare-IP UFW rules
+
+      [Timer]
+      OnBootSec=5min
+      OnUnitActiveSec=1week
+      Persistent=true
+
+      [Install]
+      WantedBy=timers.target
+
 runcmd:
   # Install Docker via the official convenience script
   - curl -fsSL https://get.docker.com | sh
   - systemctl enable --now docker
   - usermod -aG docker deploy
 
-  # Firewall: allow SSH + HTTP(S), deny everything else
+  # Firewall: allow SSH + HTTPS only (HTTPS will be tightened to Cloudflare IPs
+  # after cutover by running cloudflare-firewall.sh manually — see
+  # infra/hetzner/README.md). Port 80 stays closed: Cloudflare handles HTTP→HTTPS
+  # redirects at the edge, and we use the Cloudflare Origin Certificate, not
+  # Let's Encrypt, so no ACME HTTP-01 challenge is needed.
   - ufw default deny incoming
   - ufw default allow outgoing
   - ufw allow OpenSSH
-  - ufw allow 80/tcp
   - ufw allow 443/tcp
   - ufw --force enable
 
