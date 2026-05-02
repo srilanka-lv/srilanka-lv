@@ -13,7 +13,6 @@ export const headerStyle = style({
   width: '100%',
   paddingTop: vars.spacing[4],
   paddingBottom: vars.spacing[4],
-  overflowX: 'hidden',
 
   selectors: {
     '&::after': {

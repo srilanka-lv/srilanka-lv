@@ -1,9 +1,18 @@
 import { globalStyle } from '@vanilla-extract/css';
 
 import { vars } from './themes/theme.contract.css';
+import { breakpoints } from './tokens/breakpoints';
 
-globalStyle('html', {
-  overflowX: 'hidden',
+globalStyle('html, body', {
+  overflowX: 'clip',
+  overflowClipBox: 'content-box',
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      overflowX: 'initial',
+      overflowClipBox: 'initial',
+    },
+  },
 });
 
 globalStyle('body', {
