@@ -6,8 +6,10 @@ servers:
       - <%= ENV['HETZNER_HOST'] %>
 
 proxy:
-  ssl: true
   host: staging.srilanka.lv
+  ssl:
+    certificate_pem: KAMAL_PROXY_TLS_CERT
+    private_key_pem: KAMAL_PROXY_TLS_KEY
 
 env:
   clear:
