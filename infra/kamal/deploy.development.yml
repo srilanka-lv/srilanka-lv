@@ -13,6 +13,6 @@ proxy:
 
 env:
   clear:
-    NEXT_PUBLIC_SELF_URL: https://development.srilanka.lv
-    NEXT_PUBLIC_SANITY_STUDIO_DATASET: development
-    SENTRY_ENVIRONMENT: development
+    NEXT_PUBLIC_SELF_URL: <%= ENV.fetch('NEXT_PUBLIC_SELF_URL') %>
+    NEXT_PUBLIC_SANITY_STUDIO_DATASET: <%= ENV.fetch('NEXT_PUBLIC_SANITY_STUDIO_DATASET') %>
+    SENTRY_ENVIRONMENT: <%= ENV.fetch('SENTRY_ENVIRONMENT') %>

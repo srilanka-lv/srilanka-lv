@@ -34,18 +34,29 @@ jobs:
           ssh-private-key: ${{ secrets.HETZNER_SSH_KEY }}
 
       - name: Trust the Hetzner host
-        run: ssh-keyscan -H ${{ secrets.HETZNER_HOST }} >> ~/.ssh/known_hosts
+        run: ssh-keyscan -H ${{ vars.HETZNER_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy with Kamal
         env:
+          # Image tag (passed in via workflow input).
           VERSION: ${{ inputs.version }}
-          HETZNER_HOST: ${{ secrets.HETZNER_HOST }}
+
+          # Repo-level variables (same value across all envs).
+          HETZNER_HOST: ${{ vars.HETZNER_HOST }}
+          NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID }}
+          RESEND_AUDIENCE_ID: ${{ vars.RESEND_AUDIENCE_ID }}
+
+          # Repo-level secrets.
+          KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           KAMAL_PROXY_TLS_CERT: ${{ secrets.KAMAL_PROXY_TLS_CERT }}
           KAMAL_PROXY_TLS_KEY: ${{ secrets.KAMAL_PROXY_TLS_KEY }}
-          KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
           SANITY_API_KEY: ${{ secrets.SANITY_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
           SERPAPI_API_KEY: ${{ secrets.SERPAPI_API_KEY }}
-          NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID }}
+
+          # Per-environment variables (resolved from the env named in
+          # `environment.name` above — development, staging, or production).
+          NEXT_PUBLIC_SELF_URL: ${{ vars.NEXT_PUBLIC_SELF_URL }}
+          NEXT_PUBLIC_SANITY_STUDIO_DATASET: ${{ vars.NEXT_PUBLIC_SANITY_STUDIO_DATASET }}
+          SENTRY_ENVIRONMENT: ${{ vars.SENTRY_ENVIRONMENT }}
         run: kamal deploy -d ${{ inputs.destination }} -c infra/kamal/deploy.yml --skip-push

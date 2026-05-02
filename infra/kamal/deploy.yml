@@ -16,24 +16,25 @@ registry:
 ssh:
   user: deploy
 
-# Shared, non-secret runtime env. Per-destination overrides live in
+# Shared runtime env. Per-destination overrides live in
 # config/deploy.<destination>.yml.
 #
-# SENTRY_RELEASE is resolved at deploy time from the VERSION env var Kamal uses
-# to identify the image tag — so the value reported to Sentry always matches
-# the deployed artifact (full SHA on development, vX.Y.Z on staging/production).
+# Non-secret values use `env.clear:` and resolve via ENV.fetch — missing values
+# fail loudly at config-load time instead of silently producing empty strings.
+# In CI, the values come from GitHub repo/environment variables (vars.*); locally
+# from sourced .kamal/.env.<destination> files.
 env:
   clear:
     NODE_ENV: production
     PORT: "3000"
     HOSTNAME: 0.0.0.0
-    SENTRY_RELEASE: <%= ENV['VERSION'] %>
+    SENTRY_RELEASE: <%= ENV.fetch('VERSION') %>
+    NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID: <%= ENV.fetch('NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID') %>
+    RESEND_AUDIENCE_ID: <%= ENV.fetch('RESEND_AUDIENCE_ID') %>
   secret:
     - SANITY_API_KEY
     - RESEND_API_KEY
-    - RESEND_AUDIENCE_ID
     - SERPAPI_API_KEY
-    - NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID
 
 # kamal-proxy boots the new container, waits for /api/up to return 200,
 # then atomically switches traffic.
