@@ -65,17 +65,24 @@ environments.
    ssh deploy@<vm-ip>
    ```
 
-## 2. Point DNS at the VM
+## 2. Point DNS at the VM (via Cloudflare)
 
-Add three A records at your DNS provider (all → VM IP):
+DNS is managed in Cloudflare. See [`infra/cloudflare/README.md`](../cloudflare/README.md)
+for the full setup. The relevant records (all proxied / "orange cloud") are:
 
-```
-srilanka.lv             A   <vm-ip>
-staging.srilanka.lv     A   <vm-ip>
-development.srilanka.lv A   <vm-ip>
-```
+| Record                       | Type | Target            | Proxied |
+| ---------------------------- | ---- | ----------------- | ------- |
+| `srilanka.lv`                | A    | `<vm-ip>`         | yes     |
+| `staging.srilanka.lv`        | A    | `<vm-ip>`         | yes     |
+| `development.srilanka.lv`    | A    | `<vm-ip>`         | yes     |
 
-kamal-proxy needs DNS to resolve before it can request Let's Encrypt certs.
+`staging.srilanka.lv` and `development.srilanka.lv` are also gated by Cloudflare
+Access (email one-time PIN) — only addresses on the allow-list can reach them.
+
+> kamal-proxy uses a **Cloudflare Origin Certificate** (15-year validity) for
+> the TLS termination on the VM, not Let's Encrypt. The cert and key are passed
+> in via `KAMAL_PROXY_TLS_CERT` / `KAMAL_PROXY_TLS_KEY` secrets — see the
+> "Configure GitHub" section below.
 
 ## 3. Configure GitHub
 
@@ -107,6 +114,8 @@ appropriate to that environment:
 | `RESEND_AUDIENCE_ID`                    | Resend audience                           |
 | `SERPAPI_API_KEY`                       | SerpAPI key (used by the flights cron)    |
 | `NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID`  | Sanity project ID                         |
+| `KAMAL_PROXY_TLS_CERT`                  | Cloudflare Origin Cert PEM (full chain)   |
+| `KAMAL_PROXY_TLS_KEY`                   | Cloudflare Origin Cert private key PEM    |
 
 The non-secret per-env values (`NEXT_PUBLIC_SELF_URL`,
 `NEXT_PUBLIC_SANITY_STUDIO_DATASET`) live in the
@@ -144,3 +153,18 @@ bun infra:kamal app details -d production    # current container/image
 bun infra:kamal rollback <version> -d production
 bun infra:kamal app exec -i -d production "bash"
 ```
+
+## 6. Lock down the firewall to Cloudflare IP ranges
+
+After cutover (and after verifying the deploy works through Cloudflare), run
+the lockdown script on the VM. It rewrites UFW so port 443 only accepts
+traffic from Cloudflare's published IP ranges, and confirms port 80 is denied.
+
+```sh
+ssh deploy@<vm-ip>
+sudo /usr/local/sbin/cloudflare-firewall.sh
+sudo systemctl enable --now cloudflare-firewall.timer
+```
+
+The systemd timer re-runs the script weekly so the rules pick up changes to
+Cloudflare's IP list.
