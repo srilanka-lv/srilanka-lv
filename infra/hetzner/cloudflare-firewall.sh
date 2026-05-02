@@ -51,6 +51,13 @@ done
 ufw delete allow 80/tcp >/dev/null 2>&1 || true
 ufw deny 80/tcp comment "${COMMENT}-deny-80" >/dev/null
 
+# Remove any unrestricted "allow 443/tcp" rule (typically present from the
+# cloud-init bootstrap, which opens 443 to the world before this script
+# narrows it to CF IPs only). Idempotent: succeeds whether the rule exists
+# or not. Without this, the bootstrap rule fires before the more-specific
+# CF rules and 443 stays open to everyone.
+ufw delete allow 443/tcp >/dev/null 2>&1 || true
+
 # Allow 443 only from CF ranges.
 while IFS= read -r cidr; do
   [[ -z "${cidr}" ]] && continue
