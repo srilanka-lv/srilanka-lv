@@ -6,6 +6,7 @@ WORKDIR /app
 
 COPY package.json bun.lock ./
 COPY apps/web/package.json ./apps/web/
+COPY apps/studio/package.json ./apps/studio/
 COPY packages/sanity/package.json ./packages/sanity/
 
 RUN bun install --frozen-lockfile
