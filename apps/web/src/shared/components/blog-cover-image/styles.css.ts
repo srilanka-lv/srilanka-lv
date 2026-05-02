@@ -1,12 +1,13 @@
 import { createVar, fallbackVar, keyframes, style } from '@vanilla-extract/css';
 
+import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 export const coverImageBackgroundVar = createVar();
 
-const blurOnScroll = keyframes({
-  from: { filter: 'blur(0)', transform: 'scale(1.125)' },
-  to: { filter: 'blur(2.5px)', transform: 'scale(1)' },
+const onScrollAnimation = keyframes({
+  from: { opacity: 1, transform: 'scale(1.0625)' },
+  to: { opacity: 0.5, transform: 'scale(1)' },
 });
 
 export const coverImageBackgroundOverflowStyle = style({
@@ -15,6 +16,7 @@ export const coverImageBackgroundOverflowStyle = style({
   width: '100svw',
   height: '100svh',
   overflow: 'hidden',
+  backgroundColor: vars.color.foreground,
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
@@ -37,7 +39,7 @@ export const coverImageBackgroundWrapperStyle = style({
 
   '@supports': {
     '(animation-timeline: scroll())': {
-      animationName: blurOnScroll,
+      animationName: onScrollAnimation,
       animationTimeline: 'scroll(root block)',
       animationRangeStart: '0',
       animationRangeEnd: '100svh',
