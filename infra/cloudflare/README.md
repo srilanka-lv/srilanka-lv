@@ -96,7 +96,20 @@ back on after a CF UI change).
 
 ## 5. Cache Rules
 
-_(filled in during Phase B, Task 14)_
+Three rules in this order (first match wins). The Caching → Cache Rules list
+must show them top-to-bottom in the order below.
+
+| # | Rule name                | Match expression                                          | Cache eligibility | Edge TTL                                                                | Browser TTL                  |
+| - | ------------------------ | --------------------------------------------------------- | ----------------- | ----------------------------------------------------------------------- | ---------------------------- |
+| 1 | `cache _next/static`     | `(starts_with(http.request.uri.path, "/_next/static/"))`  | Eligible          | Ignore cache-control header and use this TTL → **1 year**               | Override origin → **1 year** |
+| 2 | `cache _next/image`      | `(starts_with(http.request.uri.path, "/_next/image"))`    | Eligible          | Use cache-control header if present, bypass cache if not                | Respect origin TTL           |
+| 3 | `bypass everything else` | All incoming requests                                     | **Bypass cache**  | (n/a — Bypass action)                                                   | (n/a)                        |
+
+Reasoning:
+
+- **Rule 1** pins immutable hashed assets at the edge for a year. Next emits these with `Cache-Control: public, max-age=31536000, immutable`; we override anyway to make the intent explicit and isolate from any future change in Next's header behavior.
+- **Rule 2** defers entirely to the headers Next sets on optimized image responses. Next picks sensible TTLs based on each source image — let it.
+- **Rule 3** bypasses cache for everything else (HTML, `/api/*`, favicons, etc.). HTML caching is handled by Next's own ISR; `/api/*` must never be edge-cached.
 
 ## 6. Cloudflare Access
 
