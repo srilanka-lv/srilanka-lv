@@ -41,7 +41,7 @@ fi
 # numbers; we filter for our COMMENT and delete from the bottom up so numbers
 # stay stable as we delete.
 mapfile -t to_delete < <(
-  ufw status numbered | grep "${COMMENT}" | awk -F'[][]' '{print $2}' | sort -rn
+  ufw status numbered | grep -E "# ${COMMENT}\$" | awk -F'[][]' '{print $2}' | sort -rn
 )
 for n in "${to_delete[@]}"; do
   yes | ufw delete "${n}" >/dev/null
