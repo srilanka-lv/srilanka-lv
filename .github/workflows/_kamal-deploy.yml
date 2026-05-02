@@ -39,7 +39,10 @@ jobs:
           ssh-private-key: ${{ secrets.HETZNER_SSH_KEY }}
 
       - name: Trust the Hetzner host
-        run: ssh-keyscan -H ${{ vars.HETZNER_HOST }} >> ~/.ssh/known_hosts
+        # No -H flag: Net::SSH (Ruby, used by Kamal) doesn't always match
+        # against hashed known_hosts entries. Plaintext hostnames are fine
+        # in CI (no privacy concern — the IP is already in vars.HETZNER_HOST).
+        run: ssh-keyscan ${{ vars.HETZNER_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy with Kamal
         env:
