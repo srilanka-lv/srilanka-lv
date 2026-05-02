@@ -11,7 +11,7 @@ Single-evening migration from "domain at Gandi → Vercel nameservers → Vercel
 - `srilanka.lv` resolves through Cloudflare to Hetzner, publicly accessible.
 - `staging.srilanka.lv` and `development.srilanka.lv` resolve through Cloudflare to Hetzner, gated by Cloudflare Access (email one-time PIN).
 - TLS is end-to-end (Full strict): visitor↔CF on CF's universal cert, CF↔Hetzner on a Cloudflare Origin Certificate installed in kamal-proxy.
-- The Hetzner box's firewall accepts 80/443 only from Cloudflare's published IP ranges; SSH (22) is unrestricted.
+- The Hetzner box's firewall accepts 443 only from Cloudflare's published IP ranges; port 80 is closed entirely (no Let's Encrypt HTTP-01 challenge needed once on the Origin Cert; HTTP→HTTPS redirects are handled at the Cloudflare edge); SSH (22) is unrestricted.
 - The CF Origin Cert is valid 15 years; CF's universal cert is auto-rotated. Day-to-day cert maintenance disappears.
 
 ## Architecture
@@ -28,7 +28,7 @@ Cloudflare edge
   │
   │  HTTPS (Full strict, re-encrypted with CF Origin Certificate)
   ▼
-Hetzner CX32  (UFW: 80/443 only from CF IP ranges; 22 unrestricted)
+Hetzner CX32  (UFW: 443 only from CF IPs; 80 closed; 22 unrestricted)
   │
   ▼
 kamal-proxy  (terminates TLS with the CF Origin Cert; routes by Host header)
@@ -39,7 +39,7 @@ kamal-proxy  (terminates TLS with the CF Origin Cert; routes by Host header)
 
 Properties:
 
-- Origin IP is unreachable for HTTP/HTTPS except through Cloudflare. Direct hits to the Hetzner IP get TCP-rejected on 80/443.
+- Origin IP is unreachable for HTTP/HTTPS except through Cloudflare. Port 80 is closed entirely; port 443 only accepts traffic from Cloudflare IP ranges.
 - TLS is end-to-end. No plaintext on the wire anywhere.
 - All three environments share one IP and one TLS endpoint on the box; kamal-proxy does the host-based routing.
 
@@ -93,7 +93,7 @@ Sourced locally from `.env`; sourced in CI from new GitHub Actions repository se
 
 **`infra/hetzner/`** — add:
 
-- `cloudflare-firewall.sh` — fetches `https://www.cloudflare.com/ips-v4` and `https://www.cloudflare.com/ips-v6`, rebuilds UFW rules so 80/443 only allow those ranges. SSH (22) stays open. Idempotent; safe to re-run.
+- `cloudflare-firewall.sh` — fetches `https://www.cloudflare.com/ips-v4` and `https://www.cloudflare.com/ips-v6`, rebuilds UFW rules so port 443 only allows those ranges. Port 80 is denied for all sources (no LE HTTP-01 challenge needed once on the Origin Cert; CF handles HTTP→HTTPS redirects at the edge). SSH (22) stays open. Idempotent; safe to re-run.
 - A systemd timer (or cron) that runs the script weekly. CF's IP list changes rarely but does change.
 
 These tie into the existing `infra/hetzner/` cloud-init bootstrap (which already creates the deploy user and installs Docker). The firewall script can be installed during cloud-init; the initial UFW lockdown is run manually (see Cutover, Phase 4) so we don't lock ourselves out before everything is verified.
@@ -137,11 +137,13 @@ Single window, single evening. All three environments cut over together when nam
 
 ### Phase 2 — Firewall lockdown
 
-15. SSH into the Hetzner box. Run `infra/hetzner/cloudflare-firewall.sh` to rewrite UFW so 80/443 only accept traffic from CF IP ranges.
+15. SSH into the Hetzner box. Run `infra/hetzner/cloudflare-firewall.sh` to rewrite UFW so port 443 only accepts traffic from CF IP ranges and port 80 is closed entirely.
 16. Install the systemd timer for weekly refresh.
 17. Verify:
     - `curl https://<hetzner-ip>` from a developer machine should hang or refuse.
+    - `curl http://<hetzner-ip>` from a developer machine should hang or refuse.
     - `curl https://srilanka.lv` (going through CF) should still return 200.
+    - `curl -I http://srilanka.lv` (going through CF) should return a 301 to the HTTPS version (CF "Always Use HTTPS").
 
 ### Phase 3 — Cleanup
 
