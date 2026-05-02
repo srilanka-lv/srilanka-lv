@@ -162,10 +162,11 @@ runcmd:
   - ufw allow 443/tcp
   - ufw --force enable
 
-  # Lock down SSH: no root login, no password auth
+  # Lock down SSH: no root login, no password auth.
+  # Ubuntu 24.04 names the unit `ssh.service` (not `sshd.service`).
   - sed -i 's/^#*PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
   - sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
-  - systemctl restart sshd
+  - systemctl restart ssh
 
   # Automatic security updates
   - dpkg-reconfigure -f noninteractive unattended-upgrades
