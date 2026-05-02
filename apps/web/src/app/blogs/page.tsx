@@ -7,7 +7,7 @@ import { DefaultSanityRepository } from '@/features/sanity/repositories/default-
 const provider = new DefaultSanityProvider();
 const repository = new DefaultSanityRepository(provider);
 
-export default async function Home() {
+export default async function BlogsPage() {
   const posts = await repository.query(allBlogPostsQuery);
 
   return posts.map((post) => (
