@@ -115,6 +115,11 @@ jobs:
         uses: googleapis/release-please-action@v5
         with:
           release-type: node
+          # Track `main` for releases regardless of the repo's default branch.
+          # Lets us keep `development` as the default branch (so the GitHub UI
+          # defaults PR base to `development` for everyday feature work) while
+          # still having release-please open release PRs against `main`.
+          target-branch: main
 
   # After release-please commits the version bump + CHANGELOG to main, open a
   # PR to bring those same changes back to development. Without this, dev
