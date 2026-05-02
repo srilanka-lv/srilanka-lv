@@ -113,7 +113,37 @@ Reasoning:
 
 ## 6. Cloudflare Access
 
-_(filled in during Phase B, Task 15)_
+Configured in **Cloudflare Zero Trust** (separate dashboard from the main CF
+zone view). The application below gates `staging.srilanka.lv` and
+`development.srilanka.lv` so they're not crawlable or publicly reachable;
+production stays open.
+
+**Team**
+
+- Name: `srilanka` (lowercase, used in the login URL `srilanka.cloudflareaccess.com`)
+- Plan: Free (covers ≤50 users)
+
+**Application**
+
+- Type: Self-hosted
+- Name: `srilanka non-prod`
+- Destinations:
+  - `staging.srilanka.lv`
+  - `development.srilanka.lv`
+- Browser rendering: off
+- Session duration: 24 hours
+- Authentication: One-time PIN (built-in; emails a 6-digit code) — `Accept all available identity providers` is on. No external IdP (Google/GitHub/etc.) is configured.
+
+**Policy**
+
+- Name: `allow-listed emails`
+- Action: **Allow**
+- Include: Emails — list of allowed addresses
+
+The **canonical allow-list lives in the Cloudflare Zero Trust dashboard**, not
+in this file (so we don't commit collaborator emails to git). To add or remove
+someone, edit the policy in the dashboard. Primary user is the account owner
+(`account-owner@example.com`).
 
 ## 7. DNS records pointing at Hetzner
 
