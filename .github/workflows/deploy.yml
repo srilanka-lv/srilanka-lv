@@ -137,14 +137,21 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v6
+        with:
+          # Need full history + all branches so `git log` can compare
+          # origin/main against origin/development. Default fetch-depth is 1
+          # and only fetches the merge ref, so origin/development isn't
+          # available — the comparison silently returned empty and the
+          # backmerge "no commits to merge" guard fired falsely.
+          fetch-depth: 0
       - name: Open backmerge PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
           # Skip if there's no diff between main and development (e.g. dev
-          # already caught up some other way). gh exits 1 if no commits differ.
-          if [ -z "$(git log origin/main ^origin/development --oneline)" ]; then
+          # already caught up some other way).
+          if [ -z "$(git log origin/development..origin/main --oneline)" ]; then
             echo "No commits on main that aren't on development — nothing to backmerge."
             exit 0
           fi
