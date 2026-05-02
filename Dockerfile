@@ -23,7 +23,7 @@ COPY . .
 RUN bun run web:build
 
 # ---- runner: minimal runtime image ----
-FROM oven/bun:1-debian-slim AS runner
+FROM oven/bun:1-slim AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
