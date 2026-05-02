@@ -33,6 +33,9 @@ jobs:
   build-development:
     if: github.event_name == 'push' && github.ref == 'refs/heads/development'
     runs-on: ubuntu-latest
+    # Reference the development environment so vars.NEXT_PUBLIC_* resolve
+    # to development values (baked into the image at build time).
+    environment: development
     permissions:
       contents: read
       packages: write
@@ -67,6 +70,10 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID }}
+            NEXT_PUBLIC_SANITY_STUDIO_DATASET=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_DATASET }}
+            NEXT_PUBLIC_SELF_URL=${{ vars.NEXT_PUBLIC_SELF_URL }}
 
   deploy-development:
     needs: build-development
@@ -103,6 +110,14 @@ jobs:
     needs: release-please
     if: needs.release-please.outputs.release_created == 'true'
     runs-on: ubuntu-latest
+    # Reference the production environment so vars.NEXT_PUBLIC_* resolve to
+    # production values (baked into the image, then deployed to BOTH staging
+    # and production). Side effect: production env's Required Reviewers rule
+    # gates the build — releases pause once for approval at this step.
+    # Trade-off: staging will serve the production NEXT_PUBLIC_SELF_URL in
+    # client-side metadata. Acceptable since staging is gated by Cloudflare
+    # Access (no public/SEO impact).
+    environment: production
     permissions:
       contents: read
       packages: write
@@ -139,6 +154,10 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID }}
+            NEXT_PUBLIC_SANITY_STUDIO_DATASET=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_DATASET }}
+            NEXT_PUBLIC_SELF_URL=${{ vars.NEXT_PUBLIC_SELF_URL }}
 
   deploy-staging:
     needs: [release-please, build-release]

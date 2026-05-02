@@ -18,6 +18,16 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# NEXT_PUBLIC_* values are baked into the JS bundle at build time.
+# Passed via --build-arg from the workflow; the workflow sources them from
+# GitHub repo + environment variables (vars.*).
+ARG NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID
+ARG NEXT_PUBLIC_SANITY_STUDIO_DATASET
+ARG NEXT_PUBLIC_SELF_URL
+ENV NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID=${NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID}
+ENV NEXT_PUBLIC_SANITY_STUDIO_DATASET=${NEXT_PUBLIC_SANITY_STUDIO_DATASET}
+ENV NEXT_PUBLIC_SELF_URL=${NEXT_PUBLIC_SELF_URL}
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
