@@ -1,0 +1,15 @@
+# cloudflare-firewall.timer
+#
+# Runs cloudflare-firewall.service weekly, plus 5 minutes after every boot
+# (so a freshly rebooted box catches up promptly).
+
+[Unit]
+Description=Weekly refresh of Cloudflare-IP UFW rules
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=1week
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,13 @@
+# cloudflare-firewall.service
+#
+# One-shot service that re-applies the UFW rules from cloudflare-firewall.sh.
+# Triggered by cloudflare-firewall.timer (weekly) and on demand.
+
+[Unit]
+Description=Refresh UFW rules for Cloudflare IP ranges
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/cloudflare-firewall.sh
