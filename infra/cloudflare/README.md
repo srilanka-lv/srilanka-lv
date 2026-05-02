@@ -53,7 +53,46 @@ _(filled in during Phase B, Task 12)_
 
 ## 4. Zone settings
 
-_(filled in during Phase B, Task 13)_
+Configured in the Cloudflare dashboard, grouped by left-nav section. Verify
+periodically — drift here can subtly break things (e.g. Auto Minify creeping
+back on after a CF UI change).
+
+**SSL/TLS → Overview**
+
+- Encryption mode: **Full (strict)** — CF↔origin uses HTTPS with strict cert validation against the Origin Certificate.
+
+**SSL/TLS → Edge Certificates**
+
+- Always Use HTTPS: **on**
+- HTTP Strict Transport Security (HSTS): **off** — deferred; turn on as a follow-up once the deploy has been stable for ≥1 month. HSTS is hard to roll back.
+- Minimum TLS Version: **1.2**
+- Opportunistic Encryption: **on**
+- TLS 1.3: **on**
+- Automatic HTTPS Rewrites: **on**
+- Universal SSL: **on**
+
+**Speed → Optimization**
+
+- Auto Minify (HTML / CSS / JS): **all off** — Next.js handles minification; CF's pass mangles chunked output.
+- Brotli: **on**
+- Early Hints: **on** — Next.js emits 103 Early Hints; CF respects them.
+- Rocket Loader: **off** — incompatible with React hydration.
+
+**Scrape Shield**
+
+- Email Address Obfuscation: **off** — mangles `mailto:` links rendered server-side.
+- Server-side Excludes: **off** (default).
+- Hotlink Protection: **off**.
+
+**Network**
+
+- HTTP/2: **on**
+- HTTP/3 (with QUIC): **on**
+- 0-RTT Connection Resumption: **on**
+- WebSockets: **on**
+- IP Geolocation: **on**
+- gRPC: **off**
+- Onion Routing: **off**
 
 ## 5. Cache Rules
 
