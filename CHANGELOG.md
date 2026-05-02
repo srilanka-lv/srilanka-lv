@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.2](https://github.com/srilanka-lv/srilanka-lv/compare/v1.1.1...v1.1.2) (2026-05-02)
+
+
+### Bug Fixes
+
+* 🔄 backmerge job needs contents:write + try direct merge first ([e2305d4](https://github.com/srilanka-lv/srilanka-lv/commit/e2305d4845ba8db6fbd4b440be09fb2a99def27f))
+* 🔄 backmerge job needs contents:write + try direct merge first ([83a6acb](https://github.com/srilanka-lv/srilanka-lv/commit/83a6acb50d35011dc545c7af5e4d7718cf2fb397))
+
 ## [1.1.1](https://github.com/srilanka-lv/srilanka-lv/compare/v1.1.0...v1.1.1) (2026-05-02)
 
 
