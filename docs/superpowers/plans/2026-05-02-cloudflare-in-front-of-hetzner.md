@@ -847,7 +847,7 @@ Application config:
 When prompted to add a policy:
 - Policy name: `allow-listed emails`
 - Action: **Allow**
-- Configure rules → Include → **Emails**: list the addresses allowed to access staging/dev (at minimum, `account-owner@example.com`; add others as needed).
+- Configure rules → Include → **Emails**: list the addresses allowed to access staging/dev (at minimum, the account-owner email; add collaborators as needed).
 
 Click Add application.
 
@@ -1175,7 +1175,7 @@ Expected: 200, full response headers including `cf-ray`, `cf-cache-status`, `ser
 
 Open `https://staging.srilanka.lv` in a browser. Expected:
 - Redirect to a Cloudflare Access login page
-- Enter `account-owner@example.com` (or whichever allow-listed email), receive OTP, enter it
+- Enter your allow-listed email, receive OTP, enter it
 - Access granted, staging app loads
 - Repeat for `https://development.srilanka.lv`
 

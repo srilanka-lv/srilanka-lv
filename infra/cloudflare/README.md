@@ -12,7 +12,7 @@ See also:
 
 ## 1. Account and zone
 
-- **Account email:** `account-owner@example.com`
+- **Account email:** account-owner email (in 1Password)
 - **Plan tier:** Free
 - **Zone:** `srilanka.lv`
 - **Cloudflare nameservers (set at Gandi during Phase E):**
@@ -142,8 +142,8 @@ production stays open.
 
 The **canonical allow-list lives in the Cloudflare Zero Trust dashboard**, not
 in this file (so we don't commit collaborator emails to git). To add or remove
-someone, edit the policy in the dashboard. Primary user is the account owner
-(`account-owner@example.com`).
+someone, edit the policy in the dashboard. The account owner is the primary
+user.
 
 ## 7. DNS records pointing at Hetzner
 
