@@ -8,9 +8,14 @@ on:
         required: true
         type: string
       version:
-        description: Image tag to deploy (full git SHA or release tag)
+        description: Image tag to deploy (e.g. v1.0.0-staging, full git SHA)
         required: true
         type: string
+      sentry_release:
+        description: Sentry release name. Defaults to `version` if empty (fine for dev). For releases, pass the bare release tag (e.g. v1.0.0) so staging+prod report to the same Sentry release.
+        required: false
+        type: string
+        default: ''
 
 jobs:
   deploy:
@@ -38,8 +43,13 @@ jobs:
 
       - name: Deploy with Kamal
         env:
-          # Image tag (passed in via workflow input).
+          # Image tag (passed in via workflow input). Kamal pulls this tag.
           VERSION: ${{ inputs.version }}
+          # Sentry release name. Falls back to VERSION if not provided. For
+          # releases, callers pass the bare tag (v1.0.0) so staging+prod
+          # report to the same Sentry release even though their image tags
+          # differ (v1.0.0-staging vs v1.0.0-production).
+          SENTRY_RELEASE: ${{ inputs.sentry_release != '' && inputs.sentry_release || inputs.version }}
 
           # Repo-level variables (same value across all envs).
           HETZNER_HOST: ${{ vars.HETZNER_HOST }}

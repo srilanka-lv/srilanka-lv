@@ -28,7 +28,7 @@ env:
     NODE_ENV: production
     PORT: "3000"
     HOSTNAME: 0.0.0.0
-    SENTRY_RELEASE: <%= ENV.fetch('VERSION') %>
+    SENTRY_RELEASE: <%= ENV.fetch('SENTRY_RELEASE', ENV.fetch('VERSION')) %>
     NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID: <%= ENV.fetch('NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID') %>
     RESEND_AUDIENCE_ID: <%= ENV.fetch('RESEND_AUDIENCE_ID') %>
   secret:
