@@ -4,8 +4,8 @@ import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 export const blogHeroAuthorStyle = style({
-  color: vars.color.secondary,
-  fontSize: vars.font.size.base,
+  color: 'inherit',
+  fontSize: vars.font.size.xl,
   textShadow: `0 ${vars.spacing[8]} ${vars.spacing[8]} rgba(0, 0, 0, 0.0625)`,
   padding: 0,
   margin: 0,
@@ -28,7 +28,7 @@ export const blogHeroAuthorLinkStyle = style({
 
   selectors: {
     '&:link, &:visited, &:hover, &:active': {
-      color: `${vars.color.secondary} !important`,
+      color: `inherit !important`,
     },
     '&:link::after, &:visited::after, &:active::after': {
       mixBlendMode: 'exclusion',

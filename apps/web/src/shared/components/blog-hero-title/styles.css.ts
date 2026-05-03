@@ -4,7 +4,7 @@ import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 export const blogHeroTitleStyle = style({
-  color: vars.color.secondary,
+  color: 'inherit',
   mixBlendMode: 'luminosity',
   fontSize: vars.font.size['5xl'],
   fontWeight: vars.font.weight.semibold,

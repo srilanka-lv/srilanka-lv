@@ -9,8 +9,8 @@ import { DefaultSanityRepository } from '@/features/sanity/repositories/default-
 import { BlogCoverImage } from '../blog-cover-image';
 import { BlogHero } from '../blog-hero';
 import { BlogHeroAuthor } from '../blog-hero-author';
+import { BlogHeroTitle } from '../blog-hero-title';
 import { BlogText } from '../blog-text';
-import { BlogHeroTitle } from '../blog-title';
 import { FaqList } from '../faq-list';
 import {
   blogPageLayoutArticleStyle,
