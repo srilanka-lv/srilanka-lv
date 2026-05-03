@@ -1,7 +1,7 @@
 import { defineQuery } from 'groq';
 
 export const blogPostBySlugQuery = defineQuery(`
-  *[_type == "blogPosts" && slug.current == $blogSlug][0]{
+  *[_type == "blogPosts" && slug.current == $slug][0]{
     _id,
     title,
     slug,
