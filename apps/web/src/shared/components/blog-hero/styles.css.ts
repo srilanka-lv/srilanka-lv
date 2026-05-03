@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
+import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 export const blogHeroStyle = style({
@@ -8,16 +9,28 @@ export const blogHeroStyle = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center',
-  paddingLeft: '4svw',
-  paddingRight: '4svw',
+  alignItems: 'flex-start',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  paddingLeft: vars.spacing[4],
+  paddingRight: vars.spacing[4],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
       paddingTop: '90px',
+      maxWidth: breakpoints.sm,
+      paddingLeft: 'initial',
+      paddingRight: 'initial',
+    },
+    [`screen and (min-width: ${breakpoints.lg})`]: {
+      maxWidth: breakpoints.md,
     },
     [`screen and (min-width: ${breakpoints.xl})`]: {
       paddingTop: '72px',
+      maxWidth: breakpoints.lg,
+    },
+    [`screen and (min-width: ${breakpoints.xxl})`]: {
+      maxWidth: breakpoints.xl,
     },
   },
 });

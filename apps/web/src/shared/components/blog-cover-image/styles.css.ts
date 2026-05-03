@@ -7,14 +7,19 @@ export const coverImageBackgroundVar = createVar();
 
 const onScrollAnimation = keyframes({
   from: { opacity: 1, transform: 'scale(1.0625)' },
-  to: { opacity: 0.5, transform: 'scale(1)' },
+  to: { opacity: 0.25, transform: 'scale(1)' },
+});
+
+export const coverImageStyle = style({
+  display: 'block',
+  gridColumn: 'span 2',
 });
 
 export const coverImageBackgroundOverflowStyle = style({
   position: 'absolute',
   inset: 0,
   width: '100svw',
-  height: '100svh',
+  height: '75svh',
   overflow: 'hidden',
   backgroundColor: vars.color.foreground,
 
@@ -73,5 +78,11 @@ export const coverImageEffectStyle = style({
 export const coverImageSpacerStyle = style({
   position: 'relative',
   display: 'block',
-  height: 'calc(100svh - 72px)',
+  height: 'calc(75svh - 72px)',
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      height: 'calc(100svh - 72px)',
+    },
+  },
 });

@@ -124,6 +124,7 @@ export const vars = createThemeContract({
       slow: null,
       normal: null,
       fast: null,
+      faster: null,
     },
   },
   zIndex: {

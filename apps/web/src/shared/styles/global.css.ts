@@ -24,27 +24,15 @@ globalStyle('body', {
   fontSmooth: 'antialiased',
 });
 
-globalStyle('a:link', {
-  color: vars.color.accent,
-  textDecoration: 'none',
-});
-
-globalStyle('a:visited', {
-  color: vars.color.accent,
+globalStyle('a:link, a:visited, a:hover, a:active', {
   textDecoration: 'none',
 });
 
 globalStyle('a:hover', {
-  color: vars.color.accent,
-  textDecoration: 'none',
+  color: vars.color.background,
 });
 
-globalStyle('a:active', {
-  color: vars.color.accent,
-  textDecoration: 'none',
-});
-
-globalStyle('a:focus-visible, button:focus-visible', {
+globalStyle('button:focus-visible', {
   outline: `${vars.focus.width} solid ${vars.focus.color}`,
   outlineOffset: vars.focus.offset,
   borderRadius: vars.border.radius.small,
