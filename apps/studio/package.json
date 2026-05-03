@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun --bun sanity dev",
-    "build": "bun --bun sanity build",
-    "deploy": "bun --bun sanity deploy",
+    "dev": "bun sanity dev",
+    "build": "bun sanity build",
+    "deploy": "bun sanity deploy",
     "schema:extract": "bun --bun sanity schema extract",
     "typegen": "bun --bun sanity schema extract && bun --bun sanity typegen generate"
   },
