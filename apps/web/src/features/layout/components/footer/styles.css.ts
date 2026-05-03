@@ -8,7 +8,7 @@ export const footerStyle = style({
   display: 'grid',
   gap: vars.spacing[12],
   justifyContent: 'center',
-  padding: `${vars.spacing[10]} ${vars.spacing[4]}`,
+  padding: `${vars.spacing[20]} ${vars.spacing[4]}`,
   color: vars.color.secondary,
   textWrap: 'balance',
 
@@ -29,7 +29,7 @@ export const footerStyle = style({
 
   '@media': {
     [`screen and (min-width: ${breakpoints.xs})`]: {
-      padding: `${vars.spacing[12]} ${vars.spacing[8]}`,
+      padding: `${vars.spacing[32]} ${vars.spacing[8]}`,
     },
     [`screen and (min-width: ${breakpoints.xl})`]: {
       gridTemplateColumns: '1fr 1fr 1fr',
