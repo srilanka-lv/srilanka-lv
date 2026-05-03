@@ -25,8 +25,8 @@ export const buttonStyles = recipe({
   variants: {
     variant: {
       primary: {
-        backgroundColor: vars.color.primary,
-        color: vars.color.primaryForeground,
+        backgroundColor: vars.color.accent,
+        color: vars.color.accentForeground,
         selectors: {
           '&:hover:not(:disabled)': {
             opacity: 0.9,

@@ -9,7 +9,7 @@ export const footerStyle = style({
   gap: vars.spacing[12],
   justifyContent: 'center',
   padding: `${vars.spacing[20]} ${vars.spacing[4]}`,
-  color: vars.color.secondary,
+  color: vars.color.background,
   textWrap: 'balance',
 
   selectors: {
@@ -18,7 +18,7 @@ export const footerStyle = style({
       justifySelf: 'center',
       position: 'absolute',
       content: '',
-      backgroundColor: vars.color.secondaryForeground,
+      backgroundColor: vars.color.foreground,
       height: '100%',
       width: '100svw',
       zIndex: vars.zIndex['-10'],
