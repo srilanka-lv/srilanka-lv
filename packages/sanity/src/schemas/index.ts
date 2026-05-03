@@ -5,6 +5,7 @@ import { faqs } from './documents/faqs';
 import { pages } from './documents/pages';
 import { tags } from './documents/tags';
 import { blockContent } from './objects/block-content';
+import { imageGallery } from './objects/image-gallery';
 import { openGraph } from './objects/open-graph';
 import { seo } from './objects/seo';
 
@@ -12,6 +13,7 @@ export const schemas: SchemaTypeDefinition[] = [
   blockContent,
   seo,
   openGraph,
+  imageGallery,
   tags,
   faqs,
   pages,

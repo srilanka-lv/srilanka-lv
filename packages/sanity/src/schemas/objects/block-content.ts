@@ -67,5 +67,6 @@ export const blockContent = defineType({
       ],
       validation: (rule) => rule.custom(imageDimensionsValidator({ width: 1920, height: 1080 })),
     }),
+    defineArrayMember({ type: 'imageGallery' }),
   ],
 });
