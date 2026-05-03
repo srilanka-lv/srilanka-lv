@@ -19,7 +19,7 @@ export const blogParagraphStyle = style({
 
   '@media': {
     [`screen and (min-width: ${breakpoints.lg})`]: {
-      fontSize: vars.font.size['2xl'],
+      fontSize: vars.font.size.xl,
     },
   },
 });
@@ -52,7 +52,7 @@ export const blogListStyle = style({
 
   '@media': {
     [`screen and (min-width: ${breakpoints.lg})`]: {
-      fontSize: vars.font.size['2xl'],
+      fontSize: vars.font.size.xl,
     },
   },
 });

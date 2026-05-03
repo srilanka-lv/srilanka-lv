@@ -33,7 +33,7 @@ export const inputStyles = recipe({
   base: {
     width: '100%',
     minWidth: 0,
-    backgroundColor: vars.color.primaryForeground,
+    backgroundColor: vars.color.background,
     border: `1px solid ${vars.color.secondary}`,
     borderRadius: vars.border.radius.medium,
     color: vars.color.foreground,
@@ -42,7 +42,7 @@ export const inputStyles = recipe({
     transition: `border-color ${vars.transition.duration.fast} ${vars.transition.easing.easeInOut}, box-shadow ${vars.transition.duration.fast} ${vars.transition.easing.easeInOut}`,
     selectors: {
       '&::placeholder': {
-        color: vars.color.secondaryForeground,
+        color: vars.color.foreground,
         opacity: 0.5,
       },
       '&:focus': {
@@ -100,7 +100,7 @@ export const inputStyles = recipe({
 export const helperTextStyle = style({
   fontSize: vars.font.size.xs,
   lineHeight: vars.font.lineHeight.normal,
-  color: vars.color.secondaryForeground,
+  color: vars.color.foreground,
 });
 
 export const errorTextStyle = style({

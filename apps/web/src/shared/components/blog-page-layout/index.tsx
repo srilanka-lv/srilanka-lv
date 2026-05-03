@@ -1,6 +1,6 @@
 import { blogPostBySlugQuery } from '@packages/sanity/queries/blog-post-by-slug-query';
+import type { BlockContent } from '@packages/sanity/sanity.types';
 import { notFound } from 'next/navigation';
-import { PortableText } from 'next-sanity';
 import type { FunctionComponent } from 'react';
 
 import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
@@ -9,8 +9,8 @@ import { DefaultSanityRepository } from '@/features/sanity/repositories/default-
 import { BlogCoverImage } from '../blog-cover-image';
 import { BlogHero } from '../blog-hero';
 import { BlogHeroAuthor } from '../blog-hero-author';
+import { BlogHeroTitle } from '../blog-hero-title';
 import { BlogText } from '../blog-text';
-import { BlogHeroTitle } from '../blog-title';
 import { FaqList } from '../faq-list';
 import {
   blogPageLayoutArticleStyle,
@@ -29,6 +29,18 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
   if (!post) {
     notFound();
   }
+
+  const items =
+    post.faqs
+      ?.filter(
+        (faq) =>
+          faq._id && faq.question != null && faq.question.trim() !== '' && faq.answer != null,
+      )
+      .map(({ _id, question, answer }) => ({
+        id: _id,
+        question: question as string,
+        answer: answer as BlockContent,
+      })) ?? [];
 
   return (
     <div className={blogPageLayoutStyle}>
@@ -51,15 +63,7 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
           </ul>
         )}
 
-        {post.faqs && post.faqs.length > 0 && (
-          <FaqList
-            items={post.faqs.map((faq) => ({
-              id: faq._id,
-              question: faq.question ?? '',
-              answer: faq.answer ? <PortableText value={faq.answer} /> : null,
-            }))}
-          />
-        )}
+        <FaqList items={items} />
       </aside>
     </div>
   );

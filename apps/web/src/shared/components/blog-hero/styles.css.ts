@@ -4,6 +4,7 @@ import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 export const blogHeroStyle = style({
+  color: 'whitesmoke', // works both in light and dark mode
   position: 'absolute',
   inset: 0,
   display: 'flex',
