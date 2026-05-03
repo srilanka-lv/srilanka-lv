@@ -118,6 +118,9 @@ export type BlockContent = Array<
       _type: "image";
       _key: string;
     }
+  | ({
+      _key: string;
+    } & ImageGallery)
 >;
 
 export type SanityImageCrop = {
@@ -179,6 +182,20 @@ export type Tags = {
       _key: string;
     } & FaqsReference
   >;
+};
+
+export type ImageGallery = {
+  _type: "imageGallery";
+  images?: Array<{
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    caption?: string;
+    _type: "image";
+    _key: string;
+  }>;
 };
 
 export type SanityImagePaletteSwatch = {
@@ -292,6 +309,7 @@ export type AllSanitySchemaTypes =
   | Pages
   | Faqs
   | Tags
+  | ImageGallery
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions

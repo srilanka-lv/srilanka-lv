@@ -32,5 +32,10 @@
   },
   "overrides": {
     "vite": "^7"
+  },
+  "dependencies": {
+    "@sanity/vision": "^5.23.0",
+    "next-sanity": "^12.4.0",
+    "sanity": "^5.23.0"
   }
 }

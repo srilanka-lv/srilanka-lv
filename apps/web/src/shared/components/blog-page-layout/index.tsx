@@ -55,13 +55,13 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
       </article>
 
       <aside className={blogPageLayoutAsideStyle}>
-        {post.tags && post.tags.length > 0 && (
+        {/* {post.tags && post.tags.length > 0 && (
           <ul>
             {post.tags.map((tag) => (
               <li key={tag._id}>{tag.title}</li>
             ))}
           </ul>
-        )}
+        )} */}
 
         <FaqList items={items} />
       </aside>

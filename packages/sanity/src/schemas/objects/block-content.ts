@@ -1,5 +1,7 @@
 import { defineArrayMember, defineType } from 'sanity';
 
+import { imageDimensionsValidator } from '../utils/validate-image-dimensions';
+
 export const blockContent = defineType({
   title: 'Block Content',
   name: 'blockContent',
@@ -60,8 +62,11 @@ export const blockContent = defineType({
           name: 'caption',
           type: 'string',
           title: 'Caption',
+          validation: (rule) => rule.required(),
         },
       ],
+      validation: (rule) => rule.custom(imageDimensionsValidator({ width: 1920, height: 1080 })),
     }),
+    defineArrayMember({ type: 'imageGallery' }),
   ],
 });
