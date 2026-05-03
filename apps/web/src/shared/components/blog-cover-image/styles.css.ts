@@ -6,8 +6,14 @@ import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 export const coverImageBackgroundVar = createVar();
 
 const onScrollAnimation = keyframes({
-  from: { opacity: 1, transform: 'scale(1.0625)' },
-  to: { opacity: 0.25, transform: 'scale(1)' },
+  from: {
+    opacity: 1,
+    transform: 'scale(1.0625)',
+  },
+  to: {
+    opacity: 0.25,
+    transform: 'scale(1)',
+  },
 });
 
 export const coverImageStyle = style({
@@ -20,8 +26,8 @@ export const coverImageBackgroundOverflowStyle = style({
   inset: 0,
   width: '100svw',
   height: '75svh',
-  overflow: 'hidden',
-  backgroundColor: vars.color.foreground,
+  overflow: 'clip',
+  backgroundColor: vars.color.background,
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
@@ -41,7 +47,13 @@ export const coverImageBackgroundWrapperStyle = style({
   width: '100%',
   height: '100%',
   display: 'block',
-  filter: 'blur(1.5px)',
+  filter: 'blur(0.25px)',
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      filter: 'blur(1.5px)',
+    },
+  },
 
   '@supports': {
     '(animation-timeline: scroll())': {

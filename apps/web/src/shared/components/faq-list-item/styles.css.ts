@@ -53,7 +53,7 @@ export const faqListAnswerStyles = styleVariants({
 
 export const faqListAnswerContainerStyle = style({
   display: 'block',
-  overflow: 'hidden',
+  overflow: 'clip',
   minHeight: 0,
 });
 
