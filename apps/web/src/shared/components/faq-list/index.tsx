@@ -1,34 +1,34 @@
-import type { ReactNode } from 'react';
+import clsx from 'clsx';
+import type { ComponentProps } from 'react';
 
-import { Heading } from '../heading';
-
-type FaqListItem = {
-  id: string;
-  question: string;
-  answer: ReactNode;
-};
+import { FaqListItem, type FaqListItemProps } from '../faq-list-item';
+import { faqListStyle } from './styles.css';
 
 type FaqListProps = {
-  items: FaqListItem[];
-};
+  className?: string;
+  questionClassName?: string;
+  questionTextClassName?: string;
+  answerClassName?: string;
+  items: FaqListItemProps[];
+} & ComponentProps<'div'>;
 
-export function FaqList({ items }: FaqListProps) {
+export function FaqList({
+  className,
+  questionClassName,
+  questionTextClassName,
+  answerClassName,
+  items,
+  ...props
+}: FaqListProps) {
   if (!items.length) {
     return null;
   }
 
   return (
-    <section>
-      {items.map((item) => (
-        <details key={item.id}>
-          <summary>
-            <Heading as="h3" variant="h3">
-              {item.question}
-            </Heading>
-          </summary>
-          {item.answer}
-        </details>
+    <div {...props} className={clsx(faqListStyle, className)}>
+      {items.map((props) => (
+        <FaqListItem key={props.id} {...props} />
       ))}
-    </section>
+    </div>
   );
 }
