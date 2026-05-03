@@ -6,4 +6,5 @@ export const transitionDuration = {
   slow: '600ms',
   normal: '400ms',
   fast: '200ms',
+  faster: '100ms',
 };
