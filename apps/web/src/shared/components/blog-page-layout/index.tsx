@@ -10,6 +10,7 @@ import { BlogCoverImage } from '../blog-cover-image';
 import { BlogHero } from '../blog-hero';
 import { BlogHeroAuthor } from '../blog-hero-author';
 import { BlogHeroTitle } from '../blog-hero-title';
+import { BlogPostJsonLd } from '../blog-post-json-ld';
 import { BlogText } from '../blog-text';
 import { FaqList } from '../faq-list';
 import {
@@ -44,6 +45,16 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
 
   return (
     <div className={blogPageLayoutStyle}>
+      <BlogPostJsonLd
+        slug={slug}
+        title={post.title ?? ''}
+        excerpt={post.excerpt ?? ''}
+        publishedAt={post.publishedAt}
+        coverImage={post.coverImage}
+        openGraph={post.openGraph}
+        body={post.body}
+      />
+
       <BlogCoverImage image={post.coverImage} />
 
       <article className={blogPageLayoutArticleStyle}>
