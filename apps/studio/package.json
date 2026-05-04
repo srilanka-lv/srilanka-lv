@@ -14,6 +14,7 @@
     "@sanity/vision": "^5.23.0",
     "@srilanka/sanity": "workspace:*",
     "sanity": "^5.23.0",
+    "sanity-plugin-media": "^4.2.0",
     "styled-components": "^6.4.1",
     "zod": "^4.4.2"
   }
