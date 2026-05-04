@@ -37,7 +37,8 @@ export const openGraph = defineType({
           validation: (rule) => rule.required(),
         },
       ],
-      validation: (rule) => rule.custom(imageDimensionsValidator({ width: 1200, height: 630 })),
+      validation: (rule) =>
+        rule.required().custom(imageDimensionsValidator({ width: 1200, height: 630 })),
     }),
   ],
 });

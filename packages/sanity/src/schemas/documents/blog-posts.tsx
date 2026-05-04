@@ -121,6 +121,7 @@ export const blogPosts = defineType({
       title: 'Open Graph',
       name: 'openGraph',
       type: 'openGraph',
+      validation: (rule) => rule.required(),
     }),
   ],
   orderings: [
