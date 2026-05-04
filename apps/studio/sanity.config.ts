@@ -2,7 +2,7 @@ import { visionTool } from '@sanity/vision';
 import { schemas } from '@srilanka/sanity';
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
-import { media } from 'sanity-plugin-media';
+import { media, mediaAssetSource } from 'sanity-plugin-media';
 
 export default defineConfig({
   projectId: process.env.SANITY_STUDIO_PROJECT_ID as string,
@@ -10,5 +10,13 @@ export default defineConfig({
   plugins: [structureTool(), visionTool(), media()],
   schema: {
     types: schemas,
+  },
+  form: {
+    image: {
+      assetSources: (prev) => prev.filter((source) => source === mediaAssetSource),
+    },
+    file: {
+      assetSources: (prev) => prev.filter((source) => source === mediaAssetSource),
+    },
   },
 });
