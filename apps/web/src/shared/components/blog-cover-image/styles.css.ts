@@ -47,13 +47,6 @@ export const coverImageBackgroundWrapperStyle = style({
   width: '100%',
   height: '100%',
   display: 'block',
-  filter: 'blur(0.25px)',
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      filter: 'blur(1.5px)',
-    },
-  },
 
   '@supports': {
     '(animation-timeline: scroll())': {
