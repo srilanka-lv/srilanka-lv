@@ -14,14 +14,36 @@ export const contentType = 'image/png';
 const sanityProvider = new DefaultSanityProvider();
 const sanityRepository = new DefaultSanityRepository(sanityProvider);
 
+let commeDataPromise: Promise<ArrayBuffer> | null = null;
+
+function getCommeData(): Promise<ArrayBuffer> {
+  if (!commeDataPromise) {
+    const port = process.env.PORT ?? '3000';
+    commeDataPromise = fetch(`http://localhost:${port}/fonts/Comme-SemiBold.ttf`).then((response) =>
+      response.arrayBuffer(),
+    );
+  }
+
+  return commeDataPromise;
+}
+
 type RouteProps = {
   params: Promise<{ slug: string }>;
 };
 
-const renderFallback = () => new ImageResponse(<BlogOgImageTemplateFallback />, size);
-
 export default async function OpengraphImage({ params }: RouteProps) {
   const { slug } = await params;
+
+  const fonts = [
+    {
+      name: 'Comme',
+      data: await getCommeData(),
+      weight: 600 as const,
+      style: 'normal' as const,
+    },
+  ];
+  const renderFallback = () =>
+    new ImageResponse(<BlogOgImageTemplateFallback />, { ...size, fonts });
 
   try {
     const post = await sanityRepository.query(blogPostBySlugQuery, { slug });
@@ -45,7 +67,7 @@ export default async function OpengraphImage({ params }: RouteProps) {
         coverImageUrl={coverImageUrl}
         coverImageAlt={post.coverImage.alt ?? ''}
       />,
-      size,
+      { ...size, fonts },
     );
   } catch {
     return renderFallback();
