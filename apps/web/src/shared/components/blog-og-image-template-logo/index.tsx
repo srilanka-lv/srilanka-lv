@@ -1,8 +1,12 @@
-type LogoProps = {
+import type { FunctionComponent } from 'react';
+
+type BlogOgImageTemplateLogoProps = {
   width: number;
 };
 
-export function Logo({ width }: LogoProps) {
+export const BlogOgImageTemplateLogo: FunctionComponent<BlogOgImageTemplateLogoProps> = ({
+  width,
+}) => {
   const aspectRatio = 576.83 / 109.46;
   const height = width / aspectRatio;
 
@@ -61,4 +65,4 @@ export function Logo({ width }: LogoProps) {
       />
     </svg>
   );
-}
+};

@@ -5,7 +5,7 @@ import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanit
 import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
 import { BlogOgImageTemplate } from '@/shared/components/blog-og-image-template';
-import { BrandedFallback } from '@/shared/components/blog-og-image-template/branded-fallback';
+import { BlogOgImageTemplateFallback } from '@/shared/components/blog-og-image-template-fallback';
 
 export const alt = 'Šrilanka.lv blog post';
 export const size = { width: 1200, height: 630 };
@@ -18,22 +18,25 @@ type RouteProps = {
   params: Promise<{ slug: string }>;
 };
 
+const renderFallback = () => new ImageResponse(<BlogOgImageTemplateFallback />, size);
+
 export default async function OpengraphImage({ params }: RouteProps) {
   const { slug } = await params;
 
   try {
     const post = await sanityRepository.query(blogPostBySlugQuery, { slug });
 
-    if (!post || !post.coverImage) {
-      return new ImageResponse(<BrandedFallback />, size);
+    if (!post?.coverImage) {
+      return renderFallback();
     }
 
     const coverImageUrl = urlForImage(post.coverImage)
       .width(1200)
       .height(630)
+      // biome-ignore lint/suspicious/noFocusedTests: This isn't a test - it's the Sanity image URL.
       .fit('crop')
       .auto('format')
-      .quality(85)
+      .quality(100)
       .url();
 
     return new ImageResponse(
@@ -45,6 +48,6 @@ export default async function OpengraphImage({ params }: RouteProps) {
       size,
     );
   } catch {
-    return new ImageResponse(<BrandedFallback />, size);
+    return renderFallback();
   }
 }

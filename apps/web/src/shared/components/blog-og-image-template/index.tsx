@@ -1,5 +1,7 @@
-import { CoverImageEffect } from './cover-image-effect';
-import { Logo } from './logo';
+import type { FunctionComponent } from 'react';
+
+import { BlogOgImageTemplateCoverImageEffect } from '../blog-og-image-template-cover-image-effect';
+import { BlogOgImageTemplateLogo } from '../blog-og-image-template-logo';
 
 type BlogOgImageTemplateProps = {
   title: string;
@@ -7,85 +9,87 @@ type BlogOgImageTemplateProps = {
   coverImageAlt: string;
 };
 
-export function BlogOgImageTemplate({
+export const BlogOgImageTemplate: FunctionComponent<BlogOgImageTemplateProps> = ({
   title,
   coverImageUrl,
   coverImageAlt,
-}: BlogOgImageTemplateProps) {
-  return (
+}) => (
+  <div
+    style={{
+      position: 'relative',
+      width: 1200,
+      height: 630,
+      display: 'flex',
+      backgroundColor: '#fff',
+    }}
+  >
+    {/* Layer 1: cover image */}
+    {/* biome-ignore lint/performance/noImgElement: img is what we want fr the blog og image template */}
+    <img
+      src={coverImageUrl}
+      alt={coverImageAlt}
+      width={1200}
+      height={630}
+      style={{
+        position: 'absolute',
+        inset: 0,
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        objectPosition: 'center',
+      }}
+    />
+
+    {/* Layer 2: dark gradient overlay for legibility.
+        Satori collapses empty positioned divs without explicit dimensions, so width/height are required. */}
     <div
       style={{
-        position: 'relative',
+        position: 'absolute',
+        top: 0,
+        left: 0,
         width: 1200,
         height: 630,
+        backgroundImage:
+          'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.125) 25%, rgba(0,0,0,0.125) 0%, rgba(0,0,0,0.50) 100%)',
+      }}
+    />
+
+    {/* Layer 3 + 4: white rip strips */}
+    <BlogOgImageTemplateCoverImageEffect variant="top" />
+    <BlogOgImageTemplateCoverImageEffect variant="bottom" />
+
+    {/* Layer 5: logo, top-left */}
+    <div
+      style={{
+        position: 'absolute',
+        top: 80,
+        left: 68,
         display: 'flex',
-        backgroundColor: '#fff',
       }}
     >
-      {/* Layer 1: cover image */}
-      <img
-        src={coverImageUrl}
-        alt={coverImageAlt}
-        width={1200}
-        height={630}
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
-      />
-
-      {/* Layer 2: dark gradient overlay for legibility */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background:
-            'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.15) 75%, rgba(0,0,0,0.45) 100%)',
-        }}
-      />
-
-      {/* Layer 3 + 4: white rip strips */}
-      <CoverImageEffect variant="top" />
-      <CoverImageEffect variant="bottom" />
-
-      {/* Layer 5: logo, top-left */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 48,
-          left: 48,
-          display: 'flex',
-        }}
-      >
-        <Logo width={200} />
-      </div>
-
-      {/* Layer 6: title, bottom-left.
-          display must be '-webkit-box' for Satori's line-clamp support. */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 48,
-          left: 48,
-          right: 48,
-          color: 'whitesmoke',
-          fontFamily: 'Comme',
-          fontWeight: 700,
-          fontSize: 68,
-          lineHeight: 1.1,
-          letterSpacing: '-0.02em',
-          display: '-webkit-box',
-          WebkitLineClamp: 3,
-          WebkitBoxOrient: 'vertical',
-          overflow: 'hidden',
-        }}
-      >
-        {title}
-      </div>
+      <BlogOgImageTemplateLogo width={400} />
     </div>
-  );
-}
+
+    {/* Layer 6: title, bottom-left. display must be '-webkit-box' for Satori's line-clamp support. */}
+    <div
+      style={{
+        position: 'absolute',
+        bottom: 80,
+        left: 56,
+        right: 56,
+        color: 'whitesmoke',
+        fontFamily: 'Comme',
+        fontWeight: 900,
+        fontSize: 100,
+        lineHeight: 1.25,
+        letterSpacing: '-0.02em',
+        display: '-webkit-box',
+        WebkitLineClamp: 3,
+        WebkitBoxOrient: 'vertical',
+        overflow: 'hidden',
+      }}
+    >
+      {title}
+    </div>
+  </div>
+);
