@@ -31,7 +31,13 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
         ? {
             images: [
               {
-                url: urlForImage(ogImage).width(1200).height(630).fit('crop').auto('format').url(),
+                url: urlForImage(ogImage)
+                  .width(1200)
+                  .height(630)
+                  .fit('crop')
+                  .auto('format')
+                  .quality(85)
+                  .url(),
                 width: 1200,
                 height: 630,
                 alt: ogImage.alt ?? '',
