@@ -6,7 +6,6 @@ import { DefaultSanityRepository } from '@/features/sanity/repositories/default-
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
 import { BlogOgImageTemplate } from '@/shared/components/blog-og-image-template';
 import { BrandedFallback } from '@/shared/components/blog-og-image-template/branded-fallback';
-import { commeBoldData } from '@/shared/fonts/comme/comme-bold-data';
 
 export const alt = 'Šrilanka.lv blog post';
 export const size = { width: 1200, height: 630 };
@@ -14,15 +13,6 @@ export const contentType = 'image/png';
 
 const sanityProvider = new DefaultSanityProvider();
 const sanityRepository = new DefaultSanityRepository(sanityProvider);
-
-const fonts = [
-  {
-    name: 'Comme',
-    data: commeBoldData,
-    weight: 700 as const,
-    style: 'normal' as const,
-  },
-];
 
 type RouteProps = {
   params: Promise<{ slug: string }>;
@@ -35,7 +25,7 @@ export default async function OpengraphImage({ params }: RouteProps) {
     const post = await sanityRepository.query(blogPostBySlugQuery, { slug });
 
     if (!post || !post.coverImage) {
-      return new ImageResponse(<BrandedFallback />, { ...size, fonts });
+      return new ImageResponse(<BrandedFallback />, size);
     }
 
     const coverImageUrl = urlForImage(post.coverImage)
@@ -52,9 +42,9 @@ export default async function OpengraphImage({ params }: RouteProps) {
         coverImageUrl={coverImageUrl}
         coverImageAlt={post.coverImage.alt ?? ''}
       />,
-      { ...size, fonts },
+      size,
     );
   } catch {
-    return new ImageResponse(<BrandedFallback />, { ...size, fonts });
+    return new ImageResponse(<BrandedFallback />, size);
   }
 }
