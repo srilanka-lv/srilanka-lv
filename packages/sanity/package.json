@@ -8,7 +8,7 @@
     "./types": "./src/sanity.types.ts"
   },
   "dependencies": {
-    "groq": "^5.23.0",
-    "sanity": "^5.23.0"
+    "groq": "^5.24.0",
+    "sanity": "^5.24.0"
   }
 }
