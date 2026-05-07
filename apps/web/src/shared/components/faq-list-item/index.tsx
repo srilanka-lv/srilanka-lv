@@ -6,6 +6,7 @@ import { type FunctionComponent, useCallback, useState } from 'react';
 
 import { PortableText } from '@/features/sanity/components/portable-text';
 
+import { IconHelpQuestionCircle } from '../icons/icon-help-question-circle';
 import { Text } from '../text';
 import {
   faqListAnswerContainerStyle,
@@ -44,6 +45,7 @@ export const FaqListItem: FunctionComponent<FaqListItemProps> = ({
         className={clsx(faqListQuestionStyle, questionClassName)}
         onClick={handleToggle}
       >
+        <IconHelpQuestionCircle size="medium" />
         <Text as="span" className={clsx(faqListQuestionTextStyle, questionTextClassName)}>
           {question}
         </Text>

@@ -2,35 +2,52 @@ import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
+const { spacing, font, transition } = vars;
+
 export const faqListItemStyle = style({
   display: 'flex',
   flexDirection: 'column',
 });
 
 export const faqListQuestionStyle = style({
+  display: 'flex',
+  alignItems: 'flex-start',
+  gap: spacing[4],
   outline: 'none',
   border: 'none',
   background: 'transparent',
   textAlign: 'left',
-  fontSize: vars.font.size.lg,
-  fontWeight: vars.font.weight.semibold,
+  fontSize: font.size.lg,
+  fontWeight: font.weight.semibold,
   margin: 0,
   padding: 0,
+  cursor: 'pointer',
+});
+
+globalStyle(`${faqListQuestionStyle} svg`, {
+  transitionTimingFunction: transition.easing.easeInOut,
+  transitionDuration: transition.duration.faster,
+  transitionProperty: 'transform',
+});
+
+globalStyle(`${faqListQuestionStyle}:hover svg, ${faqListQuestionStyle}:focus-visible svg`, {
+  transform: `rotate(-15deg) scale(1.2)`,
 });
 
 export const faqListQuestionTextStyle = style({
   display: 'block',
-  paddingTop: vars.spacing[1],
-  paddingBottom: vars.spacing[1],
-  fontSize: vars.font.size.lg,
-  fontWeight: vars.font.weight.semibold,
+  fontSize: font.size.xl,
+  fontWeight: font.weight.semibold,
 });
 
 const faqListAnswerStyle = style({
   display: 'grid',
-  fontSize: vars.font.size.base,
-  transitionTimingFunction: vars.transition.easing.easeInOut,
-  transitionDuration: vars.transition.duration.fast,
+  fontSize: font.size.base,
+  paddingTop: spacing[1],
+  paddingBottom: spacing[1],
+  paddingLeft: spacing[12],
+  transitionTimingFunction: transition.easing.easeInOut,
+  transitionDuration: transition.duration.fast,
   transitionProperty: 'grid-template-rows, opacity',
 });
 
