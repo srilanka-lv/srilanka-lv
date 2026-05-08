@@ -3,6 +3,8 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
+const { spacing, color } = vars;
+
 export const footerStyle = style({
   position: 'relative',
   display: 'grid',
@@ -70,4 +72,23 @@ export const coverImageEffectStyles = styleVariants({
       transform: 'rotate(180deg)',
     },
   ],
+});
+
+export const footerProfileStyle = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: spacing[4],
+  marginTop: spacing[8],
+});
+
+export const footerProfilePictureStyle = style({
+  width: spacing[20],
+  height: spacing[20],
+  borderRadius: '100px',
+});
+
+export const footerSignatureStyle = style({
+  fill: color.background,
+  width: spacing[40],
+  height: 'auto',
 });

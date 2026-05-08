@@ -21,24 +21,24 @@ export const navigationItems = [
     href: '/',
   },
   {
-    label: 'Produkti',
-    icon: <ShoppingBag size={20} />,
-    href: '/produkti',
-  },
-  {
     label: 'Blogs',
     icon: <Newspaper size={20} />,
     href: '/blogs',
   },
   {
-    label: 'Par mani',
-    icon: <SquareUserRound size={20} />,
-    href: '/par-mani',
+    label: 'Produkti',
+    icon: <ShoppingBag size={20} />,
+    href: '/produkti',
   },
   {
     label: 'Lidojumu cenas',
     icon: <TicketsPlane size={20} />,
     href: '/lidojumi-cenas',
+  },
+  {
+    label: 'Par mani',
+    icon: <SquareUserRound size={20} />,
+    href: '/par-mani',
   },
   {
     label: 'Kontakti',

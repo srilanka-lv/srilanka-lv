@@ -27,9 +27,9 @@
     "jotai": "^2.20.0",
     "lucide-react": "^1.14.0",
     "modern-normalize": "^3.0.1",
-    "next": "^16.2.5",
+    "next": "^16.2.6",
     "next-runtime-env": "^3.3.0",
-    "next-sanity": "^12.4.3",
+    "next-sanity": "^12.4.5",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-hook-form": "^7.75.0",
@@ -39,7 +39,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@types/node": "^25.6.0",
+    "@types/node": "^25.6.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vanilla-extract/next-plugin": "^2.5.2",
