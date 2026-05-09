@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Heading } from './index';
+import { Heading } from '.';
 
 const meta = {
   title: 'Components/Heading',

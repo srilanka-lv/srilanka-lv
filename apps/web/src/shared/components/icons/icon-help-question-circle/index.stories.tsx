@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { IconHelpQuestionCircle } from './index';
+import { IconHelpQuestionCircle } from '.';
 
 const meta = {
   title: 'Components/Icons/Help Question Circle',

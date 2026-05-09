@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { IconNavigationPageRight } from './index';
+import { IconNavigationPageRight } from '.';
 
 const meta = {
   title: 'Components/Icons/Navigation Page Right',

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Logo } from './index';
+import { Logo } from '.';
 
 const meta = {
   title: 'Components/Logo',

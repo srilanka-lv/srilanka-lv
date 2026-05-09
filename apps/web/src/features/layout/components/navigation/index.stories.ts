@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Navigation } from './index';
+import { Navigation } from '.';
 
 const meta = {
   title: 'Features/Layout/Navigation',
