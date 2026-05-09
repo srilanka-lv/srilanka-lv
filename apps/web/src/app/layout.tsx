@@ -1,7 +1,6 @@
 import 'modern-normalize/modern-normalize.css';
 
 import type { Metadata, Viewport } from 'next';
-import { PublicEnvScript, env } from 'next-runtime-env';
 import type { ReactNode } from 'react';
 
 import '@/shared/styles/global.css';
@@ -29,7 +28,9 @@ export const metadata: Metadata = {
     template: '%s | Šrilanka.lv',
     default: 'Šrilanka.lv',
   },
-  metadataBase: env('NEXT_PUBLIC_SELF_URL'),
+  metadataBase: process.env.NEXT_PUBLIC_SELF_URL
+    ? new URL(process.env.NEXT_PUBLIC_SELF_URL)
+    : undefined,
   alternates: {
     canonical: '/',
   },
@@ -46,7 +47,6 @@ export default function RootLayout({ children }: RootLayoutReturnType) {
   return (
     <html lang="lv" className={`${comme.variable} ${theme}`} translate="no">
       <head>
-        <PublicEnvScript />
         <ThemeScript />
       </head>
       <Layout>{children}</Layout>
