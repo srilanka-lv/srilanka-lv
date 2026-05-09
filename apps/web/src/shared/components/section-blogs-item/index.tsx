@@ -8,8 +8,10 @@ import { urlForImage } from '@/features/sanity/utils/url-for-image';
 import { Heading } from '../heading';
 import { IconNavigationPageRight } from '../icons/icon-navigation-page-right';
 import {
+  sectionBlogsItemHeadingStyle,
   sectionBlogsItemImageStyle,
   sectionBlogsItemLinkStyle,
+  sectionBlogsItemLinkTextStyle,
   sectionBlogsItemStyle,
 } from './styles.css';
 
@@ -25,10 +27,15 @@ export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
       urlForImage(coverImage).width(616).quality(100).fit('max').auto('format').url()
     : null;
   const alt = coverImage?.alt ?? '';
+  const itemSlug = slug?.current ? `/blogs/${slug?.current}` : null;
+
+  if (!itemSlug || !src) {
+    return null;
+  }
 
   return (
     <article className={sectionBlogsItemStyle}>
-      {src && (
+      <Link className={sectionBlogsItemLinkStyle} href={itemSlug}>
         <Image
           className={sectionBlogsItemImageStyle}
           src={src}
@@ -36,16 +43,14 @@ export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
           width={616}
           height={400}
         />
-      )}
-      <Heading as="h6" variant="h3">
-        {title}
-      </Heading>
-      {slug?.current && (
-        <Link className={sectionBlogsItemLinkStyle} href={`/blogs/${slug?.current}`}>
+        <Heading className={sectionBlogsItemHeadingStyle} as="h6" variant="h3">
+          {title}
+        </Heading>
+        <span className={sectionBlogsItemLinkTextStyle}>
           Lasīt vairāk
           <IconNavigationPageRight size="small" />
-        </Link>
-      )}
+        </span>
+      </Link>
     </article>
   );
 };
