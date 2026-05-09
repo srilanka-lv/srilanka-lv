@@ -1,3 +1,4 @@
+import { allBlogPostsQuery } from '@packages/sanity/queries/all-blog-posts-query';
 import { blogPostBySlugQuery } from '@packages/sanity/queries/blog-post-by-slug-query';
 import type { Metadata } from 'next';
 
@@ -9,9 +10,23 @@ import { BlogPageLayout } from '@/shared/components/blog-page-layout';
 const sanityProvider = new DefaultSanityProvider();
 const sanityRepository = new DefaultSanityRepository(sanityProvider);
 
+export const revalidate = 3600; // 1 hour
+
 type BlogPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export async function generateStaticParams() {
+  const posts = await sanityRepository.query(allBlogPostsQuery);
+
+  const slugs = posts
+    .filter(({ slug }) => slug?.current)
+    .map(({ slug }) => ({
+      slug: slug?.current,
+    }));
+
+  return slugs;
+}
 
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const { slug } = await params;

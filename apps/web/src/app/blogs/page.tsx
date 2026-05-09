@@ -7,6 +7,8 @@ import { DefaultSanityRepository } from '@/features/sanity/repositories/default-
 const provider = new DefaultSanityProvider();
 const repository = new DefaultSanityRepository(provider);
 
+export const revalidate = 3600; // 1 hour
+
 export default async function BlogsPage() {
   const posts = await repository.query(allBlogPostsQuery);
 
