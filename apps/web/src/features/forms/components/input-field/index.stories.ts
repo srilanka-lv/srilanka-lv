@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { InputField } from './index';
+import { InputField } from '.';
 
 const meta = {
   title: 'Forms/InputField',

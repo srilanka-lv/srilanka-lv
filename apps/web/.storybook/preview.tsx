@@ -1,10 +1,10 @@
 import type { Preview } from '@storybook/nextjs-vite';
 
-import { withBreakpointRepository } from './decorators/with-breakpoint-repository';
-import { withGlobalStyles } from './decorators/with-global-styles';
-import { withLayoutStore } from './decorators/with-layout-store';
-import { withNextFont } from './decorators/with-next-font';
-import { withVanillaExtractTheme } from './decorators/with-vanilla-extract-theme';
+import { WithBreakpointRepository } from './decorators/with-breakpoint-repository';
+import { WithGlobalStyles } from './decorators/with-global-styles';
+import { WithLayoutStore } from './decorators/with-layout-store';
+import { WithNextFont } from './decorators/with-next-font';
+import { WithVanillaExtractTheme } from './decorators/with-vanilla-extract-theme';
 
 const preview: Preview = {
   parameters: {
@@ -47,11 +47,11 @@ const preview: Preview = {
   },
   // Notice the order of the decorators. We sort them from the most specific to the least specific.
   decorators: [
-    withLayoutStore,
-    withBreakpointRepository,
-    withVanillaExtractTheme,
-    withGlobalStyles,
-    withNextFont,
+    WithLayoutStore,
+    WithBreakpointRepository,
+    WithVanillaExtractTheme,
+    WithGlobalStyles,
+    WithNextFont,
   ],
 };
 

@@ -1,5 +1,5 @@
 import type { Context, Provider } from 'react';
-import { createContext as createReactContext, useContext as useReactContext } from 'react';
+import { use as ReactUse, createContext as createReactContext } from 'react';
 
 interface CreateContextOptions<T> {
   hookName?: string | undefined;
@@ -29,7 +29,7 @@ export function createContext<T>(options: CreateContextOptions<T> = {}) {
   Context.displayName = name;
 
   function useContext() {
-    const context = useReactContext(Context);
+    const context = ReactUse(Context);
 
     if (!context) {
       const error = new Error(errorMessage ?? getErrorMessage(hookName, providerName));

@@ -206,7 +206,7 @@ Create `apps/web/src/shared/components/spinner/index.stories.ts`:
 ```ts
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Spinner } from './index';
+import { Spinner } from '.';
 
 const meta = {
   title: 'Components/Spinner',
@@ -519,7 +519,7 @@ Create `apps/web/src/features/forms/components/input-field/index.stories.ts`:
 ```ts
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { InputField } from './index';
+import { InputField } from '.';
 
 const meta = {
   title: 'Forms/InputField',
