@@ -4,7 +4,7 @@ import {
   type FunctionComponent,
   type PropsWithChildren,
   createContext,
-  useContext,
+  use,
   useState,
 } from 'react';
 
@@ -28,7 +28,7 @@ export const LayoutStoreProvider: FunctionComponent<PropsWithChildren> = ({ chil
 };
 
 export const useLayoutStore = () => {
-  const context = useContext(LayoutStoreContext);
+  const context = use(LayoutStoreContext);
 
   if (!context) {
     throw new Error('useLayoutStore must be used within a LayoutStoreProvider');
