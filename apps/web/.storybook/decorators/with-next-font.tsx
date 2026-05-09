@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import { comme } from '@/shared/fonts/fonts';
 
-export const withNextFont: Decorator = (Story) => {
+export const WithNextFont: Decorator = (Story) => {
   useEffect(() => {
     document.documentElement.classList.add(comme.variable);
     return () => {
