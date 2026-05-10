@@ -2,29 +2,31 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
+const { color, shadow, border } = vars;
+
 export const cardStyles = recipe({
   base: {},
   variants: {
     variant: {
       filled: {
-        backgroundColor: vars.color.primaryForeground,
+        backgroundColor: color.primaryForeground,
       },
       outline: {
         backgroundColor: 'transparent',
-        border: `1px solid ${vars.color.foreground}`,
+        border: `1px solid ${color.foreground}`,
         boxShadow: 'none',
       },
     },
     shadow: {
-      none: { boxShadow: vars.shadow.none },
-      small: { boxShadow: vars.shadow.small },
-      medium: { boxShadow: vars.shadow.medium },
-      large: { boxShadow: vars.shadow.large },
+      none: { boxShadow: shadow.none },
+      small: { boxShadow: shadow.small },
+      medium: { boxShadow: shadow.medium },
+      large: { boxShadow: shadow.large },
     },
     radius: {
-      small: { borderRadius: vars.border.radius.small },
-      medium: { borderRadius: vars.border.radius.medium },
-      large: { borderRadius: vars.border.radius.large },
+      small: { borderRadius: border.radius.small },
+      medium: { borderRadius: border.radius.medium },
+      large: { borderRadius: border.radius.large },
     },
   },
   defaultVariants: {

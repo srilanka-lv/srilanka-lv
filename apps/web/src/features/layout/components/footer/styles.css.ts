@@ -3,15 +3,15 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, color } = vars;
+const { spacing, color, zIndex, font } = vars;
 
 export const footerStyle = style({
   position: 'relative',
   display: 'grid',
-  gap: vars.spacing[12],
+  gap: spacing[12],
   justifyContent: 'center',
-  padding: `${vars.spacing[20]} ${vars.spacing[4]}`,
-  color: vars.color.background,
+  padding: `${spacing[20]} 0`,
+  color: color.background,
   textWrap: 'balance',
 
   selectors: {
@@ -20,34 +20,34 @@ export const footerStyle = style({
       justifySelf: 'center',
       position: 'absolute',
       content: '',
-      backgroundColor: vars.color.foreground,
+      backgroundColor: color.foreground,
       height: '100%',
       width: '100svw',
-      zIndex: vars.zIndex['-10'],
-      borderTop: `1px solid ${vars.color.primaryForeground}`,
-      borderBottom: `1px solid ${vars.color.primaryForeground}`,
+      zIndex: zIndex['-10'],
+      borderTop: `1px solid ${color.primaryForeground}`,
+      borderBottom: `1px solid ${color.primaryForeground}`,
     },
   },
 
   '@media': {
     [`screen and (min-width: ${breakpoints.xs})`]: {
-      padding: `${vars.spacing[32]} ${vars.spacing[8]}`,
+      padding: `${spacing[32]} ${spacing[8]}`,
     },
     [`screen and (min-width: ${breakpoints.xl})`]: {
       gridTemplateColumns: '1fr 1fr 1fr',
-      gap: vars.spacing[12],
-      padding: `${vars.spacing[48]} ${vars.spacing[0]}`,
+      gap: spacing[12],
+      padding: `${spacing[48]} ${spacing[0]}`,
     },
   },
 });
 
 export const footerHeadingStyle = style({
-  fontSize: vars.font.size['2xl'],
+  fontSize: font.size['2xl'],
   margin: 0,
 });
 
 export const footerTextStyle = style({
-  fontSize: vars.font.size.lg,
+  fontSize: font.size.lg,
 });
 
 export const footerListStyle = style({

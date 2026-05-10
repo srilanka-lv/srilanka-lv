@@ -3,7 +3,7 @@ import { style, styleVariants } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { color, zIndex } = vars;
+const { color, spacing, font, zIndex } = vars;
 
 export const sectionHeroStyle = style({
   position: 'relative',
@@ -14,7 +14,7 @@ export const sectionHeroStyle = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  gap: vars.spacing[2],
+  gap: spacing[2],
   alignItems: 'center',
   marginTop: '-76px',
   marginRight: '-50svw',
@@ -46,20 +46,20 @@ export const sectionHeroStyle = style({
 export const sectionHeroTitleStyle = style({
   position: 'relative',
   color: color.primaryForeground,
-  fontSize: vars.font.size['4xl'],
-  fontWeight: vars.font.weight.bold,
-  lineHeight: vars.font.lineHeight.tight,
+  fontSize: font.size['4xl'],
+  fontWeight: font.weight.bold,
+  lineHeight: font.lineHeight.tight,
   textAlign: 'center',
   textWrap: 'balance',
   width: '100%',
   maxWidth: breakpoints.md,
   margin: '0 auto',
-  padding: `0 ${vars.spacing[4]}`,
+  padding: `0 ${spacing[4]}`,
   zIndex: zIndex['10'],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
-      fontSize: vars.font.size['6xl'],
+      fontSize: font.size['6xl'],
     },
   },
 });
@@ -67,20 +67,20 @@ export const sectionHeroTitleStyle = style({
 export const sectionHeroSubtitleStyle = style({
   position: 'relative',
   color: color.primaryForeground,
-  fontSize: vars.font.size['2xl'],
-  fontWeight: vars.font.weight.light,
-  lineHeight: vars.font.lineHeight.normal,
+  fontSize: font.size['2xl'],
+  fontWeight: font.weight.light,
+  lineHeight: font.lineHeight.normal,
   textAlign: 'center',
   textWrap: 'balance',
   width: '100%',
   maxWidth: breakpoints.sm,
   margin: '0 auto',
-  padding: `0 ${vars.spacing[4]}`,
+  padding: `0 ${spacing[4]}`,
   zIndex: zIndex['10'],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
-      fontSize: vars.font.size['3xl'],
+      fontSize: font.size['3xl'],
     },
   },
 });

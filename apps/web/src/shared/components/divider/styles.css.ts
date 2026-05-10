@@ -2,6 +2,8 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
+const { spacing, color } = vars;
+
 export const dividerStyles = recipe({
   base: {
     border: 'none',
@@ -15,14 +17,14 @@ export const dividerStyles = recipe({
       dotted: { borderTopStyle: 'dotted' },
     },
     spacing: {
-      none: { marginBlock: vars.spacing[0] },
-      small: { marginBlock: vars.spacing[2] },
-      medium: { marginBlock: vars.spacing[4] },
-      large: { marginBlock: vars.spacing[8] },
+      none: { marginBlock: spacing[0] },
+      small: { marginBlock: spacing[2] },
+      medium: { marginBlock: spacing[4] },
+      large: { marginBlock: spacing[8] },
     },
     color: {
-      default: { borderTopColor: vars.color.foreground },
-      subtle: { borderTopColor: vars.color.secondary },
+      default: { borderTopColor: color.foreground },
+      subtle: { borderTopColor: color.secondary },
     },
   },
   defaultVariants: {

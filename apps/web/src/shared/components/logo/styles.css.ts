@@ -3,17 +3,19 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
+const { color, spacing } = vars;
+
 export const logoStyles = recipe({
   base: {
     display: 'block',
-    fill: vars.color.primary,
+    fill: color.primary,
     height: 'auto',
   },
   variants: {
     size: {
-      small: { width: vars.spacing[20] },
-      medium: { width: vars.spacing[32] },
-      large: { width: vars.spacing[56] },
+      small: { width: spacing[20] },
+      medium: { width: spacing[32] },
+      large: { width: spacing[56] },
     },
   },
   defaultVariants: {

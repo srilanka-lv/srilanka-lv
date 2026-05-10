@@ -2,35 +2,37 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
+const { font } = vars;
+
 export const headingStyles = recipe({
   base: {
-    lineHeight: vars.font.lineHeight.tight,
+    lineHeight: font.lineHeight.tight,
   },
   variants: {
     variant: {
       h1: {
-        fontSize: vars.font.size['5xl'],
-        fontWeight: vars.font.weight.extrabold,
+        fontSize: font.size['5xl'],
+        fontWeight: font.weight.extrabold,
       },
       h2: {
-        fontSize: vars.font.size['4xl'],
-        fontWeight: vars.font.weight.bold,
+        fontSize: font.size['4xl'],
+        fontWeight: font.weight.bold,
       },
       h3: {
-        fontSize: vars.font.size['3xl'],
-        fontWeight: vars.font.weight.bold,
+        fontSize: font.size['3xl'],
+        fontWeight: font.weight.bold,
       },
       h4: {
-        fontSize: vars.font.size['2xl'],
-        fontWeight: vars.font.weight.semibold,
+        fontSize: font.size['2xl'],
+        fontWeight: font.weight.semibold,
       },
       h5: {
-        fontSize: vars.font.size.xl,
-        fontWeight: vars.font.weight.semibold,
+        fontSize: font.size.xl,
+        fontWeight: font.weight.semibold,
       },
       h6: {
-        fontSize: vars.font.size.lg,
-        fontWeight: vars.font.weight.medium,
+        fontSize: font.size.lg,
+        fontWeight: font.weight.medium,
       },
       unstyled: {
         fontSize: 'inherit',

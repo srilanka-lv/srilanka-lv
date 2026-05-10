@@ -3,16 +3,18 @@ import { globalStyle, style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
+const { color, spacing, transition } = vars;
+
 export const blogPageLayoutStyle = style({
   display: 'grid',
   gridTemplateRows: 'calc(75svh - 90px) 1fr',
   gridTemplateColumns: 'minmax(0, 1fr)',
-  rowGap: vars.spacing[4],
+  rowGap: spacing[4],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.lg})`]: {
       gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 368px)',
-      columnGap: vars.spacing[16],
+      columnGap: spacing[16],
       rowGap: 'initial',
       gridTemplateRows: 'calc(100svh - 72px) 1fr',
     },
@@ -39,8 +41,8 @@ globalStyle(
     position: 'relative',
     color: '#ee5253',
     textDecoration: 'none',
-    transitionTimingFunction: vars.transition.easing.easeInOut,
-    transitionDuration: vars.transition.duration.faster,
+    transitionTimingFunction: transition.easing.easeInOut,
+    transitionDuration: transition.duration.faster,
     transitionProperty: 'color',
   },
 );
@@ -48,7 +50,7 @@ globalStyle(
 globalStyle(
   `${blogPageLayoutArticleStyle} a:hover, ${blogPageLayoutArticleStyle} a:focus-visible`,
   {
-    color: vars.color.background,
+    color: color.background,
   },
 );
 
@@ -60,13 +62,13 @@ globalStyle(
     display: 'block',
     content: '',
     backgroundColor: '#ee5253',
-    left: vars.spacing[-1],
+    left: spacing[-1],
     bottom: '0',
-    width: `calc(100% + ${vars.spacing[2]})`,
-    height: vars.spacing[1],
+    width: `calc(100% + ${spacing[2]})`,
+    height: spacing[1],
     zIndex: '1',
-    transitionTimingFunction: vars.transition.easing.easeInOut,
-    transitionDuration: vars.transition.duration.faster,
+    transitionTimingFunction: transition.easing.easeInOut,
+    transitionDuration: transition.duration.faster,
     transitionProperty: 'height',
   },
 );

@@ -2,10 +2,12 @@ import { style } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
+const { spacing, font, color } = vars;
+
 export const imageGalleryGridStyle = style({
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-  gap: vars.spacing[3],
+  gap: spacing[3],
   listStyle: 'none',
   padding: 0,
   margin: 0,
@@ -18,7 +20,7 @@ export const imageGalleryItemStyle = style({
 export const imageGalleryFigureStyle = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: vars.spacing[1],
+  gap: spacing[1],
   margin: 0,
 });
 
@@ -29,7 +31,7 @@ export const imageGalleryImageWrapperStyle = style({
 });
 
 export const imageGalleryCaptionStyle = style({
-  fontSize: vars.font.size.sm,
-  lineHeight: vars.font.lineHeight.snug,
-  color: vars.color.foreground,
+  fontSize: font.size.sm,
+  lineHeight: font.lineHeight.snug,
+  color: color.foreground,
 });

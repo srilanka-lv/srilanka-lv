@@ -3,27 +3,29 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
+const { color, font, spacing, zIndex, transition } = vars;
+
 export const blogHeroAuthorStyle = style({
   color: 'inherit',
-  fontSize: vars.font.size.xl,
-  textShadow: `0 ${vars.spacing[8]} ${vars.spacing[8]} rgba(0, 0, 0, 0.0625)`,
+  fontSize: font.size.xl,
+  textShadow: `0 ${spacing[8]} ${spacing[8]} rgba(0, 0, 0, 0.0625)`,
   padding: 0,
   margin: 0,
-  zIndex: vars.zIndex['10'],
+  zIndex: zIndex['10'],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.xs})`]: {
-      fontSize: vars.font.size.xl,
+      fontSize: font.size.xl,
     },
     [`screen and (min-width: ${breakpoints.md})`]: {
-      fontSize: vars.font.size['3xl'],
+      fontSize: font.size['3xl'],
     },
   },
 });
 
 export const blogHeroAuthorLinkStyle = style({
   position: 'relative',
-  fontWeight: vars.font.weight.bold,
+  fontWeight: font.weight.bold,
   fontSize: 'inherit',
 
   selectors: {
@@ -35,18 +37,18 @@ export const blogHeroAuthorLinkStyle = style({
       position: 'absolute',
       display: 'block',
       content: '',
-      backgroundColor: vars.color.background,
-      left: vars.spacing[-1],
-      bottom: vars.spacing[-1],
-      width: `calc(100% + ${vars.spacing[2]})`,
-      height: vars.spacing[1],
+      backgroundColor: color.background,
+      left: spacing[-1],
+      bottom: spacing[-1],
+      width: `calc(100% + ${spacing[2]})`,
+      height: spacing[1],
       zIndex: '1',
-      transitionTimingFunction: vars.transition.easing.easeInOut,
-      transitionDuration: vars.transition.duration.faster,
+      transitionTimingFunction: transition.easing.easeInOut,
+      transitionDuration: transition.duration.faster,
       transitionProperty: 'height, bottom',
     },
     '&:hover::after': {
-      height: `calc(100% + ${vars.spacing[2]})`,
+      height: `calc(100% + ${spacing[2]})`,
     },
   },
 });

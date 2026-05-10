@@ -2,15 +2,17 @@ import { style } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
+const { spacing, font, color } = vars;
+
 export const inlineImageFigureStyle = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: vars.spacing[1],
+  gap: spacing[1],
   margin: 0,
 });
 
 export const inlineImageCaptionStyle = style({
-  fontSize: vars.font.size.sm,
-  lineHeight: vars.font.lineHeight.snug,
-  color: vars.color.foreground,
+  fontSize: font.size.sm,
+  lineHeight: font.lineHeight.snug,
+  color: color.foreground,
 });
