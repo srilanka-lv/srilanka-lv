@@ -32,7 +32,7 @@ export const sectionBlogsItemLinkStyle = style({
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'space-between',
+  justifyContent: 'flex-end',
   height: '100%',
   transition: transition.duration.normal,
   transitionProperty: 'transform',
@@ -59,10 +59,12 @@ export const sectionBlogsItemLinkStyle = style({
 
 export const sectionBlogsItemHeadingStyle = style({
   color: color.background,
-  fontSize: font.size['3xl'],
+  fontSize: font.size['2xl'],
   fontWeight: font.weight.medium,
-  padding: `${spacing[40]} ${spacing[6]} 0 ${spacing[6]}`,
-  margin: 0,
+  lineHeight: font.lineHeight.snug,
+  textWrap: 'balance',
+  padding: `0 ${spacing[6]}`,
+  margin: `25svh 0 0 0`,
 
   '@media': {
     [`screen and (min-width: ${breakpoints.lg})`]: {
@@ -73,7 +75,7 @@ export const sectionBlogsItemHeadingStyle = style({
 });
 
 export const sectionBlogsItemLinkTextStyle = style({
-  padding: `${spacing[2]} ${spacing[6]} ${spacing[4]} ${spacing[6]}`,
+  padding: `${spacing[4]} ${spacing[6]} ${spacing[4]} ${spacing[6]}`,
   color: color.background,
-  fontSize: font.size.lg,
+  fontSize: font.size.base,
 });
