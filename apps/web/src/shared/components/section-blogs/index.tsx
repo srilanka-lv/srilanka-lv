@@ -20,12 +20,12 @@ export const SectionBlogs: FunctionComponent<SectionBlogsProps> = async ({
   className,
   ...props
 }) => {
-  const posts = await repository.query(allBlogPostsQuery);
+  const posts = await repository.query(allBlogPostsQuery, { limit: 6 });
 
   return (
     <>
       <Heading as="h2" variant="h2" className={sectionBlogsTitleStyle}>
-        Blogs
+        Mani piedzīvojumi Šrilankā
       </Heading>
       <section className={clsx(sectionBlogsStyle, className)} {...props}>
         {posts.map((post) => (

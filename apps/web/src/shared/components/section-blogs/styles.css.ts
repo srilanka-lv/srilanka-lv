@@ -6,7 +6,16 @@ import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 const { spacing } = vars;
 
 export const sectionBlogsTitleStyle = style({
+  textAlign: 'center',
+  fontSize: vars.font.size['2xl'],
+  lineHeight: vars.font.lineHeight.relaxed,
   marginBottom: 0,
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      fontSize: vars.font.size['4xl'],
+    },
+  },
 });
 
 export const sectionBlogsStyle = style({
@@ -16,7 +25,7 @@ export const sectionBlogsStyle = style({
   gridAutoColumns: '62.5svw',
   gridAutoFlow: 'column',
   gap: spacing[8],
-  padding: `${spacing[8]} ${spacing[4]}`,
+  padding: `${spacing[6]} ${spacing[4]} ${spacing[12]} ${spacing[4]}`,
   left: '50%',
   right: '50%',
   marginLeft: '-50svw',
