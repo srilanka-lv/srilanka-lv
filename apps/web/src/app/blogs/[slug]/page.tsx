@@ -17,7 +17,7 @@ type BlogPageProps = {
 };
 
 export async function generateStaticParams() {
-  const posts = await sanityRepository.query(allBlogPostsQuery);
+  const posts = await sanityRepository.query(allBlogPostsQuery, { limit: 6 });
 
   const slugs = posts
     .filter(({ slug }) => slug?.current)

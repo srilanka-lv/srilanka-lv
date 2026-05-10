@@ -9,5 +9,6 @@ export const formStyle = style({
 });
 
 export const textStyle = style({
+  fontSize: vars.font.size.lg,
   margin: 0,
 });

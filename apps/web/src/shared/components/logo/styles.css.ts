@@ -13,7 +13,7 @@ export const logoStyles = recipe({
     size: {
       small: { width: vars.spacing[20] },
       medium: { width: vars.spacing[32] },
-      large: { width: vars.spacing[48] },
+      large: { width: vars.spacing[56] },
     },
   },
   defaultVariants: {

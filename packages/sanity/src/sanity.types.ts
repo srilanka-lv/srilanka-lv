@@ -331,7 +331,7 @@ export type AllSanitySchemaTypes =
 
 // Source: ../../packages/sanity/src/queries/all-blog-posts-query.ts
 // Variable: allBlogPostsQuery
-// Query: *[_type == "blogPosts"]{ _id, title, slug, excerpt, coverImage, publishedAt }
+// Query: *[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }
 export type AllBlogPostsQueryResult = Array<{
   _id: string;
   title: string | null;
@@ -398,7 +398,7 @@ export type MetaDataBySlugQueryResult =
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "blogPosts"]{ _id, title, slug, excerpt, coverImage, publishedAt }': AllBlogPostsQueryResult;
+    '*[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': AllBlogPostsQueryResult;
     '\n  *[_type == "blogPosts" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': BlogPostBySlugQueryResult;
     "*[slug.current == $slug][0]{ seo, openGraph }": MetaDataBySlugQueryResult;
   }

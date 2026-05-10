@@ -47,7 +47,7 @@ export const footerHeadingStyle = style({
 });
 
 export const footerTextStyle = style({
-  fontSize: vars.font.size.base,
+  fontSize: vars.font.size.lg,
 });
 
 export const footerListStyle = style({

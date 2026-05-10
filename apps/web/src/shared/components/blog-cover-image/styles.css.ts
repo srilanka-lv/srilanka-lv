@@ -3,6 +3,8 @@ import { createVar, fallbackVar, keyframes, style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
+const { zIndex } = vars;
+
 export const coverImageBackgroundVar = createVar();
 
 const onScrollAnimation = keyframes({
@@ -19,6 +21,18 @@ const onScrollAnimation = keyframes({
 export const coverImageStyle = style({
   display: 'block',
   gridColumn: 'span 2',
+
+  selectors: {
+    '&::before': {
+      content: '',
+      position: 'absolute',
+      inset: 0,
+      width: '100%',
+      height: '100%',
+      background: `linear-gradient(0deg,rgba(0, 0, 0, .75) 0%, rgba(255, 255, 255, 0) 100%)`,
+      zIndex: zIndex['10'],
+    },
+  },
 });
 
 export const coverImageBackgroundOverflowStyle = style({

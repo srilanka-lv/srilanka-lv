@@ -6,7 +6,6 @@ import type { FunctionComponent } from 'react';
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
 
 import { Heading } from '../heading';
-import { IconNavigationPageRight } from '../icons/icon-navigation-page-right';
 import {
   sectionBlogsItemHeadingStyle,
   sectionBlogsItemImageStyle,
@@ -36,20 +35,11 @@ export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
   return (
     <article className={sectionBlogsItemStyle}>
       <Link className={sectionBlogsItemLinkStyle} href={itemSlug}>
-        <Image
-          className={sectionBlogsItemImageStyle}
-          src={src}
-          alt={alt}
-          width={616}
-          height={400}
-        />
+        <Image className={sectionBlogsItemImageStyle} src={src} alt={alt} fill />
         <Heading className={sectionBlogsItemHeadingStyle} as="h6" variant="h3">
           {title}
         </Heading>
-        <span className={sectionBlogsItemLinkTextStyle}>
-          Lasīt vairāk
-          <IconNavigationPageRight size="small" />
-        </span>
+        <span className={sectionBlogsItemLinkTextStyle}>Lasīt vairāk</span>
       </Link>
     </article>
   );

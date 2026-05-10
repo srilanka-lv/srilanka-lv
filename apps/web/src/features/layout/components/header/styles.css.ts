@@ -13,6 +13,7 @@ export const headerStyle = style({
   width: '100%',
   paddingTop: vars.spacing[4],
   paddingBottom: vars.spacing[4],
+  backgroundColor: vars.color.background,
 
   selectors: {
     '&::after': {
@@ -25,12 +26,6 @@ export const headerStyle = style({
       width: '100svw',
       backgroundColor: vars.color.background,
       zIndex: -1,
-
-      '@media': {
-        [`screen and (min-width: ${breakpoints.md})`]: {
-          display: 'none',
-        },
-      },
     },
   },
 
@@ -46,6 +41,25 @@ export const headerStyle = style({
       alignItems: 'baseline',
       flexDirection: 'row',
       gap: vars.spacing[0],
+    },
+  },
+});
+
+export const logoStyle = style({
+  width: vars.spacing[40],
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xs})`]: {
+      width: vars.spacing[56],
+    },
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      width: vars.spacing[48],
+    },
+    [`screen and (min-width: ${breakpoints.xl})`]: {
+      width: vars.spacing[40],
+    },
+    [`screen and (min-width: ${breakpoints.xxl})`]: {
+      width: vars.spacing[48],
     },
   },
 });

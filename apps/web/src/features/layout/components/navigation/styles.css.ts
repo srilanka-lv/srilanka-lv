@@ -158,7 +158,12 @@ export const navigationItemStyles = recipe({
 });
 
 export const navigationButtonStyle = style({
-  display: 'block',
+  width: vars.spacing[10],
+  height: vars.spacing[10],
+  padding: 0,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {

@@ -3,6 +3,8 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
+const { zIndex } = vars;
+
 export const blogHeroTitleStyle = style({
   color: 'inherit',
   mixBlendMode: 'luminosity',
@@ -12,6 +14,7 @@ export const blogHeroTitleStyle = style({
   textAlign: 'left',
   padding: 0,
   margin: 0,
+  zIndex: zIndex['10'],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.xs})`]: {

@@ -10,7 +10,7 @@ const repository = new DefaultSanityRepository(provider);
 export const revalidate = 3600; // 1 hour
 
 export default async function BlogsPage() {
-  const posts = await repository.query(allBlogPostsQuery);
+  const posts = await repository.query(allBlogPostsQuery, { limit: 6 });
 
   return posts.map((post) => (
     <Link key={post._id} href={`/blogs/${post.slug?.current}`}>
