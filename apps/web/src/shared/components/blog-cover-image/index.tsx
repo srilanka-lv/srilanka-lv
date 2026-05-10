@@ -53,7 +53,7 @@ export const BlogCoverImage: FunctionComponent<BlogCoverImageProps> = ({ image }
     src,
     alt,
     width: 2400,
-    height: 1600,
+    height: 1551,
     quality: 100,
   });
 

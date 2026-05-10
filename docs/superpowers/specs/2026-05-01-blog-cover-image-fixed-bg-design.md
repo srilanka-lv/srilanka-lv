@@ -64,9 +64,9 @@ export const BlogCoverImage: FunctionComponent<BlogCoverImageProps> = ({ src, al
     src,
     alt,
     width: 2400,
-    height: 1600,
+    height: 1551,
     sizes: '100vw',
-    quality: 90,
+    quality: 100,
   });
 
   preload(optimizedSrc, { as: 'image', imageSrcSet: srcSet, imageSizes: sizes });
