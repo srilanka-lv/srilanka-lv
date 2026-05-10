@@ -13,8 +13,8 @@ export const headerStyle = style({
   flexDirection: 'row',
   alignItems: 'center',
   width: '100%',
-  paddingTop: spacing[4],
-  paddingBottom: spacing[4],
+  paddingTop: spacing[5],
+  paddingBottom: spacing[2],
   backgroundColor: color.background,
 
   selectors: {
