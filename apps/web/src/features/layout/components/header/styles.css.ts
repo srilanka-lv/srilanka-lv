@@ -3,17 +3,19 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
+const { spacing, color, zIndex } = vars;
+
 export const headerStyle = style({
   position: 'relative',
-  zIndex: vars.zIndex['20'],
+  zIndex: zIndex['20'],
   display: 'flex',
   justifyContent: 'space-between',
   flexDirection: 'row',
   alignItems: 'center',
   width: '100%',
-  paddingTop: vars.spacing[4],
-  paddingBottom: vars.spacing[4],
-  backgroundColor: vars.color.background,
+  paddingTop: spacing[4],
+  paddingBottom: spacing[4],
+  backgroundColor: color.background,
 
   selectors: {
     '&::after': {
@@ -24,7 +26,7 @@ export const headerStyle = style({
       left: '50%',
       transform: 'translateX(-50%)',
       width: '100svw',
-      backgroundColor: vars.color.background,
+      backgroundColor: color.background,
       zIndex: -1,
     },
   },
@@ -33,33 +35,33 @@ export const headerStyle = style({
     [`screen and (min-width: ${breakpoints.md})`]: {
       minHeight: '90px',
       flexDirection: 'column',
-      gap: vars.spacing[4],
-      paddingTop: vars.spacing[6],
+      gap: spacing[4],
+      paddingTop: spacing[6],
       paddingBottom: 0,
     },
     [`screen and (min-width: ${breakpoints.xl})`]: {
       alignItems: 'baseline',
       flexDirection: 'row',
-      gap: vars.spacing[0],
+      gap: spacing[0],
     },
   },
 });
 
 export const logoStyle = style({
-  width: vars.spacing[40],
+  width: spacing[40],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.xs})`]: {
-      width: vars.spacing[56],
+      width: spacing[56],
     },
     [`screen and (min-width: ${breakpoints.md})`]: {
-      width: vars.spacing[48],
+      width: spacing[48],
     },
     [`screen and (min-width: ${breakpoints.xl})`]: {
-      width: vars.spacing[40],
+      width: spacing[40],
     },
     [`screen and (min-width: ${breakpoints.xxl})`]: {
-      width: vars.spacing[48],
+      width: spacing[48],
     },
   },
 });

@@ -3,14 +3,16 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
+const { spacing } = vars;
+
 export const layoutStyle = style({
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
   marginLeft: 'auto',
   marginRight: 'auto',
-  paddingLeft: vars.spacing[4],
-  paddingRight: vars.spacing[4],
+  paddingLeft: spacing[6],
+  paddingRight: spacing[6],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {

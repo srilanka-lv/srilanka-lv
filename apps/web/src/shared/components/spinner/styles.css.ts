@@ -3,6 +3,8 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
+const { color } = vars;
+
 const spin = keyframes({
   to: { transform: 'rotate(360deg)' },
 });
@@ -13,8 +15,8 @@ export const spinnerStyles = recipe({
     borderRadius: '50%',
     borderWidth: '2px',
     borderStyle: 'solid',
-    borderColor: vars.color.secondary,
-    borderTopColor: vars.color.foreground,
+    borderColor: color.secondary,
+    borderTopColor: color.foreground,
     animation: `${spin} 0.6s linear infinite`,
   },
   variants: {

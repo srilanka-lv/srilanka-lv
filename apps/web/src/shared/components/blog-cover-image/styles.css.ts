@@ -3,7 +3,7 @@ import { createVar, fallbackVar, keyframes, style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { zIndex } = vars;
+const { color, zIndex } = vars;
 
 export const coverImageBackgroundVar = createVar();
 
@@ -21,6 +21,15 @@ const onScrollAnimation = keyframes({
 export const coverImageStyle = style({
   display: 'block',
   gridColumn: 'span 2',
+});
+
+export const coverImageBackgroundOverflowStyle = style({
+  position: 'absolute',
+  inset: 0,
+  width: '100svw',
+  height: '75svh',
+  overflow: 'clip',
+  backgroundColor: color.background,
 
   selectors: {
     '&::before': {
@@ -33,15 +42,6 @@ export const coverImageStyle = style({
       zIndex: zIndex['10'],
     },
   },
-});
-
-export const coverImageBackgroundOverflowStyle = style({
-  position: 'absolute',
-  inset: 0,
-  width: '100svw',
-  height: '75svh',
-  overflow: 'clip',
-  backgroundColor: vars.color.background,
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
@@ -93,6 +93,7 @@ export const coverImageBackgroundStyle = style({
 
 export const coverImageEffectStyle = style({
   height: '72px',
+  zIndex: zIndex['20'],
 });
 
 export const coverImageSpacerStyle = style({

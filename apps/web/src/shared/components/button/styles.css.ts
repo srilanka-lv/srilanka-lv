@@ -2,14 +2,16 @@ import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
+const { spacing, border, font, color } = vars;
+
 export const buttonStyles = recipe({
   base: {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: vars.spacing[2],
-    borderRadius: vars.border.radius.medium,
-    fontWeight: vars.font.weight.medium,
+    gap: spacing[2],
+    borderRadius: border.radius.medium,
+    fontWeight: font.weight.medium,
     cursor: 'pointer',
     transition: 'background-color 150ms, border-color 150ms, color 150ms',
     border: '1px solid transparent',
@@ -25,8 +27,8 @@ export const buttonStyles = recipe({
   variants: {
     variant: {
       primary: {
-        backgroundColor: vars.color.accent,
-        color: vars.color.accentForeground,
+        backgroundColor: color.accent,
+        color: color.accentForeground,
         selectors: {
           '&:hover:not(:disabled)': {
             opacity: 0.9,
@@ -34,8 +36,8 @@ export const buttonStyles = recipe({
         },
       },
       secondary: {
-        backgroundColor: vars.color.secondary,
-        color: vars.color.secondaryForeground,
+        backgroundColor: color.secondary,
+        color: color.secondaryForeground,
         selectors: {
           '&:hover:not(:disabled)': {
             opacity: 0.8,
@@ -44,36 +46,36 @@ export const buttonStyles = recipe({
       },
       outline: {
         backgroundColor: 'transparent',
-        color: vars.color.foreground,
-        borderColor: vars.color.secondary,
+        color: color.foreground,
+        borderColor: color.secondary,
         selectors: {
           '&:hover:not(:disabled)': {
-            backgroundColor: vars.color.secondary,
+            backgroundColor: color.secondary,
           },
         },
       },
       ghost: {
         backgroundColor: 'transparent',
-        color: vars.color.foreground,
+        color: color.foreground,
         selectors: {
           '&:hover:not(:disabled)': {
-            backgroundColor: vars.color.secondary,
+            backgroundColor: color.secondary,
           },
         },
       },
     },
     size: {
       small: {
-        fontSize: vars.font.size.xs,
-        padding: `${vars.spacing[1]} ${vars.spacing[3]}`,
+        fontSize: font.size.xs,
+        padding: `${spacing[1]} ${spacing[3]}`,
       },
       medium: {
-        fontSize: vars.font.size.sm,
-        padding: `${vars.spacing[2]} ${vars.spacing[4]}`,
+        fontSize: font.size.sm,
+        padding: `${spacing[2]} ${spacing[4]}`,
       },
       large: {
-        fontSize: vars.font.size.base,
-        padding: `${vars.spacing[3]} ${vars.spacing[6]}`,
+        fontSize: font.size.base,
+        padding: `${spacing[3]} ${spacing[6]}`,
       },
     },
     iconOnly: {
@@ -85,15 +87,15 @@ export const buttonStyles = recipe({
   compoundVariants: [
     {
       variants: { iconOnly: true, size: 'small' },
-      style: { padding: vars.spacing[1] },
+      style: { padding: spacing[1] },
     },
     {
       variants: { iconOnly: true, size: 'medium' },
-      style: { padding: vars.spacing[2] },
+      style: { padding: spacing[2] },
     },
     {
       variants: { iconOnly: true, size: 'large' },
-      style: { padding: vars.spacing[3] },
+      style: { padding: spacing[3] },
     },
   ],
   defaultVariants: {

@@ -3,17 +3,17 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing } = vars;
+const { font, spacing } = vars;
 
 export const sectionBlogsTitleStyle = style({
   textAlign: 'center',
-  fontSize: vars.font.size['2xl'],
-  lineHeight: vars.font.lineHeight.relaxed,
+  fontSize: font.size['2xl'],
+  lineHeight: font.lineHeight.relaxed,
   marginBottom: 0,
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
-      fontSize: vars.font.size['4xl'],
+      fontSize: font.size['4xl'],
     },
   },
 });
