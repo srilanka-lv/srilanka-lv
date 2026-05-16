@@ -24,7 +24,7 @@ export const SectionBlogs: FunctionComponent<SectionBlogsProps> = async ({
 
   return (
     <>
-      <Heading as="h2" variant="h2" className={sectionBlogsTitleStyle}>
+      <Heading as="h3" variant="h2" className={sectionBlogsTitleStyle}>
         Mani piedzīvojumi Šrilankā
       </Heading>
       <section className={clsx(sectionBlogsStyle, className)} {...props}>
