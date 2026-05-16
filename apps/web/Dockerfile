@@ -4,7 +4,7 @@ FROM oven/bun:1 AS base
 FROM base AS deps
 WORKDIR /app
 
-COPY package.json bun.lock ./
+COPY package.json pnpm-workspace.yaml bun.lock ./
 COPY apps/web/package.json ./apps/web/
 COPY apps/studio/package.json ./apps/studio/
 COPY packages/sanity/package.json ./packages/sanity/
