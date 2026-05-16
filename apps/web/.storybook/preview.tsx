@@ -9,6 +9,7 @@ import { WithVanillaExtractTheme } from './decorators/with-vanilla-extract-theme
 const preview: Preview = {
   parameters: {
     layout: 'centered',
+
     viewport: {
       options: {
         xxs: { name: 'xxs (320px)', styles: { width: '320px', height: '100%' } },
@@ -20,11 +21,19 @@ const preview: Preview = {
         xxl: { name: 'xxl (1536px)', styles: { width: '1536px', height: '100%' } },
       },
     },
+
     controls: {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: 'todo',
     },
   },
   globalTypes: {
