@@ -1,4 +1,5 @@
 import { SectionBlogs } from '@/shared/components/section-blogs';
+import { SectionFaqs } from '@/shared/components/section-faqs';
 import { SectionHero } from '@/shared/components/section-hero';
 
 export default function HomePage() {
@@ -6,6 +7,7 @@ export default function HomePage() {
     <>
       <SectionHero />
       <SectionBlogs />
+      <SectionFaqs />
     </>
   );
 }

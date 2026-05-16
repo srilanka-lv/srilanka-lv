@@ -69,7 +69,8 @@ export const sectionBlogsItemHeadingStyle = style({
   '@media': {
     [`screen and (min-width: ${breakpoints.lg})`]: {
       fontSize: font.size['3xl'],
-      paddingTop: spacing[56],
+      marginTop: spacing[8],
+      paddingTop: spacing[8],
     },
   },
 });

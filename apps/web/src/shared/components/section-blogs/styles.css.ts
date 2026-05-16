@@ -14,6 +14,7 @@ export const sectionBlogsTitleStyle = style({
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
       fontSize: font.size['4xl'],
+      textAlign: 'center',
     },
   },
 });
