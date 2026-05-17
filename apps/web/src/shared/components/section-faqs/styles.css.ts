@@ -8,34 +8,45 @@ const { spacing, font, border, color, focus } = vars;
 export const sectionFaqsStyle = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: spacing[2],
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xxl})`]: {
+      position: 'relative',
+      width: '100svw',
+      left: '50%',
+      right: '50%',
+      marginLeft: '-50svw',
+      marginRight: '-50svw',
+      paddingLeft: spacing[24],
+      paddingRight: spacing[24],
+    },
+  },
 });
 
 export const sectionFaqsTitleStyle = style({
   fontSize: font.size['2xl'],
   lineHeight: font.lineHeight.relaxed,
-  marginTop: spacing[8],
-  marginBottom: spacing[8],
+  textAlign: 'center',
+  marginTop: spacing[12],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
       fontSize: font.size['4xl'],
-      textAlign: 'center',
     },
   },
 });
 
 export const sectionFaqsContentStyle = style({
   display: 'grid',
-  gridTemplateRows: 'repeat(8, 1fr)',
+  gridTemplateRows: 'repeat(2, 1fr)',
   gridTemplateColumns: '1fr',
   gap: spacing[6],
 
   '@media': {
-    [`screen and (min-width: ${breakpoints.xs})`]: {
+    [`screen and (min-width: ${breakpoints.sm})`]: {
       gridTemplateColumns: '1fr 1fr',
     },
-    [`screen and (min-width: ${breakpoints.lg})`]: {
+    [`screen and (min-width: ${breakpoints.xl})`]: {
       gridTemplateColumns: '1fr 1fr 1fr 1fr',
     },
   },
@@ -46,11 +57,11 @@ export const sectionFaqsItemStyle = style({
   flexDirection: 'column',
   placeItems: 'center',
   placeContent: 'center',
-  padding: spacing[6],
+  padding: `${spacing[10]} ${spacing[6]} ${spacing[6]} ${spacing[6]}`,
   gap: spacing[2],
   borderRadius: border.radius.large,
   color: color.primary,
-  backgroundColor: `color-mix(in oklch, ${color.accent} 12.5%, transparent)`,
+  backgroundColor: `color-mix(in oklch, ${color.accent} 6.25%, transparent)`,
 });
 
 export const sectionFaqsItemTitleStyle = style({
@@ -58,20 +69,39 @@ export const sectionFaqsItemTitleStyle = style({
   fontWeight: font.weight.semibold,
   textAlign: 'center',
   textWrap: 'balance',
+  marginBottom: spacing[2],
 });
 
 export const sectionFaqsItemLinkStyle = style({
+  display: 'block',
+  marginTop: 'auto',
+  padding: `${spacing[1]} ${spacing[2]}`,
+  textDecoration: 'none',
+  whiteSpace: 'nowrap',
+
   selectors: {
     '&:link, &:visited, &:hover, &:active': {
       fontWeight: font.weight.semibold,
       color: color.accent,
     },
     '&:focus-visible': {
-      outlineOffset: spacing[2],
+      outlineOffset: spacing[1],
       outlineStyle: 'solid',
       outlineWidth: focus.width,
       outlineColor: focus.color,
       borderRadius: border.radius.small,
+    },
+  },
+});
+
+export const sectionFaqsItemAnswerStyle = style({
+  fontSize: font.size.base,
+  textAlign: 'center',
+  textWrap: 'balance',
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xxl})`]: {
+      marginBottom: spacing[4],
     },
   },
 });

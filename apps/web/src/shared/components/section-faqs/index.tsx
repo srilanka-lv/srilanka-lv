@@ -13,6 +13,7 @@ import { IconTakingPicturesMan } from '../icons/icon-taking-pictures-man';
 import { IconWalkingSymbol } from '../icons/icon-walking-symbol';
 import {
   sectionFaqsContentStyle,
+  sectionFaqsItemAnswerStyle,
   sectionFaqsItemLinkStyle,
   sectionFaqsItemStyle,
   sectionFaqsItemTitleStyle,
@@ -31,65 +32,88 @@ export const SectionFaqs: FunctionComponent<SectionFaqsProps> = ({ className, ..
     </Heading>
     <div className={sectionFaqsContentStyle}>
       <span className={sectionFaqsItemStyle}>
-        <IconCalendarDate size="medium" />
+        <IconCalendarDate size="large" />
         <span className={sectionFaqsItemTitleStyle}>Kad doties atvaļinājumā?</span>
-        <span>Answer</span>
+        <span className={sectionFaqsItemAnswerStyle}>
+          Labākais laiks, lai apmeklētu Šrilanku, ir no novembra līdz aprīlim (Šrilankas dienvidos)
+          vai no maija līdz augustam (Šrilankas rietumos).
+        </span>
         <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
           Vairāk informācijas →
         </Link>
       </span>
       <span className={sectionFaqsItemStyle}>
-        <IconCalendarGrid size="medium" />
+        <IconCalendarGrid size="large" />
         <span className={sectionFaqsItemTitleStyle}>Cik ilgi man jāpaliek?</span>
-        <span>Answer</span>
+        <span className={sectionFaqsItemAnswerStyle}>
+          Šrilankas spilgtākos apskates objektus var apskatīt 14 līdz 21 dienā.
+        </span>
         <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
           Vairāk informācijas →
         </Link>
       </span>
       <span className={sectionFaqsItemStyle}>
-        <IconMoneyWallet size="medium" />
+        <IconMoneyWallet size="large" />
         <span className={sectionFaqsItemTitleStyle}>Dienas budžets</span>
-        <span>Answer</span>
+        <span className={sectionFaqsItemAnswerStyle}>
+          Augstākas klases braucienam dienā būs nepieciešami aptuveni 30 eiro. Ja ceļojat ar
+          ierobežotu budžetu, Šrilanku var apskatīt par aptuveni 10 līdz 20 eiro dienā.
+        </span>
         <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
           Vairāk informācijas →
         </Link>
       </span>
       <span className={sectionFaqsItemStyle}>
-        <IconMovingWalkwayLuggage size="medium" />
+        <IconMovingWalkwayLuggage size="large" />
         <span className={sectionFaqsItemTitleStyle}>Nokļūšana tur</span>
-        <span>Answer</span>
+        <span className={sectionFaqsItemAnswerStyle}>
+          Esmu izveidojis rīku, kas pārbauda lētākos lidojumus no Rīgas uz Kolombo!
+        </span>
         <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
           Vairāk informācijas →
         </Link>
       </span>
       <span className={sectionFaqsItemStyle}>
-        <IconContentWrite size="medium" />
+        <IconContentWrite size="large" />
         <span className={sectionFaqsItemTitleStyle}>Vīzas iegūšana</span>
-        <span>Answer</span>
+        <span className={sectionFaqsItemAnswerStyle}>
+          Šrilankas vīzu iegūt ir ļoti vienkārši. Tūrisma vīza dod tiesības uzturēties valstī 30
+          dienas, un to var pagarināt līdz 9 mēnešiem!
+        </span>
         <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
           Vairāk informācijas →
         </Link>
       </span>
       <span className={sectionFaqsItemStyle}>
-        <IconWalkingSymbol size="medium" />
+        <IconWalkingSymbol size="large" />
         <span className={sectionFaqsItemTitleStyle}>Pārvietošanās</span>
-        <span>Answer</span>
+        <span className={sectionFaqsItemAnswerStyle}>
+          Šrilankā ir ļoti viegli pārvietoties. Tuk-tuki, motorolleru noma, taksometri ar PickMe
+          lietotni un, protams, sabiedriskais transports (un skaisti vilcienu braucieni). Ceļošana
+          pa Šrilanku ir piedzīvojums!
+        </span>
         <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
           Vairāk informācijas →
         </Link>
       </span>
       <span className={sectionFaqsItemStyle}>
-        <IconHomeChimney size="medium" />
+        <IconHomeChimney size="large" />
         <span className={sectionFaqsItemTitleStyle}>Kur apmesties</span>
-        <span>Answer</span>
+        <span className={sectionFaqsItemAnswerStyle}>
+          Esmu apmeklējis dažas no skaistākajām (un nezināmākajām) vietām Šrilankas dienvidos. Un es
+          labprāt ar tām padalītos ar jums.
+        </span>
         <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
           Vairāk informācijas →
         </Link>
       </span>
       <span className={sectionFaqsItemStyle}>
-        <IconTakingPicturesMan size="medium" />
+        <IconTakingPicturesMan size="large" />
         <span className={sectionFaqsItemTitleStyle}>Ko darīt</span>
-        <span>Answer</span>
+        <span className={sectionFaqsItemAnswerStyle}>
+          Sērfošana, pārgājieni, sauļošanās, ielu ēdienu baudīšana. Šrilankā ir tik daudz jautru
+          lietu, ko darīt. Sekojiet man, un kopā pavadīsim jautru ceļojumu.
+        </span>
         <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
           Vairāk informācijas →
         </Link>
