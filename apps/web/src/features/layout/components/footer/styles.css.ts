@@ -11,8 +11,9 @@ export const footerStyle = style({
   gap: spacing[12],
   justifyContent: 'center',
   padding: `${spacing[20]} 0`,
-  color: color.background,
   textWrap: 'balance',
+  color: color.primary,
+  backgroundColor: 'transparent',
 
   selectors: {
     '&::before': {
@@ -20,7 +21,7 @@ export const footerStyle = style({
       justifySelf: 'center',
       position: 'absolute',
       content: '',
-      backgroundColor: color.foreground,
+      backgroundColor: `color-mix(in oklch, ${color.accent} 6.25%, transparent)`,
       height: '100%',
       width: '100svw',
       zIndex: zIndex['-10'],
@@ -67,8 +68,8 @@ export const coverImageEffectStyles = styleVariants({
   bottom: [
     coverImageEffectStyle,
     {
-      fill: 'white',
-      bottom: 0,
+      fill: color.background,
+      bottom: `-1px`,
       transform: 'rotate(180deg)',
     },
   ],
@@ -88,7 +89,7 @@ export const footerProfilePictureStyle = style({
 });
 
 export const footerSignatureStyle = style({
-  fill: color.background,
+  fill: color.foreground,
   width: spacing[40],
   height: 'auto',
 });
