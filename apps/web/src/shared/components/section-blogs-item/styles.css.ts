@@ -72,10 +72,14 @@ export const sectionBlogsItemHeadingStyle = style({
       marginTop: spacing[8],
       paddingTop: spacing[8],
     },
+    [`screen and (min-width: ${breakpoints.xxl})`]: {
+      marginTop: spacing[32],
+    },
   },
 });
 
 export const sectionBlogsItemLinkTextStyle = style({
+  whiteSpace: 'nowrap',
   padding: `${spacing[4]} ${spacing[6]} ${spacing[4]} ${spacing[6]}`,
   color: color.background,
   fontSize: font.size.base,

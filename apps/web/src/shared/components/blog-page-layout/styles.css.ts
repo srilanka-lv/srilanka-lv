@@ -26,10 +26,12 @@ export const blogPageLayoutStyle = style({
 
 export const blogPageLayoutArticleStyle = style({
   gridColumn: 'span 2',
+  paddingTop: spacing[6],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.xl})`]: {
       gridColumn: 'initial',
+      paddingTop: 'initial',
     },
   },
 });

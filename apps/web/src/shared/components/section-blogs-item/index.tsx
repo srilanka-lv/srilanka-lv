@@ -39,7 +39,7 @@ export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
         <Heading className={sectionBlogsItemHeadingStyle} as="span" variant="h3">
           {title}
         </Heading>
-        <span className={sectionBlogsItemLinkTextStyle}>Lasīt vairāk</span>
+        <span className={sectionBlogsItemLinkTextStyle}>Lasīt vairāk →</span>
       </Link>
     </article>
   );
