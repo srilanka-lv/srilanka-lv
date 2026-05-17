@@ -17,8 +17,8 @@ export const sectionFaqsStyle = style({
       right: '50%',
       marginLeft: '-50svw',
       marginRight: '-50svw',
-      paddingLeft: spacing[24],
-      paddingRight: spacing[24],
+      paddingLeft: spacing[40],
+      paddingRight: spacing[40],
     },
   },
 });

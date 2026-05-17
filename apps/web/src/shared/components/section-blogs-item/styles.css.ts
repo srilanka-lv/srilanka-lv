@@ -51,14 +51,15 @@ export const sectionBlogsItemLinkStyle = style({
       inset: 0,
       width: '100%',
       height: '100%',
-      background: `linear-gradient(0deg,rgba(0, 0, 0, .75) 0%, rgba(255, 255, 255, 0) 100%)`,
+      background: `linear-gradient(#fff0 0%, #00000050 100%)`,
       zIndex: zIndex['-10'],
     },
   },
 });
 
 export const sectionBlogsItemHeadingStyle = style({
-  color: color.background,
+  color: 'whitesmoke',
+  mixBlendMode: 'luminosity',
   fontSize: font.size['2xl'],
   fontWeight: font.weight.medium,
   lineHeight: font.lineHeight.snug,
@@ -79,8 +80,9 @@ export const sectionBlogsItemHeadingStyle = style({
 });
 
 export const sectionBlogsItemLinkTextStyle = style({
+  color: 'whitesmoke',
+  fontSize: font.size.base,
+  mixBlendMode: 'luminosity',
   whiteSpace: 'nowrap',
   padding: `${spacing[4]} ${spacing[6]} ${spacing[4]} ${spacing[6]}`,
-  color: color.background,
-  fontSize: font.size.base,
 });

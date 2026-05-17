@@ -25,7 +25,6 @@ export const subFooterStyle = style({
       height: '100%',
       width: '100svw',
       zIndex: zIndex['-10'],
-      backgroundColor: 'white',
       borderTop: `1px solid ${color.primaryForeground}`,
       borderBottom: `1px solid ${color.primaryForeground}`,
     },
