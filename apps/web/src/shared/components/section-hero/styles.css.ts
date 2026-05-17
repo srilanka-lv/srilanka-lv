@@ -16,7 +16,7 @@ export const sectionHeroStyle = style({
   justifyContent: 'center',
   gap: spacing[2],
   alignItems: 'center',
-  marginTop: '-76px',
+  marginTop: '-90px',
   marginRight: '-50svw',
   marginBottom: 0,
   marginLeft: '-50svw',
@@ -88,13 +88,13 @@ export const sectionHeroSubtitleStyle = style({
 export const sectionHeroImageStyle = style({
   opacity: 1,
   objectFit: 'cover',
-  objectPosition: 'center bottom',
+  objectPosition: 'center center',
 });
 
 export const sectionHeroCoverImageEffectStyles = styleVariants({
   top: [
     {
-      top: '76px',
+      top: '90px',
     },
   ],
   bottom: [

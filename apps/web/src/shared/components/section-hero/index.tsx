@@ -1,6 +1,7 @@
 import clsx from 'clsx';
-import Image from 'next/image';
+import { getImageProps } from 'next/image';
 import type { ComponentProps, FunctionComponent } from 'react';
+import { preload } from 'react-dom';
 
 import { CoverImageEffect } from '../cover-image-effect';
 import {
@@ -15,21 +16,54 @@ type SectionHeroProps = {
   className?: string;
 } & ComponentProps<'section'>;
 
-export const SectionHero: FunctionComponent<SectionHeroProps> = ({ className, ...props }) => (
-  <section className={clsx(sectionHeroStyle, className)} {...props}>
-    <h1 className={sectionHeroTitleStyle}>Tavs ceļojums uz Šrilanku sākas šeit</h1>
-    <h2 className={sectionHeroSubtitleStyle}>
-      No personalizēta plāna līdz kopīgiem piedzīvojumiem viss vienuviet latviešiem.
-    </h2>
-    <CoverImageEffect className={sectionHeroCoverImageEffectStyles.top} variant="top" />
-    <Image
-      className={sectionHeroImageStyle}
-      src="/images/srilanka-lv_hero-image.webp"
-      alt=""
-      quality={100}
-      fill
-      priority
-    />
-    <CoverImageEffect className={sectionHeroCoverImageEffectStyles.bottom} variant="bottom" />
-  </section>
-);
+export const SectionHero: FunctionComponent<SectionHeroProps> = ({ className, ...props }) => {
+  const common = {
+    alt: 'Tavs ceļojums uz Šrilanku sākas šeit',
+    sizes: '100vw',
+    fill: true,
+    priority: true,
+    quality: 100,
+  };
+
+  const {
+    props: { srcSet: desktop, src: optimizedSrcDesktop },
+  } = getImageProps({
+    ...common,
+    src: '/images/srilanka-lv_hero-image_desktop.webp',
+  });
+
+  const {
+    props: { srcSet: mobile, src: optimizedSrcMobile, ...rest },
+  } = getImageProps({
+    ...common,
+    src: '/images/srilanka-lv_hero-image_mobile.webp',
+  });
+
+  preload(optimizedSrcDesktop, {
+    as: 'image',
+    imageSrcSet: desktop,
+    fetchPriority: 'high',
+  });
+
+  preload(optimizedSrcMobile, {
+    as: 'image',
+    imageSrcSet: mobile,
+    fetchPriority: 'high',
+  });
+
+  return (
+    <section className={clsx(sectionHeroStyle, className)} {...props}>
+      <h1 className={sectionHeroTitleStyle}>Tavs ceļojums uz Šrilanku sākas šeit</h1>
+      <h2 className={sectionHeroSubtitleStyle}>
+        No personalizēta plāna līdz kopīgiem piedzīvojumiem viss vienuviet latviešiem.
+      </h2>
+      <CoverImageEffect className={sectionHeroCoverImageEffectStyles.top} variant="top" />
+      <picture>
+        <source media="(max-width: 1279px)" srcSet={mobile} />
+        <source media="(min-width: 1280px)" srcSet={desktop} />
+        <img {...rest} alt={common.alt} className={sectionHeroImageStyle} />
+      </picture>
+      <CoverImageEffect className={sectionHeroCoverImageEffectStyles.bottom} variant="bottom" />
+    </section>
+  );
+};
