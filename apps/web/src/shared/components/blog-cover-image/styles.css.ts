@@ -1,22 +1,11 @@
-import { createVar, fallbackVar, keyframes, style } from '@vanilla-extract/css';
+import { createVar, fallbackVar, style } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { color, zIndex } = vars;
+const { color, zIndex, spacing } = vars;
 
 export const coverImageBackgroundVar = createVar();
-
-const onScrollAnimation = keyframes({
-  from: {
-    opacity: 1,
-    transform: 'scale(1.0625)',
-  },
-  to: {
-    opacity: 0.25,
-    transform: 'scale(1)',
-  },
-});
 
 export const coverImageStyle = style({
   display: 'block',
@@ -61,17 +50,6 @@ export const coverImageBackgroundWrapperStyle = style({
   width: '100%',
   height: '100%',
   display: 'block',
-
-  '@supports': {
-    '(animation-timeline: scroll())': {
-      animationName: onScrollAnimation,
-      animationTimeline: 'scroll(root block)',
-      animationRangeStart: '0',
-      animationRangeEnd: '100svh',
-      animationFillMode: 'both',
-      animationTimingFunction: 'linear',
-    },
-  },
 });
 
 export const coverImageBackgroundStyle = style({
@@ -92,18 +70,18 @@ export const coverImageBackgroundStyle = style({
 });
 
 export const coverImageEffectStyle = style({
-  height: '72px',
+  height: spacing[8],
   zIndex: zIndex['20'],
 });
 
 export const coverImageSpacerStyle = style({
   position: 'relative',
   display: 'block',
-  height: 'calc(75svh - 72px)',
+  height: `calc(75svh - ${spacing[8]})`,
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
-      height: 'calc(100svh - 72px)',
+      height: `calc(100svh - ${spacing[8]})`,
     },
   },
 });
