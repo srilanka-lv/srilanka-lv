@@ -70,8 +70,17 @@ export const coverImageBackgroundStyle = style({
 });
 
 export const coverImageEffectStyle = style({
-  height: spacing[8],
   zIndex: zIndex['20'],
+  height: spacing[8],
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      height: spacing[12],
+    },
+    [`screen and (min-width: ${breakpoints.xxl})`]: {
+      height: spacing[24],
+    },
+  },
 });
 
 export const coverImageSpacerStyle = style({
@@ -82,6 +91,9 @@ export const coverImageSpacerStyle = style({
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
       height: `calc(100svh - ${spacing[8]})`,
+    },
+    [`screen and (min-width: ${breakpoints.lg})`]: {
+      height: `calc(100svh - ${spacing[24]})`,
     },
   },
 });

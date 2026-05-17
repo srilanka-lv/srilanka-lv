@@ -30,7 +30,13 @@ export const coverImageEffectStyles = styleVariants({
       top: '68px',
 
       '@media': {
+        [`screen and (min-width: ${breakpoints.xs})`]: {
+          top: '70px',
+        },
         [`screen and (min-width: ${breakpoints.md})`]: {
+          top: '112px',
+        },
+        [`screen and (min-width: ${breakpoints.xl})`]: {
           top: '90px',
         },
       },
