@@ -64,7 +64,6 @@ export const coverImageBackgroundStyle = style({
       backgroundImage: fallbackVar(coverImageBackgroundVar, 'none'),
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundAttachment: 'fixed',
     },
   },
 });
