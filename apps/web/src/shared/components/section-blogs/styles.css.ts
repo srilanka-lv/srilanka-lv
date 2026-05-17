@@ -54,7 +54,7 @@ export const sectionBlogsStyle = style({
       gridTemplateRows: '1fr 1fr',
     },
     [`screen and (min-width: ${breakpoints.xxl})`]: {
-      padding: `2.25rem ${spacing[24]} ${spacing[12]}`,
+      padding: `2.25rem ${spacing[40]} ${spacing[12]}`,
       gap: spacing[12],
     },
   },
