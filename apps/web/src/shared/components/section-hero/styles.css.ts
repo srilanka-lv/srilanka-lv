@@ -39,13 +39,15 @@ export const sectionHeroStyle = style({
     [`screen and (min-width: ${breakpoints.md})`]: {
       marginTop: `-90px`,
       height: 'calc(100svh - 45px)',
+      minHeight: breakpoints.md,
     },
   },
 });
 
 export const sectionHeroTitleStyle = style({
   position: 'relative',
-  color: color.primaryForeground,
+  color: 'whitesmoke',
+  mixBlendMode: 'luminosity',
   fontSize: font.size['4xl'],
   fontWeight: font.weight.bold,
   lineHeight: font.lineHeight.tight,
@@ -66,7 +68,8 @@ export const sectionHeroTitleStyle = style({
 
 export const sectionHeroSubtitleStyle = style({
   position: 'relative',
-  color: color.primaryForeground,
+  color: 'whitesmoke',
+  mixBlendMode: 'luminosity',
   fontSize: font.size['2xl'],
   fontWeight: font.weight.light,
   lineHeight: font.lineHeight.normal,
