@@ -39,8 +39,8 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
       )
       .map(({ _id, question, answer }) => ({
         id: _id,
-        question: question as string,
-        answer: answer as BlockContent,
+        questionSlot: question as string,
+        answerSlot: answer as BlockContent,
       })) ?? [];
 
   return (
@@ -66,14 +66,6 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
       </article>
 
       <aside className={blogPageLayoutAsideStyle}>
-        {/* {post.tags && post.tags.length > 0 && (
-          <ul>
-            {post.tags.map((tag) => (
-              <li key={tag._id}>{tag.title}</li>
-            ))}
-          </ul>
-        )} */}
-
         <FaqList items={items} />
       </aside>
     </div>
