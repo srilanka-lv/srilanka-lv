@@ -11,11 +11,11 @@
     "typegen": "bun --bun sanity schema extract && bun --bun sanity typegen generate"
   },
   "dependencies": {
-    "@sanity/vision": "^5.25.1",
+    "@sanity/vision": "^5.26.0",
     "@srilanka/sanity": "workspace:*",
-    "sanity": "^5.25.1",
+    "sanity": "^5.26.0",
     "sanity-plugin-media": "^4.3.0",
-    "styled-components": "^6.4.1",
+    "styled-components": "^6.4.2",
     "zod": "^4.4.3"
   }
 }

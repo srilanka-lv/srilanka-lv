@@ -34,8 +34,8 @@
     "vite": "^7"
   },
   "dependencies": {
-    "@sanity/vision": "^5.25.1",
-    "next-sanity": "^12.4.5",
-    "sanity": "^5.25.1"
+    "@sanity/vision": "^5.26.0",
+    "next-sanity": "^13.0.3",
+    "sanity": "^5.26.0"
   }
 }
