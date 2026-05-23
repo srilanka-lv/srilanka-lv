@@ -1,44 +1,47 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
+import { inComponentsLayer, inOverridesLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { color, spacing, transition } = vars;
 
-export const blogPageLayoutStyle = style({
-  display: 'grid',
-  gridTemplateRows: 'calc(75svh - 90px) 1fr',
-  gridTemplateColumns: 'minmax(0, 1fr)',
-  rowGap: spacing[4],
+export const blogPageLayoutStyle = style(
+  inComponentsLayer({
+    display: 'grid',
+    gridTemplateRows: 'calc(75svh - 90px) 1fr',
+    gridTemplateColumns: 'minmax(0, 1fr)',
+    rowGap: spacing[4],
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.lg})`]: {
-      gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 368px)',
-      columnGap: spacing[16],
-      rowGap: 'initial',
-      gridTemplateRows: 'calc(100svh - 72px) 1fr',
+    '@media': {
+      [`screen and (min-width: ${breakpoints.lg})`]: {
+        gridTemplateColumns: 'minmax(0, 1fr)',
+        gridTemplateRows: 'calc(100svh - 72px) 1fr',
+      },
     },
-    [`screen and (min-width: ${breakpoints.xxl})`]: {
-      gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 468px)',
-    },
-  },
-});
+  }),
+);
 
-export const blogPageLayoutArticleStyle = style({
-  gridColumn: 'span 2',
-  paddingTop: spacing[6],
+export const blogPageLayoutArticleStyle = style(
+  inComponentsLayer({
+    paddingTop: spacing[6],
+    paddingBottom: spacing[6],
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xl})`]: {
-      gridColumn: 'initial',
-      paddingTop: 'initial',
+    '@media': {
+      [`screen and (min-width: ${breakpoints.xl})`]: {
+        paddingTop: spacing[12],
+        paddingBottom: spacing[12],
+        maxWidth: breakpoints.sm,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      },
     },
-  },
-});
+  }),
+);
 
 globalStyle(
   `${blogPageLayoutArticleStyle} a:link, ${blogPageLayoutArticleStyle} a:visited, ${blogPageLayoutArticleStyle} a:hover, ${blogPageLayoutArticleStyle} a:active`,
-  {
+  inComponentsLayer({
     outline: 'none',
     position: 'relative',
     color: '#ee5253',
@@ -46,19 +49,19 @@ globalStyle(
     transitionTimingFunction: transition.easing.easeInOut,
     transitionDuration: transition.duration.faster,
     transitionProperty: 'color',
-  },
+  }),
 );
 
 globalStyle(
   `${blogPageLayoutArticleStyle} a:hover, ${blogPageLayoutArticleStyle} a:focus-visible`,
-  {
+  inComponentsLayer({
     color: color.background,
-  },
+  }),
 );
 
 globalStyle(
   `${blogPageLayoutArticleStyle} a:link::after, ${blogPageLayoutArticleStyle} a:visited::after, ${blogPageLayoutArticleStyle} a:active::after`,
-  {
+  inComponentsLayer({
     mixBlendMode: 'color-dodge',
     position: 'absolute',
     display: 'block',
@@ -72,22 +75,28 @@ globalStyle(
     transitionTimingFunction: transition.easing.easeInOut,
     transitionDuration: transition.duration.faster,
     transitionProperty: 'height',
-  },
+  }),
 );
 
 globalStyle(
   `${blogPageLayoutArticleStyle} a:hover::after, ${blogPageLayoutArticleStyle} a:focus-visible::after`,
-  {
+  inComponentsLayer({
     height: `calc(100%)`,
-  },
+  }),
 );
 
-export const blogPageLayoutAsideStyle = style({
-  gridColumn: 'span 2',
+globalStyle(
+  `${blogPageLayoutArticleStyle} > :last-child::after`,
+  inOverridesLayer({
+    display: 'none',
+  }),
+);
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xl})`]: {
-      gridColumn: 'initial',
-    },
-  },
-});
+export const blogPageLayoutAsideStyle = style(
+  inComponentsLayer({
+    paddingTop: 'initial',
+    maxWidth: breakpoints.sm,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  }),
+);

@@ -40,13 +40,8 @@ export const blogPosts = defineType({
       title: 'Cover Image',
       name: 'coverImage',
       type: 'image',
-      description: (
-        <>
-          The big background image for this blog post.
-          <br />
-          Required dimensions: 3456px width, 2234px height.
-        </>
-      ),
+      description:
+        'The big background image for this blog post. Required dimensions: 3456px width, 2234px height.',
       options: {
         hotspot: true,
       },
@@ -98,16 +93,7 @@ export const blogPosts = defineType({
     }),
     defineField({
       title: 'FAQs',
-      description: (
-        <>
-          FAQs are used to answer frequently asked questions about this blog post. For example:
-          <ul>
-            <li>"What is the weather like in Madiha?"</li>
-            <li>"What is the best time to visit Madiha?"</li>
-            <li>"What is the best way to get to Madiha?"</li>
-          </ul>
-        </>
-      ),
+      description: 'FAQs are used to answer frequently asked questions about this blog post.',
       name: 'faqs',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'faqs' }] }],

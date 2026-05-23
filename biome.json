@@ -17,7 +17,9 @@
       "!storybook-static",
       "!**/_generated",
       "!**/.sanity",
-      "!**/sanity.types.ts"
+      "!**/sanity.types.ts",
+      "!**/public/images/uploads",
+      "!**/serpapi/data"
     ]
   },
   "formatter": {

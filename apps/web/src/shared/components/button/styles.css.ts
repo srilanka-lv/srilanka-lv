@@ -1,11 +1,12 @@
 import { recipe } from '@vanilla-extract/recipes';
 
+import { inBaseLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
 const { spacing, border, font, color } = vars;
 
 export const buttonStyles = recipe({
-  base: {
+  base: inBaseLayer({
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -23,10 +24,10 @@ export const buttonStyles = recipe({
         cursor: 'not-allowed',
       },
     },
-  },
+  }),
   variants: {
     variant: {
-      primary: {
+      primary: inBaseLayer({
         backgroundColor: color.accent,
         color: color.accentForeground,
         selectors: {
@@ -34,8 +35,8 @@ export const buttonStyles = recipe({
             opacity: 0.9,
           },
         },
-      },
-      secondary: {
+      }),
+      secondary: inBaseLayer({
         backgroundColor: color.secondary,
         color: color.secondaryForeground,
         selectors: {
@@ -43,8 +44,8 @@ export const buttonStyles = recipe({
             opacity: 0.8,
           },
         },
-      },
-      outline: {
+      }),
+      outline: inBaseLayer({
         backgroundColor: 'transparent',
         color: color.foreground,
         borderColor: color.secondary,
@@ -53,8 +54,8 @@ export const buttonStyles = recipe({
             backgroundColor: color.secondary,
           },
         },
-      },
-      ghost: {
+      }),
+      ghost: inBaseLayer({
         backgroundColor: 'transparent',
         color: color.foreground,
         selectors: {
@@ -62,40 +63,40 @@ export const buttonStyles = recipe({
             backgroundColor: color.secondary,
           },
         },
-      },
+      }),
     },
     size: {
-      small: {
+      small: inBaseLayer({
         fontSize: font.size.xs,
         padding: `${spacing[1]} ${spacing[3]}`,
-      },
-      medium: {
+      }),
+      medium: inBaseLayer({
         fontSize: font.size.sm,
         padding: `${spacing[2]} ${spacing[4]}`,
-      },
-      large: {
+      }),
+      large: inBaseLayer({
         fontSize: font.size.base,
         padding: `${spacing[3]} ${spacing[6]}`,
-      },
+      }),
     },
     iconOnly: {
-      true: {
+      true: inBaseLayer({
         gap: 0,
-      },
+      }),
     },
   },
   compoundVariants: [
     {
       variants: { iconOnly: true, size: 'small' },
-      style: { padding: spacing[1] },
+      style: inBaseLayer({ padding: spacing[1] }),
     },
     {
       variants: { iconOnly: true, size: 'medium' },
-      style: { padding: spacing[2] },
+      style: inBaseLayer({ padding: spacing[2] }),
     },
     {
       variants: { iconOnly: true, size: 'large' },
-      style: { padding: spacing[3] },
+      style: inBaseLayer({ padding: spacing[3] }),
     },
   ],
   defaultVariants: {

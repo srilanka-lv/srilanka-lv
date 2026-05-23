@@ -1,5 +1,6 @@
 import { recipe } from '@vanilla-extract/recipes';
 
+import { inBaseLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
 const { color, shadow, border } = vars;
@@ -8,25 +9,25 @@ export const cardStyles = recipe({
   base: {},
   variants: {
     variant: {
-      filled: {
+      filled: inBaseLayer({
         backgroundColor: color.primaryForeground,
-      },
-      outline: {
+      }),
+      outline: inBaseLayer({
         backgroundColor: 'transparent',
         border: `1px solid ${color.foreground}`,
         boxShadow: 'none',
-      },
+      }),
     },
     shadow: {
-      none: { boxShadow: shadow.none },
-      small: { boxShadow: shadow.small },
-      medium: { boxShadow: shadow.medium },
-      large: { boxShadow: shadow.large },
+      none: inBaseLayer({ boxShadow: shadow.none }),
+      small: inBaseLayer({ boxShadow: shadow.small }),
+      medium: inBaseLayer({ boxShadow: shadow.medium }),
+      large: inBaseLayer({ boxShadow: shadow.large }),
     },
     radius: {
-      small: { borderRadius: border.radius.small },
-      medium: { borderRadius: border.radius.medium },
-      large: { borderRadius: border.radius.large },
+      small: inBaseLayer({ borderRadius: border.radius.small }),
+      medium: inBaseLayer({ borderRadius: border.radius.medium }),
+      large: inBaseLayer({ borderRadius: border.radius.large }),
     },
   },
   defaultVariants: {
