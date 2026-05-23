@@ -35,7 +35,7 @@ export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
   return (
     <article className={sectionBlogsItemStyle}>
       <Link className={sectionBlogsItemLinkStyle} href={itemSlug}>
-        <Image className={sectionBlogsItemImageStyle} src={src} alt={alt} fill />
+        <Image className={sectionBlogsItemImageStyle} src={src} alt={alt} fill sizes="auto" />
         <Heading className={sectionBlogsItemHeadingStyle} as="span" variant="h3">
           {title}
         </Heading>
