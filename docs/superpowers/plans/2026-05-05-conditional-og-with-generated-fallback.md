@@ -334,10 +334,6 @@ export function BlogOgImageTemplate({
         }}
       />
 
-      {/* Layer 3 + 4: white rip strips */}
-      <CoverImageEffect variant="top" />
-      <CoverImageEffect variant="bottom" />
-
       {/* Layer 5: logo, top-left */}
       <div
         style={{

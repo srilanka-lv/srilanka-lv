@@ -8,16 +8,15 @@ const { spacing, font, color, border } = vars;
 
 export const imageGalleryGridStyle = style(
   inComponentsLayer({
+    position: 'relative',
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
     gap: spacing[3],
     listStyle: 'none',
-    padding: 0,
     margin: 0,
-    marginTop: spacing[16],
-    marginBottom: spacing[16],
-    paddingTop: spacing[16],
-    paddingBottom: spacing[12],
+    padding: 0,
+    paddingTop: spacing[6],
+    paddingBottom: spacing[2],
 
     selectors: {
       '&::before, &::after': {
@@ -25,8 +24,8 @@ export const imageGalleryGridStyle = style(
         display: 'block',
         content: '',
         width: '100%',
-        maxWidth: breakpoints.xs,
-        height: '4px',
+        maxWidth: breakpoints.sm,
+        height: '2px',
         backgroundColor: `color-mix(in oklch, ${color.accent} 5%, transparent)`,
         borderRadius: border.radius.large,
         top: '100%',
@@ -41,8 +40,13 @@ export const imageGalleryGridStyle = style(
     },
 
     '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        marginTop: spacing[12],
+        marginBottom: spacing[12],
+        paddingTop: spacing[12],
+        paddingBottom: spacing[10],
+      },
       [`screen and (min-width: ${breakpoints.xl})`]: {
-        position: 'relative',
         width: '125%',
         left: '-12.5%',
       },

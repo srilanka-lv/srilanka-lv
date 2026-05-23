@@ -54,7 +54,10 @@ export const Navigation: FunctionComponent<NavigationProps> = ({ className }) =>
           <Link
             key={href}
             href={href}
-            className={navigationItemStyles({ active: pathname === href })}
+            className={navigationItemStyles({
+              active:
+                (pathname === '/' && href === '/') || (pathname.startsWith(href) && href !== '/'),
+            })}
             onClick={handleCloseMobileNavigation}
           >
             {icon}

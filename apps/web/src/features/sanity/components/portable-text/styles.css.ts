@@ -18,22 +18,34 @@ export const inlineImageFigureStyle = style(
         display: 'block',
         content: '',
         width: '100%',
-        maxWidth: breakpoints.xs,
-        marginTop: spacing[12],
-        marginBottom: spacing[8],
+        maxWidth: breakpoints.sm,
+        marginTop: spacing[2],
+        marginBottom: spacing[0],
         marginLeft: 'auto',
         marginRight: 'auto',
-        height: '4px',
+        height: '2px',
         backgroundColor: `color-mix(in oklch, ${color.accent} 5%, transparent)`,
         borderRadius: border.radius.large,
       },
       '&::before': {
-        marginTop: spacing[12],
-        marginBottom: spacing[20],
+        marginTop: spacing[0],
+        marginBottom: spacing[6],
       },
     },
 
     '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        selectors: {
+          '&::before, &::after': {
+            marginTop: spacing[12],
+            marginBottom: spacing[4],
+          },
+          '&::before': {
+            marginTop: spacing[8],
+            marginBottom: spacing[12],
+          },
+        },
+      },
       [`screen and (min-width: ${breakpoints.xl})`]: {
         position: 'relative',
         width: '125%',

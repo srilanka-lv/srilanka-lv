@@ -9,16 +9,13 @@ const { font, spacing, color } = vars;
 export const blogParagraphStyle = style(
   inOverridesLayer({
     marginBlock: spacing[6],
-    fontSize: font.size.xl,
+    fontSize: font.size.lg,
     lineHeight: font.lineHeight.normal,
     textWrap: 'balance',
 
     selectors: {
       '&:first-of-type': {
         marginTop: 0,
-      },
-      '&:last-of-type': {
-        marginBottom: 0,
       },
     },
 
@@ -54,7 +51,7 @@ export const blogListStyle = style(
   inOverridesLayer({
     marginBlock: spacing[4],
     paddingLeft: spacing[4],
-    fontSize: font.size.xl,
+    fontSize: font.size.lg,
     lineHeight: font.lineHeight.relaxed,
 
     '@media': {
@@ -69,5 +66,6 @@ globalStyle(
   `${blogListStyle} li`,
   inOverridesLayer({
     marginBlock: spacing[2],
+    textWrap: 'balance',
   }),
 );

@@ -9,7 +9,7 @@ const { color, spacing, transition } = vars;
 export const blogPageLayoutStyle = style(
   inComponentsLayer({
     display: 'grid',
-    gridTemplateRows: 'calc(75svh - 90px) 1fr',
+    gridTemplateRows: 'calc(100svh - 68px) 1fr',
     gridTemplateColumns: 'minmax(0, 1fr)',
     rowGap: spacing[4],
 
@@ -28,7 +28,7 @@ export const blogPageLayoutArticleStyle = style(
     paddingBottom: spacing[6],
 
     '@media': {
-      [`screen and (min-width: ${breakpoints.xl})`]: {
+      [`screen and (min-width: ${breakpoints.md})`]: {
         paddingTop: spacing[12],
         paddingBottom: spacing[12],
         maxWidth: breakpoints.sm,
@@ -95,6 +95,7 @@ globalStyle(
 export const blogPageLayoutAsideStyle = style(
   inComponentsLayer({
     paddingTop: 'initial',
+    paddingBottom: spacing[8],
     maxWidth: breakpoints.sm,
     marginLeft: 'auto',
     marginRight: 'auto',
