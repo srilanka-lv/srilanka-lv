@@ -5,7 +5,7 @@ import type { NextConfig } from 'next';
 import packageJson from '../../package.json' with { type: 'json' };
 
 const withVanillaExtract = createVanillaExtractPlugin({
-  unstable_turbopack: { mode: 'on' },
+  unstable_turbopack: { mode: 'auto' },
 });
 
 const nextConfig: NextConfig = {

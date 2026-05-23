@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun --bun next dev",
-    "build": "bun --bun next build",
+    "dev": "next dev --webpack",
+    "build": "next build",
     "postbuild": "cp -R public .next/standalone/apps/web/ && cp -R .next/static .next/standalone/apps/web/.next/",
     "start": "bun --bun .next/standalone/apps/web/server.js",
     "sb": "bun storybook dev -p 6006",
