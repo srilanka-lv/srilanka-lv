@@ -1,9 +1,9 @@
-import 'modern-normalize/modern-normalize.css';
+import '@/shared/styles/layers/layers.css';
+import '@/shared/styles/reset.css';
+import '@/shared/styles/global.css';
 
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
-
-import '@/shared/styles/global.css';
 
 import { Layout } from '@/features/layout/components/layout';
 import { ThemeScript } from '@/shared/components/theme-script';

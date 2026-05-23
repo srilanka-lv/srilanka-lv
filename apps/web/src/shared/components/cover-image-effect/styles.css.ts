@@ -1,32 +1,32 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
+import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { color, zIndex, spacing } = vars;
 
-const coverImageEffectStyle = style({
-  position: 'absolute',
-  width: '100%',
-  height: spacing[8],
-  left: 0,
-  fill: color.background,
-  zIndex: zIndex['10'],
+const coverImageEffectStyle = style(
+  inComponentsLayer({
+    position: 'absolute',
+    width: '100%',
+    height: spacing[8],
+    left: 0,
+    fill: color.background,
+    zIndex: zIndex['10'],
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      height: spacing[12],
+    '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        height: spacing[12],
+      },
     },
-    [`screen and (min-width: ${breakpoints.xxl})`]: {
-      height: spacing[24],
-    },
-  },
-});
+  }),
+);
 
 export const coverImageEffectStyles = styleVariants({
   top: [
     coverImageEffectStyle,
-    {
+    inComponentsLayer({
       top: '68px',
 
       '@media': {
@@ -40,11 +40,11 @@ export const coverImageEffectStyles = styleVariants({
           top: '90px',
         },
       },
-    },
+    }),
   ],
   bottom: [
     coverImageEffectStyle,
-    {
+    inComponentsLayer({
       bottom: 'calc(25svh - 1px)',
       transform: 'rotate(180deg)',
 
@@ -53,6 +53,6 @@ export const coverImageEffectStyles = styleVariants({
           bottom: '-1px',
         },
       },
-    },
+    }),
   ],
 });

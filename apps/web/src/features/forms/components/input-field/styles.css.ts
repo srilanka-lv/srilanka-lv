@@ -1,38 +1,45 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
+import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
 const { spacing, font, color, border, transition, focus } = vars;
 
-export const rootStyle = style({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: spacing[1],
-  width: '100%',
-  selectors: {
-    '&[data-disabled]': {
-      opacity: 0.5,
-      cursor: 'not-allowed',
+export const rootStyle = style(
+  inComponentsLayer({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: spacing[1],
+    width: '100%',
+    selectors: {
+      '&[data-disabled]': {
+        opacity: 0.5,
+        cursor: 'not-allowed',
+      },
     },
-  },
-});
+  }),
+);
 
-export const labelStyle = style({
-  fontWeight: font.weight.medium,
-  fontSize: font.size.sm,
-  lineHeight: font.lineHeight.normal,
-  color: 'inherit',
-});
+export const labelStyle = style(
+  inComponentsLayer({
+    fontWeight: font.weight.medium,
+    fontSize: font.size.sm,
+    lineHeight: font.lineHeight.normal,
+    color: 'inherit',
+  }),
+);
 
-export const inputWrapperStyle = style({
-  position: 'relative',
-  display: 'flex',
-  alignItems: 'center',
-});
+export const inputWrapperStyle = style(
+  inComponentsLayer({
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+  }),
+);
 
 export const inputStyles = recipe({
-  base: {
+  base: inComponentsLayer({
     width: '100%',
     minWidth: 0,
     backgroundColor: color.background,
@@ -59,38 +66,38 @@ export const inputStyles = recipe({
         boxShadow: `0 0 0 ${focus.width} ${color.error}`,
       },
     },
-  },
+  }),
   variants: {
     size: {
-      small: {
+      small: inComponentsLayer({
         fontSize: font.size.xs,
         padding: `${spacing[1]} ${spacing[3]}`,
-      },
-      medium: {
+      }),
+      medium: inComponentsLayer({
         fontSize: font.size.sm,
         padding: `${spacing[2]} ${spacing[4]}`,
-      },
-      large: {
+      }),
+      large: inComponentsLayer({
         fontSize: font.size.base,
         padding: `${spacing[3]} ${spacing[6]}`,
-      },
+      }),
     },
     loading: {
-      true: {},
+      true: inComponentsLayer({}),
     },
   },
   compoundVariants: [
     {
       variants: { loading: true, size: 'small' },
-      style: { paddingRight: spacing[8] },
+      style: inComponentsLayer({ paddingRight: spacing[8] }),
     },
     {
       variants: { loading: true, size: 'medium' },
-      style: { paddingRight: spacing[10] },
+      style: inComponentsLayer({ paddingRight: spacing[10] }),
     },
     {
       variants: { loading: true, size: 'large' },
-      style: { paddingRight: spacing[12] },
+      style: inComponentsLayer({ paddingRight: spacing[12] }),
     },
   ],
   defaultVariants: {
@@ -99,23 +106,29 @@ export const inputStyles = recipe({
   },
 });
 
-export const helperTextStyle = style({
-  fontSize: font.size.xs,
-  lineHeight: font.lineHeight.normal,
-  color: color.foreground,
-});
+export const helperTextStyle = style(
+  inComponentsLayer({
+    fontSize: font.size.xs,
+    lineHeight: font.lineHeight.normal,
+    color: color.foreground,
+  }),
+);
 
-export const errorTextStyle = style({
-  fontSize: font.size.xs,
-  lineHeight: font.lineHeight.normal,
-  color: color.error,
-});
+export const errorTextStyle = style(
+  inComponentsLayer({
+    fontSize: font.size.xs,
+    lineHeight: font.lineHeight.normal,
+    color: color.error,
+  }),
+);
 
-export const spinnerStyle = style({
-  position: 'absolute',
-  right: spacing[3],
-  top: 0,
-  bottom: 0,
-  margin: 'auto 0',
-  pointerEvents: 'none',
-});
+export const spinnerStyle = style(
+  inComponentsLayer({
+    position: 'absolute',
+    right: spacing[3],
+    top: 0,
+    bottom: 0,
+    margin: 'auto 0',
+    pointerEvents: 'none',
+  }),
+);
