@@ -3,9 +3,7 @@ import { getImageProps } from 'next/image';
 import type { ComponentProps, FunctionComponent } from 'react';
 import { preload } from 'react-dom';
 
-import { CoverImageEffect } from '../cover-image-effect';
 import {
-  sectionHeroCoverImageEffectStyles,
   sectionHeroImageStyle,
   sectionHeroStyle,
   sectionHeroSubtitleStyle,
@@ -57,13 +55,11 @@ export const SectionHero: FunctionComponent<SectionHeroProps> = ({ className, ..
       <h2 className={sectionHeroSubtitleStyle}>
         No personalizēta plāna līdz kopīgiem piedzīvojumiem viss vienuviet latviešiem.
       </h2>
-      <CoverImageEffect className={sectionHeroCoverImageEffectStyles.top} variant="top" />
       <picture>
         <source media="(max-width: 1279px)" srcSet={mobile} />
         <source media="(min-width: 1280px)" srcSet={desktop} />
         <img {...rest} alt={common.alt} className={sectionHeroImageStyle} />
       </picture>
-      <CoverImageEffect className={sectionHeroCoverImageEffectStyles.bottom} variant="bottom" />
     </section>
   );
 };

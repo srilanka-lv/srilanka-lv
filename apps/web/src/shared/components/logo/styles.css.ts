@@ -27,5 +27,11 @@ export const logoStyles = recipe({
 export const logoLinkStyle = style(
   inComponentsLayer({
     display: 'block',
+
+    selectors: {
+      '&:link, &:visited, &:hover, &:active': {
+        color: 'currentColor',
+      },
+    },
   }),
 );

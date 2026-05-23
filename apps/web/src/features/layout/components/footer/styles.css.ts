@@ -1,4 +1,4 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
 import { inOverridesLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
@@ -75,26 +75,6 @@ export const footerListStyle = style(
     margin: 0,
   }),
 );
-
-const coverImageEffectStyle = style(
-  inOverridesLayer({
-    left: 'unset',
-    placeSelf: 'center',
-    width: '100svw',
-  }),
-);
-
-export const coverImageEffectStyles = styleVariants({
-  top: [coverImageEffectStyle, inOverridesLayer({ top: 0 })],
-  bottom: [
-    coverImageEffectStyle,
-    inOverridesLayer({
-      fill: color.background,
-      bottom: `-1px`,
-      transform: 'rotate(180deg)',
-    }),
-  ],
-});
 
 export const footerProfileStyle = style(
   inOverridesLayer({

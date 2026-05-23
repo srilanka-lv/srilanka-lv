@@ -1,13 +1,15 @@
 import { style } from '@vanilla-extract/css';
 
-import { inComponentsLayer } from '@/shared/styles/layers/layers';
+import { inComponentsLayer, inOverridesLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, color, zIndex } = vars;
+const { spacing, zIndex } = vars;
 
 export const headerStyle = style(
   inComponentsLayer({
+    mixBlendMode: 'luminosity',
+    color: 'whitesmoke',
     position: 'relative',
     zIndex: zIndex['20'],
     display: 'flex',
@@ -17,7 +19,6 @@ export const headerStyle = style(
     width: '100%',
     paddingTop: spacing[5],
     paddingBottom: spacing[2],
-    backgroundColor: color.background,
 
     selectors: {
       '&::after': {
@@ -28,8 +29,8 @@ export const headerStyle = style(
         left: '50%',
         transform: 'translateX(-50%)',
         width: '100svw',
-        backgroundColor: color.background,
         zIndex: -1,
+        background: 'linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
       },
     },
 
@@ -39,7 +40,7 @@ export const headerStyle = style(
         flexDirection: 'column',
         gap: spacing[4],
         paddingTop: spacing[6],
-        paddingBottom: 0,
+        paddingBottom: spacing[8],
       },
       [`screen and (min-width: ${breakpoints.xl})`]: {
         alignItems: 'baseline',
@@ -51,7 +52,8 @@ export const headerStyle = style(
 );
 
 export const logoStyle = style(
-  inComponentsLayer({
+  inOverridesLayer({
+    fill: 'currentColor',
     width: spacing[40],
 
     '@media': {

@@ -1,10 +1,10 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
 import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { color, spacing, font, zIndex } = vars;
+const { spacing, font, zIndex } = vars;
 
 export const sectionHeroStyle = style(
   inComponentsLayer({
@@ -23,7 +23,6 @@ export const sectionHeroStyle = style(
     marginBottom: 0,
     marginLeft: '-50svw',
     overflow: 'hidden',
-    backgroundColor: color.foreground,
 
     selectors: {
       '&::after': {
@@ -39,9 +38,11 @@ export const sectionHeroStyle = style(
 
     '@media': {
       [`screen and (min-width: ${breakpoints.md})`]: {
+        marginTop: `-144px`,
+        height: '100svh',
+      },
+      [`screen and (min-width: ${breakpoints.xl})`]: {
         marginTop: `-90px`,
-        height: 'calc(100svh - 45px)',
-        minHeight: breakpoints.md,
       },
     },
   }),
@@ -102,16 +103,3 @@ export const sectionHeroImageStyle = style(
     objectPosition: 'center center',
   }),
 );
-
-export const sectionHeroCoverImageEffectStyles = styleVariants({
-  top: [
-    inComponentsLayer({
-      top: '90px',
-    }),
-  ],
-  bottom: [
-    inComponentsLayer({
-      bottom: '-1px',
-    }),
-  ],
-});

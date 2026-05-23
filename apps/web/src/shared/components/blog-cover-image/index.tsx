@@ -6,13 +6,11 @@ import { preload } from 'react-dom';
 
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
 
-import { CoverImageEffect } from '../cover-image-effect';
 import {
   coverImageBackgroundOverflowStyle,
   coverImageBackgroundStyle,
   coverImageBackgroundVar,
   coverImageBackgroundWrapperStyle,
-  coverImageEffectStyle,
   coverImageSpacerStyle,
   coverImageStyle,
 } from './styles.css';
@@ -66,7 +64,6 @@ export const BlogCoverImage: FunctionComponent<BlogCoverImageProps> = ({ image }
 
   return (
     <span className={coverImageStyle}>
-      <CoverImageEffect className={coverImageEffectStyle} variant="top" />
       <span className={coverImageBackgroundOverflowStyle}>
         <span className={coverImageBackgroundWrapperStyle}>
           <span
@@ -82,7 +79,6 @@ export const BlogCoverImage: FunctionComponent<BlogCoverImageProps> = ({ image }
         </span>
       </span>
       <span className={coverImageSpacerStyle} />
-      <CoverImageEffect className={coverImageEffectStyle} variant="bottom" />
     </span>
   );
 };

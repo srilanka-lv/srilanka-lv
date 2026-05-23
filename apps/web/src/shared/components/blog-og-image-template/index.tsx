@@ -1,6 +1,5 @@
 import type { FunctionComponent } from 'react';
 
-import { BlogOgImageTemplateCoverImageEffect } from '../blog-og-image-template-cover-image-effect';
 import { BlogOgImageTemplateLogo } from '../blog-og-image-template-logo';
 
 type BlogOgImageTemplateProps = {
@@ -53,10 +52,6 @@ export const BlogOgImageTemplate: FunctionComponent<BlogOgImageTemplateProps> = 
           'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.125) 25%, rgba(0,0,0,0.125) 0%, rgba(0,0,0,0.50) 100%)',
       }}
     />
-
-    {/* Layer 3 + 4: white rip strips */}
-    <BlogOgImageTemplateCoverImageEffect variant="top" />
-    <BlogOgImageTemplateCoverImageEffect variant="bottom" />
 
     {/* Layer 5: logo, top-left */}
     <div

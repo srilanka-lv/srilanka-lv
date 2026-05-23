@@ -81,7 +81,7 @@ export const navigationItemStyles = recipe({
     display: 'flex',
     alignItems: 'center',
     gap: spacing[3],
-    color: color.foreground,
+    color: 'currentColor',
     textDecoration: 'none',
     fontSize: font.size.lg,
     fontWeight: font.weight.medium,
@@ -95,7 +95,7 @@ export const navigationItemStyles = recipe({
 
     selectors: {
       '&:link, &:visited, &:hover, &:active': {
-        color: color.primary,
+        color: 'currentColor',
       },
       '&:link::after, &:visited::after, &:hover::after, &:active::after': {
         content: '',
@@ -105,7 +105,7 @@ export const navigationItemStyles = recipe({
         right: 0,
         width: '100%',
         height: '1.5px',
-        backgroundColor: color.primary,
+        backgroundColor: 'whitesmoke',
         borderRadius: border.radius.large,
         transform: 'scaleX(0)',
         opacity: 0,
@@ -139,20 +139,10 @@ export const navigationItemStyles = recipe({
     active: {
       true: inOverridesLayer({
         selectors: {
-          '&:link, &:visited, &:hover, &:active': {
-            color: color.accent,
-          },
           '&:link::after, &:visited::after, &:hover::after, &:active::after': {
-            backgroundColor: color.accent,
+            backgroundColor: 'whitesmoke',
             opacity: 1,
             transform: 'scaleX(1)',
-          },
-        },
-      }),
-      false: inOverridesLayer({
-        selectors: {
-          '&:link, &:visited, &:hover, &:active': {
-            color: color.primary,
           },
         },
       }),
