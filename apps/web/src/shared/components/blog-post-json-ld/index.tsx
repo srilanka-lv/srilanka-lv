@@ -33,7 +33,7 @@ export function BlogPostJsonLd({
     : Temporal.Now.zonedDateTimeISO('UTC').year;
 
   const siteUrl = getSiteUrl();
-  const pageUrl = `${siteUrl}/blogs/${slug}`;
+  const pageUrl = `${siteUrl}/blogi/${slug}`;
 
   const cover = coverImage
     ? imageObjectFor({ image: coverImage, width: 2400, copyrightYear: year, pageUrl })

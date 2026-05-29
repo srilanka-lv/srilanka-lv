@@ -5,7 +5,10 @@ import { urlForImage } from '@/features/sanity/utils/url-for-image';
 
 import { buildSanityRepository } from './build-sanity-repository';
 
-export async function buildPageMetadata(slug: string): Promise<Metadata> {
+export async function buildPageMetadata(
+  slug: string,
+  canonicalPath: string = `/${slug}`,
+): Promise<Metadata> {
   const repository = buildSanityRepository();
   const data = await repository.query(pagesMetaDataBySlugQuery, { slug });
 
@@ -17,6 +20,9 @@ export async function buildPageMetadata(slug: string): Promise<Metadata> {
   return {
     title: data?.seo?.metaTitle,
     description: data?.seo?.metaDescription,
+    alternates: {
+      canonical: canonicalPath,
+    },
     openGraph: {
       title: ogTitle,
       description: ogDescription,

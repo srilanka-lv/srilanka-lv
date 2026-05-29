@@ -26,7 +26,7 @@ export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
       urlForImage(coverImage).width(1200).quality(100).fit('max').auto('format').url()
     : null;
   const alt = coverImage?.alt ?? '';
-  const itemSlug = slug?.current ? `/blogs/${slug?.current}` : null;
+  const itemSlug = slug?.current ? `/blogi/${slug?.current}` : null;
 
   if (!itemSlug || !src) {
     return null;
