@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   metadataBase: process.env.NEXT_PUBLIC_SELF_URL
     ? new URL(process.env.NEXT_PUBLIC_SELF_URL)
     : undefined,
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     images: '/og-image.png',
   },

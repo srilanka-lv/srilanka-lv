@@ -13,7 +13,7 @@ export default async function BlogsPage() {
   const posts = await repository.query(blogPostsQuery, { limit: 6 });
 
   return posts.map((post) => (
-    <Link key={post._id} href={`/blogs/${post.slug?.current}`}>
+    <Link key={post._id} href={`/blogi/${post.slug?.current}`}>
       {post.title}
     </Link>
   ));

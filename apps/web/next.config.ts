@@ -46,12 +46,50 @@ const nextConfig: NextConfig = {
         destination: '/flight-tickets',
       },
       {
-        source: `/${PAGE_BLOGS_SLUG}`,
-        destination: '/blogs',
-      },
-      {
         source: `/${PAGE_CONTACT_SLUG}`,
         destination: '/contact',
+      },
+      {
+        source: `/${PAGE_BLOGS_SLUG}`,
+        destination: '/blog',
+      },
+      {
+        source: `/${PAGE_BLOGS_SLUG}/:slug`,
+        destination: '/blog/:slug',
+      },
+    ];
+  },
+  redirects: async () => {
+    return [
+      {
+        source: '/products',
+        destination: `/${PAGE_PRODUCTS_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/about-me',
+        destination: `/${PAGE_ABOUT_ME_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/flight-tickets',
+        destination: `/${PAGE_FLIGHT_TICKETS_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/contact',
+        destination: `/${PAGE_CONTACT_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/blog',
+        destination: `/${PAGE_BLOGS_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/blog/:slug',
+        destination: `/${PAGE_BLOGS_SLUG}/:slug`,
+        permanent: true,
       },
     ];
   },
