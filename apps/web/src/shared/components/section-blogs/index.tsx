@@ -1,16 +1,12 @@
-import { allBlogPostsQuery } from '@packages/sanity/queries/all-blog-posts-query';
+import { blogPostsQuery } from '@packages/sanity/queries/blog-posts-query';
 import clsx from 'clsx';
 import type { ComponentProps, FunctionComponent } from 'react';
 
-import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
-import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
+import { buildSanityRepository } from '@/features/sanity/utils/build-sanity-repository';
 
 import { Heading } from '../heading';
 import { SectionBlogsItem } from '../section-blogs-item';
 import { sectionBlogsStyle, sectionBlogsTitleStyle } from './styles.css';
-
-const provider = new DefaultSanityProvider();
-const repository = new DefaultSanityRepository(provider);
 
 type SectionBlogsProps = {
   className?: string;
@@ -20,7 +16,8 @@ export const SectionBlogs: FunctionComponent<SectionBlogsProps> = async ({
   className,
   ...props
 }) => {
-  const posts = await repository.query(allBlogPostsQuery, { limit: 6 });
+  const repository = buildSanityRepository();
+  const posts = await repository.query(blogPostsQuery, { limit: 6 });
 
   return (
     <>

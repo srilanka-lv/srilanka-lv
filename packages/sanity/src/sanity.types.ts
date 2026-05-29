@@ -329,29 +329,10 @@ export type AllSanitySchemaTypes =
   | SanityImageAsset
   | Geopoint;
 
-// Source: ../../packages/sanity/src/queries/all-blog-posts-query.ts
-// Variable: allBlogPostsQuery
-// Query: *[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }
-export type AllBlogPostsQueryResult = Array<{
-  _id: string;
-  title: string | null;
-  slug: Slug | null;
-  excerpt: string | null;
-  coverImage: {
-    asset?: SanityImageAssetReference;
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  } | null;
-  publishedAt: string | null;
-}>;
-
-// Source: ../../packages/sanity/src/queries/blog-post-by-slug-query.ts
-// Variable: blogPostBySlugQuery
+// Source: ../../packages/sanity/src/queries/blog-posts-by-slug-query.ts
+// Variable: blogPostsBySlugQuery
 // Query: *[_type == "blogPosts" && slug.current == $slug][0]{    _id,    title,    slug,    excerpt,    coverImage,    body,    publishedAt,    seo,    openGraph,    tags[]->{ _id, title, slug },    faqs[]->{ _id, question, answer }  }
-export type BlogPostBySlugQueryResult = {
+export type BlogPostsBySlugQueryResult = {
   _id: string;
   title: string | null;
   slug: Slug | null;
@@ -380,26 +361,79 @@ export type BlogPostBySlugQueryResult = {
   }> | null;
 } | null;
 
-// Source: ../../packages/sanity/src/queries/meta-data-by-slug-query.ts
-// Variable: metaDataBySlugQuery
-// Query: *[slug.current == $slug][0]{ seo, openGraph }
-export type MetaDataBySlugQueryResult =
-  | {
-      seo: null;
-      openGraph: null;
-    }
-  | {
-      seo: Seo | null;
-      openGraph: OpenGraph | null;
-    }
-  | null;
+// Source: ../../packages/sanity/src/queries/blog-posts-meta-data-by-slug-query.ts
+// Variable: blogPostsMetaDataBySlugQuery
+// Query: *[_type == "blogPosts" && slug.current == $slug][0]{ seo, openGraph }
+export type BlogPostsMetaDataBySlugQueryResult = {
+  seo: Seo | null;
+  openGraph: OpenGraph | null;
+} | null;
+
+// Source: ../../packages/sanity/src/queries/blog-posts-query.ts
+// Variable: blogPostsQuery
+// Query: *[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }
+export type BlogPostsQueryResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  excerpt: string | null;
+  coverImage: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  publishedAt: string | null;
+}>;
+
+// Source: ../../packages/sanity/src/queries/pages-by-slug-query.ts
+// Variable: pagesBySlugQuery
+// Query: *[_type == "pages" && slug.current == $slug][0]{    _id,    title,    slug,    excerpt,    coverImage,    body,    publishedAt,    seo,    openGraph,    tags[]->{ _id, title, slug },    faqs[]->{ _id, question, answer }  }
+export type PagesBySlugQueryResult = {
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  excerpt: null;
+  coverImage: null;
+  body: null;
+  publishedAt: null;
+  seo: Seo | null;
+  openGraph: OpenGraph | null;
+  tags: null;
+  faqs: null;
+} | null;
+
+// Source: ../../packages/sanity/src/queries/pages-meta-data-by-slug-query.ts
+// Variable: pagesMetaDataBySlugQuery
+// Query: *[_type == "pages" && slug.current == $slug][0]{ seo, openGraph }
+export type PagesMetaDataBySlugQueryResult = {
+  seo: Seo | null;
+  openGraph: OpenGraph | null;
+} | null;
+
+// Source: ../../packages/sanity/src/queries/pages-query.ts
+// Variable: pagesQuery
+// Query: *[_type == "pages"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }
+export type PagesQueryResult = Array<{
+  _id: string;
+  title: string | null;
+  slug: Slug | null;
+  excerpt: null;
+  coverImage: null;
+  publishedAt: null;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '*[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': AllBlogPostsQueryResult;
-    '\n  *[_type == "blogPosts" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': BlogPostBySlugQueryResult;
-    "*[slug.current == $slug][0]{ seo, openGraph }": MetaDataBySlugQueryResult;
+    '\n  *[_type == "blogPosts" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': BlogPostsBySlugQueryResult;
+    '*[_type == "blogPosts" && slug.current == $slug][0]{ seo, openGraph }': BlogPostsMetaDataBySlugQueryResult;
+    '*[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': BlogPostsQueryResult;
+    '\n  *[_type == "pages" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': PagesBySlugQueryResult;
+    '*[_type == "pages" && slug.current == $slug][0]{ seo, openGraph }': PagesMetaDataBySlugQueryResult;
+    '*[_type == "pages"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': PagesQueryResult;
   }
 }

@@ -1,10 +1,9 @@
-import { blogPostBySlugQuery } from '@packages/sanity/queries/blog-post-by-slug-query';
+import { blogPostsBySlugQuery } from '@packages/sanity/queries/blog-posts-by-slug-query';
 import type { BlockContent } from '@packages/sanity/sanity.types';
 import { notFound } from 'next/navigation';
 import type { FunctionComponent } from 'react';
 
-import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
-import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
+import { buildSanityRepository } from '@/features/sanity/utils/build-sanity-repository';
 
 import { BlogCoverImage } from '../blog-cover-image';
 import { BlogHero } from '../blog-hero';
@@ -19,13 +18,11 @@ import {
   blogPageLayoutStyle,
 } from './styles.css';
 
-const sanityProvider = new DefaultSanityProvider();
-const sanityRepository = new DefaultSanityRepository(sanityProvider);
-
 type BlogPageLayoutProps = { slug: string };
 
 export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ slug }) => {
-  const post = await sanityRepository.query(blogPostBySlugQuery, { slug });
+  const repository = buildSanityRepository();
+  const post = await repository.query(blogPostsBySlugQuery, { slug });
 
   if (!post) {
     notFound();

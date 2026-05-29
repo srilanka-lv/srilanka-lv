@@ -14,6 +14,14 @@ import {
   TicketsPlane,
 } from 'lucide-react';
 
+import {
+  PAGE_ABOUT_ME_SLUG,
+  PAGE_BLOGS_SLUG,
+  PAGE_CONTACT_SLUG,
+  PAGE_FLIGHT_TICKETS_SLUG,
+  PAGE_PRODUCTS_SLUG,
+} from '@/features/sanity/constants/pages-slugs';
+
 export const navigationItems = [
   {
     label: 'Sākums',
@@ -21,29 +29,29 @@ export const navigationItems = [
     href: '/',
   },
   {
-    label: 'Blogs',
+    label: 'Blogi',
     icon: <Newspaper size={20} />,
-    href: '/blogs',
+    href: `/${PAGE_BLOGS_SLUG}`,
   },
   {
     label: 'Produkti',
     icon: <ShoppingBag size={20} />,
-    href: '/produkti',
+    href: `/${PAGE_PRODUCTS_SLUG}`,
   },
   {
     label: 'Lidojumu cenas',
     icon: <TicketsPlane size={20} />,
-    href: '/lidojumi-cenas',
+    href: `/${PAGE_FLIGHT_TICKETS_SLUG}`,
   },
   {
     label: 'Par mani',
     icon: <SquareUserRound size={20} />,
-    href: '/par-mani',
+    href: `/${PAGE_ABOUT_ME_SLUG}`,
   },
   {
     label: 'Kontakti',
     icon: <MailCheck size={20} />,
-    href: '/kontakti',
+    href: `/${PAGE_CONTACT_SLUG}`,
   },
 ] as const;
 

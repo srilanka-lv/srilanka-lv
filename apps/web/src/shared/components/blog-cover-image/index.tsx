@@ -1,4 +1,4 @@
-import type { BlogPostBySlugQueryResult } from '@packages/sanity/sanity.types';
+import type { BlogPostsBySlugQueryResult } from '@packages/sanity/sanity.types';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { getImageProps } from 'next/image';
 import type { FunctionComponent } from 'react';
@@ -16,7 +16,7 @@ import {
 } from './styles.css';
 
 type BlogCoverImageProps = {
-  image: NonNullable<BlogPostBySlugQueryResult>['coverImage'];
+  image: NonNullable<BlogPostsBySlugQueryResult>['coverImage'];
 };
 
 const getBackgroundImage = (srcSet = '') => {

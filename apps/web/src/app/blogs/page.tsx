@@ -1,16 +1,16 @@
-import { allBlogPostsQuery } from '@packages/sanity/queries/all-blog-posts-query';
+import { blogPostsQuery } from '@packages/sanity/queries/blog-posts-query';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
-import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
+import { PAGE_BLOGS_SLUG } from '@/features/sanity/constants/pages-slugs';
+import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
+import { buildSanityRepository } from '@/features/sanity/utils/build-sanity-repository';
 
-const provider = new DefaultSanityProvider();
-const repository = new DefaultSanityRepository(provider);
-
-export const revalidate = 3600; // 1 hour
+export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGE_BLOGS_SLUG);
 
 export default async function BlogsPage() {
-  const posts = await repository.query(allBlogPostsQuery, { limit: 6 });
+  const repository = buildSanityRepository();
+  const posts = await repository.query(blogPostsQuery, { limit: 6 });
 
   return posts.map((post) => (
     <Link key={post._id} href={`/blogs/${post.slug?.current}`}>
