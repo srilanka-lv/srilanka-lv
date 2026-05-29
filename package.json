@@ -23,7 +23,7 @@
     "infra:kamal": "kamal -c infra/kamal/deploy.yml"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.15",
+    "@biomejs/biome": "2.4.16",
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.1",
     "husky": "^9.1.7",
@@ -34,8 +34,8 @@
     "vite": "^7"
   },
   "dependencies": {
-    "@sanity/vision": "^5.26.0",
-    "next-sanity": "^13.0.3",
-    "sanity": "^5.26.0"
+    "@sanity/vision": "^5.28.0",
+    "next-sanity": "^13.0.7",
+    "sanity": "^5.28.0"
   }
 }
