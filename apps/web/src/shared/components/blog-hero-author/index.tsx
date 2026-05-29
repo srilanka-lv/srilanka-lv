@@ -1,5 +1,5 @@
 import { Temporal } from '@js-temporal/polyfill';
-import type { BlogPostBySlugQueryResult } from '@packages/sanity/sanity.types';
+import type { BlogPostsBySlugQueryResult } from '@packages/sanity/sanity.types';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
 
@@ -10,7 +10,7 @@ import {
   blogHeroAuthorStyle,
 } from './styles.css';
 
-type BlogHeroAuthorProps = Pick<NonNullable<BlogPostBySlugQueryResult>, 'publishedAt'>;
+type BlogHeroAuthorProps = Pick<NonNullable<BlogPostsBySlugQueryResult>, 'publishedAt'>;
 
 export const BlogHeroAuthor: FunctionComponent<BlogHeroAuthorProps> = ({ publishedAt }) => {
   if (!publishedAt) {

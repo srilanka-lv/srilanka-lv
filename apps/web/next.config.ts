@@ -2,6 +2,15 @@ import path from 'node:path';
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
 import type { NextConfig } from 'next';
 
+import {
+  PAGE_ABOUT_ME_SLUG,
+  PAGE_BLOGS_SLUG,
+  PAGE_CONTACT_SLUG,
+  PAGE_FLIGHT_TICKETS_SLUG,
+  PAGE_HOME_SLUG,
+  PAGE_PRODUCTS_SLUG,
+} from '@/features/sanity/constants/pages-slugs';
+
 import packageJson from '../../package.json' with { type: 'json' };
 
 const withVanillaExtract = createVanillaExtractPlugin({
@@ -21,19 +30,27 @@ const nextConfig: NextConfig = {
   rewrites: async () => {
     return [
       {
-        source: '/produkti',
+        source: `/${PAGE_HOME_SLUG}`,
+        destination: '/',
+      },
+      {
+        source: `/${PAGE_PRODUCTS_SLUG}`,
         destination: '/products',
       },
       {
-        source: '/par-mani',
+        source: `/${PAGE_ABOUT_ME_SLUG}`,
         destination: '/about-me',
       },
       {
-        source: '/lidojumi-cenas',
+        source: `/${PAGE_FLIGHT_TICKETS_SLUG}`,
         destination: '/flight-tickets',
       },
       {
-        source: '/kontakti',
+        source: `/${PAGE_BLOGS_SLUG}`,
+        destination: '/blogs',
+      },
+      {
+        source: `/${PAGE_CONTACT_SLUG}`,
         destination: '/contact',
       },
     ];

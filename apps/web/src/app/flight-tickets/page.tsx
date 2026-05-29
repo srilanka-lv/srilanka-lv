@@ -1,23 +1,8 @@
-import { metaDataBySlugQuery } from '@packages/sanity/queries/meta-data-by-slug-query';
-import type { Metadata } from 'next';
-
-import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
-import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
+import { PAGE_FLIGHT_TICKETS_SLUG } from '@/features/sanity/constants/pages-slugs';
+import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
 import flightData from '@/features/serpapi/data/flight-data.json';
 
-const slug = 'letakie-lidojumi-uz-srilanku-no-rigas';
-
-const sanityProvider = new DefaultSanityProvider();
-const sanityRepository = new DefaultSanityRepository(sanityProvider);
-
-export async function generateMetadata(): Promise<Metadata> {
-  const data = await sanityRepository.query(metaDataBySlugQuery, { slug });
-
-  return {
-    title: data?.seo?.metaTitle,
-    description: data?.seo?.metaDescription,
-  };
-}
+export const generateMetadata = () => buildPageMetadata(PAGE_FLIGHT_TICKETS_SLUG);
 
 export default function FlightCalendarPage() {
   return (

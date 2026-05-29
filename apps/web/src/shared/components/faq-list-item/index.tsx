@@ -12,7 +12,7 @@ export type FaqListItemProps = {
   iconSlot?: ReactNode;
   linkSlot?: ReactNode;
   questionSlot: ReactNode;
-  answerSlot: ReactNode;
+  answerSlot?: ReactNode;
 };
 
 export const FaqListItem: FunctionComponent<FaqListItemProps> = ({
@@ -25,7 +25,7 @@ export const FaqListItem: FunctionComponent<FaqListItemProps> = ({
   <article className={clsx(sectionFaqsItemStyle, className)}>
     {iconSlot}
     <span className={sectionFaqsItemTitleStyle}>{questionSlot}</span>
-    <span className={sectionFaqsItemAnswerStyle}>{answerSlot}</span>
+    {answerSlot && <span className={sectionFaqsItemAnswerStyle}>{answerSlot}</span>}
     {linkSlot}
   </article>
 );

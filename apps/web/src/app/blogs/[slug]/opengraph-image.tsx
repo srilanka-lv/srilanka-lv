@@ -1,8 +1,7 @@
-import { blogPostBySlugQuery } from '@packages/sanity/queries/blog-post-by-slug-query';
+import { blogPostsBySlugQuery } from '@packages/sanity/queries/blog-posts-by-slug-query';
 import { ImageResponse } from 'next/og';
 
-import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
-import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
+import { buildSanityRepository } from '@/features/sanity/utils/build-sanity-repository';
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
 import { BlogOgImageTemplate } from '@/shared/components/blog-og-image-template';
 import { BlogOgImageTemplateFallback } from '@/shared/components/blog-og-image-template-fallback';
@@ -10,9 +9,6 @@ import { BlogOgImageTemplateFallback } from '@/shared/components/blog-og-image-t
 export const alt = 'Šrilanka.lv blog post';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
-
-const sanityProvider = new DefaultSanityProvider();
-const sanityRepository = new DefaultSanityRepository(sanityProvider);
 
 let commeDataPromise: Promise<ArrayBuffer> | null = null;
 
@@ -46,7 +42,8 @@ export default async function OpengraphImage({ params }: RouteProps) {
     new ImageResponse(<BlogOgImageTemplateFallback />, { ...size, fonts });
 
   try {
-    const post = await sanityRepository.query(blogPostBySlugQuery, { slug });
+    const repository = buildSanityRepository();
+    const post = await repository.query(blogPostsBySlugQuery, { slug });
 
     if (!post?.coverImage) {
       return renderFallback();

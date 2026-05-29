@@ -1,14 +1,10 @@
-import { allBlogPostsQuery } from '@packages/sanity/queries/all-blog-posts-query';
-import { blogPostBySlugQuery } from '@packages/sanity/queries/blog-post-by-slug-query';
+import { blogPostsBySlugQuery } from '@packages/sanity/queries/blog-posts-by-slug-query';
+import { blogPostsQuery } from '@packages/sanity/queries/blog-posts-query';
 import type { Metadata } from 'next';
 
-import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
-import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
+import { buildSanityRepository } from '@/features/sanity/utils/build-sanity-repository';
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
 import { BlogPageLayout } from '@/shared/components/blog-page-layout';
-
-const sanityProvider = new DefaultSanityProvider();
-const sanityRepository = new DefaultSanityRepository(sanityProvider);
 
 export const revalidate = 3600; // 1 hour
 
@@ -17,7 +13,8 @@ type BlogPageProps = {
 };
 
 export async function generateStaticParams() {
-  const posts = await sanityRepository.query(allBlogPostsQuery, { limit: 6 });
+  const repository = buildSanityRepository();
+  const posts = await repository.query(blogPostsQuery, { limit: 6 });
 
   const slugs = posts
     .filter(({ slug }) => slug?.current)
@@ -30,7 +27,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = await sanityRepository.query(blogPostBySlugQuery, { slug });
+  const repository = buildSanityRepository();
+  const post = await repository.query(blogPostsBySlugQuery, { slug });
 
   const ogTitle = post?.openGraph?.openGraphTitle ?? post?.title ?? undefined;
   const ogDescription = post?.openGraph?.openGraphDescription ?? post?.excerpt ?? undefined;
@@ -49,6 +47,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
                 url: urlForImage(ogImage)
                   .width(1200)
                   .height(630)
+                  // biome-ignore lint/suspicious/noFocusedTests: This isn't a test - it's the Sanity image URL.
                   .fit('crop')
                   .auto('format')
                   .quality(85)

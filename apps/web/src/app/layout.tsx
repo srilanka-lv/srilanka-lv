@@ -11,6 +11,8 @@ import { comme } from '@/shared/fonts/fonts';
 import { lightTheme as theme } from '@/shared/styles/themes/theme.light.css';
 import { darkColors, lightColors } from '@/shared/styles/tokens/colors';
 
+export const revalidate = 3600;
+
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: lightColors.background },

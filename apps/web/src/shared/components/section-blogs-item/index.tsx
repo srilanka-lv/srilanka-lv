@@ -1,4 +1,4 @@
-import type { AllBlogPostsQueryResult } from '@packages/sanity/sanity.types';
+import type { BlogPostsQueryResult } from '@packages/sanity/sanity.types';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
@@ -14,7 +14,7 @@ import {
   sectionBlogsItemStyle,
 } from './styles.css';
 
-type SectionBlogsItemProps = AllBlogPostsQueryResult[number];
+type SectionBlogsItemProps = BlogPostsQueryResult[number];
 
 export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
   title,

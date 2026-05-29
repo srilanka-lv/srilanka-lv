@@ -1,5 +1,5 @@
 import { Temporal } from '@js-temporal/polyfill';
-import type { BlockContent, BlogPostBySlugQueryResult } from '@packages/sanity/sanity.types';
+import type { BlockContent, BlogPostsBySlugQueryResult } from '@packages/sanity/sanity.types';
 
 import { collectBlockContentImages } from '@/features/sanity/utils/collect-block-content-images';
 import { type ImageObjectJsonLd, imageObjectFor } from '@/features/sanity/utils/image-object';
@@ -14,8 +14,8 @@ type BlogPostJsonLdProps = {
   title: string;
   excerpt: string;
   publishedAt: string | null;
-  coverImage: NonNullable<BlogPostBySlugQueryResult>['coverImage'];
-  openGraph: NonNullable<BlogPostBySlugQueryResult>['openGraph'];
+  coverImage: NonNullable<BlogPostsBySlugQueryResult>['coverImage'];
+  openGraph: NonNullable<BlogPostsBySlugQueryResult>['openGraph'];
   body: BlockContent | null;
 };
 
