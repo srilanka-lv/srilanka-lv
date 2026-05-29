@@ -388,6 +388,14 @@ export type BlogPostsQueryResult = Array<{
   publishedAt: string | null;
 }>;
 
+// Source: ../../packages/sanity/src/queries/blog-posts-sitemap-query.ts
+// Variable: blogPostsSitemapQuery
+// Query: *[_type == "blogPosts" && defined(slug.current)]{ "slug": slug.current, _updatedAt }
+export type BlogPostsSitemapQueryResult = Array<{
+  slug: string | null;
+  _updatedAt: string;
+}>;
+
 // Source: ../../packages/sanity/src/queries/pages-by-slug-query.ts
 // Variable: pagesBySlugQuery
 // Query: *[_type == "pages" && slug.current == $slug][0]{    _id,    title,    slug,    excerpt,    coverImage,    body,    publishedAt,    seo,    openGraph,    tags[]->{ _id, title, slug },    faqs[]->{ _id, question, answer }  }
@@ -432,6 +440,7 @@ declare module "@sanity/client" {
     '\n  *[_type == "blogPosts" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': BlogPostsBySlugQueryResult;
     '*[_type == "blogPosts" && slug.current == $slug][0]{ seo, openGraph }': BlogPostsMetaDataBySlugQueryResult;
     '*[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': BlogPostsQueryResult;
+    '*[_type == "blogPosts" && defined(slug.current)]{ "slug": slug.current, _updatedAt }': BlogPostsSitemapQueryResult;
     '\n  *[_type == "pages" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': PagesBySlugQueryResult;
     '*[_type == "pages" && slug.current == $slug][0]{ seo, openGraph }': PagesMetaDataBySlugQueryResult;
     '*[_type == "pages"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': PagesQueryResult;
