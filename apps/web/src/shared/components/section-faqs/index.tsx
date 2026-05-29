@@ -30,61 +30,9 @@ export const SectionFaqs: FunctionComponent<SectionFaqsProps> = ({ className, ..
     </Heading>
     <div className={sectionFaqsContentStyle}>
       <FaqListItem
-        iconSlot={<IconCalendarDate size="large" />}
-        questionSlot="Kad doties atvaļinājumā?"
-        answerSlot="Labākais laiks, lai apmeklētu Šrilanku, ir no novembra līdz aprīlim (Šrilankas dienvidos) vai no maija līdz augustam (Šrilankas rietumos)."
-        linkSlot={
-          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
-            Vairāk informācijas →
-          </Link>
-        }
-      />
-      <FaqListItem
-        iconSlot={<IconCalendarGrid size="large" />}
-        questionSlot="Cik ilgi man jāpaliek?"
-        answerSlot="Šrilankas spilgtākos apskates objektus var apskatīt 14 līdz 21 dienā."
-        linkSlot={
-          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
-            Vairāk informācijas →
-          </Link>
-        }
-      />
-      <FaqListItem
-        iconSlot={<IconMoneyWallet size="large" />}
-        questionSlot="Dienas budžets"
-        answerSlot="Augstākas klases braucienam dienā būs nepieciešami aptuveni 30 eiro. Ja ceļojat ar
-          ierobežotu budžetu, Šrilanku var apskatīt par aptuveni 10 līdz 20 eiro dienā."
-        linkSlot={
-          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
-            Vairāk informācijas →
-          </Link>
-        }
-      />
-      <FaqListItem
-        iconSlot={<IconMovingWalkwayLuggage size="large" />}
-        questionSlot="Nokļūšana tur"
-        answerSlot="Esmu izveidojis rīku, kas pārbauda lētākos lidojumus no Rīgas uz Kolombo!"
-        linkSlot={
-          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
-            Vairāk informācijas →
-          </Link>
-        }
-      />
-      <FaqListItem
-        iconSlot={<IconContentWrite size="large" />}
-        questionSlot="Vīzas iegūšana"
-        answerSlot="Šrilankas vīzu iegūt ir ļoti vienkārši. Tūrisma vīza dod tiesības uzturēties valstī 30
-          dienas, un to var pagarināt līdz 9 mēnešiem!"
-        linkSlot={
-          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
-            Vairāk informācijas →
-          </Link>
-        }
-      />
-      <FaqListItem
-        iconSlot={<IconWalkingSymbol size="large" />}
-        questionSlot="Pārvietošanās"
-        answerSlot="Šrilankā ir ļoti viegli pārvietoties. Tuk-tuki, motorolleru noma, taksometri ar PickMe lietotni un, protams, sabiedriskais transports (un skaisti vilcienu braucieni). Ceļošana pa Šrilanku ir piedzīvojums!"
+        iconSlot={<IconTakingPicturesMan size="large" />}
+        questionSlot="Ko darīt (un ko nedarīt) Šrilankas brīvdienās"
+        answerSlot="Sērfošana, sauļošanās, ielu ēdienu baudīšana. Šrilankā ir tik daudz jautru lietu, ko darīt. Sekojiet man, un kopā pavadīsim jautru ceļojumu."
         linkSlot={
           <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
             Vairāk informācijas →
@@ -93,8 +41,8 @@ export const SectionFaqs: FunctionComponent<SectionFaqsProps> = ({ className, ..
       />
       <FaqListItem
         iconSlot={<IconHomeChimney size="large" />}
-        questionSlot="Kur apmesties"
-        answerSlot="Esmu apmeklējis dažas no skaistākajām (un nezināmākajām) vietām Šrilankas dienvidos. Un es labprāt ar tām padalītos ar jums."
+        questionSlot="Kurās Šrilankas vietās vislabāk palikt"
+        answerSlot="Esmu apmeklējis dažas no skaistākajām un nezināmākajām vietām Šrilankas dienvidos. Un es labprāt ar tām padalītos ar jums."
         linkSlot={
           <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
             Vairāk informācijas →
@@ -102,9 +50,60 @@ export const SectionFaqs: FunctionComponent<SectionFaqsProps> = ({ className, ..
         }
       />
       <FaqListItem
-        iconSlot={<IconTakingPicturesMan size="large" />}
-        questionSlot="Ko darīt"
-        answerSlot="Sērfošana, pārgājieni, sauļošanās, ielu ēdienu baudīšana. Šrilankā ir tik daudz jautru lietu, ko darīt. Sekojiet man, un kopā pavadīsim jautru ceļojumu."
+        iconSlot={<IconMoneyWallet size="large" />}
+        questionSlot="Dienas budžets ceļojumam uz Šrilanku"
+        answerSlot="Komforta ceļotājam dienā būs nepieciešami aptuveni 100 eiro. Ja ceļojat ar ierobežotu budžetu, Šrilanku var apskatīt arī par 20 eiro dienā."
+        linkSlot={
+          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
+            Vairāk informācijas →
+          </Link>
+        }
+      />
+      <FaqListItem
+        iconSlot={<IconMovingWalkwayLuggage size="large" />}
+        questionSlot="Lētākais veids, kā nokļūt no Latvijas uz Šrilanku"
+        answerSlot="Visdārgākā šī ceļojuma daļa noteikti ir aviobiļetes. Tāpēc esmu izveidojusi šo rīku, lai tev būtu vieglāk atrast vislētākās biļetes uz Šrilanku."
+        linkSlot={
+          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
+            Vairāk informācijas →
+          </Link>
+        }
+      />
+      <FaqListItem
+        iconSlot={<IconCalendarDate size="large" />}
+        questionSlot="Labākais laiks, lai ceļotu uz Šrilanku"
+        answerSlot="Šrilankā ir divi gadalaiki, tāpēc ir svarīgi plānot pareizo ceļojuma laiku atkarībā no jūsu atvaļinājuma mērķa."
+        linkSlot={
+          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
+            Vairāk informācijas →
+          </Link>
+        }
+      />
+      <FaqListItem
+        iconSlot={<IconCalendarGrid size="large" />}
+        questionSlot="Cik ilgu laiku ir jāieplāno ceļojumam uz Šrilanku"
+        answerSlot="Vai vēlaties apskatīt tūristu apskates objektus? Vai brauciet ar konkrētu mērķi, piemēram apskatīt safari, pasērfot vai sauļoties?"
+        linkSlot={
+          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
+            Vairāk informācijas →
+          </Link>
+        }
+      />
+
+      <FaqListItem
+        iconSlot={<IconContentWrite size="large" />}
+        questionSlot="Kā iegūt Šrilankas tūristu vīzu Latvijas pilsoņiem"
+        answerSlot="Šrilankas vīzu iegūt ir ļoti vienkārši. Tūristu vīza dod tiesības uzturēties valstī 30 dienas, un to var pagarināt līdz pat 9 mēnešiem!"
+        linkSlot={
+          <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
+            Vairāk informācijas →
+          </Link>
+        }
+      />
+      <FaqListItem
+        iconSlot={<IconWalkingSymbol size="large" />}
+        questionSlot="Dažādās transportu veidu iespējas Šrilankā"
+        answerSlot="No Tuk Tuk līdz sabiedriskajiem vilcieniem un motorolleru nomai. Lūk, kā pārvietoties Šrilankā."
         linkSlot={
           <Link className={sectionFaqsItemLinkStyle} href="/faq/kad-doties-atvalinjanumam">
             Vairāk informācijas →
