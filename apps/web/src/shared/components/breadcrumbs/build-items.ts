@@ -6,7 +6,7 @@ export type BreadcrumbItem = {
   href: string;
 };
 
-function findNavLabel(href: string): string {
+export function findNavLabel(href: string): string {
   const item = navigationItems.find((entry) => entry.href === href);
 
   if (!item) {
