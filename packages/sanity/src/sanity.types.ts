@@ -331,9 +331,10 @@ export type AllSanitySchemaTypes =
 
 // Source: ../../packages/sanity/src/queries/blog-posts-by-slug-query.ts
 // Variable: blogPostsBySlugQuery
-// Query: *[_type == "blogPosts" && slug.current == $slug][0]{    _id,    title,    slug,    excerpt,    coverImage,    body,    publishedAt,    seo,    openGraph,    tags[]->{ _id, title, slug },    faqs[]->{ _id, question, answer }  }
+// Query: *[_type == "blogPosts" && slug.current == $slug][0]{    _id,    _updatedAt,    title,    slug,    excerpt,    coverImage,    body,    publishedAt,    seo,    openGraph,    tags[]->{ _id, title, slug },    faqs[]->{ _id, question, answer }  }
 export type BlogPostsBySlugQueryResult = {
   _id: string;
+  _updatedAt: string;
   title: string | null;
   slug: Slug | null;
   excerpt: string | null;
@@ -437,7 +438,7 @@ export type PagesQueryResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '\n  *[_type == "blogPosts" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': BlogPostsBySlugQueryResult;
+    '\n  *[_type == "blogPosts" && slug.current == $slug][0]{\n    _id,\n    _updatedAt,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': BlogPostsBySlugQueryResult;
     '*[_type == "blogPosts" && slug.current == $slug][0]{ seo, openGraph }': BlogPostsMetaDataBySlugQueryResult;
     '*[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': BlogPostsQueryResult;
     '*[_type == "blogPosts" && defined(slug.current)]{ "slug": slug.current, _updatedAt }': BlogPostsSitemapQueryResult;

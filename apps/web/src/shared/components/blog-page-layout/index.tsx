@@ -49,6 +49,7 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
         title={post.title ?? ''}
         excerpt={post.excerpt ?? ''}
         publishedAt={post.publishedAt}
+        updatedAt={post._updatedAt}
         coverImage={post.coverImage}
         openGraph={post.openGraph}
         body={post.body}
