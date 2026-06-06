@@ -28,12 +28,14 @@ Home (`/`) gets no breadcrumb — it's the top of the tree.
 ### Props
 
 ```ts
-type BreadcrumbItem = { name: string; url: string };
+type BreadcrumbItem = { name: string; href: string };
 
 type BreadcrumbsProps = {
   items: BreadcrumbItem[];
 };
 ```
+
+`href` is a relative path (e.g. `/blogi`). The component prepends `getSiteUrl()` to build the absolute URL used in JSON-LD; the visible `<nav>` uses the relative path directly with `next/link` for client-side navigation.
 
 ### Output
 
@@ -76,14 +78,14 @@ The `›` character between crumbs is rendered by the stylesheet (`li:not(:last-
 
 ## Build helpers
 
-Both helpers return `BreadcrumbItem[]` with absolute URLs (via `getSiteUrl()`). Labels for static-page crumbs are resolved by looking the crumb's `href` up in `navigationItems` (from `features/layout/components/navigation/index.data`). The post crumb's label is the passed post title.
+Both helpers return `BreadcrumbItem[]` with relative paths. Labels for static-page crumbs are resolved by looking the crumb's `href` up in `navigationItems` (from `features/layout/components/navigation/index.data`). The post crumb's label is the passed post title. The component handles converting relative paths to absolute URLs for the JSON-LD output.
 
 ```ts
 export function buildSectionItems(href: string): BreadcrumbItem[];
-// → [{ name: 'Sākums', url: '…/' }, { name: <nav label for href>, url: '…/<href>' }]
+// → [{ name: 'Sākums', href: '/' }, { name: <nav label for href>, href }]
 
 export function buildPostItems(slug: string, title: string): BreadcrumbItem[];
-// → [home, blog, { name: title, url: '…/blogi/<slug>' }]
+// → [home, blog, { name: title, href: `/blogi/<slug>` }]
 ```
 
 If `href` doesn't match any entry in `navigationItems`, the helper throws. Fail-loud at build / first request, not silently broken in production.
