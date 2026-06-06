@@ -1,5 +1,5 @@
+import clsx from 'clsx';
 import Link from 'next/link';
-import type { FunctionComponent } from 'react';
 
 import { getSiteUrl } from '@/shared/utils/get-site-url';
 
@@ -26,7 +26,7 @@ function toAbsoluteUrl(href: string): string {
   return `${siteUrl}${href}`;
 }
 
-export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({ items }) => {
+export function Breadcrumbs({ items }: BreadcrumbsProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -59,7 +59,7 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({ items }) => {
                 <li
                   key={item.href}
                   aria-current="page"
-                  className={`${breadcrumbsItemStyle} ${breadcrumbsCurrentStyle}`}
+                  className={clsx(breadcrumbsItemStyle, breadcrumbsCurrentStyle)}
                 >
                   {item.name}
                 </li>
@@ -78,4 +78,4 @@ export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({ items }) => {
       </nav>
     </>
   );
-};
+}
