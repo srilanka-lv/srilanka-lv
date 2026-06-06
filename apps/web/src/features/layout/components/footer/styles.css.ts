@@ -39,17 +39,7 @@ export const footerStyle = style(
       [`screen and (min-width: ${breakpoints.xl})`]: {
         gridTemplateColumns: '1fr 1fr 1fr',
         gap: spacing[12],
-        padding: `${spacing[48]} ${spacing[0]}`,
-      },
-      [`screen and (min-width: ${breakpoints.xxl})`]: {
-        position: 'relative',
-        width: '100svw',
-        left: '50%',
-        right: '50%',
-        marginLeft: '-50svw',
-        marginRight: '-50svw',
-        paddingLeft: spacing[40],
-        paddingRight: spacing[40],
+        padding: `${spacing[24]} ${spacing[0]}`,
       },
     },
   }),
