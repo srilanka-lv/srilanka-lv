@@ -8,6 +8,13 @@ import {
   PAGE_CONTACT_SLUG,
   PAGE_FLIGHT_TICKETS_SLUG,
   PAGE_HOME_SLUG,
+  PAGE_INFO_BEST_TIME_TO_TRAVEL_SLUG,
+  PAGE_INFO_DAILY_BUDGET_SLUG,
+  PAGE_INFO_HOW_LONG_TO_GO_SLUG,
+  PAGE_INFO_TRANSPORT_SLUG,
+  PAGE_INFO_VISA_SLUG,
+  PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG,
+  PAGE_INFO_WHERE_TO_STAY_SLUG,
   PAGE_PRODUCTS_SLUG,
 } from '@/features/sanity/constants/pages-slugs';
 
@@ -57,6 +64,34 @@ const nextConfig: NextConfig = {
         source: `/${PAGE_BLOGS_SLUG}/:slug`,
         destination: '/blog/:slug',
       },
+      {
+        source: `/${PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG}`,
+        destination: '/holiday-in-sri-lanka-what-to-do',
+      },
+      {
+        source: `/${PAGE_INFO_WHERE_TO_STAY_SLUG}`,
+        destination: '/holiday-in-sri-lanka-where-to-stay',
+      },
+      {
+        source: `/${PAGE_INFO_DAILY_BUDGET_SLUG}`,
+        destination: '/holiday-in-sri-lanka-daily-budget',
+      },
+      {
+        source: `/${PAGE_INFO_BEST_TIME_TO_TRAVEL_SLUG}`,
+        destination: '/holiday-in-sri-lanka-best-time-to-travel',
+      },
+      {
+        source: `/${PAGE_INFO_HOW_LONG_TO_GO_SLUG}`,
+        destination: '/holiday-in-sri-lanka-how-long-to-go',
+      },
+      {
+        source: `/${PAGE_INFO_VISA_SLUG}`,
+        destination: '/holiday-in-sri-lanka-how-to-get-a-visa',
+      },
+      {
+        source: `/${PAGE_INFO_TRANSPORT_SLUG}`,
+        destination: '/holiday-in-sri-lanka-transport',
+      },
     ];
   },
   redirects: async () => {
@@ -89,6 +124,41 @@ const nextConfig: NextConfig = {
       {
         source: '/blog/:slug',
         destination: `/${PAGE_BLOGS_SLUG}/:slug`,
+        permanent: true,
+      },
+      {
+        source: '/holiday-in-sri-lanka-what-to-do',
+        destination: `/${PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/holiday-in-sri-lanka-where-to-stay',
+        destination: `/${PAGE_INFO_WHERE_TO_STAY_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/holiday-in-sri-lanka-daily-budget',
+        destination: `/${PAGE_INFO_DAILY_BUDGET_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/holiday-in-sri-lanka-best-time-to-travel',
+        destination: `/${PAGE_INFO_BEST_TIME_TO_TRAVEL_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/holiday-in-sri-lanka-how-long-to-go',
+        destination: `/${PAGE_INFO_HOW_LONG_TO_GO_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/holiday-in-sri-lanka-how-to-get-a-visa',
+        destination: `/${PAGE_INFO_VISA_SLUG}`,
+        permanent: true,
+      },
+      {
+        source: '/holiday-in-sri-lanka-transport',
+        destination: `/${PAGE_INFO_TRANSPORT_SLUG}`,
         permanent: true,
       },
     ];
