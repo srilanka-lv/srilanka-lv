@@ -9,6 +9,13 @@ import {
   PAGE_BLOGS_SLUG,
   PAGE_CONTACT_SLUG,
   PAGE_FLIGHT_TICKETS_SLUG,
+  PAGE_INFO_BEST_TIME_TO_TRAVEL_SLUG,
+  PAGE_INFO_DAILY_BUDGET_SLUG,
+  PAGE_INFO_HOW_LONG_TO_GO_SLUG,
+  PAGE_INFO_TRANSPORT_SLUG,
+  PAGE_INFO_VISA_SLUG,
+  PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG,
+  PAGE_INFO_WHERE_TO_STAY_SLUG,
   PAGE_PRODUCTS_SLUG,
 } from '@/features/sanity/constants/pages-slugs';
 import { Logo } from '@/shared/components/logo';
@@ -30,6 +37,13 @@ export const Header: FunctionComponent<HeaderProps> = ({ className }) => {
       `/${PAGE_ABOUT_ME_SLUG}`,
       `/${PAGE_FLIGHT_TICKETS_SLUG}`,
       `/${PAGE_CONTACT_SLUG}`,
+      `/${PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG}`,
+      `/${PAGE_INFO_WHERE_TO_STAY_SLUG}`,
+      `/${PAGE_INFO_DAILY_BUDGET_SLUG}`,
+      `/${PAGE_INFO_BEST_TIME_TO_TRAVEL_SLUG}`,
+      `/${PAGE_INFO_HOW_LONG_TO_GO_SLUG}`,
+      `/${PAGE_INFO_VISA_SLUG}`,
+      `/${PAGE_INFO_TRANSPORT_SLUG}`,
     ];
 
     if (pagesWithoutOverlay.includes(pathname)) {
