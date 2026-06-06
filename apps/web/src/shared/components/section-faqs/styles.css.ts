@@ -37,6 +37,12 @@ export const sectionFaqsTitleStyle = style(
       [`screen and (min-width: ${breakpoints.md})`]: {
         fontSize: font.size['4xl'],
       },
+      [`screen and (min-width: ${breakpoints.xl})`]: {
+        marginTop: spacing[16],
+      },
+      [`screen and (min-width: ${breakpoints.xxl})`]: {
+        marginTop: spacing[24],
+      },
     },
   }),
 );
@@ -72,12 +78,8 @@ export const sectionFaqsItemLinkStyle = style(
         fontWeight: font.weight.semibold,
         color: color.accent,
       },
-      '&:focus-visible': {
-        outlineOffset: spacing[1],
-        outlineStyle: 'solid',
-        outlineWidth: focus.width,
-        outlineColor: focus.color,
-        borderRadius: border.radius.small,
+      '&:hover, &:focus-visible': {
+        color: color.background,
       },
     },
   }),

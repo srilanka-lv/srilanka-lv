@@ -15,8 +15,8 @@ export const sectionBlogsItemStyle = style(
     transitionTimingFunction: transition.easing.easeInOut,
 
     selectors: {
-      '&:hover': {
-        transform: `scale(1.05) translateY(${spacing[-2]})`,
+      '&:hover, &:focus-visible': {
+        transform: `scale(1.0125)`,
       },
     },
   }),
@@ -48,10 +48,8 @@ export const sectionBlogsItemLinkStyle = style(
       '&:link, &:visited, &:hover, &:active': {
         color: color.foreground,
       },
-      '&:hover': {
-        transform: 'scale(1.0125)',
-      },
       '&::after': {
+        mixBlendMode: 'normal',
         content: '',
         position: 'absolute',
         inset: 0,

@@ -105,7 +105,7 @@ export const navigationItemStyles = recipe({
         right: 0,
         width: '100%',
         height: '1.5px',
-        backgroundColor: 'whitesmoke',
+        backgroundColor: 'currentColor',
         borderRadius: border.radius.large,
         transform: 'scaleX(0)',
         opacity: 0,
@@ -119,7 +119,7 @@ export const navigationItemStyles = recipe({
           },
         },
       },
-      '&:hover::after': {
+      '&:hover::after, &:focus-visible::after': {
         opacity: 1,
         transform: 'scaleX(1)',
       },
@@ -140,7 +140,7 @@ export const navigationItemStyles = recipe({
       true: inOverridesLayer({
         selectors: {
           '&:link::after, &:visited::after, &:hover::after, &:active::after': {
-            backgroundColor: 'whitesmoke',
+            backgroundColor: 'currentColor',
             opacity: 1,
             transform: 'scaleX(1)',
           },

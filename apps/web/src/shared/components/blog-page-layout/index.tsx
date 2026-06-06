@@ -11,11 +11,14 @@ import { BlogHeroAuthor } from '../blog-hero-author';
 import { BlogHeroTitle } from '../blog-hero-title';
 import { BlogPostJsonLd } from '../blog-post-json-ld';
 import { BlogText } from '../blog-text';
+import { Breadcrumbs } from '../breadcrumbs';
+import { buildPostItems } from '../breadcrumbs/build-items';
 import { FaqList } from '../faq-list';
 import {
   blogPageLayoutArticleStyle,
   blogPageLayoutAsideStyle,
   blogPageLayoutStyle,
+  breadcrumbsStyle,
 } from './styles.css';
 
 type BlogPageLayoutProps = { slug: string };
@@ -47,6 +50,7 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
         title={post.title ?? ''}
         excerpt={post.excerpt ?? ''}
         publishedAt={post.publishedAt}
+        updatedAt={post._updatedAt}
         coverImage={post.coverImage}
         openGraph={post.openGraph}
         body={post.body}
@@ -59,6 +63,7 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
           <BlogHeroTitle>{post.title}</BlogHeroTitle>
           <BlogHeroAuthor publishedAt={post.publishedAt} />
         </BlogHero>
+        <Breadcrumbs className={breadcrumbsStyle} items={buildPostItems(slug, post.title ?? '')} />
         <BlogText body={post.body} />
       </article>
 

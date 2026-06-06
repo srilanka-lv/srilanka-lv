@@ -50,20 +50,22 @@ export const Navigation: FunctionComponent<NavigationProps> = ({ className }) =>
           className,
         )}
       >
-        {navigationItems.map(({ href, icon, label }) => (
-          <Link
-            key={href}
-            href={href}
-            className={navigationItemStyles({
-              active:
-                (pathname === '/' && href === '/') || (pathname.startsWith(href) && href !== '/'),
-            })}
-            onClick={handleCloseMobileNavigation}
-          >
-            {icon}
-            {label}
-          </Link>
-        ))}
+        {navigationItems
+          .filter(({ visibleInNavigation }) => visibleInNavigation)
+          .map(({ href, icon, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={navigationItemStyles({
+                active:
+                  (pathname === '/' && href === '/') || (pathname.startsWith(href) && href !== '/'),
+              })}
+              onClick={handleCloseMobileNavigation}
+            >
+              {icon}
+              {label}
+            </Link>
+          ))}
         <Divider
           className={navigationItemsDividerStyle}
           variant="dashed"

@@ -15,7 +15,7 @@ export default function HomePage() {
       <HomeJsonLd />
       <SectionHero />
       <SectionFaqs />
-      <SectionBlogs />
+      <SectionBlogs sectionTitle="Mani piedzīvojumi Šrilankā" blogsLimit={6} />
     </>
   );
 }

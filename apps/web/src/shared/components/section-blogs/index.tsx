@@ -9,24 +9,38 @@ import { SectionBlogsItem } from '../section-blogs-item';
 import { sectionBlogsStyle, sectionBlogsTitleStyle } from './styles.css';
 
 type SectionBlogsProps = {
-  className?: string;
+  sectionTitle?: string;
+  sectionTitleClassName?: string;
+  sectionBlogsClassName?: string;
+  sectionBlogsItemClassName?: string;
+  blogsLimit?: number;
 } & ComponentProps<'section'>;
 
 export const SectionBlogs: FunctionComponent<SectionBlogsProps> = async ({
-  className,
+  sectionTitle,
+  sectionTitleClassName,
+  sectionBlogsClassName,
+  sectionBlogsItemClassName,
+  blogsLimit = 12,
   ...props
 }) => {
   const repository = buildSanityRepository();
-  const posts = await repository.query(blogPostsQuery, { limit: 6 });
+  const posts = await repository.query(blogPostsQuery, { limit: blogsLimit });
 
   return (
     <>
-      <Heading as="h3" variant="h2" className={sectionBlogsTitleStyle}>
-        Mani piedzīvojumi Šrilankā
-      </Heading>
-      <section className={clsx(sectionBlogsStyle, className)} {...props}>
+      {sectionTitle && (
+        <Heading
+          as="h3"
+          variant="h2"
+          className={clsx(sectionBlogsTitleStyle, sectionTitleClassName)}
+        >
+          {sectionTitle}
+        </Heading>
+      )}
+      <section className={clsx(sectionBlogsStyle, sectionBlogsClassName)} {...props}>
         {posts.map((post) => (
-          <SectionBlogsItem key={post._id} {...post} />
+          <SectionBlogsItem key={post._id} {...post} className={sectionBlogsItemClassName} />
         ))}
       </section>
     </>

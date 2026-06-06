@@ -14,6 +14,7 @@ type BlogPostJsonLdProps = {
   title: string;
   excerpt: string;
   publishedAt: string | null;
+  updatedAt: string;
   coverImage: NonNullable<BlogPostsBySlugQueryResult>['coverImage'];
   openGraph: NonNullable<BlogPostsBySlugQueryResult>['openGraph'];
   body: BlockContent | null;
@@ -24,6 +25,7 @@ export function BlogPostJsonLd({
   title,
   excerpt,
   publishedAt,
+  updatedAt,
   coverImage,
   openGraph,
   body,
@@ -59,9 +61,11 @@ export function BlogPostJsonLd({
     '@id': `${pageUrl}#post`,
     mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
     url: pageUrl,
+    inLanguage: 'lv',
     headline: title,
     description: excerpt,
     datePublished: publishedAt,
+    dateModified: updatedAt,
     author: { '@type': 'Person', name: AUTHOR_NAME, url: getAuthorUrl() },
     publisher: {
       '@type': 'Organization',

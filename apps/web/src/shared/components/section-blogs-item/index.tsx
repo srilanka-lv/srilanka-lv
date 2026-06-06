@@ -1,4 +1,5 @@
 import type { BlogPostsQueryResult } from '@packages/sanity/sanity.types';
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
@@ -14,9 +15,10 @@ import {
   sectionBlogsItemStyle,
 } from './styles.css';
 
-type SectionBlogsItemProps = BlogPostsQueryResult[number];
+type SectionBlogsItemProps = { className?: string } & BlogPostsQueryResult[number];
 
 export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
+  className,
   title,
   slug,
   coverImage,
@@ -33,7 +35,7 @@ export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
   }
 
   return (
-    <article className={sectionBlogsItemStyle}>
+    <article className={clsx(sectionBlogsItemStyle, className)}>
       <Link className={sectionBlogsItemLinkStyle} href={itemSlug}>
         <Image className={sectionBlogsItemImageStyle} src={src} alt={alt} fill sizes="auto" />
         <Heading className={sectionBlogsItemHeadingStyle} as="span" variant="h3">

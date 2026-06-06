@@ -32,6 +32,9 @@ export const logoLinkStyle = style(
       '&:link, &:visited, &:hover, &:active': {
         color: 'currentColor',
       },
+      '&::after': {
+        all: 'unset',
+      },
     },
   }),
 );
