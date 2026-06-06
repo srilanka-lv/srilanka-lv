@@ -16,7 +16,7 @@ export const sectionBlogsItemStyle = style(
 
     selectors: {
       '&:hover': {
-        transform: `scale(1.05) translateY(${spacing[-2]})`,
+        transform: `scale(1.0125)`,
       },
     },
   }),
@@ -47,9 +47,6 @@ export const sectionBlogsItemLinkStyle = style(
     selectors: {
       '&:link, &:visited, &:hover, &:active': {
         color: color.foreground,
-      },
-      '&:hover': {
-        transform: 'scale(1.0125)',
       },
       '&::after': {
         content: '',
