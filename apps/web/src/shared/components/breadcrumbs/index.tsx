@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
+import type { FunctionComponent } from 'react';
 
 import { getSiteUrl } from '@/shared/utils/get-site-url';
 
@@ -13,6 +14,7 @@ import {
 } from './styles.css';
 
 type BreadcrumbsProps = {
+  className?: string;
   items: BreadcrumbItem[];
 };
 
@@ -26,7 +28,7 @@ function toAbsoluteUrl(href: string): string {
   return `${siteUrl}${href}`;
 }
 
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export const Breadcrumbs: FunctionComponent<BreadcrumbsProps> = ({ className, items }) => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -49,7 +51,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         // biome-ignore lint/security/noDangerouslySetInnerHtml: required for JSON-LD
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <nav aria-label="Breadcrumbs" className={breadcrumbsNavStyle}>
+      <nav aria-label="Breadcrumbs" className={clsx(breadcrumbsNavStyle, className)}>
         <ol className={breadcrumbsListStyle}>
           {items.map((item, index) => {
             const isLast = index === items.length - 1;
@@ -78,4 +80,4 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
       </nav>
     </>
   );
-}
+};

@@ -5,6 +5,24 @@ import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { spacing } = vars;
 
+export const blogsPageLayoutStyle = style({
+  paddingTop: 'unset',
+  paddingBottom: spacing[12],
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xl})`]: {
+      display: 'grid',
+      gridTemplateColumns: `1fr ${breakpoints.xxs}`,
+      gap: spacing[12],
+      paddingBottom: spacing[24],
+    },
+  },
+});
+
+export const breadcrumbsStyle = style({
+  paddingBottom: spacing[8],
+});
+
 export const blogsPageLayoutBlogsStyle = style({
   all: 'revert',
   display: 'grid',
@@ -15,20 +33,6 @@ export const blogsPageLayoutBlogsStyle = style({
   '@media': {
     [`screen and (min-width: ${breakpoints.sm})`]: {
       gridTemplateColumns: '1fr 1fr',
-    },
-  },
-});
-
-export const blogsPageLayoutStyle = style({
-  paddingTop: spacing[12],
-  paddingBottom: spacing[12],
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xl})`]: {
-      display: 'grid',
-      gridTemplateColumns: `1fr ${breakpoints.xxs}`,
-      gap: spacing[12],
-      paddingBottom: spacing[24],
     },
   },
 });

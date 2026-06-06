@@ -46,6 +46,10 @@ globalStyle(
   }),
 );
 
+export const breadcrumbsStyle = style({
+  paddingBottom: spacing[8],
+});
+
 export const blogPageLayoutAsideStyle = style(
   inComponentsLayer({
     paddingTop: 'initial',

@@ -18,6 +18,7 @@ import {
   blogPageLayoutArticleStyle,
   blogPageLayoutAsideStyle,
   blogPageLayoutStyle,
+  breadcrumbsStyle,
 } from './styles.css';
 
 type BlogPageLayoutProps = { slug: string };
@@ -62,7 +63,7 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
           <BlogHeroTitle>{post.title}</BlogHeroTitle>
           <BlogHeroAuthor publishedAt={post.publishedAt} />
         </BlogHero>
-        <Breadcrumbs items={buildPostItems(slug, post.title ?? '')} />
+        <Breadcrumbs className={breadcrumbsStyle} items={buildPostItems(slug, post.title ?? '')} />
         <BlogText body={post.body} />
       </article>
 
