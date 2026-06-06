@@ -37,6 +37,12 @@ export const sectionFaqsTitleStyle = style(
       [`screen and (min-width: ${breakpoints.md})`]: {
         fontSize: font.size['4xl'],
       },
+      [`screen and (min-width: ${breakpoints.xl})`]: {
+        marginTop: spacing[16],
+      },
+      [`screen and (min-width: ${breakpoints.xxl})`]: {
+        marginTop: spacing[24],
+      },
     },
   }),
 );
