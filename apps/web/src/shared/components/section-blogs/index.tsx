@@ -13,6 +13,7 @@ type SectionBlogsProps = {
   sectionTitleClassName?: string;
   sectionBlogsClassName?: string;
   sectionBlogsItemClassName?: string;
+  blogsLimit?: number;
 } & ComponentProps<'section'>;
 
 export const SectionBlogs: FunctionComponent<SectionBlogsProps> = async ({
@@ -20,10 +21,11 @@ export const SectionBlogs: FunctionComponent<SectionBlogsProps> = async ({
   sectionTitleClassName,
   sectionBlogsClassName,
   sectionBlogsItemClassName,
+  blogsLimit = 12,
   ...props
 }) => {
   const repository = buildSanityRepository();
-  const posts = await repository.query(blogPostsQuery, { limit: 6 });
+  const posts = await repository.query(blogPostsQuery, { limit: blogsLimit });
 
   return (
     <>
