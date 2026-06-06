@@ -78,12 +78,8 @@ export const sectionFaqsItemLinkStyle = style(
         fontWeight: font.weight.semibold,
         color: color.accent,
       },
-      '&:focus-visible': {
-        outlineOffset: spacing[1],
-        outlineStyle: 'solid',
-        outlineWidth: focus.width,
-        outlineColor: focus.color,
-        borderRadius: border.radius.small,
+      '&:hover, &:focus-visible': {
+        color: color.background,
       },
     },
   }),

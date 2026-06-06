@@ -4,7 +4,7 @@ import { inComponentsLayer, inOverridesLayer } from '@/shared/styles/layers/laye
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { color, spacing, transition } = vars;
+const { spacing } = vars;
 
 export const blogPageLayoutStyle = style(
   inComponentsLayer({
@@ -36,52 +36,6 @@ export const blogPageLayoutArticleStyle = style(
         marginRight: 'auto',
       },
     },
-  }),
-);
-
-globalStyle(
-  `${blogPageLayoutArticleStyle} a:link, ${blogPageLayoutArticleStyle} a:visited, ${blogPageLayoutArticleStyle} a:hover, ${blogPageLayoutArticleStyle} a:active`,
-  inComponentsLayer({
-    outline: 'none',
-    position: 'relative',
-    color: '#ee5253',
-    textDecoration: 'none',
-    transitionTimingFunction: transition.easing.easeInOut,
-    transitionDuration: transition.duration.faster,
-    transitionProperty: 'color',
-  }),
-);
-
-globalStyle(
-  `${blogPageLayoutArticleStyle} a:hover, ${blogPageLayoutArticleStyle} a:focus-visible`,
-  inComponentsLayer({
-    color: color.background,
-  }),
-);
-
-globalStyle(
-  `${blogPageLayoutArticleStyle} a:link::after, ${blogPageLayoutArticleStyle} a:visited::after, ${blogPageLayoutArticleStyle} a:active::after`,
-  inComponentsLayer({
-    mixBlendMode: 'color-dodge',
-    position: 'absolute',
-    display: 'block',
-    content: '',
-    backgroundColor: '#ee5253',
-    left: spacing[-1],
-    bottom: '0',
-    width: `calc(100% + ${spacing[2]})`,
-    height: spacing[1],
-    zIndex: '1',
-    transitionTimingFunction: transition.easing.easeInOut,
-    transitionDuration: transition.duration.faster,
-    transitionProperty: 'height',
-  }),
-);
-
-globalStyle(
-  `${blogPageLayoutArticleStyle} a:hover::after, ${blogPageLayoutArticleStyle} a:focus-visible::after`,
-  inComponentsLayer({
-    height: `calc(100%)`,
   }),
 );
 

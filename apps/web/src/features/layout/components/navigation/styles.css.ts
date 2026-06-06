@@ -119,7 +119,7 @@ export const navigationItemStyles = recipe({
           },
         },
       },
-      '&:hover::after': {
+      '&:hover::after, &:focus-visible::after': {
         opacity: 1,
         transform: 'scaleX(1)',
       },

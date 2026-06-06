@@ -1,9 +1,9 @@
 import { style } from '@vanilla-extract/css';
 
-import { inComponentsLayer, inOverridesLayer } from '@/shared/styles/layers/layers';
+import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
-const { spacing, font, color, focus, border } = vars;
+const { spacing, font, color } = vars;
 
 export const breadcrumbsNavStyle = style(
   inComponentsLayer({
@@ -43,23 +43,15 @@ export const breadcrumbsItemStyle = style(
 );
 
 export const breadcrumbsLinkStyle = style(
-  inOverridesLayer({
+  inComponentsLayer({
     selectors: {
       '&:link, &:visited': {
         color: color.foreground,
-        textDecoration: 'underline',
-        textUnderlineOffset: '0.25em',
-        opacity: 0.7,
-      },
-      '&:hover, &:active': {
         opacity: 1,
       },
-      '&:focus-visible': {
-        outlineOffset: spacing[1],
-        outlineStyle: 'solid',
-        outlineWidth: focus.width,
-        outlineColor: focus.color,
-        borderRadius: border.radius.small,
+      '&:hover, &:active, &:focus-visible': {
+        color: color.background,
+        opacity: 1,
       },
     },
   }),
