@@ -34,7 +34,7 @@ export const breadcrumbsItemStyle = style(
 
     selectors: {
       '&:not(:last-child)::after': {
-        content: '"\\203A"',
+        content: '"›"',
         display: 'inline-block',
         opacity: 0.6,
       },
