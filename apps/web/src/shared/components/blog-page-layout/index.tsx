@@ -11,6 +11,8 @@ import { BlogHeroAuthor } from '../blog-hero-author';
 import { BlogHeroTitle } from '../blog-hero-title';
 import { BlogPostJsonLd } from '../blog-post-json-ld';
 import { BlogText } from '../blog-text';
+import { Breadcrumbs } from '../breadcrumbs';
+import { buildPostItems } from '../breadcrumbs/build-items';
 import { FaqList } from '../faq-list';
 import {
   blogPageLayoutArticleStyle,
@@ -59,6 +61,7 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
           <BlogHeroTitle>{post.title}</BlogHeroTitle>
           <BlogHeroAuthor publishedAt={post.publishedAt} />
         </BlogHero>
+        <Breadcrumbs items={buildPostItems(slug, post.title ?? '')} />
         <BlogText body={post.body} />
       </article>
 
