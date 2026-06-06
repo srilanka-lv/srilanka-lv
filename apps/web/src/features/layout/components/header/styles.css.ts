@@ -1,15 +1,14 @@
 import { style } from '@vanilla-extract/css';
+import { recipe } from '@vanilla-extract/recipes';
 
 import { inComponentsLayer, inOverridesLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, zIndex } = vars;
+const { spacing, zIndex, color } = vars;
 
-export const headerStyle = style(
+const headerStyle = style(
   inComponentsLayer({
-    mixBlendMode: 'luminosity',
-    color: 'whitesmoke',
     position: 'relative',
     zIndex: zIndex['20'],
     display: 'flex',
@@ -19,20 +18,6 @@ export const headerStyle = style(
     width: '100%',
     paddingTop: spacing[5],
     paddingBottom: spacing[2],
-
-    selectors: {
-      '&::after': {
-        content: '',
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '100svw',
-        zIndex: -1,
-        background: 'linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
-      },
-    },
 
     '@media': {
       [`screen and (min-width: ${breakpoints.md})`]: {
@@ -50,6 +35,36 @@ export const headerStyle = style(
     },
   }),
 );
+
+export const headerStyles = recipe({
+  base: headerStyle,
+  variants: {
+    variant: {
+      'without-overlay': {
+        mixBlendMode: 'normal',
+        color: color.foreground,
+      },
+      'with-overlay': {
+        mixBlendMode: 'luminosity',
+        color: 'whitesmoke',
+
+        selectors: {
+          '&::after': {
+            content: '',
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '100svw',
+            zIndex: -1,
+            background: 'linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
+          },
+        },
+      },
+    },
+  },
+});
 
 export const logoStyle = style(
   inOverridesLayer({
