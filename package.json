@@ -30,9 +30,6 @@
     "lint-staged": "^17.0.7",
     "typescript": "^6.0.3"
   },
-  "overrides": {
-    "vite": "^7"
-  },
   "dependencies": {
     "@sanity/vision": "^6.0.0",
     "next-sanity": "^13.1.0",
