@@ -1,6 +1,6 @@
+import { PAGE_BLOGS_SLUG } from '@packages/sanity/constants/pages-slugs';
 import type { Metadata } from 'next';
 
-import { PAGE_BLOGS_SLUG } from '@/features/sanity/constants/pages-slugs';
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
 import { BlogsPageLayout } from '@/shared/components/blogs-page-layout';
 

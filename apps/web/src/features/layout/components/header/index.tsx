@@ -1,9 +1,5 @@
 'use client';
 
-import clsx from 'clsx';
-import { usePathname } from 'next/navigation';
-import { type FunctionComponent, useMemo } from 'react';
-
 import {
   PAGE_ABOUT_ME_SLUG,
   PAGE_BLOGS_SLUG,
@@ -17,7 +13,11 @@ import {
   PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG,
   PAGE_INFO_WHERE_TO_STAY_SLUG,
   PAGE_PRODUCTS_SLUG,
-} from '@/features/sanity/constants/pages-slugs';
+} from '@packages/sanity/constants/pages-slugs';
+import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
+import { type FunctionComponent, useMemo } from 'react';
+
 import { Logo } from '@/shared/components/logo';
 
 import { Navigation } from '../navigation';

@@ -1,6 +1,6 @@
+import { PAGE_FLIGHT_TICKETS_SLUG } from '@packages/sanity/constants/pages-slugs';
 import type { Metadata } from 'next';
 
-import { PAGE_FLIGHT_TICKETS_SLUG } from '@/features/sanity/constants/pages-slugs';
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
 import flightData from '@/features/serpapi/data/flight-data.json';
 import { Breadcrumbs } from '@/shared/components/breadcrumbs';

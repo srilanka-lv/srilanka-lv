@@ -5,13 +5,8 @@ export const pagesBySlugQuery = defineQuery(`
     _id,
     title,
     slug,
-    excerpt,
-    coverImage,
     body,
-    publishedAt,
     seo,
-    openGraph,
-    tags[]->{ _id, title, slug },
-    faqs[]->{ _id, question, answer }
+    openGraph
   }
 `);

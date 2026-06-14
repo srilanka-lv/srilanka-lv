@@ -6,15 +6,6 @@ import {
   SiYoutube,
 } from '@icons-pack/react-simple-icons';
 import {
-  Home,
-  MailCheck,
-  Newspaper,
-  ShoppingBag,
-  SquareUserRound,
-  TicketsPlane,
-} from 'lucide-react';
-
-import {
   PAGE_ABOUT_ME_SLUG,
   PAGE_BLOGS_SLUG,
   PAGE_CONTACT_SLUG,
@@ -27,7 +18,15 @@ import {
   PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG,
   PAGE_INFO_WHERE_TO_STAY_SLUG,
   PAGE_PRODUCTS_SLUG,
-} from '@/features/sanity/constants/pages-slugs';
+} from '@packages/sanity/constants/pages-slugs';
+import {
+  Home,
+  MailCheck,
+  Newspaper,
+  ShoppingBag,
+  SquareUserRound,
+  TicketsPlane,
+} from 'lucide-react';
 
 export const navigationItems = [
   {

@@ -1,5 +1,3 @@
-import type { ReactNode } from 'react';
-
 import {
   PAGE_FLIGHT_TICKETS_SLUG,
   PAGE_INFO_BEST_TIME_TO_TRAVEL_SLUG,
@@ -9,7 +7,8 @@ import {
   PAGE_INFO_VISA_SLUG,
   PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG,
   PAGE_INFO_WHERE_TO_STAY_SLUG,
-} from '@/features/sanity/constants/pages-slugs';
+} from '@packages/sanity/constants/pages-slugs';
+import type { ReactNode } from 'react';
 
 import { IconCalendarDate } from '../icons/icon-calendar-date';
 import { IconCalendarGrid } from '../icons/icon-calendar-grid';

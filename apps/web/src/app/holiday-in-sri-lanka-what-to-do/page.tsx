@@ -1,20 +1,21 @@
+import { PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG } from '@packages/sanity/constants/pages-slugs';
+import { pagesBySlugQuery } from '@packages/sanity/queries/pages-by-slug-query';
 import type { Metadata } from 'next';
 
-import { PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG } from '@/features/sanity/constants/pages-slugs';
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
-import { Breadcrumbs } from '@/shared/components/breadcrumbs';
-import { buildSectionItems, findNavLabel } from '@/shared/components/breadcrumbs/build-items';
+import { buildSanityRepository } from '@/features/sanity/utils/build-sanity-repository';
+import { StaticPageLayout } from '@/shared/components/static-page-layout';
 
 export const generateMetadata = (): Promise<Metadata> =>
   buildPageMetadata(PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG);
 
-export default function HolidayInSriLankaWhatToDoPage() {
-  const href = `/${PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG}`;
+export default async function HolidayInSriLankaWhatToDoPage() {
+  const repository = buildSanityRepository();
+  const post = await repository.query(pagesBySlugQuery, {
+    slug: PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG,
+  });
 
   return (
-    <>
-      <Breadcrumbs items={buildSectionItems(href)} />
-      <h1>{findNavLabel(href)}</h1>
-    </>
+    <StaticPageLayout href={`/${PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG}`} body={post?.body} />
   );
 }

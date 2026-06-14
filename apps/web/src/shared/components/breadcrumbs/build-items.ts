@@ -1,5 +1,6 @@
+import { PAGE_BLOGS_SLUG } from '@packages/sanity/constants/pages-slugs';
+
 import { navigationItems } from '@/features/layout/components/navigation/index.data';
-import { PAGE_BLOGS_SLUG } from '@/features/sanity/constants/pages-slugs';
 
 export type BreadcrumbItem = {
   name: string;

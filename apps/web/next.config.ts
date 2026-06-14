@@ -1,7 +1,4 @@
 import path from 'node:path';
-import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
-import type { NextConfig } from 'next';
-
 import {
   PAGE_ABOUT_ME_SLUG,
   PAGE_BLOGS_SLUG,
@@ -16,7 +13,9 @@ import {
   PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG,
   PAGE_INFO_WHERE_TO_STAY_SLUG,
   PAGE_PRODUCTS_SLUG,
-} from '@/features/sanity/constants/pages-slugs';
+} from '@packages/sanity/constants/pages-slugs';
+import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
+import type { NextConfig } from 'next';
 
 import packageJson from '../../package.json' with { type: 'json' };
 

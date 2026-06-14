@@ -1,13 +1,13 @@
-import { blogPostsSitemapQuery } from '@packages/sanity/queries/blog-posts-sitemap-query';
-import type { MetadataRoute } from 'next';
-
 import {
   PAGE_ABOUT_ME_SLUG,
   PAGE_BLOGS_SLUG,
   PAGE_CONTACT_SLUG,
   PAGE_FLIGHT_TICKETS_SLUG,
   PAGE_PRODUCTS_SLUG,
-} from '@/features/sanity/constants/pages-slugs';
+} from '@packages/sanity/constants/pages-slugs';
+import { blogPostsSitemapQuery } from '@packages/sanity/queries/blog-posts-sitemap-query';
+import type { MetadataRoute } from 'next';
+
 import { buildSanityRepository } from '@/features/sanity/utils/build-sanity-repository';
 import { getSiteUrl } from '@/shared/utils/get-site-url';
 

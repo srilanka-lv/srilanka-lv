@@ -1,6 +1,5 @@
+import { PAGE_BLOGS_SLUG } from '@packages/sanity/constants/pages-slugs';
 import type { FunctionComponent } from 'react';
-
-import { PAGE_BLOGS_SLUG } from '@/features/sanity/constants/pages-slugs';
 
 import { Breadcrumbs } from '../breadcrumbs';
 import { buildSectionItems } from '../breadcrumbs/build-items';
