@@ -12,7 +12,7 @@
     "build-sb": "bun storybook build"
   },
   "dependencies": {
-    "@ark-ui/react": "^5.37.0",
+    "@ark-ui/react": "^5.37.1",
     "@hookform/resolvers": "^5.4.0",
     "@icons-pack/react-simple-icons": "^13.13.0",
     "@js-temporal/polyfill": "^0.5.1",
@@ -31,9 +31,11 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-hook-form": "^7.77.0",
+    "react-player": "^3.4.0",
     "resend": "^6.12.4",
     "serpapi": "^2.2.1",
     "sharp": "^0.34.5",
+    "structured-table": "^0.3.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {

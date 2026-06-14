@@ -6,13 +6,31 @@ import {
 } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { SanityTable } from 'structured-table';
 
 import { Heading } from '@/shared/components/heading';
 import { Text } from '@/shared/components/text';
 
 import { urlForImage } from '../../utils/url-for-image';
 import { ImageGallery } from '../portable-text-image-gallery/image-gallery';
-import { inlineImageCaptionStyle, inlineImageFigureStyle } from './styles.css';
+import TableView from '../stl-renderer/table/TableView';
+import { YouTubeEmbed } from '../youtube-embed';
+import {
+  inlineImageCaptionStyle,
+  inlineImageFigureStyle,
+  stlTableScrollWrapperStyle,
+} from './styles.css';
+
+type StlTableBlockValue = {
+  stlParsed?: string;
+  stlString?: string;
+  caption?: string;
+};
+
+type YouTubeBlockValue = {
+  url?: string;
+  caption?: string;
+};
 
 const components: PortableTextComponents = {
   block: {
@@ -96,6 +114,24 @@ const components: PortableTextComponents = {
       );
     },
     imageGallery: ImageGallery,
+    stlTableBlock: ({ value }: { value: StlTableBlockValue }) => {
+      if (!value?.stlParsed) {
+        return null;
+      }
+
+      const data = JSON.parse(value.stlParsed) as SanityTable;
+      return (
+        <>
+          <div className={stlTableScrollWrapperStyle}>
+            <TableView data={data} />
+          </div>
+          {value.caption ? <p>{value.caption}</p> : null}
+        </>
+      );
+    },
+    youTube: ({ value }: { value: YouTubeBlockValue }) => (
+      <YouTubeEmbed url={value.url} caption={value.caption} />
+    ),
   },
 };
 

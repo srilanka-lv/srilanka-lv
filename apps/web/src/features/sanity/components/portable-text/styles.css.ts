@@ -77,3 +77,44 @@ export const inlineImageCaptionStyle = style(
     paddingBottom: spacing[4],
   }),
 );
+
+export const stlTableScrollWrapperStyle = style(
+  inComponentsLayer({
+    width: '100%',
+    overflowX: 'auto',
+  }),
+);
+
+export const youtubeFigureStyle = style(
+  inComponentsLayer({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: spacing[1],
+    margin: 0,
+  }),
+);
+
+export const youtubeWrapperStyle = style(
+  inComponentsLayer({
+    position: 'relative',
+    width: '100%',
+    aspectRatio: '16 / 9',
+    borderRadius: border.radius.large,
+    overflow: 'hidden',
+  }),
+);
+
+// react-player v3 renders the player as a custom element (e.g. <youtube-video>) whose
+// iframe lives in a closed-off shadow root, so a light-DOM `iframe` selector can't reach
+// it. Size react-player's root child to fill the aspect-ratio box instead; the element's
+// own shadow styles size the iframe to 100% of that host.
+globalStyle(
+  `${youtubeWrapperStyle} > *`,
+  inComponentsLayer({
+    position: 'absolute',
+    inset: 0,
+    width: '100%',
+    height: '100%',
+    border: 0,
+  }),
+);
