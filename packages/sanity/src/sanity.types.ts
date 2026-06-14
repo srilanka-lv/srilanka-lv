@@ -121,6 +121,12 @@ export type BlockContent = Array<
   | ({
       _key: string;
     } & ImageGallery)
+  | ({
+      _key: string;
+    } & StlTableBlock)
+  | ({
+      _key: string;
+    } & YouTube)
 >;
 
 export type SanityImageCrop = {
@@ -153,7 +159,7 @@ export type Pages = {
   _rev: string;
   title?: string;
   slug?: Slug;
-  faq?: FaqsReference;
+  body?: BlockContent;
   seo?: Seo;
   openGraph?: OpenGraph;
 };
@@ -182,6 +188,19 @@ export type Tags = {
       _key: string;
     } & FaqsReference
   >;
+};
+
+export type YouTube = {
+  _type: "youTube";
+  url?: string;
+  caption?: string;
+};
+
+export type StlTableBlock = {
+  _type: "stlTableBlock";
+  stlString?: string;
+  stlParsed?: string;
+  caption?: string;
 };
 
 export type ImageGallery = {
@@ -318,6 +337,8 @@ export type AllSanitySchemaTypes =
   | Pages
   | Faqs
   | Tags
+  | YouTube
+  | StlTableBlock
   | ImageGallery
   | MediaTag
   | SanityImagePaletteSwatch
@@ -399,19 +420,14 @@ export type BlogPostsSitemapQueryResult = Array<{
 
 // Source: ../../packages/sanity/src/queries/pages-by-slug-query.ts
 // Variable: pagesBySlugQuery
-// Query: *[_type == "pages" && slug.current == $slug][0]{    _id,    title,    slug,    excerpt,    coverImage,    body,    publishedAt,    seo,    openGraph,    tags[]->{ _id, title, slug },    faqs[]->{ _id, question, answer }  }
+// Query: *[_type == "pages" && slug.current == $slug][0]{    _id,    title,    slug,    body,    seo,    openGraph  }
 export type PagesBySlugQueryResult = {
   _id: string;
   title: string | null;
   slug: Slug | null;
-  excerpt: null;
-  coverImage: null;
-  body: null;
-  publishedAt: null;
+  body: BlockContent | null;
   seo: Seo | null;
   openGraph: OpenGraph | null;
-  tags: null;
-  faqs: null;
 } | null;
 
 // Source: ../../packages/sanity/src/queries/pages-meta-data-by-slug-query.ts
@@ -424,14 +440,11 @@ export type PagesMetaDataBySlugQueryResult = {
 
 // Source: ../../packages/sanity/src/queries/pages-query.ts
 // Variable: pagesQuery
-// Query: *[_type == "pages"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }
+// Query: *[_type == "pages"] | order(title asc) [0...$limit]{ _id, title, slug }
 export type PagesQueryResult = Array<{
   _id: string;
   title: string | null;
   slug: Slug | null;
-  excerpt: null;
-  coverImage: null;
-  publishedAt: null;
 }>;
 
 // Query TypeMap
@@ -442,8 +455,8 @@ declare module "@sanity/client" {
     '*[_type == "blogPosts" && slug.current == $slug][0]{ seo, openGraph }': BlogPostsMetaDataBySlugQueryResult;
     '*[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': BlogPostsQueryResult;
     '*[_type == "blogPosts" && defined(slug.current)]{ "slug": slug.current, _updatedAt }': BlogPostsSitemapQueryResult;
-    '\n  *[_type == "pages" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': PagesBySlugQueryResult;
+    '\n  *[_type == "pages" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    body,\n    seo,\n    openGraph\n  }\n': PagesBySlugQueryResult;
     '*[_type == "pages" && slug.current == $slug][0]{ seo, openGraph }': PagesMetaDataBySlugQueryResult;
-    '*[_type == "pages"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': PagesQueryResult;
+    '*[_type == "pages"] | order(title asc) [0...$limit]{ _id, title, slug }': PagesQueryResult;
   }
 }
