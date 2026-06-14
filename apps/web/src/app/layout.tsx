@@ -27,7 +27,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Šrilanka.lv',
+    template: '%s | Šrilanka 26/27',
     default: 'Šrilanka.lv',
   },
   metadataBase: process.env.NEXT_PUBLIC_SELF_URL
