@@ -1,6 +1,6 @@
+import { PAGE_HOME_SLUG } from '@packages/sanity/constants/pages-slugs';
 import type { Metadata } from 'next';
 
-import { PAGE_HOME_SLUG } from '@/features/sanity/constants/pages-slugs';
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
 import { HomeJsonLd } from '@/shared/components/home-json-ld';
 import { SectionBlogs } from '@/shared/components/section-blogs';
