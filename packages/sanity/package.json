@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "groq": "^5.30.0",
-    "sanity": "^5.30.0"
+    "sanity": "^5.30.0",
+    "sanity-plugin-stl-table": "^0.3.0"
   }
 }

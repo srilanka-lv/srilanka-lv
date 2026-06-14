@@ -1,3 +1,5 @@
+import './schemaTypes/components/register';
+
 import { visionTool } from '@sanity/vision';
 import { schemas } from '@srilanka/sanity';
 import { defineConfig } from 'sanity';
