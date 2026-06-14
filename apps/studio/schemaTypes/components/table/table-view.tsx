@@ -1,10 +1,9 @@
-import React from 'react';
 import type { SanityTable, TableCell } from 'structured-table';
 
 import { ButtonCell, LinkCell, TextCell } from '../cell';
 import '../style.css';
 
-const TableCellContent = React.memo(({ data }: { data: TableCell }) => {
+const TableCellContent = ({ data }: { data: TableCell }) => {
   switch (data.type) {
     case 'text':
       return <TextCell data={data} />;
@@ -15,8 +14,7 @@ const TableCellContent = React.memo(({ data }: { data: TableCell }) => {
     default:
       return null;
   }
-});
-TableCellContent.displayName = 'TableCellContent';
+};
 
 function getBodyCellTag(cell: TableCell): 'td' | 'th' {
   return cell.cellType === 'header' ? 'th' : 'td';
@@ -95,4 +93,4 @@ const TableView = ({ data, className = 'border' }: { data: SanityTable; classNam
   );
 };
 
-export default TableView;
+export { TableView };

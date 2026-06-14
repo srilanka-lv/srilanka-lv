@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import type { SanityTableProps } from 'structured-table';
 
-import TableView from './table/table-view';
+import { TableView } from './table/table-view';
 
 /**
  * STLReact: Namespace for utilities that return React components.

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { TextCellProps } from 'structured-table';
 
-const TextCell = React.memo(({ data }: { data: TextCellProps }) => {
+const TextCell = ({ data }: { data: TextCellProps }) => {
   if (!Array.isArray(data.value)) {
     return <>{data.value}</>;
   }
@@ -19,7 +19,6 @@ const TextCell = React.memo(({ data }: { data: TextCellProps }) => {
       })}
     </>
   );
-});
-TextCell.displayName = 'TextCell';
+};
 
 export { TextCell };

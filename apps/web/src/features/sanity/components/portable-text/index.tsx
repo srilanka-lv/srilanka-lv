@@ -13,7 +13,7 @@ import { Text } from '@/shared/components/text';
 
 import { urlForImage } from '../../utils/url-for-image';
 import { ImageGallery } from '../portable-text-image-gallery/image-gallery';
-import TableView from '../stl-renderer/table/table-view';
+import { TableView } from '../stl-renderer/table/table-view';
 import { YouTubeEmbed } from '../youtube-embed';
 import {
   inlineImageCaptionStyle,

@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useId } from 'react';
+import { type MouseEvent, useId } from 'react';
 import type { ButtonCellProps } from 'structured-table';
 
-const ButtonCell = React.memo(({ data }: { data: ButtonCellProps }) => {
+const ButtonCell = ({ data }: { data: ButtonCellProps }) => {
   const stableId = useId();
 
-  const handleBtnClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleBtnClick = (e: MouseEvent<HTMLButtonElement>) => {
     try {
       // 1. If URL is present, it opens the url in new tab
       if (data.url) {
@@ -45,7 +45,6 @@ const ButtonCell = React.memo(({ data }: { data: ButtonCellProps }) => {
       {data.text}
     </button>
   );
-});
-ButtonCell.displayName = 'ButtonCell';
+};
 
 export { ButtonCell };

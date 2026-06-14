@@ -25,7 +25,7 @@ type TableViewProps = {
   className?: string;
 };
 
-export default function TableView({ data, className }: TableViewProps) {
+export function TableView({ data, className }: TableViewProps) {
   const tableClassName = className ? `${stlTableStyle} ${className}` : stlTableStyle;
 
   return (
