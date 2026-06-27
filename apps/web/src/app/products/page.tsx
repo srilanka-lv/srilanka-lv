@@ -1,19 +1,14 @@
-import { PAGE_PRODUCTS_SLUG } from '@packages/sanity/constants/pages-slugs';
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import type { Metadata } from 'next';
+import type { FunctionComponent } from 'react';
 
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
-import { Breadcrumbs } from '@/shared/components/breadcrumbs';
-import { buildSectionItems, findNavLabel } from '@/shared/components/breadcrumbs/build-items';
+import { ProductsPage } from '@/shared/components/products-page';
 
-export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGE_PRODUCTS_SLUG);
+export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGES.LV.PRODUCTS);
 
-export default function ProductsPage() {
-  const href = `/${PAGE_PRODUCTS_SLUG}`;
+const NextProductsPage: FunctionComponent = () => {
+  return <ProductsPage />;
+};
 
-  return (
-    <>
-      <Breadcrumbs items={buildSectionItems(href)} />
-      <h1>{findNavLabel(href)}</h1>
-    </>
-  );
-}
+export default NextProductsPage;
