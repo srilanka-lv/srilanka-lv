@@ -1,14 +1,15 @@
-import { PAGE_CONTACT_SLUG } from '@packages/sanity/constants/pages-slugs';
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import type { Metadata } from 'next';
+import type { FunctionComponent } from 'react';
 
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
 import { Breadcrumbs } from '@/shared/components/breadcrumbs';
 import { buildSectionItems, findNavLabel } from '@/shared/components/breadcrumbs/build-items';
 
-export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGE_CONTACT_SLUG);
+export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGES.LV.CONTACT);
 
-export default function ContactPage() {
-  const href = `/${PAGE_CONTACT_SLUG}`;
+const NextContactPage: FunctionComponent = () => {
+  const href = `/${PAGES.LV.CONTACT}`;
 
   return (
     <>
@@ -17,4 +18,6 @@ export default function ContactPage() {
       <span>About Me Page</span>
     </>
   );
-}
+};
+
+export default NextContactPage;

@@ -95,7 +95,13 @@ export const navigationItemStyles = recipe({
 
     selectors: {
       '&:link, &:visited, &:hover, &:active': {
-        color: 'currentColor',
+        color: color.foreground,
+
+        '@media': {
+          [`screen and (min-width: ${breakpoints.md})`]: {
+            color: 'currentColor',
+          },
+        },
       },
       '&:link::after, &:visited::after, &:hover::after, &:active::after': {
         content: '',
@@ -139,6 +145,13 @@ export const navigationItemStyles = recipe({
     active: {
       true: inOverridesLayer({
         selectors: {
+          '&:link, &:visited, &:hover, &:active': {
+            '@media': {
+              [`screen and (max-width: ${breakpoints.md})`]: {
+                color: color.accent,
+              },
+            },
+          },
           '&:link::after, &:visited::after, &:hover::after, &:active::after': {
             backgroundColor: 'currentColor',
             opacity: 1,

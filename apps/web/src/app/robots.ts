@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 import { getSiteUrl } from '@/shared/utils/get-site-url';
 
-export default function robots(): MetadataRoute.Robots {
+const robots = (): MetadataRoute.Robots => {
   const siteUrl = getSiteUrl();
 
   return {
@@ -14,4 +14,6 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${siteUrl}/sitemap.xml`,
     host: siteUrl,
   };
-}
+};
+
+export default robots;

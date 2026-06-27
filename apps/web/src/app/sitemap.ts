@@ -1,10 +1,4 @@
-import {
-  PAGE_ABOUT_ME_SLUG,
-  PAGE_BLOGS_SLUG,
-  PAGE_CONTACT_SLUG,
-  PAGE_FLIGHT_TICKETS_SLUG,
-  PAGE_PRODUCTS_SLUG,
-} from '@packages/sanity/constants/pages-slugs';
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import { blogPostsSitemapQuery } from '@packages/sanity/queries/blog-posts-sitemap-query';
 import type { MetadataRoute } from 'next';
 
@@ -20,11 +14,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticPaths = [
     '',
-    `/${PAGE_BLOGS_SLUG}`,
-    `/${PAGE_PRODUCTS_SLUG}`,
-    `/${PAGE_FLIGHT_TICKETS_SLUG}`,
-    `/${PAGE_ABOUT_ME_SLUG}`,
-    `/${PAGE_CONTACT_SLUG}`,
+    `/${PAGES.LV.BLOGS}`,
+    `/${PAGES.LV.PRODUCTS}`,
+    `/${PAGES.LV.FLIGHT_TICKETS}`,
+    `/${PAGES.LV.ABOUT_ME}`,
+    `/${PAGES.LV.CONTACT}`,
   ];
 
   const staticEntries: MetadataRoute.Sitemap = staticPaths.map((path) => ({
@@ -37,7 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogEntries: MetadataRoute.Sitemap = posts
     .filter((post) => post.slug)
     .map((post) => ({
-      url: `${siteUrl}/${PAGE_BLOGS_SLUG}/${post.slug}`,
+      url: `${siteUrl}/${PAGES.LV.BLOGS}/${post.slug}`,
       lastModified: new Date(post._updatedAt),
       changeFrequency: 'monthly',
       priority: 0.6,

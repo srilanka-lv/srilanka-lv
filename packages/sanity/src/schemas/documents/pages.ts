@@ -1,21 +1,14 @@
 import { defineField, defineType } from 'sanity';
 
-import {
-  PAGE_ABOUT_ME_SLUG,
-  PAGE_BLOGS_SLUG,
-  PAGE_CONTACT_SLUG,
-  PAGE_FLIGHT_TICKETS_SLUG,
-  PAGE_HOME_SLUG,
-  PAGE_PRODUCTS_SLUG,
-} from '../../constants/pages-slugs';
+import { PAGES } from '../../constants/pages-slugs';
 
 const SLUGS_WITHOUT_BODY = [
-  PAGE_HOME_SLUG,
-  PAGE_FLIGHT_TICKETS_SLUG,
-  PAGE_ABOUT_ME_SLUG,
-  PAGE_CONTACT_SLUG,
-  PAGE_PRODUCTS_SLUG,
-  PAGE_BLOGS_SLUG,
+  PAGES.LV.HOME,
+  PAGES.LV.FLIGHT_TICKETS,
+  PAGES.LV.ABOUT_ME,
+  PAGES.LV.CONTACT,
+  PAGES.LV.PRODUCTS,
+  PAGES.LV.BLOGS,
 ];
 
 export const pages = defineType({

@@ -1,6 +1,7 @@
 import { blogPostsBySlugQuery } from '@packages/sanity/queries/blog-posts-by-slug-query';
 import { blogPostsQuery } from '@packages/sanity/queries/blog-posts-query';
 import type { Metadata } from 'next';
+import type { FunctionComponent } from 'react';
 
 import { buildSanityRepository } from '@/features/sanity/utils/build-sanity-repository';
 import { urlForImage } from '@/features/sanity/utils/url-for-image';
@@ -66,8 +67,10 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
   };
 }
 
-export default async function BlogPage({ params }: BlogPageProps) {
+const NextBlogPage: FunctionComponent<BlogPageProps> = async ({ params }) => {
   const { slug } = await params;
 
   return <BlogPageLayout slug={slug} />;
-}
+};
+
+export default NextBlogPage;

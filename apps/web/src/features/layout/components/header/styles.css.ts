@@ -43,22 +43,34 @@ export const headerStyles = recipe({
       'without-overlay': {
         mixBlendMode: 'normal',
         color: color.foreground,
-      },
-      'with-overlay': {
-        mixBlendMode: 'luminosity',
-        color: 'whitesmoke',
 
         selectors: {
           '&::after': {
-            content: '',
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '100svw',
-            zIndex: -1,
-            background: 'linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
+            display: 'none',
+          },
+        },
+      },
+      'with-overlay': {
+        color: color.background,
+
+        '@media': {
+          [`screen and (min-width: ${breakpoints.md})`]: {
+            mixBlendMode: 'luminosity',
+            color: 'whitesmoke',
+
+            selectors: {
+              '&::after': {
+                content: '',
+                position: 'absolute',
+                top: 0,
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '100svw',
+                zIndex: -1,
+                background: 'linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
+              },
+            },
           },
         },
       },

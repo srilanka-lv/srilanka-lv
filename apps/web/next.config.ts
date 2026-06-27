@@ -1,19 +1,5 @@
 import path from 'node:path';
-import {
-  PAGE_ABOUT_ME_SLUG,
-  PAGE_BLOGS_SLUG,
-  PAGE_CONTACT_SLUG,
-  PAGE_FLIGHT_TICKETS_SLUG,
-  PAGE_HOME_SLUG,
-  PAGE_INFO_BEST_TIME_TO_TRAVEL_SLUG,
-  PAGE_INFO_DAILY_BUDGET_SLUG,
-  PAGE_INFO_HOW_LONG_TO_GO_SLUG,
-  PAGE_INFO_TRANSPORT_SLUG,
-  PAGE_INFO_VISA_SLUG,
-  PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG,
-  PAGE_INFO_WHERE_TO_STAY_SLUG,
-  PAGE_PRODUCTS_SLUG,
-} from '@packages/sanity/constants/pages-slugs';
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
 import type { NextConfig } from 'next';
 
@@ -36,128 +22,128 @@ const nextConfig: NextConfig = {
   rewrites: async () => {
     return [
       {
-        source: `/${PAGE_HOME_SLUG}`,
-        destination: '/',
+        source: `/${PAGES.LV.HOME}`,
+        destination: `/${PAGES.EN.HOME}`,
       },
       {
-        source: `/${PAGE_PRODUCTS_SLUG}`,
-        destination: '/products',
+        source: `/${PAGES.LV.PRODUCTS}`,
+        destination: `/${PAGES.EN.PRODUCTS}`,
       },
       {
-        source: `/${PAGE_ABOUT_ME_SLUG}`,
-        destination: '/about-me',
+        source: `/${PAGES.LV.ABOUT_ME}`,
+        destination: `/${PAGES.EN.ABOUT_ME}`,
       },
       {
-        source: `/${PAGE_FLIGHT_TICKETS_SLUG}`,
-        destination: '/flight-tickets',
+        source: `/${PAGES.LV.FLIGHT_TICKETS}`,
+        destination: `/${PAGES.EN.FLIGHT_TICKETS}`,
       },
       {
-        source: `/${PAGE_CONTACT_SLUG}`,
-        destination: '/contact',
+        source: `/${PAGES.LV.CONTACT}`,
+        destination: `/${PAGES.EN.CONTACT}`,
       },
       {
-        source: `/${PAGE_BLOGS_SLUG}`,
-        destination: '/blog',
+        source: `/${PAGES.LV.BLOGS}`,
+        destination: `/${PAGES.EN.BLOGS}`,
       },
       {
-        source: `/${PAGE_BLOGS_SLUG}/:slug`,
-        destination: '/blog/:slug',
+        source: `/${PAGES.LV.BLOGS}/:slug`,
+        destination: `/${PAGES.EN.BLOGS}/:slug`,
       },
       {
-        source: `/${PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG}`,
-        destination: '/holiday-in-sri-lanka-what-to-do',
+        source: `/${PAGES.LV.INFO_WHAT_TO_DO}`,
+        destination: `/${PAGES.EN.INFO_WHAT_TO_DO}`,
       },
       {
-        source: `/${PAGE_INFO_WHERE_TO_STAY_SLUG}`,
-        destination: '/holiday-in-sri-lanka-where-to-stay',
+        source: `/${PAGES.LV.INFO_WHERE_TO_STAY}`,
+        destination: `/${PAGES.EN.INFO_WHERE_TO_STAY}`,
       },
       {
-        source: `/${PAGE_INFO_DAILY_BUDGET_SLUG}`,
-        destination: '/holiday-in-sri-lanka-daily-budget',
+        source: `/${PAGES.LV.INFO_DAILY_BUDGET}`,
+        destination: `/${PAGES.EN.INFO_DAILY_BUDGET}`,
       },
       {
-        source: `/${PAGE_INFO_BEST_TIME_TO_TRAVEL_SLUG}`,
-        destination: '/holiday-in-sri-lanka-best-time-to-travel',
+        source: `/${PAGES.LV.INFO_BEST_TIME_TO_TRAVEL}`,
+        destination: `/${PAGES.EN.INFO_BEST_TIME_TO_TRAVEL}`,
       },
       {
-        source: `/${PAGE_INFO_HOW_LONG_TO_GO_SLUG}`,
-        destination: '/holiday-in-sri-lanka-how-long-to-go',
+        source: `/${PAGES.LV.INFO_HOW_LONG_TO_GO}`,
+        destination: `/${PAGES.EN.INFO_HOW_LONG_TO_GO}`,
       },
       {
-        source: `/${PAGE_INFO_VISA_SLUG}`,
-        destination: '/holiday-in-sri-lanka-how-to-get-a-visa',
+        source: `/${PAGES.LV.INFO_VISA}`,
+        destination: `/${PAGES.EN.INFO_VISA}`,
       },
       {
-        source: `/${PAGE_INFO_TRANSPORT_SLUG}`,
-        destination: '/holiday-in-sri-lanka-transport',
+        source: `/${PAGES.LV.INFO_TRANSPORT}`,
+        destination: `/${PAGES.EN.INFO_TRANSPORT}`,
       },
     ];
   },
   redirects: async () => {
     return [
       {
-        source: '/products',
-        destination: `/${PAGE_PRODUCTS_SLUG}`,
+        source: `/${PAGES.EN.PRODUCTS}`,
+        destination: `/${PAGES.LV.PRODUCTS}`,
         permanent: true,
       },
       {
-        source: '/about-me',
-        destination: `/${PAGE_ABOUT_ME_SLUG}`,
+        source: `/${PAGES.EN.ABOUT_ME}`,
+        destination: `/${PAGES.LV.ABOUT_ME}`,
         permanent: true,
       },
       {
-        source: '/flight-tickets',
-        destination: `/${PAGE_FLIGHT_TICKETS_SLUG}`,
+        source: `/${PAGES.EN.FLIGHT_TICKETS}`,
+        destination: `/${PAGES.LV.FLIGHT_TICKETS}`,
         permanent: true,
       },
       {
-        source: '/contact',
-        destination: `/${PAGE_CONTACT_SLUG}`,
+        source: `/${PAGES.EN.CONTACT}`,
+        destination: `/${PAGES.LV.CONTACT}`,
         permanent: true,
       },
       {
-        source: '/blog',
-        destination: `/${PAGE_BLOGS_SLUG}`,
+        source: `/${PAGES.EN.BLOGS}`,
+        destination: `/${PAGES.LV.BLOGS}`,
         permanent: true,
       },
       {
-        source: '/blog/:slug',
-        destination: `/${PAGE_BLOGS_SLUG}/:slug`,
+        source: `/${PAGES.EN.BLOGS}/:slug`,
+        destination: `/${PAGES.LV.BLOGS}/:slug`,
         permanent: true,
       },
       {
-        source: '/holiday-in-sri-lanka-what-to-do',
-        destination: `/${PAGE_INFO_WHAT_TO_DO_WHAT_NOT_TO_DO_SLUG}`,
+        source: `/${PAGES.EN.INFO_WHAT_TO_DO}`,
+        destination: `/${PAGES.LV.INFO_WHAT_TO_DO}`,
         permanent: true,
       },
       {
-        source: '/holiday-in-sri-lanka-where-to-stay',
-        destination: `/${PAGE_INFO_WHERE_TO_STAY_SLUG}`,
+        source: `/${PAGES.EN.INFO_WHERE_TO_STAY}`,
+        destination: `/${PAGES.LV.INFO_WHERE_TO_STAY}`,
         permanent: true,
       },
       {
-        source: '/holiday-in-sri-lanka-daily-budget',
-        destination: `/${PAGE_INFO_DAILY_BUDGET_SLUG}`,
+        source: `/${PAGES.EN.INFO_DAILY_BUDGET}`,
+        destination: `/${PAGES.LV.INFO_DAILY_BUDGET}`,
         permanent: true,
       },
       {
-        source: '/holiday-in-sri-lanka-best-time-to-travel',
-        destination: `/${PAGE_INFO_BEST_TIME_TO_TRAVEL_SLUG}`,
+        source: `/${PAGES.EN.INFO_BEST_TIME_TO_TRAVEL}`,
+        destination: `/${PAGES.LV.INFO_BEST_TIME_TO_TRAVEL}`,
         permanent: true,
       },
       {
-        source: '/holiday-in-sri-lanka-how-long-to-go',
-        destination: `/${PAGE_INFO_HOW_LONG_TO_GO_SLUG}`,
+        source: `/${PAGES.EN.INFO_HOW_LONG_TO_GO}`,
+        destination: `/${PAGES.LV.INFO_HOW_LONG_TO_GO}`,
         permanent: true,
       },
       {
-        source: '/holiday-in-sri-lanka-how-to-get-a-visa',
-        destination: `/${PAGE_INFO_VISA_SLUG}`,
+        source: `/${PAGES.EN.INFO_VISA}`,
+        destination: `/${PAGES.LV.INFO_VISA}`,
         permanent: true,
       },
       {
-        source: '/holiday-in-sri-lanka-transport',
-        destination: `/${PAGE_INFO_TRANSPORT_SLUG}`,
+        source: `/${PAGES.EN.INFO_TRANSPORT}`,
+        destination: `/${PAGES.LV.INFO_TRANSPORT}`,
         permanent: true,
       },
     ];

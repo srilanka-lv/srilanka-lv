@@ -1,11 +1,12 @@
-import { PAGE_BLOGS_SLUG } from '@packages/sanity/constants/pages-slugs';
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import type { Metadata } from 'next';
+import type { FunctionComponent } from 'react';
 
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
 import { BlogsPageLayout } from '@/shared/components/blogs-page-layout';
 
-export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGE_BLOGS_SLUG);
+export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGES.LV.BLOGS);
 
-export default async function BlogsPage() {
-  return <BlogsPageLayout />;
-}
+const NextBlogsPage: FunctionComponent = async () => <BlogsPageLayout />;
+
+export default NextBlogsPage;
