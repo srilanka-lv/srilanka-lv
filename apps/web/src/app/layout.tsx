@@ -3,7 +3,7 @@ import '@/shared/styles/reset.css';
 import '@/shared/styles/global.css';
 
 import type { Metadata, Viewport } from 'next';
-import type { ReactNode } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 
 import { Layout } from '@/features/layout/components/layout';
 import { ThemeScript } from '@/shared/components/theme-script';
@@ -42,13 +42,13 @@ type RootLayoutReturnType = Readonly<{
   children: ReactNode;
 }>;
 
-export default function RootLayout({ children }: RootLayoutReturnType) {
-  return (
-    <html lang="lv" className={`${comme.variable} ${theme}`} translate="no">
-      <head>
-        <ThemeScript />
-      </head>
-      <Layout>{children}</Layout>
-    </html>
-  );
-}
+const NextRootLayout: FunctionComponent<RootLayoutReturnType> = ({ children }) => (
+  <html lang="lv" className={`${comme.variable} ${theme}`} translate="no">
+    <head>
+      <ThemeScript />
+    </head>
+    <Layout>{children}</Layout>
+  </html>
+);
+
+export default NextRootLayout;
