@@ -1,16 +1,16 @@
-import { PAGE_FLIGHT_TICKETS_SLUG } from '@packages/sanity/constants/pages-slugs';
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import type { Metadata } from 'next';
+import type { FunctionComponent } from 'react';
 
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
 import flightData from '@/features/serpapi/data/flight-data.json';
 import { Breadcrumbs } from '@/shared/components/breadcrumbs';
 import { buildSectionItems, findNavLabel } from '@/shared/components/breadcrumbs/build-items';
 
-export const generateMetadata = (): Promise<Metadata> =>
-  buildPageMetadata(PAGE_FLIGHT_TICKETS_SLUG);
+export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGES.LV.FLIGHT_TICKETS);
 
-export default function FlightCalendarPage() {
-  const href = `/${PAGE_FLIGHT_TICKETS_SLUG}`;
+const NextFlightCalendarPage: FunctionComponent = () => {
+  const href = `/${PAGES.LV.FLIGHT_TICKETS}`;
 
   return (
     <>
@@ -29,4 +29,6 @@ export default function FlightCalendarPage() {
       </div>
     </>
   );
-}
+};
+
+export default NextFlightCalendarPage;

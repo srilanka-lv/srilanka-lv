@@ -1,4 +1,4 @@
-import { PAGE_BLOGS_SLUG } from '@packages/sanity/constants/pages-slugs';
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import type { FunctionComponent } from 'react';
 
 import { Breadcrumbs } from '../breadcrumbs';
@@ -8,7 +8,7 @@ import { blogsPageLayoutBlogsStyle, blogsPageLayoutStyle, breadcrumbsStyle } fro
 
 export const BlogsPageLayout: FunctionComponent = () => (
   <>
-    <Breadcrumbs className={breadcrumbsStyle} items={buildSectionItems(`/${PAGE_BLOGS_SLUG}`)} />
+    <Breadcrumbs className={breadcrumbsStyle} items={buildSectionItems(`/${PAGES.LV.BLOGS}`)} />
     <div className={blogsPageLayoutStyle}>
       <SectionBlogs sectionBlogsClassName={blogsPageLayoutBlogsStyle} />
       <aside>Partnerships</aside>

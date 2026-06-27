@@ -1,4 +1,4 @@
-import { PAGE_BLOGS_SLUG } from '@packages/sanity/constants/pages-slugs';
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 
 import { navigationItems } from '@/features/layout/components/navigation/index.data';
 
@@ -25,7 +25,7 @@ export function buildSectionItems(href: string): BreadcrumbItem[] {
 }
 
 export function buildPostItems(slug: string, title: string): BreadcrumbItem[] {
-  const blogHref = `/${PAGE_BLOGS_SLUG}`;
+  const blogHref = `/${PAGES.LV.BLOGS}`;
 
   return [
     { name: findNavLabel('/'), href: '/' },
