@@ -53,12 +53,12 @@ export const ProductsPage: FunctionComponent = () => {
             <span className={productSubTitleStyle}>{subTitle}</span>
             <Component className={productTitleStyle}>{title}</Component>
             <p className={productDescriptionStyle}>{description}</p>
-            <Link className={productLinkStyle} href={href}>
+            <Link className={productLinkStyle} href={slug}>
               Vairāk informācijas →
             </Link>
             <div className={productImageWrapperStyle}>
               <Image
-                src={`/images/srilanka-lv_product_thumb-${index + 1}.png`}
+                src={`/images/srilanka-lv_product_thumb-${index + 1}.webp`}
                 alt={title}
                 fill
                 sizes="auto"
