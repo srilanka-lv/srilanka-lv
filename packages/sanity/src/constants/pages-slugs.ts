@@ -12,7 +12,7 @@ export const PAGES = {
   EN: {
     HOME: '',
     PRODUCTS: 'products',
-    PRODUCTS_GIRLS_TRIP: 'girls-trip',
+    PRODUCTS_GIRLS_TRIP: 'trip',
     PRODUCTS_CONSULTATION: 'consultation',
     PRODUCTS_HOLIDAY_PLAN: 'holiday-plan',
     ABOUT_ME: 'about-me',

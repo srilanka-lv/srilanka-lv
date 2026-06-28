@@ -30,6 +30,18 @@ const nextConfig: NextConfig = {
         destination: `/${PAGES.EN.PRODUCTS}`,
       },
       {
+        source: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
+        destination: `/${PAGES.EN.PRODUCTS}/${PAGES.EN.PRODUCTS_GIRLS_TRIP}`,
+      },
+      {
+        source: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_CONSULTATION}`,
+        destination: `/${PAGES.EN.PRODUCTS}/${PAGES.EN.PRODUCTS_CONSULTATION}`,
+      },
+      {
+        source: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_HOLIDAY_PLAN}`,
+        destination: `/${PAGES.EN.PRODUCTS}/${PAGES.EN.PRODUCTS_HOLIDAY_PLAN}`,
+      },
+      {
         source: `/${PAGES.LV.ABOUT_ME}`,
         destination: `/${PAGES.EN.ABOUT_ME}`,
       },
@@ -84,6 +96,21 @@ const nextConfig: NextConfig = {
       {
         source: `/${PAGES.EN.PRODUCTS}`,
         destination: `/${PAGES.LV.PRODUCTS}`,
+        permanent: true,
+      },
+      {
+        source: `/${PAGES.EN.PRODUCTS_GIRLS_TRIP}`,
+        destination: `/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
+        permanent: true,
+      },
+      {
+        source: `/${PAGES.EN.PRODUCTS_CONSULTATION}`,
+        destination: `/${PAGES.LV.PRODUCTS_CONSULTATION}`,
+        permanent: true,
+      },
+      {
+        source: `/${PAGES.EN.PRODUCTS_HOLIDAY_PLAN}`,
+        destination: `/${PAGES.LV.PRODUCTS_HOLIDAY_PLAN}`,
         permanent: true,
       },
       {

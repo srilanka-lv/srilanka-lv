@@ -68,7 +68,7 @@ export const headerStyles = recipe({
                 transform: 'translateX(-50%)',
                 width: '100svw',
                 zIndex: -1,
-                background: 'linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%)',
+                background: 'linear-gradient(180deg,rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 100%)',
               },
             },
           },
