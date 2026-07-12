@@ -34,7 +34,7 @@ globalStyle(
 globalStyle(
   'b, strong',
   inResetLayer({
-    fontWeight: 'bolder',
+    fontWeight: '600',
   }),
 );
 

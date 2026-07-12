@@ -8,8 +8,8 @@
     "./types": "./src/sanity.types.ts"
   },
   "dependencies": {
-    "groq": "^6.2.0",
-    "sanity": "^6.2.0",
+    "groq": "^6.4.0",
+    "sanity": "^6.4.0",
     "sanity-plugin-stl-table": "^0.3.0"
   }
 }
