@@ -1,5 +1,7 @@
 import { defineField, defineType } from 'sanity';
 
+import { imageDimensionsValidator } from '../utils/validate-image-dimensions';
+
 export const openGraph = defineType({
   title: 'Open Graph',
   name: 'openGraph',
@@ -23,8 +25,7 @@ export const openGraph = defineType({
       title: 'Open Graph Image',
       name: 'openGraphImage',
       type: 'image',
-      description:
-        'Image shown when sharing on social media. Recommended size: 1200x630px (1.91:1 ratio).',
+      description: 'Image shown when sharing on social media. Required: 1200×630 pixels.',
       options: {
         accept: 'image/png, image/jpeg, image/webp',
       },
@@ -36,6 +37,7 @@ export const openGraph = defineType({
           validation: (rule) => rule.required(),
         },
       ],
+      validation: (rule) => rule.custom(imageDimensionsValidator({ width: 1200, height: 630 })),
     }),
   ],
 });

@@ -83,6 +83,8 @@ jobs:
             NEXT_PUBLIC_SANITY_STUDIO_DATASET=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_DATASET }}
             NEXT_PUBLIC_SELF_URL=${{ vars.NEXT_PUBLIC_SELF_URL }}
             KAMAL_SERVICE=srilanka-development
+          secrets: |
+            sanity_api_key=${{ secrets.SANITY_API_KEY }}
 
   deploy-development:
     needs: build-development
@@ -232,6 +234,8 @@ jobs:
             NEXT_PUBLIC_SANITY_STUDIO_DATASET=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_DATASET }}
             NEXT_PUBLIC_SELF_URL=${{ vars.NEXT_PUBLIC_SELF_URL }}
             KAMAL_SERVICE=srilanka-staging
+          secrets: |
+            sanity_api_key=${{ secrets.SANITY_API_KEY }}
 
   build-production:
     needs: release-please
@@ -282,6 +286,8 @@ jobs:
             NEXT_PUBLIC_SANITY_STUDIO_DATASET=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_DATASET }}
             NEXT_PUBLIC_SELF_URL=${{ vars.NEXT_PUBLIC_SELF_URL }}
             KAMAL_SERVICE=srilanka-production
+          secrets: |
+            sanity_api_key=${{ secrets.SANITY_API_KEY }}
 
   deploy-staging:
     needs: [release-please, build-staging]
@@ -356,6 +362,8 @@ jobs:
             NEXT_PUBLIC_SANITY_STUDIO_DATASET=${{ vars.NEXT_PUBLIC_SANITY_STUDIO_DATASET }}
             NEXT_PUBLIC_SELF_URL=${{ vars.NEXT_PUBLIC_SELF_URL }}
             KAMAL_SERVICE=srilanka-${{ inputs.destination }}
+          secrets: |
+            sanity_api_key=${{ secrets.SANITY_API_KEY }}
 
   deploy-manual:
     if: github.event_name == 'workflow_dispatch' && inputs.action == 'deploy'

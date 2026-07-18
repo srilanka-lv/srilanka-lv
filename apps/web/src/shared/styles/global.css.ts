@@ -1,51 +1,90 @@
 import { globalStyle } from '@vanilla-extract/css';
 
+import { inBaseLayer } from './layers/layers';
 import { vars } from './themes/theme.contract.css';
 import { breakpoints } from './tokens/breakpoints';
 
-globalStyle('html, body', {
-  overflowX: 'clip',
-  overflowClipBox: 'content-box',
+const { color, font, border, focus, transition, spacing } = vars;
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      overflowX: 'initial',
-      overflowClipBox: 'initial',
+globalStyle(
+  'html, body',
+  inBaseLayer({
+    overflowX: 'clip',
+    overflowClipBox: 'content-box',
+
+    '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        overflowX: 'initial',
+        overflowClipBox: 'initial',
+      },
     },
-  },
-});
+  }),
+);
 
-globalStyle('body', {
-  backgroundColor: vars.color.background,
-  color: vars.color.foreground,
-  fontFamily: vars.font.family.body,
-  lineHeight: vars.font.lineHeight.normal,
-  textRendering: 'optimizeLegibility',
-  fontSmooth: 'antialiased',
-});
+globalStyle(
+  'body',
+  inBaseLayer({
+    backgroundColor: color.background,
+    color: color.foreground,
+    fontFamily: font.family.body,
+    lineHeight: font.lineHeight.normal,
+    textRendering: 'optimizeLegibility',
+    fontSmooth: 'antialiased',
+  }),
+);
 
-globalStyle('a:link', {
-  color: vars.color.accent,
-  textDecoration: 'none',
-});
+globalStyle(
+  `body a:link, body a:visited, body a:hover, body a:active`,
+  inBaseLayer({
+    outline: 'none',
+    position: 'relative',
+    color: '#ee5253',
+    textDecoration: 'none',
+    transitionTimingFunction: transition.easing.easeInOut,
+    transitionDuration: transition.duration.faster,
+    transitionProperty: 'color',
+  }),
+);
 
-globalStyle('a:visited', {
-  color: vars.color.accent,
-  textDecoration: 'none',
-});
+globalStyle(
+  `body a:hover, body a:focus-visible`,
+  inBaseLayer({
+    color: color.background,
+  }),
+);
 
-globalStyle('a:hover', {
-  color: vars.color.accent,
-  textDecoration: 'none',
-});
+globalStyle(
+  `body a:link::after, body a:visited::after, body a:active::after`,
+  inBaseLayer({
+    mixBlendMode: 'color-dodge',
+    position: 'absolute',
+    display: 'block',
+    content: '',
+    backgroundColor: '#ee5253',
+    left: '0',
+    bottom: '0',
+    width: `100%`,
+    height: spacing[1],
+    zIndex: '1',
+    borderRadius: border.radius.small,
+    transitionTimingFunction: transition.easing.easeInOut,
+    transitionDuration: transition.duration.faster,
+    transitionProperty: 'height',
+  }),
+);
 
-globalStyle('a:active', {
-  color: vars.color.accent,
-  textDecoration: 'none',
-});
+globalStyle(
+  `body a:hover::after, body a:focus-visible::after`,
+  inBaseLayer({
+    height: `calc(100%)`,
+  }),
+);
 
-globalStyle('a:focus-visible, button:focus-visible', {
-  outline: `${vars.focus.width} solid ${vars.focus.color}`,
-  outlineOffset: vars.focus.offset,
-  borderRadius: vars.border.radius.small,
-});
+globalStyle(
+  'button:focus-visible',
+  inBaseLayer({
+    outline: `${focus.width} solid ${focus.color}`,
+    outlineOffset: focus.offset,
+    borderRadius: border.radius.small,
+  }),
+);

@@ -1,34 +1,42 @@
-import type { ReactNode } from 'react';
+import type { BlockContent } from '@packages/sanity/sanity.types';
+import clsx from 'clsx';
+import type { ComponentProps } from 'react';
 
-import { Heading } from '../heading';
+import { PortableText } from '@/features/sanity/components/portable-text';
+import { Heading } from '@/shared/components/heading';
 
-type FaqListItem = {
-  id: string;
-  question: string;
-  answer: ReactNode;
-};
+import { FaqListItem } from '../faq-list-item';
+import { faqListItemStyle, faqListStyle, faqListTitleStyle } from './styles.css';
 
 type FaqListProps = {
-  items: FaqListItem[];
-};
+  className?: string;
+  items: {
+    id: string;
+    questionSlot: string;
+    answerSlot: BlockContent;
+  }[];
+} & ComponentProps<'div'>;
 
-export function FaqList({ items }: FaqListProps) {
+export function FaqList({ className, items, ...props }: FaqListProps) {
   if (!items.length) {
     return null;
   }
 
   return (
-    <section>
-      {items.map((item) => (
-        <details key={item.id}>
-          <summary>
-            <Heading as="h3" variant="h3">
-              {item.question}
-            </Heading>
-          </summary>
-          {item.answer}
-        </details>
-      ))}
-    </section>
+    <>
+      <Heading as="h6" variant="h2" className={faqListTitleStyle}>
+        Bieži uzdotie jautājumi
+      </Heading>
+      <div {...props} className={clsx(faqListStyle, className)}>
+        {items.map(({ id, questionSlot, answerSlot }) => (
+          <FaqListItem
+            key={id}
+            className={faqListItemStyle}
+            questionSlot={questionSlot}
+            answerSlot={<PortableText value={answerSlot} />}
+          />
+        ))}
+      </div>
+    </>
   );
 }

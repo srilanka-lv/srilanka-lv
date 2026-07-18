@@ -1,35 +1,42 @@
 import { style } from '@vanilla-extract/css';
 
+import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-export const layoutStyle = style({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  paddingLeft: vars.spacing[4],
-  paddingRight: vars.spacing[4],
+const { spacing } = vars;
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      paddingLeft: 'unset',
-      paddingRight: 'unset',
-      maxWidth: breakpoints.sm,
-    },
-    [`screen and (min-width: ${breakpoints.lg})`]: {
-      maxWidth: breakpoints.md,
-    },
-    [`screen and (min-width: ${breakpoints.xl})`]: {
-      maxWidth: breakpoints.lg,
-    },
-    [`screen and (min-width: ${breakpoints.xxl})`]: {
-      maxWidth: breakpoints.xl,
-    },
-  },
-});
+export const layoutStyle = style(
+  inComponentsLayer({
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    paddingLeft: spacing[6],
+    paddingRight: spacing[6],
 
-export const mainStyle = style({
-  isolation: 'isolate',
-});
+    '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        paddingLeft: 'unset',
+        paddingRight: 'unset',
+        maxWidth: breakpoints.sm,
+      },
+      [`screen and (min-width: ${breakpoints.lg})`]: {
+        maxWidth: breakpoints.md,
+      },
+      [`screen and (min-width: ${breakpoints.xl})`]: {
+        maxWidth: breakpoints.lg,
+      },
+      [`screen and (min-width: ${breakpoints.xxl})`]: {
+        maxWidth: breakpoints.xl,
+      },
+    },
+  }),
+);
+
+export const mainStyle = style(
+  inComponentsLayer({
+    isolation: 'isolate',
+  }),
+);

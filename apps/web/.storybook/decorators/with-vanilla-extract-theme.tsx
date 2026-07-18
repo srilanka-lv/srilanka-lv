@@ -16,7 +16,7 @@ function getThemeClass(selected: string): string {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? darkTheme : lightTheme;
 }
 
-export const withVanillaExtractTheme: Decorator = (Story, context) => {
+export const WithVanillaExtractTheme: Decorator = (Story, context) => {
   const selected = context.globals.theme ?? 'system';
 
   useLayoutEffect(() => {

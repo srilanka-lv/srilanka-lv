@@ -1,4 +1,3 @@
-import { env } from 'next-runtime-env';
 import { createClient } from 'next-sanity';
 
 import type { SanityProviderInterface } from '../interfaces/sanity-provider-interface';
@@ -9,10 +8,10 @@ export class DefaultSanityProvider implements SanityProviderInterface {
 
   constructor() {
     this.client = createClient({
-      projectId: env('NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID'),
-      dataset: env('NEXT_PUBLIC_SANITY_STUDIO_DATASET'),
+      projectId: process.env.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID,
+      dataset: process.env.NEXT_PUBLIC_SANITY_STUDIO_DATASET,
       apiVersion: '2026-04-22',
-      token: env('SANITY_API_KEY'),
+      token: process.env.SANITY_API_KEY,
       useCdn: false,
     });
   }

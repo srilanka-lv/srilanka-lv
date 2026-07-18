@@ -1,30 +1,33 @@
 import { recipe } from '@vanilla-extract/recipes';
 
+import { inBaseLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+
+const { color, shadow, border } = vars;
 
 export const cardStyles = recipe({
   base: {},
   variants: {
     variant: {
-      filled: {
-        backgroundColor: vars.color.primaryForeground,
-      },
-      outline: {
+      filled: inBaseLayer({
+        backgroundColor: color.primaryForeground,
+      }),
+      outline: inBaseLayer({
         backgroundColor: 'transparent',
-        border: `1px solid ${vars.color.foreground}`,
+        border: `1px solid ${color.foreground}`,
         boxShadow: 'none',
-      },
+      }),
     },
     shadow: {
-      none: { boxShadow: vars.shadow.none },
-      small: { boxShadow: vars.shadow.small },
-      medium: { boxShadow: vars.shadow.medium },
-      large: { boxShadow: vars.shadow.large },
+      none: inBaseLayer({ boxShadow: shadow.none }),
+      small: inBaseLayer({ boxShadow: shadow.small }),
+      medium: inBaseLayer({ boxShadow: shadow.medium }),
+      large: inBaseLayer({ boxShadow: shadow.large }),
     },
     radius: {
-      small: { borderRadius: vars.border.radius.small },
-      medium: { borderRadius: vars.border.radius.medium },
-      large: { borderRadius: vars.border.radius.large },
+      small: inBaseLayer({ borderRadius: border.radius.small }),
+      medium: inBaseLayer({ borderRadius: border.radius.medium }),
+      large: inBaseLayer({ borderRadius: border.radius.large }),
     },
   },
   defaultVariants: {

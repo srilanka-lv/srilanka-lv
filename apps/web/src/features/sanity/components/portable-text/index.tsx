@@ -6,11 +6,31 @@ import {
 } from '@portabletext/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { SanityTable } from 'structured-table';
 
 import { Heading } from '@/shared/components/heading';
 import { Text } from '@/shared/components/text';
 
 import { urlForImage } from '../../utils/url-for-image';
+import { ImageGallery } from '../portable-text-image-gallery/image-gallery';
+import { TableView } from '../stl-renderer/table/table-view';
+import { YouTubeEmbed } from '../youtube-embed';
+import {
+  inlineImageCaptionStyle,
+  inlineImageFigureStyle,
+  stlTableScrollWrapperStyle,
+} from './styles.css';
+
+type StlTableBlockValue = {
+  stlParsed?: string;
+  stlString?: string;
+  caption?: string;
+};
+
+type YouTubeBlockValue = {
+  url?: string;
+  caption?: string;
+};
 
 const components: PortableTextComponents = {
   block: {
@@ -75,19 +95,43 @@ const components: PortableTextComponents = {
       }
 
       // biome-ignore lint/suspicious/noFocusedTests: This isn't a test - it's the Sanity image URL.
-      const url = urlForImage(value).width(2400).quality(100).fit('max').auto('format').url();
+      const url = urlForImage(value).width(1920).quality(100).fit('max').auto('format').url();
 
       return (
-        <Image
-          src={url}
-          alt={value.alt ?? ''}
-          width={1600}
-          height={900}
-          sizes="(min-width: 1024px) 800px, 100vw"
-          style={{ width: '100%', height: 'auto' }}
-        />
+        <figure className={inlineImageFigureStyle}>
+          <Image
+            src={url}
+            alt={value.alt ?? ''}
+            width={1920}
+            height={1080}
+            sizes="(min-width: 1024px) 800px, 100vw"
+            style={{ width: '100%', height: 'auto' }}
+          />
+          {value.caption ? (
+            <figcaption className={inlineImageCaptionStyle}>{value.caption}</figcaption>
+          ) : null}
+        </figure>
       );
     },
+    imageGallery: ImageGallery,
+    stlTableBlock: ({ value }: { value: StlTableBlockValue }) => {
+      if (!value?.stlParsed) {
+        return null;
+      }
+
+      const data = JSON.parse(value.stlParsed) as SanityTable;
+      return (
+        <>
+          <div className={stlTableScrollWrapperStyle}>
+            <TableView data={data} />
+          </div>
+          {value.caption ? <p>{value.caption}</p> : null}
+        </>
+      );
+    },
+    youTube: ({ value }: { value: YouTubeBlockValue }) => (
+      <YouTubeEmbed url={value.url} caption={value.caption} />
+    ),
   },
 };
 

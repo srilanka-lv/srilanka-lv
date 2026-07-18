@@ -1,30 +1,33 @@
 import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
+import { inOverridesLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
+const { color, spacing, zIndex, font, transition, border } = vars;
+
 export const navigationStyles = recipe({
-  base: {
+  base: inOverridesLayer({
     position: 'absolute',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    gap: vars.spacing[2],
+    gap: spacing[2],
     top: '.5rem',
-    left: `calc(100% + ${vars.spacing[4]})`,
+    left: `calc(100% + ${spacing[4]})`,
     height: 'auto',
-    padding: `${vars.spacing[6]} ${vars.spacing[6]}`,
-    zIndex: vars.zIndex['20'],
+    padding: `${spacing[6]} ${spacing[6]}`,
+    zIndex: zIndex['20'],
     // Animate `transform` with the standard easing; `visibility` is a binary
     // property (no in-between values), so its "transition" is just a delayed
     // snap. The per-state delay below makes the snap happen at the END of the
     // close animation (so the menu stays visible while it slides out) and
     // IMMEDIATELY on open (so the slide-in is visible from frame one).
     transitionProperty: 'transform, visibility',
-    transitionDuration: `${vars.transition.duration.normal}, 0s`,
-    transitionTimingFunction: `${vars.transition.easing.easeInOut}, linear`,
+    transitionDuration: `${transition.duration.normal}, 0s`,
+    transitionTimingFunction: `${transition.easing.easeInOut}, linear`,
 
     '@media': {
       [`screen and (min-width: ${breakpoints.md})`]: {
@@ -45,54 +48,60 @@ export const navigationStyles = recipe({
         borderRadius: 'unset',
         boxShadow: 'unset',
         backgroundColor: 'unset',
-        gap: vars.spacing[6],
+        gap: spacing[6],
       },
       [`screen and (min-width: ${breakpoints.lg})`]: {
-        gap: vars.spacing[8],
+        gap: spacing[8],
       },
     },
-  },
+  }),
   variants: {
     isVisible: {
-      true: {
-        transform: `translateX(calc(-100% - ${vars.spacing[2]}))`,
+      true: inOverridesLayer({
+        transform: `translateX(calc(-100% - ${spacing[2]}))`,
         visibility: 'visible',
         // Open: snap to "visible" with no delay so the slide-in is visible.
         transitionDelay: '0s, 0s',
-      },
-      false: {
+      }),
+      false: inOverridesLayer({
         transform: 'translateX(0%)',
         visibility: 'hidden',
         // Close: defer the visibility snap until the slide-out finishes, so
         // the menu stays in the rendered tree for the full animation.
-        transitionDelay: `0s, ${vars.transition.duration.normal}`,
-      },
+        transitionDelay: `0s, ${transition.duration.normal}`,
+      }),
     },
   },
 });
 
 export const navigationItemStyles = recipe({
-  base: {
+  base: inOverridesLayer({
     position: 'relative',
     width: '100%',
     display: 'flex',
     alignItems: 'center',
-    gap: vars.spacing[3],
-    color: vars.color.foreground,
+    gap: spacing[3],
+    color: 'currentColor',
     textDecoration: 'none',
-    fontSize: vars.font.size.lg,
-    fontWeight: vars.font.weight.medium,
-    lineHeight: vars.font.lineHeight.none,
+    fontSize: font.size.lg,
+    fontWeight: font.weight.medium,
+    lineHeight: font.lineHeight.none,
     whiteSpace: 'nowrap',
-    paddingTop: vars.spacing[2],
-    paddingBottom: vars.spacing[2],
+    paddingTop: spacing[2],
+    paddingBottom: spacing[2],
     transitionProperty: 'color',
-    transitionDuration: vars.transition.duration.fast,
-    transitionTimingFunction: vars.transition.easing.easeInOut,
+    transitionDuration: transition.duration.fast,
+    transitionTimingFunction: transition.easing.easeInOut,
 
     selectors: {
       '&:link, &:visited, &:hover, &:active': {
-        color: vars.color.primary,
+        color: color.foreground,
+
+        '@media': {
+          [`screen and (min-width: ${breakpoints.md})`]: {
+            color: 'currentColor',
+          },
+        },
       },
       '&:link::after, &:visited::after, &:hover::after, &:active::after': {
         content: '',
@@ -102,13 +111,13 @@ export const navigationItemStyles = recipe({
         right: 0,
         width: '100%',
         height: '1.5px',
-        backgroundColor: vars.color.primary,
-        borderRadius: vars.border.radius.large,
+        backgroundColor: 'currentColor',
+        borderRadius: border.radius.large,
         transform: 'scaleX(0)',
         opacity: 0,
         transitionProperty: 'transform, opacity, background-color',
-        transitionDuration: vars.transition.duration.fast,
-        transitionTimingFunction: vars.transition.easing.easeInOut,
+        transitionDuration: transition.duration.fast,
+        transitionTimingFunction: transition.easing.easeInOut,
 
         '@media': {
           [`screen and (max-width: ${breakpoints.md})`]: {
@@ -116,7 +125,7 @@ export const navigationItemStyles = recipe({
           },
         },
       },
-      '&:hover::after': {
+      '&:hover::after, &:focus-visible::after': {
         opacity: 1,
         transform: 'scaleX(1)',
       },
@@ -124,54 +133,58 @@ export const navigationItemStyles = recipe({
 
     '@media': {
       [`screen and (min-width: ${breakpoints.xs})`]: {
-        fontSize: vars.font.size.lg,
-        gap: vars.spacing[2],
+        fontSize: font.size.lg,
+        gap: spacing[2],
       },
       [`screen and (min-width: ${breakpoints.xxl})`]: {
-        fontSize: vars.font.size.xl,
+        fontSize: font.size.xl,
       },
     },
-  },
+  }),
   variants: {
     active: {
-      true: {
+      true: inOverridesLayer({
         selectors: {
           '&:link, &:visited, &:hover, &:active': {
-            color: vars.color.accent,
+            '@media': {
+              [`screen and (max-width: ${breakpoints.md})`]: {
+                color: color.accent,
+              },
+            },
           },
           '&:link::after, &:visited::after, &:hover::after, &:active::after': {
-            backgroundColor: vars.color.accent,
+            backgroundColor: 'currentColor',
             opacity: 1,
             transform: 'scaleX(1)',
           },
         },
-      },
-      false: {
-        selectors: {
-          '&:link, &:visited, &:hover, &:active': {
-            color: vars.color.primary,
-          },
-        },
-      },
+      }),
     },
   },
 });
 
-export const navigationButtonStyle = style({
-  display: 'block',
+export const navigationButtonStyle = style(
+  inOverridesLayer({
+    width: spacing[10],
+    height: spacing[10],
+    padding: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      display: 'none',
+    '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        display: 'none',
+      },
     },
-  },
-});
+  }),
+);
 
 export const navigationBackdropStyles = recipe({
-  base: {
+  base: inOverridesLayer({
     position: 'fixed',
     inset: 0,
-    zIndex: vars.zIndex['10'],
+    zIndex: zIndex['10'],
     appearance: 'none',
     background: 'none',
     border: 'none',
@@ -183,49 +196,55 @@ export const navigationBackdropStyles = recipe({
         display: 'none',
       },
     },
-  },
+  }),
   variants: {
     isVisible: {
-      true: {
+      true: inOverridesLayer({
         pointerEvents: 'auto',
         visibility: 'visible',
-      },
-      false: {
+      }),
+      false: inOverridesLayer({
         pointerEvents: 'none',
         visibility: 'hidden',
+      }),
+    },
+  },
+});
+
+export const navigationItemsDividerStyle = style(
+  inOverridesLayer({
+    '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        display: 'none',
       },
     },
-  },
-});
+  }),
+);
 
-export const navigationItemsDividerStyle = style({
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      display: 'none',
+export const socialMediaStyle = style(
+  inOverridesLayer({
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    gap: spacing[3],
+    marginTop: spacing[2],
+
+    '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        display: 'none',
+      },
     },
-  },
-});
+  }),
+);
 
-export const socialMediaStyle = style({
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  gap: vars.spacing[3],
-  marginTop: vars.spacing[2],
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      display: 'none',
+export const socialMediaItemStyle = style(
+  inOverridesLayer({
+    selectors: {
+      '&:link, &:visited, &:hover, &:active': {
+        color: color.primary,
+      },
     },
-  },
-});
-
-export const socialMediaItemStyle = style({
-  selectors: {
-    '&:link, &:visited, &:hover, &:active': {
-      color: vars.color.primary,
-    },
-  },
-});
+  }),
+);

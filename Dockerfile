@@ -31,7 +31,11 @@ ENV NEXT_PUBLIC_SELF_URL=${NEXT_PUBLIC_SELF_URL}
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN bun run web:build
+# SANITY_API_KEY is needed at build time so generateStaticParams can fetch
+# blog posts. Passed as a Docker build secret (not a build-arg, which would
+# bake the value into image layers/history).
+RUN --mount=type=secret,id=sanity_api_key \
+    SANITY_API_KEY=$(cat /run/secrets/sanity_api_key) bun run web:build
 
 # ---- runner: minimal runtime image ----
 FROM oven/bun:1-slim AS runner

@@ -1,30 +1,71 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
+import { inOverridesLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-export const blogParagraphStyle = style({
-  marginBlock: vars.spacing[8],
-  fontSize: vars.font.size['2xl'],
-  lineHeight: vars.font.lineHeight.normal,
-});
+const { font, spacing, color } = vars;
 
-export const blogHeadingStyle = style({
-  marginBlock: vars.spacing[8],
-  fontSize: vars.font.size['6xl'],
-  fontWeight: vars.font.weight.bold,
-  lineHeight: vars.font.lineHeight.snug,
-});
+export const blogParagraphStyle = style(
+  inOverridesLayer({
+    marginBlock: spacing[6],
+    fontSize: font.size.lg,
+    lineHeight: font.lineHeight.normal,
+    textWrap: 'balance',
 
-export const blogBlockquoteStyle = style({
-  marginBlock: vars.spacing[8],
-  paddingLeft: vars.spacing[4],
-  borderLeft: `4px solid ${vars.color.primaryForeground}`,
-  fontStyle: 'italic',
-});
+    selectors: {
+      '&:first-of-type': {
+        marginTop: 0,
+      },
+    },
 
-export const blogListStyle = style({
-  marginBlock: vars.spacing[8],
-  paddingLeft: vars.spacing[6],
-  fontSize: vars.font.size['2xl'],
-  lineHeight: vars.font.lineHeight.relaxed,
-});
+    '@media': {
+      [`screen and (min-width: ${breakpoints.lg})`]: {
+        fontSize: font.size.xl,
+      },
+    },
+  }),
+);
+
+export const blogHeadingStyle = style(
+  inOverridesLayer({
+    marginBlock: spacing[4],
+    marginTop: spacing[12],
+    fontSize: font.size['4xl'],
+    fontWeight: font.weight.semibold,
+    lineHeight: font.lineHeight.tight,
+  }),
+);
+
+export const blogBlockquoteStyle = style(
+  inOverridesLayer({
+    marginBlock: spacing[4],
+    marginTop: spacing[12],
+    paddingLeft: spacing[4],
+    borderLeft: `4px solid ${color.primaryForeground}`,
+    fontStyle: 'italic',
+  }),
+);
+
+export const blogListStyle = style(
+  inOverridesLayer({
+    marginBlock: spacing[4],
+    paddingLeft: spacing[4],
+    fontSize: font.size.lg,
+    lineHeight: font.lineHeight.relaxed,
+
+    '@media': {
+      [`screen and (min-width: ${breakpoints.lg})`]: {
+        fontSize: font.size.xl,
+      },
+    },
+  }),
+);
+
+globalStyle(
+  `${blogListStyle} li`,
+  inOverridesLayer({
+    marginBlock: spacing[2],
+    textWrap: 'balance',
+  }),
+);

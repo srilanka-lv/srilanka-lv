@@ -4,17 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun --bun sanity dev",
-    "build": "bun --bun sanity build",
-    "deploy": "bun --bun sanity deploy",
+    "dev": "bun sanity dev",
+    "build": "bun sanity build",
+    "deploy": "bun sanity deploy",
     "schema:extract": "bun --bun sanity schema extract",
     "typegen": "bun --bun sanity schema extract && bun --bun sanity typegen generate"
   },
   "dependencies": {
-    "@sanity/vision": "^5.23.0",
+    "@sanity/vision": "^6.5.0",
     "@srilanka/sanity": "workspace:*",
-    "sanity": "^5.23.0",
-    "styled-components": "^6.4.1",
-    "zod": "^4.4.1"
+    "sanity": "^6.5.0",
+    "sanity-plugin-media": "^6.0.3",
+    "sanity-plugin-stl-table": "^0.3.0",
+    "styled-components": "^6.4.3",
+    "zod": "^4.4.3"
   }
 }

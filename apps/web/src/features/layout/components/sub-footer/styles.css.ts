@@ -1,74 +1,80 @@
 import { style } from '@vanilla-extract/css';
 
+import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-export const subFooterStyle = style({
-  position: 'relative',
-  fontSize: vars.font.size.sm,
-  fontWeight: vars.font.weight.normal,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  listStyle: 'none',
-  padding: `${vars.spacing[4]} 0`,
-  margin: 0,
+const { font, spacing, zIndex, color } = vars;
 
-  selectors: {
-    '&::before': {
-      position: 'absolute',
-      content: '',
-      top: 0,
-      height: '100%',
-      width: '100svw',
-      zIndex: vars.zIndex['-10'],
-      backgroundColor: 'white',
-      borderTop: `1px solid ${vars.color.primaryForeground}`,
-      borderBottom: `1px solid ${vars.color.primaryForeground}`,
+export const subFooterStyle = style(
+  inComponentsLayer({
+    position: 'relative',
+    fontSize: font.size.sm,
+    fontWeight: font.weight.normal,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    listStyle: 'none',
+    padding: `${spacing[4]} 0`,
+    margin: 0,
+
+    selectors: {
+      '&::before': {
+        position: 'absolute',
+        content: '',
+        top: 0,
+        height: '100%',
+        width: '100svw',
+        zIndex: zIndex['-10'],
+        borderTop: `1px solid ${color.primaryForeground}`,
+        borderBottom: `1px solid ${color.primaryForeground}`,
+      },
     },
-  },
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xl})`]: {
-      flexDirection: 'row',
-      padding: `${vars.spacing[6]} 0`,
+    '@media': {
+      [`screen and (min-width: ${breakpoints.xl})`]: {
+        flexDirection: 'row',
+        padding: `${spacing[6]} 0`,
+      },
     },
-  },
-});
+  }),
+);
 
-export const subFooterItemStyle = style({
-  position: 'relative',
-  zIndex: vars.zIndex['10'],
-  display: 'inline-flex',
-  alignItems: 'center',
-  paddingTop: vars.spacing[1],
-  paddingBottom: vars.spacing[1],
+export const subFooterItemStyle = style(
+  inComponentsLayer({
+    position: 'relative',
+    zIndex: zIndex['10'],
+    display: 'inline-flex',
+    alignItems: 'center',
+    paddingTop: spacing[1],
+    paddingBottom: spacing[1],
 
-  selectors: {
-    '&:not(:last-child)::after': {
-      content: '',
-      display: 'none',
-      width: '1px',
-      height: vars.spacing[4],
-      backgroundColor: vars.color.foreground,
-      marginLeft: vars.spacing[2],
-      marginRight: vars.spacing[2],
+    selectors: {
+      '&:not(:last-child)::after': {
+        content: '',
+        display: 'none',
+        width: '1px',
+        height: spacing[4],
+        backgroundColor: color.foreground,
+        marginLeft: spacing[2],
+        marginRight: spacing[2],
 
-      '@media': {
-        [`screen and (min-width: ${breakpoints.xl})`]: {
-          display: 'inline-block',
-          marginLeft: vars.spacing[4],
-          marginRight: vars.spacing[4],
+        '@media': {
+          [`screen and (min-width: ${breakpoints.xl})`]: {
+            display: 'inline-block',
+            marginLeft: spacing[4],
+            marginRight: spacing[4],
+          },
         },
       },
     },
-  },
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xl})`]: {
-      paddingTop: vars.spacing[4],
-      paddingBottom: vars.spacing[4],
+    '@media': {
+      [`screen and (min-width: ${breakpoints.xl})`]: {
+        paddingTop: spacing[4],
+        paddingBottom: spacing[4],
+      },
     },
-  },
-});
+  }),
+);

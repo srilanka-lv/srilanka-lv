@@ -5,7 +5,7 @@ import { DefaultBreakpointRepository } from '@/features/breakpoint/repositories/
 import { BreakpointStoreProvider } from '@/features/breakpoint/stores/breakpoint-store';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-export const withBreakpointRepository: Decorator = (Story) => {
+export const WithBreakpointRepository: Decorator = (Story) => {
   const breakpointRepository = new DefaultBreakpointRepository({ breakpoints });
 
   return (

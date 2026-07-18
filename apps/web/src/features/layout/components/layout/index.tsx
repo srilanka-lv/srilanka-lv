@@ -14,7 +14,6 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => (
     <body className={layoutStyle}>
       <Header />
       <main className={mainStyle}>{children}</main>
-      <aside></aside>
       <Footer />
       <SubFooter />
     </body>

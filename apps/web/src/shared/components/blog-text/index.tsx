@@ -51,9 +51,13 @@ const components: PortableTextComponents = {
 };
 
 type BlogTextProps = {
-  body: PortableTextValue;
+  body: PortableTextValue | null;
 };
 
-export const BlogText: FunctionComponent<BlogTextProps> = ({ body }) => (
-  <PortableText value={body} components={components} />
-);
+export const BlogText: FunctionComponent<BlogTextProps> = ({ body }) => {
+  if (!body) {
+    return null;
+  }
+
+  return <PortableText value={body} components={components} />;
+};

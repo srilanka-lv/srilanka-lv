@@ -1,36 +1,34 @@
-import { metaDataBySlugQuery } from '@packages/sanity/queries/meta-data-by-slug-query';
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import type { Metadata } from 'next';
+import type { FunctionComponent } from 'react';
 
-import { DefaultSanityProvider } from '@/features/sanity/providers/default-sanity-provider';
-import { DefaultSanityRepository } from '@/features/sanity/repositories/default-sanity-repository';
+import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
 import flightData from '@/features/serpapi/data/flight-data.json';
+import { Breadcrumbs } from '@/shared/components/breadcrumbs';
+import { buildSectionItems, findNavLabel } from '@/shared/components/breadcrumbs/build-items';
 
-const slug = 'letakie-lidojumi-uz-srilanku-no-rigas';
+export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGES.LV.FLIGHT_TICKETS);
 
-const sanityProvider = new DefaultSanityProvider();
-const sanityRepository = new DefaultSanityRepository(sanityProvider);
+const NextFlightCalendarPage: FunctionComponent = () => {
+  const href = `/${PAGES.LV.FLIGHT_TICKETS}`;
 
-export async function generateMetadata(): Promise<Metadata> {
-  const data = await sanityRepository.query(metaDataBySlugQuery, { slug });
-
-  return {
-    title: data?.seo?.metaTitle,
-    description: data?.seo?.metaDescription,
-  };
-}
-
-export default function FlightCalendarPage() {
   return (
-    <div>
-      {flightData.months.map((month) => (
-        <div key={month.month}>
-          <ul>
-            <li>{month.label}</li>
-            <li>Average price to fly from Riga to Colombo: {month.averagePrice}</li>
-            <li>Cheapest price to fly from Riga to Colombo: {month.lowestPrice}</li>
-          </ul>
-        </div>
-      ))}
-    </div>
+    <>
+      <Breadcrumbs items={buildSectionItems(href)} />
+      <h1>{findNavLabel(href)}</h1>
+      <div>
+        {flightData.months.map((month) => (
+          <div key={month.month}>
+            <ul>
+              <li>{month.label}</li>
+              <li>Average price to fly from Riga to Colombo: {month.averagePrice}</li>
+              <li>Cheapest price to fly from Riga to Colombo: {month.lowestPrice}</li>
+            </ul>
+          </div>
+        ))}
+      </div>
+    </>
   );
-}
+};
+
+export default NextFlightCalendarPage;

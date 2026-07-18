@@ -4,7 +4,7 @@ import {
   type FunctionComponent,
   type PropsWithChildren,
   createContext,
-  useContext,
+  use,
   useState,
 } from 'react';
 
@@ -31,7 +31,7 @@ export const BreakpointStoreProvider: FunctionComponent<PropsWithChildren> = ({ 
 };
 
 export const useBreakpointStore = () => {
-  const context = useContext(BreakpointStoreContext);
+  const context = use(BreakpointStoreContext);
 
   if (!context) {
     throw new Error('useBreakpointStore must be used within a BreakpointStoreProvider');

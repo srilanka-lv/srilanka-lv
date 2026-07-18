@@ -1,5 +1,16 @@
 import { defineField, defineType } from 'sanity';
 
+import { PAGES } from '../../constants/pages-slugs';
+
+const SLUGS_WITHOUT_BODY = [
+  PAGES.LV.HOME,
+  PAGES.LV.FLIGHT_TICKETS,
+  PAGES.LV.ABOUT_ME,
+  PAGES.LV.CONTACT,
+  PAGES.LV.PRODUCTS,
+  PAGES.LV.BLOGS,
+];
+
 export const pages = defineType({
   title: 'Pages',
   name: 'pages',
@@ -22,10 +33,15 @@ export const pages = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      title: 'FAQ',
-      name: 'faq',
-      type: 'reference',
-      to: [{ type: 'faqs' }],
+      title: 'Body',
+      name: 'body',
+      type: 'blockContent',
+      description:
+        'The main content of this page. This will show up as the body of the page in the front-end. Use this space to tell your story, share your insights, and engage your readers.',
+      hidden: ({ document }) => {
+        const slug = (document?.slug as { current?: string } | undefined)?.current;
+        return slug ? SLUGS_WITHOUT_BODY.includes(slug) : false;
+      },
     }),
     defineField({
       title: 'SEO',

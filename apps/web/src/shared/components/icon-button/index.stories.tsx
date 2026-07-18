@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Mail } from 'lucide-react';
 import { fn } from 'storybook/test';
 
-import { IconButton } from './index';
+import { IconButton } from '.';
 
 const meta = {
   title: 'Components/IconButton',

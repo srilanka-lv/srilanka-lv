@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Text } from './index';
+import { Text } from '.';
 
 const meta = {
   title: 'Components/Text',

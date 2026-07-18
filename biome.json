@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.5.4/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -17,7 +17,10 @@
       "!storybook-static",
       "!**/_generated",
       "!**/.sanity",
-      "!**/sanity.types.ts"
+      "!**/sanity.types.ts",
+      "!**/public/images/uploads",
+      "!**/serpapi/data",
+      "!**/*.svg"
     ]
   },
   "formatter": {
@@ -29,7 +32,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
+      "preset": "recommended",
       "style": {
         "noParameterAssign": "error",
         "useFilenamingConvention": {
@@ -54,8 +57,7 @@
         "useArrowFunction": "off"
       },
       "suspicious": {
-        "noExplicitAny": "error",
-        "noConsole": "warn"
+        "noExplicitAny": "error"
       },
       "correctness": {
         "noUnusedImports": "error"

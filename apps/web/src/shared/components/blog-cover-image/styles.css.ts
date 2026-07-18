@@ -1,77 +1,79 @@
-import { createVar, fallbackVar, keyframes, style } from '@vanilla-extract/css';
+import { createVar, fallbackVar, style } from '@vanilla-extract/css';
 
+import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
+const { zIndex, spacing } = vars;
+
 export const coverImageBackgroundVar = createVar();
 
-const onScrollAnimation = keyframes({
-  from: { opacity: 1, transform: 'scale(1.0625)' },
-  to: { opacity: 0.5, transform: 'scale(1)' },
-});
+export const coverImageStyle = style(
+  inComponentsLayer({
+    display: 'block',
+  }),
+);
 
-export const coverImageBackgroundOverflowStyle = style({
-  position: 'absolute',
-  inset: 0,
-  width: '100svw',
-  height: '100svh',
-  overflow: 'hidden',
-  backgroundColor: vars.color.foreground,
+export const coverImageBackgroundOverflowStyle = style(
+  inComponentsLayer({
+    position: 'absolute',
+    inset: 0,
+    width: '100svw',
+    height: '100svh',
+    overflow: 'clip',
 
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      marginTop: '90px',
-      height: 'calc(100svh - 90px)',
+    selectors: {
+      '&::before': {
+        content: '',
+        position: 'absolute',
+        inset: 0,
+        width: '100%',
+        height: '100%',
+        background: `linear-gradient(0deg,rgba(0, 0, 0, .75) 0%, rgba(255, 255, 255, 0) 100%)`,
+        zIndex: zIndex['10'],
+      },
     },
-    [`screen and (min-width: ${breakpoints.xl})`]: {
-      marginTop: '72px',
-      height: 'calc(100svh - 72px)',
+  }),
+);
+
+export const coverImageBackgroundWrapperStyle = style(
+  inComponentsLayer({
+    position: 'absolute',
+    inset: 0,
+    width: '100%',
+    height: '100%',
+    display: 'block',
+  }),
+);
+
+export const coverImageBackgroundStyle = style(
+  inComponentsLayer({
+    width: '100%',
+    height: '100%',
+
+    selectors: {
+      '&::before': {
+        content: '',
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: fallbackVar(coverImageBackgroundVar, 'none'),
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      },
     },
-  },
-});
+  }),
+);
 
-export const coverImageBackgroundWrapperStyle = style({
-  position: 'absolute',
-  inset: 0,
-  width: '100%',
-  height: '100%',
-  display: 'block',
+export const coverImageSpacerStyle = style(
+  inComponentsLayer({
+    position: 'relative',
+    display: 'block',
+    height: `calc(75svh - ${spacing[8]})`,
 
-  '@supports': {
-    '(animation-timeline: scroll())': {
-      animationName: onScrollAnimation,
-      animationTimeline: 'scroll(root block)',
-      animationRangeStart: '0',
-      animationRangeEnd: '100svh',
-      animationFillMode: 'both',
-      animationTimingFunction: 'linear',
+    '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        height: `calc(100svh - ${spacing[8]})`,
+      },
     },
-  },
-});
-
-export const coverImageBackgroundStyle = style({
-  width: '100%',
-  height: '100%',
-
-  selectors: {
-    '&::before': {
-      content: '',
-      position: 'absolute',
-      inset: 0,
-      backgroundImage: fallbackVar(coverImageBackgroundVar, 'none'),
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed',
-    },
-  },
-});
-
-export const coverImageEffectStyle = style({
-  height: '72px',
-});
-
-export const coverImageSpacerStyle = style({
-  position: 'relative',
-  display: 'block',
-  height: 'calc(100svh - 72px)',
-});
+  }),
+);

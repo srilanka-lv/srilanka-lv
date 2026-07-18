@@ -1,5 +1,6 @@
 'use client';
 
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import clsx from 'clsx';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
@@ -26,8 +27,36 @@ type NavigationProps = {
   className?: string;
 };
 
+/**
+ * `usePathname()` resolves to the rewritten EN route during SSR (e.g. `/products`)
+ * but to the public LV slug on the client (`/produkti`). The nav `href`s are LV,
+ * so we map an EN pathname back to its LV slug before the active check to keep it
+ * consistent across SSR and client (otherwise the active item only lights up after
+ * hydration). Home (`/`) is identical on both sides, so it is left out of the map.
+ */
+const enToLvPath: Record<string, string> = Object.fromEntries(
+  Object.entries(PAGES.EN)
+    .filter(([key]) => key !== 'HOME')
+    .map(([key, enSlug]) => [`/${enSlug}`, `/${PAGES.LV[key as keyof typeof PAGES.LV]}`]),
+);
+
+const toLvPathname = (pathname: string): string => {
+  const exactMatch = enToLvPath[pathname];
+
+  if (exactMatch) {
+    return exactMatch;
+  }
+
+  const nestedMatch = Object.entries(enToLvPath).find(([enPath]) =>
+    pathname.startsWith(`${enPath}/`),
+  );
+
+  return nestedMatch ? pathname.replace(nestedMatch[0], nestedMatch[1]) : pathname;
+};
+
 export const Navigation: FunctionComponent<NavigationProps> = ({ className }) => {
   const pathname = usePathname();
+  const activePathname = toLvPathname(pathname);
   const { mobileNavigationIsVisible, setMobileNavigationIsVisible } =
     useLayoutMobileNavigationIsVisible();
 
@@ -50,17 +79,23 @@ export const Navigation: FunctionComponent<NavigationProps> = ({ className }) =>
           className,
         )}
       >
-        {navigationItems.map(({ href, icon, label }) => (
-          <Link
-            key={href}
-            href={href}
-            className={navigationItemStyles({ active: pathname === href })}
-            onClick={handleCloseMobileNavigation}
-          >
-            {icon}
-            {label}
-          </Link>
-        ))}
+        {navigationItems
+          .filter(({ visibleInNavigation }) => visibleInNavigation)
+          .map(({ href, icon, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={navigationItemStyles({
+                active:
+                  (activePathname === '/' && href === '/') ||
+                  (activePathname.startsWith(href) && href !== '/'),
+              })}
+              onClick={handleCloseMobileNavigation}
+            >
+              {icon}
+              {label}
+            </Link>
+          ))}
         <Divider
           className={navigationItemsDividerStyle}
           variant="dashed"
