@@ -1,6 +1,6 @@
+import '@/shared/styles/global.css';
 import '@/shared/styles/layers/layers.css';
 import '@/shared/styles/reset.css';
-import '@/shared/styles/global.css';
 
 import type { Metadata, Viewport } from 'next';
 import type { FunctionComponent, ReactNode } from 'react';
