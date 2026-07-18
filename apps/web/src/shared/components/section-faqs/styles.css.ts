@@ -4,7 +4,7 @@ import { inOverridesLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, font, border, color, focus } = vars;
+const { spacing, font, color } = vars;
 
 export const sectionFaqsStyle = style(
   inOverridesLayer({
