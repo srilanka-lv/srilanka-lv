@@ -1,6 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { font, color, spacing, border } = vars;
 
@@ -12,14 +13,14 @@ export const tripPagePlanItineraryItemStyle = style({
 const tripPagePlanItineraryItemToggleBaseStyle = style({
   display: 'flex',
   justifyContent: 'flex-start',
-  alignItems: 'center',
-  gap: spacing[4],
+  alignItems: 'flex-end',
+  gap: spacing[2],
   background: 'none',
   border: 'none',
   outline: 'none',
-  padding: spacing[4],
   margin: 0,
-  fontSize: font.size.xl,
+  padding: `${spacing[3]} ${0}`,
+  fontSize: font.size.lg,
   fontWeight: font.weight.medium,
   color: color.foreground,
   textAlign: 'left',
@@ -29,10 +30,19 @@ const tripPagePlanItineraryItemToggleBaseStyle = style({
   transitionDuration: '325ms',
   transitionTimingFunction: 'cubic-bezier(0.675, 0.145, 0.000, 1.015)',
   cursor: 'pointer',
+  whiteSpace: 'nowrap',
 
   selectors: {
     '&:not([data-state-expanded="true"]):hover': {
       backgroundColor: `color-mix(in oklch, ${color.foreground} 3.25%, transparent)`,
+    },
+  },
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.lg})`]: {
+      gap: spacing[4],
+      padding: spacing[4],
+      fontSize: font.size.xl,
     },
   },
 });
@@ -56,7 +66,12 @@ export const tripPagePlanItineraryItemToggleStyles = styleVariants({
 export const tripPagePlanItineraryItemToggleTitleStyle = style({
   fontSize: font.size.base,
   fontWeight: font.weight.normal,
-  color: '#e67e22',
+  color: '#20Bf6b',
+  position: 'relative',
+  top: '-1px',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
 const tripPagePlanItineraryItemToggleIconBaseStyle = style({
@@ -114,8 +129,8 @@ const tripPagePlanItineraryItemContentTextBaseStyle = style({
   transitionProperty: 'opacity, padding, background-color',
   transitionDuration: '325ms',
   transitionTimingFunction: 'cubic-bezier(0.675, 0.145, 0.000, 1.015)',
-  paddingLeft: spacing[6],
-  paddingRight: spacing[6],
+  // paddingLeft: spacing[6],
+  // paddingRight: spacing[6],
   overflow: 'hidden',
   borderRadius: border.radius.large,
 });
@@ -132,17 +147,15 @@ export const tripPagePlanItineraryItemContentTextBaseStyles = styleVariants({
       paddingBottom: 0,
       pointerEvents: 'none',
       opacity: 0,
-      backgroundColor: `color-mix(in oklch, ${color.foreground} 0%, transparent)`,
     },
   ],
   expanded: [
     tripPagePlanItineraryItemContentTextBaseStyle,
     {
-      paddingTop: spacing[6],
-      paddingBottom: spacing[6],
+      paddingTop: spacing[2],
+      paddingBottom: spacing[4],
       pointerEvents: 'auto',
       opacity: 1,
-      backgroundColor: `color-mix(in oklch, ${color.foreground} 3.25%, transparent)`,
     },
   ],
 });

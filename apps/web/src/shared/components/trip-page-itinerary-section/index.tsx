@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { TripPageExpandable } from '../trip-page-expandable';
 import {
   tripPagePlanItineraryItemSeparatorStyle,
+  tripPagePlanItinerarySectionMapImageStyle,
   tripPagePlanItinerarySectionMapStyle,
   tripPagePlanItinerarySectionStyle,
   tripPagePlanItineraryStyle,
@@ -12,12 +13,15 @@ export const TripPageItinerarySection = () => (
   <section className={tripPagePlanItinerarySectionStyle}>
     <span className={tripPagePlanItinerarySectionMapStyle}>
       <Image
-        src="/images/srilanka-lv_10-dienu-celojums_itenerary-map.png"
+        className={tripPagePlanItinerarySectionMapImageStyle}
+        src="/images/srilanka-lv_10-dienu-celojums_v2.gif"
         alt="Karte ar mūsu ceļojuma uz Šrilanku spilgtākajiem notikumiem"
         sizes="auto"
         quality={75}
-        width={312}
-        height={312}
+        width={405}
+        height={405}
+        objectFit="cover"
+        objectPosition="center"
       />
     </span>
     <div className={tripPagePlanItineraryStyle}>
