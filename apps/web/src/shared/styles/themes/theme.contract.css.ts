@@ -19,6 +19,7 @@ export const vars = createThemeContract({
       display: null,
     },
     size: {
+      xxs: null,
       xs: null,
       sm: null,
       base: null,

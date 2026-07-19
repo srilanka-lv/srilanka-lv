@@ -2,6 +2,7 @@ import { createVar, globalStyle, keyframes, style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { spacing, font, border, color, shadow, focus, zIndex, transition } = vars;
 
@@ -23,7 +24,7 @@ export const buttonStyles = recipe({
     fontSize: font.size.lg,
     fontWeight: font.weight.medium,
     padding: spacing[4],
-    marginBottom: spacing[4],
+    marginBottom: spacing[2],
     borderRadius: border.radius.medium,
     cursor: 'pointer',
     transitionProperty: 'transform, box-shadow',
@@ -33,6 +34,12 @@ export const buttonStyles = recipe({
     vars: {
       [primaryColorVar]: '#20bf6b',
       [secondaryColorVar]: '#f5f6fa',
+    },
+
+    '@media': {
+      [`screen and (min-width: ${breakpoints.xs})`]: {
+        marginBottom: spacing[4],
+      },
     },
   },
   variants: {
@@ -59,6 +66,13 @@ export const buttonStyles = recipe({
         backgroundColor: 'transparent',
         border: `0.5px solid oklch(from ${secondaryColorVar} calc(l - 0.125) c h)`,
         boxShadow: `0 2px 0 0 oklch(from ${secondaryColorVar} calc(l - 0.125) c h)`,
+        marginBottom: 0,
+
+        '@media': {
+          [`screen and (min-width: ${breakpoints.xs})`]: {
+            marginBottom: 0,
+          },
+        },
 
         selectors: {
           '&:hover': {

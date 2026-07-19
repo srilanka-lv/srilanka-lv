@@ -35,6 +35,7 @@ export const TripPageHeroSection = () => (
           src="/images/srilanka-lv_10-dienu-celojums_apmeklejot-udenskritumu.webp"
           alt="Laura Grieta no srilanka.lv apmeklē ūdenskritumu Šrilankā"
           fill
+          objectFit="cover"
           sizes="auto"
           priority
           quality={75}
