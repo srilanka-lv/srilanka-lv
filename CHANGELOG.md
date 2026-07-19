@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.2.0...v1.3.0) (2026-07-19)
+
+
+### Features
+
+* ✨ trip page responsiveness ([04a25e5](https://github.com/srilanka-lv/srilanka-lv/commit/04a25e532641b12f763b922e506f577bd2596223))
+* ✨ trip page responsiveness ([9b0d2e7](https://github.com/srilanka-lv/srilanka-lv/commit/9b0d2e74442e646bb042fa32392d041e3abafe76))
+
 ## [1.2.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.1.2...v1.2.0) (2026-07-18)
 
 
