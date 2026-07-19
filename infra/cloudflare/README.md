@@ -1,6 +1,6 @@
 # Cloudflare setup
 
-This runbook documents the Cloudflare configuration that fronts the Hetzner-hosted
+This documents the Cloudflare configuration that fronts the Hetzner-hosted
 deployment of `srilanka.lv` and its `staging.` / `development.` subdomains.
 
 See also:
