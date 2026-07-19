@@ -1,36 +1,67 @@
 import { style } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { spacing, font, border, color, zIndex } = vars;
 
 export const tripPageHeroSectionStyle = style({
-  display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
-  gridTemplateRows: '1fr',
-  gap: spacing[8],
-  marginTop: spacing[4],
-  marginBottom: spacing[24],
+  display: 'flex',
+  flexDirection: 'column',
+  gap: spacing[4],
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xs})`]: {
+      gap: spacing[8],
+    },
+    [`screen and (min-width: ${breakpoints.lg})`]: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridTemplateRows: '1fr',
+      marginTop: spacing[4],
+      marginBottom: spacing[24],
+    },
+  },
 });
 
 export const tripPageImageGalleryStyle = style({
-  position: 'relative',
-  gridColumn: '1 / 3',
-  display: 'grid',
-  gridTemplateRows: 'repeat(2, min-content)',
-  gridTemplateColumns: 'repeat(3, 1fr)',
-  gap: spacing[2],
+  display: 'flex',
+  flexDirection: 'column',
+  gap: spacing[1],
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.lg})`]: {
+      gridColumn: '1 / 3',
+      display: 'grid',
+      gridTemplateRows: 'repeat(2, min-content)',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: spacing[2],
+    },
+  },
 });
 
 export const tripPageImageGalleryMainImageStyle = style({
   position: 'relative',
-  gridRow: '1 / 2',
-  gridColumn: '1 / 2',
-  gridArea: '1 / 1 / 2 / 4',
-  minHeight: '500px',
+  display: 'block',
+  width: '100%',
+  height: '50svh',
   overflow: 'hidden',
-  borderTopLeftRadius: border.radius.large,
-  borderTopRightRadius: border.radius.large,
+  borderTopLeftRadius: border.radius.medium,
+  borderTopRightRadius: border.radius.medium,
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.sm})`]: {
+      height: '60svh',
+    },
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      gridRow: '1 / 2',
+      gridColumn: '1 / 2',
+      gridArea: '1 / 1 / 2 / 4',
+      minHeight: '500px',
+      borderTopLeftRadius: border.radius.large,
+      borderTopRightRadius: border.radius.large,
+    },
+  },
 });
 
 export const tripPageImageGalleryMainImagePriceStyle = style({
@@ -61,25 +92,53 @@ export const tripPageImageGalleryMainImagePriceSubtitleStyle = style({
 });
 
 export const tripPageImageGalleryThumbnailsContainerStyle = style({
+  display: 'grid',
+  gap: spacing[1],
   gridRow: '2 / 3',
   gridColumn: '1 / 4',
-  display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
-  gridTemplateRows: 'repeat(2, min-content)',
-  gap: spacing[2],
+  gridTemplateColumns: 'repeat(2, 1fr)',
+  gridTemplateRows: 'repeat(3, min-content)',
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.lg})`]: {
+      gap: spacing[2],
+      gridRow: '2 / 3',
+      gridColumn: '1 / 4',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridTemplateRows: 'repeat(2, min-content)',
+    },
+  },
 });
 
 export const tripPageImageGalleryThumbnailImageStyle = style({
   position: 'relative',
   overflow: 'hidden',
-  minHeight: '100px',
   aspectRatio: '2 / 1.25',
+
   selectors: {
-    '&:nth-of-type(4)': {
-      borderBottomLeftRadius: border.radius.large,
+    '&:nth-of-type(5)': {
+      borderBottomLeftRadius: border.radius.medium,
     },
     '&:nth-of-type(6)': {
-      borderBottomRightRadius: border.radius.large,
+      borderBottomRightRadius: border.radius.medium,
+    },
+  },
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      // minHeight: '100px',
+
+      selectors: {
+        '&:nth-of-type(4)': {
+          borderBottomLeftRadius: border.radius.large,
+        },
+        '&:nth-of-type(5)': {
+          borderBottomLeftRadius: 0,
+        },
+        '&:nth-of-type(6)': {
+          borderBottomRightRadius: border.radius.large,
+        },
+      },
     },
   },
 });
@@ -104,6 +163,7 @@ export const tripPageSummaryStyle = style({
   display: 'grid',
   gridTemplateRows: 'repeat(7, min-content)',
   gridTemplateColumns: '1fr 1fr',
+  gap: spacing[1],
   height: 'auto',
   top: spacing[8],
   gridColumn: '3 / 4',
@@ -114,6 +174,18 @@ export const tripPageSummaryStyle = style({
   borderColor: `color-mix(in oklch, ${color.foreground} 25%, transparent)`,
   padding: spacing[6],
   alignSelf: 'start',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  textAlign: 'left',
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xs})`]: {
+      gap: spacing[2],
+    },
+    [`screen and (min-width: ${breakpoints.lg})`]: {
+      gap: 0,
+    },
+  },
 });
 
 export const tripPageSummaryItemStyle = style({
@@ -124,26 +196,45 @@ export const tripPageSummaryItemStyle = style({
 });
 
 export const tripPageSummaryItemTitleStyle = style({
-  fontSize: font.size.sm,
+  fontSize: font.size.xs,
   fontWeight: font.weight.light,
   color: `color-mix(in oklch, ${color.foreground} 75%, transparent)`,
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xs})`]: {
+      fontSize: font.size.sm,
+    },
+  },
 });
 
 export const tripPageSummaryItemValueStyle = style({
-  fontSize: font.size.base,
+  fontSize: font.size.sm,
   fontWeight: font.weight.medium,
   color: color.foreground,
   fontVariantNumeric: 'tabular-nums',
   lineHeight: font.lineHeight.relaxed,
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xs})`]: {
+      fontSize: font.size.base,
+    },
+  },
 });
 
 export const tripPageSummaryItemValueListStyle = style({
+  fontSize: font.size.sm,
   fontWeight: font.weight.medium,
   color: color.foreground,
   padding: 0,
   margin: 0,
   listStyle: 'none',
   listStylePosition: 'inside',
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xs})`]: {
+      fontSize: font.size.base,
+    },
+  },
 });
 
 export const tripPageSummaryItemValueListItemIncludedStyle = style({
@@ -174,6 +265,13 @@ export const tripPageSummaryItemSeparatorStyle = style({
   gridColumn: '1 / 3',
   height: '1px',
   backgroundColor: `color-mix(in oklch, ${color.foreground} 7.5%, transparent)`,
-  marginTop: spacing[4],
-  marginBottom: spacing[4],
+  marginTop: spacing[2],
+  marginBottom: spacing[2],
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xs})`]: {
+      marginTop: spacing[4],
+      marginBottom: spacing[4],
+    },
+  },
 });
