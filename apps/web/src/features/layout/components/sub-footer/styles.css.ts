@@ -27,8 +27,7 @@ export const subFooterStyle = style(
         height: '100%',
         width: '100svw',
         zIndex: zIndex['-10'],
-        borderTop: `1px solid ${color.primaryForeground}`,
-        borderBottom: `1px solid ${color.primaryForeground}`,
+        borderTop: `1px solid color-mix(in oklch, ${color.primary} 10%, transparent)`,
       },
     },
 

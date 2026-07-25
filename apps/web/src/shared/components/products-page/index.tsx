@@ -22,7 +22,7 @@ export const ProductsPage: FunctionComponent = () => {
   return (
     <>
       <Breadcrumbs items={buildSectionItems(href)} />
-      {products.map(({ subTitle, title, description, href: productHref }, index) => {
+      {products.map(({ subTitle, title, description, href: productHref, thumbnailSrc }, index) => {
         const Component = index === 0 ? 'h1' : index === 1 ? 'h2' : 'h3';
 
         return (
@@ -35,7 +35,7 @@ export const ProductsPage: FunctionComponent = () => {
             </Link>
             <div className={productImageWrapperStyle}>
               <Image
-                src={`/images/srilanka-lv_product_thumb-${index + 1}.webp`}
+                src={thumbnailSrc}
                 alt={title}
                 fill
                 sizes="auto"

@@ -103,11 +103,12 @@ export const Navigation: FunctionComponent<NavigationProps> = ({ className }) =>
           spacing="small"
         />
         <div className={socialMediaStyle}>
-          {socialMediaItems.map(({ href, icon }) => (
+          {socialMediaItems.map(({ href, icon, label }) => (
             <a
               className={socialMediaItemStyle}
               href={href}
               key={href}
+              aria-label={label}
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
