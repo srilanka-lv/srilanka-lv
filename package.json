@@ -20,7 +20,8 @@
     "studio:typegen": "bun --elide-lines=0 --filter @srilanka/studio typegen",
     "repo:lint": "biome check",
     "repo:format": "biome format --write",
-    "infra:kamal": "kamal -c infra/kamal/deploy.yml"
+    "infra:kamal": "kamal -c infra/kamal/deploy.yml",
+    "web:indexnow": "bun --elide-lines=0 --filter @srilanka/web indexnow"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.5",

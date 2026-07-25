@@ -11,6 +11,9 @@ export const revalidate = 3600;
 
 const BLOG_POSTS_LIMIT = 20;
 
+const SITE_SUMMARY =
+  'Latviešu valodas ceļvedis par Šrilanku, ko raksta latviete, kura salā dzīvo kopš 2022. gada';
+
 type SectionPage = {
   slug: string;
   path: string;
@@ -86,14 +89,9 @@ export const GET = async (): Promise<Response> => {
 
   const pagesBySlug = new Map(pages.map((sanityPage) => [sanityPage.slug, sanityPage]));
 
-  const lines: string[] = [`# ${SITE_NAME}`];
+  const lines: string[] = [`# ${SITE_NAME}`, '', `> ${SITE_SUMMARY}`];
 
-  const homeDescription = pagesBySlug.get(PAGES.LV.HOME)?.description;
-  if (homeDescription) {
-    lines.push('', `> ${toSingleLine(homeDescription)}`);
-  }
-
-  for (const section of sections) {
+  const sectionLines = (section: Section): string[] => {
     const items = section.pages.flatMap((sectionPage) => {
       const sanityPage = pagesBySlug.get(sectionPage.slug);
       const title = sanityPage?.title ?? sectionPage.fallback?.title;
@@ -107,10 +105,12 @@ export const GET = async (): Promise<Response> => {
       return [toListItem(title, `${siteUrl}${sectionPage.path}`, description)];
     });
 
-    if (items.length > 0) {
-      lines.push('', `## ${section.heading}`, '', ...items);
+    if (items.length === 0) {
+      return [];
     }
-  }
+
+    return ['', `## ${section.heading}`, '', ...items];
+  };
 
   const postItems = posts.flatMap((post) => {
     if (!post.slug?.current || !post.title) {
@@ -122,9 +122,13 @@ export const GET = async (): Promise<Response> => {
     ];
   });
 
+  const [guides, productsSection, aboutSection] = sections;
+
+  lines.push(...sectionLines(guides));
   if (postItems.length > 0) {
     lines.push('', '## Blogi', '', ...postItems);
   }
+  lines.push(...sectionLines(productsSection), ...sectionLines(aboutSection));
 
   return new Response(`${lines.join('\n')}\n`, {
     headers: {

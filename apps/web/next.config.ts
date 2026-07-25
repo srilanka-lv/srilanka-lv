@@ -175,6 +175,19 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  headers: async () => {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Link',
+            value: '</llms.txt>; rel="llms-txt"',
+          },
+        ],
+      },
+    ];
+  },
   output: 'standalone',
   outputFileTracingRoot: path.join(import.meta.dirname, '../../'),
   deploymentId: `v${packageJson.version.replaceAll('.', '-')}`,

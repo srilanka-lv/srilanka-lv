@@ -59,14 +59,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     repository.query(blogPostsSitemapQuery),
   ]);
 
-  const updatedAtBySlug = new Map(pages.map((page) => [page.slug, page._updatedAt]));
+  const pagesBySlug = new Map(pages.map((page) => [page.slug, page]));
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.map((staticPage) => {
-    const updatedAt = updatedAtBySlug.get(staticPage.slug);
+    const page = pagesBySlug.get(staticPage.slug);
 
     return {
       url: `${siteUrl}${staticPage.path}`,
-      ...(updatedAt ? { lastModified: new Date(updatedAt) } : {}),
+      ...(page ? { lastModified: new Date(page._updatedAt) } : {}),
+      ...(page && page.imageUrls.length > 0 ? { images: page.imageUrls } : {}),
       changeFrequency: 'weekly',
       priority: staticPage.priority,
     };
@@ -77,6 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .map((post) => ({
       url: `${siteUrl}/${PAGES.LV.BLOGS}/${post.slug}`,
       lastModified: new Date(post._updatedAt),
+      ...(post.imageUrls.length > 0 ? { images: post.imageUrls } : {}),
       changeFrequency: 'monthly',
       priority: 0.6,
     }));

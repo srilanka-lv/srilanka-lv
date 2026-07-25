@@ -1,33 +1,14 @@
-import { socialMediaItems } from '@/features/layout/components/navigation/index.data';
-import { SITE_NAME } from '@/shared/constants/site-name';
-import { getLogoUrl } from '@/shared/utils/get-logo-url';
 import { getSiteUrl } from '@/shared/utils/get-site-url';
+import { organizationNode, personNode, websiteNode } from '@/shared/utils/json-ld-nodes';
 
 import { faqItems } from '../section-faqs/index.data';
 
 export function HomeJsonLd() {
   const siteUrl = getSiteUrl();
 
-  const organization = {
-    '@type': 'Organization',
-    '@id': `${siteUrl}#organization`,
-    name: SITE_NAME,
-    url: siteUrl,
-    logo: {
-      '@type': 'ImageObject',
-      url: getLogoUrl(),
-    },
-    sameAs: socialMediaItems.map((item) => item.href),
-  };
-
-  const website = {
-    '@type': 'WebSite',
-    '@id': `${siteUrl}#website`,
-    url: siteUrl,
-    name: SITE_NAME,
-    inLanguage: 'lv',
-    publisher: { '@id': `${siteUrl}#organization` },
-  };
+  const organization = organizationNode();
+  const website = websiteNode();
+  const person = personNode();
 
   const faqPage = {
     '@type': 'FAQPage',
@@ -44,7 +25,7 @@ export function HomeJsonLd() {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [organization, website, faqPage],
+    '@graph': [organization, website, person, faqPage],
   };
 
   return (

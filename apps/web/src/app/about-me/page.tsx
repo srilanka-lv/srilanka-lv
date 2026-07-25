@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import type { FunctionComponent } from 'react';
 
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
+import { AboutJsonLd } from '@/shared/components/about-json-ld';
 import { Breadcrumbs } from '@/shared/components/breadcrumbs';
 import { buildSectionItems, findNavLabel } from '@/shared/components/breadcrumbs/build-items';
 
@@ -13,6 +14,7 @@ const NextAboutMePage: FunctionComponent = () => {
 
   return (
     <>
+      <AboutJsonLd path={href} title={findNavLabel(href)} />
       <Breadcrumbs items={buildSectionItems(href)} />
       <h1>{findNavLabel(href)}</h1>
       <span>About Me Page</span>

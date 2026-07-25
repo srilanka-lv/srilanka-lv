@@ -26,7 +26,7 @@ export const TripPageUspSection = () => (
       <li className={tripPageUspItemListItemStyle}>
         Rādīšu Šrilanu no savas pieredzes. Vietas man ir jau zināmas, tāpēc vari uzticēties man.
         Gribu lai vari pilnīgi atslābt no ikdienas un atvēr acis kaut kam jaunam. Šrilanka ir manas
-        mājas jau kā 2. Gadus, un ja jau kādu laiku seko @dzivetropos varēsi pieredzēt kā patiesi ir
+        mājas jau 4 gadus, un ja jau kādu laiku seko @dzivetropos varēsi pieredzēt kā patiesi ir
         dzīvot Šrilankā.
       </li>
       <li className={tripPageUspItemListItemStyle}>

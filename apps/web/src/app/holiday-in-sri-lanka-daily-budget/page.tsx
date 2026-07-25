@@ -16,7 +16,7 @@ const NextHolidayInSriLankaWhatToDoPage: FunctionComponent = async () => {
     slug: PAGES.LV.INFO_DAILY_BUDGET,
   });
 
-  return <StaticPageLayout href={`/${PAGES.LV.INFO_DAILY_BUDGET}`} body={post?.body} />;
+  return <StaticPageLayout href={`/${PAGES.LV.INFO_DAILY_BUDGET}`} body={post?.body} page={post} />;
 };
 
 export default NextHolidayInSriLankaWhatToDoPage;

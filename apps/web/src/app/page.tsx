@@ -8,7 +8,17 @@ import { SectionBlogs } from '@/shared/components/section-blogs';
 import { SectionFaqs } from '@/shared/components/section-faqs';
 import { SectionHero } from '@/shared/components/section-hero';
 
-export const generateMetadata = (): Promise<Metadata> => buildPageMetadata(PAGES.LV.HOME, '/');
+export const generateMetadata = async (): Promise<Metadata> => {
+  const metadata = await buildPageMetadata(PAGES.LV.HOME, '/');
+
+  // The homepage title is authored in Sanity as the complete title; opt out of
+  // the root layout's "%s | Šrilanka 26/27" template so it is not suffixed.
+  if (typeof metadata.title === 'string') {
+    return { ...metadata, title: { absolute: metadata.title } };
+  }
+
+  return metadata;
+};
 
 const NextHomePage: FunctionComponent = () => {
   return (

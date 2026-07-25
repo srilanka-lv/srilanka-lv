@@ -1,13 +1,17 @@
 import { Temporal } from '@js-temporal/polyfill';
 import type { BlockContent, BlogPostsBySlugQueryResult } from '@packages/sanity/sanity.types';
 
+import { blockContentToPlainText } from '@/features/sanity/utils/block-content-to-text';
 import { collectBlockContentImages } from '@/features/sanity/utils/collect-block-content-images';
+import { discoverImageCrops } from '@/features/sanity/utils/discover-image-crops';
 import { type ImageObjectJsonLd, imageObjectFor } from '@/features/sanity/utils/image-object';
-import { AUTHOR_NAME } from '@/shared/constants/author-name';
-import { SITE_NAME } from '@/shared/constants/site-name';
-import { getAuthorUrl } from '@/shared/utils/get-author-url';
-import { getLogoUrl } from '@/shared/utils/get-logo-url';
 import { getSiteUrl } from '@/shared/utils/get-site-url';
+import {
+  organizationId,
+  organizationNode,
+  personId,
+  personNode,
+} from '@/shared/utils/json-ld-nodes';
 
 type BlogPostJsonLdProps = {
   slug: string;
@@ -18,6 +22,7 @@ type BlogPostJsonLdProps = {
   coverImage: NonNullable<BlogPostsBySlugQueryResult>['coverImage'];
   openGraph: NonNullable<BlogPostsBySlugQueryResult>['openGraph'];
   body: BlockContent | null;
+  faqs: NonNullable<BlogPostsBySlugQueryResult>['faqs'];
 };
 
 export function BlogPostJsonLd({
@@ -29,6 +34,7 @@ export function BlogPostJsonLd({
   coverImage,
   openGraph,
   body,
+  faqs,
 }: BlogPostJsonLdProps) {
   const year = publishedAt
     ? Temporal.Instant.from(publishedAt).toZonedDateTimeISO('UTC').year
@@ -56,6 +62,8 @@ export function BlogPostJsonLd({
     (image): image is ImageObjectJsonLd => image !== null,
   );
 
+  const heroCrops = discoverImageCrops(coverImage ?? openGraph?.openGraphImage);
+
   const blogPosting = {
     '@type': 'BlogPosting',
     '@id': `${pageUrl}#post`,
@@ -66,22 +74,43 @@ export function BlogPostJsonLd({
     description: excerpt,
     datePublished: publishedAt,
     dateModified: updatedAt,
-    author: { '@type': 'Person', name: AUTHOR_NAME, url: getAuthorUrl() },
-    publisher: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      url: siteUrl,
-      logo: {
-        '@type': 'ImageObject',
-        url: getLogoUrl(),
-      },
-    },
-    image: allImages.map((image) => ({ '@id': image['@id'] })),
+    author: { '@id': personId() },
+    publisher: { '@id': organizationId() },
+    image: [...heroCrops, ...allImages.map((image) => ({ '@id': image['@id'] }))],
   };
+
+  const faqPairs = (faqs ?? []).flatMap((faq) => {
+    const answer = blockContentToPlainText(faq.answer);
+    if (!faq.question || answer === '') {
+      return [];
+    }
+
+    return [
+      {
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: { '@type': 'Answer', text: answer },
+      },
+    ];
+  });
+  const faqPage =
+    faqPairs.length > 0
+      ? {
+          '@type': 'FAQPage',
+          '@id': `${pageUrl}#faq`,
+          mainEntity: faqPairs,
+        }
+      : null;
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [blogPosting, ...allImages],
+    '@graph': [
+      blogPosting,
+      personNode(),
+      organizationNode(),
+      ...(faqPage ? [faqPage] : []),
+      ...allImages,
+    ],
   };
 
   return (

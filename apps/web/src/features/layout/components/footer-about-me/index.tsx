@@ -17,8 +17,8 @@ export const FooterAboutMe = () => (
       Čau! Esmu Grieta.
     </Heading>
     <Text className={footerTextStyle}>
-      Jau vairāk nekā divu gadus dzīvoju Šrilankā. Kad pirmo reizi ierados, pieļāvu daudz kļūdu. No
-      nepareiziem maršrutiem līdz neveiksmīgām naktsmītnēm. Tieši tā es iemācījos, kā ceļot šeit
+      Jau vairāk nekā četrus gadus dzīvoju Šrilankā. Kad pirmo reizi ierados, pieļāvu daudz kļūdu.
+      No nepareiziem maršrutiem līdz neveiksmīgām naktsmītnēm. Tieši tā es iemācījos, kā ceļot šeit
       gudri un droši.
     </Text>
     <Text className={footerTextStyle}>
