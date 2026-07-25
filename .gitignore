@@ -43,3 +43,9 @@ next-env.d.ts
 # sanity
 .sanity/
 schema.json
+
+# claude code / impeccable local state
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+**/.impeccable/hook.cache.json
+**/.impeccable/live/sessions/

@@ -1,9 +1,11 @@
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import clsx from 'clsx';
 import { getImageProps } from 'next/image';
 import type { ComponentProps, FunctionComponent } from 'react';
 import { preload } from 'react-dom';
 
 import {
+  sectionHeroButtonStyle,
   sectionHeroImageStyle,
   sectionHeroStyle,
   sectionHeroSubtitleStyle,
@@ -54,6 +56,12 @@ export const SectionHero: FunctionComponent<SectionHeroProps> = ({ className, ..
       <h2 className={sectionHeroSubtitleStyle}>
         No personalizēta plāna līdz kopīgiem piedzīvojumiem viss vienuviet latviešiem.
       </h2>
+      <a
+        className={sectionHeroButtonStyle}
+        href={`/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`}
+      >
+        Brauc uz Šrilanku ar mani
+      </a>
       <picture>
         <source media="(max-width: 1279px)" srcSet={mobile} />
         <source media="(min-width: 1280px)" srcSet={desktop} />

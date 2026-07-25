@@ -20,7 +20,13 @@
       "!**/sanity.types.ts",
       "!**/public/images/uploads",
       "!**/serpapi/data",
-      "!**/*.svg"
+      "!**/*.svg",
+      "!.claude",
+      "!.agents",
+      "!.codex",
+      "!.github/skills",
+      "!.github/hooks",
+      "!**/.impeccable"
     ]
   },
   "formatter": {
