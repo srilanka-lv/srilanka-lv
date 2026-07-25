@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.4.0...v1.5.0) (2026-07-25)
+
+
+### Features
+
+* ✨ add hero CTA linking to the girls trip ([1ff5ba2](https://github.com/srilanka-lv/srilanka-lv/commit/1ff5ba2e3bbe7aa3f85292ad87cf36c58b7e699d))
+* 💄 redesign footer with product cards, guide links and socials ([f8f1133](https://github.com/srilanka-lv/srilanka-lv/commit/f8f11335ac3f53cbdb48f83530f4a0135e58c134))
+
 ## [1.4.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.3.1...v1.4.0) (2026-07-25)
 
 
