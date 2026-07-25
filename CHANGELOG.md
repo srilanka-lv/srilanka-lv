@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.3.1...v1.4.0) (2026-07-25)
+
+
+### Features
+
+* ⚡️ PageSpeed improvement ([205beb1](https://github.com/srilanka-lv/srilanka-lv/commit/205beb1f230e72581e0d8c08fb48cb6c5f0fd42c))
+* ⚡️ PageSpeed improvement ([b3eda88](https://github.com/srilanka-lv/srilanka-lv/commit/b3eda88f500ce4ccd5995becfc3f889b5c4017fe))
+
 ## [1.3.1](https://github.com/srilanka-lv/srilanka-lv/compare/v1.3.0...v1.3.1) (2026-07-19)
 
 
