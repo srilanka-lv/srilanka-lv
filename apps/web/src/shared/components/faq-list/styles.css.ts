@@ -14,9 +14,11 @@ export const faqListTitleStyle = style(
     marginTop: 0,
     marginBottom: spacing[8],
 
+    // No margin-top: the article column's own closing space (padding, grid
+    // gap, last-paragraph margin) already adds up to one section break.
     '@media': {
       [`screen and (min-width: ${breakpoints.md})`]: {
-        marginTop: spacing[24],
+        marginTop: 0,
         marginBottom: spacing[12],
       },
     },
@@ -35,17 +37,11 @@ export const faqListStyle = style(
       [`screen and (min-width: ${breakpoints.sm})`]: {
         gridTemplateColumns: '1fr 1fr',
       },
+      // No full-bleed breakout: the list fills the layout container (via the
+      // article aside) so it aligns with the other container-width sections.
+      // No bottom padding: the aside's 2rem + the footer's 4rem top padding
+      // make the site-wide 6rem seam to the footer's first heading.
       [`screen and (min-width: ${breakpoints.md})`]: {
-        width: '100svw',
-        left: '50%',
-        right: '50%',
-        marginLeft: '-50svw',
-        marginRight: '-50svw',
-        paddingBottom: spacing[10],
-        paddingLeft: spacing[40],
-        paddingRight: spacing[40],
-        display: 'grid',
-        gridTemplateRows: 'auto',
         gridTemplateColumns: '1fr',
       },
       [`screen and (min-width: ${breakpoints.xl})`]: {

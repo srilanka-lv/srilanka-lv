@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+import { darkThemeSelector } from '@/shared/styles/themes/theme.dark.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { breakpoint, color, spacing, font, border, focus, zIndex } = vars;
@@ -18,6 +19,8 @@ export const productStyle = style({
   paddingLeft: spacing[8],
   borderRadius: border.radius.large,
 
+  // Each product keeps its identity hue in both themes: the light pastels
+  // below, and dark panels at elevation-ladder lightness with the same hue.
   selectors: {
     '&:nth-of-type(1)': {
       backgroundColor: `#faf4f5`,
@@ -28,12 +31,24 @@ export const productStyle = style({
     '&:nth-of-type(3)': {
       backgroundColor: '#f0f3f7',
     },
+    [`${darkThemeSelector} &:nth-of-type(1)`]: {
+      backgroundColor: 'oklch(21% 0.012 5.6)',
+    },
+    [`${darkThemeSelector} &:nth-of-type(2)`]: {
+      backgroundColor: 'oklch(21% 0.012 145.5)',
+    },
+    [`${darkThemeSelector} &:nth-of-type(3)`]: {
+      backgroundColor: 'oklch(21% 0.012 255.5)',
+    },
   },
 
   '@media': {
     [`screen and (min-width: ${breakpoints.md})`]: {
       marginTop: spacing[24],
-      marginBottom: spacing[24],
+      // 2rem: collapses with the next panel's 6rem margin-top (so panels stay
+      // 6rem apart) while the last panel sits 2rem + the footer's 4rem = the
+      // site-wide 6rem above the footer's first heading.
+      marginBottom: spacing[8],
       paddingRight: spacing[64],
       paddingBottom: spacing[8],
     },
@@ -101,12 +116,18 @@ export const productLinkStyle = style({
   zIndex: zIndex['10'],
 
   selectors: {
-    '&:link, &:visited, &:hover, &:active': {
+    '&:link, &:visited': {
       color: color.accent,
       fontWeight: font.weight.semibold,
     },
+    // Follows the global link treatment: when the coral bar fills on
+    // hover/focus, the text flips to the background ink. Pinning accent here
+    // rendered coral-on-coral once the bar was solid.
+    '&:hover, &:active': {
+      color: color.background,
+    },
     '&:focus-visible': {
-      color: color.foreground,
+      color: color.background,
       outlineOffset: spacing[1],
       outlineStyle: 'solid',
       outlineWidth: focus.width,

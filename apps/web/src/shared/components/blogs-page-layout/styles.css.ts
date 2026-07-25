@@ -10,11 +10,15 @@ export const blogsPageLayoutStyle = style({
   paddingBottom: spacing[12],
 
   '@media': {
+    // lg+: 2rem here + the footer's 4rem top padding = the site-wide 6rem
+    // gap between page content and the footer's first heading.
+    [`screen and (min-width: ${breakpoints.lg})`]: {
+      paddingBottom: spacing[8],
+    },
     [`screen and (min-width: ${breakpoints.xl})`]: {
       display: 'grid',
       gridTemplateColumns: `1fr ${breakpoints.xxs}`,
       gap: spacing[12],
-      paddingBottom: spacing[24],
     },
   },
 });

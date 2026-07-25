@@ -33,3 +33,9 @@ export const darkTheme = createTheme(vars, {
   zIndex,
   breakpoint: breakpoints,
 });
+
+// In dev builds the generated class contains a literal dot from this file's
+// name (`theme.dark_darkTheme__…`), so a raw `.${darkTheme}` selector parses
+// as two classes and matches nothing. Always scope dark-only rules with this
+// escaped selector instead.
+export const darkThemeSelector = `.${darkTheme.replace(/\./g, '\\.')}`;

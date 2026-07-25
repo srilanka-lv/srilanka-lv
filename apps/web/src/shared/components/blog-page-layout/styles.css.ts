@@ -50,11 +50,12 @@ export const breadcrumbsStyle = style({
   paddingBottom: spacing[8],
 });
 
+// No max-width: the aside spans the layout container so the FAQ grid aligns
+// with the other container-width sections (blogs grid, footer, products).
 export const blogPageLayoutAsideStyle = style(
   inComponentsLayer({
     paddingTop: 'initial',
     paddingBottom: spacing[8],
-    maxWidth: breakpoints.sm,
     marginLeft: 'auto',
     marginRight: 'auto',
   }),

@@ -10,7 +10,9 @@ export const tripPagePlanItinerarySectionStyle = style({
   flexDirection: 'column',
   gap: spacing[8],
   marginTop: spacing[8],
-  marginBottom: spacing[16],
+  // 2rem + the footer's 4rem top padding = the site-wide 6rem seam to the
+  // footer's first heading.
+  marginBottom: spacing[8],
   backgroundColor: color.background,
 
   '@media': {
