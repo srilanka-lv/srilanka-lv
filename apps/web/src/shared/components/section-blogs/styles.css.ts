@@ -18,7 +18,7 @@ export const sectionBlogsTitleStyle = style(
       [`screen and (min-width: ${breakpoints.md})`]: {
         fontSize: font.size['4xl'],
         marginTop: spacing[24],
-        marginBottom: spacing[4],
+        marginBottom: 0,
       },
     },
   }),
@@ -47,19 +47,28 @@ export const sectionBlogsStyle = style(
         gridAutoColumns: '32.5svw',
       },
       [`screen and (min-width: ${breakpoints.md})`]: {
-        padding: `2.25rem ${spacing[4]} ${spacing[12]}`,
+        padding: `${spacing[12]} ${spacing[4]} ${spacing[12]}`,
       },
       [`screen and (min-width: ${breakpoints.lg})`]: {
         gridAutoColumns: '20svw',
-        padding: `2.25rem ${spacing[8]} ${spacing[8]}`,
+        padding: `${spacing[12]} ${spacing[8]} ${spacing[8]}`,
       },
+      // From xl up the carousel becomes a 3x2 grid, so the full-bleed
+      // breakout above is cancelled and the grid aligns with the layout
+      // container, matching the footer and product sections.
       [`screen and (min-width: ${breakpoints.xl})`]: {
         gridTemplateColumns: '1fr 1fr 1fr',
         gridTemplateRows: '1fr 1fr',
+        width: '100%',
+        left: 'unset',
+        right: 'unset',
+        marginLeft: '0',
+        marginRight: '0',
+        overflowX: 'visible',
+        padding: `${spacing[12]} 0 ${spacing[8]}`,
       },
       [`screen and (min-width: ${breakpoints.xxl})`]: {
-        padding: `2.25rem ${spacing[40]} ${spacing[12]}`,
-        gap: spacing[12],
+        padding: `${spacing[12]} 0 ${spacing[8]}`,
       },
     },
   }),

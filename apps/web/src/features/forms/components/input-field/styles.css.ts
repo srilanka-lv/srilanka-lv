@@ -43,7 +43,7 @@ export const inputStyles = recipe({
     width: '100%',
     minWidth: 0,
     backgroundColor: color.background,
-    border: `1px solid ${color.secondary}`,
+    border: `1px solid ${color.border}`,
     borderRadius: border.radius.medium,
     color: color.foreground,
     fontFamily: 'inherit',

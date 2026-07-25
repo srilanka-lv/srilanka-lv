@@ -108,8 +108,11 @@ export const sectionHeroButtonStyle = style(
   inComponentsLayer({
     position: 'relative',
     zIndex: zIndex['10'],
-    backgroundColor: color.background,
-    color: color.foreground,
+    // Sits on the hero photo, so the pill must stay a light surface in both
+    // themes (the light theme's background/foreground values); the themed
+    // tokens would camouflage it near-black on the photo in dark mode.
+    backgroundColor: 'oklch(98.96% 0.002 17.19)',
+    color: 'oklch(15.53% 0.050 25.04)',
     borderRadius: border.radius.large,
     marginTop: spacing[8],
     padding: `${spacing[4]} ${spacing[8]}`,

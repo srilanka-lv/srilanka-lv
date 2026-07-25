@@ -8,7 +8,7 @@ const { color, font, spacing, border, transition } = vars;
 export const stlTableStyle = style({
   width: '100%',
   borderCollapse: 'collapse',
-  border: `1px solid ${color.secondary}`,
+  border: `1px solid ${color.border}`,
   color: color.foreground,
   fontSize: font.size.lg,
 
@@ -24,7 +24,7 @@ globalStyle(`${stlTableStyle} th, ${stlTableStyle} td`, {
 });
 
 globalStyle(`${stlTableStyle} thead tr`, {
-  borderBottom: `1px solid ${color.secondary}`,
+  borderBottom: `1px solid ${color.border}`,
 });
 
 globalStyle(`${stlTableStyle} th`, {
@@ -33,11 +33,11 @@ globalStyle(`${stlTableStyle} th`, {
   fontWeight: font.weight.medium,
   color: color.secondaryForeground,
   textTransform: 'none',
-  borderBottom: `1px solid ${color.secondary}`,
+  borderBottom: `1px solid ${color.border}`,
 });
 
 globalStyle(`${stlTableStyle} tbody tr`, {
-  borderBottom: `1px solid ${color.secondary}`,
+  borderBottom: `1px solid ${color.border}`,
   transition: `background-color ${transition.duration.normal} ${transition.easing.easeInOut}`,
 });
 
@@ -55,7 +55,7 @@ globalStyle(`${stlTableStyle} td`, {
 });
 
 globalStyle(`${stlTableStyle} tfoot tr`, {
-  borderTop: `1px solid ${color.secondary}`,
+  borderTop: `1px solid ${color.border}`,
 });
 
 globalStyle(`${stlTableStyle} tfoot th`, {
@@ -96,7 +96,7 @@ globalStyle(`${stlTableStyle} button[data-variant="default"]:hover`, {
 globalStyle(`${stlTableStyle} button[data-variant="outline"]`, {
   backgroundColor: 'transparent',
   color: color.foreground,
-  border: `1px solid ${color.secondary}`,
+  border: `1px solid ${color.border}`,
 });
 
 globalStyle(`${stlTableStyle} button[data-variant="outline"]:hover`, {

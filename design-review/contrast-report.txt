@@ -1,0 +1,62 @@
+=== TOKEN VALUES (new) ===
+background           oklch(15.00% 0.008 27)  #0e0a09
+surface              oklch(19.00% 0.008 27)  #171212
+secondary            oklch(23.00% 0.008 27)  #211c1b
+border               oklch(27.00% 0.008 27)  #2a2524
+foreground           oklch(98.96% 0.002 17.19)  #fdfbfb
+primary              oklch(98.50% 0.001 106.423)  #fafaf9
+primaryForeground    oklch(21.60% 0.006 56.043)  #1c1917
+secondaryForeground  oklch(98.50% 0.001 106.423)  #fafaf9
+accent               oklch(65.17% 0.192 23.82)  #ee5253
+accentForeground     oklch(15.00% 0.008 27)  #0e0a09
+error                oklch(70.40% 0.191 22.216)  #ff6467
+
+=== OLD VALUES ===
+background           oklch(14.08% 0.052 27.19)  #1a0101
+foreground           oklch(98.96% 0.002 17.19)  #fdfbfb
+primary              oklch(98.50% 0.001 106.423)  #fafaf9
+primaryForeground    oklch(21.60% 0.006 56.043)  #1c1917
+secondary            oklch(26.80% 0.007 34.298)  #292524
+secondaryForeground  oklch(98.50% 0.001 106.423)  #fafaf9
+accent               oklch(65.17% 0.192 23.82)  #ee5253
+accentForeground     oklch(27.40% 0.072 132.109)  #192e03
+error                oklch(70.40% 0.191 22.216)  #ff6467
+
+=== CONTRAST (new dark palette) ===
+PASS  19.10:1 (min 4.5)  body text (foreground) on page bg
+PASS  17.94:1 (min 4.5)  body text on card (surface)
+PASS  16.42:1 (min 4.5)  body text on raised (secondary)
+PASS  18.87:1 (min 4.5)  strong text (primary) on page bg
+PASS  7.24:1 (min 4.5)  muted (updated-at mix65) on page bg
+PASS  6.80:1 (min 4.5)  muted (updated-at mix65) on card
+PASS  7.10:1 (min 4.5)  breadcrumb 60% opacity on page bg
+PASS  5.60:1 (min 4.5)  link (accent) on page bg
+PASS  5.26:1 (min 4.5)  link (accent) on card (surface)
+PASS  4.81:1 (min 3)  link (accent) on raised (secondary)
+PASS  5.60:1 (min 4.5)  button text (accentForeground) on accent
+PASS  16.22:1 (min 4.5)  secondary button text on secondary
+PASS  6.81:1 (min 4.5)  error text on page bg
+PASS  5.60:1 (min 4.5)  link-hover text (bg color) on accent bar
+PASS  10.07:1 (min 3)  focus ring (lime) on page bg
+PASS  9.46:1 (min 3)  focus ring (lime) on card
+PASS  8.66:1 (min 3)  focus ring (lime) on raised
+PASS  5.20:1 (min 4.5)  input placeholder (fg 50% op) on page bg
+PASS  17.24:1 (min 4.5)  body text (foreground) on dark pink panel
+PASS  17.13:1 (min 4.5)  body text (foreground) on dark mint panel
+PASS  17.18:1 (min 4.5)  body text (foreground) on dark blue panel
+PASS  5.05:1 (min 4.5)  link (accent) on dark pink panel
+PASS  5.03:1 (min 4.5)  link (accent) on dark blue panel
+PASS  7.94:1 (min 4.5)  chip sage #9fb3a1 on dark mint panel
+PASS  18.45:1 (min 4.5)  body text (foreground) on accent-tint panel
+PASS  5.41:1 (min 4.5)  link (accent) on accent-tint panel
+
+=== non-text separation (report only) ===
+border vs page bg      1.30:1
+border vs card         1.22:1
+card vs page bg        1.06:1
+raised vs card         1.09:1
+
+=== OLD problem pairs (for the report) ===
+old button text (olive) on accent: 4.15:1
+old link (accent) on old bg:       5.69:1
+old muted on old bg:               7.23:1
