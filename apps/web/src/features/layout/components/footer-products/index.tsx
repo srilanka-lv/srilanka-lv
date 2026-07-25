@@ -1,4 +1,3 @@
-import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
@@ -22,7 +21,7 @@ export const FooterProducts: FunctionComponent = () => {
   return (
     <div>
       <Heading as="h2" variant="h6" className={footerHeadingStyle}>
-        <Link href={`/${PAGES.LV.PRODUCTS}`}>Mūsu produkti</Link>
+        Mani produkti
       </Heading>
       <ul className={footerProductsListStyle}>
         {products.map((product) => (
