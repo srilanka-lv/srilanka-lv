@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.5.0...v1.6.0) (2026-07-25)
+
+
+### Features
+
+* ✨ splash images ([c28e50e](https://github.com/srilanka-lv/srilanka-lv/commit/c28e50e7ae127fe340e9aa3cc996b69e39d3c974))
+* ✨ splash images ([191fafe](https://github.com/srilanka-lv/srilanka-lv/commit/191fafee8c35cb46ea349a0a8c0fc32c403daa53))
+
 ## [1.5.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.4.0...v1.5.0) (2026-07-25)
 
 
