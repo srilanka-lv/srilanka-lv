@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.1](https://github.com/srilanka-lv/srilanka-lv/compare/v1.7.0...v1.7.1) (2026-07-25)
+
+
+### Bug Fixes
+
+* ✨ dark mode improvements ([23d31fd](https://github.com/srilanka-lv/srilanka-lv/commit/23d31fd6b89c2e2e45cf067b775a98449919a9d3))
+* ✨ dark mode improvements ([48d03ba](https://github.com/srilanka-lv/srilanka-lv/commit/48d03ba721b02cf420482d691d3358d4a4d8069b))
+
 ## [1.7.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.6.0...v1.7.0) (2026-07-25)
 
 
