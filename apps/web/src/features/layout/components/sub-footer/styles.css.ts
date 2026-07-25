@@ -78,3 +78,9 @@ export const subFooterItemStyle = style(
     },
   }),
 );
+
+export const subFooterLinkStyle = style(
+  inComponentsLayer({
+    color: 'inherit',
+  }),
+);

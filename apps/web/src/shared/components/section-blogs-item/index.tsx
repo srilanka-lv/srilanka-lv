@@ -25,7 +25,7 @@ export const SectionBlogsItem: FunctionComponent<SectionBlogsItemProps> = ({
 }) => {
   const src = coverImage
     ? // biome-ignore lint/suspicious/noFocusedTests: This isn't a test - it's the Sanity image URL.
-      urlForImage(coverImage).width(1200).quality(100).fit('max').auto('format').url()
+      urlForImage(coverImage).width(1200).quality(80).fit('max').auto('format').url()
     : null;
   const alt = coverImage?.alt ?? '';
   const itemSlug = slug?.current ? `/blogi/${slug?.current}` : null;

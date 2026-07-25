@@ -7,7 +7,7 @@ import { footerHeadingStyle, footerListStyle } from '../footer/styles.css';
 export const FooterProducts: FunctionComponent = () => {
   return (
     <div>
-      <Heading as="h6" className={footerHeadingStyle}>
+      <Heading as="h2" variant="h6" className={footerHeadingStyle}>
         Mūsu produkti
       </Heading>
       <ul className={footerListStyle}>

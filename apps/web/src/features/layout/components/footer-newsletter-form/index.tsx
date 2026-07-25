@@ -1,6 +1,6 @@
 'use client';
 
-import { zodResolver } from '@hookform/resolvers/zod';
+import { standardSchemaResolver } from '@hookform/resolvers/standard-schema';
 import { useForm } from 'react-hook-form';
 
 import { InputField } from '@/features/forms/components/input-field';
@@ -20,7 +20,7 @@ export function FooterNewsletterForm() {
     setError,
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<FormSchema>({
-    resolver: zodResolver(formSchema),
+    resolver: standardSchemaResolver(formSchema),
   });
 
   const onSubmit = async (data: FormSchema) => {
@@ -34,7 +34,7 @@ export function FooterNewsletterForm() {
 
   return (
     <form className={formStyle} onSubmit={handleSubmit(onSubmit)}>
-      <Heading as="h6" className={footerHeadingStyle}>
+      <Heading as="h2" variant="h6" className={footerHeadingStyle}>
         Nepalaid garām jaunumus!
       </Heading>
 
@@ -45,7 +45,7 @@ export function FooterNewsletterForm() {
 
       {isSubmitSuccessful ? (
         <div>
-          <Heading as="h6" className={footerHeadingStyle}>
+          <Heading as="h2" variant="h6" className={footerHeadingStyle}>
             Paldies!
           </Heading>
           <Text>Esi veiksmīgi pieteicies jaunumiem.</Text>

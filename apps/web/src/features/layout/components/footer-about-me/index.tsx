@@ -13,7 +13,7 @@ import {
 
 export const FooterAboutMe = () => (
   <div>
-    <Heading as="h6" className={footerHeadingStyle}>
+    <Heading as="h2" variant="h6" className={footerHeadingStyle}>
       Čau! Esmu Grieta.
     </Heading>
     <Text className={footerTextStyle}>

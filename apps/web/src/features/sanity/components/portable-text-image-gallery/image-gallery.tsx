@@ -29,7 +29,7 @@ export function ImageGallery({ value }: ImageGalleryProps) {
         }
 
         // biome-ignore lint/suspicious/noFocusedTests: This isn't a test - it's the Sanity image URL.
-        const url = urlForImage(image).width(800).quality(100).fit('max').auto('format').url();
+        const url = urlForImage(image).width(800).quality(80).fit('max').auto('format').url();
 
         return (
           <li key={image._key} className={imageGalleryItemStyle}>

@@ -37,7 +37,7 @@ export const BlogCoverImage: FunctionComponent<BlogCoverImageProps> = ({ image }
 
   const src = image
     ? // biome-ignore lint/suspicious/noFocusedTests: This isn't a test - it's the Sanity image URL.
-      urlForImage(image).width(2400).quality(100).fit('max').auto('format').url()
+      urlForImage(image).width(2400).quality(80).fit('max').auto('format').url()
     : null;
 
   const alt = image?.alt ?? '';
@@ -53,7 +53,6 @@ export const BlogCoverImage: FunctionComponent<BlogCoverImageProps> = ({ image }
     alt,
     width: 2400,
     height: 1551,
-    quality: 100,
   });
 
   preload(optimizedSrc, {
