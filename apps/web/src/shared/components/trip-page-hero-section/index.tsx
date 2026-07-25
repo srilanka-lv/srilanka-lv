@@ -36,7 +36,7 @@ export const TripPageHeroSection = () => (
           alt="Laura Grieta no srilanka.lv apmeklē ūdenskritumu Šrilankā"
           fill
           objectFit="cover"
-          sizes="auto"
+          sizes="(min-width: 1024px) 66vw, 100vw"
           priority
           quality={75}
         />
@@ -47,7 +47,7 @@ export const TripPageHeroSection = () => (
             src="/images/srilanka-lv_10-dienu-celojums_latviesu-meitenu-grupa-atpusas-pie-baseina-srilanka.webp"
             alt="Latviešu meiteņu grupa atpūšas pie baseina Šrilankā"
             fill
-            sizes="auto"
+            sizes="(min-width: 1024px) 22vw, 80vw"
             priority
             quality={75}
           />
@@ -57,7 +57,7 @@ export const TripPageHeroSection = () => (
             src="/images/srilanka-lv_10-dienu-celojums_rita-joga-srilankas-tropiskaja-atmosfera.webp"
             alt="Rīta joga Šrilankas tropiskajā atmosfērā"
             fill
-            sizes="auto"
+            sizes="(min-width: 1024px) 22vw, 80vw"
             priority
             quality={75}
           />
@@ -67,7 +67,7 @@ export const TripPageHeroSection = () => (
             src="/images/srilanka-lv_meitenu-celojums_saulrieta-serfosana.webp"
             alt="Sērfošana ar meitenēm Šrilankā"
             fill
-            sizes="auto"
+            sizes="(min-width: 1024px) 22vw, 80vw"
             priority
             quality={75}
           />
