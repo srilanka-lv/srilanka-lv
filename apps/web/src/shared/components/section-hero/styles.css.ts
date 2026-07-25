@@ -4,7 +4,7 @@ import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, font, zIndex } = vars;
+const { spacing, font, zIndex, color, border, transition } = vars;
 
 export const sectionHeroStyle = style(
   inComponentsLayer({
@@ -18,7 +18,7 @@ export const sectionHeroStyle = style(
     justifyContent: 'center',
     gap: spacing[2],
     alignItems: 'center',
-    marginTop: '-90px',
+    marginTop: '-101px',
     marginRight: '-50svw',
     marginBottom: 0,
     marginLeft: '-50svw',
@@ -42,7 +42,7 @@ export const sectionHeroStyle = style(
         height: '100svh',
       },
       [`screen and (min-width: ${breakpoints.xl})`]: {
-        marginTop: `-90px`,
+        marginTop: `-101px`,
       },
     },
   }),
@@ -101,5 +101,35 @@ export const sectionHeroImageStyle = style(
     opacity: 1,
     objectFit: 'cover',
     objectPosition: 'center center',
+  }),
+);
+
+export const sectionHeroButtonStyle = style(
+  inComponentsLayer({
+    position: 'relative',
+    zIndex: zIndex['10'],
+    backgroundColor: color.background,
+    color: color.foreground,
+    borderRadius: border.radius.large,
+    marginTop: spacing[8],
+    padding: `${spacing[4]} ${spacing[8]}`,
+    textDecoration: 'none',
+    fontSize: font.size.xl,
+    fontWeight: font.weight.medium,
+    lineHeight: font.lineHeight.normal,
+    textAlign: 'center',
+    transition: transition.duration.faster,
+    transitionProperty: 'transform',
+    transitionTimingFunction: transition.easing.easeInOut,
+
+    selectors: {
+      '&:hover': {
+        color: color.accent,
+        transform: 'translateY(-2px)',
+      },
+      '&:after': {
+        display: 'none',
+      },
+    },
   }),
 );
