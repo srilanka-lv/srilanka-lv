@@ -10,7 +10,7 @@ export const cardStyles = recipe({
   variants: {
     variant: {
       filled: inBaseLayer({
-        backgroundColor: color.primaryForeground,
+        backgroundColor: color.surface,
       }),
       outline: inBaseLayer({
         backgroundColor: 'transparent',

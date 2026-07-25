@@ -6,23 +6,12 @@ import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { spacing, font, color } = vars;
 
+// No full-bleed breakout: the section fills the layout container so it
+// aligns with the blogs grid, products, and footer at every viewport width.
 export const sectionFaqsStyle = style(
   inOverridesLayer({
     display: 'flex',
     flexDirection: 'column',
-
-    '@media': {
-      [`screen and (min-width: ${breakpoints.xxl})`]: {
-        position: 'relative',
-        width: '100svw',
-        left: '50%',
-        right: '50%',
-        marginLeft: '-50svw',
-        marginRight: '-50svw',
-        paddingLeft: spacing[40],
-        paddingRight: spacing[40],
-      },
-    },
   }),
 );
 
@@ -33,15 +22,14 @@ export const sectionFaqsTitleStyle = style(
     textAlign: 'center',
     marginTop: spacing[12],
 
+    // md+ shares one section rhythm with the blogs section: 6rem above the
+    // heading, 3rem from heading to content (the base leaves the browser's
+    // default heading margin-bottom in place, matching mobile as it was).
     '@media': {
       [`screen and (min-width: ${breakpoints.md})`]: {
         fontSize: font.size['4xl'],
-      },
-      [`screen and (min-width: ${breakpoints.xl})`]: {
-        marginTop: spacing[16],
-      },
-      [`screen and (min-width: ${breakpoints.xxl})`]: {
         marginTop: spacing[24],
+        marginBottom: spacing[12],
       },
     },
   }),

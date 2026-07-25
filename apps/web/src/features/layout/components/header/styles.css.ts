@@ -51,7 +51,10 @@ export const headerStyles = recipe({
         },
       },
       'with-overlay': {
-        color: color.background,
+        // Sits on a photo, so the ink must stay light in both themes: the
+        // light theme's background value, not the themed background token
+        // (which is near-black in dark mode).
+        color: 'oklch(98.96% 0.002 17.19)',
 
         '@media': {
           [`screen and (min-width: ${breakpoints.md})`]: {

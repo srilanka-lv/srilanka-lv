@@ -25,7 +25,7 @@ export const dividerStyles = recipe({
     },
     color: {
       default: inBaseLayer({ borderTopColor: color.foreground }),
-      subtle: inBaseLayer({ borderTopColor: color.secondary }),
+      subtle: inBaseLayer({ borderTopColor: color.border }),
     },
   },
   defaultVariants: {

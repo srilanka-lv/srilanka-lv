@@ -16,7 +16,7 @@ export const spinnerStyles = recipe({
     borderRadius: '50%',
     borderWidth: '2px',
     borderStyle: 'solid',
-    borderColor: color.secondary,
+    borderColor: color.border,
     borderTopColor: color.foreground,
     animation: `${spin} 0.6s linear infinite`,
   }),

@@ -48,7 +48,7 @@ export const buttonStyles = recipe({
       outline: inBaseLayer({
         backgroundColor: 'transparent',
         color: color.foreground,
-        borderColor: color.secondary,
+        borderColor: color.border,
         selectors: {
           '&:hover:not(:disabled)': {
             backgroundColor: color.secondary,
