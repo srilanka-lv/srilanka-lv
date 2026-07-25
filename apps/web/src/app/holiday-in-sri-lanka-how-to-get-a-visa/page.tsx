@@ -15,7 +15,7 @@ const NextHolidayInSriLankaWhatToDoPage: FunctionComponent = async () => {
     slug: PAGES.LV.INFO_VISA,
   });
 
-  return <StaticPageLayout href={`/${PAGES.LV.INFO_VISA}`} body={post?.body} />;
+  return <StaticPageLayout href={`/${PAGES.LV.INFO_VISA}`} body={post?.body} page={post} />;
 };
 
 export default NextHolidayInSriLankaWhatToDoPage;

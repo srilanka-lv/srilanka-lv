@@ -13,6 +13,7 @@ import { BlogPostJsonLd } from '../blog-post-json-ld';
 import { BlogText } from '../blog-text';
 import { Breadcrumbs } from '../breadcrumbs';
 import { buildPostItems } from '../breadcrumbs/build-items';
+import { ContentUpdatedAt } from '../content-updated-at';
 import { FaqList } from '../faq-list';
 import {
   blogPageLayoutArticleStyle,
@@ -30,6 +31,11 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
   if (!post) {
     notFound();
   }
+
+  const showUpdatedAt =
+    post.publishedAt != null &&
+    post._updatedAt.slice(0, 7) !== post.publishedAt.slice(0, 7) &&
+    post._updatedAt > post.publishedAt;
 
   const items =
     post.faqs
@@ -54,6 +60,7 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
         coverImage={post.coverImage}
         openGraph={post.openGraph}
         body={post.body}
+        faqs={post.faqs}
       />
 
       <BlogCoverImage image={post.coverImage} />
@@ -62,6 +69,7 @@ export const BlogPageLayout: FunctionComponent<BlogPageLayoutProps> = async ({ s
         <BlogHero>
           <BlogHeroTitle>{post.title}</BlogHeroTitle>
           <BlogHeroAuthor publishedAt={post.publishedAt} />
+          {showUpdatedAt && <ContentUpdatedAt updatedAt={post._updatedAt} />}
         </BlogHero>
         <Breadcrumbs className={breadcrumbsStyle} items={buildPostItems(slug, post.title ?? '')} />
         <BlogText body={post.body} />

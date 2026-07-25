@@ -412,17 +412,20 @@ export type BlogPostsQueryResult = Array<{
 
 // Source: ../../packages/sanity/src/queries/blog-posts-sitemap-query.ts
 // Variable: blogPostsSitemapQuery
-// Query: *[_type == "blogPosts" && defined(slug.current)]{ "slug": slug.current, _updatedAt }
+// Query: *[_type == "blogPosts" && defined(slug.current)]{    "slug": slug.current,    _updatedAt,    "imageUrls": array::unique(array::compact(      [coverImage.asset->url, openGraph.openGraphImage.asset->url]      + coalesce(body[_type == "image"].asset->url, [])      + coalesce(body[_type == "imageGallery"].images[].asset->url, [])    ))  }
 export type BlogPostsSitemapQueryResult = Array<{
   slug: string | null;
   _updatedAt: string;
+  imageUrls: Array<string>;
 }>;
 
 // Source: ../../packages/sanity/src/queries/pages-by-slug-query.ts
 // Variable: pagesBySlugQuery
-// Query: *[_type == "pages" && slug.current == $slug][0]{    _id,    title,    slug,    body,    seo,    openGraph  }
+// Query: *[_type == "pages" && slug.current == $slug][0]{    _id,    _createdAt,    _updatedAt,    title,    slug,    body,    seo,    openGraph  }
 export type PagesBySlugQueryResult = {
   _id: string;
+  _createdAt: string;
+  _updatedAt: string;
   title: string | null;
   slug: Slug | null;
   body: BlockContent | null;
@@ -458,10 +461,11 @@ export type PagesQueryResult = Array<{
 
 // Source: ../../packages/sanity/src/queries/pages-sitemap-query.ts
 // Variable: pagesSitemapQuery
-// Query: *[_type == "pages" && slug.current in $slugs]{ "slug": slug.current, _updatedAt }
+// Query: *[_type == "pages" && slug.current in $slugs]{    "slug": slug.current,    _updatedAt,    "imageUrls": array::unique(array::compact(      [openGraph.openGraphImage.asset->url]      + coalesce(body[_type == "image"].asset->url, [])      + coalesce(body[_type == "imageGallery"].images[].asset->url, [])    ))  }
 export type PagesSitemapQueryResult = Array<{
   slug: string | null;
   _updatedAt: string;
+  imageUrls: Array<string>;
 }>;
 
 // Query TypeMap
@@ -471,11 +475,11 @@ declare module "@sanity/client" {
     '\n  *[_type == "blogPosts" && slug.current == $slug][0]{\n    _id,\n    _updatedAt,\n    title,\n    slug,\n    excerpt,\n    coverImage,\n    body,\n    publishedAt,\n    seo,\n    openGraph,\n    tags[]->{ _id, title, slug },\n    faqs[]->{ _id, question, answer }\n  }\n': BlogPostsBySlugQueryResult;
     '*[_type == "blogPosts" && slug.current == $slug][0]{ seo, openGraph }': BlogPostsMetaDataBySlugQueryResult;
     '*[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': BlogPostsQueryResult;
-    '*[_type == "blogPosts" && defined(slug.current)]{ "slug": slug.current, _updatedAt }': BlogPostsSitemapQueryResult;
-    '\n  *[_type == "pages" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    body,\n    seo,\n    openGraph\n  }\n': PagesBySlugQueryResult;
+    '\n  *[_type == "blogPosts" && defined(slug.current)]{\n    "slug": slug.current,\n    _updatedAt,\n    "imageUrls": array::unique(array::compact(\n      [coverImage.asset->url, openGraph.openGraphImage.asset->url]\n      + coalesce(body[_type == "image"].asset->url, [])\n      + coalesce(body[_type == "imageGallery"].images[].asset->url, [])\n    ))\n  }\n': BlogPostsSitemapQueryResult;
+    '\n  *[_type == "pages" && slug.current == $slug][0]{\n    _id,\n    _createdAt,\n    _updatedAt,\n    title,\n    slug,\n    body,\n    seo,\n    openGraph\n  }\n': PagesBySlugQueryResult;
     '*[_type == "pages" && slug.current in $slugs]{ "slug": slug.current, title, "description": seo.metaDescription }': PagesLlmsTxtQueryResult;
     '*[_type == "pages" && slug.current == $slug][0]{ seo, openGraph }': PagesMetaDataBySlugQueryResult;
     '*[_type == "pages"] | order(title asc) [0...$limit]{ _id, title, slug }': PagesQueryResult;
-    '*[_type == "pages" && slug.current in $slugs]{ "slug": slug.current, _updatedAt }': PagesSitemapQueryResult;
+    '\n  *[_type == "pages" && slug.current in $slugs]{\n    "slug": slug.current,\n    _updatedAt,\n    "imageUrls": array::unique(array::compact(\n      [openGraph.openGraphImage.asset->url]\n      + coalesce(body[_type == "image"].asset->url, [])\n      + coalesce(body[_type == "imageGallery"].images[].asset->url, [])\n    ))\n  }\n': PagesSitemapQueryResult;
   }
 }

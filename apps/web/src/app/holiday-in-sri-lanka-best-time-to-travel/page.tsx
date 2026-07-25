@@ -16,7 +16,13 @@ const NextHolidayInSriLankaWhatToDoPage: FunctionComponent = async () => {
     slug: PAGES.LV.INFO_BEST_TIME_TO_TRAVEL,
   });
 
-  return <StaticPageLayout href={`/${PAGES.LV.INFO_BEST_TIME_TO_TRAVEL}`} body={post?.body} />;
+  return (
+    <StaticPageLayout
+      href={`/${PAGES.LV.INFO_BEST_TIME_TO_TRAVEL}`}
+      body={post?.body}
+      page={post}
+    />
+  );
 };
 
 export default NextHolidayInSriLankaWhatToDoPage;

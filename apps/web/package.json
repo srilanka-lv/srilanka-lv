@@ -9,7 +9,9 @@
     "postbuild": "cp -R public .next/standalone/apps/web/ && cp -R .next/static .next/standalone/apps/web/.next/",
     "start": "bun --bun .next/standalone/apps/web/server.js",
     "sb": "bun storybook dev -p 6006",
-    "build-sb": "bun storybook build"
+    "build-sb": "bun storybook build",
+    "indexnow": "bun scripts/submit-indexnow.ts",
+    "validate:seo": "bun scripts/validate-seo.ts"
   },
   "dependencies": {
     "@ark-ui/react": "^5.37.2",

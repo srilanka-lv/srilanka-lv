@@ -103,12 +103,12 @@ export const socialMediaItems = [
   {
     icon: <SiTiktok size={20} />,
     label: 'TikTok',
-    href: 'https://www.tiktok.com/dzivetropos',
+    href: 'https://www.tiktok.com/@dzivetropos',
   },
   {
     icon: <SiYoutube size={20} />,
     label: 'YouTube',
-    href: 'https://www.youtube.com/dzivetropos',
+    href: 'https://www.youtube.com/@dzivetropos',
   },
   {
     icon: <SiPatreon size={20} />,
