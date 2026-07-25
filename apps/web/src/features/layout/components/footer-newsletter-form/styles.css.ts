@@ -15,7 +15,7 @@ export const formStyle = style(
 
 export const textStyle = style(
   inComponentsLayer({
-    fontSize: font.size.lg,
+    fontSize: font.size.base,
     margin: 0,
   }),
 );

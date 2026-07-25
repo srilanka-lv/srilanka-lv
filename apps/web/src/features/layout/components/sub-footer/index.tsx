@@ -8,7 +8,7 @@ export const SubFooter: FunctionComponent = () => {
   return (
     <ul className={subFooterStyle}>
       <li className={subFooterItemStyle}>Copyright © {year} Srilanka.lv. All rights reserved.</li>
-      <li className={subFooterItemStyle}>Tālruņa numurs: +371 67085858</li>
+      <li className={subFooterItemStyle}>WhatsApp: +64 2902323786</li>
       <li className={subFooterItemStyle}>E-pasts: sveiki@srilanka.lv</li>
       <li className={subFooterItemStyle}>Privātuma noteikumi</li>
       <li className={subFooterItemStyle}>Atruna</li>

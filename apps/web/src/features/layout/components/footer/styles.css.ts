@@ -9,37 +9,45 @@ const { spacing, color, zIndex, font } = vars;
 export const footerStyle = style(
   inOverridesLayer({
     position: 'relative',
-    display: 'grid',
-    gap: spacing[12],
-    justifyContent: 'center',
-    padding: `${spacing[20]} 0`,
+    padding: `${spacing[12]} 0`,
     textWrap: 'balance',
     color: color.primary,
     backgroundColor: 'transparent',
 
     selectors: {
       '&::before': {
-        alignSelf: 'center',
-        justifySelf: 'center',
-        position: 'absolute',
         content: '',
-        backgroundColor: `color-mix(in oklch, ${color.accent} 5%, transparent)`,
-        height: '100%',
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: '50%',
+        transform: 'translateX(-50%)',
         width: '100svw',
+        borderTop: `1px solid color-mix(in oklch, ${color.primary} 10%, transparent)`,
         zIndex: zIndex['-10'],
-        borderTop: `1px solid ${color.primaryForeground}`,
-        borderBottom: `1px solid ${color.primaryForeground}`,
       },
     },
 
     '@media': {
-      [`screen and (min-width: ${breakpoints.xs})`]: {
-        padding: `${spacing[32]} ${spacing[8]}`,
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        padding: `${spacing[16]} 0`,
       },
+    },
+  }),
+);
+
+export const footerColumnsStyle = style(
+  inOverridesLayer({
+    display: 'grid',
+    gap: spacing[10],
+    marginTop: spacing[12],
+    paddingTop: spacing[12],
+    borderTop: `1px solid color-mix(in oklch, ${color.primary} 10%, transparent)`,
+
+    '@media': {
       [`screen and (min-width: ${breakpoints.xl})`]: {
-        gridTemplateColumns: '1fr 1fr 1fr',
-        gap: spacing[12],
-        padding: `${spacing[24]} ${spacing[0]}`,
+        gridTemplateColumns: '1.25fr 1fr 1.1fr',
+        gap: spacing[16],
       },
     },
   }),
@@ -54,7 +62,7 @@ export const footerHeadingStyle = style(
 
 export const footerTextStyle = style(
   inOverridesLayer({
-    fontSize: font.size.lg,
+    fontSize: font.size.base,
   }),
 );
 
