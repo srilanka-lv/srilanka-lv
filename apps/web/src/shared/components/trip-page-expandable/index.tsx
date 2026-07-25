@@ -38,8 +38,6 @@ export const TripPageExpandable: FunctionComponent<TripPageExpandableProps> = ({
         onClick={() => setIsExpanded(!isExpanded)}
         aria-expanded={isExpanded}
         aria-controls={`trip-page-expandable-${title}`}
-        aria-label={`Toggle ${title}`}
-        aria-describedby={`trip-page-expandable-${title}`}
         data-state-expanded={isExpanded}
         data-state-collapsed={!isExpanded}
       >

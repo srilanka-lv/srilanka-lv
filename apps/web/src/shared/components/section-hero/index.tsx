@@ -20,7 +20,6 @@ export const SectionHero: FunctionComponent<SectionHeroProps> = ({ className, ..
     sizes: '100vw',
     fill: true,
     priority: true,
-    quality: 100,
   };
 
   const {

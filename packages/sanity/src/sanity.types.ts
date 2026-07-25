@@ -430,6 +430,15 @@ export type PagesBySlugQueryResult = {
   openGraph: OpenGraph | null;
 } | null;
 
+// Source: ../../packages/sanity/src/queries/pages-llms-txt-query.ts
+// Variable: pagesLlmsTxtQuery
+// Query: *[_type == "pages" && slug.current in $slugs]{ "slug": slug.current, title, "description": seo.metaDescription }
+export type PagesLlmsTxtQueryResult = Array<{
+  slug: string | null;
+  title: string | null;
+  description: string | null;
+}>;
+
 // Source: ../../packages/sanity/src/queries/pages-meta-data-by-slug-query.ts
 // Variable: pagesMetaDataBySlugQuery
 // Query: *[_type == "pages" && slug.current == $slug][0]{ seo, openGraph }
@@ -447,6 +456,14 @@ export type PagesQueryResult = Array<{
   slug: Slug | null;
 }>;
 
+// Source: ../../packages/sanity/src/queries/pages-sitemap-query.ts
+// Variable: pagesSitemapQuery
+// Query: *[_type == "pages" && slug.current in $slugs]{ "slug": slug.current, _updatedAt }
+export type PagesSitemapQueryResult = Array<{
+  slug: string | null;
+  _updatedAt: string;
+}>;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
@@ -456,7 +473,9 @@ declare module "@sanity/client" {
     '*[_type == "blogPosts"] | order(publishedAt desc) [0...$limit]{ _id, title, slug, excerpt, coverImage, publishedAt }': BlogPostsQueryResult;
     '*[_type == "blogPosts" && defined(slug.current)]{ "slug": slug.current, _updatedAt }': BlogPostsSitemapQueryResult;
     '\n  *[_type == "pages" && slug.current == $slug][0]{\n    _id,\n    title,\n    slug,\n    body,\n    seo,\n    openGraph\n  }\n': PagesBySlugQueryResult;
+    '*[_type == "pages" && slug.current in $slugs]{ "slug": slug.current, title, "description": seo.metaDescription }': PagesLlmsTxtQueryResult;
     '*[_type == "pages" && slug.current == $slug][0]{ seo, openGraph }': PagesMetaDataBySlugQueryResult;
     '*[_type == "pages"] | order(title asc) [0...$limit]{ _id, title, slug }': PagesQueryResult;
+    '*[_type == "pages" && slug.current in $slugs]{ "slug": slug.current, _updatedAt }': PagesSitemapQueryResult;
   }
 }
