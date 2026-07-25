@@ -16,7 +16,9 @@ const NextHolidayInSriLankaWhatToDoPage: FunctionComponent = async () => {
     slug: PAGES.LV.INFO_HOW_LONG_TO_GO,
   });
 
-  return <StaticPageLayout href={`/${PAGES.LV.INFO_HOW_LONG_TO_GO}`} body={post?.body} />;
+  return (
+    <StaticPageLayout href={`/${PAGES.LV.INFO_HOW_LONG_TO_GO}`} body={post?.body} page={post} />
+  );
 };
 
 export default NextHolidayInSriLankaWhatToDoPage;
