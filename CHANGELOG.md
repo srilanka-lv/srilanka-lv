@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.7.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.6.0...v1.7.0) (2026-07-25)
+
+
+### Features
+
+* ⚡️ SEO ([c6d3eb6](https://github.com/srilanka-lv/srilanka-lv/commit/c6d3eb6d0c18e39d02e43f3d15c3648d07ea4102))
+* ⚡️ SEO ([7fd1716](https://github.com/srilanka-lv/srilanka-lv/commit/7fd171600dcee743675e578a3ac7398dec94b092))
+
 ## [1.6.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.5.0...v1.6.0) (2026-07-25)
 
 
