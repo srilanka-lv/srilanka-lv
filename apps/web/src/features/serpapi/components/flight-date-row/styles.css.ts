@@ -49,6 +49,16 @@ export const airlinesStyle = style({
   color: color.secondaryForeground,
 });
 
+// Groups the airline logos as a single flex item (own gap mirrors the
+// parent's) so the aria-hidden wrapper in index.tsx (the adjacent airline
+// names already carry this information for assistive tech) doesn't disturb
+// the visual spacing between logos or before the text.
+export const logoGroupStyle = style({
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: spacing[2],
+});
+
 export const logoStyle = style({
   borderRadius: border.radius.small,
 });
@@ -122,7 +132,7 @@ export const ctaLinkStyle = style(
         outline: `${focus.width} solid ${focus.color}`,
         outlineOffset: focus.offset,
       },
-      '&:after': {
+      '&::after': {
         display: 'none',
       },
     },

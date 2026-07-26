@@ -70,7 +70,7 @@ export const ctaLinkStyle = style(
         outline: `${focus.width} solid ${focus.color}`,
         outlineOffset: focus.offset,
       },
-      '&:after': {
+      '&::after': {
         display: 'none',
       },
     },

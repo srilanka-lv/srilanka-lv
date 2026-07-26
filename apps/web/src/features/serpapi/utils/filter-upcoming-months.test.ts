@@ -64,7 +64,7 @@ describe('filterUpcomingMonths', () => {
     const months = filterUpcomingMonths(buildData(), Temporal.PlainDate.from('2026-08-24'));
 
     expect(months[0]?.lowestPrice).toBe(382);
-    expect(months[0]?.averagePrice).toBe(Math.round((382 + 601) / 2));
+    expect(months[0]?.averagePrice).toBe(492);
   });
 
   it('returns an empty array when everything is past', () => {

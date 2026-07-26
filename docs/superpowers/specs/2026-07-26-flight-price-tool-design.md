@@ -62,9 +62,12 @@ price, booking token. Prices are **one-way**, economy, 1 adult, EUR (SerpApi `ty
 - Dataviz rules honored: zero-based bars, single series so no legend, thin marks with 4px rounded
   top anchored to a shared baseline, price text in text tokens (never data-colored), cheapness
   carried by geometry and numbers, not color alone.
-- **Color**: bars in quiet warm neutrals: light theme `color-mix(in oklch, deep-maroon ~15%,
-  transparent)`; dark theme the raised ladder step. Selected tile: coral bar + coral hairline
-  border (coral = actionable/current, One Coral Rule intact; no second accent anywhere).
+- **Color**: bars in quiet warm neutrals via the theme contract: both themes use
+  `color-mix(in oklch, ${color.primary} 15%, transparent)` (light theme's `primary` is a deep
+  maroon, so the bar reads maroon-tinted; dark theme's `primary` is near-white, so the same
+  formula reads near-white-tinted). Approved simplification over a separate raised-ladder-step
+  treatment for dark. Selected tile: coral bar + coral hairline border (coral = actionable/current,
+  One Coral Rule intact; no second accent anywhere).
 - **Default selection**: the cheapest upcoming month, so the €382 story is visible at load. On a
   tie (Sep/Oct/Nov all bottom out at €382), the earliest tied month wins.
 - All month panels are server-rendered into the DOM; inactive panels are `hidden` (SEO keeps all

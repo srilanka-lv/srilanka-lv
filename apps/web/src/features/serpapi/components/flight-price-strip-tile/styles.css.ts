@@ -2,7 +2,7 @@ import { createVar, keyframes, style } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
-const { color, font, spacing, border, transition } = vars;
+const { color, font, spacing, border, shadow, transition, zIndex } = vars;
 
 export const barHeightVar = createVar();
 export const barIndexVar = createVar();
@@ -13,6 +13,7 @@ const growKeyframes = keyframes({
 });
 
 export const tileStyle = style({
+  position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -21,6 +22,7 @@ export const tileStyle = style({
   border: '1px solid transparent',
   borderRadius: border.radius.medium,
   backgroundColor: 'transparent',
+  color: color.foreground,
   cursor: 'pointer',
   flexShrink: 0,
   ':focus-visible': {
@@ -75,13 +77,40 @@ export const priceLabelStyle = style({
   fontVariantNumeric: 'tabular-nums',
 });
 
+// Was a visually-hidden (clip-path) span; now a real tooltip bubble shown on
+// hover/focus (name kept as-is to avoid touching index.tsx, which already
+// renders this as `<span className={visuallyHiddenStyle}>{hint}</span>` and
+// needs no markup change for a CSS-only fix).
+//
+// Positioned over the bar track (the tile's own vertical center) rather than
+// above/below the tile: the strip's `overflowX: auto` (flight-price-explorer)
+// implicitly computes overflow-y to `auto` too, so anything extending past
+// the tile's own box vertically would be clipped by the scroll container.
+// Centering inside the tile keeps the bubble fully within tile bounds.
 export const visuallyHiddenStyle = style({
   position: 'absolute',
-  width: '1px',
-  height: '1px',
-  margin: '-1px',
-  padding: 0,
-  overflow: 'hidden',
-  clipPath: 'inset(50%)',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  zIndex: zIndex['10'],
+  pointerEvents: 'none',
+  opacity: 0,
   whiteSpace: 'nowrap',
+  padding: `${spacing[1]} ${spacing[2]}`,
+  borderRadius: border.radius.small,
+  border: `1px solid color-mix(in oklch, ${color.primary} 10%, transparent)`,
+  backgroundColor: color.surface,
+  color: color.foreground,
+  boxShadow: shadow.small,
+  fontSize: font.size.xs,
+  lineHeight: font.lineHeight.snug,
+  textAlign: 'center',
+  selectors: {
+    [`${tileStyle}:hover &`]: {
+      opacity: 1,
+    },
+    [`${tileStyle}:focus-visible &`]: {
+      opacity: 1,
+    },
+  },
 });

@@ -19,6 +19,7 @@ import {
   ctaLinkStyle,
   dateStyle,
   disclaimerStyle,
+  logoGroupStyle,
   logoStyle,
   metaStyle,
   priceStyle,
@@ -42,16 +43,18 @@ export const FlightDateRow: FunctionComponent<FlightDateRowProps> = ({ entry, qu
       <summary className={summaryStyle}>
         <span className={dateStyle}>{formatDateLabel(entry.date)}</span>
         <span className={airlinesStyle}>
-          {airlines.map(([airline, logo]) => (
-            <Image
-              key={airline}
-              className={logoStyle}
-              src={logo}
-              alt={airline}
-              width={20}
-              height={20}
-            />
-          ))}
+          <span className={logoGroupStyle} aria-hidden>
+            {airlines.map(([airline, logo]) => (
+              <Image
+                key={airline}
+                className={logoStyle}
+                src={logo}
+                alt={airline}
+                width={20}
+                height={20}
+              />
+            ))}
+          </span>
           {airlines.map(([airline]) => airline).join(', ')}
         </span>
         <span className={metaStyle}>
