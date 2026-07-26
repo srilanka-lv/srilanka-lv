@@ -9,6 +9,10 @@ const { spacing, font, border, color, shadow, focus, zIndex, transition } = vars
 const primaryColorVar = createVar();
 const secondaryColorVar = createVar();
 
+export const tripPageHeroSectionCtaStyle = style({
+  gridColumn: 'span 2',
+});
+
 export const buttonStyles = recipe({
   base: {
     position: 'relative',
@@ -30,6 +34,7 @@ export const buttonStyles = recipe({
     transitionProperty: 'transform, box-shadow',
     transitionDuration: '100ms',
     transitionTimingFunction: 'cubic-bezier(0.675, 0.145, 0.000, 1.015)',
+    whiteSpace: 'nowrap',
 
     vars: {
       [primaryColorVar]: '#20bf6b',

@@ -21,7 +21,7 @@ export const SectionBlogs: FunctionComponent<SectionBlogsProps> = async ({
   sectionTitleClassName,
   sectionBlogsClassName,
   sectionBlogsItemClassName,
-  blogsLimit = 12,
+  blogsLimit = 24,
   ...props
 }) => {
   const repository = buildSanityRepository();

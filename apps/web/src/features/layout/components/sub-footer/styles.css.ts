@@ -18,6 +18,7 @@ export const subFooterStyle = style(
     listStyle: 'none',
     padding: `${spacing[4]} 0`,
     margin: 0,
+    whiteSpace: 'nowrap',
 
     selectors: {
       '&::before': {

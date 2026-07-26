@@ -17,7 +17,7 @@ export const blogsPageLayoutStyle = style({
     },
     [`screen and (min-width: ${breakpoints.xl})`]: {
       display: 'grid',
-      gridTemplateColumns: `1fr ${breakpoints.xxs}`,
+      gridTemplateColumns: '1fr',
       gap: spacing[12],
     },
   },

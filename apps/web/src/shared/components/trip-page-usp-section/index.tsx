@@ -8,7 +8,7 @@ import {
 
 export const TripPageUspSection = () => (
   <section className={tripPageUspSectionStyle}>
-    <Heading as="h1" variant="h2" className={tripPageUspTitleStyle}>
+    <Heading as="h2" variant="h2" className={tripPageUspTitleStyle}>
       Kāpēc jums patiks šis ceļojums
     </Heading>
     <ul className={tripPageUspItemListStyle}>

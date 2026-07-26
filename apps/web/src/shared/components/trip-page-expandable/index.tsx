@@ -58,8 +58,8 @@ export const TripPageExpandable: FunctionComponent<TripPageExpandableProps> = ({
             className={tripPagePlanItineraryItemContentImageStyle}
             src={imageSrc}
             alt={title}
-            width={100}
-            height={100}
+            width={125}
+            height={125}
           />
           <span>{content}</span>
         </span>

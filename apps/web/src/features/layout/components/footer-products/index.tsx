@@ -31,7 +31,7 @@ export const FooterProducts: FunctionComponent = () => {
                 <Image
                   className={footerProductsImageStyle}
                   src={product.thumbnailSrc}
-                  alt=""
+                  alt={product.title}
                   fill
                   sizes="(min-width: 768px) 33vw, 96px"
                 />
