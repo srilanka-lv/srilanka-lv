@@ -1,8 +1,14 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
+import { config } from 'serpapi';
 
 import { DefaultSerpApiProvider } from '../providers/default-serpapi-provider';
 import { DefaultSerpApiRepository } from '../repositories/default-serpapi-repository';
+
+// deep_search responses regularly exceed the serpapi client's 60s default.
+config.timeout = 180_000;
+
+const FETCH_ATTEMPTS = 3;
 
 function getMondaysForNextMonths(months: number): string[] {
   const dates: string[] = [];
@@ -40,22 +46,39 @@ async function main() {
   const dataDir = resolve(dirname(new URL(import.meta.url).pathname), '../data');
   mkdirSync(dataDir, { recursive: true });
 
-  for (const date of dates) {
-    console.log(`Fetching ${date}...`);
-    try {
-      const response = await repository.searchFlights({
-        airportDepartureId: 'RIX',
-        airportArrivalId: 'CMB',
-        outboundDate: date,
-      });
+  const failedDates: string[] = [];
 
-      const filename = `flights_queried-on-${queriedOn}_results-for-${date}.json`;
-      const outputPath = resolve(dataDir, filename);
-      writeFileSync(outputPath, JSON.stringify(response));
-      console.log(`Written ${filename}`);
-    } catch (error) {
-      console.error(`Failed to fetch ${date}:`, error);
+  for (const date of dates) {
+    let written = false;
+
+    for (let attempt = 1; attempt <= FETCH_ATTEMPTS; attempt++) {
+      console.log(`Fetching ${date} (attempt ${attempt}/${FETCH_ATTEMPTS})...`);
+      try {
+        const response = await repository.searchFlights({
+          airportDepartureId: 'RIX',
+          airportArrivalId: 'CMB',
+          outboundDate: date,
+        });
+
+        const filename = `flights_queried-on-${queriedOn}_results-for-${date}.json`;
+        const outputPath = resolve(dataDir, filename);
+        writeFileSync(outputPath, JSON.stringify(response));
+        console.log(`Written ${filename}`);
+        written = true;
+        break;
+      } catch (error) {
+        console.error(`Failed to fetch ${date} (attempt ${attempt}/${FETCH_ATTEMPTS}):`, error);
+      }
     }
+
+    if (!written) {
+      failedDates.push(date);
+    }
+  }
+
+  if (failedDates.length > 0) {
+    console.error(`Failed after ${FETCH_ATTEMPTS} attempts: ${failedDates.join(', ')}`);
+    process.exitCode = 1;
   }
 
   console.log(`Done. Queried ${dates.length} dates.`);

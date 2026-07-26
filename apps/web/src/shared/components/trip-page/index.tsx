@@ -26,9 +26,6 @@ export const ProductPageTrip: FunctionComponent = () => {
       </Heading>
       <TripPageHeroSection />
       <TripPageUspSection />
-      <Heading as="h1" variant="h3" className={tripPageTitleStyle}>
-        Ceļojuma plāns
-      </Heading>
       <TripPageItinerarySection />
     </>
   );
