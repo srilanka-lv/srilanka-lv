@@ -1,8 +1,9 @@
 import { keyframes, style } from '@vanilla-extract/css';
 
+import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 
-const { color, font, spacing, border, shadow } = vars;
+const { color, font, spacing, border, shadow, focus } = vars;
 
 const contentEnterKeyframes = keyframes({
   from: { opacity: 0, transform: 'translateY(-0.25rem)' },
@@ -101,3 +102,29 @@ export const disclaimerStyle = style({
   fontSize: font.size.xs,
   color: color.secondaryForeground,
 });
+
+// Same fix as the funnel CTA in app/flight-tickets/styles.css.ts: the global
+// coral link styling (base layer) otherwise repaints this anchor's text and
+// its color-dodge bar the same coral as the button's own accent background,
+// making the label invisible. The `components` layer wins over the base
+// layer regardless of selector specificity, and the bar is switched off
+// since it has nothing to contrast against on a solid coral pill. A lime
+// focus-visible outline replaces the bar's lost focus indicator.
+export const ctaLinkStyle = style(
+  inComponentsLayer({
+    color: color.accentForeground,
+    selectors: {
+      '&:hover': {
+        color: color.accentForeground,
+      },
+      '&:focus-visible': {
+        color: color.accentForeground,
+        outline: `${focus.width} solid ${focus.color}`,
+        outlineOffset: focus.offset,
+      },
+      '&:after': {
+        display: 'none',
+      },
+    },
+  }),
+);

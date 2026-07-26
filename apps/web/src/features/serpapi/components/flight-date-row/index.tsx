@@ -16,6 +16,7 @@ import {
   airlinesStyle,
   chevronStyle,
   contentStyle,
+  ctaLinkStyle,
   dateStyle,
   disclaimerStyle,
   logoStyle,
@@ -67,6 +68,7 @@ export const FlightDateRow: FunctionComponent<FlightDateRowProps> = ({ entry, qu
             as="a"
             variant="primary"
             size="medium"
+            className={ctaLinkStyle}
             href={buildGoogleFlightsUrl(entry.date)}
             target="_blank"
             rel="noopener"

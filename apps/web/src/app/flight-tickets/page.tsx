@@ -23,6 +23,7 @@ import { Card } from '@/shared/components/card';
 import { SectionBlogs } from '@/shared/components/section-blogs';
 
 import {
+  ctaLinkStyle,
   funnelBodyStyle,
   funnelCardStyle,
   funnelTitleStyle,
@@ -71,6 +72,7 @@ const NextFlightCalendarPage: FunctionComponent = () => {
               as="a"
               variant="primary"
               size="medium"
+              className={ctaLinkStyle}
               href={buildGoogleFlightsRouteUrl()}
               target="_blank"
               rel="noopener"
@@ -87,6 +89,7 @@ const NextFlightCalendarPage: FunctionComponent = () => {
             as="a"
             variant="primary"
             size="medium"
+            className={ctaLinkStyle}
             href={`/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_HOLIDAY_PLAN}`}
           >
             {FLIGHT_PAGE_COPY.funnelCtaLabel}
