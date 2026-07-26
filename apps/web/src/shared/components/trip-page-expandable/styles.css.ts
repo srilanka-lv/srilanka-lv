@@ -1,4 +1,4 @@
-import { style, styleVariants } from '@vanilla-extract/css';
+import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
@@ -64,9 +64,8 @@ export const tripPagePlanItineraryItemToggleStyles = styleVariants({
 });
 
 export const tripPagePlanItineraryItemToggleTitleStyle = style({
-  fontSize: font.size.base,
+  fontSize: font.size.lg,
   fontWeight: font.weight.normal,
-  color: '#20Bf6b',
   position: 'relative',
   top: '-1px',
   whiteSpace: 'nowrap',
@@ -129,8 +128,6 @@ const tripPagePlanItineraryItemContentTextBaseStyle = style({
   transitionProperty: 'opacity, padding, background-color',
   transitionDuration: '325ms',
   transitionTimingFunction: 'cubic-bezier(0.675, 0.145, 0.000, 1.015)',
-  // paddingLeft: spacing[6],
-  // paddingRight: spacing[6],
   overflow: 'hidden',
   borderRadius: border.radius.large,
 });
@@ -158,4 +155,12 @@ export const tripPagePlanItineraryItemContentTextBaseStyles = styleVariants({
       opacity: 1,
     },
   ],
+});
+
+globalStyle(`${tripPagePlanItineraryItemContentTextBaseStyle} p:first-child`, {
+  marginTop: 0,
+});
+
+globalStyle(`${tripPagePlanItineraryItemContentTextBaseStyle} p:last-child`, {
+  marginBottom: 0,
 });

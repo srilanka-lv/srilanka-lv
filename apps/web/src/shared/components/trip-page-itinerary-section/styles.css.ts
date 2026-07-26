@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, border, color } = vars;
+const { spacing, color, font } = vars;
 
 export const tripPagePlanItinerarySectionStyle = style({
   display: 'flex',
@@ -24,27 +24,39 @@ export const tripPagePlanItinerarySectionStyle = style({
   },
 });
 
-export const tripPagePlanItinerarySectionMapStyle = style({
-  display: 'none',
+export const tripPagePlanItinerarySectionWrapperStyle = style({
+  position: 'sticky',
+  top: spacing[4],
+});
+
+export const tripPageTitleStyle = style({
+  fontSize: font.size['2xl'],
+  fontWeight: font.weight.normal,
+  lineHeight: font.lineHeight.tight,
+  marginTop: 0,
+  marginBottom: spacing[4],
 
   '@media': {
-    [`screen and (min-width: ${breakpoints.lg})`]: {
-      gridColumn: '1 / 2',
-      display: 'flex',
-      justifyContent: 'center',
-      backgroundColor: `color-mix(in oklch, ${color.accent} 10%, transparent)`,
-      alignSelf: 'flex-start',
-      borderRadius: border.radius.large,
-      overflow: 'hidden',
-      aspectRatio: '1 / 1',
+    [`screen and (min-width: ${breakpoints.sm})`]: {
+      fontSize: font.size['4xl'],
+    },
+    [`screen and (min-width: ${breakpoints.md})`]: {
+      fontSize: font.size['5xl'],
     },
   },
 });
 
-export const tripPagePlanItinerarySectionMapImageStyle = style({
-  width: '100%',
-  height: '100%',
-  aspectRatio: '1 / 1',
+export const tripPagePlanItinerarySectionCtaStyle = style({
+  display: 'none',
+
+  '@media': {
+    [`screen and (min-width: ${breakpoints.xl})`]: {
+      display: 'block',
+      marginTop: spacing[8],
+      maxWidth: '320px',
+      marginLeft: spacing[3],
+    },
+  },
 });
 
 export const tripPagePlanItineraryStyle = style({

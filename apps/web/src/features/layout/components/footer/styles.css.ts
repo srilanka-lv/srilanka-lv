@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 import { inOverridesLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
@@ -98,3 +98,25 @@ export const footerSignatureStyle = style(
     height: 'auto',
   }),
 );
+
+export const whatsAppLinkStyle = style(
+  inOverridesLayer({
+    display: 'block',
+    marginTop: spacing[8],
+    width: '100%',
+    maxWidth: spacing[56],
+    height: 'auto',
+
+    selectors: {
+      '&:after': {
+        display: 'none',
+      },
+    },
+  }),
+);
+
+globalStyle(`${whatsAppLinkStyle} svg`, {
+  display: 'block',
+  width: '100%',
+  height: 'auto',
+});

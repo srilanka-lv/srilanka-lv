@@ -1,19 +1,23 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-25T13:32:33Z",
+  "generatedAt": "2026-07-26T10:47:07Z",
   "title": "Design System: Šrilanka.lv",
   "extensions": {
     "colorMeta": {
       "coral": { "role": "primary", "displayName": "Coral", "canonical": "oklch(65.17% 0.192 23.82)", "tonalRamp": ["oklch(15% 0.192 23.82)", "oklch(26% 0.192 23.82)", "oklch(38% 0.192 23.82)", "oklch(50% 0.192 23.82)", "oklch(65.17% 0.192 23.82)", "oklch(75% 0.15 23.82)", "oklch(85% 0.09 23.82)", "oklch(95% 0.03 23.82)"] },
       "warm-paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "oklch(98.96% 0.002 17.19)", "tonalRamp": ["oklch(15% 0.002 17.19)", "oklch(28% 0.002 17.19)", "oklch(42% 0.002 17.19)", "oklch(55% 0.002 17.19)", "oklch(68% 0.002 17.19)", "oklch(80% 0.002 17.19)", "oklch(92% 0.002 17.19)", "oklch(98.96% 0.002 17.19)"] },
       "espresso-ink": { "role": "neutral", "displayName": "Espresso Ink", "canonical": "oklch(15.53% 0.050 25.04)", "tonalRamp": ["oklch(15.53% 0.05 25.04)", "oklch(28% 0.05 25.04)", "oklch(42% 0.05 25.04)", "oklch(55% 0.05 25.04)", "oklch(68% 0.04 25.04)", "oklch(80% 0.03 25.04)", "oklch(92% 0.015 25.04)", "oklch(97% 0.005 25.04)"] },
+      "deep-maroon": { "role": "neutral", "displayName": "Deep Maroon", "canonical": "oklch(19.03% 0.056 24.12)", "tonalRamp": ["oklch(15% 0.056 24.12)", "oklch(19.03% 0.056 24.12)", "oklch(30% 0.056 24.12)", "oklch(44% 0.052 24.12)", "oklch(58% 0.045 24.12)", "oklch(72% 0.03 24.12)", "oklch(86% 0.015 24.12)", "oklch(95% 0.006 24.12)"] },
       "warm-stone": { "role": "neutral", "displayName": "Warm Stone", "canonical": "oklch(97% 0.001 106.424)", "tonalRamp": ["oklch(15% 0.004 106.4)", "oklch(27% 0.006 106.4)", "oklch(40% 0.006 106.4)", "oklch(55% 0.005 106.4)", "oklch(70% 0.004 106.4)", "oklch(82% 0.003 106.4)", "oklch(92% 0.002 106.4)", "oklch(97% 0.001 106.4)"] },
-      "dark-bg": { "role": "neutral", "displayName": "Charcoal Ground", "canonical": "oklch(15% 0.008 27)", "tonalRamp": ["oklch(15% 0.008 27)", "oklch(19% 0.008 27)", "oklch(23% 0.008 27)", "oklch(27% 0.008 27)", "oklch(45% 0.006 27)", "oklch(65% 0.004 27)", "oklch(85% 0.003 27)", "oklch(95% 0.002 27)"] }
+      "stone-ink": { "role": "neutral", "displayName": "Stone Ink", "canonical": "oklch(21.6% 0.006 56.043)", "tonalRamp": ["oklch(15% 0.006 56.04)", "oklch(21.6% 0.006 56.04)", "oklch(34% 0.006 56.04)", "oklch(48% 0.005 56.04)", "oklch(62% 0.004 56.04)", "oklch(76% 0.003 56.04)", "oklch(88% 0.002 56.04)", "oklch(96% 0.001 56.04)"] },
+      "error-red": { "role": "status", "displayName": "Error Red", "canonical": "oklch(63.7% 0.237 25.331)", "tonalRamp": ["oklch(15% 0.2 25.33)", "oklch(27% 0.22 25.33)", "oklch(39% 0.237 25.33)", "oklch(51% 0.237 25.33)", "oklch(63.7% 0.237 25.33)", "oklch(74% 0.18 25.33)", "oklch(85% 0.1 25.33)", "oklch(94% 0.04 25.33)"] },
+      "focus-lime": { "role": "status", "displayName": "Focus Lime", "canonical": "oklch(76.8% 0.233 130.85)", "tonalRamp": ["oklch(18% 0.12 130.85)", "oklch(30% 0.16 130.85)", "oklch(42% 0.2 130.85)", "oklch(54% 0.22 130.85)", "oklch(65% 0.23 130.85)", "oklch(76.8% 0.233 130.85)", "oklch(87% 0.16 130.85)", "oklch(95% 0.07 130.85)"] },
+      "dark-bg": { "role": "neutral", "displayName": "Warm Charcoal Ladder", "canonical": "oklch(15% 0.008 27)", "tonalRamp": ["oklch(15% 0.008 27)", "oklch(19% 0.008 27)", "oklch(23% 0.008 27)", "oklch(27% 0.008 27)", "oklch(45% 0.006 27)", "oklch(65% 0.004 27)", "oklch(85% 0.003 27)", "oklch(95% 0.002 27)"] }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Headings; same Comme family, hierarchy by size and weight only." },
+      "display": { "displayName": "Display", "purpose": "Headings; same Comme family, hierarchy by size and weight only, tight (1.25) line-height." },
       "body": { "displayName": "Body", "purpose": "Article and UI text." },
-      "label": { "displayName": "Label", "purpose": "Buttons and small labels." }
+      "label": { "displayName": "Label", "purpose": "Buttons and small UI labels." }
     },
     "shadows": [
       { "name": "small", "value": "0 1px 2px 0 rgb(0 0 0 / 0.05)", "purpose": "Barely-there lift." },
@@ -44,7 +48,7 @@
       "refersTo": "button-primary",
       "description": "Coral CTA button; the only saturated element on most screens.",
       "html": "<button class=\"ds-btn-primary\">Uzzināt vairāk</button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: #ee5253; color: #fdfbfb; border: 1px solid transparent; border-radius: 0.5rem; padding: 0.5rem 1rem; font-weight: 500; font-size: 0.875rem; line-height: 1; cursor: pointer; transition: background-color 150ms, opacity 150ms; } .ds-btn-primary:hover { opacity: 0.9; } .ds-btn-primary:focus-visible { outline: 0.1rem solid oklch(76.8% 0.233 130.85); outline-offset: 0.5rem; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: #ee5253; color: #fdfbfb; border: 1px solid transparent; border-radius: 0.5rem; padding: 0.5rem 1rem; font-weight: 500; font-size: 0.875rem; line-height: 1; cursor: pointer; transition: background-color 150ms, border-color 150ms, color 150ms, opacity 150ms; } .ds-btn-primary:hover { opacity: 0.9; } .ds-btn-primary:focus-visible { outline: 0.1rem solid oklch(76.8% 0.233 130.85); outline-offset: 0.5rem; }"
     },
     {
       "name": "Secondary Button",
@@ -52,7 +56,15 @@
       "refersTo": "button-secondary",
       "description": "Quiet warm-stone button for secondary actions.",
       "html": "<button class=\"ds-btn-secondary\">Atpakaļ</button>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: #f5f5f4; color: #1c1917; border: 1px solid transparent; border-radius: 0.5rem; padding: 0.5rem 1rem; font-weight: 500; font-size: 0.875rem; line-height: 1; cursor: pointer; transition: opacity 150ms; } .ds-btn-secondary:hover { opacity: 0.8; }"
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: #f5f5f4; color: #1c1917; border: 1px solid transparent; border-radius: 0.5rem; padding: 0.5rem 1rem; font-weight: 500; font-size: 0.875rem; line-height: 1; cursor: pointer; transition: opacity 150ms; } .ds-btn-secondary:hover { opacity: 0.8; } .ds-btn-secondary:focus-visible { outline: 0.1rem solid oklch(76.8% 0.233 130.85); outline-offset: 0.5rem; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": null,
+      "description": "Transparent button with hairline border; fills with warm stone on hover.",
+      "html": "<button class=\"ds-btn-outline\">Skatīt visus</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: transparent; color: #1d0303; border: 1px solid #f5f5f4; border-radius: 0.5rem; padding: 0.5rem 1rem; font-weight: 500; font-size: 0.875rem; line-height: 1; cursor: pointer; transition: background-color 150ms, border-color 150ms, color 150ms; } .ds-btn-outline:hover { background: #f5f5f4; } .ds-btn-outline:focus-visible { outline: 0.1rem solid oklch(76.8% 0.233 130.85); outline-offset: 0.5rem; }"
     },
     {
       "name": "Filled Card",
@@ -74,14 +86,14 @@
       "name": "Coral Bar Link",
       "kind": "custom",
       "refersTo": null,
-      "description": "The signature link treatment: coral bottom bar grows to full height behind the text on hover.",
+      "description": "The signature link treatment: a 0.25rem coral bottom bar grows to full height on hover while the text flips to the background color. Light mode blends the bar over the glyphs with color-dodge; dark mode renders it as solid coral beneath the text instead (normal blend, z-index -1, isolated link) because the dodge would blow out to neon red.",
       "html": "<a class=\"ds-link\" href=\"#\">Lasīt ceļvedi</a>",
-      "css": ".ds-link { position: relative; color: #ee5253; text-decoration: none; transition: color 100ms cubic-bezier(0.690, 0.420, 0.180, 0.985); } .ds-link::after { content: \"\"; mix-blend-mode: color-dodge; position: absolute; left: 0; bottom: 0; width: 100%; height: 0.25rem; background: #ee5253; border-radius: 0.25rem; z-index: 1; transition: height 100ms cubic-bezier(0.690, 0.420, 0.180, 0.985); } .ds-link:hover { color: #fdfbfb; } .ds-link:hover::after { height: 100%; }"
+      "css": ".ds-link { position: relative; isolation: isolate; color: #ee5253; text-decoration: none; transition: color 100ms cubic-bezier(0.690, 0.420, 0.180, 0.985); } .ds-link::after { content: \"\"; mix-blend-mode: color-dodge; position: absolute; left: 0; bottom: 0; width: 100%; height: 0.25rem; background: #ee5253; border-radius: 0.25rem; z-index: 1; transition: height 100ms cubic-bezier(0.690, 0.420, 0.180, 0.985); } .ds-link:hover { color: #fdfbfb; } .ds-link:hover::after { height: 100%; } @media (prefers-color-scheme: dark) { .ds-link::after { mix-blend-mode: normal; z-index: -1; } }"
     }
   ],
   "narrative": {
     "northStar": "A postcard from a friend who lives there",
-    "overview": "Everything on Šrilanka.lv reads like a personal message from one real person, not a travel brand. The visual system supports that: a warm near-white paper ground, espresso-dark ink with a faint red undertone, and a single coral accent that carries every action and link. Real photography from Sri Lanka does the atmospheric work; the UI itself stays quiet, flat, and warm so the photos and the host's voice lead. The system is theme-paired: a light theme (approved, canonical) and a dark theme driven by the same 10-slot color contract defined once in src/shared/styles/tokens/colors.ts.",
+    "overview": "Everything on Šrilanka.lv reads like a personal message from one real person, not a travel brand. The visual system supports that: a warm near-white paper ground, espresso-dark ink with a faint red undertone, and a single coral accent that carries every action and link. Real photography from Sri Lanka does the atmospheric work; the UI itself stays quiet, flat, and warm so the photos and the host's voice lead. The system is theme-paired: a light theme (approved, canonical) and a dark theme driven by the same 10-slot color contract (background, foreground, primary, primaryForeground, secondary, secondaryForeground, accent, accentForeground, error, errorForeground) defined once in src/shared/styles/tokens/colors.ts and applied via vanilla-extract themes. There are no per-component dark overrides; the contract is the single source of truth.",
     "keyCharacteristics": [
       "One coral accent (#ee5253), identical in both themes",
       "Warm neutrals everywhere; nothing pure black, nothing cool-toned",
@@ -92,7 +104,7 @@
       { "name": "The One Coral Rule", "body": "Coral #ee5253 is the only saturated UI color and does not change between themes. No second accent is ever introduced.", "section": "colors" },
       { "name": "The Warm Neutral Rule", "body": "Every neutral carries a trace of warmth (red-to-stone hues, 17-56°); pure #000, pure grays, and cool/blue tints are off-brand.", "section": "colors" },
       { "name": "The Whisper Shadow Rule", "body": "All shadows stay at 5% alpha. If an element needs more separation, change its surface color, not its shadow.", "section": "elevation" },
-      { "name": "The Coral Bar Rule", "body": "Every content link carries a coral bottom bar that grows to full height on hover while the text flips to the background color. Light mode blends the bar over the glyphs with color-dodge; dark mode renders it as solid coral beneath the text (normal blend, z-index -1, isolated link).", "section": "colors" }
+      { "name": "The Coral Bar Rule", "body": "Every content link carries a coral bottom bar (0.25rem) that grows to full height on hover while the text flips to the background color. In light mode the bar sits over the glyphs with mix-blend-mode: color-dodge; in dark mode the dodge would blow out to neon red, so the bar renders as solid coral beneath the text (darkThemeSelector override in global.css.ts: normal blend, z-index -1, isolated link).", "section": "colors" }
     ],
     "dos": [
       "Do keep coral #ee5253 as the only saturated color in both themes.",

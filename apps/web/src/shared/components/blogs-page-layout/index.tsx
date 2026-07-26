@@ -11,7 +11,6 @@ export const BlogsPageLayout: FunctionComponent = () => (
     <Breadcrumbs className={breadcrumbsStyle} items={buildSectionItems(`/${PAGES.LV.BLOGS}`)} />
     <div className={blogsPageLayoutStyle}>
       <SectionBlogs sectionBlogsClassName={blogsPageLayoutBlogsStyle} />
-      <aside>Partnerships</aside>
     </div>
   </>
 );
