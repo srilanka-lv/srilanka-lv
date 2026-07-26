@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.8.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.7.1...v1.8.0) (2026-07-26)
+
+
+### Features
+
+* ✨ expandable flight date row with google flights link ([209fc77](https://github.com/srilanka-lv/srilanka-lv/commit/209fc777f43e8149a58b25630d5904417d480d59))
+* ✨ filter upcoming flight months with recomputed aggregates ([43dd745](https://github.com/srilanka-lv/srilanka-lv/commit/43dd745ae35419688b9efdf4d32f7b72f2c2ae3c))
+* ✨ flight data models for mapped flight json ([46a8670](https://github.com/srilanka-lv/srilanka-lv/commit/46a867092363e9e089acbe2abd976d1654ce218b))
+* ✨ flight itinerary leg timeline ([b2ea5ca](https://github.com/srilanka-lv/srilanka-lv/commit/b2ea5ca75627c8f4cb463725916621208ae2877f))
+* ✨ flight month panel with date rows ([6b341b2](https://github.com/srilanka-lv/srilanka-lv/commit/6b341b2a81c2334094a5727ed76f8b7be3bd3022))
+* ✨ flight page copy placeholders and status line ([3c2e3d4](https://github.com/srilanka-lv/srilanka-lv/commit/3c2e3d478c2176d7c39465a9b6f57667d7acaf0c))
+* ✨ flight price strip with month tabs ([9693d79](https://github.com/srilanka-lv/srilanka-lv/commit/9693d79b1c94539cf98d458b596c6dcc443398e8))
+* ✨ flight price tool page ([e585555](https://github.com/srilanka-lv/srilanka-lv/commit/e5855558826a1b4f9df66bfccf9b459bed80f7a0))
+* ✨ google flights deep link builder ([620a81c](https://github.com/srilanka-lv/srilanka-lv/commit/620a81c968760b356a26bc232b282eedcf2c591a))
+* ✨ lv-LV formatting utils for flight data ([e5a6d76](https://github.com/srilanka-lv/srilanka-lv/commit/e5a6d7629cfce8ea4922f103e5800e4c69be0eb2))
+
+
+### Bug Fixes
+
+* 🐛 final review polish for flight price tool ([00f39d9](https://github.com/srilanka-lv/srilanka-lv/commit/00f39d9c0652753e69eec472e812e1403f41dc29))
+* 🐛 flight price tool verification fixes ([a22ef4e](https://github.com/srilanka-lv/srilanka-lv/commit/a22ef4ecdc70d63e9fd00aa94177e3acb9487053))
+* 🐛 serpapi fetch timeout and per-date retries ([57d6b78](https://github.com/srilanka-lv/srilanka-lv/commit/57d6b78b4b7462edc9f7703938be1d05f5365c65))
+* 💄 product pag ([3003bdc](https://github.com/srilanka-lv/srilanka-lv/commit/3003bdc552e7e879818cb500bf53f60dd41e9aff))
+
 ## [1.7.1](https://github.com/srilanka-lv/srilanka-lv/compare/v1.7.0...v1.7.1) (2026-07-25)
 
 
