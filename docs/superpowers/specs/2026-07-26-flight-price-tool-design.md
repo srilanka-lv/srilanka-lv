@@ -17,15 +17,18 @@ price, booking token. Prices are **one-way**, economy, 1 adult, EUR (SerpApi `ty
 ## Decisions (from discovery)
 
 1. **Primary job: price-lookup tool** (Operate mode), not an editorial guide. Scan → drill → act.
-2. **Freshness: periodic manual re-runs** of `fetch-flights.ts`. The page hides past dates at
-   render, shows a "pārbaudīts {queriedOn}" stamp, and treats prices as real dated observations.
+2. **Freshness: weekly CI/CD re-runs** of `fetch-flights.ts` (SerpApi) refresh the data
+   automatically. The page hides past dates at render, shows a "pārbaudīts {queriedOn}" stamp,
+   and treats prices as real dated observations.
 3. **Detail depth: rows + expandable full itinerary** (legs and layovers).
 4. **Trip framing: one-way, labeled loudly.** A "vienvirziena cena" chip is always visible near
    prices. No round-trip estimates, no return-leg data in v1.
 5. **Row action: per-date Google Flights deep link**, new tab. The SerpApi `bookingToken` cannot
    produce a public booking URL; the deep link is `https://www.google.com/travel/flights?q=`
    prefilled with RIX→CMB, the departure date, one-way, `hl=lv`, EUR. Exact URL format verified at
-   implementation time.
+   implementation time. **Future direction (not v1):** the ultimate goal is a direct booking link
+   for Latvians (e.g. via SerpApi's booking-options API using `bookingToken`); the URL builder
+   util (`build-google-flights-url.ts`) is the single seam to swap when that lands.
 6. **Funnel: one quiet product card** at the end, in her voice, pointing to the personalized
    holiday plan. No newsletter tie-in on this page.
 7. **Concept A: price strip + drill-down.** A year-at-a-glance bar strip doubles as month
