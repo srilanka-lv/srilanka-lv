@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.1](https://github.com/srilanka-lv/srilanka-lv/compare/v1.9.0...v1.9.1) (2026-07-29)
+
+
+### Bug Fixes
+
+* 🔥 serve umami directly, drop first-party proxy rewrites ([f9338df](https://github.com/srilanka-lv/srilanka-lv/commit/f9338df3f047cc590b17da39a4810957515e1d96))
+
 ## [1.9.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.8.0...v1.9.0) (2026-07-29)
 
 
