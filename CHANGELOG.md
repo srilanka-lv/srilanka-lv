@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.9.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.8.0...v1.9.0) (2026-07-29)
+
+
+### Features
+
+* ✨ add umami trackEvent helper ([0943d29](https://github.com/srilanka-lv/srilanka-lv/commit/0943d298be8133ea9cfdfffda90979e17ba52757))
+* ✨ proxy umami tracker via first-party rewrites ([1cdf7c9](https://github.com/srilanka-lv/srilanka-lv/commit/1cdf7c91d9034983cc3d5950de5b7b34db1a0d14))
+* ✨ track contact clicks in footer ([23cd9b0](https://github.com/srilanka-lv/srilanka-lv/commit/23cd9b0ce3d3efb73c88ca58978d765d4043de15))
+* ✨ track flight month selection ([5287a36](https://github.com/srilanka-lv/srilanka-lv/commit/5287a362b6f9569e77df850af20e1e93ca118a15))
+* ✨ track outbound link clicks ([cc6651c](https://github.com/srilanka-lv/srilanka-lv/commit/cc6651c631b952a0ddbfedc47d78449772d43197))
+* ✨ track product cta before revolut redirect ([d6dba11](https://github.com/srilanka-lv/srilanka-lv/commit/d6dba11ad55f3af4fab5cd1d87e39f4378e0e165))
+* ✨ Umami Analytics ([6761383](https://github.com/srilanka-lv/srilanka-lv/commit/6761383d4a3999ddd7cb62ad1a7865231982d4e8))
+
+
+### Bug Fixes
+
+* 🐛 cap product cta tracking wait at 400ms ([df4f4fb](https://github.com/srilanka-lv/srilanka-lv/commit/df4f4fb658cfb1903942df7aaa31477e0148a82b))
+
 ## [1.8.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.7.1...v1.8.0) (2026-07-26)
 
 
