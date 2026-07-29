@@ -10,6 +10,7 @@ import type { SanityTable } from 'structured-table';
 
 import { Heading } from '@/shared/components/heading';
 import { Text } from '@/shared/components/text';
+import { isExternalHref } from '@/shared/utils/is-external-href';
 
 import { urlForImage } from '../../utils/url-for-image';
 import { ImageGallery } from '../portable-text-image-gallery/image-gallery';
@@ -75,11 +76,16 @@ const components: PortableTextComponents = {
     em: ({ children }) => <em>{children}</em>,
     link: ({ children, value }) => {
       const href = value?.href ?? '#';
-      const isExternal = /^https?:\/\//.test(href);
 
-      if (isExternal) {
+      if (isExternalHref(href)) {
         return (
-          <a href={href} target="_blank" rel="noopener noreferrer">
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-umami-event="outbound-link"
+            data-umami-event-url={href}
+          >
             {children}
           </a>
         );
