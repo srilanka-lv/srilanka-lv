@@ -170,9 +170,10 @@ Dashboard steps (zone `srilanka.lv` → Zaraz):
    double-count pageviews.
 2. Under Settings, set **Bot Score Threshold** to block "Automated and Likely
    Automated" requests.
-3. Create a trigger `Production pageview`: Match rule, `{{ system.page.url }}`
-   (hostname) equals `srilanka.lv`. This keeps staging/development clean; the
-   `data-domains` attribute below is the second guard.
+3. Create a trigger `Production pageview`: Match rule,
+   `{{ system.page.url.hostname }}` equals `srilanka.lv`. This keeps
+   staging/development clean; the `data-domains` attribute below is the
+   second guard.
 4. Add a tool → **Custom HTML**, name `Umami Analytics`, fired by the
    `Production pageview` trigger, with this snippet:
 
@@ -199,6 +200,11 @@ Verification after the next production deploy:
 - Click an outbound blog link, a footer social link, the WhatsApp link, the
   reserve CTA, and switch a flight month: events `outbound-link`, `contact`
   (with `channel`), `product-cta`, and `flight-month-select` all appear.
+- Click the footer email link with an ad-blocker (e.g., uBlock Origin)
+  enabled: the mail client must still open. If the click dead-ends, add
+  `target="_blank"` to the mailto anchor in `sub-footer/index.tsx` (Umami's
+  click delegation defers navigation on same-tab anchors until the beacon
+  settles).
 - Visit from a phone on cellular data: Umami must show the correct country. If
   every visit reports Germany, the rewrite proxy is masking real client IPs;
   fallback is to point the snippet back at `https://cloud.umami.is/script.js`
