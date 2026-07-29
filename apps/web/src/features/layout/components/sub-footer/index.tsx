@@ -16,11 +16,23 @@ export const SubFooter: FunctionComponent = () => {
           rel="noopener noreferrer"
           href="https://wa.me/642902323786"
           title="WhatsApp"
+          data-umami-event="contact"
+          data-umami-event-channel="whatsapp"
         >
           +64 2902323786
         </a>
       </li>
-      <li className={subFooterItemStyle}>E-pasts: sveiki@srilanka.lv</li>
+      <li className={subFooterItemStyle}>
+        E-pasts:{' '}
+        <a
+          className={subFooterLinkStyle}
+          href="mailto:sveiki@srilanka.lv"
+          data-umami-event="contact"
+          data-umami-event-channel="email"
+        >
+          sveiki@srilanka.lv
+        </a>
+      </li>
       {/* <li className={subFooterItemStyle}>Privātuma noteikumi</li>
       <li className={subFooterItemStyle}>Atruna</li> */}
       <li className={subFooterItemStyle}>
