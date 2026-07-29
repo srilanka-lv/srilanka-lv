@@ -155,11 +155,13 @@ _(filled in during Phase E, Task 27)_
 
 ## 9. Zaraz: Umami Analytics
 
-Umami Cloud tracking on production only, injected by Zaraz. The tracker script and
-collect endpoint are proxied first-party through Next.js rewrites (`/mi/m.js` and
-`/mi/api/send`, see `apps/web/next.config.ts`) so ad-blocker domain lists never
-match. Umami dashboard: https://cloud.umami.is (website ID
-`00c9cbc1-15d3-4e00-8261-44860f861bf7`).
+Umami Cloud tracking on production only, injected by Zaraz. The tracker loads
+directly from `cloud.umami.is`. A first-party proxy (`/mi/*` Next.js rewrites)
+was tried and reverted on 2026-07-29: EasyPrivacy blocks the fixed `/api/send`
+path suffix even on a first-party domain, and beacons re-originated by the
+Hetzner box geolocated every visitor to Germany. Ad-blocker visitors are an
+accepted loss; correct geolocation for everyone else wins. Umami dashboard:
+https://cloud.umami.is (website ID `00c9cbc1-15d3-4e00-8261-44860f861bf7`).
 
 Dashboard steps (zone `srilanka.lv` → Zaraz):
 
@@ -180,8 +182,7 @@ Dashboard steps (zone `srilanka.lv` → Zaraz):
    ```html
    <script
      defer
-     src="/mi/m.js"
-     data-host-url="https://srilanka.lv/mi"
+     src="https://cloud.umami.is/script.js"
      data-website-id="00c9cbc1-15d3-4e00-8261-44860f861bf7"
      data-domains="srilanka.lv"
    ></script>
@@ -191,22 +192,17 @@ Dashboard steps (zone `srilanka.lv` → Zaraz):
 
 Verification after the next production deploy:
 
-- `view-source:https://development.srilanka.lv` contains no `/mi/m.js` script.
-- On https://srilanka.lv with devtools open: the script loads from
-  `srilanka.lv/mi/m.js` and pageview beacons POST to `srilanka.lv/mi/api/send`
-  (both first-party, no requests to `cloud.umami.is`).
+- `view-source:https://development.srilanka.lv` contains no Umami script.
+- On https://srilanka.lv with devtools open (ad-blocker off): the script loads
+  from `cloud.umami.is/script.js` and pageview beacons POST to
+  `cloud.umami.is/api/send`.
 - Umami realtime shows the visit; client-side navigation adds exactly one
   pageview per route change.
 - Click an outbound blog link, a footer social link, the WhatsApp link, the
   reserve CTA, and switch a flight month: events `outbound-link`, `contact`
   (with `channel`), `product-cta`, and `flight-month-select` all appear.
 - Click the footer email link with an ad-blocker (e.g., uBlock Origin)
-  enabled: the mail client must still open. If the click dead-ends, add
-  `target="_blank"` to the mailto anchor in `sub-footer/index.tsx` (Umami's
-  click delegation defers navigation on same-tab anchors until the beacon
-  settles).
-- Visit from a phone on cellular data: Umami must show the correct country. If
-  every visit reports Germany, the rewrite proxy is masking real client IPs;
-  fallback is to point the snippet back at `https://cloud.umami.is/script.js`
-  (remove `data-host-url`) until a header-forwarding proxy replaces the
-  rewrites.
+  enabled: the mail client must still open (the blocker stops the tracker from
+  loading at all, so links behave natively).
+- Visit from a phone on cellular data: Umami must show the correct country
+  (beacons go direct, no proxy in the path).

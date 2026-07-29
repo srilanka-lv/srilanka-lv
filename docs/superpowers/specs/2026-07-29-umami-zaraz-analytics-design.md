@@ -10,7 +10,7 @@ Add privacy-friendly analytics to srilanka.lv using Umami Cloud (free Hobby tier
 - **Environment scope:** production (`srilanka.lv`) only. Enforced twice: a Zaraz trigger hostname condition, and the `data-domains` attribute on the script tag.
 - **Delivery:** Zaraz Custom HTML tool. Zaraz has no native Umami integration (verified against the supported-tools list, July 2026). Custom HTML is the practical path; a custom Managed Component (fully server-side) was rejected as overkill, and plain `next/script` was rejected because tag management should stay in Cloudflare.
 - **Consent:** no consent banner. Umami is cookieless and stores no personal data; this follows Umami's own GDPR position, and is a product decision, not legal advice.
-- **Ad-blocker bypass:** the tracker script and collect endpoint are proxied through `srilanka.lv` via Next.js rewrites (per Umami's [bypass guide](https://docs.umami.is/docs/bypass-ad-blockers)), so blockers that blocklist `cloud.umami.is` never see that domain. Proxy prefix is `/mi` (deliberately meaningless: no "stats", "analytics", or "umami" in the path). Best effort: blockers with behavioral rules may still block.
+- **Ad-blocker bypass:** REVERSED at rollout (2026-07-29). A first-party proxy via Next.js rewrites (`/mi/m.js`, `/mi/api/send`) was built and shipped, then removed after production testing showed it lost on both fronts: EasyPrivacy blocks the `/api/send` path suffix even first-party (Umami Cloud cannot rename it), and beacons re-originated by the Hetzner origin made Umami geolocate every visitor to Germany. The tracker now loads directly from `cloud.umami.is`; ad-blocker visitors are an accepted loss in exchange for correct geolocation.
 
 ## Architecture
 
@@ -20,18 +20,14 @@ Visitor on srilanka.lv (production only)
   ▼
 Cloudflare edge: Zaraz auto-inject
   ├─ trigger "Production pageview" (hostname = srilanka.lv) fires
-  ├─ Custom HTML tool injects the Umami script tag (src /mi/m.js, first-party)
+  ├─ Custom HTML tool injects the Umami script tag (src cloud.umami.is)
   │    (bot-score filter drops automated traffic before this point)
   ▼
-Browser: Umami tracker (loaded from srilanka.lv/mi/m.js)
+Browser: Umami tracker (loaded from cloud.umami.is/script.js)
   ├─ pageviews: initial load + SPA route changes (tracker hooks history itself)
   ├─ click events via data-umami-event attributes (document-level delegation)
   └─ programmatic events via window.umami.track()
-  │    all beacons POST to srilanka.lv/mi/api/send (first-party)
-  ▼
-Next.js rewrites on the origin (proxy)
-  ├─ /mi/m.js      → https://cloud.umami.is/script.js
-  └─ /mi/api/send  → https://cloud.umami.is/api/send
+  │    all beacons POST direct to cloud.umami.is/api/send
   ▼
 Umami Cloud dashboard (cloud.umami.is)
 ```
@@ -50,14 +46,11 @@ One-time manual setup on the `srilanka.lv` zone, documented as a runbook section
 ```html
 <script
   defer
-  src="/mi/m.js"
-  data-host-url="https://srilanka.lv/mi"
+  src="https://cloud.umami.is/script.js"
   data-website-id="00c9cbc1-15d3-4e00-8261-44860f861bf7"
   data-domains="srilanka.lv"
 ></script>
 ```
-
-The `src` is relative because Zaraz injects the tag into pages served on `srilanka.lv`; the Next.js rewrites proxy `/mi/m.js` and `/mi/api/send` to Umami Cloud. `data-host-url` pins the collect endpoint to the proxied path (the tracker appends `/api/send` to it).
 
 No Cloudflare Access, firewall, or Kamal changes are involved. The repo has no CSP configuration, so no header changes are needed.
 
@@ -65,12 +58,9 @@ No Cloudflare Access, firewall, or Kamal changes are involved. The repo has no C
 
 All changes live in `apps/web`.
 
-### Ad-blocker bypass proxy
+### Ad-blocker bypass proxy (removed)
 
-Two entries appended to the existing `rewrites()` array in `apps/web/next.config.ts`:
-
-- `/mi/m.js` → `https://cloud.umami.is/script.js`
-- `/mi/api/send` → `https://cloud.umami.is/api/send`
+Two rewrites (`/mi/m.js`, `/mi/api/send` → cloud.umami.is) shipped with the original branch and were removed after rollout testing; see the reversed decision above.
 
 ### Tracking helper
 
@@ -100,20 +90,18 @@ Where a page currently renders its CTA as a server component, the attributes are
 
 ## Verification
 
-1. **Proxy check (local):** `curl localhost:3000/mi/m.js` returns the Umami tracker source; a POST to `localhost:3000/mi/api/send` reaches Umami Cloud (any non-404 Umami response proves the rewrite).
-2. **Staging/dev negative check:** view source on `development.srilanka.lv`, confirm no Umami script and no Zaraz Umami tool firing.
-3. **Production pageviews:** after the Zaraz config is live, confirm via Zaraz debug mode that the tool fires, the script loads from `/mi/m.js`, beacons go to `/mi/api/send`, and Umami Cloud's realtime view shows the visit.
-4. **SPA single-count check:** navigate client-side between pages; exactly one pageview per route change in Umami.
-5. **Events:** trigger one of each event type on production and confirm all four appear in Umami with their data properties.
-6. **Geolocation through the proxy:** visit from a network that is not the Hetzner box (e.g., phone on cellular) and confirm Umami records the correct country. The proxy forwards the request from the origin server, so Umami must be reading the forwarded client IP header; if every visit shows as Germany (Hetzner's location), the proxy is masking visitor IPs and the fallback is to point the Zaraz snippet back at `cloud.umami.is` directly until a header-forwarding proxy (e.g., a Cloudflare Worker) replaces the rewrites.
-7. **Helper unit test:** `trackEvent` no-ops without `window.umami` and forwards name/data when present.
+1. **Staging/dev negative check:** view source on `development.srilanka.lv`, confirm no Umami script and no Zaraz Umami tool firing.
+2. **Production pageviews:** after the Zaraz config is live, confirm via Zaraz debug mode that the tool fires, the script loads from `cloud.umami.is`, and Umami Cloud's realtime view shows the visit.
+3. **SPA single-count check:** navigate client-side between pages; exactly one pageview per route change in Umami.
+4. **Events:** trigger one of each event type on production and confirm all four appear in Umami with their data properties.
+5. **Geolocation:** visit from a phone on cellular and confirm Umami records the correct country (this is what killed the proxy variant: it reported Germany for everyone).
+6. **Helper unit test:** `trackEvent` no-ops without `window.umami` and forwards name/data when present.
 
 The repo-side attribute changes are verifiable before the Zaraz config exists (attributes are inert without the script), so code can merge and deploy independently of the dashboard work.
 
 ## Out of Scope / Accepted Trade-offs
 
-- The ad-blocker bypass is best effort: the first-party proxy defeats domain blocklists, but blockers with path or behavioral heuristics may still drop beacons. Accepted: the stats are directional, not billing-grade.
-- Proxied beacons add load on the Hetzner origin (one small POST per pageview/event). Negligible at current traffic.
+- Visitors with ad-blockers (uBlock Origin, AdGuard, Pi-hole and similar) are invisible to Umami: EasyPrivacy blocks both the `cloud.umami.is` domain and the `/api/send` path pattern, and the proxy workaround cost geolocation for everyone. Accepted: the stats are directional, not billing-grade.
 - No custom events for the newsletter signup or navigation; add later if a question actually needs them.
 - Tag config lives in two places (Zaraz dashboard + repo attributes). Mitigated by the runbook in `infra/cloudflare/README.md`.
 - Umami Cloud Hobby tier limits (events/month) are far above current traffic; revisit only if limits are hit.
