@@ -31,7 +31,13 @@ export const TripPageHeroSectionCta: FunctionComponent<TripPageHeroSectionCtaPro
       type="button"
       className={buttonStyles({ variant: 'primary' })}
       onClick={async () => {
-        await trackEvent('product-cta', { product: 'girls-trip' });
+        // Cap the tracking wait so a hung beacon can never stall the payment redirect.
+        await Promise.race([
+          trackEvent('product-cta', { product: 'girls-trip' }),
+          new Promise((resolve) => {
+            setTimeout(resolve, 400);
+          }),
+        ]);
         window.location.href =
           'https://revolut.me/srilankalv?currency=EUR&amount=25000&note=10%20dienu%20ce%C4%BCojums%20uz%20%C5%A0rilanku%20meiten%C4%93m%20-%20Rezerv%C4%81cija';
       }}
