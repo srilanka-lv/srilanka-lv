@@ -3,6 +3,8 @@
 import { type MouseEvent, useId } from 'react';
 import type { ButtonCellProps } from 'structured-table';
 
+import { isExternalHref } from '@/shared/utils/is-external-href';
+
 const ButtonCell = ({ data }: { data: ButtonCellProps }) => {
   const stableId = useId();
 
@@ -33,6 +35,8 @@ const ButtonCell = ({ data }: { data: ButtonCellProps }) => {
     }
   };
 
+  const external = Boolean(data.url && isExternalHref(data.url));
+
   return (
     <button
       type="button"
@@ -41,6 +45,8 @@ const ButtonCell = ({ data }: { data: ButtonCellProps }) => {
       className="st-button"
       data-action={data.action}
       data-variant={data.variant}
+      data-umami-event={external ? 'outbound-link' : undefined}
+      data-umami-event-url={external ? data.url : undefined}
     >
       {data.text}
     </button>

@@ -93,6 +93,16 @@ const nextConfig: NextConfig = {
         source: `/${PAGES.LV.INFO_TRANSPORT}`,
         destination: `/${PAGES.EN.INFO_TRANSPORT}`,
       },
+      // Umami tracker + collect endpoint, proxied first-party so ad-blocker
+      // domain blocklists never see cloud.umami.is.
+      {
+        source: '/mi/m.js',
+        destination: 'https://cloud.umami.is/script.js',
+      },
+      {
+        source: '/mi/api/send',
+        destination: 'https://cloud.umami.is/api/send',
+      },
     ];
   },
   redirects: async () => {

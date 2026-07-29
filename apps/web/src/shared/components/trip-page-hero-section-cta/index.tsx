@@ -5,6 +5,8 @@ import { Portal } from '@ark-ui/react/portal';
 import clsx from 'clsx';
 import type { FunctionComponent } from 'react';
 
+import { trackEvent } from '@/shared/utils/analytics';
+
 import {
   backdropStyle,
   buttonIconStyle,
@@ -28,7 +30,14 @@ export const TripPageHeroSectionCta: FunctionComponent<TripPageHeroSectionCtaPro
     <button
       type="button"
       className={buttonStyles({ variant: 'primary' })}
-      onClick={() => {
+      onClick={async () => {
+        // Cap the tracking wait so a hung beacon can never stall the payment redirect.
+        await Promise.race([
+          trackEvent('product-cta', { product: 'girls-trip' }),
+          new Promise((resolve) => {
+            setTimeout(resolve, 400);
+          }),
+        ]);
         window.location.href =
           'https://revolut.me/srilankalv?currency=EUR&amount=25000&note=10%20dienu%20ce%C4%BCojums%20uz%20%C5%A0rilanku%20meiten%C4%93m%20-%20Rezerv%C4%81cija';
       }}

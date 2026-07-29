@@ -3,6 +3,8 @@
 import { Tabs } from '@ark-ui/react/tabs';
 import { Children, type FunctionComponent, type ReactNode } from 'react';
 
+import { trackEvent } from '@/shared/utils/analytics';
+
 import type { FlightMonthSummaryModel } from '../../models/flight-data-model';
 import { FlightPriceStripTile } from '../flight-price-strip-tile';
 import { listStyle, rootStyle } from './styles.css';
@@ -23,7 +25,15 @@ export const FlightPriceExplorer: FunctionComponent<FlightPriceExplorerProps> = 
   const maxAveragePrice = Math.max(...summaries.map((summary) => summary.averagePrice));
 
   return (
-    <Tabs.Root defaultValue={defaultMonth} className={rootStyle}>
+    <Tabs.Root
+      defaultValue={defaultMonth}
+      className={rootStyle}
+      onValueChange={({ value }) => {
+        if (value) {
+          void trackEvent('flight-month-select', { month: value });
+        }
+      }}
+    >
       <Tabs.List className={listStyle}>
         {summaries.map((summary, index) => (
           <FlightPriceStripTile
