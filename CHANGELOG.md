@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.9.1...v1.10.0) (2026-08-02)
+
+
+### Features
+
+* ✨ about me page ([b5031f0](https://github.com/srilanka-lv/srilanka-lv/commit/b5031f01edadbe68138e79721b8622a4082a332c))
+* ✨ about me page ([39008b9](https://github.com/srilanka-lv/srilanka-lv/commit/39008b96029c53e8e8a28d5be8e91db415308ff8))
+
 ## [1.9.1](https://github.com/srilanka-lv/srilanka-lv/compare/v1.9.0...v1.9.1) (2026-07-29)
 
 
