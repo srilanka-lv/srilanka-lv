@@ -26,6 +26,12 @@ const nextConfig: NextConfig = {
   rewrites: async () => {
     return [
       {
+        // The app router ignores dot-prefixed folders, so /.well-known/*
+        // routes live under app/well-known/*.
+        source: '/.well-known/:path*',
+        destination: '/well-known/:path*',
+      },
+      {
         source: `/${PAGES.LV.HOME}`,
         destination: `/${PAGES.EN.HOME}`,
       },
@@ -186,7 +192,8 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Link',
-            value: '</llms.txt>; rel="llms-txt"',
+            value:
+              '</llms.txt>; rel="llms-txt", </llms.txt>; rel="describedby"; type="text/markdown", </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
           },
         ],
       },
