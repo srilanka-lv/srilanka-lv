@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.11.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.10.0...v1.11.0) (2026-08-12)
+
+
+### Features
+
+* ✨ agent discovery endpoints and markdown content negotiation ([003adaa](https://github.com/srilanka-lv/srilanka-lv/commit/003adaa7d7ad1b5940c4b5430c07fbe66ddffce4))
+* ✨ agent discovery endpoints and markdown content negotiation ([5a229d8](https://github.com/srilanka-lv/srilanka-lv/commit/5a229d82e55bc99e704ca7e0d36acb55be40451b))
+
 ## [1.10.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.9.1...v1.10.0) (2026-08-02)
 
 
