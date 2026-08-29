@@ -52,10 +52,6 @@ const nextConfig: NextConfig = {
         destination: `/${PAGES.EN.FLIGHT_TICKETS}`,
       },
       {
-        source: `/${PAGES.LV.CONTACT}`,
-        destination: `/${PAGES.EN.CONTACT}`,
-      },
-      {
         source: `/${PAGES.LV.BLOGS}`,
         destination: `/${PAGES.EN.BLOGS}`,
       },
@@ -139,11 +135,13 @@ const nextConfig: NextConfig = {
         destination: `/${PAGES.LV.FLIGHT_TICKETS}`,
         permanent: true,
       },
-      {
-        source: `/${PAGES.EN.CONTACT}`,
-        destination: `/${PAGES.LV.CONTACT}`,
-        permanent: true,
-      },
+      // The contact page is retired: its details live in the footer on every
+      // page. Temporary (307) like the other retired pages.
+      ...[`/${RETIRED_PAGES.EN.CONTACT}`, `/${RETIRED_PAGES.LV.CONTACT}`].map((source) => ({
+        source,
+        destination: '/',
+        permanent: false,
+      })),
       {
         source: `/${PAGES.EN.BLOGS}`,
         destination: `/${PAGES.LV.BLOGS}`,

@@ -1,19 +1,6 @@
-import {
-  SiFacebook,
-  SiInstagram,
-  SiPatreon,
-  SiTiktok,
-  SiYoutube,
-} from '@icons-pack/react-simple-icons';
+import { SiFacebook, SiInstagram } from '@icons-pack/react-simple-icons';
 import { PAGES } from '@packages/sanity/constants/pages-slugs';
-import {
-  Home,
-  MailCheck,
-  Newspaper,
-  ShoppingBag,
-  SquareUserRound,
-  TicketsPlane,
-} from 'lucide-react';
+import { Home, Newspaper, ShoppingBag, SquareUserRound, TicketsPlane } from 'lucide-react';
 
 export const navigationItems = [
   {
@@ -45,12 +32,6 @@ export const navigationItems = [
     label: 'Par mani',
     icon: <SquareUserRound size={20} />,
     href: `/${PAGES.LV.ABOUT_ME}`,
-  },
-  {
-    visibleInNavigation: true,
-    label: 'Kontakti',
-    icon: <MailCheck size={20} />,
-    href: `/${PAGES.LV.CONTACT}`,
   },
   {
     visibleInNavigation: false,
@@ -100,24 +81,24 @@ export const socialMediaItems = [
     label: 'Instagram',
     href: 'https://www.instagram.com/dzivetropos',
   },
-  {
-    icon: <SiTiktok size={20} />,
-    label: 'TikTok',
-    href: 'https://www.tiktok.com/@dzivetropos',
-  },
-  {
-    icon: <SiYoutube size={20} />,
-    label: 'YouTube',
-    href: 'https://www.youtube.com/@dzivetropos',
-  },
-  {
-    icon: <SiPatreon size={20} />,
-    label: 'Patreon',
-    href: 'https://www.patreon.com/dzivetropos',
-  },
+  // {
+  //   icon: <SiTiktok size={20} />,
+  //   label: 'TikTok',
+  //   href: 'https://www.tiktok.com/@dzivetropos',
+  // },
+  // {
+  //   icon: <SiYoutube size={20} />,
+  //   label: 'YouTube',
+  //   href: 'https://www.youtube.com/@dzivetropos',
+  // },
+  // {
+  //   icon: <SiPatreon size={20} />,
+  //   label: 'Patreon',
+  //   href: 'https://www.patreon.com/dzivetropos',
+  // },
   {
     icon: <SiFacebook size={20} />,
     label: 'Facebook',
-    href: 'https://www.facebook.com/dzivetropos',
+    href: 'https://www.facebook.com/profile.php?id=61590469498422',
   },
 ];

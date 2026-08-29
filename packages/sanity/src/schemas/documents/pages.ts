@@ -2,11 +2,10 @@ import { defineField, defineType } from 'sanity';
 
 import { PAGES } from '../../constants/pages-slugs';
 
-const SLUGS_WITHOUT_BODY = [
+const SLUGS_WITHOUT_BODY: string[] = [
   PAGES.LV.HOME,
   PAGES.LV.FLIGHT_TICKETS,
   PAGES.LV.ABOUT_ME,
-  PAGES.LV.CONTACT,
   PAGES.LV.PRODUCTS,
   PAGES.LV.BLOGS,
 ];
