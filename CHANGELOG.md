@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.12.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.11.0...v1.12.0) (2026-08-29)
+
+
+### Features
+
+* ♻️  clean up kontakt ([a4c65bb](https://github.com/srilanka-lv/srilanka-lv/commit/a4c65bb9d5c5eddac72302761f0c565a6bdf23d2))
+* ♻️  clean up kontakt ([f438f9f](https://github.com/srilanka-lv/srilanka-lv/commit/f438f9fc6b0c4597b09be1e4fd0ddfae7d8c6755))
+* ✨ trip page update ([5ac04ca](https://github.com/srilanka-lv/srilanka-lv/commit/5ac04ca7a7ff818fee24e60aac9f36e0a4242c66))
+* ✨ trip page update ([db00a2e](https://github.com/srilanka-lv/srilanka-lv/commit/db00a2e1c3b2fc0f4c83768a9d5b4ef6d13ce0c1))
+
 ## [1.11.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.10.0...v1.11.0) (2026-08-12)
 
 
