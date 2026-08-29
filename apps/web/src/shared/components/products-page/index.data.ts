@@ -1,4 +1,6 @@
-import { PAGES } from '@packages/sanity/constants/pages-slugs';
+import { PAGES, RETIRED_PAGES } from '@packages/sanity/constants/pages-slugs';
+
+import { WHATSAPP_URL } from '@/shared/constants/whatsapp';
 
 export type Product = {
   subTitle: string;
@@ -6,6 +8,8 @@ export type Product = {
   description: string;
   slug: string;
   href: string;
+  /** Product has no page of its own; its CTA opens a WhatsApp chat instead. */
+  whatsAppOnly?: boolean;
   thumbnailSrc: string;
 };
 
@@ -24,8 +28,9 @@ export const products: Product[] = [
     title: 'Zvans 1:1 Konsultācija un atbildes par Taviem jautājumiem par un ap Šrilanku',
     description:
       'Esmu Šrilankā jau gandrīz četrus gadus. Meklējat labākos brīvdienu galamērķus Šrilankā, jaukākās kafejnīcas, praktiskus ieteikumus un labākās naktsmītnes? Esmu gatavs visu izstāstīt individuālā sarunā.',
-    slug: PAGES.LV.PRODUCTS_CONSULTATION,
-    href: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_CONSULTATION}`,
+    slug: RETIRED_PAGES.LV.PRODUCTS_CONSULTATION,
+    href: WHATSAPP_URL,
+    whatsAppOnly: true,
     thumbnailSrc: '/images/srilanka-lv_product_thumb-2.webp',
   },
   {
@@ -33,8 +38,9 @@ export const products: Product[] = [
     title: 'Personalizēts ceļojuma plāns uz Šrilanku',
     description:
       'Saņemiet pielāgotu ceļojuma plānu, kas balstīts uz Tavām vēlmēm un situāciju. Ceļo viens un vēlaties sportot? Vai vēlies baudīt tieši Šrilankas kultūru? Es sarūpēšu labākās aktivitātes un lokācijas. Vai drīzāk ģimenes ceļojums? Es atradīšu labākās vietas, kas piemērotas bērniem. ',
-    slug: PAGES.LV.PRODUCTS_HOLIDAY_PLAN,
-    href: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_HOLIDAY_PLAN}`,
+    slug: RETIRED_PAGES.LV.PRODUCTS_HOLIDAY_PLAN,
+    href: WHATSAPP_URL,
+    whatsAppOnly: true,
     thumbnailSrc: '/images/srilanka-lv_product_thumb-3.webp',
   },
 ];

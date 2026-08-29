@@ -4,6 +4,7 @@ import type { FunctionComponent } from 'react';
 
 import { Heading } from '@/shared/components/heading';
 import { products } from '@/shared/components/products-page/index.data';
+import { WhatsAppPill } from '@/shared/components/whatsapp-button';
 
 import { footerHeadingStyle } from '../footer/styles.css';
 import {
@@ -15,6 +16,7 @@ import {
   footerProductsImageWrapStyle,
   footerProductsListStyle,
   footerProductsTitleStyle,
+  footerProductsWhatsAppCtaStyle,
 } from './styles.css';
 
 export const FooterProducts: FunctionComponent = () => {
@@ -24,9 +26,9 @@ export const FooterProducts: FunctionComponent = () => {
         Mani produkti
       </Heading>
       <ul className={footerProductsListStyle}>
-        {products.map((product) => (
-          <li key={product.slug}>
-            <Link className={footerProductsCardStyle} href={product.href}>
+        {products.map((product) => {
+          const cardContent = (
+            <>
               <span className={footerProductsImageWrapStyle}>
                 <Image
                   className={footerProductsImageStyle}
@@ -39,11 +41,39 @@ export const FooterProducts: FunctionComponent = () => {
               <span className={footerProductsBodyStyle}>
                 <span className={footerProductsChipStyle}>{product.subTitle}</span>
                 <span className={footerProductsTitleStyle}>{product.title}</span>
-                <span className={footerProductsCtaStyle}>Vairāk informācijas →</span>
+                {product.whatsAppOnly ? (
+                  <span className={footerProductsWhatsAppCtaStyle}>
+                    <WhatsAppPill />
+                  </span>
+                ) : (
+                  <span className={footerProductsCtaStyle}>Vairāk informācijas →</span>
+                )}
               </span>
-            </Link>
-          </li>
-        ))}
+            </>
+          );
+
+          return (
+            <li key={product.slug}>
+              {product.whatsAppOnly ? (
+                <a
+                  className={footerProductsCardStyle}
+                  href={product.href}
+                  title="Chat on WhatsApp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-umami-event="contact"
+                  data-umami-event-channel="whatsapp"
+                >
+                  {cardContent}
+                </a>
+              ) : (
+                <Link className={footerProductsCardStyle} href={product.href}>
+                  {cardContent}
+                </Link>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

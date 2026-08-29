@@ -1,3 +1,8 @@
+'use client';
+
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
+import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
 import type { FunctionComponent } from 'react';
 
 import { FooterAboutMe } from '../footer-about-me';
@@ -5,7 +10,7 @@ import { FooterLinks } from '../footer-links';
 import { FooterNewsletterForm } from '../footer-newsletter-form';
 import { FooterProducts } from '../footer-products';
 import { FooterSocials } from '../footer-socials';
-import { footerColumnsStyle, footerStyle } from './styles.css';
+import { footerColumnsStyle, footerSeamlessStyle, footerStyle } from './styles.css';
 
 /*
  * Direction contract (impeccable)
@@ -19,16 +24,26 @@ import { footerColumnsStyle, footerStyle } from './styles.css';
  * below a hairline: her story with signature, guide links, newsletter plus socials.
  * FORM: crafted footer extension of the incumbent world; local extension, no seed.
  */
-export const Footer: FunctionComponent = () => (
-  <footer className={footerStyle}>
-    <FooterProducts />
-    <div className={footerColumnsStyle}>
-      <FooterAboutMe />
-      <FooterLinks />
-      <div>
-        <FooterNewsletterForm />
-        <FooterSocials />
+// The products index already lists every product in full, so the footer there
+// drops the "Mani produkti" cards and the full-bleed hairline band. Both EN
+// (SSR) and LV (client) pathnames are covered for the rewrite duality.
+const productsIndexPaths = [`/${PAGES.EN.PRODUCTS}`, `/${PAGES.LV.PRODUCTS}`];
+
+export const Footer: FunctionComponent = () => {
+  const pathname = usePathname();
+  const isProductsIndex = productsIndexPaths.includes(pathname);
+
+  return (
+    <footer className={clsx(footerStyle, isProductsIndex && footerSeamlessStyle)}>
+      {!isProductsIndex && <FooterProducts />}
+      <div className={footerColumnsStyle}>
+        <FooterAboutMe />
+        <FooterLinks />
+        <div>
+          <FooterNewsletterForm />
+          <FooterSocials />
+        </div>
       </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};

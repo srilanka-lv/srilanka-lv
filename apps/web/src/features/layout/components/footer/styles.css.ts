@@ -36,6 +36,18 @@ export const footerStyle = style(
   }),
 );
 
+// On the products index the footer drops its full-bleed hairline band; the
+// page content flows straight into the footer columns there.
+export const footerSeamlessStyle = style(
+  inOverridesLayer({
+    selectors: {
+      '&::before': {
+        display: 'none',
+      },
+    },
+  }),
+);
+
 export const footerColumnsStyle = style(
   inOverridesLayer({
     display: 'grid',

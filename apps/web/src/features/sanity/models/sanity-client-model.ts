@@ -1,3 +1,3 @@
-import type { SanityClient } from '@sanity/client';
+import type { SanityClient } from 'next-sanity';
 
 export type SanityClientModel = SanityClient;

@@ -136,12 +136,6 @@ async function main() {
   await validatePage('/produkti/meitenu-celojums-uz-srilanku', [
     ['TouristTrip', ['name', 'description', 'provider', 'offers']],
   ]);
-  await validatePage('/produkti/srilankas-brivdienu-konsultacijas', [
-    ['Product', ['name', 'description', 'brand']],
-  ]);
-  await validatePage('/produkti/personalizets-celojuma-plans-uz-srilanku', [
-    ['Product', ['name', 'description', 'brand']],
-  ]);
   await validatePage('/par-mani', [
     ['AboutPage', ['name', 'url', 'mainEntity']],
     ['Person', ['name', 'description']],

@@ -1,5 +1,7 @@
 import type { FunctionComponent } from 'react';
 
+import { WHATSAPP_URL } from '@/shared/constants/whatsapp';
+
 import { subFooterItemStyle, subFooterLinkStyle, subFooterStyle } from './styles.css';
 
 export const SubFooter: FunctionComponent = () => {
@@ -14,7 +16,7 @@ export const SubFooter: FunctionComponent = () => {
           className={subFooterLinkStyle}
           target="_blank"
           rel="noopener noreferrer"
-          href="https://wa.me/642902323786"
+          href={WHATSAPP_URL}
           title="WhatsApp"
           data-umami-event="contact"
           data-umami-event-channel="whatsapp"

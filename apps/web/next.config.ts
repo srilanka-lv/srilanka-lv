@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { PAGES } from '@packages/sanity/constants/pages-slugs';
+import { PAGES, RETIRED_PAGES } from '@packages/sanity/constants/pages-slugs';
 import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
 import type { NextConfig } from 'next';
 
@@ -42,14 +42,6 @@ const nextConfig: NextConfig = {
       {
         source: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
         destination: `/${PAGES.EN.PRODUCTS}/${PAGES.EN.PRODUCTS_GIRLS_TRIP}`,
-      },
-      {
-        source: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_CONSULTATION}`,
-        destination: `/${PAGES.EN.PRODUCTS}/${PAGES.EN.PRODUCTS_CONSULTATION}`,
-      },
-      {
-        source: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_HOLIDAY_PLAN}`,
-        destination: `/${PAGES.EN.PRODUCTS}/${PAGES.EN.PRODUCTS_HOLIDAY_PLAN}`,
       },
       {
         source: `/${PAGES.LV.ABOUT_ME}`,
@@ -110,19 +102,33 @@ const nextConfig: NextConfig = {
       },
       {
         source: `/${PAGES.EN.PRODUCTS_GIRLS_TRIP}`,
-        destination: `/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
+        destination: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
         permanent: true,
       },
       {
-        source: `/${PAGES.EN.PRODUCTS_CONSULTATION}`,
-        destination: `/${PAGES.LV.PRODUCTS_CONSULTATION}`,
+        source: `/${PAGES.EN.PRODUCTS}/${PAGES.EN.PRODUCTS_GIRLS_TRIP}`,
+        destination: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
         permanent: true,
       },
-      {
-        source: `/${PAGES.EN.PRODUCTS_HOLIDAY_PLAN}`,
-        destination: `/${PAGES.LV.PRODUCTS_HOLIDAY_PLAN}`,
-        permanent: true,
-      },
+      // The consultation and holiday-plan pages are retired but still indexed
+      // by Google, so every historical URL lands on the girls trip page.
+      // Temporary (307) so the URLs can come back if those pages ship later.
+      ...[
+        {
+          en: RETIRED_PAGES.EN.PRODUCTS_CONSULTATION,
+          lv: RETIRED_PAGES.LV.PRODUCTS_CONSULTATION,
+        },
+        {
+          en: RETIRED_PAGES.EN.PRODUCTS_HOLIDAY_PLAN,
+          lv: RETIRED_PAGES.LV.PRODUCTS_HOLIDAY_PLAN,
+        },
+      ].flatMap(({ en, lv }) =>
+        [`/${en}`, `/${PAGES.EN.PRODUCTS}/${en}`, `/${PAGES.LV.PRODUCTS}/${lv}`].map((source) => ({
+          source,
+          destination: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
+          permanent: false,
+        })),
+      ),
       {
         source: `/${PAGES.EN.ABOUT_ME}`,
         destination: `/${PAGES.LV.ABOUT_ME}`,

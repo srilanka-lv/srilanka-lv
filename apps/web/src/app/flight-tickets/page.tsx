@@ -21,6 +21,7 @@ import { buildSectionItems, findNavLabel } from '@/shared/components/breadcrumbs
 import { Button } from '@/shared/components/button';
 import { Card } from '@/shared/components/card';
 import { SectionBlogs } from '@/shared/components/section-blogs';
+import { WHATSAPP_URL } from '@/shared/constants/whatsapp';
 
 import {
   ctaLinkStyle,
@@ -90,7 +91,11 @@ const NextFlightCalendarPage: FunctionComponent = () => {
             variant="primary"
             size="medium"
             className={ctaLinkStyle}
-            href={`/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_HOLIDAY_PLAN}`}
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-umami-event="contact"
+            data-umami-event-channel="whatsapp"
           >
             {FLIGHT_PAGE_COPY.funnelCtaLabel}
           </Button>
