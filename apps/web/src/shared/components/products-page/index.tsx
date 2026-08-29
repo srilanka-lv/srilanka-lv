@@ -5,6 +5,7 @@ import type { FunctionComponent } from 'react';
 
 import { Breadcrumbs } from '@/shared/components/breadcrumbs';
 import { buildSectionItems } from '@/shared/components/breadcrumbs/build-items';
+import { WhatsAppButton } from '@/shared/components/whatsapp-button';
 
 import { products } from './index.data';
 import {
@@ -14,6 +15,7 @@ import {
   productStyle,
   productSubTitleStyle,
   productTitleStyle,
+  productWhatsAppCtaStyle,
 } from './styles.css';
 
 export const ProductsPage: FunctionComponent = () => {
@@ -22,7 +24,8 @@ export const ProductsPage: FunctionComponent = () => {
   return (
     <>
       <Breadcrumbs items={buildSectionItems(href)} />
-      {products.map(({ subTitle, title, description, href: productHref, thumbnailSrc }, index) => {
+      {products.map((product, index) => {
+        const { subTitle, title, description, href: productHref, thumbnailSrc } = product;
         const Component = index === 0 ? 'h1' : index === 1 ? 'h2' : 'h3';
 
         return (
@@ -30,9 +33,13 @@ export const ProductsPage: FunctionComponent = () => {
             <span className={productSubTitleStyle}>{subTitle}</span>
             <Component className={productTitleStyle}>{title}</Component>
             <p className={productDescriptionStyle}>{description}</p>
-            <Link className={productLinkStyle} href={productHref}>
-              Vairāk informācijas →
-            </Link>
+            {product.whatsAppOnly ? (
+              <WhatsAppButton className={productWhatsAppCtaStyle} />
+            ) : (
+              <Link className={productLinkStyle} href={productHref}>
+                Vairāk par šo ceļojumu! →
+              </Link>
+            )}
             <div className={productImageWrapperStyle}>
               <Image
                 src={thumbnailSrc}

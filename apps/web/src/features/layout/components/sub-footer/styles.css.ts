@@ -82,5 +82,14 @@ export const subFooterItemStyle = style(
 export const subFooterLinkStyle = style(
   inComponentsLayer({
     color: 'inherit',
+
+    selectors: {
+      // color: inherit lives in the components layer, so it outranks the
+      // base-layer a:hover rule; restate the hover color or the glyphs stay
+      // dark and the color-dodge bar turns them red-on-red.
+      '&:hover, &:focus-visible': {
+        color: color.background,
+      },
+    },
   }),
 );

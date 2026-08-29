@@ -13,11 +13,8 @@ export const PAGES = {
     HOME: '',
     PRODUCTS: 'products',
     PRODUCTS_GIRLS_TRIP: 'trip',
-    PRODUCTS_CONSULTATION: 'consultation',
-    PRODUCTS_HOLIDAY_PLAN: 'holiday-plan',
     ABOUT_ME: 'about-me',
     FLIGHT_TICKETS: 'flight-tickets',
-    CONTACT: 'contact',
     BLOGS: 'blog',
     INFO_WHAT_TO_DO: 'holiday-in-sri-lanka-what-to-do',
     INFO_WHERE_TO_STAY: 'holiday-in-sri-lanka-where-to-stay',
@@ -31,11 +28,8 @@ export const PAGES = {
     HOME: 'sakums',
     PRODUCTS: 'produkti',
     PRODUCTS_GIRLS_TRIP: 'meitenu-celojums-uz-srilanku',
-    PRODUCTS_CONSULTATION: 'srilankas-brivdienu-konsultacijas',
-    PRODUCTS_HOLIDAY_PLAN: 'personalizets-celojuma-plans-uz-srilanku',
     ABOUT_ME: 'par-mani',
     FLIGHT_TICKETS: 'letakie-lidojumi-uz-srilanku-no-rigas',
-    CONTACT: 'kontakti',
     BLOGS: 'blogi',
     INFO_WHAT_TO_DO: 'ko-darit-un-ko-nedarit-srilankas-brivdienas',
     INFO_WHERE_TO_STAY: 'kuras-srilankas-vietas-vislabak-palikt',
@@ -44,5 +38,24 @@ export const PAGES = {
     INFO_HOW_LONG_TO_GO: 'cik-ilgu-laiku-ir-jaieplano-celojumam-uz-srilanku',
     INFO_VISA: 'ka-iegut-srilankas-turistu-vizu-latvijas-pilsoniem',
     INFO_TRANSPORT: 'dazadas-transportu-veidu-iespejas-srilanka',
+  },
+} as const;
+
+/**
+ * Slugs of retired pages that no longer exist but are still indexed by Google.
+ * `next.config` redirects each historical URL to a live page (products to the
+ * girls trip, contact to the home page). Kept out of `PAGES` so nothing can
+ * link to them internally.
+ */
+export const RETIRED_PAGES = {
+  EN: {
+    PRODUCTS_CONSULTATION: 'consultation',
+    PRODUCTS_HOLIDAY_PLAN: 'holiday-plan',
+    CONTACT: 'contact',
+  },
+  LV: {
+    PRODUCTS_CONSULTATION: 'srilankas-brivdienu-konsultacijas',
+    PRODUCTS_HOLIDAY_PLAN: 'personalizets-celojuma-plans-uz-srilanku',
+    CONTACT: 'kontakti',
   },
 } as const;
