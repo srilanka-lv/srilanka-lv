@@ -137,6 +137,12 @@ export const productLinkStyle = style({
   },
 });
 
+export const productWhatsAppCtaStyle = style({
+  position: 'relative',
+  marginTop: spacing[4],
+  zIndex: zIndex['10'],
+});
+
 export const productImageWrapperStyle = style({
   position: 'absolute',
   right: 0,

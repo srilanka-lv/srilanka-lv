@@ -26,7 +26,7 @@ export const TripPageHeroSection = () => (
     <div className={tripPageImageGalleryStyle}>
       <span className={tripPageImageGalleryMainImageStyle}>
         <span className={tripPageImageGalleryMainImagePriceStyle}>
-          <span>1.500 EURO</span>
+          <span>1.700 EURO</span>
           <span className={tripPageImageGalleryMainImagePriceSubtitleStyle}>
             no personas / 10 dienas
           </span>
@@ -132,7 +132,7 @@ export const TripPageHeroSection = () => (
       </div>
       <div className={tripPageSummaryItemStyle}>
         <span className={tripPageSummaryItemTitleStyle}>Datumi</span>
-        <strong className={tripPageSummaryItemValueStyle}>18/01/27 - 27/01/27</strong>
+        <strong className={tripPageSummaryItemValueStyle}>10/01/27 - 19/01/27</strong>
       </div>
       <span className={tripPageSummaryItemSeparatorStyle} />
       <div className={tripPageSummaryItemStyle}>
@@ -141,7 +141,7 @@ export const TripPageHeroSection = () => (
       </div>
       <div className={tripPageSummaryItemStyle}>
         <span className={tripPageSummaryItemTitleStyle}>Cik vietas?</span>
-        <strong className={tripPageSummaryItemValueStyle}>6. meitenes</strong>
+        <strong className={tripPageSummaryItemValueStyle}>7. meitenes</strong>
       </div>
       <span className={tripPageSummaryItemSeparatorStyle} />
       <div className={tripPageSummaryItemStyle}>

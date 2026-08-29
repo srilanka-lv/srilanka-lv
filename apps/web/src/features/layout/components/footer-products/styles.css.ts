@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
@@ -165,3 +165,19 @@ export const footerProductsCtaStyle = style(
     color: `color-mix(in oklch, ${color.accent} 75%, ${color.foreground})`,
   }),
 );
+
+export const footerProductsWhatsAppCtaStyle = style(
+  inComponentsLayer({
+    display: 'block',
+    marginTop: 'auto',
+    paddingTop: spacing[2],
+    width: '100%',
+    maxWidth: spacing[40],
+  }),
+);
+
+globalStyle(`${footerProductsWhatsAppCtaStyle} svg`, {
+  display: 'block',
+  width: '100%',
+  height: 'auto',
+});

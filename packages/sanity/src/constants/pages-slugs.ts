@@ -13,8 +13,6 @@ export const PAGES = {
     HOME: '',
     PRODUCTS: 'products',
     PRODUCTS_GIRLS_TRIP: 'trip',
-    PRODUCTS_CONSULTATION: 'consultation',
-    PRODUCTS_HOLIDAY_PLAN: 'holiday-plan',
     ABOUT_ME: 'about-me',
     FLIGHT_TICKETS: 'flight-tickets',
     CONTACT: 'contact',
@@ -31,8 +29,6 @@ export const PAGES = {
     HOME: 'sakums',
     PRODUCTS: 'produkti',
     PRODUCTS_GIRLS_TRIP: 'meitenu-celojums-uz-srilanku',
-    PRODUCTS_CONSULTATION: 'srilankas-brivdienu-konsultacijas',
-    PRODUCTS_HOLIDAY_PLAN: 'personalizets-celojuma-plans-uz-srilanku',
     ABOUT_ME: 'par-mani',
     FLIGHT_TICKETS: 'letakie-lidojumi-uz-srilanku-no-rigas',
     CONTACT: 'kontakti',
@@ -44,5 +40,21 @@ export const PAGES = {
     INFO_HOW_LONG_TO_GO: 'cik-ilgu-laiku-ir-jaieplano-celojumam-uz-srilanku',
     INFO_VISA: 'ka-iegut-srilankas-turistu-vizu-latvijas-pilsoniem',
     INFO_TRANSPORT: 'dazadas-transportu-veidu-iespejas-srilanka',
+  },
+} as const;
+
+/**
+ * Slugs of retired pages that no longer exist but are still indexed by Google.
+ * `next.config` redirects every historical URL to the girls trip page. Kept
+ * out of `PAGES` so nothing can link to them internally.
+ */
+export const RETIRED_PAGES = {
+  EN: {
+    PRODUCTS_CONSULTATION: 'consultation',
+    PRODUCTS_HOLIDAY_PLAN: 'holiday-plan',
+  },
+  LV: {
+    PRODUCTS_CONSULTATION: 'srilankas-brivdienu-konsultacijas',
+    PRODUCTS_HOLIDAY_PLAN: 'personalizets-celojuma-plans-uz-srilanku',
   },
 } as const;
