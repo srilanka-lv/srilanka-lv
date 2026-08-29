@@ -58,7 +58,7 @@ const sections: Section[] = [
   },
   {
     heading: 'Par mani',
-    pages: [toSectionPage(PAGES.LV.ABOUT_ME), toSectionPage(PAGES.LV.CONTACT)],
+    pages: [toSectionPage(PAGES.LV.ABOUT_ME)],
   },
 ];
 
@@ -100,7 +100,13 @@ export const buildSiteOverviewMarkdown = async (): Promise<string> => {
 
       const description = sanityPage?.description ?? sectionPage.fallback?.description;
 
-      return [toListItem(title, `${siteUrl}${sectionPage.path}`, description)];
+      // WhatsApp-only products carry an absolute wa.me href instead of a
+      // site-relative path.
+      const url = sectionPage.path.startsWith('https://')
+        ? sectionPage.path
+        : `${siteUrl}${sectionPage.path}`;
+
+      return [toListItem(title, url, description)];
     });
 
     if (items.length === 0) {

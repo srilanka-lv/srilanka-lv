@@ -30,7 +30,6 @@ const staticPages: StaticPage[] = [
   ),
   toStaticPage(PAGES.LV.FLIGHT_TICKETS),
   toStaticPage(PAGES.LV.ABOUT_ME),
-  toStaticPage(PAGES.LV.CONTACT),
   toStaticPage(PAGES.LV.INFO_WHAT_TO_DO),
   toStaticPage(PAGES.LV.INFO_WHERE_TO_STAY),
   toStaticPage(PAGES.LV.INFO_DAILY_BUDGET),
