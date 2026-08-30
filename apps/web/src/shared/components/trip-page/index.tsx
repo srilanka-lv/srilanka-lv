@@ -11,6 +11,7 @@ import { TripPageItinerarySection } from '../trip-page-itinerary-section';
 import { TripPageUspSection } from '../trip-page-usp-section';
 import {
   tripPageCollaborationLinkStyle,
+  tripPageCollaborationLogoStyle,
   tripPageCollaborationStyle,
   tripPageTitleStyle,
 } from './styles.css';
@@ -39,6 +40,7 @@ export const ProductPageTrip: FunctionComponent = () => {
           data-umami-event-url="https://celoarmariku.lv"
         >
           <Image
+            className={tripPageCollaborationLogoStyle}
             src="/images/srilanka-lv_logo_celoarmariku.png"
             alt="Ceļo ar Mariku"
             width={74}

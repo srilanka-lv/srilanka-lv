@@ -7,6 +7,7 @@ import type { FunctionComponent, ReactNode } from 'react';
 
 import { Layout } from '@/features/layout/components/layout';
 import { ThemeScript } from '@/shared/components/theme-script';
+import { DEFAULT_OG_IMAGE } from '@/shared/constants/og-image';
 import { comme } from '@/shared/fonts/fonts';
 import { lightTheme as theme } from '@/shared/styles/themes/theme.light.css';
 import { darkColors, lightColors } from '@/shared/styles/tokens/colors';
@@ -37,7 +38,10 @@ export const metadata: Metadata = {
     'max-image-preview': 'large',
   },
   openGraph: {
-    images: '/og-image.png',
+    siteName: 'Šrilanka.lv',
+    locale: 'lv_LV',
+    type: 'website',
+    images: [DEFAULT_OG_IMAGE],
   },
   appleWebApp: {
     capable: true,

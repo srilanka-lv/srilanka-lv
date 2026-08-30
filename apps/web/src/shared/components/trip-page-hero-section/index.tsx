@@ -1,5 +1,8 @@
 import Image from 'next/image';
 
+import { GIRLS_TRIP_DATES_DISPLAY } from '@/shared/constants/girls-trip-dates';
+import { GIRLS_TRIP_PRICE_DISPLAY } from '@/shared/constants/girls-trip-price';
+
 import { TripPageHeroSectionCta } from '../trip-page-hero-section-cta';
 import {
   tripPageHeroSectionDescriptionParagraphStyle,
@@ -26,7 +29,7 @@ export const TripPageHeroSection = () => (
     <div className={tripPageImageGalleryStyle}>
       <span className={tripPageImageGalleryMainImageStyle}>
         <span className={tripPageImageGalleryMainImagePriceStyle}>
-          <span>1.700 EURO</span>
+          <span>{GIRLS_TRIP_PRICE_DISPLAY}</span>
           <span className={tripPageImageGalleryMainImagePriceSubtitleStyle}>
             no personas / 10 dienas
           </span>
@@ -102,7 +105,7 @@ export const TripPageHeroSection = () => (
       </span>
       <div className={tripPageHeroSectionDescriptionStyle}>
         <p className={tripPageHeroSectionDescriptionParagraphStyle}>
-          10 dienu ceļojums pa Šrilanku kopā ar mani, mazā, līdz 6 cilvēku sieviešu grupā. Aktīvs,
+          10 dienu ceļojums pa Šrilanku kopā ar mani, mazā, līdz 7 cilvēku sieviešu grupā. Aktīvs,
           iedvesmojošs un pilnībā noorganizēts ceļojums, kuru Tu vari vienkārši baudīt.
           {` `}
           <strong>Šis nav tikai ceļojums. Tā ir pieredze.</strong>
@@ -132,12 +135,12 @@ export const TripPageHeroSection = () => (
       </div>
       <div className={tripPageSummaryItemStyle}>
         <span className={tripPageSummaryItemTitleStyle}>Datumi</span>
-        <strong className={tripPageSummaryItemValueStyle}>10/01/27 - 19/01/27</strong>
+        <strong className={tripPageSummaryItemValueStyle}>{GIRLS_TRIP_DATES_DISPLAY}</strong>
       </div>
       <span className={tripPageSummaryItemSeparatorStyle} />
       <div className={tripPageSummaryItemStyle}>
         <span className={tripPageSummaryItemTitleStyle}>Ceļojuma veids</span>
-        <strong className={tripPageSummaryItemValueStyle}>Atīvs ceļojums</strong>
+        <strong className={tripPageSummaryItemValueStyle}>Aktīvs ceļojums</strong>
       </div>
       <div className={tripPageSummaryItemStyle}>
         <span className={tripPageSummaryItemTitleStyle}>Cik vietas?</span>
