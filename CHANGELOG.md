@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.13.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.12.0...v1.13.0) (2026-08-30)
+
+
+### Features
+
+* ✨ girls trip page campaign optimizations ([87ed259](https://github.com/srilanka-lv/srilanka-lv/commit/87ed2591594b00d2b7d0787b2b559d8aa5ff08f3))
+* ✨ girls trip page campaign optimizations ([f0af4dd](https://github.com/srilanka-lv/srilanka-lv/commit/f0af4dde4457da330765a61b5c85681d5d0b6df5))
+
 ## [1.12.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.11.0...v1.12.0) (2026-08-29)
 
 
