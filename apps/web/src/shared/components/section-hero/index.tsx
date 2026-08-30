@@ -2,7 +2,6 @@ import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import clsx from 'clsx';
 import { getImageProps } from 'next/image';
 import type { ComponentProps, FunctionComponent } from 'react';
-import { preload } from 'react-dom';
 
 import {
   sectionHeroButtonStyle,
@@ -16,6 +15,9 @@ type SectionHeroProps = {
   className?: string;
 } & ComponentProps<'section'>;
 
+const mobileMedia = '(max-width: 1279px)';
+const desktopMedia = '(min-width: 1280px)';
+
 export const SectionHero: FunctionComponent<SectionHeroProps> = ({ className, ...props }) => {
   const common = {
     alt: 'Tavs ceļojums uz Šrilanku sākas šeit',
@@ -25,33 +27,38 @@ export const SectionHero: FunctionComponent<SectionHeroProps> = ({ className, ..
   };
 
   const {
-    props: { srcSet: desktop, src: optimizedSrcDesktop },
+    props: { srcSet: desktop },
   } = getImageProps({
     ...common,
     src: '/images/srilanka-lv_hero-image_desktop.webp',
   });
 
   const {
-    props: { srcSet: mobile, src: optimizedSrcMobile, ...rest },
+    props: { srcSet: mobile, src: _src, ...rest },
   } = getImageProps({
     ...common,
     src: '/images/srilanka-lv_hero-image_mobile.webp',
   });
 
-  preload(optimizedSrcDesktop, {
-    as: 'image',
-    imageSrcSet: desktop,
-    fetchPriority: 'high',
-  });
-
-  preload(optimizedSrcMobile, {
-    as: 'image',
-    imageSrcSet: mobile,
-    fetchPriority: 'high',
-  });
-
   return (
     <section className={clsx(sectionHeroStyle, className)} {...props}>
+      {/* Hoisted into <head>; media-scoped so each viewport downloads only its own variant. */}
+      <link
+        rel="preload"
+        as="image"
+        imageSrcSet={mobile}
+        imageSizes="100vw"
+        media={mobileMedia}
+        fetchPriority="high"
+      />
+      <link
+        rel="preload"
+        as="image"
+        imageSrcSet={desktop}
+        imageSizes="100vw"
+        media={desktopMedia}
+        fetchPriority="high"
+      />
       <h1 className={sectionHeroTitleStyle}>Tavs ceļojums uz Šrilanku sākas šeit</h1>
       <h2 className={sectionHeroSubtitleStyle}>
         No personalizēta plāna līdz kopīgiem piedzīvojumiem viss vienuviet latviešiem.

@@ -6,7 +6,7 @@ import { products } from './index.data';
 
 export const buildProductPageMetadata = async (slug: string): Promise<Metadata> => {
   const product = products.find((item) => item.slug === slug);
-  const metadata = await buildPageMetadata(slug, product?.href);
+  const metadata = await buildPageMetadata(slug, product?.href, product?.ogImage);
 
   return {
     ...metadata,
