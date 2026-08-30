@@ -21,12 +21,18 @@ export function ProductJsonLd({ product, kind }: ProductJsonLdProps) {
           name: product.title,
           description: product.description,
           provider: { '@id': organizationId() },
-          offers: {
-            '@type': 'Offer',
-            price: '1500',
-            priceCurrency: 'EUR',
-            url: pageUrl,
-          },
+          ...(product.departureDate ? { departureTime: product.departureDate } : {}),
+          ...(product.returnDate ? { arrivalTime: product.returnDate } : {}),
+          ...(product.priceEur
+            ? {
+                offers: {
+                  '@type': 'Offer',
+                  price: product.priceEur,
+                  priceCurrency: 'EUR',
+                  url: pageUrl,
+                },
+              }
+            : {}),
         }
       : {
           '@type': 'Product',

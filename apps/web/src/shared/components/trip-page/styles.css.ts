@@ -1,6 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+import { darkThemeSelector } from '@/shared/styles/themes/theme.dark.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { spacing, font, color } = vars;
@@ -52,6 +53,16 @@ export const tripPageCollaborationLinkStyle = style({
   selectors: {
     '&:after': {
       display: 'none',
+    },
+  },
+});
+
+export const tripPageCollaborationLogoStyle = style({
+  selectors: {
+    // The logo artwork is pure black on transparency, so inverting it yields
+    // the white version for dark backgrounds without a second asset.
+    [`${darkThemeSelector} &`]: {
+      filter: 'invert(1)',
     },
   },
 });

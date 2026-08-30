@@ -35,8 +35,19 @@ export const SubFooter: FunctionComponent = () => {
           sveiki@srilanka.lv
         </a>
       </li>
-      {/* <li className={subFooterItemStyle}>Privātuma noteikumi</li>
-      <li className={subFooterItemStyle}>Atruna</li> */}
+      <li className={subFooterItemStyle}>
+        <a
+          className={subFooterLinkStyle}
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://celoarmariku.lv/policies/privacy-policy"
+          data-umami-event="outbound-link"
+          data-umami-event-url="https://celoarmariku.lv/policies/privacy-policy"
+        >
+          Privātuma politika
+        </a>
+      </li>
+      {/* <li className={subFooterItemStyle}>Atruna</li> */}
       <li className={subFooterItemStyle}>
         <a className={subFooterLinkStyle} href="/llms.txt">
           llms.txt
