@@ -106,6 +106,13 @@ const nextConfig: NextConfig = {
         destination: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
         permanent: true,
       },
+      // Short campaign URL for Instagram ads and bio links. Temporary (307)
+      // so it can point at whichever campaign is running.
+      {
+        source: '/celojums',
+        destination: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
+        permanent: false,
+      },
       // The consultation and holiday-plan pages are retired but still indexed
       // by Google, so every historical URL lands on the girls trip page.
       // Temporary (307) so the URLs can come back if those pages ship later.
