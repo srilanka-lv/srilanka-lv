@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.14.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.13.0...v1.14.0) (2026-09-01)
+
+
+### Features
+
+* ✨ partner cart CTA and /celojums campaign redirect ([f807f1f](https://github.com/srilanka-lv/srilanka-lv/commit/f807f1f505116de99920e57d4af2dc4792756fc1))
+* partner cart CTA and /celojums campaign redirect ([7375b7f](https://github.com/srilanka-lv/srilanka-lv/commit/7375b7f341a6da81fe7f8866729cd9ab95cc5fdf))
+
 ## [1.13.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.12.0...v1.13.0) (2026-08-30)
 
 
