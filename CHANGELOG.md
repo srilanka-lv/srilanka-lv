@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.15.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.14.0...v1.15.0) (2026-09-11)
+
+
+### Features
+
+* ✨ video section on the girls trip page ([6f8e7f5](https://github.com/srilanka-lv/srilanka-lv/commit/6f8e7f56a141c512760bc218105e12cd19f2fe1a))
+* 🎥 use the final girls trip video and switch on its structured data ([1d9e473](https://github.com/srilanka-lv/srilanka-lv/commit/1d9e4736c5a3c0748263f55b8b01f989cc3c7f89))
+
+
+### Bug Fixes
+
+* 🐛 point partner links at the girls trip product and link flights ([ef615e9](https://github.com/srilanka-lv/srilanka-lv/commit/ef615e9e57b2a35df2bee4f91611dce1e9c66305))
+* 💄 quieten the flights and partner text links on the trip page ([bb61708](https://github.com/srilanka-lv/srilanka-lv/commit/bb61708b315b97e11069c4ce3270334ffd607dc2))
+
 ## [1.14.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.13.0...v1.14.0) (2026-09-01)
 
 
