@@ -1,6 +1,6 @@
 import type { Product } from '@/shared/components/products-page/index.data';
 import {
-  GIRLS_TRIP_VIDEO_HEADING,
+  GIRLS_TRIP_VIDEO_TITLE,
   GIRLS_TRIP_VIDEO_UPLOAD_DATE,
   GIRLS_TRIP_VIDEO_URL,
 } from '@/shared/constants/girls-trip-video';
@@ -21,7 +21,7 @@ export function ProductJsonLd({ product, kind }: ProductJsonLdProps) {
     kind === 'trip'
       ? buildVideoObject({
           url: GIRLS_TRIP_VIDEO_URL,
-          name: GIRLS_TRIP_VIDEO_HEADING,
+          name: GIRLS_TRIP_VIDEO_TITLE,
           description: product.description,
           uploadDate: GIRLS_TRIP_VIDEO_UPLOAD_DATE,
         })

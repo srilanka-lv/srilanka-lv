@@ -20,7 +20,7 @@ export const tripPageHeroSectionStyle = style({
       gridTemplateColumns: 'repeat(3, 1fr)',
       gridTemplateRows: '1fr',
       marginTop: spacing[4],
-      marginBottom: spacing[24],
+      marginBottom: spacing[12],
     },
   },
 });
@@ -283,7 +283,7 @@ export const tripPageHeroVideoAnchorStyle = style([
   {
     gridColumn: '1 / 3',
     justifySelf: 'center',
-    marginTop: spacing[2],
+    marginTop: spacing[5],
     fontSize: font.size.sm,
   },
 ]);

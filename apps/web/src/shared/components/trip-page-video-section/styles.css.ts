@@ -48,7 +48,7 @@ export const tripPageVideoPlayerStyle = style({
 
   '@media': {
     [`screen and (min-width: ${breakpoints.lg})`]: {
-      maxWidth: '60rem',
+      maxWidth: '40rem',
     },
   },
 });
