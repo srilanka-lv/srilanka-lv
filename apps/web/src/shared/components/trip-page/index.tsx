@@ -4,6 +4,10 @@ import type { FunctionComponent } from 'react';
 
 import { Breadcrumbs } from '@/shared/components/breadcrumbs';
 import { buildItems } from '@/shared/components/breadcrumbs/build-items';
+import {
+  GIRLS_TRIP_PARTNER_PRODUCT_CAMPAIGN_URL,
+  GIRLS_TRIP_PARTNER_PRODUCT_URL,
+} from '@/shared/constants/girls-trip-partner-url';
 
 import { Heading } from '../heading';
 import { TripPageHeroSection } from '../trip-page-hero-section';
@@ -33,11 +37,11 @@ export const ProductPageTrip: FunctionComponent = () => {
       <div className={tripPageCollaborationStyle}>
         <a
           className={tripPageCollaborationLinkStyle}
-          href="https://celoarmariku.lv?utm_source=srilanka-lv&utm_medium=banner-product-page&utm_campaign=girls-trip"
+          href={GIRLS_TRIP_PARTNER_PRODUCT_CAMPAIGN_URL}
           target="_blank"
           rel="noopener noreferrer"
           data-umami-event="outbound-link"
-          data-umami-event-url="https://celoarmariku.lv"
+          data-umami-event-url={GIRLS_TRIP_PARTNER_PRODUCT_URL}
         >
           <Image
             className={tripPageCollaborationLogoStyle}
@@ -50,11 +54,11 @@ export const ProductPageTrip: FunctionComponent = () => {
         <span>
           ☀️ Šī ir sadarbība ar{' '}
           <a
-            href="https://celoarmariku.lv/products/srilanka-paradize-indijas-okeana?utm_source=srilanka-lv&utm_medium=banner-product-page&utm_campaign=girls-trip"
+            href={GIRLS_TRIP_PARTNER_PRODUCT_CAMPAIGN_URL}
             target="_blank"
             rel="noopener noreferrer"
             data-umami-event="outbound-link"
-            data-umami-event-url="https://celoarmariku.lv/products/srilanka-paradize-indijas-okeana?utm_source=srilanka-lv&utm_medium=banner-product-page&utm_campaign=girls-trip"
+            data-umami-event-url={GIRLS_TRIP_PARTNER_PRODUCT_URL}
           >
             Ceļo ar Mariku
           </a>

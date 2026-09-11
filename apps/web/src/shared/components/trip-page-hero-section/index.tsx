@@ -1,4 +1,6 @@
+import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { GIRLS_TRIP_DATES_DISPLAY } from '@/shared/constants/girls-trip-dates';
 import { GIRLS_TRIP_PRICE_DISPLAY } from '@/shared/constants/girls-trip-price';
@@ -170,7 +172,9 @@ export const TripPageHeroSection = () => (
         <ul className={tripPageSummaryItemValueListStyle}>
           <li className={tripPageSummaryItemValueListItemExcludedStyle}>Apdrošināšana</li>
           <li className={tripPageSummaryItemValueListItemExcludedStyle}>Ēšana</li>
-          <li className={tripPageSummaryItemValueListItemExcludedStyle}>Lidojuma biļetes</li>
+          <li className={tripPageSummaryItemValueListItemExcludedStyle}>
+            <Link href={`/${PAGES.LV.FLIGHT_TICKETS}`}>Lidojuma biļetes</Link>
+          </li>
           <li className={tripPageSummaryItemValueListItemExcludedStyle}>Personīgās izmaksas</li>
         </ul>
       </div>
