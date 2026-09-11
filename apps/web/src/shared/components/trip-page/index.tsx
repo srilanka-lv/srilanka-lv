@@ -14,6 +14,7 @@ import { Heading } from '../heading';
 import { TripPageHeroSection } from '../trip-page-hero-section';
 import { TripPageItinerarySection } from '../trip-page-itinerary-section';
 import { TripPageUspSection } from '../trip-page-usp-section';
+import { TripPageVideoSection } from '../trip-page-video-section';
 import {
   tripPageCollaborationLinkStyle,
   tripPageCollaborationLogoStyle,
@@ -67,6 +68,7 @@ export const ProductPageTrip: FunctionComponent = () => {
         </span>
       </div>
       <TripPageHeroSection />
+      <TripPageVideoSection />
       <TripPageUspSection />
       <TripPageItinerarySection />
     </>

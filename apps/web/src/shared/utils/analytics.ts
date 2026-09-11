@@ -4,7 +4,8 @@ export type AnalyticsEventName =
   | 'outbound-link'
   | 'product-cta'
   | 'contact'
-  | 'flight-month-select';
+  | 'flight-month-select'
+  | 'video-play';
 
 declare global {
   interface Window {

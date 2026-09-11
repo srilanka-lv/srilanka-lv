@@ -4,6 +4,10 @@ import Link from 'next/link';
 
 import { GIRLS_TRIP_DATES_DISPLAY } from '@/shared/constants/girls-trip-dates';
 import { GIRLS_TRIP_PRICE_DISPLAY } from '@/shared/constants/girls-trip-price';
+import {
+  GIRLS_TRIP_VIDEO_ANCHOR_LABEL,
+  GIRLS_TRIP_VIDEO_SECTION_ID,
+} from '@/shared/constants/girls-trip-video';
 import { quietLinkStyle } from '@/shared/styles/quiet-link.css';
 
 import { TripPageHeroSectionCta } from '../trip-page-hero-section-cta';
@@ -11,6 +15,7 @@ import {
   tripPageHeroSectionDescriptionParagraphStyle,
   tripPageHeroSectionDescriptionStyle,
   tripPageHeroSectionStyle,
+  tripPageHeroVideoAnchorStyle,
   tripPageImageGalleryMainImagePriceStyle,
   tripPageImageGalleryMainImagePriceSubtitleStyle,
   tripPageImageGalleryMainImageStyle,
@@ -183,6 +188,9 @@ export const TripPageHeroSection = () => (
       </div>
       <span className={tripPageSummaryItemSeparatorStyle} />
       <TripPageHeroSectionCta />
+      <a className={tripPageHeroVideoAnchorStyle} href={`#${GIRLS_TRIP_VIDEO_SECTION_ID}`}>
+        {GIRLS_TRIP_VIDEO_ANCHOR_LABEL}
+      </a>
     </div>
   </section>
 );

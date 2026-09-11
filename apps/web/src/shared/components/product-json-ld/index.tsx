@@ -1,4 +1,10 @@
 import type { Product } from '@/shared/components/products-page/index.data';
+import {
+  GIRLS_TRIP_VIDEO_HEADING,
+  GIRLS_TRIP_VIDEO_UPLOAD_DATE,
+  GIRLS_TRIP_VIDEO_URL,
+} from '@/shared/constants/girls-trip-video';
+import { buildVideoObject } from '@/shared/utils/build-video-object';
 import { getSiteUrl } from '@/shared/utils/get-site-url';
 import { organizationId, organizationNode, personNode } from '@/shared/utils/json-ld-nodes';
 
@@ -10,6 +16,16 @@ type ProductJsonLdProps = {
 export function ProductJsonLd({ product, kind }: ProductJsonLdProps) {
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}${product.href}`;
+
+  const video =
+    kind === 'trip'
+      ? buildVideoObject({
+          url: GIRLS_TRIP_VIDEO_URL,
+          name: GIRLS_TRIP_VIDEO_HEADING,
+          description: product.description,
+          uploadDate: GIRLS_TRIP_VIDEO_UPLOAD_DATE,
+        })
+      : null;
 
   const mainNode =
     kind === 'trip'
@@ -23,6 +39,7 @@ export function ProductJsonLd({ product, kind }: ProductJsonLdProps) {
           provider: { '@id': organizationId() },
           ...(product.departureDate ? { departureTime: product.departureDate } : {}),
           ...(product.returnDate ? { arrivalTime: product.returnDate } : {}),
+          ...(video ? { video } : {}),
           ...(product.priceEur
             ? {
                 offers: {

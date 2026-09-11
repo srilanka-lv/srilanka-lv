@@ -1,5 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
+import { quietLinkStyle } from '@/shared/styles/quiet-link.css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
@@ -275,3 +276,14 @@ export const tripPageSummaryItemSeparatorStyle = style({
     },
   },
 });
+
+// Sits under the CTA inside the two-column summary grid, spanning both columns.
+export const tripPageHeroVideoAnchorStyle = style([
+  quietLinkStyle,
+  {
+    gridColumn: '1 / 3',
+    justifySelf: 'center',
+    marginTop: spacing[2],
+    fontSize: font.size.sm,
+  },
+]);
