@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { GIRLS_TRIP_DATES_DISPLAY } from '@/shared/constants/girls-trip-dates';
 import { GIRLS_TRIP_PRICE_DISPLAY } from '@/shared/constants/girls-trip-price';
+import { quietLinkStyle } from '@/shared/styles/quiet-link.css';
 
 import { TripPageHeroSectionCta } from '../trip-page-hero-section-cta';
 import {
@@ -173,7 +174,9 @@ export const TripPageHeroSection = () => (
           <li className={tripPageSummaryItemValueListItemExcludedStyle}>Apdrošināšana</li>
           <li className={tripPageSummaryItemValueListItemExcludedStyle}>Ēšana</li>
           <li className={tripPageSummaryItemValueListItemExcludedStyle}>
-            <Link href={`/${PAGES.LV.FLIGHT_TICKETS}`}>Lidojuma biļetes</Link>
+            <Link className={quietLinkStyle} href={`/${PAGES.LV.FLIGHT_TICKETS}`}>
+              Lidojuma biļetes
+            </Link>
           </li>
           <li className={tripPageSummaryItemValueListItemExcludedStyle}>Personīgās izmaksas</li>
         </ul>

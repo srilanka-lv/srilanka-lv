@@ -8,6 +8,7 @@ import {
   GIRLS_TRIP_PARTNER_PRODUCT_CAMPAIGN_URL,
   GIRLS_TRIP_PARTNER_PRODUCT_URL,
 } from '@/shared/constants/girls-trip-partner-url';
+import { quietLinkStyle } from '@/shared/styles/quiet-link.css';
 
 import { Heading } from '../heading';
 import { TripPageHeroSection } from '../trip-page-hero-section';
@@ -54,6 +55,7 @@ export const ProductPageTrip: FunctionComponent = () => {
         <span>
           ☀️ Šī ir sadarbība ar{' '}
           <a
+            className={quietLinkStyle}
             href={GIRLS_TRIP_PARTNER_PRODUCT_CAMPAIGN_URL}
             target="_blank"
             rel="noopener noreferrer"
