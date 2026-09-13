@@ -56,3 +56,11 @@ Every one of these shows as a yellow mark on the page. Search the page for `Guid
 9. Three quotes from past girls-trip participants, with first names and permission.
 10. Dave's line and the Instagram link in the author box.
 11. Confirm or replace the south coast temperature table.
+12. Prices for the activities table: sērfošanas nodarbība, dēļa noma, vaļu vērošana, niršana, safari, krokodilu tūre, sikspārņu vakars, masāža, gatavošanas meistarklase, bruņurupuču vērošana, gredzenu darbnīca, SUP.
+13. Grieta: one more activity she does not recommend, and why.
+
+## Added after Grieta's proofread, 13 September
+
+Two new sections are on the page: "Ko redzēt Šrilankā: galvenās vietas" and "Ko darīt Šrilankā: aktivitātes". Both are tables of named places and activities, so they need Grieta's eye on two things: whether the verdict column reads as hers, and whether anything she would actually recommend is missing.
+
+The whole page was also rewritten to address any Latvian speaker rather than a woman. Grieta's own voice stays in the first person feminine, and the girls-trip section keeps its framing.
