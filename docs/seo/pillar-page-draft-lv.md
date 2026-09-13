@@ -1,5 +1,7 @@
 # Ceļojums uz Šrilanku: melnraksts
 
+> **Statuss, 13. septembris:** šis melnraksts ir ieviests lapā `/celojums-uz-srilanku`. Lapa tagad ir avots, nevis šis fails. Pēc Grietas atsauksmes lapai pievienotas divas jaunas sadaļas, kuru šeit nav: "Ko redzēt Šrilankā: galvenās vietas" un "Ko darīt Šrilankā: aktivitātes". Tāpat visa lapa ir pārrakstīta dzimtes ziņā neitrāla: autore runā sievietes pirmajā personā, bet lasītājs vairs netiek uzrunāts kā sieviete. Izņēmums ir meiteņu ceļojuma sadaļa.
+
 Melnraksts sagatavots 2026. gada 13. septembrī no Grietas esošajiem rakstiem srilanka.lv, viņas tabulām, lidojumu cenu rīka datiem (2026. gada jūlijs un augusts) un Šrilankas oficiālās ETA lapas. Nekas nav ņemts no konkurentu lapām.
 
 Marķējumi tekstā:
