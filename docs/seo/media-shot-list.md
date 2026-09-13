@@ -58,6 +58,18 @@ Every one of these shows as a yellow mark on the page. Search the page for `Guid
 11. Confirm or replace the south coast temperature table.
 12. Prices for the activities table: sērfošanas nodarbība, dēļa noma, vaļu vērošana, niršana, safari, krokodilu tūre, sikspārņu vakars, masāža, gatavošanas meistarklase, bruņurupuču vērošana, gredzenu darbnīca, SUP.
 13. Grieta: one more activity she does not recommend, and why.
+14. The south coast PDF itself, plus one line describing what is in it (the signup block asks for both).
+
+## The PDF signup block
+
+An inline block sits after the south coast section: leave an email, get the PDF. It is not a pop-up, on purpose, because a pop-up would add interaction cost to a page tuned for Core Web Vitals and would interrupt the reader.
+
+Two things are still placeholders:
+
+- **The file.** Find it, and decide what it still offers that the page does not. The page now covers seven beaches with prices, so the overlap is large. If the honest answer is "not much", fold the good parts into the page and drop the PDF instead.
+- **The delivery.** The email address is captured today, but nothing is sent. `shared/components/guide-lead-magnet/actions/request-guide-pdf.ts` carries the four steps needed to wire it. Do not remove the yellow marks from the block until sending actually works: the copy promises a file.
+
+If the PDF does ship, serve it so Google cannot index it, otherwise it competes with the page for the same south coast queries. Delivering it through an API route gets that for free, since robots.txt already disallows `/api/`.
 
 ## Added after Grieta's proofread, 13 September
 
