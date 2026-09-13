@@ -20,9 +20,9 @@ export const PUBLISHED_AT = '2026-09-13';
 
 export const TITLE = 'Ceļojums uz Šrilanku: pilns ceļvedis no Madihas';
 export const DESCRIPTION =
-  'Ceļojums uz Šrilanku bez aģentūras. Vīza, lidojumi no Rīgas, cenas eiro, maršruts un pludmales. Rakstām no Madihas, kur dzīvojam kopš 2022. gada.';
+  'Ceļojums uz Šrilanku bez aģentūras. Vīza, lidojumi no Rīgas, cenas eiro, maršruts un pludmales. Rakstu no Madihas, kur dzīvoju kopš 2022. gada.';
 export const LEDE =
-  'Ceļvedi raksta divi cilvēki, kas šeit arī dzīvo. Vīza, lidojumi, cenas, maršruts, pludmales un viss pārējais, ko gribēsi zināt pirms pirmā brauciena.';
+  'Ceļvedi raksta cilvēks, kas Šrilankā arī dzīvo. Vīza, lidojumi, cenas, maršruts, pludmales un viss pārējais, ko gribēsi zināt pirms pirmā brauciena.';
 
 /** TODO(pillar): replace with the real clips before release. */
 const PLACEHOLDER_VIDEO_URL = 'https://www.youtube.com/watch?v=DgF8qcLSCb4';
@@ -31,9 +31,9 @@ const PLACEHOLDER_UPLOAD_DATE = '2026-09-13';
 export const videos = {
   intro: {
     url: PLACEHOLDER_VIDEO_URL,
-    title: 'Kas mēs esam un kas ir šajā ceļvedī',
+    title: 'Kas es esmu un kas ir šajā ceļvedī',
     description:
-      'Vietturis. Grieta un Deivs Madihas pludmalē pastāsta, cik ilgi šeit dzīvo un ko šajā ceļvedī atradīsi.',
+      'Vietturis. Grieta Madihas pludmalē pastāsta, cik ilgi šeit dzīvo un ko šajā ceļvedī atradīsi.',
     uploadDate: PLACEHOLDER_UPLOAD_DATE,
   },
   southCoast: {
@@ -73,7 +73,7 @@ export const sections = {
   souvenirs: 'ko-atvest',
   reviews: 'atsauksmes',
   faq: 'biezak-uzdotie-jautajumi',
-  trip: 'celo-kopa-ar-mums',
+  trip: 'celo-kopa-ar-mani',
 } as const;
 
 export const tocItems: GuideTocItem[] = [
@@ -94,7 +94,7 @@ export const tocItems: GuideTocItem[] = [
   { id: sections.souvenirs, title: 'Ko atvest no Šrilankas' },
   { id: sections.reviews, title: 'Ko saka citi ceļotāji' },
   { id: sections.faq, title: 'Biežāk uzdotie jautājumi' },
-  { id: sections.trip, title: 'Ceļo kopā ar mums' },
+  { id: sections.trip, title: 'Ceļo kopā ar mani' },
 ];
 
 /**

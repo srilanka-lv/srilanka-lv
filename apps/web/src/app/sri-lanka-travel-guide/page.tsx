@@ -808,19 +808,19 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             ],
             [
               'Ahangama',
-              'Tiem, kam patīk stils un kafejnīcas',
+              'Tiem, kam patīk skaistas, estētiskas kafejnīcas un tūristīga gaisotne.',
               'Boutique viesnīcas, sērfošana pieredzējušiem',
               <GuideTodo key="ahangama">cena</GuideTodo>,
             ],
             [
               'Unavatuna',
-              'Rosībai un naktsdzīvei',
+              'Piemērots naktsdzīvei un ģimenēm. Labi, ja protat krievu valodu.',
               'Viegli pieejama pludmale, restorāni, tuvu Gallei',
               <GuideTodo key="unawatuna">cena</GuideTodo>,
             ],
             [
               'Hiriketija',
-              'Mazam līcim ar labu noskaņu',
+              'Lieliski piemērots sērfošanas cienītājiem, kuri ceļo vieni.',
               'Sērfošana, joga, mierīga peldēšanās',
               <GuideTodo key="hiriketiya">cena</GuideTodo>,
             ],
@@ -1177,16 +1177,16 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         <GuideFaq items={faqs} />
       </GuideSection>
 
-      <GuideSection id={sections.trip} title="Ceļo kopā ar mums">
+      <GuideSection id={sections.trip} title="Ceļo kopā ar mani">
         <p>
-          Ja, to visu lasot, radās sajūta, ka gribi to piedzīvot, bet ne viena pati, mums ir meiteņu
-          ceļojums uz Šrilanku 2027. gada janvārī. Maza grupa, dienvidu piekraste, kalni un safari,
-          un mēs visu laiku esam blakus. Sīkāk:{' '}
+          Ja, to visu lasot, radās sajūta, ka gribi to piedzīvot, bet ne viena pati, 2027. gada
+          janvārī es vedu uz Šrilanku nelielu meiteņu grupu. Dienvidu piekraste, kalni un safari, un
+          es visu laiku esmu blakus. Sīkāk:{' '}
           <Link href={href.girlsTrip}>meiteņu ceļojums uz Šrilanku</Link>.
         </p>
         <p>
-          Ikdienu no Madihas rādām Instagramā. Ja kaut kas par ceļojuma plānošanu palika neskaidrs,
-          raksti. Atbildam visām.
+          Ikdienu no Madihas rādu Instagramā. Ja kaut kas par ceļojuma plānošanu palika neskaidrs,
+          raksti man. Atbildu visām.
         </p>
       </GuideSection>
 
@@ -1198,7 +1198,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         <p>
           Kopš 2022. gada dzīvo Šrilankas dienvidos, Madihā, pirms tam vairākas sezonas pavadīja
           Šrilankā un Bali. Raksta vietnē srilanka.lv un vada meiteņu ceļojumus.{' '}
-          <GuideTodo>Deiva teikums un Instagram saite</GuideTodo>
+          <GuideTodo>Instagram saite</GuideTodo>
         </p>
       </GuideAuthor>
     </GuidePageLayout>

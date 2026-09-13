@@ -19,7 +19,7 @@ Photos go in `apps/web/public/images/guide/`. Export as WebP where possible; kee
 | `group.webp` | 1920 × 1080 | Grupas foto no iepriekšējā meiteņu ceļojuma. |
 | `infographic-season.webp` | 1920 × 1080 | Sezonu infografika ar tiem pašiem skaitļiem, kas tabulā. |
 | `infographic-cost.webp` | 1920 × 1080 | 14 dienu izmaksu infografika, tie paši skaitļi, kas tabulā. |
-| `author.webp` | 800 × 800 | Grieta, kvadrāts, seja centrā (rāda kā apli 96 px). |
+| `author.webp` | 800 × 800 | Grieta, kvadrāts, seja centrā (rāda kā apli 96 px). Tikai Grieta: lapa ir rakstīta viņas vienskaitļa balsī. |
 
 When a file lands, change the `src` and the extension in `src/app/sri-lanka-travel-guide/page.tsx` (and in `images` in `index.data.tsx` for the structured data). Write a real Latvian `alt` that describes the scene, not the keyword.
 
@@ -29,7 +29,7 @@ Three clips, 60 to 90 seconds, uploaded to YouTube. The page uses a click-to-loa
 
 | Slot | Title on YouTube | What is in it |
 |---|---|---|
-| `videos.intro` | Ceļojums uz Šrilanku: kas mēs esam | You two on the beach in Madiha: who you are, how long you have lived here, what the guide covers. |
+| `videos.intro` | Ceļojums uz Šrilanku: kas es esmu | Grieta alone on the beach in Madiha: who she is, how long she has lived here, what the guide covers. The page speaks in her voice only, so Dave should not appear or be named in this clip. |
 | `videos.southCoast` | Ceļojums uz Šrilanku: dienvidu piekraste | Madiha, Mirisa, Veligama, Unavatuna from the ground. |
 | `videos.transport` | Ceļojums uz Šrilanku: tuk-tuks un vilciens | A tuk-tuk ride on the coast road and a train ride in the hills. |
 
@@ -54,7 +54,7 @@ Every one of these shows as a yellow mark on the page. Search the page for `Guid
 7. Grieta: the one place or activity she would skip, and why.
 8. Grieta: what she brings home for friends, two or three sentences.
 9. Three quotes from past girls-trip participants, with first names and permission.
-10. Dave's line and the Instagram link in the author box.
+10. The Instagram link in the author box.
 11. Confirm or replace the south coast temperature table.
 12. Prices for the activities table: sērfošanas nodarbība, dēļa noma, vaļu vērošana, niršana, safari, krokodilu tūre, sikspārņu vakars, masāža, gatavošanas meistarklase, bruņurupuču vērošana, gredzenu darbnīca, SUP.
 13. Grieta: one more activity she does not recommend, and why.
