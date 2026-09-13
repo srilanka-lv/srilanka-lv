@@ -37,12 +37,25 @@ export const anchorStyle = style(
     opacity: 0,
     transition: `opacity ${transition.duration.fast} ${transition.easing.easeInOut}`,
 
+    // Opt out of the sitewide link treatment. Every `a` on the site grows a
+    // coral bar over itself on hover and flips its text to the background
+    // colour; on an icon that reads as a glitch rather than a link. The icon
+    // stays coral at all times instead. The components layer sits after base,
+    // so these win without fighting the global rules on specificity.
+    '::after': {
+      content: 'none',
+    },
+    ':hover': {
+      color: color.accent,
+    },
+
     selectors: {
       [`${headingStyle}:hover &`]: {
         opacity: 1,
       },
       '&:focus-visible': {
         opacity: 1,
+        color: color.accent,
         outline: `${focus.width} solid ${focus.color}`,
         outlineOffset: focus.offset,
       },

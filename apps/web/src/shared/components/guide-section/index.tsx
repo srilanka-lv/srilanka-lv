@@ -23,7 +23,7 @@ export const GuideSection: FunctionComponent<GuideSectionProps> = ({ id, title, 
     <h2 className={headingStyle}>
       {title}
       <a href={`#${id}`} className={anchorStyle} aria-label={`Saite uz sadaļu: ${title}`}>
-        <Link2 size={20} aria-hidden="true" />
+        <Link2 size={30} aria-hidden="true" />
       </a>
     </h2>
     {children}
