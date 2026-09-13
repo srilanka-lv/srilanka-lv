@@ -122,7 +122,12 @@ type RootLayoutReturnType = Readonly<{
 }>;
 
 const NextRootLayout: FunctionComponent<RootLayoutReturnType> = ({ children }) => (
-  <html lang="lv" className={`${comme.variable} ${theme}`} translate="no">
+  <html
+    lang="lv"
+    className={`${comme.variable} ${theme}`}
+    translate="no"
+    data-scroll-behavior="smooth"
+  >
     <head>
       <ThemeScript />
     </head>

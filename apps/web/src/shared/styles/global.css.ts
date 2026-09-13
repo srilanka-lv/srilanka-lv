@@ -22,6 +22,21 @@ globalStyle(
   }),
 );
 
+// In-page anchors (the guide's table of contents and its heading links) glide
+// instead of jumping. Guarded by the motion preference, and the root layout
+// carries `data-scroll-behavior="smooth"` so Next 16 still scrolls route
+// changes instantly rather than animating the whole page on every navigation.
+globalStyle(
+  'html',
+  inBaseLayer({
+    '@media': {
+      '(prefers-reduced-motion: no-preference)': {
+        scrollBehavior: 'smooth',
+      },
+    },
+  }),
+);
+
 globalStyle(
   'body',
   inBaseLayer({
