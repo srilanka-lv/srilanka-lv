@@ -7,6 +7,7 @@ import { GuideAuthor } from '@/shared/components/guide-author';
 import { GuideCallout } from '@/shared/components/guide-callout';
 import { GuideFaq } from '@/shared/components/guide-faq';
 import { GuideFigure } from '@/shared/components/guide-figure';
+import { GuideLeadMagnet } from '@/shared/components/guide-lead-magnet';
 import { GuidePageLayout } from '@/shared/components/guide-page-layout';
 import { GuideSection } from '@/shared/components/guide-section';
 import { GuideTable } from '@/shared/components/guide-table';
@@ -888,6 +889,21 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           .
         </p>
       </GuideSection>
+
+      <GuideLeadMagnet
+        title="Šrilankas dienvidu ceļvedis PDF formātā"
+        note={
+          <>
+            Reizi mēnesī atsūtīšu arī jaunumus par lidojumu cenām un salu. Atteikties var ar vienu
+            klikšķi.{' '}
+            <GuideTodo>vietturis: piegāde vēl nav ieslēgta, sk. request-guide-pdf.ts</GuideTodo>
+          </>
+        }
+      >
+        Esmu sagatavojusi atsevišķu ceļvedi par Šrilankas dienvidiem:{' '}
+        <GuideTodo>kas tieši ir PDF: pludmales, kafejnīcas, naktsmītnes, karte</GuideTodo>. Atstāj
+        e-pastu, un es to atsūtīšu.
+      </GuideLeadMagnet>
 
       <GuideSection id={sections.transport} title="Transports Šrilankā">
         <p>
