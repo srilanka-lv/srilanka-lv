@@ -2,6 +2,8 @@ import { SiFacebook, SiInstagram } from '@icons-pack/react-simple-icons';
 import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import { Compass, Home, Newspaper, ShoppingBag, SquareUserRound, TicketsPlane } from 'lucide-react';
 
+import { INSTAGRAM_URL } from '@/shared/constants/instagram';
+
 export const navigationItems = [
   {
     // Home stays registered for breadcrumbs but is not listed in the header:
@@ -89,7 +91,7 @@ export const socialMediaItems = [
   {
     icon: <SiInstagram size={20} />,
     label: 'Instagram',
-    href: 'https://www.instagram.com/dzivetropos',
+    href: INSTAGRAM_URL,
   },
   // {
   //   icon: <SiTiktok size={20} />,

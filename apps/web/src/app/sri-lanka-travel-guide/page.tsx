@@ -13,6 +13,7 @@ import { GuideTable } from '@/shared/components/guide-table';
 import { GuideToc } from '@/shared/components/guide-toc';
 import { GuideTodo } from '@/shared/components/guide-todo';
 import { GuideVideo } from '@/shared/components/guide-video';
+import { INSTAGRAM_URL } from '@/shared/constants/instagram';
 import { DEFAULT_OG_IMAGE } from '@/shared/constants/og-image';
 
 import { GuideJsonLd } from './guide-json-ld';
@@ -1187,8 +1188,17 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           <Link href={href.girlsTrip}>meiteņu ceļojums uz Šrilanku</Link>.
         </p>
         <p>
-          Ikdienu no Madihas rādu Instagramā. Ja kaut kas par ceļojuma plānošanu palika neskaidrs,
-          raksti man. Atbildu visām.
+          Ikdienu no Madihas rādu{' '}
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-umami-event="outbound-link"
+            data-umami-event-url={INSTAGRAM_URL}
+          >
+            Instagramā
+          </a>
+          . Ja kaut kas par ceļojuma plānošanu palika neskaidrs, raksti man. Atbildu visām.
         </p>
       </GuideSection>
 
@@ -1199,8 +1209,17 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       >
         <p>
           Kopš 2022. gada dzīvo Šrilankas dienvidos, Madihā, pirms tam vairākas sezonas pavadīja
-          Šrilankā un Bali. Raksta vietnē srilanka.lv un vada meiteņu ceļojumus.{' '}
-          <GuideTodo>Instagram saite</GuideTodo>
+          Šrilankā un Bali. Raksta vietnē srilanka.lv un vada meiteņu ceļojumus. Ikdiena no salas:{' '}
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-umami-event="outbound-link"
+            data-umami-event-url={INSTAGRAM_URL}
+          >
+            @dzivetropos
+          </a>
+          .
         </p>
       </GuideAuthor>
     </GuidePageLayout>
