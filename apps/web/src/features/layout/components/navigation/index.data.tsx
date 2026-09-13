@@ -1,13 +1,23 @@
 import { SiFacebook, SiInstagram } from '@icons-pack/react-simple-icons';
 import { PAGES } from '@packages/sanity/constants/pages-slugs';
-import { Home, Newspaper, ShoppingBag, SquareUserRound, TicketsPlane } from 'lucide-react';
+import { Compass, Home, Newspaper, ShoppingBag, SquareUserRound, TicketsPlane } from 'lucide-react';
 
 export const navigationItems = [
   {
-    visibleInNavigation: true,
+    // Home stays registered for breadcrumbs but is not listed in the header:
+    // the logo already links there, and the slot goes to the pillar guide.
+    visibleInNavigation: false,
     label: 'Sākums',
     icon: <Home size={20} />,
     href: '/',
+  },
+  {
+    // The pillar guide. Its label doubles as the page's H1 and as the sitewide
+    // anchor text, so it must stay the exact target phrase.
+    visibleInNavigation: true,
+    label: 'Ceļojums uz Šrilanku',
+    icon: <Compass size={20} />,
+    href: `/${PAGES.LV.GUIDE_TRIP}`,
   },
   {
     visibleInNavigation: true,

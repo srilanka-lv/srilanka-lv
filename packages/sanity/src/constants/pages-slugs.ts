@@ -23,6 +23,7 @@ export const PAGES = {
     INFO_HOW_LONG_TO_GO: 'holiday-in-sri-lanka-how-long-to-go',
     INFO_VISA: 'holiday-in-sri-lanka-how-to-get-a-visa',
     INFO_TRANSPORT: 'holiday-in-sri-lanka-transport',
+    GUIDE_TRIP: 'sri-lanka-travel-guide',
   },
   LV: {
     HOME: 'sakums',
@@ -38,6 +39,7 @@ export const PAGES = {
     INFO_HOW_LONG_TO_GO: 'cik-ilgu-laiku-ir-jaieplano-celojumam-uz-srilanku',
     INFO_VISA: 'ka-iegut-srilankas-turistu-vizu-latvijas-pilsoniem',
     INFO_TRANSPORT: 'dazadas-transportu-veidu-iespejas-srilanka',
+    GUIDE_TRIP: 'celojums-uz-srilanku',
   },
 } as const;
 

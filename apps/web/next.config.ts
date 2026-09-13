@@ -87,6 +87,10 @@ const nextConfig: NextConfig = {
         source: `/${PAGES.LV.INFO_TRANSPORT}`,
         destination: `/${PAGES.EN.INFO_TRANSPORT}`,
       },
+      {
+        source: `/${PAGES.LV.GUIDE_TRIP}`,
+        destination: `/${PAGES.EN.GUIDE_TRIP}`,
+      },
     ];
   },
   redirects: async () => {
@@ -192,6 +196,11 @@ const nextConfig: NextConfig = {
       {
         source: `/${PAGES.EN.INFO_TRANSPORT}`,
         destination: `/${PAGES.LV.INFO_TRANSPORT}`,
+        permanent: true,
+      },
+      {
+        source: `/${PAGES.EN.GUIDE_TRIP}`,
+        destination: `/${PAGES.LV.GUIDE_TRIP}`,
         permanent: true,
       },
     ];

@@ -24,18 +24,24 @@ import { footerColumnsStyle, footerSeamlessStyle, footerStyle } from './styles.c
  * below a hairline: her story with signature, guide links, newsletter plus socials.
  * FORM: crafted footer extension of the incumbent world; local extension, no seed.
  */
-// The products index already lists every product in full, so the footer there
-// drops the "Mani produkti" cards and the full-bleed hairline band. Both EN
-// (SSR) and LV (client) pathnames are covered for the rewrite duality.
-const productsIndexPaths = [`/${PAGES.EN.PRODUCTS}`, `/${PAGES.LV.PRODUCTS}`];
+// The products index already lists every product in full, and the pillar guide
+// carries its own call to action, so the footer on those routes drops the
+// "Mani produkti" cards and the full-bleed hairline band. Both EN (SSR) and LV
+// (client) pathnames are covered for the rewrite duality.
+const pathsWithoutProducts = [
+  `/${PAGES.EN.PRODUCTS}`,
+  `/${PAGES.LV.PRODUCTS}`,
+  `/${PAGES.EN.GUIDE_TRIP}`,
+  `/${PAGES.LV.GUIDE_TRIP}`,
+];
 
 export const Footer: FunctionComponent = () => {
   const pathname = usePathname();
-  const isProductsIndex = productsIndexPaths.includes(pathname);
+  const withoutProducts = pathsWithoutProducts.includes(pathname);
 
   return (
-    <footer className={clsx(footerStyle, isProductsIndex && footerSeamlessStyle)}>
-      {!isProductsIndex && <FooterProducts />}
+    <footer className={clsx(footerStyle, withoutProducts && footerSeamlessStyle)}>
+      {!withoutProducts && <FooterProducts />}
       <div className={footerColumnsStyle}>
         <FooterAboutMe />
         <FooterLinks />

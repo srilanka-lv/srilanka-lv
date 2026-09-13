@@ -19,6 +19,8 @@ export const revalidate = 3600;
 
 const BLOG_POSTS_LIMIT = 20;
 
+// The pillar guide (PAGES.LV.GUIDE_TRIP) is authored in code, not Sanity, so it
+// is not served by this Sanity-backed route. It needs its own markdown export.
 const PAGE_SLUGS = new Set<string>([
   PAGES.LV.INFO_WHAT_TO_DO,
   PAGES.LV.INFO_WHERE_TO_STAY,
