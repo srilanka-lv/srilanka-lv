@@ -17,10 +17,26 @@ type GuideImage = {
   height: number;
 };
 
+type GuideSubject = {
+  name: string;
+  wikidata: string;
+  wikipediaLv: string;
+  wikipediaEn: string;
+};
+
+type GuideMention = {
+  name: string;
+  wikidata: string;
+};
+
 type GuideJsonLdProps = {
   path: string;
   title: string;
   description: string;
+  /** The one thing the page is about, linked to its Wikidata item. */
+  subject: GuideSubject;
+  /** Places and topics the text covers, each linked to its Wikidata item. */
+  mentions: GuideMention[];
   /** ISO dates. `dateModified` must match the visible "Atjaunots" date. */
   datePublished: string;
   dateModified: string;
@@ -39,6 +55,8 @@ export const GuideJsonLd: FunctionComponent<GuideJsonLdProps> = ({
   path,
   title,
   description,
+  subject,
+  mentions,
   datePublished,
   dateModified,
   images,
@@ -59,9 +77,28 @@ export const GuideJsonLd: FunctionComponent<GuideJsonLdProps> = ({
     creditText: 'Šrilanka.lv',
   }));
 
+  // Naming the real-world things behind the Latvian text. `about` is the one
+  // subject; `mentions` are the places the guide actually covers. Both point
+  // at Wikidata so the entity is unambiguous regardless of the language or the
+  // spelling used on the page.
+  const aboutNode = {
+    '@type': 'TouristDestination',
+    '@id': `${pageUrl}#destination`,
+    name: subject.name,
+    sameAs: [subject.wikidata, subject.wikipediaLv, subject.wikipediaEn],
+  };
+
+  const mentionNodes = mentions.map((mention) => ({
+    '@type': 'Place',
+    name: mention.name,
+    sameAs: mention.wikidata,
+  }));
+
   const article = {
     '@type': 'Article',
     '@id': `${pageUrl}#article`,
+    about: { '@id': aboutNode['@id'] },
+    mentions: mentionNodes,
     mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
     url: pageUrl,
     inLanguage: 'lv',
@@ -99,6 +136,7 @@ export const GuideJsonLd: FunctionComponent<GuideJsonLdProps> = ({
     '@context': 'https://schema.org',
     '@graph': [
       article,
+      aboutNode,
       faqPage,
       ...videoObjects,
       ...imageObjects,

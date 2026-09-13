@@ -28,7 +28,9 @@ import {
   UPDATED_AT,
   faqs,
   images,
+  mentionedPlaces,
   sections,
+  subject,
   tocItems,
   videoList,
   videos,
@@ -97,6 +99,8 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       images={images}
       faqs={faqs}
       videos={videoList}
+      subject={subject}
+      mentions={mentionedPlaces}
     />
 
     <GuidePageLayout href={PATH} updatedAt={UPDATED_AT} lede={LEDE} tocItems={tocItems}>

@@ -199,3 +199,37 @@ export const images = [
   { src: '/images/guide/infographic-season.svg', width: 1920, height: 1080 },
   { src: '/images/guide/infographic-cost.svg', width: 1920, height: 1080 },
 ];
+
+/**
+ * Entities the guide is about, for the Article's `about` and `mentions`.
+ *
+ * Every id was resolved against the Wikidata API rather than guessed, because
+ * several are ambiguous: plain "Galle" and "Colombo" both resolve to family
+ * names first. Linking the page's places to their Wikidata items tells Google
+ * which real-world things the text is about, which is the one thing a Latvian
+ * guide cannot signal through language alone.
+ */
+export const subject = {
+  name: 'Šrilanka',
+  wikidata: 'https://www.wikidata.org/wiki/Q854',
+  wikipediaLv: 'https://lv.wikipedia.org/wiki/Šrilanka',
+  wikipediaEn: 'https://en.wikipedia.org/wiki/Sri_Lanka',
+};
+
+export const mentionedPlaces: { name: string; wikidata: string }[] = [
+  { name: 'Sigiriya', wikidata: 'https://www.wikidata.org/wiki/Q272153' },
+  { name: 'Dambullas alu templis', wikidata: 'https://www.wikidata.org/wiki/Q45690' },
+  { name: 'Kandy', wikidata: 'https://www.wikidata.org/wiki/Q203197' },
+  { name: 'Galle', wikidata: 'https://www.wikidata.org/wiki/Q319366' },
+  { name: 'Kolombo', wikidata: 'https://www.wikidata.org/wiki/Q35381' },
+  { name: 'Anuradhapura', wikidata: 'https://www.wikidata.org/wiki/Q5724' },
+  { name: 'Polonnaruva', wikidata: 'https://www.wikidata.org/wiki/Q394443' },
+  { name: 'Nuwara Eliya', wikidata: 'https://www.wikidata.org/wiki/Q1340579' },
+  { name: "Adam's Peak", wikidata: 'https://www.wikidata.org/wiki/Q60789' },
+  { name: 'Yala nacionālais parks', wikidata: 'https://www.wikidata.org/wiki/Q1530863' },
+  { name: 'Udawalawe nacionālais parks', wikidata: 'https://www.wikidata.org/wiki/Q131875' },
+  { name: 'Mirissa', wikidata: 'https://www.wikidata.org/wiki/Q1345652' },
+  { name: 'Weligama', wikidata: 'https://www.wikidata.org/wiki/Q3534843' },
+  { name: 'Unawatuna', wikidata: 'https://www.wikidata.org/wiki/Q651301' },
+  { name: 'Šrilankas virtuve', wikidata: 'https://www.wikidata.org/wiki/Q2234037' },
+];
