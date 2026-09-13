@@ -8,8 +8,8 @@ const { border, color, font, spacing } = vars;
 export const calloutStyle = style(
   inComponentsLayer({
     marginBlock: spacing[6],
-    paddingBlock: spacing[4],
-    paddingInline: spacing[5],
+    paddingBlock: spacing[5],
+    paddingInline: spacing[6],
     border: `1px solid ${color.border}`,
     borderRadius: border.radius.medium,
     backgroundColor: color.secondary,

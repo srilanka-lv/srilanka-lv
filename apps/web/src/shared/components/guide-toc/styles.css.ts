@@ -1,7 +1,8 @@
-import { globalStyle, style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
 import { inComponentsLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
+import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
 const { border, color, font, spacing } = vars;
 
@@ -23,43 +24,61 @@ export const summaryStyle = style(
   }),
 );
 
+/**
+ * The numbers are rendered as spans rather than list markers. With markers the
+ * two-digit entries overflowed the padding box and were clipped at the left
+ * edge on a phone, which is where this list matters most.
+ */
 export const listStyle = style(
   inComponentsLayer({
+    listStyle: 'none',
     margin: 0,
     paddingBlock: spacing[2],
     paddingInline: spacing[5],
-    paddingLeft: spacing[10],
     columnGap: spacing[8],
     fontSize: font.size.base,
     lineHeight: font.lineHeight.relaxed,
 
     '@media': {
-      'screen and (min-width: 768px)': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
         columns: 2,
       },
     },
   }),
 );
 
-globalStyle(
-  `${listStyle} li`,
+export const itemStyle = style(
   inComponentsLayer({
     breakInside: 'avoid',
     marginBlock: spacing[1],
   }),
 );
 
-globalStyle(
-  `${listStyle} a`,
+export const linkStyle = style(
   inComponentsLayer({
+    display: 'flex',
+    gap: spacing[2],
     color: color.foreground,
     textDecoration: 'none',
+
+    '::after': {
+      content: 'none',
+    },
+    ':hover': {
+      color: color.accent,
+    },
+    ':focus-visible': {
+      color: color.accent,
+    },
   }),
 );
 
-globalStyle(
-  `${listStyle} a:hover, ${listStyle} a:focus-visible`,
+export const counterStyle = style(
   inComponentsLayer({
-    color: color.accent,
+    flexShrink: 0,
+    minWidth: '1.5em',
+    textAlign: 'right',
+    color: color.secondaryForeground,
+    fontVariantNumeric: 'tabular-nums',
   }),
 );

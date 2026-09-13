@@ -9,8 +9,8 @@ const { border, color, font, spacing } = vars;
 export const blockStyle = style(
   inComponentsLayer({
     marginBlock: spacing[10],
-    paddingBlock: spacing[6],
-    paddingInline: spacing[6],
+    paddingBlock: spacing[8],
+    paddingInline: spacing[8],
     border: `1px solid ${color.border}`,
     borderRadius: border.radius.medium,
     backgroundColor: color.secondary,

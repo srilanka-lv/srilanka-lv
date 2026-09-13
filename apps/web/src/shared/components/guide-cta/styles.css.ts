@@ -9,8 +9,8 @@ const { border, color, font, spacing } = vars;
 export const ctaStyle = style(
   inComponentsLayer({
     marginBlock: spacing[10],
-    paddingBlock: spacing[6],
-    paddingInline: spacing[6],
+    paddingBlock: spacing[8],
+    paddingInline: spacing[8],
     border: `1px solid ${color.border}`,
     borderRadius: border.radius.medium,
     // The surface ground, so it reads as a separate object from the callouts
