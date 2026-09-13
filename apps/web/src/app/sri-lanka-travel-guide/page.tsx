@@ -5,6 +5,7 @@ import type { FunctionComponent } from 'react';
 
 import { GuideAuthor } from '@/shared/components/guide-author';
 import { GuideCallout } from '@/shared/components/guide-callout';
+import { GuideCta } from '@/shared/components/guide-cta';
 import { GuideFaq } from '@/shared/components/guide-faq';
 import { GuideFigure } from '@/shared/components/guide-figure';
 import { GuideLeadMagnet } from '@/shared/components/guide-lead-magnet';
@@ -16,6 +17,7 @@ import { GuideTodo } from '@/shared/components/guide-todo';
 import { GuideVideo } from '@/shared/components/guide-video';
 import { INSTAGRAM_URL } from '@/shared/constants/instagram';
 import { DEFAULT_OG_IMAGE } from '@/shared/constants/og-image';
+import { WHATSAPP_URL } from '@/shared/constants/whatsapp';
 
 import { GuideJsonLd } from './guide-json-ld';
 import {
@@ -779,6 +781,28 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           <Link href={href.post('celojums-uz-srilanku-ar-berniem')}>ceļojums ar bērniem</Link>.
         </p>
       </GuideSection>
+
+      <GuideCta
+        title="Negribi plānot visu no nulles?"
+        actions={
+          <>
+            <Link href={href.girlsTrip}>Meiteņu ceļojums 2027. gada janvārī</Link>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-umami-event="contact"
+              data-umami-event-channel="whatsapp"
+            >
+              Personalizēts plāns: uzraksti man
+            </a>
+          </>
+        }
+      >
+        Šo maršrutu esmu izbraukājusi pati un zinu, kas tajā strādā un kas ne. Ja gribi to pašu,
+        tikai pielāgotu taviem datumiem un budžetam, es sagatavoju personalizētu plānu. Ja labāk
+        ceļot kompānijā, janvārī vedu uz Šrilanku nelielu meiteņu grupu.
+      </GuideCta>
 
       <GuideSection id={sections.stay} title="Dienvidu piekraste: kur palikt">
         <p>
