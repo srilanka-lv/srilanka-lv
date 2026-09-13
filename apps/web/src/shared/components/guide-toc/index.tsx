@@ -1,5 +1,6 @@
 import type { FunctionComponent } from 'react';
 
+import { inlineTocHiddenStyle } from '../guide-toc-sidebar/styles.css';
 import { listStyle, summaryStyle, tocStyle } from './styles.css';
 
 export type GuideTocItem = {
@@ -17,7 +18,7 @@ type GuideTocProps = {
  * with one tap.
  */
 export const GuideToc: FunctionComponent<GuideTocProps> = ({ items }) => (
-  <nav aria-label="Saturs">
+  <nav aria-label="Saturs" className={inlineTocHiddenStyle}>
     <details className={tocStyle} open>
       <summary className={summaryStyle}>Saturs</summary>
       <ol className={listStyle}>

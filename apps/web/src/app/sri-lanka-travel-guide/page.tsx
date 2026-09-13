@@ -97,7 +97,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       videos={videoList}
     />
 
-    <GuidePageLayout href={PATH} updatedAt={UPDATED_AT} lede={LEDE}>
+    <GuidePageLayout href={PATH} updatedAt={UPDATED_AT} lede={LEDE} tocItems={tocItems}>
       <GuideFigure
         src="/images/guide/hero.svg"
         alt="Madihas pludmale Šrilankas dienvidos saullēktā"
