@@ -136,7 +136,9 @@ Order matters. Everything up to step 9 is done on a branch before Saturday.
 10. Saturday morning: release through the normal flow. After deploy: run the IndexNow submit script for Bing, open Search Console URL Inspection on the new URL and click Request indexing (the API cannot do this), inspect the old URL and confirm it reports the redirect.
 11. Only after the redirect is live in production: unpublish the old blog post in Sanity. Doing it earlier creates a 404 window.
 
-## 6. Internal linking (Grieta in Studio, about two hours)
+## 6. Internal linking (done 13 Sep by script; swap hrefs after release)
+
+**Status:** all 25 spoke sentences are live in the `development` dataset (which the live site reads), linking to the existing post `/blogi/celojums-uz-srilanku` so nothing points at a URL that does not exist in production yet. The redirect from that slug to the new page is in `next.config.ts` on the branch and ships with the release. **Post-release task:** one transaction rewrites the 25 hrefs to `/celojums-uz-srilanku` so Google stops passing through the redirect. Sentences and status: `docs/seo/spoke-links-lv.md`.
 
 This is the second-biggest lever after the content itself. The page has one inbound internal link today.
 

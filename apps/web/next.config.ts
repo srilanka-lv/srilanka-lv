@@ -158,6 +158,15 @@ const nextConfig: NextConfig = {
         destination: `/${PAGES.LV.BLOGS}`,
         permanent: true,
       },
+      // The blog post "Ceļojums uz Šrilanku" was promoted to the top-level
+      // pillar guide. Both the LV and the EN post URLs go straight to it, and
+      // they sit before the generic blog redirect so the EN one does not hop
+      // through /blogi first. Permanent: Google should transfer the history.
+      ...[`/${PAGES.LV.BLOGS}`, `/${PAGES.EN.BLOGS}`].map((blogPath) => ({
+        source: `${blogPath}/${PAGES.LV.GUIDE_TRIP}`,
+        destination: `/${PAGES.LV.GUIDE_TRIP}`,
+        permanent: true,
+      })),
       {
         source: `/${PAGES.EN.BLOGS}/:slug`,
         destination: `/${PAGES.LV.BLOGS}/:slug`,

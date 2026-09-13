@@ -2,7 +2,7 @@
 
 Priekšlikums Grietai, 2026. gada 13. septembris. Katrai lapai viens noslēdzošs teikums ar saiti uz `/celojums-uz-srilanku`. Teikumu pievieno kā pēdējo rindkopu pirms BUJ. Saites teksts ir kvadrātiekavās. Precīzā frāze "ceļojums uz Šrilanku" ir 11 no 25 saitēm, pārējās ir dabiskie varianti, lai Google to neuztver kā shēmu.
 
-Grieta: labo, ko gribi, un pasaki "ok". Pēc tam es tos ierakstu Sanity `development` datu kopā (to lasa arī dzīvā lapa). Pirms tam ir uzņemta pilna datu kopas kopija.
+**Statuss, 13. septembris, vakars: visi 25 teikumi ir ierakstīti** Sanity `development` datu kopā (transakcija `7P2D00ai8KUgrZgiFaC8Ap`), pēc Deiva norādījuma. Pagaidām saites ved uz esošo rakstu `/blogi/celojums-uz-srilanku`, jo jaunā lapa vēl nav publicēta. Pēc publicēšanas 19. septembrī viena transakcija nomaina visus 25 `href` uz `/celojums-uz-srilanku`. Grieta: ja kādu teikumu gribi mainīt, pasaki, to var izdarīt jebkurā brīdī. Pilna datu kopas kopija pirms ieraksta: `docs/seo/backups/development-2026-09-13-1606.ndjson`.
 
 | # | Lapa | Teikums |
 |---|---|---|
