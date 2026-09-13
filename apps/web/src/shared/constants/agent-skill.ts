@@ -28,6 +28,7 @@ export const buildAgentSkillMarkdown = (siteUrl: string): string => {
     '',
     '## Core guides',
     '',
+    `- ${siteUrl}/${PAGES.LV.GUIDE_TRIP} (the complete trip guide; start here)`,
     `- ${siteUrl}/${PAGES.LV.INFO_WHAT_TO_DO}`,
     `- ${siteUrl}/${PAGES.LV.INFO_WHERE_TO_STAY}`,
     `- ${siteUrl}/${PAGES.LV.INFO_DAILY_BUDGET}`,

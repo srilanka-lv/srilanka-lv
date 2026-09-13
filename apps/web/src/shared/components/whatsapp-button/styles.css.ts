@@ -11,12 +11,7 @@ export const whatsAppButtonStyle = style(
     width: '100%',
     maxWidth: spacing[56],
     height: 'auto',
-
-    selectors: {
-      '&::after': {
-        display: 'none',
-      },
-    },
+    backgroundImage: 'none',
   }),
 );
 
