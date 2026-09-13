@@ -46,6 +46,12 @@ schema.json
 
 # claude code / impeccable local state
 .claude/settings.local.json
+# google search console MCP: service-account key + downloaded binary, never commit
+.claude/*.json
+!.claude/settings.json
+.claude/gsc-mcp-*
+# semrush exports (third-party data, keep local)
+docs/seo/semrush/
 .claude/scheduled_tasks.lock
 **/.impeccable/hook.cache.json
 **/.impeccable/live/sessions/
