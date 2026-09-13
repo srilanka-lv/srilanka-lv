@@ -126,14 +126,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           ['Oficiālais nosaukums', 'Šrilankas Demokrātiskā Sociālistiskā Republika'],
           ['Galvaspilsēta', 'Šrī Džajavardenepura-Kote, lielākā pilsēta Kolombo'],
           ['Platība', '65 610 km², gandrīz tāda pati kā Latvijai (64 589 km²)'],
-          ['Iedzīvotāji', <GuideTodo key="pop">iedzīvotāju skaits un gads</GuideTodo>],
+          ['Iedzīvotāji', '23 miljoniem (2026. gada septembrī)'],
           ['Valodas', 'singāļu un tamilu; angļu valodu tūrisma zonās saprot'],
-          [
-            'Valūta',
-            <>
-              Šrilankas rūpija (LKR), 1 EUR ≈ <GuideTodo>kurss septembrī</GuideTodo> LKR
-            </>,
-          ],
+          ['Valūta', '1 EUR = ~381.34 LKR (2026. gada septembrī)'],
           ['Laika starpība', '+3,5 stundas Latvijas ziemā, +2,5 stundas vasarā'],
           ['Tālruņa kods', '+94'],
           ['Lidosta', 'Bandaranaike (CMB), ap 35 km no Kolombo'],
@@ -166,7 +161,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           jūt visur: tempļos, svētku dienās un tajā, cik mierīgs te ir ikdienas ritms.
         </p>
         <p>
-          Salai ir sešas UNESCO kultūras mantojuma vietas: Sigirija, Kandi, Anuradhapura,
+          Salai ir sešas UNESCO kultūras mantojuma vietas: Sigiriya, Kandy, Anuradhapura,
           Polonnaruva, Dambullas alu tempļi un Galles forts. Trīs no tām ir maršrutā, ko iesaku
           zemāk.
         </p>
@@ -187,9 +182,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </p>
         <p>
           Šrilankā ir divas musonu sezonas, un tās nenāk pār visu salu reizē. Dienvidrietumu
-          piekrastē, kur ir Mirisa, Madiha, Galle un Kolombo, lietus līst no maija līdz augustam,
+          piekrastē, kur ir Mirissa, Madiha, Galle un Kolombo, lietus līst no maija līdz augustam,
           bet sausā sezona ilgst no novembra līdz aprīlim. Ziemeļos un austrumos, kur ir Arugam Bay
-          un Trinkomalī, viss ir otrādi: sauss no maija līdz septembrim, lietains no oktobra līdz
+          un Trincomalee, viss ir otrādi: sauss no maija līdz septembrim, lietains no oktobra līdz
           janvārim.
         </p>
         <p>
@@ -291,7 +286,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           Ielidosi Bandaranaike lidostā (CMB) pie Kolombo. Līdz dienvidu piekrastei no turienes ir
           2,5 līdz 3,5 stundas pa šoseju. Vislētāk un vienkāršāk ir ar PickMe lietotni, vietējo
           Boltu, kas cenu parāda jau pirms brauciena. Brauciens no lidostas līdz Madihai maksā
-          aptuveni <GuideTodo>PickMe cena no lidostas līdz Madihai</GuideTodo> eiro.
+          aptuveni 75 līdz 100 eiro.
         </p>
 
         <GuideCallout tone="tip">
@@ -318,10 +313,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           <li>
             ETA ir derīga 30 dienas, un to var pagarināt līdz pat sešiem vai deviņiem mēnešiem.
           </li>
-          <li>
-            Maksa ir aptuveni <GuideTodo>precīzā ETA maksa</GuideTodo> USD par cilvēku, bērniem līdz
-            12 gadiem parasti bez maksas.
-          </li>
+          <li>Maksa ir aptuveni 60 EUR par cilvēku, bērniem līdz 12 gadiem parasti bez maksas.</li>
           <li>Piesakies vismaz septiņas dienas pirms lidojuma.</li>
           <li>
             Piesakies tikai oficiālajā lapā{' '}
@@ -385,28 +377,28 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         <GuideTable
           head={['Kas', 'Cena', 'Piezīme']}
           rows={[
+            ['Rice and curry', '3 EUR', 'Vietējā ēstuvē, ne tūristu kafejnīcā'],
             [
-              'Rice and curry',
-              <GuideTodo key="rc">cena</GuideTodo>,
-              'Vietējā ēstuvē, ne tūristu kafejnīcā',
+              'Kafija tūristu kafejnīcā',
+              '1,50 līdz 5 EUR',
+              'Maksās vairāk, ja ņemsi ar auzu pienu',
             ],
-            ['Kafija tūristu kafejnīcā', '1,50 līdz 5 EUR', ''],
             ['Maltīte kafejnīcā', '3 līdz 15 EUR', 'Rietumu ēdiens 3 līdz 4 reizes dārgāks'],
-            ['Alus Lion', <GuideTodo key="beer">cena</GuideTodo>, ''],
-            ['Ūdens 1,5 l', <GuideTodo key="water">cena</GuideTodo>, ''],
-            ['Kokosrieksts', <GuideTodo key="coco">cena</GuideTodo>, 'Prasi ar ledu'],
+            ['Alus Lion', '2 EUR', 'Maksās vairāk, ja pērc restorānos pie okeāna'],
+            ['Ūdens 1,5 l', '1 EUR', 'Nedzer ūdeni no krāna'],
+            ['Kokosrieksts', '1 EUR', 'Prasi ar ledu'],
             ['Tuk-tuks īsam braucienam', '1 līdz 5 EUR', 'Vienojies par cenu pirms brauciena'],
             ['PickMe pilsētā', '3 līdz 15 EUR', ''],
-            ['Autobuss', '0,50 līdz 2 EUR', ''],
+            ['Autobuss', '0,50 līdz 2 EUR', 'Vislētākais veids, kā ceļot Šrilankā'],
             ['Vilciens', '1 līdz 10 EUR', '3. klase Ella–Nanu Oja ap 0,60 EUR'],
             ['Skūtera noma dienā', '3 līdz 7 EUR', 'Pilna bāka ap 3 EUR'],
             ['Auto ar šoferi dienā', '60 līdz 100 EUR', ''],
             ['Nakts viesu mājā', '20 līdz 60 EUR', 'Hosteļi un homestay 8 līdz 15 EUR'],
-            ['Nakts villā ar baseinu', <GuideTodo key="villa">cena</GuideTodo>, ''],
+            ['Nakts villā ar baseinu', '200 līdz 450 EUR', ''],
             ['SIM karte ar 10 līdz 30 GB', '5 līdz 10 EUR', 'Lidostā'],
-            ['Joga vai pilates nodarbība', 'ap 8 EUR', ''],
-            ['Vaļu vērošana Mirisā', <GuideTodo key="whale">cena</GuideTodo>, ''],
-            ['Safari Udavalavē', <GuideTodo key="safari">cena</GuideTodo>, ''],
+            ['Joga vai pilates nodarbība', 'ap 8 EUR', 'Ja ņem 5x vai 10x abonementu, būs lētāk'],
+            ['Vaļu vērošana Mirissā', '75 EUR', ''],
+            ['Safari Udawalawē', '50 EUR', ''],
           ]}
           caption="Cenas uz vietas, 2026. gada septembris, Šrilankas dienvidos."
         />
@@ -469,7 +461,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             ],
             [
               'Kultūras trīsstūris',
-              'Sigirija, Dambulla, Anuradhapura, Polonnaruva, tempļi',
+              'Sigiriya, Dambulla, Anuradhapura, Polonnaruva, tempļi',
               'Visu gadu',
               '2–3',
             ],
@@ -501,7 +493,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           head={['Vieta', 'Kas tas ir', 'Cik ilgi', 'Mans viedoklis']}
           rows={[
             [
-              'Sigirija',
+              'Sigiriya',
               'Klints, kas paceļas 180 metrus virs apkārtnes un 349 metrus virs jūras līmeņa, ar 5. gadsimta cietoksni, freskām un dārziem. UNESCO vieta.',
               'Pusdiena, kāpiens ap 1,5 stundu',
               'Jā, bet kāp saullēktā. Dienas vidū ir karsts un pilns ar cilvēkiem.',
@@ -510,13 +502,13 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
               'Dambullas alu tempļi',
               'Lielākais alu tempļu komplekss salā, vairāk nekā 150 Budas statujas.',
               'Ap 1,5 stundu',
-              'Jā, un to ir viegli apvienot ar Sigiriju vienā dienā.',
+              'Jā, un to ir viegli apvienot ar Sigiriyu vienā dienā.',
             ],
             [
-              'Kandi un Zoba relikvijas templis',
+              'Kandy un Zoba relikvijas templis',
               'Budisma svētākā vieta Šrilankā, pilsēta ap mākslīgu ezeru.',
               'Pusdiena',
-              'Jā, bet vienai naktij pietiek. Kalnu miers sākas tikai aiz Kandi.',
+              'Jā, bet vienai naktij pietiek. Kalnu miers sākas tikai aiz Kandy.',
             ],
             [
               'Ella un Deviņu arku tilts',
@@ -531,25 +523,25 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
               'Jā. Viegli sasniedzams no jebkuras dienvidu pludmales.',
             ],
             [
-              'Udavalave vai Jala',
-              'Nacionālie parki. Udavalavē ziloņi, Jalā arī leopardi.',
+              'Udawalawe vai Yala',
+              'Nacionālie parki. Udawalawē ziloņi, Yalā arī leopardi.',
               'Pusdiena, no rīta',
-              'Jā. Man Udavalave patīk labāk: ziloņi ir garantēti un džipu ir mazāk.',
+              'Jā. Man Udawalawe patīk labāk: ziloņi ir garantēti un džipu ir mazāk.',
             ],
             [
-              'Mirisa un Coconut Tree Hill',
+              'Mirissa un Coconut Tree Hill',
               'Fotografētākā vieta dienvidos un viena no skaistākajām pludmalēm.',
               '1 stunda skatam, vairākas dienas pludmalei',
               'Jā, bet ej saullēktā vai saulrietā, kad tur nav rindas.',
             ],
             [
               'Tējas plantācijas',
-              'Nuvaraelija, Hapitale, Ellas apkārtne. Ceilonas tēja un kalnu ainavas.',
+              'Nuwara Eliya, Haputale, Ellas apkārtne. Ceilonas tēja un kalnu ainavas.',
               'Pusdiena',
               'Jā, un pa taciņām tur var pastaigāt bez maksas.',
             ],
             [
-              'Adamas smaile',
+              'Adam’s Peak',
               'Svētais kalns, 2 243 metri. Svētceļnieki kāpj naktī, lai augšā sagaidītu saullēktu.',
               'Visa nakts, kāpiens 3 līdz 4 stundas',
               'Tikai ar labu fizisko formu. Vieglāka alternatīva ir Little Adam’s Peak Ellā.',
@@ -558,7 +550,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
               'Anuradhapura un Polonnaruva',
               'Senās galvaspilsētas ar tempļu drupām, statujām un ūdenskrātuvēm.',
               'Viena diena katrai',
-              'Tikai tad, ja patīk vēsture. Ar Sigiriju un Dambullu pietiek, ja laika ir maz.',
+              'Tikai tad, ja patīk vēsture. Ar Sigiriyu un Dambullu pietiek, ja laika ir maz.',
             ],
             [
               'Ūdenskritumi',
@@ -600,87 +592,94 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         <GuideTable
           head={['Aktivitāte', 'Kur', 'Kad', 'Cena']}
           rows={[
-            [
-              'Sērfošana iesācējiem',
-              'Veligama',
-              'Novembris–aprīlis',
-              <GuideTodo key="surf-begin">nodarbības cena</GuideTodo>,
-            ],
+            ['Sērfošana iesācējiem', 'Weligama', 'Novembris–aprīlis', '15 EUR'],
             [
               'Sērfošana ar pieredzi',
               'Midigama, Ahangama',
               'Novembris–aprīlis',
-              <GuideTodo key="surf-adv">dēļa noma dienā</GuideTodo>,
+              '1 EUR par stundu',
             ],
-            [
-              'Vaļu un delfīnu vērošana',
-              'Mirisa',
-              'Novembris–aprīlis',
-              <GuideTodo key="whale2">cena</GuideTodo>,
-            ],
+            ['Vaļu un delfīnu vērošana', 'Mirissa', 'Novembris–aprīlis', '45 EUR'],
             [
               'Snorkelēšana ar bruņurupučiem',
               'Madiha, Polhena',
               'Visu gadu',
               'Bez maksas, maskas noma ap 3 EUR',
             ],
-            [
-              'Niršana',
-              'Unavatuna, Hikaduva',
-              'Novembris–aprīlis',
-              <GuideTodo key="dive">cena</GuideTodo>,
-            ],
+            ['Niršana', 'Unawatuna, Hikkaduwa', 'Novembris–aprīlis', '45 EUR'],
             [
               'Safari ar džipu',
-              'Udavalave, Jala, Minnerija',
+              'Udawalawe, Yala, Minneriya',
               'Visu gadu, sausajā sezonā labāk',
-              <GuideTodo key="safari2">cena</GuideTodo>,
+              '100 EUR',
             ],
-            [
-              'Krokodilu tūre pa upi',
-              'Nilvalas upe pie Mataras',
-              'Visu gadu',
-              <GuideTodo key="croc">cena</GuideTodo>,
-            ],
-            [
-              'Sikspārņu vakars uz ezera',
-              'Mirisa',
-              'Visu gadu',
-              <GuideTodo key="bats">cena</GuideTodo>,
-            ],
-            ['Joga vai pilates', 'Madiha, Mirisa, Veligama', 'Visu gadu', 'Ap 8 EUR nodarbība'],
+            ['Krokodilu tūre pa upi', 'Nilwalas upe pie Mataras', 'Visu gadu', '25 EUR'],
+            ['Sikspārņu vakars uz ezera', 'Mirissa', 'Visu gadu', '15 EUR'],
+            ['Joga vai pilates', 'Madiha, Mirissa, Weligama', 'Visu gadu', 'Ap 8 EUR nodarbība'],
             [
               'Ajūrvēdas masāža',
-              'Veligama, Mirisa',
+              'Weligama, Mirissa',
               'Visu gadu',
-              <GuideTodo key="massage">cena</GuideTodo>,
+              <>
+                10 EUR vai 100 EUR ja gribi skaistā vietā, kā{' '}
+                <a href="https://goodspa.lk/" rel="noopener noreferrer" target="_blank">
+                  Good Spa
+                </a>
+              </>,
             ],
             [
               'Ēdiena gatavošanas meistarklase',
               'Gandrīz katrā tūristu pilsētā',
               'Visu gadu',
-              <GuideTodo key="cooking">cena</GuideTodo>,
+              <>
+                30 EUR kā{' '}
+                <a
+                  href="https://www.airbnb.com/experiences/6553301"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Prabodi
+                </a>
+              </>,
             ],
             ['Pārgājiens Little Adam’s Peak', 'Ella', 'Visu gadu', 'Bez maksas'],
             [
               'Vilciena brauciens kalnos',
-              'Kandi–Ella vai Ella–Nanu Oja',
+              'Kandy–Ella vai Ella–Nanu Oja',
               'Visu gadu',
               '0,60 līdz 15 EUR atkarībā no klases',
             ],
-            [
-              'Bruņurupuču vērošana dabā',
-              'Rekava, Hiriketija',
-              'Sezonā, vakaros',
-              <GuideTodo key="turtle">cena</GuideTodo>,
-            ],
+            ['Bruņurupuču vērošana dabā', 'Rekawa, Hiriketiya', 'Sezonā, vakaros', '5 EUR'],
             [
               'Gredzenu darināšana juvelieru darbnīcā',
-              'Veligama',
+              'Weligama',
               'Visu gadu',
-              <GuideTodo key="rings">cena</GuideTodo>,
+              <>
+                40 EUR kā{' '}
+                <a
+                  href="https://www.sapienssrilanka.com/jewelryworkshop"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Sapiens
+                </a>
+              </>,
             ],
-            ['SUP vai kajaks', 'Kogalas ezers', 'Visu gadu', <GuideTodo key="sup">cena</GuideTodo>],
+            [
+              'SUP vai kajaks',
+              'Koggala ezers',
+              'Visu gadu',
+              <>
+                35 EUR kā{' '}
+                <a
+                  href="https://discoverborderlands.com/weligama/stand-up-paddle-board-lesson-and-tour/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Borderlands
+                </a>
+              </>,
+            ],
           ]}
           caption="Aktivitātes Šrilankā ar vietu, sezonu un aptuveno cenu, 2026. gada septembris."
         />
@@ -697,7 +696,10 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             nacionālajā parkā ir gan lētāk, gan godīgāk pret dzīvniekiem.
           </li>
           <li>
-            <GuideTodo>Grieta: vēl viena aktivitāte, ko tu neiesaki, un kāpēc</GuideTodo>
+            Kandy - Ella slaveno vilciena maršrutu. Tev sanāks pārmaksāt un ceļu nevarēsi izbaudīt,
+            jo viss būs pārpildīts! Iesaku izvēlēties jebkuru citu vilcienu braucienā no Ella. Skati
+            tie paši, bet cena daudz izdveīgāka. Kāp iekšā pēdējais, lai tiec stāvāt tieši pie
+            atvērtajām durvīm!
           </li>
         </ul>
 
@@ -727,27 +729,27 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             ['1', 'Kolombo vai Negombo', 'Ielido, izguli lidojumu. Neplāno neko vairāk.', '1'],
             [
               '2–3',
-              'Sigirija un Dambulla',
-              'Lauvas klints saullēktā, Dambullas alu tempļi, ziloņi Minnerijā.',
+              'Sigiriya un Dambulla',
+              'Lauvas klints saullēktā, Dambullas alu tempļi, ziloņi Minneriyā.',
               '2',
             ],
-            ['4', 'Kandi', 'Zoba relikvijas templis, ezers, vakara ceremonija.', '1'],
+            ['4', 'Kandy', 'Zoba relikvijas templis, ezers, vakara ceremonija.', '1'],
             [
               '5–7',
               'Ella',
               'Little Adam’s Peak, Deviņu arku tilts, tējas plantācijas, ūdenskritumi.',
               '2–3',
             ],
-            ['8', 'Udavalave vai Jala', 'Safari no rīta. Udavalave: ziloņi, mazāk džipu.', '1'],
+            ['8', 'Udawalawe vai Yala', 'Safari no rīta. Udawalawe: ziloņi, mazāk džipu.', '1'],
             [
               '9–10',
-              'Hiriketija vai Tangalle',
+              'Hiriketiya vai Tangalle',
               'Pirmās pludmales dienas, sērfošana iesācējiem, joga.',
               '2',
             ],
             [
               '11–14',
-              'Madiha, Mirisa vai Veligama',
+              'Madiha, Mirissa vai Weligama',
               'Okeāns, snorkelēšana, vaļu vērošana sezonā, Galles forts.',
               '3–4',
             ],
@@ -756,7 +758,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         />
 
         <p>
-          Ja tev ir 10 dienas, izlaid nakti Kolombo un Kandi, brauc no lidostas uzreiz uz Sigiriju
+          Ja tev ir 10 dienas, izlaid nakti Kolombo un Kandy, brauc no lidostas uzreiz uz Sigiriyu
           un no Ellas pa taisno uz dienvidiem. Ja tev ir viena nedēļa, paliec tikai dienvidos.
           Vienai nedēļai visa sala vienkārši ir par tālu.
         </p>
@@ -769,7 +771,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           </Link>
           ,{' '}
           <Link href={href.post('mirissa-srilanka-ko-redzet-darit-un-vai-ir-verts-turp-doties')}>
-            Mirisa
+            Mirissa
           </Link>{' '}
           un <Link href={href.howLong}>cik ilgu laiku ieplānot</Link>. Ja brauc ar bērniem:{' '}
           <Link href={href.post('celojums-uz-srilanku-ar-berniem')}>ceļojums ar bērniem</Link>.
@@ -795,13 +797,13 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
               <GuideTodo key="madiha">cena</GuideTodo>,
             ],
             [
-              'Mirisa',
+              'Mirissa',
               'Pirmajam braucienam, draugu kompānijai',
               'Skaistākā pludmale, vaļu vērošana, saulrieti',
               <GuideTodo key="mirissa">cena</GuideTodo>,
             ],
             [
-              'Veligama',
+              'Weligama',
               'Tiem, kas tikai mācās sērfot, un attālinātam darbam',
               'Sērfošanas skolas, coworking, lēti hosteļi',
               <GuideTodo key="weligama">cena</GuideTodo>,
@@ -813,13 +815,13 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
               <GuideTodo key="ahangama">cena</GuideTodo>,
             ],
             [
-              'Unavatuna',
+              'Unawatuna',
               'Piemērots naktsdzīvei un ģimenēm. Labi, ja protat krievu valodu.',
               'Viegli pieejama pludmale, restorāni, tuvu Gallei',
               <GuideTodo key="unawatuna">cena</GuideTodo>,
             ],
             [
-              'Hiriketija',
+              'Hiriketiya',
               'Lieliski piemērots sērfošanas cienītājiem, kuri ceļo vieni.',
               'Sērfošana, joga, mierīga peldēšanās',
               <GuideTodo key="hiriketiya">cena</GuideTodo>,
@@ -843,7 +845,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         />
 
         <p>
-          Sērfošana: Veligama ir labākā vieta, kur sākt, pat ja tā tev būs pirmā reize uz dēļa.
+          Sērfošana: Weligama ir labākā vieta, kur sākt, pat ja tā tev būs pirmā reize uz dēļa.
           Midigama un Ahangama ir tiem, kas jau prot. Sērfot dienvidos var visu sausās sezonas
           laiku, no novembra līdz aprīlim.
         </p>
@@ -862,18 +864,18 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
 
         <GuideFigure
           src="/images/guide/beach-mirissa.svg"
-          alt="Mirisas līcis un Coconut Tree Hill saulrietā"
+          alt="Mirissas līcis un Coconut Tree Hill saulrietā"
           width={1920}
           height={1080}
-          caption="Vietturis. Mirisa, Coconut Tree Hill."
+          caption="Vietturis. Mirissa, Coconut Tree Hill."
         />
 
         <GuideFigure
           src="/images/guide/beach-weligama.svg"
-          alt="Sērfotāji Veligamas līcī Šrilankā"
+          alt="Sērfotāji Weligamas līcī Šrilankā"
           width={1920}
           height={1080}
-          caption="Vietturis. Veligama, sērfošana iesācējiem."
+          caption="Vietturis. Weligama, sērfošana iesācējiem."
         />
 
         <p>
@@ -909,7 +911,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             var noformēt turpat lidostā. Ķivere vienmēr.
           </li>
           <li>
-            <strong>Vilciens.</strong> Lēns, pārpildīts un ļoti skaists. Kandi–Ella biļetes
+            <strong>Vilciens.</strong> Lēns, pārpildīts un ļoti skaists. Kandy–Ella biļetes
             jārezervē nedēļas iepriekš, visos citos maršrutos pērc stacijā. 2. klase ir labākā
             izvēle: var atvērt logus.
           </li>
@@ -1061,7 +1063,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </p>
         <p>
           Manas mīļākās vietas vietējai virtuvei: Saras Kitchen, Malli’s Hoppers, Kalage, Papa
-          Jeevz. Eiropas garšām: Surf Lodge, Atha, KIP, KOH Mirisā.
+          Jeevz. Eiropas garšām: Surf Lodge, Atha, KIP, KOH Mirissā.
         </p>
         <p>
           Vairāk: <Link href={href.post('ediens-srilanka')}>ēdiens Šrilankā</Link>.
@@ -1097,7 +1099,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         <h3>Ko ņemt līdzi</h3>
         <p>
           Vieglas kokvilnas vai lina drēbes, garās bikses vai svārki tempļiem, plāns džemperis Ellai
-          un vilcienam, lietus jaka ārpus sausās sezonas, sandales un slēgti apavi Sigirijai.
+          un vilcienam, lietus jaka ārpus sausās sezonas, sandales un slēgti apavi Sigiriyai.
           Sauleskrēms uz vietas ir dārgs, ņem līdzi no Latvijas. Pretodu līdzekli pērc uz vietas.
           Neņem līdzi daudz drēbju, dārgas rotaslietas un smagu čemodānu: vilcienā un tuk-tukā katrs
           kilograms ir jūtams.

@@ -40,7 +40,7 @@ export const videos = {
     url: PLACEHOLDER_VIDEO_URL,
     title: 'Šrilankas dienvidu piekraste',
     description:
-      'Vietturis. Madiha, Mirisa, Veligama un Unavatuna vienā minūtē: kā katra pludmale izskatās no zemes, nevis no droņa.',
+      'Vietturis. Madiha, Mirissa, Weligama un Unawatuna vienā minūtē: kā katra pludmale izskatās no zemes, nevis no droņa.',
     uploadDate: PLACEHOLDER_UPLOAD_DATE,
   },
   transport: {
@@ -131,7 +131,7 @@ export const faqs: GuideFaqItem[] = [
   {
     question: 'Kad ir labākais laiks ceļot uz Šrilanku?',
     answer:
-      'Labākais laiks ceļojumam uz Šrilanku ir atkarīgs no reģiona, jo salā ir divas musonu sezonas. Dienvidrietumu piekrastei, kur ir Mirisa, Galle un Kolombo, vislabākais laiks ir no novembra līdz aprīlim. Austrumu piekrastei, piemēram, Arugam Bay, no maija līdz septembrim.',
+      'Labākais laiks ceļojumam uz Šrilanku ir atkarīgs no reģiona, jo salā ir divas musonu sezonas. Dienvidrietumu piekrastei, kur ir Mirissa, Galle un Kolombo, vislabākais laiks ir no novembra līdz aprīlim. Austrumu piekrastei, piemēram, Arugam Bay, no maija līdz septembrim.',
   },
   {
     question: 'Vai ir vērts braukt uz Šrilanku musonu sezonā?',
