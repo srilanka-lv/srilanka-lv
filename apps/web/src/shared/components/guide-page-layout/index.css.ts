@@ -21,6 +21,22 @@ export const guideArticleStyle = style({
  */
 export const guideBodyStyle = style({});
 
+export const guideLedeStyle = style(
+  inOverridesLayer({
+    marginBlock: spacing[3],
+    fontSize: font.size.xl,
+    fontWeight: font.weight.light,
+    lineHeight: font.lineHeight.normal,
+    textWrap: 'balance',
+
+    '@media': {
+      [`screen and (min-width: ${breakpoints.lg})`]: {
+        fontSize: font.size['2xl'],
+      },
+    },
+  }),
+);
+
 globalStyle(
   `${guideBodyStyle} p`,
   inOverridesLayer({

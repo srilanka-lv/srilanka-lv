@@ -3,13 +3,15 @@ import type { FunctionComponent, PropsWithChildren } from 'react';
 import { Breadcrumbs } from '../breadcrumbs';
 import { buildSectionItems, findNavLabel } from '../breadcrumbs/build-items';
 import { ContentUpdatedAt } from '../content-updated-at';
-import { guideArticleStyle, guideBodyStyle } from './index.css';
+import { guideArticleStyle, guideBodyStyle, guideLedeStyle } from './index.css';
 
 type GuidePageLayoutProps = PropsWithChildren<{
   /** Public LV path, e.g. `/celojums-uz-srilanku`. Must be registered in `navigationItems`. */
   href: string;
   /** ISO date of the last content change; rendered as "Atjaunots: ...". */
   updatedAt: string;
+  /** One-sentence subtitle under the H1. */
+  lede?: string;
 }>;
 
 /**
@@ -22,11 +24,13 @@ type GuidePageLayoutProps = PropsWithChildren<{
 export const GuidePageLayout: FunctionComponent<GuidePageLayoutProps> = ({
   href,
   updatedAt,
+  lede,
   children,
 }) => (
   <article className={guideArticleStyle}>
     <Breadcrumbs items={buildSectionItems(href)} />
     <h1>{findNavLabel(href)}</h1>
+    {lede ? <p className={guideLedeStyle}>{lede}</p> : null}
     <ContentUpdatedAt updatedAt={updatedAt} />
     <div className={guideBodyStyle}>{children}</div>
   </article>

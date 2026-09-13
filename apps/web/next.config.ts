@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'www.gstatic.com',
       },
+      {
+        // YouTube poster frames for the click-to-load video facade.
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+      },
     ],
     qualities: [75, 100],
   },
