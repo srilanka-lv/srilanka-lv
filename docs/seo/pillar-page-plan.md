@@ -120,6 +120,8 @@ Each H2 gets a Latvian target phrase, what it must answer, the media that goes w
 
 ## 5. Technical checklist (Dave)
 
+**Decision, 13 Sep evening: the page is authored in code, not Sanity.** Dave writes the content directly in `apps/web/src/app/sri-lanka-travel-guide/page.tsx`. Steps 1 to 3 below (Sanity document, schema, layout wiring) therefore fall away, and two things move to code: the FAQ and Article JSON-LD must be built from the page's own data, and the markdown mirror at `/markdown/celojums-uz-srilanku` needs its own export, since the Sanity-backed route no longer serves it. Scaffold shipped on branch `feat/pillar-page-celojums-uz-srilanku`: route, `GuidePageLayout` (header, breadcrumbs, H1, updated date, article typography, footer, sub-footer, no blog strip, no FAQ aside, no footer product cards), slug registration, rewrite, redirect, sitemap, llms.txt, agent skill, and the header now leads with the guide instead of Sākums.
+
 Order matters. Everything up to step 9 is done on a branch before Saturday.
 
 1. Sanity Studio, production dataset: create a `pages` document with slug `celojums-uz-srilanku`. Copy the body from the blog post, then restructure the headings so the outline is H2 and H3 only. Fill `seo.metaTitle`, `seo.metaDescription`, `openGraph`.
