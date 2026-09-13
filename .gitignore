@@ -55,3 +55,5 @@ docs/seo/semrush/
 .claude/scheduled_tasks.lock
 **/.impeccable/hook.cache.json
 **/.impeccable/live/sessions/
+# sanity dataset backups taken before scripted edits
+docs/seo/backups/
