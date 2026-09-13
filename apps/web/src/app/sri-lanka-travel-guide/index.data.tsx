@@ -22,7 +22,7 @@ export const TITLE = 'Ceļojums uz Šrilanku: pilns ceļvedis no Madihas';
 export const DESCRIPTION =
   'Ceļojums uz Šrilanku bez aģentūras. Vīza, lidojumi no Rīgas, cenas eiro, maršruts un pludmales. Rakstām no Madihas, kur dzīvojam kopš 2022. gada.';
 export const LEDE =
-  'Pilns ceļvedis no diviem cilvēkiem, kuri šeit dzīvo. Vīza, lidojumi, cenas, maršruts, pludmales un viss, ko gribētu zināt pirms pirmā brauciena.';
+  'Pilns ceļvedis no diviem cilvēkiem, kuri šeit dzīvo. Vīza, lidojumi, cenas, maršruts, pludmales un viss, ko gribēsi zināt pirms pirmā brauciena.';
 
 /** TODO(pillar): replace with the real clips before release. */
 const PLACEHOLDER_VIDEO_URL = 'https://www.youtube.com/watch?v=DgF8qcLSCb4';
@@ -61,16 +61,18 @@ export const sections = {
   flights: 'ka-noklut-no-rigas',
   visa: 'viza',
   cost: 'cik-maksa',
-  route: 'marsruts',
   regions: 'regioni',
+  highlights: 'ko-redzet',
+  activities: 'ko-darit',
+  route: 'marsruts',
   stay: 'kur-palikt',
   transport: 'transports',
   safety: 'drosiba',
-  food: 'edins',
+  food: 'ediens',
   practical: 'praktiska-informacija',
   souvenirs: 'ko-atvest',
   reviews: 'atsauksmes',
-  faq: 'bieziak-uzdotie-jautajumi',
+  faq: 'biezak-uzdotie-jautajumi',
   trip: 'celo-kopa-ar-mums',
 } as const;
 
@@ -80,15 +82,17 @@ export const tocItems: GuideTocItem[] = [
   { id: sections.flights, title: 'Kā nokļūt no Rīgas uz Šrilanku' },
   { id: sections.visa, title: 'Šrilankas vīza Latvijas pilsoņiem' },
   { id: sections.cost, title: 'Cik maksā ceļojums uz Šrilanku' },
-  { id: sections.route, title: 'Ko redzēt: maršruts 10 līdz 14 dienām' },
   { id: sections.regions, title: 'Šrilankas reģioni vienā tabulā' },
+  { id: sections.highlights, title: 'Ko redzēt Šrilankā: galvenās vietas' },
+  { id: sections.activities, title: 'Ko darīt Šrilankā: aktivitātes' },
+  { id: sections.route, title: 'Maršruts 10 līdz 14 dienām' },
   { id: sections.stay, title: 'Dienvidu piekraste: kur palikt' },
   { id: sections.transport, title: 'Transports Šrilankā' },
-  { id: sections.safety, title: 'Drošība un ceļošana vienai' },
+  { id: sections.safety, title: 'Drošība un ceļošana vienatnē' },
   { id: sections.food, title: 'Ēdiens Šrilankā' },
   { id: sections.practical, title: 'Praktiskā informācija' },
   { id: sections.souvenirs, title: 'Ko atvest no Šrilankas' },
-  { id: sections.reviews, title: 'Ko saka citas latvietes' },
+  { id: sections.reviews, title: 'Ko saka citi ceļotāji' },
   { id: sections.faq, title: 'Biežāk uzdotie jautājumi' },
   { id: sections.trip, title: 'Ceļo kopā ar mums' },
 ];
@@ -132,12 +136,12 @@ export const faqs: GuideFaqItem[] = [
   {
     question: 'Vai ir vērts braukt uz Šrilanku musonu sezonā?',
     answer:
-      'Jā, ja izvēlas pareizo krastu. Kad Šrilankas dienvidos līst, austrumos ir sauss, un otrādi. Arī dienvidos lietus sezonā no jūnija līdz augustam ir karsti, lietus līst īsu brīdi, un naktsmītnes ir lētākas. Ekskursijas un safari notiek visu gadu.',
+      'Jā, braukt uz Šrilanku musonu sezonā ir vērts, ja izvēlas pareizo krastu. Kad Šrilankas dienvidos līst, austrumos ir sauss, un otrādi. Arī dienvidos lietus sezonā no jūnija līdz augustam ir karsti, lietus līst īsu brīdi, un naktsmītnes ir lētākas. Ekskursijas un safari notiek visu gadu.',
   },
   {
     question: 'Cik maksā ceļojums uz Šrilanku no Latvijas?',
     answer:
-      'Divu nedēļu ceļojums uz Šrilanku, ko plāno pati, maksā no aptuveni 1 550 eiro budžeta variantā līdz 2 250 eiro ar komfortu, ieskaitot lidojumu un vīzu. Aģentūru pakešu cenas Latvijā 2026. gada rudenī ir no 1 500 līdz 2 650 eiro par 10 līdz 13 naktīm.',
+      'Divu nedēļu ceļojums uz Šrilanku, ko plāno patstāvīgi, maksā no aptuveni 1 550 eiro budžeta variantā līdz 2 250 eiro ar komfortu, ieskaitot lidojumu un vīzu. Aģentūru pakešu cenas Latvijā 2026. gada rudenī ir no 1 500 līdz 2 650 eiro par 10 līdz 13 naktīm.',
   },
   {
     question: 'Cik maksā naktsmājas Šrilankā?',
@@ -160,14 +164,14 @@ export const faqs: GuideFaqItem[] = [
       'Obligātu vakcīnu ceļojumam uz Šrilanku nav. Ārsti mēdz ieteikt A un B hepatīta, vēdertīfa un stingumkrampju vakcīnas. Malārija Šrilankā nav aktuāla problēma, bet odi var pārnēsāt dengue drudzi, tāpēc pretodu līdzeklis ir jāņem līdzi.',
   },
   {
-    question: 'Vai Šrilanka ir droša ceļošanai vienai?',
+    question: 'Vai Šrilanka ir droša, ceļojot vienatnē?',
     answer:
-      'Jā, Šrilanka kopumā ir droša valsts arī sievietei, kura ceļo viena. Bailes par krāpšanu vai bīstamību parasti izrādās pārspīlētas, jo vietējie lielākoties ir draudzīgi un izpalīdzīgi. Galvenie riski ir satiksme, karstums un pārmaksāšana tūristu vietās.',
+      'Jā, Šrilanka kopumā ir droša valsts arī tiem, kas ceļo vienatnē. Bailes par krāpšanu vai bīstamību parasti izrādās pārspīlētas, jo vietējie lielākoties ir draudzīgi un izpalīdzīgi. Galvenie riski ir satiksme, karstums un pārmaksāšana tūristu vietās.',
   },
   {
-    question: 'Vai Šrilanku var apceļot visu vienā ceļojumā?',
+    question: 'Vai visu Šrilanku var apceļot vienā ceļojumā?',
     answer:
-      'Teorētiski jā, bet praksē tas ir intensīvi. Attālumi Šrilankā nav lieli, bet pārvietošanās ir lēnāka, nekā šķiet kartē. Divās nedēļās var apvienot kultūras trīsstūri, kalnus, safari un dienvidu pludmales. Vienā nedēļā labāk palikt tikai dienvidos.',
+      'Visu Šrilanku vienā ceļojumā apceļot var, bet praksē tas ir intensīvi. Attālumi Šrilankā nav lieli, bet pārvietošanās ir lēnāka, nekā šķiet kartē. Divās nedēļās var apvienot kultūras trīsstūri, kalnus, safari un dienvidu pludmales. Vienā nedēļā labāk palikt tikai dienvidos.',
   },
   {
     question: 'Kāds ir klimats Šrilankā?',
@@ -177,7 +181,7 @@ export const faqs: GuideFaqItem[] = [
   {
     question: 'Vai ir vērts ceļot uz Šrilanku?',
     answer:
-      'Jā. Šrilanka apvieno tropu dabu, draudzīgus cilvēkus, kultūru un piedzīvojuma sajūtu vienā salā, kas ir Latvijas izmērā. Tā nav perfekta valsts pēc Eiropas standartiem, un tieši tas to padara īpašu. Daudzas latvietes pēc pirmā brauciena atgriežas.',
+      'Jā, ceļojums uz Šrilanku ir tā vērts. Šrilanka apvieno tropu dabu, draudzīgus cilvēkus, kultūru un piedzīvojuma sajūtu vienā salā, kas ir Latvijas izmērā. Tā nav perfekta valsts pēc Eiropas standartiem, un tieši tas to padara īpašu. Daudzi pēc pirmā brauciena atgriežas.',
   },
 ];
 
