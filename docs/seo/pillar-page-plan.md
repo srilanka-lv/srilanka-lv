@@ -163,7 +163,7 @@ This is the second-biggest lever after the content itself. The page has one inbo
 
 Nothing here is needed for Saturday. All of it helps from week 2 on, and two or three real links decide the difference between #3 and #1.
 
-0. celoarmariku.lv, if you or Grieta control it: two or three contextual links from its pages that actually discuss Sri Lanka, one with the exact anchor "Ceļojums uz Šrilanku" and the others with natural variants. Body text, not the footer. This alone can be the two or three links the plan says decide first place.
+0. celoarmariku.lv is the partner agency (Ceļo ar Mariku) that sells the girls trip. It has a Sri Lanka collection page with three tours and no editorial text, no blog, and no link to srilanka.lv today. The ask to Marika, from Grieta: (a) a two-sentence intro on the Sri Lanka collection page that names Grieta as the resident group leader and links "Ceļojums uz Šrilanku"; (b) a "sagatavojies braucienam" line on the girls-trip product page linking the guide with a natural anchor; (c) the same line on one of the two other Sri Lanka tour pages. Body text, not the footer, not sitewide, not paid. This alone can be the two or three links the plan says decide first place.
 1. Instagram: the bio link points at the guide. A story highlight called "Ceļvedis". Every reel caption ends with "pilnais ceļvedis saitē profilā".
 2. Ask three Latvian travel creators or bloggers for a mention with a link. Offer a tip or a quote from Madiha in return.
 3. Pitch one Latvian outlet (LSM, Delfi, TVNET lifestyle) with the human story: a Latvian couple who moved to Sri Lanka's south coast and wrote the guide. One link from any of them outweighs everything else on this list.
