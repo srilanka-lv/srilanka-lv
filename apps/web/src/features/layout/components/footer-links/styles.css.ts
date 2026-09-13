@@ -24,12 +24,10 @@ export const footerLinksLinkStyle = style(
     selectors: {
       '&:link, &:visited, &:active': {
         color: 'inherit',
+        backgroundImage: 'none',
         textDecoration: 'underline',
         textDecorationColor: `color-mix(in oklch, ${color.accent} 50%, transparent)`,
         textUnderlineOffset: '3px',
-      },
-      '&::after': {
-        display: 'none',
       },
       '&:hover': {
         color: color.accent,

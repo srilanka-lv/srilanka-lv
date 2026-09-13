@@ -31,6 +31,7 @@ export const blogHeroAuthorLinkStyle = style(
     position: 'relative',
     fontWeight: font.weight.bold,
     fontSize: 'inherit',
+    backgroundImage: 'none',
 
     selectors: {
       '&:link, &:visited, &:hover, &:active': {

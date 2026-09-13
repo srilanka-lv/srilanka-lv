@@ -61,9 +61,7 @@ export const linkStyle = style(
     color: color.foreground,
     textDecoration: 'none',
 
-    '::after': {
-      content: 'none',
-    },
+    backgroundImage: 'none',
     ':hover': {
       color: color.accent,
     },

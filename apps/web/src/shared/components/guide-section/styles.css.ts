@@ -42,9 +42,7 @@ export const anchorStyle = style(
     // colour; on an icon that reads as a glitch rather than a link. The icon
     // stays coral at all times instead. The components layer sits after base,
     // so these win without fighting the global rules on specificity.
-    '::after': {
-      content: 'none',
-    },
+    backgroundImage: 'none',
     ':hover': {
       color: color.accent,
     },

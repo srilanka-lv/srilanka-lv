@@ -41,9 +41,7 @@ export const footerProductsCardStyle = style(
     selectors: {
       '&:link, &:visited, &:active': {
         color: 'inherit',
-      },
-      '&::after': {
-        display: 'none',
+        backgroundImage: 'none',
       },
       '&:hover': {
         color: 'inherit',

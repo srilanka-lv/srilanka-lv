@@ -48,6 +48,21 @@ globalStyle(
   }),
 );
 
+// Every link carries a coral bar along its baseline that grows to fill the
+// line on hover.
+//
+// The bar is a background on the link itself, not an absolutely positioned
+// pseudo-element. A pseudo-element cannot follow an inline box that wraps: its
+// containing block runs from the first fragment's left edge to the last
+// fragment's right edge, which on a wrapped link runs backwards and collapses
+// to zero width. The bar then painted nothing at all, and because the hover
+// state flips the text to near-white, any link that broke across two lines
+// disappeared into the page on hover. `box-decoration-break: clone` hands each
+// line fragment its own copy of the background, so a wrapped link gets a bar
+// on every line it occupies.
+//
+// Anything that wants no bar sets `backgroundImage: 'none'` from the
+// components or overrides layer, which sits after this one.
 globalStyle(
   `body a:link, body a:visited, body a:hover, body a:active`,
   inBaseLayer({
@@ -55,74 +70,36 @@ globalStyle(
     position: 'relative',
     color: '#ee5253',
     textDecoration: 'none',
+    backgroundImage: 'linear-gradient(#ee5253, #ee5253)',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '0 100%',
+    backgroundSize: `100% 1px`,
+    borderRadius: border.radius.small,
+    WebkitBoxDecorationBreak: 'clone',
+    boxDecorationBreak: 'clone',
     transitionTimingFunction: transition.easing.easeInOut,
     transitionDuration: transition.duration.faster,
-    transitionProperty: 'color',
+    transitionProperty: 'background-size, color',
   }),
 );
 
 // Text on the filled coral bar. `accentForeground` is the token the palette
-// defines for exactly this pairing; it resolves to the same values the old
-// `background` did in both themes, so nothing shifts, but the intent is now
-// stated rather than coincidental.
+// defines for exactly this pairing.
 globalStyle(
   `body a:hover, body a:focus-visible`,
   inBaseLayer({
     color: color.accentForeground,
+    backgroundSize: '100% 100%',
   }),
 );
 
+// An anchor that presents as a button sits on the button's own surface, where
+// the link bar has nothing to underline. `Button` stamps `role="button"` on
+// every element it renders that is not a `button`.
 globalStyle(
-  `body a:link::after, body a:visited::after, body a:active::after`,
+  'body a[role="button"]',
   inBaseLayer({
-    mixBlendMode: 'color-dodge',
-    position: 'absolute',
-    display: 'block',
-    content: '',
-    backgroundColor: '#ee5253',
-    left: '0',
-    bottom: '0',
-    width: `100%`,
-    height: spacing[1],
-    zIndex: '1',
-    borderRadius: border.radius.small,
-    transitionTimingFunction: transition.easing.easeInOut,
-    transitionDuration: transition.duration.faster,
-    transitionProperty: 'height',
-  }),
-);
-
-globalStyle(
-  `body a:hover::after, body a:focus-visible::after`,
-  inBaseLayer({
-    height: `calc(100%)`,
-  }),
-);
-
-// The bar is solid brand coral behind the glyphs in BOTH themes.
-//
-// It used to be color-dodge in light mode, which only worked on the page's own
-// background. On any lighter surface the dodge resolves to pure white, and
-// since the hover text is near-white too, the whole link vanished: every link
-// inside a white card or table went invisible on hover. Dark mode had already
-// abandoned the blend for the mirror problem, where it blew out to neon red.
-//
-// Without the blend the bar would paint over the glyphs, since its base
-// z-index is 1, so it drops beneath them; isolation keeps that negative
-// z-index inside the link's own stacking context rather than behind an
-// ancestor's background.
-globalStyle(
-  'body a:link, body a:visited, body a:active',
-  inBaseLayer({
-    isolation: 'isolate',
-  }),
-);
-
-globalStyle(
-  'body a:link::after, body a:visited::after, body a:active::after',
-  inBaseLayer({
-    mixBlendMode: 'normal',
-    zIndex: '-1',
+    backgroundImage: 'none',
   }),
 );
 

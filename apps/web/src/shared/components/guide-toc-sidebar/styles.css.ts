@@ -22,6 +22,7 @@ export const sidebarStyle = style(
         maxHeight: `calc(100vh - ${spacing[20]})`,
         overflowY: 'auto',
         paddingRight: spacing[2],
+        marginBottom: spacing[16],
       },
     },
   }),
@@ -64,9 +65,7 @@ export const linkStyle = style(
     // Opt out of the sitewide link treatment: the coral bar swiping over a
     // dense list of 18 entries is noise. The active entry is marked with the
     // accent rule on its left edge instead.
-    '::after': {
-      content: 'none',
-    },
+    backgroundImage: 'none',
     ':hover': {
       color: color.accent,
     },
