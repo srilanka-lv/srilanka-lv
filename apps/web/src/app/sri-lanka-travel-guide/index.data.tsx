@@ -22,7 +22,7 @@ export const TITLE = 'Ceļojums uz Šrilanku: pilns ceļvedis no Madihas';
 export const DESCRIPTION =
   'Ceļojums uz Šrilanku bez aģentūras. Vīza, lidojumi no Rīgas, cenas eiro, maršruts un pludmales. Rakstām no Madihas, kur dzīvojam kopš 2022. gada.';
 export const LEDE =
-  'Pilns ceļvedis no diviem cilvēkiem, kuri šeit dzīvo. Vīza, lidojumi, cenas, maršruts, pludmales un viss, ko gribēsi zināt pirms pirmā brauciena.';
+  'Ceļvedi raksta divi cilvēki, kas šeit arī dzīvo. Vīza, lidojumi, cenas, maršruts, pludmales un viss pārējais, ko gribēsi zināt pirms pirmā brauciena.';
 
 /** TODO(pillar): replace with the real clips before release. */
 const PLACEHOLDER_VIDEO_URL = 'https://www.youtube.com/watch?v=DgF8qcLSCb4';
@@ -111,12 +111,12 @@ export const faqs: GuideFaqItem[] = [
   {
     question: 'Kāda ir laika starpība starp Latviju un Šrilanku?',
     answer:
-      'Šrilanka ir 3,5 stundas priekšā Latvijai ziemas laikā un 2,5 stundas vasaras laikā. Šrilankā pulksteņus nepārceļ.',
+      'Šrilanka ir par 3,5 stundām priekšā Latvijai ziemas laikā un par 2,5 stundām vasaras laikā. Šrilankā pulksteņus nepārceļ, tāpēc starpība mainās tikai tad, kad laiku pārceļ Latvijā.',
   },
   {
     question: 'Vai Latvijas pilsoņiem uz Šrilanku vajag vīzu?',
     answer:
-      'Jā, Latvijas pilsoņiem ceļojumam uz Šrilanku ir nepieciešama tūristu vīza ETA, ko noformē tiešsaistē oficiālajā lapā eta.gov.lk pirms lidojuma. Latvija nav to valstu sarakstā, kurām Šrilanka 2026. gadā vīzu izsniedz bez maksas.',
+      'Jā, Latvijas pilsoņiem ceļojumam uz Šrilanku ir vajadzīga tūristu vīza ETA, ko noformē tiešsaistē oficiālajā lapā eta.gov.lk pirms lidojuma. Latvija nav to valstu sarakstā, kurām Šrilanka 2026. gadā vīzu izsniedz bez maksas.',
   },
   {
     question: 'Cik ilgi ar tūristu vīzu drīkst palikt Šrilankā un vai to var pagarināt?',
@@ -126,12 +126,12 @@ export const faqs: GuideFaqItem[] = [
   {
     question: 'Kādi dokumenti vajadzīgi ieceļošanai Šrilankā?',
     answer:
-      'Ieceļošanai Šrilankā vajadzīga pase, kas derīga vismaz sešus mēnešus pēc ielidošanas, apstiprināta ETA vīza, atpakaļceļa vai tālākā lidojuma biļete un pirmās naktsmītnes rezervācija. Retos gadījumos imigrācijā var pajautāt par līdzekļiem ceļojuma izmaksu segšanai.',
+      'Ieceļošanai Šrilankā vajadzīga pase, kas derīga vismaz sešus mēnešus pēc ielidošanas, apstiprināta ETA vīza, atpakaļceļa vai tālākā lidojuma biļete un pirmās naktsmītnes rezervācija. Retos gadījumos imigrācijā pajautā arī, vai naudas ceļojumam pietiek.',
   },
   {
     question: 'Kad ir labākais laiks ceļot uz Šrilanku?',
     answer:
-      'Labākais laiks ceļojumam uz Šrilanku ir atkarīgs no reģiona, jo salā ir divi musonu periodi. Dienvidrietumu piekrastei, kur ir Mirisa, Galle un Kolombo, vislabākais laiks ir no novembra līdz aprīlim. Austrumu piekrastei, piemēram, Arugam Bay, no maija līdz septembrim.',
+      'Labākais laiks ceļojumam uz Šrilanku ir atkarīgs no reģiona, jo salā ir divas musonu sezonas. Dienvidrietumu piekrastei, kur ir Mirisa, Galle un Kolombo, vislabākais laiks ir no novembra līdz aprīlim. Austrumu piekrastei, piemēram, Arugam Bay, no maija līdz septembrim.',
   },
   {
     question: 'Vai ir vērts braukt uz Šrilanku musonu sezonā?',
@@ -151,7 +151,7 @@ export const faqs: GuideFaqItem[] = [
   {
     question: 'Kāda valūta ir Šrilankā un vai var maksāt ar karti?',
     answer:
-      'Valūta Šrilankā ir Šrilankas rūpija (LKR). Ar karti var maksāt lielākajās viesnīcās, restorānos un veikalos, bet mazākās vietās, tirgos un tuk-tukos vajag skaidru naudu. Bankomāti ir droši, un tos ieteicams izmantot pie bankām.',
+      'Valūta Šrilankā ir Šrilankas rūpija (LKR). Ar karti var maksāt lielākajās viesnīcās, restorānos un veikalos, bet mazākās vietās, tirgos un tuk-tukos vajag skaidru naudu. Bankomāti ir droši, bet izvēlies tos, kas atrodas pie bankām.',
   },
   {
     question: 'Kādā valodā runā Šrilankā?',
@@ -161,22 +161,22 @@ export const faqs: GuideFaqItem[] = [
   {
     question: 'Vai uz Šrilanku vajag vakcīnas?',
     answer:
-      'Obligātu vakcīnu ceļojumam uz Šrilanku nav. Ārsti mēdz ieteikt A un B hepatīta, vēdertīfa un stingumkrampju vakcīnas. Malārija Šrilankā nav aktuāla problēma, bet odi var pārnēsāt dengue drudzi, tāpēc pretodu līdzeklis ir jāņem līdzi.',
+      'Obligātu vakcīnu ceļojumam uz Šrilanku nav. Ārsti mēdz ieteikt A un B hepatīta, vēdertīfa un stingumkrampju vakcīnas. Malārija Šrilankā nav aktuāla, bet odi pārnēsā dengue drudzi, tāpēc pretodu līdzekli paņem līdzi vai nopērc uz vietas.',
   },
   {
     question: 'Vai Šrilanka ir droša, ceļojot vienatnē?',
     answer:
-      'Jā, Šrilanka kopumā ir droša valsts arī tiem, kas ceļo vienatnē. Bailes par krāpšanu vai bīstamību parasti izrādās pārspīlētas, jo vietējie lielākoties ir draudzīgi un izpalīdzīgi. Galvenie riski ir satiksme, karstums un pārmaksāšana tūristu vietās.',
+      'Jā, Šrilanka kopumā ir droša valsts arī tiem, kas ceļo vienatnē. Bažas par krāpšanu un bīstamību parasti izrādās lielākas nekā pati realitāte, jo vietējie lielākoties ir draudzīgi un izpalīdzīgi. Galvenie riski ir nevis noziedzība, bet satiksme, karstums un pārmaksāšana tūristu vietās.',
   },
   {
     question: 'Vai visu Šrilanku var apceļot vienā ceļojumā?',
     answer:
-      'Visu Šrilanku vienā ceļojumā apceļot var, bet praksē tas ir intensīvi. Attālumi Šrilankā nav lieli, bet pārvietošanās ir lēnāka, nekā šķiet kartē. Divās nedēļās var apvienot kultūras trīsstūri, kalnus, safari un dienvidu pludmales. Vienā nedēļā labāk palikt tikai dienvidos.',
+      'Visu Šrilanku vienā ceļojumā apbraukāt var, bet tad ceļojums pārvēršas skrējienā. Attālumi Šrilankā nav lieli, tikai pārvietošanās ir daudz lēnāka, nekā izskatās kartē. Divās nedēļās var mierīgi apvienot kultūras trīsstūri, kalnus, safari un dienvidu pludmales. Vienā nedēļā labāk palikt tikai dienvidos.',
   },
   {
     question: 'Kāds ir klimats Šrilankā?',
     answer:
-      'Klimats Šrilankā ir tropisks: silts visu gadu, ap 29 līdz 30 grādiem dienā, ar lielu mitrumu. Dienvidu piekrastē sausā sezona ir no novembra līdz aprīlim, bet lietus sezona no maija līdz augustam. Pirmajās dienās ķermenim jāpierod pie mitruma.',
+      'Klimats Šrilankā ir tropisks: silts visu gadu, ap 29 līdz 30 grādiem dienā, ar lielu mitrumu. Dienvidu piekrastē sausā sezona ir no novembra līdz aprīlim, bet lietus sezona no maija līdz augustam. Pirmās dienas paiet, pierodot pie mitruma.',
   },
   {
     question: 'Vai ir vērts ceļot uz Šrilanku?',

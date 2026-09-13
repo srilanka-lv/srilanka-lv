@@ -107,15 +107,14 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       />
 
       <p>
-        Ceļojums uz Šrilanku ir viena no tām lietām, ko cilvēki no Latvijas pēdējos gados plāno
-        arvien biežāk, un arvien biežāk plāno paši. Es kopš 2022. gada dzīvoju Madihā, mazā
-        piekrastes ciematā Šrilankas dienvidos, un katru sezonu redzu arvien vairāk ceļotāju no
-        Latvijas.
+        Ceļojums uz Šrilanku pēdējos gados vairs nav nekāda eksotika. Latvieši to plāno arvien
+        biežāk un arvien biežāk plāno paši, bez aģentūras. Es kopš 2022. gada dzīvoju Madihā, mazā
+        piekrastes ciematā Šrilankas dienvidos, un katru sezonu te satieku arvien vairāk savējo.
       </p>
       <p>
-        Šis ceļvedis ir viss, ko es pati gribētu zināt pirms sava pirmā brauciena: kā nokļūt no
-        Rīgas, cik maksā vīza, cik maksā diena, kad braukt, kur palikt un no kā izvairīties. Visas
-        cenas ir eiro, un katrai ir norādīts datums, jo Šrilankā tās mainās.
+        Šajā ceļvedī ir viss, ko es pati gribētu zināt pirms pirmā brauciena: kā tikt šurp no Rīgas,
+        cik maksā vīza, cik maksā viena diena, kad braukt, kur palikt un no kā labāk izvairīties.
+        Cenas visas ir eiro, un katrai ir klāt datums, jo Šrilankā tās mainās ātri.
       </p>
 
       <GuideVideo {...videos.intro} />
@@ -126,7 +125,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         rows={[
           ['Oficiālais nosaukums', 'Šrilankas Demokrātiskā Sociālistiskā Republika'],
           ['Galvaspilsēta', 'Šrī Džajavardenepura-Kote, lielākā pilsēta Kolombo'],
-          ['Platība', '65 610 km², gandrīz tikpat, cik Latvijai (64 589 km²)'],
+          ['Platība', '65 610 km², gandrīz tāda pati kā Latvijai (64 589 km²)'],
           ['Iedzīvotāji', <GuideTodo key="pop">iedzīvotāju skaits un gads</GuideTodo>],
           ['Valodas', 'singāļu un tamilu; angļu valodu tūrisma zonās saprot'],
           [
@@ -163,20 +162,20 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         <p>
           Līdz 1972. gadam sala saucās Ceilona, un tāpēc tēja no šejienes joprojām ir Ceilonas tēja.
           Oficiālā galvaspilsēta ir Šrī Džajavardenepura-Kote, bet dzīve un lidosta ir Kolombo, un
-          tur sākas arī lielākā daļa ceļojumu. Aptuveni 70 procenti iedzīvotāju ir budisti, un tas
-          ir redzams visur: tempļos, svētku dienās un tajā, cik mierīgs ir dzīves ritms.
+          tur sākas arī lielākā daļa ceļojumu. Aptuveni 70 procenti iedzīvotāju ir budisti, un to
+          jūt visur: tempļos, svētku dienās un tajā, cik mierīgs te ir ikdienas ritms.
         </p>
         <p>
           Salai ir sešas UNESCO kultūras mantojuma vietas: Sigirija, Kandi, Anuradhapura,
-          Polonnaruva, Dambullas alu tempļi un Galles forts. Trīs no tām ir iekļautas maršrutā, ko
-          iesaku zemāk.
+          Polonnaruva, Dambullas alu tempļi un Galles forts. Trīs no tām ir maršrutā, ko iesaku
+          zemāk.
         </p>
 
         <GuideCallout tone="personal">
           <p>
-            Man vissvarīgākais fakts par Šrilanku ir šis: tā nav liela, bet tā ir lēna. Ceļš, kas
-            kartē izskatās pēc divām stundām, bieži ir četras. To ir vērts zināt jau tagad, jo tas
-            nosaka, cik daudz reāli iespējams redzēt.
+            Svarīgākais, kas par Šrilanku jāsaprot: tā nav liela, bet tā ir lēna. Ceļš, kas kartē
+            izskatās pēc divām stundām, dzīvē ir četras. To labāk zināt uzreiz, jo tieši tas izlemj,
+            cik daudz tu paspēsi redzēt.
           </p>
         </GuideCallout>
       </GuideSection>
@@ -187,11 +186,11 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           ar Latvijas ziemu, un tieši tāpēc lielākā daļa latviešu brauc šajā laikā.
         </p>
         <p>
-          Šrilankā ir divas musonu sezonas, un tās skar dažādas salas puses dažādos laikos.
-          Dienvidrietumu piekrastē, kur ir Mirisa, Madiha, Galle un Kolombo, lietus līst no maija
-          līdz augustam, bet sausā sezona ilgst no novembra līdz aprīlim. Ziemeļos un austrumos, kur
-          ir Arugam Bay un Trinkomalī, ir otrādi: sauss no maija līdz septembrim, lietus no oktobra
-          līdz janvārim.
+          Šrilankā ir divas musonu sezonas, un tās nenāk pār visu salu reizē. Dienvidrietumu
+          piekrastē, kur ir Mirisa, Madiha, Galle un Kolombo, lietus līst no maija līdz augustam,
+          bet sausā sezona ilgst no novembra līdz aprīlim. Ziemeļos un austrumos, kur ir Arugam Bay
+          un Trinkomalī, viss ir otrādi: sauss no maija līdz septembrim, lietains no oktobra līdz
+          janvārim.
         </p>
         <p>
           Vienkāršais likums, ko es saku visiem: kad Latvijā ir ziema, brauc uz dienvidiem un
@@ -214,7 +213,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             ['Novembris', 'Dienvidi un rietumi', 'Sākas sausā sezona, vairāk saules'],
             ['Decembris', 'Dienvidi un rietumi', 'Sauss, silts un saulains'],
           ]}
-          caption="Kurā mēnesī kurp braukt. Grietas tabula no lapas par labāko ceļošanas laiku."
+          caption="Kurā mēnesī kurp braukt. Tā pati tabula, kas lapā par labāko ceļošanas laiku."
         />
 
         <GuideTable
@@ -245,17 +244,16 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         />
 
         <p>
-          Temperatūra dienvidos praktiski nemainās visu gadu. Mainās tikai lietus daudzums. Un pat
-          lietus sezonā, no jūnija līdz augustam, dienvidos ir karsti un lietus līst īsi, parasti
-          pēcpusdienā vai naktī. Es šeit dzīvoju visu gadu, un jūnijs pie okeāna joprojām ir labāks
-          par jūniju Rīgā.
+          Temperatūra dienvidos praktiski nemainās visu gadu. Mainās tikai lietus. Pat lietus
+          sezonā, no jūnija līdz augustam, dienvidos ir karsts, un līst īsi, parasti pēcpusdienā vai
+          naktī. Es te dzīvoju visu gadu, un jūnijs pie okeāna joprojām ir labāks nekā jūnijs Rīgā.
         </p>
 
         <GuideCallout tone="tip">
           <p>
-            Ja gribi lētāk, plāno pa vidu: ne decembra beigās, kad cenas ir augstākās, un ne jūlija
-            vidū. Novembra sākums un aprīlis ir mans ieteikums, ja gribi labu cenas un laika
-            līdzsvaru.
+            Ja gribi lētāk, plāno pa vidu: ne decembra beigās, kad cenas ir visaugstākās, un ne
+            jūlija vidū. Mans ieteikums ir novembra sākums vai aprīlis. Tur cena un laiks sakrīt
+            vislabāk.
           </p>
         </GuideCallout>
 
@@ -268,11 +266,11 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       <GuideSection id={sections.flights} title="Kā nokļūt no Rīgas uz Šrilanku">
         <p>
           Tieša lidojuma no Rīgas uz Šrilanku nav. Ērtākais ceļš ir ar vienu pārsēšanos Stambulā,
-          Abū Dabī, Dubaijā vai Dohā, un kopējais ceļā pavadītais laiks ir no 15 līdz 18 stundām.
+          Abū Dabī, Dubaijā vai Dohā, un ceļā kopā paiet no 15 līdz 18 stundām.
         </p>
         <p>
-          Pēc mūsu lidojumu cenu rīka datiem 2026. gada jūlijā un augustā lētākās biļetes vienā
-          virzienā no Rīgas uz Kolombo bija:
+          Mūsu lidojumu cenu rīks 2026. gada jūlijā un augustā rādīja šādas lētākās vienvirziena
+          biļetes no Rīgas uz Kolombo:
         </p>
         <ul>
           <li>no 380 līdz 420 eiro oktobrī, novembrī un janvāra otrajā pusē,</li>
@@ -291,9 +289,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </p>
         <p>
           Ielidosi Bandaranaike lidostā (CMB) pie Kolombo. Līdz dienvidu piekrastei no turienes ir
-          2,5 līdz 3,5 stundas pa šoseju. Lētākā un ērtākā ir PickMe lietotne, Šrilankas Bolt, kas
-          parāda cenu jau pirms brauciena. Brauciens no lidostas līdz Madihai maksā aptuveni{' '}
-          <GuideTodo>PickMe cena no lidostas līdz Madihai</GuideTodo> eiro.
+          2,5 līdz 3,5 stundas pa šoseju. Vislētāk un vienkāršāk ir ar PickMe lietotni, vietējo
+          Boltu, kas cenu parāda jau pirms brauciena. Brauciens no lidostas līdz Madihai maksā
+          aptuveni <GuideTodo>PickMe cena no lidostas līdz Madihai</GuideTodo> eiro.
         </p>
 
         <GuideCallout tone="tip">
@@ -318,7 +316,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </p>
         <ul>
           <li>
-            ETA ir derīga 30 dienas, ar iespēju to pagarināt līdz pat sešiem vai deviņiem mēnešiem.
+            ETA ir derīga 30 dienas, un to var pagarināt līdz pat sešiem vai deviņiem mēnešiem.
           </li>
           <li>
             Maksa ir aptuveni <GuideTodo>precīzā ETA maksa</GuideTodo> USD par cilvēku, bērniem līdz
@@ -370,9 +368,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       <GuideSection id={sections.cost} title="Cik maksā ceļojums uz Šrilanku">
         <p>
           Divu nedēļu ceļojums uz Šrilanku, ja to plāno patstāvīgi, maksā no aptuveni 1 550 eiro
-          budžeta variantā līdz 2 250 eiro ar komfortu, ieskaitot biļetes un vīzu. Aģentūru pakešu
-          cenas Latvijā 2026. gada rudenī ir no 1 500 līdz 2 650 eiro par 10 līdz 13 naktīm, tātad
-          par to pašu naudu patstāvīgi izplānots ceļojums dod divas nedēļas un pilnu brīvību.
+          budžeta variantā līdz 2 250 eiro ar komfortu, ieskaitot biļetes un vīzu. Aģentūru paketes
+          Latvijā 2026. gada rudenī maksā no 1 500 līdz 2 650 eiro par 10 līdz 13 naktīm. Tātad par
+          to pašu naudu vari būt šeit divas nedēļas un visu laiku darīt, ko gribi.
         </p>
 
         <GuideTable
@@ -427,9 +425,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           dubultoties, un pica vai burgers maksā trīs līdz četras reizes vairāk nekā rice and curry.
         </p>
         <p>
-          Skaidra nauda Šrilankā joprojām ir galvenais norēķinu veids. Kartes pieņem lielākās
-          viesnīcas un restorāni, bet ārpus tūristu zonām gandrīz viss notiek skaidrā naudā.
-          Bankomāti ir visur, bet ar komisiju, tāpēc izņem lielāku summu vienā reizē.
+          Šrilankā joprojām valda skaidra nauda. Kartes pieņem lielākās viesnīcas un restorāni, bet
+          ārpus tūristu zonām gandrīz viss notiek skaidrā. Bankomāti ir visur, tikai ar komisiju,
+          tāpēc izņem lielāku summu uzreiz.
         </p>
 
         <GuideCallout tone="tip">
@@ -450,8 +448,8 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
 
       <GuideSection id={sections.regions} title="Šrilankas reģioni vienā tabulā">
         <p>
-          Šrilanka ir maza sala ar piecām pilnīgi atšķirīgām daļām. Šī tabula ir īsākais veids, kā
-          saprast, kur tev jābrauc.
+          Šrilanka ir maza sala ar piecām pilnīgi atšķirīgām daļām. Šī tabula ir ātrākais veids, kā
+          saprast, kurp tieši tev jābrauc.
         </p>
 
         <GuideTable
@@ -496,7 +494,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         <p>
           Šrilankā ir sešas UNESCO mantojuma vietas, divi nacionālie parki ar ziloņiem un
           leopardiem, kalnu reģions ar tējas plantācijām un ap 1 300 kilometru piekrastes. Šis ir
-          saraksts ar vietām, kuras es tiešām iesaku, un ar godīgu piezīmi par katru.
+          saraksts ar vietām, kuras es tiešām iesaku, un pie katras ir godīga piezīme.
         </p>
 
         <GuideTable
@@ -548,7 +546,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
               'Tējas plantācijas',
               'Nuvaraelija, Hapitale, Ellas apkārtne. Ceilonas tēja un kalnu ainavas.',
               'Pusdiena',
-              'Jā, un pa taciņām var izstaigāt bez maksas.',
+              'Jā, un pa taciņām tur var pastaigāt bez maksas.',
             ],
             [
               'Adamas smaile',
@@ -574,9 +572,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
 
         <GuideCallout tone="personal">
           <p>
-            Gandrīz katra aktivitāte, ko gribēsi redzēt, atrodas citā salas pusē. Sala nav liela,
-            bet seši braucienā pavadīti stundas vienā virzienā tikai vienas vietas dēļ nav tā vērts.
-            Izvēlies divas vai trīs vietas un apvieno tās ar tuvāko pilsētu.
+            Gandrīz viss, ko gribēsi redzēt, atrodas citā salas pusē. Sala nav liela, bet sešas
+            stundas ceļā vienā virzienā vienas vienīgas vietas dēļ nav tā vērtas. Izvēlies divas vai
+            trīs vietas un apvieno tās ar tuvāko pilsētu.
           </p>
         </GuideCallout>
 
@@ -594,9 +592,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
 
       <GuideSection id={sections.activities} title="Ko darīt Šrilankā: aktivitātes">
         <p>
-          Šrilankā vienā ceļojumā var sērfot, vērot vaļus, doties safari, kāpt kalnos un iemācīties
-          gatavot kariju. Šīs ir aktivitātes, kuras esmu izmēģinājusi pati, ar vietu un aptuveno
-          cenu.
+          Šrilankā vienā ceļojumā var iemācīties sērfot, vērot vaļus, izbraukt safari, uzkāpt kalnā
+          un iemācīties pagatavot kariju. Tabulā ir tikai tas, ko esmu izmēģinājusi pati, ar vietu
+          un aptuveno cenu.
         </p>
 
         <GuideTable
@@ -691,12 +689,12 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         <ul>
           <li>
             Ekskursijas, ko piedāvā uz ielas. Ziloņu apskates, slepenie tempļi un īpašie piedāvājumi
-            no tuk-tuka loga gandrīz vienmēr nozīmē pārmaksāšanu, un bieži ieeja patiesībā ir bez
-            maksas.
+            no tuk-tuka loga gandrīz vienmēr nozīmē, ka pārmaksāsi, un bieži vien ieeja tur
+            patiesībā ir bez maksas.
           </li>
           <li>
-            Vietas, kur ziloņus var apsēst vai kur dzīvniekus tur mazos aplokos. Safari nacionālajā
-            parkā ir gan lētāk, gan godīgāk pret dzīvniekiem.
+            Vietas, kur piedāvā jāt ar ziloņiem vai kur dzīvniekus tur mazos aplokos. Safari
+            nacionālajā parkā ir gan lētāk, gan godīgāk pret dzīvniekiem.
           </li>
           <li>
             <GuideTodo>Grieta: vēl viena aktivitāte, ko tu neiesaki, un kāpēc</GuideTodo>
@@ -710,9 +708,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
 
       <GuideSection id={sections.route} title="Maršruts 10 līdz 14 dienām">
         <p>
-          Šrilankā 14 dienās iespējams apvienot kultūras trīsstūri, kalnus, safari un dienvidu
-          pludmales, ja nemaini vietu katru dienu. Šis ir maršruts, ko es ieteiktu cilvēkam, kurš uz
-          Šrilanku brauc pirmo reizi.
+          Šrilankā 14 dienās var apvienot kultūras trīsstūri, kalnus, safari un dienvidu pludmales,
+          ja vien nemaini vietu katru dienu. Šo maršrutu es ieteiktu cilvēkam, kurš uz Šrilanku
+          brauc pirmo reizi.
         </p>
 
         <GuideFigure
@@ -758,9 +756,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         />
 
         <p>
-          Ja tev ir 10 dienas, izlaid Kolombo nakti un Kandi, brauc no lidostas uzreiz uz Sigiriju
-          un no Ellas pa taisno uz dienvidiem. Ja tev ir viena nedēļa, paliec tikai dienvidos: ceļš
-          ir par tālu, lai vienā nedēļā mēģinātu apbraukāt visu salu.
+          Ja tev ir 10 dienas, izlaid nakti Kolombo un Kandi, brauc no lidostas uzreiz uz Sigiriju
+          un no Ellas pa taisno uz dienvidiem. Ja tev ir viena nedēļa, paliec tikai dienvidos.
+          Vienai nedēļai visa sala vienkārši ir par tālu.
         </p>
 
         <p>
@@ -804,7 +802,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             ],
             [
               'Veligama',
-              'Sērfošanas iesācējiem un attālinātam darbam',
+              'Tiem, kas tikai mācās sērfot, un attālinātam darbam',
               'Sērfošanas skolas, coworking, lēti hosteļi',
               <GuideTodo key="weligama">cena</GuideTodo>,
             ],
@@ -972,14 +970,14 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </ul>
 
         <p>
-          Vislielākā krāpniecība Šrilankā ir pārmaksāšana. Tūristiem cenas vienmēr būs mazliet
-          augstākas, jo vietējie pelna mazāk. Strīdi te neko neatrisina. Ja smaidi un saglabā mieru,
-          viss atrisināsies daudz vieglāk.
+          Vislielākā krāpšana Šrilankā ir pārmaksāšana. Tūristam cena vienmēr būs mazliet augstāka,
+          jo vietējie pelna krietni mazāk. Strīdēties nav vērts, te tas neko nedod. Ar smaidu un
+          mieru tiksi daudz tālāk.
         </p>
         <p>
           Bez ceļojuma apdrošināšanas uz Šrilanku nebrauc. Biežākās traumas ir no satiksmes
           negadījumiem, it sevišķi ar skūteri. Privātās klīnikas strādā ātri un labi, bet rēķins var
-          būt simtos vai tūkstošos eiro.
+          iet simtos un tūkstošos eiro.
         </p>
         <p>
           Obligātu vakcīnu nav. Ārsti mēdz ieteikt vakcīnas pret A un B hepatītu, vēdertīfu un
@@ -1058,8 +1056,8 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </GuideCallout>
 
         <p>
-          Vai var saindēties? Mana pieredze ir pozitīva: vairākos gados ne reizi neesmu saslimusi no
-          vietējā ēdiena. Izvēlies vietas, kur jau ēd vietējie un ēdienu gatavo svaigu.
+          Vai var saindēties? Man šajos gados tas nav gadījies ne reizi. Ēd tur, kur jau sēž
+          vietējie un kur ēdienu gatavo svaigu.
         </p>
         <p>
           Manas mīļākās vietas vietējai virtuvei: Saras Kitchen, Malli’s Hoppers, Kalage, Papa
@@ -1073,16 +1071,16 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       <GuideSection id={sections.practical} title="Praktiskā informācija">
         <h3>Nauda un kartes</h3>
         <p>
-          Valūta ir Šrilankas rūpija. Skaidra nauda ir galvenais norēķinu veids, kartes pieņem
-          lielākajās vietās. Bankomāti ir visur, bet ar komisiju. Starptautiskas kartes strādā labāk
-          nekā Latvijas banku kartes. Naudu var izņemt jau lidostā.
+          Valūta ir Šrilankas rūpija. Maksā ar skaidru naudu, karti pieņem tikai lielākajās vietās.
+          Bankomāti ir visur, bet ar komisiju. Starptautiskas kartes strādā labāk nekā Latvijas
+          banku kartes. Naudu var izņemt jau lidostā.
         </p>
 
         <h3>SIM karte un internets</h3>
         <p>
           Lidostā uzreiz nopērc vietējo SIM karti, Dialog, Mobitel vai SLT, par 5 līdz 10 eiro ar 10
-          līdz 30 GB. Ar to pietiek visam ceļojumam. Mobilais internets Šrilankā ir labāks par wifi
-          viesnīcās, un elektrības pārrāvumu laikā tas ir vienīgais, kas strādā. Ņem līdzi power
+          līdz 30 GB. Ar to pietiek visam ceļojumam. Mobilais internets Šrilankā ir labāks nekā wifi
+          viesnīcās, un, kad pazūd elektrība, tas ir vienīgais, kas vēl strādā. Ņem līdzi power
           banku un izslēdz Latvijas SIM kartes mobilos datus.
         </p>
 
@@ -1093,7 +1091,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         <p>
           Tempļos jānosedz pleci un ceļi, apavi jānovelk pie ieejas, un fotografējoties nekad
           nestāvi ar muguru pret Budas statuju. Pusdienlaikā akmens grīda ir tik karsta, ka pēdas
-          apdeg: paņem līdzi zeķes. Ērts risinājums ir plāns sarongs somā.
+          apdeg: paņem līdzi zeķes. Un plāns sarongs somā izglābj gandrīz vienmēr.
         </p>
 
         <h3>Ko ņemt līdzi</h3>
@@ -1140,7 +1138,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </p>
         <p>
           Muitas noteikumi: tēju un garšvielas var vest bez ierobežojumiem personīgai lietošanai.
-          Neved koraļļus, gliemežvākus un neko, kas iegūts no savvaļas dzīvniekiem, par to ir sodi
+          Neved koraļļus, gliemežvākus un neko, kas nāk no savvaļas dzīvniekiem. Par to sodu dabūsi
           jau Šrilankas lidostā.
         </p>
       </GuideSection>
@@ -1181,14 +1179,14 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
 
       <GuideSection id={sections.trip} title="Ceļo kopā ar mums">
         <p>
-          Ja lasot radās sajūta, ka gribi to visu piedzīvot, bet ne vienatnē, mums ir meiteņu
+          Ja, to visu lasot, radās sajūta, ka gribi to piedzīvot, bet ne viena pati, mums ir meiteņu
           ceļojums uz Šrilanku 2027. gada janvārī. Maza grupa, dienvidu piekraste, kalni un safari,
-          un mēs uz vietas visu laiku. Sīkāk:{' '}
+          un mēs visu laiku esam blakus. Sīkāk:{' '}
           <Link href={href.girlsTrip}>meiteņu ceļojums uz Šrilanku</Link>.
         </p>
         <p>
-          Ikdienu no Madihas rādām Instagramā. Jautājumi par ceļojuma plānošanu vienmēr ir laipni
-          gaidīti, atbildam visām.
+          Ikdienu no Madihas rādām Instagramā. Ja kaut kas par ceļojuma plānošanu palika neskaidrs,
+          raksti. Atbildam visām.
         </p>
       </GuideSection>
 
