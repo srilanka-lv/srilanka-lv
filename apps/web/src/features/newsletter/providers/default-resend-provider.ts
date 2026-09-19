@@ -1,7 +1,10 @@
 import { Resend } from 'resend';
 
+import { NEWSLETTER_REPLY_TO, NEWSLETTER_SENDER } from '../constants/sender';
 import type { NewsletterProviderInterface } from '../interfaces/newsletter-provider-interface';
 import type { NewsletterAddContactResultModel } from '../models/newsletter-add-contact-result-model';
+import type { NewsletterSendEmailInputModel } from '../models/newsletter-send-email-input-model';
+import type { NewsletterSendEmailResultModel } from '../models/newsletter-send-email-result-model';
 
 export class DefaultResendProvider implements NewsletterProviderInterface {
   private readonly client: Resend;
@@ -35,6 +38,29 @@ export class DefaultResendProvider implements NewsletterProviderInterface {
 
     if (!data) {
       throw new Error('Failed to add contact to audience');
+    }
+
+    return { id: data.id };
+  }
+
+  public async sendEmail(
+    input: NewsletterSendEmailInputModel,
+  ): Promise<NewsletterSendEmailResultModel> {
+    const { data, error } = await this.client.emails.send({
+      from: NEWSLETTER_SENDER,
+      replyTo: NEWSLETTER_REPLY_TO,
+      to: input.to,
+      subject: input.subject,
+      html: input.html,
+      text: input.text,
+    });
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    if (!data) {
+      throw new Error('Failed to send email');
     }
 
     return { id: data.id };

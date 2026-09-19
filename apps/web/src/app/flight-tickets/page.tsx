@@ -1,5 +1,6 @@
 import { Temporal } from '@js-temporal/polyfill';
 import { PAGES } from '@packages/sanity/constants/pages-slugs';
+import clsx from 'clsx';
 import type { Metadata } from 'next';
 import type { FunctionComponent } from 'react';
 
@@ -19,9 +20,10 @@ import { formatShortDate } from '@/features/serpapi/utils/format-short-date';
 import { Breadcrumbs } from '@/shared/components/breadcrumbs';
 import { buildSectionItems, findNavLabel } from '@/shared/components/breadcrumbs/build-items';
 import { Button } from '@/shared/components/button';
+import { buttonStyles } from '@/shared/components/button/styles.css';
 import { Card } from '@/shared/components/card';
+import { ContactLink } from '@/shared/components/contact-link';
 import { SectionBlogs } from '@/shared/components/section-blogs';
-import { WHATSAPP_URL } from '@/shared/constants/whatsapp';
 
 import {
   ctaLinkStyle,
@@ -86,19 +88,12 @@ const NextFlightCalendarPage: FunctionComponent = () => {
         <Card variant="filled" className={funnelCardStyle}>
           <h2 className={funnelTitleStyle}>{FLIGHT_PAGE_COPY.funnelTitle}</h2>
           <p className={funnelBodyStyle}>{FLIGHT_PAGE_COPY.funnelBody}</p>
-          <Button
-            as="a"
-            variant="primary"
-            size="medium"
-            className={ctaLinkStyle}
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-umami-event="contact"
-            data-umami-event-channel="whatsapp"
+          <ContactLink
+            role="button"
+            className={clsx(buttonStyles({ variant: 'primary', size: 'medium' }), ctaLinkStyle)}
           >
             {FLIGHT_PAGE_COPY.funnelCtaLabel}
-          </Button>
+          </ContactLink>
         </Card>
       </div>
       <SectionBlogs sectionTitle="Mani piedzīvojumi Šrilankā" blogsLimit={6} />

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
 
+import { ContactLink } from '@/shared/components/contact-link';
 import { Heading } from '@/shared/components/heading';
 import { products } from '@/shared/components/products-page/index.data';
 import { WhatsAppPill } from '@/shared/components/whatsapp-button';
@@ -55,17 +56,7 @@ export const FooterProducts: FunctionComponent = () => {
           return (
             <li key={product.slug}>
               {product.whatsAppOnly ? (
-                <a
-                  className={footerProductsCardStyle}
-                  href={product.href}
-                  title="Chat on WhatsApp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-umami-event="contact"
-                  data-umami-event-channel="whatsapp"
-                >
-                  {cardContent}
-                </a>
+                <ContactLink className={footerProductsCardStyle}>{cardContent}</ContactLink>
               ) : (
                 <Link className={footerProductsCardStyle} href={product.href}>
                   {cardContent}

@@ -40,6 +40,7 @@ export const sectionBlogsItemLinkStyle = style(
     flexDirection: 'column',
     justifyContent: 'flex-end',
     height: '100%',
+    backgroundImage: 'none',
     transition: transition.duration.normal,
     transitionProperty: 'transform',
     transitionTimingFunction: transition.easing.easeInOut,

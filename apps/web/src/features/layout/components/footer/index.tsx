@@ -27,15 +27,19 @@ import { footerColumnsStyle, footerSeamlessStyle, footerStyle } from './styles.c
 // The products index already lists every product in full, so the footer there
 // drops the "Mani produkti" cards and the full-bleed hairline band. Both EN
 // (SSR) and LV (client) pathnames are covered for the rewrite duality.
-const productsIndexPaths = [`/${PAGES.EN.PRODUCTS}`, `/${PAGES.LV.PRODUCTS}`];
+//
+// The pillar guide keeps them: someone who reaches the end of 3,500 words is
+// the best-qualified reader on the site, and the cards are the only place all
+// three offers appear with a photo.
+const pathsWithoutProducts = [`/${PAGES.EN.PRODUCTS}`, `/${PAGES.LV.PRODUCTS}`];
 
 export const Footer: FunctionComponent = () => {
   const pathname = usePathname();
-  const isProductsIndex = productsIndexPaths.includes(pathname);
+  const withoutProducts = pathsWithoutProducts.includes(pathname);
 
   return (
-    <footer className={clsx(footerStyle, isProductsIndex && footerSeamlessStyle)}>
-      {!isProductsIndex && <FooterProducts />}
+    <footer className={clsx(footerStyle, withoutProducts && footerSeamlessStyle)}>
+      {!withoutProducts && <FooterProducts />}
       <div className={footerColumnsStyle}>
         <FooterAboutMe />
         <FooterLinks />

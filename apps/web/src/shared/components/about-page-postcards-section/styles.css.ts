@@ -31,6 +31,7 @@ export const postcardLinkStyle = style(
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: color.surface,
+    backgroundImage: 'none',
     borderRadius: border.radius.medium,
     border: `1px solid color-mix(in oklch, ${color.foreground} 10%, transparent)`,
     boxShadow: shadow.medium,
@@ -50,9 +51,6 @@ export const postcardLinkStyle = style(
         color: color.foreground,
         outline: `${focus.width} solid ${focus.color}`,
         outlineOffset: focus.offset,
-      },
-      '&::after': {
-        display: 'none',
       },
     },
   }),

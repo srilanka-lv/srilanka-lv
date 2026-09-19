@@ -22,6 +22,7 @@ const toStaticPage = (slug: string, path = `/${slug}`, priority = 0.7): StaticPa
 
 const staticPages: StaticPage[] = [
   toStaticPage(PAGES.LV.HOME, '', 1),
+  toStaticPage(PAGES.LV.GUIDE_TRIP, undefined, 0.9),
   toStaticPage(PAGES.LV.BLOGS),
   toStaticPage(PAGES.LV.PRODUCTS),
   toStaticPage(
