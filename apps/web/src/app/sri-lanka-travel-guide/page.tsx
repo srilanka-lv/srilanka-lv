@@ -418,8 +418,8 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
 
         <GuideCallout tone="tip">
           <p>
-            Vienmēr turi līdzi mazas banknotes. Tirgū un tuk-tukā par lielu banknoti sīknaudu ne
-            vienmēr atradīs.
+            Vienmēr turi līdzi mazas banknotes. Tirgū, mazās pilsētiņās un tuk-tukā ar karti maksāt
+            nevarēsi!
           </p>
         </GuideCallout>
 
