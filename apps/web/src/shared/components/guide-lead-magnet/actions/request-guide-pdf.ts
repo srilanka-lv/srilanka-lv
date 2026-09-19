@@ -4,21 +4,16 @@ import { DefaultResendProvider } from '@/features/newsletter/providers/default-r
 import { DefaultNewsletterRepository } from '@/features/newsletter/repositories/default-newsletter-repository';
 
 import { formSchema } from '../constants/form-schema';
+import { buildGuidePdfEmail } from '../constants/guide-pdf-email';
 
 type RequestGuidePdfResult = { success: true } | { success: false; error: string };
 
 /**
- * Subscribes the reader and (once the file exists) mails them the south coast
- * PDF.
+ * Subscribes the reader and mails them the link to the south coast PDF.
  *
- * TODO(pdf): the delivery step is NOT built. Adding the contact works, so the
- * address is captured, but nothing is sent yet. Before this ships:
- *   1. Put the PDF somewhere the server can read it, or upload it to Resend.
- *   2. Add a `sendGuidePdf` method to `NewsletterProviderInterface` and
- *      implement it in `DefaultResendProvider` with `client.emails.send`.
- *   3. Call it below and let a delivery failure surface as an error, so the
- *      reader is never told the file is on its way when it is not.
- *   4. Remove the placeholder note from the block's copy.
+ * The contact is added first so a lead is never lost to a delivery hiccup;
+ * a send failure still surfaces as an error, so the reader is never told the
+ * guide is on its way when it is not.
  */
 export async function requestGuidePdf(data: { email: string }): Promise<RequestGuidePdfResult> {
   const parsed = formSchema.safeParse(data);
@@ -32,6 +27,7 @@ export async function requestGuidePdf(data: { email: string }): Promise<RequestG
     const repository = new DefaultNewsletterRepository(provider);
 
     await repository.addContact(parsed.data.email);
+    await repository.sendEmail(buildGuidePdfEmail(parsed.data.email));
 
     return { success: true };
   } catch (error) {
