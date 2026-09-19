@@ -30,7 +30,7 @@ Still open:
 | route map | 1920 × 1080 | Optional. Maršruta karte ar sešām pieturām, 14 dienas. Would need its `GuideFigure` and `images` entry added back. |
 | cost infographic | 1920 × 1080 | Optional. 14 dienu izmaksu infografika, tie paši skaitļi, kas tabulā. Same as above. |
 
-Alt texts and captions were written from the photos on 2026-09-19 and need Grieta's read.
+Alt texts and captions were written from the photos and proofread by Grieta on 2026-09-19.
 
 ## Videos
 
