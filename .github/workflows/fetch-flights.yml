@@ -6,10 +6,11 @@ on:
   workflow_dispatch: # Allow manual triggers
 
 # `contents: write` to push the data branch, `pull-requests: write` to open
-# and merge the PR. Both `main` and `development` are protected by rulesets
-# that only accept changes through a pull request, so a direct push from
-# the bot is rejected (every scheduled run from 2026-07-26 on failed at the
-# push step for this reason).
+# and merge the PR (and for release-please to open the release PR). Both
+# `main` and `development` are protected by rulesets that only accept
+# changes through a pull request, so a direct push from the bot is rejected
+# (every scheduled run from 2026-07-26 on failed at the push step for this
+# reason).
 permissions:
   contents: write
   pull-requests: write
@@ -20,11 +21,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        # Default ref = `development`, the repo's default branch and the
-        # branch everything flows from. Data lands there, deploys to the
-        # development env on the next push, and reaches production with the
-        # next release (development → main), like every other change.
+        # Data goes straight to `main`, not through `development`: it is
+        # only data, and this is the shortest path to production. The
+        # release backmerge job in deploy.yml brings it back to
+        # `development` with the next release.
         uses: actions/checkout@v6
+        with:
+          ref: main
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -41,6 +44,7 @@ jobs:
         run: bun run apps/web/src/features/serpapi/scripts/map-flights.ts
 
       - name: Open and merge a pull request with the new data
+        id: data-pr
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -61,7 +65,7 @@ jobs:
           # `feat`, not `chore`: release-please ignores chore commits when
           # deciding whether to cut a version, so a data-only week would
           # never reach production. As a feat it is enough on its own to
-          # produce a release once development is merged into main.
+          # produce a release.
           git commit -m "feat(flights): ✈️ update flights data ${today}"
           # --force so a same-day re-run (e.g. a manual dispatch) replaces the
           # earlier attempt's branch instead of failing on a non-fast-forward.
@@ -70,21 +74,35 @@ jobs:
           # gh fails if a PR already exists for this head; reuse it then.
           pr_url="$(
             gh pr create \
-              --base development \
+              --base main \
               --head "${branch}" \
               --title "feat(flights): ✈️ update flights data ${today}" \
               --body "Weekly flight data refresh from the scheduled fetch-flights workflow (queried ${today}). Auto-merged; nothing to review unless the merge below failed." \
             2>/dev/null
-          )" || pr_url="$(gh pr list --head "${branch}" --state open --json url --jq '.[0].url')"
+          )" || pr_url="$(gh pr list --base main --head "${branch}" --state open --json url --jq '.[0].url')"
           echo "PR: ${pr_url}"
 
           # Same pattern as the release backmerge job in deploy.yml: try a
-          # direct merge (no required reviews or checks on `development`, so
-          # it is mergeable at once), fall back to auto-merge, and if both
-          # fail leave the PR open for a manual merge.
+          # direct merge (no required reviews or checks on `main`, so it is
+          # mergeable at once), fall back to auto-merge, and if both fail
+          # leave the PR open for a manual merge.
           if gh pr merge --merge "${pr_url}"; then
             git push origin --delete "${branch}"
+            echo "merged=true" >> "${GITHUB_OUTPUT}"
           else
             gh pr merge --auto --merge "${pr_url}" \
               || echo "Could not merge automatically. PR left open for manual merge."
           fi
+
+      - name: Open or update the release PR
+        # A merge made with the Actions token does not trigger the push
+        # workflows (GitHub rule), so deploy.yml's release-please job never
+        # sees this merge. Run release-please here with the same settings
+        # so the release PR appears right away. Merging that PR by hand is a
+        # normal push to `main`, which does trigger deploy.yml and ships
+        # staging → production as usual.
+        if: steps.data-pr.outputs.merged == 'true'
+        uses: googleapis/release-please-action@v5
+        with:
+          release-type: node
+          target-branch: main
