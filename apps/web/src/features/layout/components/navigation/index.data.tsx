@@ -23,12 +23,6 @@ export const navigationItems = [
   },
   {
     visibleInNavigation: true,
-    label: 'Blogi',
-    icon: <Newspaper size={20} />,
-    href: `/${PAGES.LV.BLOGS}`,
-  },
-  {
-    visibleInNavigation: true,
     label: 'Produkti',
     icon: <ShoppingBag size={20} />,
     href: `/${PAGES.LV.PRODUCTS}`,
@@ -38,6 +32,12 @@ export const navigationItems = [
     label: 'Lidojumu cenas',
     icon: <TicketsPlane size={20} />,
     href: `/${PAGES.LV.FLIGHT_TICKETS}`,
+  },
+  {
+    visibleInNavigation: true,
+    label: 'Blogi',
+    icon: <Newspaper size={20} />,
+    href: `/${PAGES.LV.BLOGS}`,
   },
   {
     visibleInNavigation: true,
