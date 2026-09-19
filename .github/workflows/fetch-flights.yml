@@ -86,11 +86,14 @@ jobs:
           # direct merge (no required reviews or checks on `main`, so it is
           # mergeable at once), fall back to auto-merge, and if both fail
           # leave the PR open for a manual merge.
-          if gh pr merge --merge "${pr_url}"; then
+          # Rebase, not a merge commit: release-please reads the PR title
+          # for merge commits too, so a merge commit lists the same feat
+          # twice in the changelog (verified in run 35457988608 / PR #125).
+          if gh pr merge --rebase "${pr_url}"; then
             git push origin --delete "${branch}"
             echo "merged=true" >> "${GITHUB_OUTPUT}"
           else
-            gh pr merge --auto --merge "${pr_url}" \
+            gh pr merge --auto --rebase "${pr_url}" \
               || echo "Could not merge automatically. PR left open for manual merge."
           fi
 
