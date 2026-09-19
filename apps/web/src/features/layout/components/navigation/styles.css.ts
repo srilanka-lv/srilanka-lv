@@ -83,6 +83,7 @@ export const navigationItemStyles = recipe({
     gap: spacing[3],
     color: 'currentColor',
     textDecoration: 'none',
+    backgroundImage: 'none',
     fontSize: font.size.lg,
     fontWeight: font.weight.medium,
     lineHeight: font.lineHeight.none,

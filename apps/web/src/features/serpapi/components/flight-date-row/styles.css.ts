@@ -132,9 +132,7 @@ export const ctaLinkStyle = style(
         outline: `${focus.width} solid ${focus.color}`,
         outlineOffset: focus.offset,
       },
-      '&::after': {
-        display: 'none',
-      },
     },
+    backgroundImage: 'none',
   }),
 );

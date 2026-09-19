@@ -32,6 +32,16 @@ const sections: Section[] = [
   {
     heading: 'Ceļveži',
     pages: [
+      // Authored in code, so there is no Sanity document to read a title from.
+      {
+        slug: PAGES.LV.GUIDE_TRIP,
+        path: `/${PAGES.LV.GUIDE_TRIP}`,
+        fallback: {
+          title: 'Ceļojums uz Šrilanku',
+          description:
+            'Pilns ceļvedis ceļojumam uz Šrilanku bez aģentūras: vīza, lidojumi no Rīgas, cenas eiro, maršruts un pludmales. Rakstīts Madihā.',
+        },
+      },
       toSectionPage(PAGES.LV.INFO_WHAT_TO_DO),
       toSectionPage(PAGES.LV.INFO_WHERE_TO_STAY),
       toSectionPage(PAGES.LV.INFO_DAILY_BUDGET),

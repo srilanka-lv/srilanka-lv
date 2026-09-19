@@ -61,6 +61,7 @@ export const staleCardStyle = style({
 export const ctaLinkStyle = style(
   inComponentsLayer({
     color: color.accentForeground,
+    backgroundImage: 'none',
     selectors: {
       '&:hover': {
         color: color.accentForeground,
@@ -69,9 +70,6 @@ export const ctaLinkStyle = style(
         color: color.accentForeground,
         outline: `${focus.width} solid ${focus.color}`,
         outlineOffset: focus.offset,
-      },
-      '&::after': {
-        display: 'none',
       },
     },
   }),

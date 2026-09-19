@@ -7,7 +7,9 @@ import { footerHeadingStyle } from '../footer/styles.css';
 import { navigationItems } from '../navigation/index.data';
 import { footerLinksLinkStyle, footerLinksListStyle } from './styles.css';
 
-const guideItems = navigationItems.filter((item) => !item.visibleInNavigation);
+// Every item that is not in the header, except Home: that one is only
+// registered for breadcrumbs and is reachable from the logo.
+const guideItems = navigationItems.filter((item) => !item.visibleInNavigation && item.href !== '/');
 
 export const FooterLinks: FunctionComponent = () => (
   <div>
