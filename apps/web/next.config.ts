@@ -113,6 +113,18 @@ const nextConfig: NextConfig = {
         destination: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
         permanent: false,
       },
+      // Per-audience short links for the Meta DM ad greetings. Meta caps the
+      // greeting at 300 characters, which a full UTM query string overflows, so
+      // the greeting carries a short path and the UTM tagging happens here.
+      ...[
+        { path: 'dm-w', content: 'warm' },
+        { path: 'dm-lv', content: 'cold-lv' },
+        { path: 'dm-d', content: 'cold-diaspora' },
+      ].map(({ path, content }) => ({
+        source: `/celojums/${path}`,
+        destination: `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}?utm_source=ig&utm_medium=dm-ad&utm_campaign=girls-trip-jan27&utm_content=${content}`,
+        permanent: false,
+      })),
       // The consultation and holiday-plan pages are retired but still indexed
       // by Google, so every historical URL lands on the girls trip page.
       // Temporary (307) so the URLs can come back if those pages ship later.

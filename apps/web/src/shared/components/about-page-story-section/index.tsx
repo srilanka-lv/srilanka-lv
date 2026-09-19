@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
 
+import { ContactLink } from '@/shared/components/contact-link';
 import { Signature } from '@/shared/components/signature';
-import { WHATSAPP_URL } from '@/shared/constants/whatsapp';
 
 import {
   storyClosingStyle,
@@ -102,17 +102,7 @@ export const AboutPageStorySection: FunctionComponent = () => (
     </p>
     <p className={storyParagraphStyle}>
       Šodien es palīdzu latviešiem iepazīt Šrilanku tādu, kādu to pazīstu es, īstu, autentisku un
-      drošu. Veidoju{' '}
-      <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        data-umami-event="contact"
-        data-umami-event-channel="whatsapp"
-      >
-        personalizētus ceļojumu plānus
-      </a>
-      , organizēju{' '}
+      drošu. Veidoju <ContactLink>personalizētus ceļojumu plānus</ContactLink>, organizēju{' '}
       <Link href={`/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`}>grupu braucienus</Link>{' '}
       un sniedzu reālu atbalstu uz vietas, lai ikviens varētu izbaudīt šo salu ar pārliecību un
       mieru.

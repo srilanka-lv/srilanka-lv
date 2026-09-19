@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import type { FunctionComponent } from 'react';
 
-import { WHATSAPP_URL } from '@/shared/constants/whatsapp';
+import { ContactLink } from '@/shared/components/contact-link';
 
 import { whatsAppButtonStyle } from './styles.css';
 
@@ -34,15 +34,7 @@ export const WhatsAppPill: FunctionComponent<WhatsAppProps> = ({ className }) =>
 
 /** Standalone "Chat on WhatsApp" link, styled as the green pill from the footer. */
 export const WhatsAppButton: FunctionComponent<WhatsAppProps> = ({ className }) => (
-  <a
-    className={clsx(whatsAppButtonStyle, className)}
-    href={WHATSAPP_URL}
-    title="Chat on WhatsApp"
-    target="_blank"
-    rel="noopener noreferrer"
-    data-umami-event="contact"
-    data-umami-event-channel="whatsapp"
-  >
+  <ContactLink className={clsx(whatsAppButtonStyle, className)}>
     <WhatsAppPill />
-  </a>
+  </ContactLink>
 );
