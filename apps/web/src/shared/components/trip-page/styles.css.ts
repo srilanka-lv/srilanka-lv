@@ -50,11 +50,7 @@ export const tripPageCollaborationStyle = style({
 });
 
 export const tripPageCollaborationLinkStyle = style({
-  selectors: {
-    '&:after': {
-      display: 'none',
-    },
-  },
+  backgroundImage: 'none',
 });
 
 export const tripPageCollaborationLogoStyle = style({

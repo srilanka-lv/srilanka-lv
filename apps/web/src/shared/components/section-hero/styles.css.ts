@@ -125,13 +125,14 @@ export const sectionHeroButtonStyle = style(
     transitionProperty: 'transform',
     transitionTimingFunction: transition.easing.easeInOut,
 
+    // The pill is its own surface, so the sitewide link bar has nothing to
+    // sit under.
+    backgroundImage: 'none',
+
     selectors: {
       '&:hover': {
         color: color.accent,
         transform: 'translateY(-2px)',
-      },
-      '&:after': {
-        display: 'none',
       },
     },
   }),

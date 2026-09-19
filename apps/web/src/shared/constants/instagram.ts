@@ -1,6 +1,6 @@
 export const INSTAGRAM_HANDLE = 'dzivetropos';
 
-export const INSTAGRAM_PROFILE_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}`;
+export const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}`;
 
 // ig.me deep link: opens a direct message thread with the account. Inside
 // Instagram's own in-app browser this is the only contact route that reliably

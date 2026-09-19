@@ -12,12 +12,10 @@ const { focus } = vars;
 export const quietLinkStyle = style(
   inComponentsLayer({
     borderBottom: '1px dotted currentColor',
+    backgroundImage: 'none',
     selectors: {
       '&:link, &:visited, &:hover, &:active, &:focus-visible': {
         color: 'inherit',
-      },
-      '&::after': {
-        display: 'none',
       },
       '&:focus-visible': {
         outline: `${focus.width} solid ${focus.color}`,

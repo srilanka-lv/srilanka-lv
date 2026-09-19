@@ -28,9 +28,7 @@ export const footerSocialLinkStyle = style(
     selectors: {
       '&:link, &:visited, &:active': {
         color: color.accent,
-      },
-      '&::after': {
-        display: 'none',
+        backgroundImage: 'none',
       },
       '&:hover': {
         color: color.primary,
