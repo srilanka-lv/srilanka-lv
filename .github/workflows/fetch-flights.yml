@@ -5,15 +5,26 @@ on:
     - cron: '0 3 * * 0' # Every Sunday at 03:00 UTC
   workflow_dispatch: # Allow manual triggers
 
+# `contents: write` to push the data branch, `pull-requests: write` to open
+# and merge the PR. Both `main` and `development` are protected by rulesets
+# that only accept changes through a pull request, so a direct push from
+# the bot is rejected (every scheduled run from 2026-07-26 on failed at the
+# push step for this reason).
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   fetch-flights:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
+        # Default ref = `development`, the repo's default branch and the
+        # branch everything flows from. Data lands there, deploys to the
+        # development env on the next push, and reaches production with the
+        # next release (development → main), like every other change.
         uses: actions/checkout@v6
-        with:
-          ref: main
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -29,12 +40,47 @@ jobs:
       - name: Map flight data
         run: bun run apps/web/src/features/serpapi/scripts/map-flights.ts
 
-      - name: Commit and push
+      - name: Open and merge a pull request with the new data
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -e
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add apps/web/src/features/serpapi/data/
-          git diff --cached --quiet && echo "No changes to commit" && exit 0
-          git commit -m "chore(flights): ✈️ update flights data $(date +%Y-%m-%d)"
-          git pull --rebase origin main
-          git push origin main
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          today="$(date +%Y-%m-%d)"
+          branch="chore/flights-data-${today}"
+
+          git checkout -b "${branch}"
+          git commit -m "chore(flights): ✈️ update flights data ${today}"
+          # --force so a same-day re-run (e.g. a manual dispatch) replaces the
+          # earlier attempt's branch instead of failing on a non-fast-forward.
+          git push --force origin "${branch}"
+
+          # gh fails if a PR already exists for this head; reuse it then.
+          pr_url="$(
+            gh pr create \
+              --base development \
+              --head "${branch}" \
+              --title "chore(flights): ✈️ update flights data ${today}" \
+              --body "Weekly flight data refresh from the scheduled fetch-flights workflow (queried ${today}). Auto-merged; nothing to review unless the merge below failed." \
+            2>/dev/null
+          )" || pr_url="$(gh pr list --head "${branch}" --state open --json url --jq '.[0].url')"
+          echo "PR: ${pr_url}"
+
+          # Same pattern as the release backmerge job in deploy.yml: try a
+          # direct merge (no required reviews or checks on `development`, so
+          # it is mergeable at once), fall back to auto-merge, and if both
+          # fail leave the PR open for a manual merge.
+          if gh pr merge --merge "${pr_url}"; then
+            git push origin --delete "${branch}"
+          else
+            gh pr merge --auto --merge "${pr_url}" \
+              || echo "Could not merge automatically. PR left open for manual merge."
+          fi
