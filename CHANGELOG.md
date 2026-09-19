@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.16.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.15.0...v1.16.0) (2026-09-19)
+
+
+### Features
+
+* ✨ "Ceļojums uz Šrilanku" pillar page ([2983f08](https://github.com/srilanka-lv/srilanka-lv/commit/2983f08dc71dadf189be084abe9c18a286a0964e))
+* ✨ add an inline PDF signup block to the guide ([470212e](https://github.com/srilanka-lv/srilanka-lv/commit/470212eb31bfb55674b7081f5b917ba49b492ab1))
+* ✨ add the what-to-see and what-to-do sections, neutralise the address ([7f0a5ec](https://github.com/srilanka-lv/srilanka-lv/commit/7f0a5ece523d2f68654281be640edcceebda4487))
+* ✨ build the pillar guide content with media placeholders ([4418179](https://github.com/srilanka-lv/srilanka-lv/commit/44181796052c570e561d143b0600409f50340877))
+* ✨ fill the guide with real photos, quotes and Grieta's voice ([8a35aa5](https://github.com/srilanka-lv/srilanka-lv/commit/8a35aa5341a97185c83a2485c6029b2448386447))
+* ✨ give the guide its product calls to action ([4b76b69](https://github.com/srilanka-lv/srilanka-lv/commit/4b76b698934f8585f97ef174106a48b0fdba3f51))
+* ✨ link each guide heading to itself ([f0cfc27](https://github.com/srilanka-lv/srilanka-lv/commit/f0cfc275c89bc6541827f1d5234182ef93359ab4))
+* ✨ link Grieta's Instagram from the guide ([aa3aadc](https://github.com/srilanka-lv/srilanka-lv/commit/aa3aadc6c8473998683be956b357f6954f91a7dd))
+* ✨ link the guide's entities to Wikidata in the schema ([cb154e8](https://github.com/srilanka-lv/srilanka-lv/commit/cb154e846ce0813b7ce30a71b070aeb52deb0cde))
+* ✨ mail the south coast PDF link after signup ([610affd](https://github.com/srilanka-lv/srilanka-lv/commit/610affd22ed6e6e5bae13b1dd012aa554559096e))
+* ✨ put the guide first in the menu, blogs after flight prices ([c819845](https://github.com/srilanka-lv/srilanka-lv/commit/c819845e38939a411caa72db35ef34b7ca44157e))
+* ✨ redirect the old blog post URL to the pillar guide ([78f7834](https://github.com/srilanka-lv/srilanka-lv/commit/78f783402f8f8183bb3ef0b91a2845d2039bf52f))
+* ✨ scaffold the "Ceļojums uz Šrilanku" pillar page route ([b17113f](https://github.com/srilanka-lv/srilanka-lv/commit/b17113f8a59c61f9834dc8db1c9eed7a044ee479))
+* ✨ smooth-scroll in-page anchors ([64adebc](https://github.com/srilanka-lv/srilanka-lv/commit/64adebcad9e392ee79d2a81041e767364a88dde5))
+* ✨ sticky table of contents beside the guide on wide screens ([4afb91d](https://github.com/srilanka-lv/srilanka-lv/commit/4afb91df4667c239af2e3494b0a12a4102f235d8))
+
+
+### Bug Fixes
+
+* 🐛 give wrapped links their coral bar back ([b2c2323](https://github.com/srilanka-lv/srilanka-lv/commit/b2c2323ab39a10f25cc99612c39835dbca8a8fe4))
+* 🐛 keep link text readable when hovered on light surfaces ([a862444](https://github.com/srilanka-lv/srilanka-lv/commit/a8624442af39f8fa6f1dc8e414c47445aa2e6f5c))
+* 🐛 route in-app browser visitors to Instagram DM and tag DM-ad links ([a04a555](https://github.com/srilanka-lv/srilanka-lv/commit/a04a5559f08fae294d69f013b6c6dd4afe442d1c))
+* 🐛 route in-app browser visitors to Instagram DM and tag DM-ad links ([f602c15](https://github.com/srilanka-lv/srilanka-lv/commit/f602c15f6a1b03b10e68bcc5e93849dff123d2d6))
+* 🐛 use international spellings for Sri Lankan place names ([865b524](https://github.com/srilanka-lv/srilanka-lv/commit/865b524549b3b96f9b31dd79109085f84f64f012))
+* 💄 unclip the contents list and loosen the guide's boxed sections ([49bdac5](https://github.com/srilanka-lv/srilanka-lv/commit/49bdac54e6162f37551911cc9db70b0e9ae74435))
+* 📝 update the small banknotes tip ([0327e72](https://github.com/srilanka-lv/srilanka-lv/commit/0327e7217c778d52a51c55289615b50b1b0b40f3))
+
 ## [1.15.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.14.0...v1.15.0) (2026-09-11)
 
 
