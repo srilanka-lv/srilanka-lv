@@ -55,10 +55,14 @@ jobs:
           fi
 
           today="$(date +%Y-%m-%d)"
-          branch="chore/flights-data-${today}"
+          branch="feat/flights-data-${today}"
 
           git checkout -b "${branch}"
-          git commit -m "chore(flights): ✈️ update flights data ${today}"
+          # `feat`, not `chore`: release-please ignores chore commits when
+          # deciding whether to cut a version, so a data-only week would
+          # never reach production. As a feat it is enough on its own to
+          # produce a release once development is merged into main.
+          git commit -m "feat(flights): ✈️ update flights data ${today}"
           # --force so a same-day re-run (e.g. a manual dispatch) replaces the
           # earlier attempt's branch instead of failing on a non-fast-forward.
           git push --force origin "${branch}"
@@ -68,7 +72,7 @@ jobs:
             gh pr create \
               --base development \
               --head "${branch}" \
-              --title "chore(flights): ✈️ update flights data ${today}" \
+              --title "feat(flights): ✈️ update flights data ${today}" \
               --body "Weekly flight data refresh from the scheduled fetch-flights workflow (queried ${today}). Auto-merged; nothing to review unless the merge below failed." \
             2>/dev/null
           )" || pr_url="$(gh pr list --head "${branch}" --state open --json url --jq '.[0].url')"
