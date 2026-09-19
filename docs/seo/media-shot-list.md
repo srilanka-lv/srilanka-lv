@@ -1,29 +1,40 @@
 # Media shot list for /celojums-uz-srilanku
 
-For Grieta and Dave, week of 2026-09-14. Every slot below is already on the page as a labelled placeholder. Replace the file, keep the filename and the pixel size, and the page picks it up with no code change.
+For Grieta and Dave. Most photo slots are filled as of 2026-09-19; the open ones are listed below.
 
 Photos go in `apps/web/public/images/guide/`. Export as WebP where possible; keep the hero under 200 KB.
 
 ## Photos
 
+Landed 2026-09-19 as WebP, 1920 × 1080, in `public/images/guide/`, named as exported (`srilanka-lv_<scene>.webp`), not by slot:
+
+| Slot | File |
+|---|---|
+| hero | `srilanka-lv_madihas-pludmale.webp` (188 KB) |
+| map | `srilanka-lv_lidojums-riga-parsesanas-stambula-galamerkis-srilanka-colombo.webp` |
+| infographic-season | `srilanka-lv_sezonas-srilanka-salidzinajuma-ar-latviju.webp` |
+| beach-madiha | `srilanka-lv_makskernieks-bauda-saulrietu-srilanka.webp` |
+| beach-mirissa | `srilanka-lv_populara-vieta-srilanka-kokosriekstu-palmu-kalns.webp` |
+| beach-weligama | `srilanka-lv_meitenes-serfo-weligama.webp` |
+| food | `srilanka-lv_latviesu-ediens-un-srilankas-ediens.webp` |
+| spices | `srilanka-lv_plucu-tejas-lapas-srilanka.webp` |
+| group | `srilanka-lv_meitenu-celojums.webp` |
+
+The route-map and cost-infographic figures were removed from the page; the tables carry those numbers.
+
+Still open:
+
 | Filename | Size | What |
 |---|---|---|
-| `hero.webp` | 3456 × 2234 | Madihas pludmale saullēktā. Šis ir LCP elements, tāpēc tam jābūt vieglam. |
-| `map.webp` | 1920 × 1080 | Karte: Rīga, pārsēšanās punkts, Kolombo. |
-| `route.webp` | 1920 × 1080 | Maršruta karte ar sešām pieturām, 14 dienas. |
-| `beach-madiha.webp` | 1920 × 1080 | Madihas pludmale. |
-| `beach-mirissa.webp` | 1920 × 1080 | Mirisa, Coconut Tree Hill vai līcis saulrietā. |
-| `beach-weligama.webp` | 1920 × 1080 | Veligama, sērfotāji iesācēji. |
-| `food.webp` | 1920 × 1080 | Rice and curry uz banānu lapas vietējā ēstuvē. |
-| `spices.webp` | 1920 × 1080 | Garšvielu tirgus vai tējas plantācija. |
-| `group.webp` | 1920 × 1080 | Grupas foto no iepriekšējā meiteņu ceļojuma. |
-| `infographic-season.webp` | 1920 × 1080 | Sezonu infografika ar tiem pašiem skaitļiem, kas tabulā. |
-| `infographic-cost.webp` | 1920 × 1080 | 14 dienu izmaksu infografika, tie paši skaitļi, kas tabulā. |
-| `author.webp` | 800 × 800 | Grieta, kvadrāts, seja centrā (rāda kā apli 96 px). Tikai Grieta: lapa ir rakstīta viņas vienskaitļa balsī. |
+| author portrait | 800 × 800 | Optional. The author box now uses the footer's real profile photo (400 × 400). A dedicated square shot, seja centrā, would let it render sharper at 96 px; change `portraitSrc` in `page.tsx`. |
+| route map | 1920 × 1080 | Optional. Maršruta karte ar sešām pieturām, 14 dienas. Would need its `GuideFigure` and `images` entry added back. |
+| cost infographic | 1920 × 1080 | Optional. 14 dienu izmaksu infografika, tie paši skaitļi, kas tabulā. Same as above. |
 
-When a file lands, change the `src` and the extension in `src/app/sri-lanka-travel-guide/page.tsx` (and in `images` in `index.data.tsx` for the structured data). Write a real Latvian `alt` that describes the scene, not the keyword.
+Alt texts and captions were written from the photos on 2026-09-19 and need Grieta's read.
 
 ## Videos
+
+Removed from the page on 2026-09-19 so it could launch without placeholder clips. When the clips exist, add them back: `videos` and `videoList` in `index.data.tsx`, three `<GuideVideo>` blocks in `page.tsx` (after the intro paragraph, after the south coast intro, after the transport intro), and the `videos` prop plus `buildVideoObject` mapping in `guide-json-ld.tsx`. The `GuideVideo` component is still in `shared/components`.
 
 Three clips, 60 to 90 seconds, uploaded to YouTube. The page uses a click-to-load facade, so a video costs nothing until someone presses play.
 
@@ -35,7 +46,7 @@ Three clips, 60 to 90 seconds, uploaded to YouTube. The page uses a click-to-loa
 
 Each clip goes up twice: the horizontal cut for the page, and the vertical Instagram cut as a YouTube Short with "Šrilanka" at the start of the title. The "šrilanka" results page carries a short-videos carousel, and Shorts are how a small channel enters it.
 
-Then in `index.data.tsx` swap `url` and `uploadDate` per clip. The upload date is required: without it the VideoObject schema is dropped.
+The upload date is required per clip: without it the VideoObject schema is dropped.
 
 ## Audio
 
@@ -43,33 +54,20 @@ Not used on the page. There is no audio block, and audio has no ranking effect. 
 
 ## Facts still owed
 
-Every one of these shows as a yellow mark on the page. Search the page for `GuideTodo`.
+None as of the evening of 2026-09-19. The souvenirs paragraph, three testimonials (Inese A., Elza A., Artūrs B., with portraits in `public/images/guide/`), the temperature table and the email copy all landed. No `GuideTodo` marks remain on the page.
 
-1. Population figure and its year.
-2. Rupee to euro rate with the date.
-3. The exact ETA fee in USD from the official site.
-4. PickMe fare from the airport to Madiha.
-5. Unit prices: rice and curry, a beer, 1.5 l water, a coconut, a villa night, whale watching, safari.
-6. A night's price for each of the seven south coast beaches.
-7. Grieta: the one place or activity she would skip, and why.
-8. Grieta: what she brings home for friends, two or three sentences.
-9. Three quotes from past girls-trip participants, with first names and permission.
-10. The Instagram link in the author box.
-11. Confirm or replace the south coast temperature table.
-12. Prices for the activities table: sērfošanas nodarbība, dēļa noma, vaļu vērošana, niršana, safari, krokodilu tūre, sikspārņu vakars, masāža, gatavošanas meistarklase, bruņurupuču vērošana, gredzenu darbnīca, SUP.
-13. Grieta: one more activity she does not recommend, and why.
-14. The south coast PDF itself, plus one line describing what is in it (the signup block asks for both).
+The per-beach "Nakts no" column was removed on 2026-09-19: beaches are free, so the column had nothing honest to say.
 
 ## The PDF signup block
 
 An inline block sits after the south coast section: leave an email, get the PDF. It is not a pop-up, on purpose, because a pop-up would add interaction cost to a page tuned for Core Web Vitals and would interrupt the reader.
 
-Two things are still placeholders:
+How it works since 2026-09-19:
 
-- **The file.** Find it, and decide what it still offers that the page does not. The page now covers seven beaches with prices, so the overlap is large. If the honest answer is "not much", fold the good parts into the page and drop the PDF instead.
-- **The delivery.** The email address is captured today, but nothing is sent. `shared/components/guide-lead-magnet/actions/request-guide-pdf.ts` carries the four steps needed to wire it. Do not remove the yellow marks from the block until sending actually works: the copy promises a file.
-
-If the PDF does ship, serve it so Google cannot index it, otherwise it competes with the page for the same south coast queries. Delivering it through an API route gets that for free, since robots.txt already disallows `/api/`.
+- The reader's address goes into the Resend audience (same list as the footer form), then one transactional email goes out from `sveiki@srilanka.lv` with a link to the PDF. srilanka.lv is verified on Resend in eu-west-1; the sender lives in `features/newsletter/constants/sender.ts`.
+- The PDF is hosted on Google Drive (My Drive > Clients > SriLanka.lv), shared as "anyone with the link, viewer". Upload the 5 MB compressed export, not the 44 MB original. The `/view` link goes into `GUIDE_PDF_URL` in `guide-lead-magnet/constants/guide-pdf-email.ts`; a unit test fails while the placeholder is still there.
+- The email copy in that same file was approved on 2026-09-19.
+- Free tier limits: 100 emails a day, 3,000 a month, 1,000 contacts across both forms.
 
 ## Added after Grieta's proofread, 13 September
 

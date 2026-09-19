@@ -12,9 +12,8 @@ import { GuideLeadMagnet } from '@/shared/components/guide-lead-magnet';
 import { GuidePageLayout } from '@/shared/components/guide-page-layout';
 import { GuideSection } from '@/shared/components/guide-section';
 import { GuideTable } from '@/shared/components/guide-table';
+import { GuideTestimonials } from '@/shared/components/guide-testimonials';
 import { GuideToc } from '@/shared/components/guide-toc';
-import { GuideTodo } from '@/shared/components/guide-todo';
-import { GuideVideo } from '@/shared/components/guide-video';
 import { INSTAGRAM_URL } from '@/shared/constants/instagram';
 import { DEFAULT_OG_IMAGE } from '@/shared/constants/og-image';
 import { WHATSAPP_URL } from '@/shared/constants/whatsapp';
@@ -32,8 +31,6 @@ import {
   sections,
   subject,
   tocItems,
-  videoList,
-  videos,
 } from './index.data';
 
 /*
@@ -41,8 +38,8 @@ import {
  * media. The Latvian source draft is docs/seo/pillar-page-draft-lv.md, and the
  * strategy behind the section order is docs/seo/pillar-page-plan.md.
  *
- * Yellow <GuideTodo> marks and the "vietturis" images and videos are
- * placeholders: none of them may survive to release.
+ * Videos were taken off the page for launch and come back once the three
+ * clips exist; see docs/seo/media-shot-list.md.
  */
 
 const PATH = `/${PAGES.LV.GUIDE_TRIP}`;
@@ -98,20 +95,19 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       dateModified={UPDATED_AT}
       images={images}
       faqs={faqs}
-      videos={videoList}
       subject={subject}
       mentions={mentionedPlaces}
     />
 
     <GuidePageLayout href={PATH} updatedAt={UPDATED_AT} lede={LEDE} tocItems={tocItems}>
       <GuideFigure
-        src="/images/guide/hero.svg"
-        alt="Madihas pludmale Šrilankas dienvidos saullēktā"
-        width={3456}
-        height={2234}
+        src="/images/guide/srilanka-lv_madihas-pludmale.webp"
+        alt="Meitene pie viļņiem Madihas pludmalē Šrilankas dienvidos"
+        width={1920}
+        height={1080}
         preload
         sizes="(min-width: 1024px) 768px, 100vw"
-        caption="Vietturis. Šeit nāks hero foto no Madihas."
+        caption="Madihas pludmale, Šrilankas dienvidi."
       />
 
       <p>
@@ -124,8 +120,6 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         cik maksā vīza, cik maksā viena diena, kad braukt, kur palikt un no kā labāk izvairīties.
         Cenas visas ir eiro, un katrai ir klāt datums, jo Šrilankā tās mainās ātri.
       </p>
-
-      <GuideVideo {...videos.intro} />
 
       <GuideToc items={tocItems} />
 
@@ -155,11 +149,11 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </p>
 
         <GuideFigure
-          src="/images/guide/map.svg"
+          src="/images/guide/srilanka-lv_lidojums-riga-parsesanas-stambula-galamerkis-srilanka-colombo.webp"
           alt="Karte ar lidojuma maršrutu no Rīgas uz Šrilanku ar pārsēšanos"
           width={1920}
           height={1080}
-          caption="Vietturis. Šeit nāks karte ar Rīgu, pārsēšanās punktu un Kolombo."
+          caption="Lidojums no Rīgas ar pārsēšanos Stambulā, galamērķis Kolombo."
         />
 
         <p>
@@ -235,15 +229,15 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             ['Novembris', '29 °C', '24 °C', '28 °C', 'ap 17'],
             ['Decembris', '29 °C', '24 °C', '28 °C', 'ap 11'],
           ]}
-          caption="Temperatūra Šrilankas dienvidu piekrastē. Aptuvenas vidējās vērtības, jāapstiprina pirms publicēšanas."
+          caption="Temperatūra Šrilankas dienvidu piekrastē. Aptuvenas vidējās vērtības."
         />
 
         <GuideFigure
-          src="/images/guide/infographic-season.svg"
-          alt="Infografika ar Šrilankas sezonām pa mēnešiem dienvidos un austrumos"
+          src="/images/guide/srilanka-lv_sezonas-srilanka-salidzinajuma-ar-latviju.webp"
+          alt="Četri gadalaiki Rīgā un tie paši mēneši Šrilankā, foto pa pāriem"
           width={1920}
           height={1080}
-          caption="Vietturis. Šeit nāks sezonu infografika ar tiem pašiem skaitļiem, kas tabulā."
+          caption="Sezonas Šrilankā salīdzinājumā ar Latviju."
         />
 
         <p>
@@ -409,14 +403,6 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             ['Safari Udawalawē', '50 EUR', ''],
           ]}
           caption="Cenas uz vietas, 2026. gada septembris, Šrilankas dienvidos."
-        />
-
-        <GuideFigure
-          src="/images/guide/infographic-cost.svg"
-          alt="Infografika ar 14 dienu ceļojuma izmaksu sadalījumu Šrilankā"
-          width={1920}
-          height={1080}
-          caption="Vietturis. Šeit nāks izmaksu infografika ar tiem pašiem skaitļiem, kas tabulā."
         />
 
         <p>
@@ -723,14 +709,6 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           brauc pirmo reizi.
         </p>
 
-        <GuideFigure
-          src="/images/guide/route.svg"
-          alt="Ceļojuma maršruts pa Šrilanku 14 dienām no Kolombo līdz Madihai"
-          width={1920}
-          height={1080}
-          caption="Vietturis. Šeit nāks maršruta karte ar sešām pieturām."
-        />
-
         <GuideTable
           head={['Dienas', 'Vieta', 'Kāpēc', 'Naktis']}
           rows={[
@@ -815,63 +793,50 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           Madihā un esmu palikusi katrā no šīm vietām, tāpēc šis ir mans godīgais salīdzinājums.
         </p>
 
-        <GuideVideo {...videos.southCoast} />
-
         <GuideTable
-          head={['Vieta', 'Kam der', 'Kas tur ir', 'Nakts no']}
+          head={['Vieta', 'Kam der', 'Kas tur ir']}
           rows={[
             [
               'Madiha',
               'Mieram, jogai un sērfošanai bez pūļiem',
               'Klusa pludmale, snorkelēšana, bruņurupuči',
-              <GuideTodo key="madiha">cena</GuideTodo>,
             ],
             [
               'Mirissa',
               'Pirmajam braucienam, draugu kompānijai',
               'Skaistākā pludmale, vaļu vērošana, saulrieti',
-              <GuideTodo key="mirissa">cena</GuideTodo>,
             ],
             [
               'Weligama',
               'Tiem, kas tikai mācās sērfot, un attālinātam darbam',
               'Sērfošanas skolas, coworking, lēti hosteļi',
-              <GuideTodo key="weligama">cena</GuideTodo>,
             ],
             [
               'Ahangama',
               'Tiem, kam patīk skaistas, estētiskas kafejnīcas un tūristīga gaisotne.',
               'Boutique viesnīcas, sērfošana pieredzējušiem',
-              <GuideTodo key="ahangama">cena</GuideTodo>,
             ],
             [
               'Unawatuna',
               'Piemērots naktsdzīvei un ģimenēm. Labi, ja protat krievu valodu.',
               'Viegli pieejama pludmale, restorāni, tuvu Gallei',
-              <GuideTodo key="unawatuna">cena</GuideTodo>,
             ],
             [
               'Hiriketiya',
               'Lieliski piemērots sērfošanas cienītājiem, kuri ceļo vieni.',
               'Sērfošana, joga, mierīga peldēšanās',
-              <GuideTodo key="hiriketiya">cena</GuideTodo>,
             ],
-            [
-              'Tangalle un Talalla',
-              'Tukšai pludmalei',
-              'Garas, klusas pludmales, maz tūristu',
-              <GuideTodo key="tangalle">cena</GuideTodo>,
-            ],
+            ['Tangalle un Talalla', 'Tukšai pludmalei', 'Garas, klusas pludmales, maz tūristu'],
           ]}
           caption="Dienvidu pludmaļu salīdzinājums, 2026. gada septembris."
         />
 
         <GuideFigure
-          src="/images/guide/beach-madiha.svg"
-          alt="Madihas pludmale ar palmām Šrilankas dienvidos"
+          src="/images/guide/srilanka-lv_makskernieks-bauda-saulrietu-srilanka.webp"
+          alt="Makšķernieks uz klints un suns Madihas pludmalē saulrietā"
           width={1920}
           height={1080}
-          caption="Vietturis. Madihas pludmale."
+          caption="Makšķernieks bauda saulrietu Madihas pludmalē."
         />
 
         <p>
@@ -893,19 +858,19 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </GuideCallout>
 
         <GuideFigure
-          src="/images/guide/beach-mirissa.svg"
-          alt="Mirissas līcis un Coconut Tree Hill saulrietā"
+          src="/images/guide/srilanka-lv_populara-vieta-srilanka-kokosriekstu-palmu-kalns.webp"
+          alt="Trīs ceļotājas zem kokosriekstu palmām Coconut Tree Hill Mirissā"
           width={1920}
           height={1080}
-          caption="Vietturis. Mirissa, Coconut Tree Hill."
+          caption="Mirissa, Coconut Tree Hill."
         />
 
         <GuideFigure
-          src="/images/guide/beach-weligama.svg"
-          alt="Sērfotāji Weligamas līcī Šrilankā"
+          src="/images/guide/srilanka-lv_meitenes-serfo-weligama.webp"
+          alt="Meitene sērfo Weligamas līcī un divas meitenes pie sērfa dēļiem krastā"
           width={1920}
           height={1080}
-          caption="Vietturis. Weligama, sērfošana iesācējiem."
+          caption="Weligama, sērfošana iesācējām."
         />
 
         <p>
@@ -919,18 +884,24 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       </GuideSection>
 
       <GuideLeadMagnet
+        chip="60 lappuses"
         title="Šrilankas dienvidu ceļvedis PDF formātā"
+        cover={{
+          src: '/images/guide/srilanka-lv_celojuma-padomi-srilankas-dienvidiem_vaks.webp',
+          alt: 'Ceļveža vāks: Ceļojuma padomi Šrilankas dienvidiem',
+          width: 509,
+          height: 720,
+        }}
         note={
           <>
             Reizi mēnesī atsūtīšu arī jaunumus par lidojumu cenām un salu. Atteikties var ar vienu
-            klikšķi.{' '}
-            <GuideTodo>vietturis: piegāde vēl nav ieslēgta, sk. request-guide-pdf.ts</GuideTodo>
+            klikšķi.
           </>
         }
       >
-        Esmu sagatavojusi atsevišķu ceļvedi par Šrilankas dienvidiem:{' '}
-        <GuideTodo>kas tieši ir PDF: pludmales, kafejnīcas, naktsmītnes, karte</GuideTodo>. Atstāj
-        e-pastu, un es to atsūtīšu.
+        Esmu sagatavojusi atsevišķu ceļvedi par Šrilankas dienvidiem: 60 lappuses par sezonu, vīzu,
+        transportu, naktsmītnēm, pludmalēm, kafejnīcām, aktivitātēm un budžetu, plus vairāk nekā 20
+        vietas Google Maps. Atstāj e-pastu, un es to atsūtīšu.
       </GuideLeadMagnet>
 
       <GuideSection id={sections.transport} title="Transports Šrilankā">
@@ -938,8 +909,6 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
           Pa Šrilanku pārvietoties ir viegli un lēti, bet lēni. Populārākie veidi ir tuk-tuks,
           PickMe taksometrs, skūteris, vilciens un autobuss, un katram ir sava vieta ceļojumā.
         </p>
-
-        <GuideVideo {...videos.transport} />
 
         <ul>
           <li>
@@ -1065,11 +1034,11 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </p>
 
         <GuideFigure
-          src="/images/guide/food.svg"
-          alt="Rice and curry uz banānu lapas vietējā ēstuvē Šrilankas dienvidos"
+          src="/images/guide/srilanka-lv_latviesu-ediens-un-srilankas-ediens.webp"
+          alt="Latviešu ēdiens un Šrilankas ēdiens blakus: kartupeļu pankūkas un rice and curry"
           width={1920}
           height={1080}
-          caption="Vietturis. Rice and curry uz banānu lapas."
+          caption="Latviešu ēdiens un Šrilankas ēdiens."
         />
 
         <h3>Pieci ēdieni, kas jānogaršo</h3>
@@ -1171,17 +1140,18 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         </p>
 
         <GuideFigure
-          src="/images/guide/spices.svg"
-          alt="Garšvielas un Ceilonas tēja Šrilankas tirgū"
+          src="/images/guide/srilanka-lv_plucu-tejas-lapas-srilanka.webp"
+          alt="Meitene plūc tējas lapas tējas plantācijā Šrilankas kalnos"
           width={1920}
           height={1080}
-          caption="Vietturis. Garšvielu tirgus vai tējas plantācija."
+          caption="Tējas lapu plūkšana Šrilankas kalnos."
         />
 
         <p>
-          <GuideTodo>
-            Grieta: tavs personīgais saraksts, ko tu vedi mājās draugiem, divi līdz trīs teikumi
-          </GuideTodo>
+          Parasti no Šrilankas mājās uz Latviju vedu ļoti daudz vīrakus! Šrilankā ir milzīga izvēle
+          un ļoti lēti. Vēl vedu žāvētus zilā lotusa ziediņus, tos parasti lieto tējā, palīdz
+          atslābt un relaksēties. Un, protams, eļļiņas. Mana mīļākā ir kanēļa eļļa, izmantoju šo
+          pret odiem!
         </p>
         <p>
           Muitas noteikumi: tēju un garšvielas var vest bez ierobežojumiem personīgai lietošanai.
@@ -1191,22 +1161,35 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       </GuideSection>
 
       <GuideSection id={sections.reviews} title="Ko saka citi ceļotāji">
-        <blockquote>
-          <GuideTodo>Citāts 1, vārds, ar atļauju</GuideTodo>
-        </blockquote>
-        <blockquote>
-          <GuideTodo>Citāts 2, vārds, ar atļauju</GuideTodo>
-        </blockquote>
-        <blockquote>
-          <GuideTodo>Citāts 3, vārds, ar atļauju</GuideTodo>
-        </blockquote>
+        <GuideTestimonials
+          items={[
+            {
+              name: 'Inese A.',
+              portraitSrc: '/images/guide/srilanka-lv_inese.webp',
+              quote:
+                'Šrilanka ir pati skaistākā sala! Piedzīvoju tik daudz, ka vajadzēja atvaļinājumu pēc atvaļinājuma. Iesmīlēju šo skaisto vietu tik ļoti, ka meklēju biļetes jau nākamajam gadam.',
+            },
+            {
+              name: 'Elza A.',
+              portraitSrc: '/images/guide/srilanka-lv_elza.webp',
+              quote:
+                'Braucu uz Šrilanku mierīgai atpūtai, bet aizbraucu ar iedvesmu un piepildījumu. Prioritāte bija pludmales! Un tieši to saņēmu. Katru dienu biju citā pieokeāna pilsētiņā, ļoti silts un dzidrs ūdens, baltas smiltis, bruņurupuči pašā okeāna krastā… kaut ko tādu nekad nebiju piedzīvojusi. Un protams nebeidzamas masāžas, jūras veltis, un ārkārtīgi mierīga atmosfēra.',
+            },
+            {
+              name: 'Artūrs B.',
+              portraitSrc: '/images/guide/srilanka-lv_arturs.webp',
+              quote:
+                'Biju visaktīvākajā ceļojumā. Kalni, sērfs, ūdenskritumi, tējas plantācijas, gatavošanas meistarklases un viss perfekti ietilpa manā budžetā. Šrilankai ir tik daudz ko piedāvāt un tiešām sajūta, ka vienmēr atradu ko jaunu apskatīt. Ļoti iemīlēju tradicionālo šrilankiešu ēdienu! Ir ass, bet man ļoti garšo. Tik atšķirīga kultūra un visjaukākie cilvēki. Visu salu pat nepaspēju apceļot, jābrauc vēlreiz.',
+            },
+          ]}
+        />
 
         <GuideFigure
-          src="/images/guide/group.svg"
-          alt="Meiteņu ceļojuma grupa Šrilankas dienvidu piekrastē"
+          src="/images/guide/srilanka-lv_meitenu-celojums.webp"
+          alt="Divas meitenes apskaujas pludmalē saulrietā meiteņu ceļojumā Šrilankā"
           width={1920}
           height={1080}
-          caption="Vietturis. Grupas foto no iepriekšējā meiteņu ceļojuma."
+          caption="Meiteņu ceļojums Šrilankā."
         />
 
         <p>
@@ -1248,7 +1231,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
 
       <GuideAuthor
         name="Laura Grieta Grinberga"
-        portraitSrc="/images/guide/author.svg"
+        portraitSrc="/images/srilanka-lv_laura-grieta-grinberga_profile.webp"
         portraitAlt="Grieta Šrilankas dienvidos, Madihā"
       >
         <p>

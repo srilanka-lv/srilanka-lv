@@ -25,14 +25,19 @@ export const tableStyle = style(
   }),
 );
 
+// The caption is the resting point after a dense block: body size, warm
+// tinted from the foreground rather than gray, so the eye lands on the date
+// of the numbers before moving on.
 export const captionStyle = style(
   inComponentsLayer({
     captionSide: 'bottom',
     paddingBlock: spacing[3],
     paddingInline: spacing[4],
-    fontSize: font.size.sm,
-    color: color.secondaryForeground,
+    fontSize: font.size.base,
+    lineHeight: font.lineHeight.snug,
+    color: `color-mix(in oklch, ${color.foreground} 72%, ${color.background})`,
     textAlign: 'left',
+    textWrap: 'pretty',
   }),
 );
 
@@ -53,7 +58,10 @@ globalStyle(
     fontSize: font.size.sm,
     fontWeight: font.weight.semibold,
     letterSpacing: font.letterSpacing.wide,
-    backgroundColor: color.secondary,
+    // The product family's coral tint, so the header row reads as the
+    // table's title bar rather than another stone stripe.
+    color: color.foreground,
+    backgroundColor: `color-mix(in oklch, ${color.accent} 8%, ${color.background})`,
     whiteSpace: 'nowrap',
   }),
 );

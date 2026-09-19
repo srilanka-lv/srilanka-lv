@@ -1,6 +1,8 @@
+import { Lightbulb, TriangleAlert } from 'lucide-react';
+import Image from 'next/image';
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
-import { calloutStyle, labelStyle } from './styles.css';
+import { bodyStyle, calloutStyles, iconStyle, labelStyle, portraitStyle } from './styles.css';
 
 type GuideCalloutTone = 'tip' | 'warning' | 'personal';
 
@@ -16,12 +18,39 @@ type GuideCalloutProps = PropsWithChildren<{
 
 /**
  * A short aside inside the guide: a tip, a warning, or a first-person note
- * from Madiha. A quiet bordered box in the site's stone surface, so the coral
- * stays reserved for links and actions.
+ * from Madiha. Tips and warnings are quiet stone boxes; a personal note
+ * carries Grieta's portrait on the coral-tinted panel, the same one the
+ * product cards and the PDF block stand on.
  */
-export const GuideCallout: FunctionComponent<GuideCalloutProps> = ({ tone = 'tip', children }) => (
-  <aside className={calloutStyle}>
-    <span className={labelStyle}>{labels[tone]}</span>
-    {children}
-  </aside>
-);
+export const GuideCallout: FunctionComponent<GuideCalloutProps> = ({ tone = 'tip', children }) => {
+  if (tone === 'personal') {
+    return (
+      <aside className={calloutStyles.personal}>
+        <Image
+          className={portraitStyle}
+          src="/images/srilanka-lv_laura-grieta-grinberga_profile.webp"
+          alt="Grieta - Srilanka.lv"
+          width={64}
+          height={64}
+          sizes="64px"
+        />
+        <div className={bodyStyle}>
+          <span className={labelStyle}>{labels.personal}</span>
+          {children}
+        </div>
+      </aside>
+    );
+  }
+
+  const Icon = tone === 'warning' ? TriangleAlert : Lightbulb;
+
+  return (
+    <aside className={calloutStyles.quiet}>
+      <span className={labelStyle}>
+        <Icon className={iconStyle} aria-hidden="true" strokeWidth={2} />
+        {labels[tone]}
+      </span>
+      <div className={bodyStyle}>{children}</div>
+    </aside>
+  );
+};

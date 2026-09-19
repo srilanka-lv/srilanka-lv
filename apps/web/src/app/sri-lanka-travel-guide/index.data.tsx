@@ -1,21 +1,18 @@
 import type { GuideFaqItem } from '@/shared/components/guide-faq';
 import type { GuideTocItem } from '@/shared/components/guide-toc';
-import type { GuideVideoData } from '@/shared/components/guide-video';
 
 /*
  * Content data for the pillar guide. Text lives in the page component; this
  * file holds the arrays that are rendered AND fed to the structured data, so
- * the two can never drift: the table of contents, the FAQ and the videos.
+ * the two can never drift: the table of contents and the FAQ.
  *
- * Placeholder rules while the page is being built:
- * - Every video below points at the same placeholder clip. Swap `url` and
- *   `uploadDate` per clip once Grieta and Dave have published the real ones.
- * - Every image lives in `public/images/guide/` as a labelled SVG at the exact
- *   target size. Replace the file, keep the name, width and height.
+ * Photos live in `public/images/guide/` as WebP at 1920 by 1080. The author
+ * portrait is still a labelled SVG; replace the file, keep the name and size.
+ * Videos are off the page until the clips exist: see docs/seo/media-shot-list.md.
  */
 
 /** Bump on every content change: it drives the visible "Atjaunots" date and `dateModified`. */
-export const UPDATED_AT = '2026-09-13';
+export const UPDATED_AT = '2026-09-19';
 export const PUBLISHED_AT = '2026-09-13';
 
 export const TITLE = 'Ceļojums uz Šrilanku: pilns ceļvedis no Madihas';
@@ -23,36 +20,6 @@ export const DESCRIPTION =
   'Ceļojums uz Šrilanku bez aģentūras. Vīza, lidojumi no Rīgas, cenas eiro, maršruts un pludmales. Rakstu no Madihas, kur dzīvoju kopš 2022. gada.';
 export const LEDE =
   'Ceļvedi raksta cilvēks, kas Šrilankā arī dzīvo. Vīza, lidojumi, cenas, maršruts, pludmales un viss pārējais, ko gribēsi zināt pirms pirmā brauciena.';
-
-/** TODO(pillar): replace with the real clips before release. */
-const PLACEHOLDER_VIDEO_URL = 'https://www.youtube.com/watch?v=DgF8qcLSCb4';
-const PLACEHOLDER_UPLOAD_DATE = '2026-09-13';
-
-export const videos = {
-  intro: {
-    url: PLACEHOLDER_VIDEO_URL,
-    title: 'Kas es esmu un kas ir šajā ceļvedī',
-    description:
-      'Vietturis. Grieta Madihas pludmalē pastāsta, cik ilgi šeit dzīvo un ko šajā ceļvedī atradīsi.',
-    uploadDate: PLACEHOLDER_UPLOAD_DATE,
-  },
-  southCoast: {
-    url: PLACEHOLDER_VIDEO_URL,
-    title: 'Šrilankas dienvidu piekraste',
-    description:
-      'Vietturis. Madiha, Mirissa, Weligama un Unawatuna vienā minūtē: kā katra pludmale izskatās no zemes, nevis no droņa.',
-    uploadDate: PLACEHOLDER_UPLOAD_DATE,
-  },
-  transport: {
-    url: PLACEHOLDER_VIDEO_URL,
-    title: 'Ar tuk-tuku un vilcienu pa Šrilanku',
-    description:
-      'Vietturis. Kā izskatās brauciens ar tuk-tuku pa dienvidu piekrasti un vilciena brauciens kalnos.',
-    uploadDate: PLACEHOLDER_UPLOAD_DATE,
-  },
-} satisfies Record<string, GuideVideoData>;
-
-export const videoList: GuideVideoData[] = [videos.intro, videos.southCoast, videos.transport];
 
 /** Section anchors. The ids are also the H2 ids, so the table of contents links resolve. */
 export const sections = {
@@ -187,17 +154,35 @@ export const faqs: GuideFaqItem[] = [
 
 /** Images referenced on the page, for the ImageObject nodes in the structured data. */
 export const images = [
-  { src: '/images/guide/hero.svg', width: 3456, height: 2234 },
-  { src: '/images/guide/map.svg', width: 1920, height: 1080 },
-  { src: '/images/guide/route.svg', width: 1920, height: 1080 },
-  { src: '/images/guide/beach-madiha.svg', width: 1920, height: 1080 },
-  { src: '/images/guide/beach-mirissa.svg', width: 1920, height: 1080 },
-  { src: '/images/guide/beach-weligama.svg', width: 1920, height: 1080 },
-  { src: '/images/guide/food.svg', width: 1920, height: 1080 },
-  { src: '/images/guide/spices.svg', width: 1920, height: 1080 },
-  { src: '/images/guide/group.svg', width: 1920, height: 1080 },
-  { src: '/images/guide/infographic-season.svg', width: 1920, height: 1080 },
-  { src: '/images/guide/infographic-cost.svg', width: 1920, height: 1080 },
+  { src: '/images/guide/srilanka-lv_madihas-pludmale.webp', width: 1920, height: 1080 },
+  {
+    src: '/images/guide/srilanka-lv_lidojums-riga-parsesanas-stambula-galamerkis-srilanka-colombo.webp',
+    width: 1920,
+    height: 1080,
+  },
+  {
+    src: '/images/guide/srilanka-lv_makskernieks-bauda-saulrietu-srilanka.webp',
+    width: 1920,
+    height: 1080,
+  },
+  {
+    src: '/images/guide/srilanka-lv_populara-vieta-srilanka-kokosriekstu-palmu-kalns.webp',
+    width: 1920,
+    height: 1080,
+  },
+  { src: '/images/guide/srilanka-lv_meitenes-serfo-weligama.webp', width: 1920, height: 1080 },
+  {
+    src: '/images/guide/srilanka-lv_latviesu-ediens-un-srilankas-ediens.webp',
+    width: 1920,
+    height: 1080,
+  },
+  { src: '/images/guide/srilanka-lv_plucu-tejas-lapas-srilanka.webp', width: 1920, height: 1080 },
+  { src: '/images/guide/srilanka-lv_meitenu-celojums.webp', width: 1920, height: 1080 },
+  {
+    src: '/images/guide/srilanka-lv_sezonas-srilanka-salidzinajuma-ar-latviju.webp',
+    width: 1920,
+    height: 1080,
+  },
 ];
 
 /**

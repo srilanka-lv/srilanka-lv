@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import type { FunctionComponent, ReactNode } from 'react';
 
-import { authorStyle, bodyStyle, nameStyle, portraitStyle } from './styles.css';
+import { Signature } from '@/shared/components/signature';
+
+import { authorStyle, bodyStyle, nameStyle, portraitStyle, signatureStyle } from './styles.css';
 
 type GuideAuthorProps = {
   name: string;
@@ -11,9 +13,9 @@ type GuideAuthorProps = {
 };
 
 /**
- * The author box: who wrote the guide and where they live. The Person node in
- * the page's JSON-LD carries the same name, so the visible byline and the
- * structured data agree.
+ * The author box: who wrote the guide and where they live, signed the way the
+ * footer is. The Person node in the page's JSON-LD carries the same name, so
+ * the visible byline and the structured data agree.
  */
 export const GuideAuthor: FunctionComponent<GuideAuthorProps> = ({
   name,
@@ -33,6 +35,7 @@ export const GuideAuthor: FunctionComponent<GuideAuthorProps> = ({
     <div className={bodyStyle}>
       <span className={nameStyle}>{name}</span>
       {children}
+      <Signature className={signatureStyle} />
     </div>
   </aside>
 );

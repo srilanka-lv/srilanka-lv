@@ -1,8 +1,6 @@
 import type { FunctionComponent } from 'react';
 
 import type { GuideFaqItem } from '@/shared/components/guide-faq';
-import type { GuideVideoData } from '@/shared/components/guide-video';
-import { buildVideoObject } from '@/shared/utils/build-video-object';
 import { getSiteUrl } from '@/shared/utils/get-site-url';
 import {
   organizationId,
@@ -42,13 +40,11 @@ type GuideJsonLdProps = {
   dateModified: string;
   images: GuideImage[];
   faqs: GuideFaqItem[];
-  videos: GuideVideoData[];
 };
 
 /**
- * Structured data for the code-authored guide: Article, FAQPage, one
- * VideoObject per clip, and the site's Person and Organization nodes, all in
- * one graph. Built from the same arrays the page renders, so the schema can
+ * Structured data for the code-authored guide: Article, FAQPage and the
+ * site's Person and Organization nodes, all in one graph. Built from the same arrays the page renders, so the schema can
  * never describe content that is not on the page.
  */
 export const GuideJsonLd: FunctionComponent<GuideJsonLdProps> = ({
@@ -61,7 +57,6 @@ export const GuideJsonLd: FunctionComponent<GuideJsonLdProps> = ({
   dateModified,
   images,
   faqs,
-  videos,
 }) => {
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}${path}`;
@@ -121,28 +116,9 @@ export const GuideJsonLd: FunctionComponent<GuideJsonLdProps> = ({
     })),
   };
 
-  const videoObjects = videos
-    .map((video) =>
-      buildVideoObject({
-        url: video.url,
-        name: video.title,
-        description: video.description,
-        uploadDate: video.uploadDate,
-      }),
-    )
-    .filter((node) => node !== null);
-
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [
-      article,
-      aboutNode,
-      faqPage,
-      ...videoObjects,
-      ...imageObjects,
-      personNode(),
-      organizationNode(),
-    ],
+    '@graph': [article, aboutNode, faqPage, ...imageObjects, personNode(), organizationNode()],
   };
 
   return (
