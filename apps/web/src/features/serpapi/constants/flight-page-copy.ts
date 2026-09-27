@@ -16,12 +16,13 @@ export const FLIGHT_PAGE_COPY = {
   stopsSuffix: 'pārsēšanās',
   overnightLabel: 'nakts lidojums',
   layoverSuffix: 'pārsēšanās',
-  rowCtaLabel: 'Pārbaudīt cenu Google Flights',
-  priceDisclaimer: 'Cena pārbaudīta {date}, šobrīd tā var atšķirties.',
+  rowCtaLabel: 'Pārbaudīt cenu Kiwi.com',
+  priceDisclaimer:
+    'Cena no Google Flights, pārbaudīta {date}. Kiwi.com aktuālā cena var atšķirties.',
   methodNote:
-    'Cenas ir vienvirziena ekonomiskās klases biļetes vienai personai. Dati iegūti no Google Flights, pārbaudot izlidošanas pirmdienās. Cenas regulāri mainās, tāpēc pirms pirkuma vienmēr pārbaudi aktuālo cenu.',
-  staleNotice: 'Šie dati ir novecojuši. Aktuālās cenas vari pārbaudīt Google Flights.',
-  staleCtaLabel: 'Atvērt Google Flights',
+    'Cenas ir vienvirziena ekonomiskās klases biļetes vienai personai. Dati iegūti no Google Flights, pārbaudot izlidošanas pirmdienās. Cenas regulāri mainās, tāpēc pirms pirkuma vienmēr pārbaudi aktuālo cenu. Saites uz Kiwi.com ir partneru saites: ja caur tām nopērc biļeti, es saņemu nelielu komisiju, bet tev tas neko papildus nemaksā.',
+  staleNotice: 'Šie dati ir novecojuši. Aktuālās cenas vari pārbaudīt Kiwi.com.',
+  staleCtaLabel: 'Atvērt Kiwi.com',
   funnelTitle: 'Atradi savu lidojumu?',
   funnelBody: 'Es palīdzēšu ar visu pārējo: personalizēts ceļojuma plāns 48 stundu laikā.',
   funnelCtaLabel: 'Uzzināt vairāk',

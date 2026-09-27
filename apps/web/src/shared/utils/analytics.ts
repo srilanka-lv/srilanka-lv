@@ -4,7 +4,11 @@ export type AnalyticsEventName =
   | 'outbound-link'
   | 'product-cta'
   | 'contact'
+  | 'contact-handoff'
+  | 'social-profile'
   | 'flight-month-select'
+  | 'flight-date-expand'
+  | 'flight-booking-click'
   | 'video-play';
 
 declare global {

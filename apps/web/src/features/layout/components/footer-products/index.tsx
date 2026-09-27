@@ -56,7 +56,12 @@ export const FooterProducts: FunctionComponent = () => {
           return (
             <li key={product.slug}>
               {product.whatsAppOnly ? (
-                <ContactLink className={footerProductsCardStyle}>{cardContent}</ContactLink>
+                <ContactLink
+                  className={footerProductsCardStyle}
+                  placement={`footer-product-${product.slug}`}
+                >
+                  {cardContent}
+                </ContactLink>
               ) : (
                 <Link className={footerProductsCardStyle} href={product.href}>
                   {cardContent}

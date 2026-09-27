@@ -1,4 +1,4 @@
-import { PlayIcon } from '@sanity/icons';
+import { PlayIcon } from '@sanity/icons/Play';
 import { defineField, defineType } from 'sanity';
 
 import { getYouTubeVideoId } from '../utils/youtube-video-id';

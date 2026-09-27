@@ -111,6 +111,9 @@ export const Navigation: FunctionComponent<NavigationProps> = ({ className }) =>
               aria-label={label}
               target="_blank"
               rel="nofollow noopener noreferrer"
+              data-umami-event="social-profile"
+              data-umami-event-network={label.toLowerCase()}
+              data-umami-event-placement="navigation"
             >
               {icon}
             </a>

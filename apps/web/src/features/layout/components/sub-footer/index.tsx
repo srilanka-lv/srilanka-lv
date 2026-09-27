@@ -1,6 +1,6 @@
 import type { FunctionComponent } from 'react';
 
-import { buildWhatsAppUrl } from '@/shared/constants/whatsapp';
+import { ContactLink } from '@/shared/components/contact-link';
 
 import { subFooterItemStyle, subFooterLinkStyle, subFooterStyle } from './styles.css';
 
@@ -12,17 +12,9 @@ export const SubFooter: FunctionComponent = () => {
       <li className={subFooterItemStyle}>Copyright © {year} Srilanka.lv. All rights reserved.</li>
       <li className={subFooterItemStyle}>
         WhatsApp:{' '}
-        <a
-          className={subFooterLinkStyle}
-          target="_blank"
-          rel="noopener noreferrer"
-          href={buildWhatsAppUrl()}
-          title="WhatsApp"
-          data-umami-event="contact"
-          data-umami-event-channel="whatsapp"
-        >
+        <ContactLink className={subFooterLinkStyle} placement="sub-footer">
           +64 2902323786
-        </a>
+        </ContactLink>
       </li>
       <li className={subFooterItemStyle}>
         E-pasts:{' '}
@@ -31,6 +23,7 @@ export const SubFooter: FunctionComponent = () => {
           href="mailto:sveiki@srilanka.lv"
           data-umami-event="contact"
           data-umami-event-channel="email"
+          data-umami-event-placement="sub-footer"
         >
           sveiki@srilanka.lv
         </a>

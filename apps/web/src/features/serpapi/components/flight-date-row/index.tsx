@@ -6,10 +6,11 @@ import { Button } from '@/shared/components/button';
 
 import { FLIGHT_PAGE_COPY } from '../../constants/flight-page-copy';
 import type { FlightDateModel } from '../../models/flight-data-model';
-import { buildGoogleFlightsUrl } from '../../utils/build-google-flights-url';
+import { buildKiwiFlightsUrl } from '../../utils/build-kiwi-flights-url';
 import { formatDateLabel } from '../../utils/format-date-label';
 import { formatDuration } from '../../utils/format-duration';
 import { formatPrice } from '../../utils/format-price';
+import { FlightDateDetails } from '../flight-date-details';
 import { FlightItinerary } from '../flight-itinerary';
 import {
   actionsStyle,
@@ -39,7 +40,7 @@ export const FlightDateRow: FunctionComponent<FlightDateRowProps> = ({ entry, qu
   ];
 
   return (
-    <details className={rowStyle}>
+    <FlightDateDetails className={rowStyle} date={entry.date} price={cheapestFlight.price}>
       <summary className={summaryStyle}>
         <span className={dateStyle}>{formatDateLabel(entry.date)}</span>
         <span className={airlinesStyle}>
@@ -72,9 +73,14 @@ export const FlightDateRow: FunctionComponent<FlightDateRowProps> = ({ entry, qu
             variant="primary"
             size="medium"
             className={ctaLinkStyle}
-            href={buildGoogleFlightsUrl(entry.date)}
+            href={buildKiwiFlightsUrl(entry.date)}
             target="_blank"
-            rel="noopener"
+            rel="sponsored noopener"
+            data-umami-event="flight-booking-click"
+            data-umami-event-partner="kiwi"
+            data-umami-event-placement="date-row"
+            data-umami-event-date={entry.date}
+            data-umami-event-price={cheapestFlight.price}
           >
             {FLIGHT_PAGE_COPY.rowCtaLabel}
           </Button>
@@ -83,6 +89,6 @@ export const FlightDateRow: FunctionComponent<FlightDateRowProps> = ({ entry, qu
           </span>
         </div>
       </div>
-    </details>
+    </FlightDateDetails>
   );
 };
