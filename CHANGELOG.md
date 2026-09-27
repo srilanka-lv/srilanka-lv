@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.18.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.17.0...v1.18.0) (2026-09-27)
+
+
+### Features
+
+* ✨ Kiwi affiliate links, reliable WhatsApp contact and full click tracking ([c1c69fc](https://github.com/srilanka-lv/srilanka-lv/commit/c1c69fcd9181b0ee0f06ae66f009d60511b63eda))
+* **contact:** 🔒 route every WhatsApp link to the app that works and track each button ([e060bcc](https://github.com/srilanka-lv/srilanka-lv/commit/e060bcc0e19f4d550d2233c4bf4fd6738d87dfd7))
+* **flights:** ✈️ update flights data 2026-09-27 ([cf3e721](https://github.com/srilanka-lv/srilanka-lv/commit/cf3e7211b50fcd4a77580aa54c89df09ad161d4d))
+* **flights:** ✨ book through Kiwi affiliate links and track every action ([4f332e9](https://github.com/srilanka-lv/srilanka-lv/commit/4f332e9af0063dd01ddf0f372b59572374761c4d))
+
+
+### Bug Fixes
+
+* 🐛 import PlayIcon from its subpath and add missing type declarations ([187e549](https://github.com/srilanka-lv/srilanka-lv/commit/187e549f4d5ff118aeb55015fabe8eda03ec8e67))
+* 🐛 restore data-scroll-behavior on the root html element ([66a1902](https://github.com/srilanka-lv/srilanka-lv/commit/66a1902baa4c98a7ee5b850d347814476d1db4fd))
+
 ## [1.17.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.16.0...v1.17.0) (2026-09-19)
 
 
