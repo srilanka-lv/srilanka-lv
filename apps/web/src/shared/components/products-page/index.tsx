@@ -34,7 +34,10 @@ export const ProductsPage: FunctionComponent = () => {
             <Component className={productTitleStyle}>{title}</Component>
             <p className={productDescriptionStyle}>{description}</p>
             {product.whatsAppOnly ? (
-              <WhatsAppButton className={productWhatsAppCtaStyle} />
+              <WhatsAppButton
+                className={productWhatsAppCtaStyle}
+                placement={`products-page-${product.slug}`}
+              />
             ) : (
               <Link className={productLinkStyle} href={productHref}>
                 Vairāk par šo ceļojumu! →

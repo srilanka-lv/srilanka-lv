@@ -6,6 +6,7 @@ import type { Metadata, Viewport } from 'next';
 import type { FunctionComponent, ReactNode } from 'react';
 
 import { Layout } from '@/features/layout/components/layout';
+import { ContactLinkGuardScript } from '@/shared/components/contact-link-guard-script';
 import { ThemeScript } from '@/shared/components/theme-script';
 import { DEFAULT_OG_IMAGE } from '@/shared/constants/og-image';
 import { comme } from '@/shared/fonts/fonts';
@@ -122,9 +123,15 @@ type RootLayoutReturnType = Readonly<{
 }>;
 
 const NextRootLayout: FunctionComponent<RootLayoutReturnType> = ({ children }) => (
-  <html lang="lv" className={`${comme.variable} ${theme}`} translate="no">
+  <html
+    lang="lv"
+    className={`${comme.variable} ${theme}`}
+    translate="no"
+    data-scroll-behavior="smooth"
+  >
     <head>
       <ThemeScript />
+      <ContactLinkGuardScript />
     </head>
     <Layout>{children}</Layout>
   </html>

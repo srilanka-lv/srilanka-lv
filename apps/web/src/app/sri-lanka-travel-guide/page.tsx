@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
 
+import { ContactLink } from '@/shared/components/contact-link';
 import { GuideAuthor } from '@/shared/components/guide-author';
 import { GuideCallout } from '@/shared/components/guide-callout';
 import { GuideCta } from '@/shared/components/guide-cta';
@@ -16,7 +17,6 @@ import { GuideTestimonials } from '@/shared/components/guide-testimonials';
 import { GuideToc } from '@/shared/components/guide-toc';
 import { INSTAGRAM_URL } from '@/shared/constants/instagram';
 import { DEFAULT_OG_IMAGE } from '@/shared/constants/og-image';
-import { WHATSAPP_URL } from '@/shared/constants/whatsapp';
 
 import { GuideJsonLd } from './guide-json-ld';
 import {
@@ -769,15 +769,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         actions={
           <>
             <Link href={href.girlsTrip}>Meiteņu ceļojums 2027. gada janvārī</Link>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-umami-event="contact"
-              data-umami-event-channel="whatsapp"
-            >
-              Personalizēts plāns: uzraksti man
-            </a>
+            <ContactLink placement="guide-cta">Personalizēts plāns: uzraksti man</ContactLink>
           </>
         }
       >
@@ -1220,8 +1212,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            data-umami-event="outbound-link"
-            data-umami-event-url={INSTAGRAM_URL}
+            data-umami-event="social-profile"
+            data-umami-event-network="instagram"
+            data-umami-event-placement="guide-trip-section"
           >
             Instagramā
           </a>
@@ -1241,8 +1234,9 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            data-umami-event="outbound-link"
-            data-umami-event-url={INSTAGRAM_URL}
+            data-umami-event="social-profile"
+            data-umami-event-network="instagram"
+            data-umami-event-placement="guide-author"
           >
             @dzivetropos
           </a>

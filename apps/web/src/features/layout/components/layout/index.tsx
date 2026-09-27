@@ -1,6 +1,7 @@
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
 import { AppContextProviders } from '@/shared/components/app-context-providers';
+import { ContactHandoffTracker } from '@/shared/components/contact-handoff-tracker';
 
 import { Footer } from '../footer';
 import { Header } from '../header';
@@ -16,6 +17,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => (
       <main className={mainStyle}>{children}</main>
       <Footer />
       <SubFooter />
+      <ContactHandoffTracker />
     </body>
   </AppContextProviders>
 );
