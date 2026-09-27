@@ -4,7 +4,10 @@ import { type ComponentPropsWithoutRef, type FunctionComponent, useEffect, useSt
 
 import { DEFAULT_CONTACT_LINK, resolveContactLink } from '@/shared/utils/contact-link';
 
-type ContactLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href' | 'target' | 'rel'>;
+type ContactLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href' | 'target' | 'rel'> & {
+  // Where on the site the link sits, so Umami can tell contact clicks apart
+  placement?: string;
+};
 
 /**
  * "Write to Grieta" link. Renders as WhatsApp on the server; after mount it
@@ -13,11 +16,12 @@ type ContactLinkProps = Omit<ComponentPropsWithoutRef<'a'>, 'href' | 'target' | 
  * the OS opens the messaging app instead of a dead browser tab.
  *
  * Umami reads the data attributes at click time, so the reported channel is
- * the one the visitor actually used.
+ * the one the visitor actually used, plus the placement when one is given.
  */
 export const ContactLink: FunctionComponent<ContactLinkProps> = ({
   children,
   title,
+  placement,
   ...anchorProps
 }) => {
   const [link, setLink] = useState(DEFAULT_CONTACT_LINK);
@@ -35,6 +39,7 @@ export const ContactLink: FunctionComponent<ContactLinkProps> = ({
       title={title ?? link.title}
       data-umami-event="contact"
       data-umami-event-channel={link.channel}
+      data-umami-event-placement={placement}
     >
       {children}
     </a>

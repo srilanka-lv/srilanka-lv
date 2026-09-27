@@ -5,6 +5,8 @@ export type AnalyticsEventName =
   | 'product-cta'
   | 'contact'
   | 'flight-month-select'
+  | 'flight-date-expand'
+  | 'flight-booking-click'
   | 'video-play';
 
 declare global {

@@ -11,7 +11,7 @@ import { FlightStatusLine } from '@/features/serpapi/components/flight-status-li
 import { FLIGHT_PAGE_COPY } from '@/features/serpapi/constants/flight-page-copy';
 import flightData from '@/features/serpapi/data/flight-data.json';
 import type { FlightDataModel } from '@/features/serpapi/models/flight-data-model';
-import { buildGoogleFlightsRouteUrl } from '@/features/serpapi/utils/build-google-flights-url';
+import { buildKiwiFlightsRouteUrl } from '@/features/serpapi/utils/build-kiwi-flights-url';
 import {
   filterUpcomingMonths,
   findCheapestUpcomingMonth,
@@ -76,9 +76,12 @@ const NextFlightCalendarPage: FunctionComponent = () => {
               variant="primary"
               size="medium"
               className={ctaLinkStyle}
-              href={buildGoogleFlightsRouteUrl()}
+              href={buildKiwiFlightsRouteUrl()}
               target="_blank"
-              rel="noopener"
+              rel="sponsored noopener"
+              data-umami-event="flight-booking-click"
+              data-umami-event-partner="kiwi"
+              data-umami-event-placement="stale-notice"
             >
               {FLIGHT_PAGE_COPY.staleCtaLabel}
             </Button>
@@ -89,6 +92,7 @@ const NextFlightCalendarPage: FunctionComponent = () => {
           <h2 className={funnelTitleStyle}>{FLIGHT_PAGE_COPY.funnelTitle}</h2>
           <p className={funnelBodyStyle}>{FLIGHT_PAGE_COPY.funnelBody}</p>
           <ContactLink
+            placement="flight-tickets"
             role="button"
             className={clsx(buttonStyles({ variant: 'primary', size: 'medium' }), ctaLinkStyle)}
           >
