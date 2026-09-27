@@ -42,6 +42,6 @@ export const FooterAboutMe = () => (
       />
       <Signature className={footerSignatureStyle} />
     </div>
-    <WhatsAppButton className={whatsAppLinkStyle} />
+    <WhatsAppButton className={whatsAppLinkStyle} placement="footer-about-me" />
   </div>
 );

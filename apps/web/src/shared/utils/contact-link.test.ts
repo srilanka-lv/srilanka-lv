@@ -32,6 +32,11 @@ describe('resolveContactLink', () => {
     expect(link.href).toBe(INSTAGRAM_DM_URL);
     expect(link.channel).toBe('instagram');
     expect(link.target).toBeUndefined();
+    expect(link.context).toBe('instagram-app');
+  });
+
+  it('tells the Facebook in-app browser apart from Instagram', () => {
+    expect(resolveContactLink(FACEBOOK_ANDROID).context).toBe('facebook-app');
   });
 
   it('keeps WhatsApp for mobile browsers but opens it in the same tab', () => {
@@ -39,11 +44,13 @@ describe('resolveContactLink', () => {
     expect(link.href.startsWith(WHATSAPP_URL)).toBe(true);
     expect(link.channel).toBe('whatsapp');
     expect(link.target).toBeUndefined();
+    expect(link.context).toBe('mobile');
   });
 
   it('keeps WhatsApp in a new tab on desktop', () => {
     const link = resolveContactLink(CHROME_MAC);
     expect(link.channel).toBe('whatsapp');
     expect(link.target).toBe('_blank');
+    expect(link.context).toBe('desktop');
   });
 });

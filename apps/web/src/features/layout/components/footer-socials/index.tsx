@@ -13,8 +13,9 @@ export const FooterSocials: FunctionComponent = () => (
         aria-label={label}
         target="_blank"
         rel="nofollow noopener noreferrer"
-        data-umami-event="contact"
-        data-umami-event-channel={label.toLowerCase()}
+        data-umami-event="social-profile"
+        data-umami-event-network={label.toLowerCase()}
+        data-umami-event-placement="footer-socials"
       >
         {icon}
       </a>

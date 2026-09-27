@@ -9,6 +9,10 @@ type WhatsAppProps = {
   className?: string;
 };
 
+type WhatsAppButtonProps = WhatsAppProps & {
+  placement: string;
+};
+
 /** The "Chat on WhatsApp" pill artwork, for use inside an existing link. */
 export const WhatsAppPill: FunctionComponent<WhatsAppProps> = ({ className }) => (
   <svg
@@ -33,8 +37,11 @@ export const WhatsAppPill: FunctionComponent<WhatsAppProps> = ({ className }) =>
 );
 
 /** Standalone "Chat on WhatsApp" link, styled as the green pill from the footer. */
-export const WhatsAppButton: FunctionComponent<WhatsAppProps> = ({ className }) => (
-  <ContactLink className={clsx(whatsAppButtonStyle, className)}>
+export const WhatsAppButton: FunctionComponent<WhatsAppButtonProps> = ({
+  className,
+  placement,
+}) => (
+  <ContactLink className={clsx(whatsAppButtonStyle, className)} placement={placement}>
     <WhatsAppPill />
   </ContactLink>
 );

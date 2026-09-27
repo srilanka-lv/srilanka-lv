@@ -6,6 +6,7 @@ import type { Metadata, Viewport } from 'next';
 import type { FunctionComponent, ReactNode } from 'react';
 
 import { Layout } from '@/features/layout/components/layout';
+import { ContactLinkGuardScript } from '@/shared/components/contact-link-guard-script';
 import { ThemeScript } from '@/shared/components/theme-script';
 import { DEFAULT_OG_IMAGE } from '@/shared/constants/og-image';
 import { comme } from '@/shared/fonts/fonts';
@@ -130,6 +131,7 @@ const NextRootLayout: FunctionComponent<RootLayoutReturnType> = ({ children }) =
   >
     <head>
       <ThemeScript />
+      <ContactLinkGuardScript />
     </head>
     <Layout>{children}</Layout>
   </html>
