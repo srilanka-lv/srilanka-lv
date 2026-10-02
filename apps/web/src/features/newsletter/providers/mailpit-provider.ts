@@ -5,6 +5,7 @@ import { NEWSLETTER_REPLY_TO, NEWSLETTER_SENDER } from '../constants/sender';
 import type { NewsletterProviderInterface } from '../interfaces/newsletter-provider-interface';
 import type { NewsletterAddContactResultModel } from '../models/newsletter-add-contact-result-model';
 import type { NewsletterSaveContactInputModel } from '../models/newsletter-save-contact-input-model';
+import type { NewsletterSaveContactResultModel } from '../models/newsletter-save-contact-result-model';
 import type { NewsletterSendEmailInputModel } from '../models/newsletter-send-email-input-model';
 import type { NewsletterSendEmailResultModel } from '../models/newsletter-send-email-result-model';
 
@@ -48,13 +49,13 @@ export class MailpitProvider implements NewsletterProviderInterface {
 
   public async saveContact({
     segmentId,
-  }: NewsletterSaveContactInputModel): Promise<NewsletterAddContactResultModel> {
+  }: NewsletterSaveContactInputModel): Promise<NewsletterSaveContactResultModel> {
     // No address in the log: this one is a website visitor's.
     console.info(
       `[mailpit] saveContact skipped for segment ${segmentId}: segments only exist on Resend`,
     );
 
-    return { id: 'mailpit-noop' };
+    return { id: 'mailpit-noop', existing: false };
   }
 
   public async sendEmail(

@@ -4,6 +4,7 @@ import { NEWSLETTER_REPLY_TO, NEWSLETTER_SENDER } from '../constants/sender';
 import type { NewsletterProviderInterface } from '../interfaces/newsletter-provider-interface';
 import type { NewsletterAddContactResultModel } from '../models/newsletter-add-contact-result-model';
 import type { NewsletterSaveContactInputModel } from '../models/newsletter-save-contact-input-model';
+import type { NewsletterSaveContactResultModel } from '../models/newsletter-save-contact-result-model';
 import type { NewsletterSendEmailInputModel } from '../models/newsletter-send-email-input-model';
 import type { NewsletterSendEmailResultModel } from '../models/newsletter-send-email-result-model';
 
@@ -49,8 +50,9 @@ export class DefaultResendProvider implements NewsletterProviderInterface {
 
   /**
    * Creates a new contact in one segment. Contacts are global per email
-   * address in Resend and anyone can type any address, so an existing contact
-   * is never touched: the create fails and this throws.
+   * address in Resend and anyone can type any address, so the address is
+   * looked up first and an existing contact is left untouched. Only a lookup
+   * that reports not found leads to a create; any other lookup error throws.
    *
    * Custom properties only exist once they are created in Resend, and Resend
    * rejects the whole call for an unknown key, so a call with properties
@@ -62,7 +64,17 @@ export class DefaultResendProvider implements NewsletterProviderInterface {
     lastName,
     segmentId,
     properties,
-  }: NewsletterSaveContactInputModel): Promise<NewsletterAddContactResultModel> {
+  }: NewsletterSaveContactInputModel): Promise<NewsletterSaveContactResultModel> {
+    const found = await this.client.contacts.get({ email });
+
+    if (found.data) {
+      return { id: found.data.id, existing: true };
+    }
+
+    if (found.error?.name !== 'not_found') {
+      throw new Error(found.error?.message ?? 'Failed to look up contact');
+    }
+
     const contact = { email, firstName, lastName };
     const segments = [{ id: segmentId }];
 
@@ -76,7 +88,7 @@ export class DefaultResendProvider implements NewsletterProviderInterface {
       throw new Error(created.error?.message ?? 'Failed to save contact');
     }
 
-    return { id: created.data.id };
+    return { id: created.data.id, existing: false };
   }
 
   public async sendEmail(

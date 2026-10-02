@@ -4,7 +4,12 @@ import type { AskGrietaLeadModel } from '../models/ask-grieta-lead-model';
 import { buildLeadEmail } from './build-lead-email';
 import { errorMessageOf } from './redact-pii';
 
-export type LeadContactOutcome = 'saved' | 'skipped-no-email' | 'skipped-no-segment' | 'failed';
+export type LeadContactOutcome =
+  | 'saved'
+  | 'skipped-no-email'
+  | 'skipped-no-segment'
+  | 'skipped-existing'
+  | 'failed';
 
 export type DeliverLeadResult =
   | { status: 'sent'; contact: LeadContactOutcome }
@@ -84,7 +89,7 @@ export async function deliverLead(
   const [firstName, ...rest] = lead.name.trim().split(/\s+/);
 
   try {
-    await repository.saveContact({
+    const saved = await repository.saveContact({
       email: lead.email,
       firstName,
       lastName: rest.length ? rest.join(' ') : undefined,
@@ -95,7 +100,7 @@ export async function deliverLead(
       },
     });
 
-    return { status: 'sent', contact: 'saved' };
+    return { status: 'sent', contact: saved.existing ? 'skipped-existing' : 'saved' };
   } catch (error) {
     console.warn(`[ask-grieta] lead ${leadId}: contact not saved: ${errorMessageOf(error)}`);
     return { status: 'sent', contact: 'failed' };

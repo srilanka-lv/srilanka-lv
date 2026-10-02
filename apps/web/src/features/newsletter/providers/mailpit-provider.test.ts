@@ -80,7 +80,7 @@ describe('MailpitProvider', () => {
 
     expect(
       await new MailpitProvider().saveContact({ email: 'anna@example.com', segmentId: 'seg_1' }),
-    ).toEqual({ id: 'mailpit-noop' });
+    ).toEqual({ id: 'mailpit-noop', existing: false });
     expect(fetchMock).not.toHaveBeenCalled();
     expect(JSON.stringify(info.mock.calls)).not.toContain('anna@example.com');
     info.mockRestore();

@@ -2,12 +2,17 @@ import { afterEach, beforeEach, describe, expect, it, mock } from 'bun:test';
 
 import { DefaultResendProvider, type ResendClient } from './default-resend-provider';
 
-type Reply = { data: { id: string } | null; error: { message: string } | null };
+type Reply = { data: { id: string } | null; error: { message: string; name?: string } | null };
 
 const ok = (id: string): Reply => ({ data: { id }, error: null });
-const fail = (message: string): Reply => ({ data: null, error: { message } });
+const fail = (message: string, name = 'validation_error'): Reply => ({
+  data: null,
+  error: { message, name },
+});
+const notFound = fail('Contact not found', 'not_found');
 
 const fakeClient = (replies: {
+  get?: Reply[];
   create?: Reply[];
   add?: Reply[];
   update?: Reply[];
@@ -16,6 +21,7 @@ const fakeClient = (replies: {
   const next = (list: Reply[] | undefined) => async () => list?.shift() ?? ok('default');
   const client = {
     contacts: {
+      get: mock(async () => replies.get?.shift() ?? notFound),
       create: mock(next(replies.create)),
       update: mock(next(replies.update)),
       segments: { add: mock(next(replies.add)) },
@@ -48,7 +54,8 @@ describe('DefaultResendProvider.saveContact', () => {
   it('creates the contact in the leads segment with name and properties, never unsubscribing', async () => {
     const { client, provider } = fakeClient({ create: [ok('c_1')] });
 
-    expect(await provider.saveContact(lead)).toEqual({ id: 'c_1' });
+    expect(await provider.saveContact(lead)).toEqual({ id: 'c_1', existing: false });
+    expect(client.contacts.get).toHaveBeenCalledWith({ email: 'anna@example.com' });
     expect(client.contacts.create).toHaveBeenCalledTimes(1);
     expect(client.contacts.create).toHaveBeenCalledWith({
       email: 'anna@example.com',
@@ -67,7 +74,7 @@ describe('DefaultResendProvider.saveContact', () => {
       create: [fail('Property "whatsapp" does not exist'), ok('c_2')],
     });
 
-    expect(await provider.saveContact(lead)).toEqual({ id: 'c_2' });
+    expect(await provider.saveContact(lead)).toEqual({ id: 'c_2', existing: false });
     expect(client.contacts.create).toHaveBeenCalledTimes(2);
     expect(client.contacts.create.mock.calls[1]).toEqual([
       {
@@ -79,14 +86,32 @@ describe('DefaultResendProvider.saveContact', () => {
     ]);
   });
 
-  it('leaves an existing contact untouched and throws', async () => {
+  it('leaves an existing contact untouched', async () => {
+    const { client, provider } = fakeClient({ get: [ok('c_existing')] });
+
+    expect(await provider.saveContact(lead)).toEqual({ id: 'c_existing', existing: true });
+    expect(client.contacts.create).not.toHaveBeenCalled();
+    expect(client.contacts.update).not.toHaveBeenCalled();
+    expect(client.contacts.segments.add).not.toHaveBeenCalled();
+  });
+
+  it('creates nothing when the lookup fails for another reason', async () => {
     const { client, provider } = fakeClient({
-      create: [fail('Contact already exists'), fail('Contact already exists')],
+      get: [fail('Too many requests', 'rate_limit_exceeded')],
     });
 
-    await expect(provider.saveContact(lead)).rejects.toThrow('Contact already exists');
-    expect(client.contacts.segments.add).not.toHaveBeenCalled();
+    await expect(provider.saveContact(lead)).rejects.toThrow('Too many requests');
+    expect(client.contacts.create).not.toHaveBeenCalled();
     expect(client.contacts.update).not.toHaveBeenCalled();
+    expect(client.contacts.segments.add).not.toHaveBeenCalled();
+  });
+
+  it('throws when the new contact cannot be created', async () => {
+    const { client, provider } = fakeClient({ create: [fail('nope'), fail('nope')] });
+
+    await expect(provider.saveContact(lead)).rejects.toThrow('nope');
+    expect(client.contacts.update).not.toHaveBeenCalled();
+    expect(client.contacts.segments.add).not.toHaveBeenCalled();
   });
 });
 

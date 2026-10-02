@@ -16,7 +16,10 @@ const lead: AskGrietaLeadModel = {
   context: 'mobile',
 };
 
-const repositoryWith = ({ send = [] as ('ok' | 'fail')[], save = 'ok' as 'ok' | 'fail' } = {}) => ({
+const repositoryWith = ({
+  send = [] as ('ok' | 'fail')[],
+  save = 'ok' as 'ok' | 'existing' | 'fail',
+} = {}) => ({
   sendEmail: mock(async () => {
     if (send.shift() === 'fail') {
       throw new Error('Resend 500 for anna@example.com');
@@ -27,7 +30,7 @@ const repositoryWith = ({ send = [] as ('ok' | 'fail')[], save = 'ok' as 'ok' | 
     if (save === 'fail') {
       throw new Error('Segment seg_leads not found');
     }
-    return { id: 'contact_1' };
+    return { id: 'contact_1', existing: save === 'existing' };
   }),
 });
 
@@ -111,6 +114,16 @@ describe('deliverLead', () => {
       status: 'sent',
       contact: 'failed',
     });
+  });
+
+  it('reports an existing contact as left untouched, without logging the address', async () => {
+    const repository = repositoryWith({ save: 'existing' });
+
+    expect(await deliverLead(lead, { ...options, repository, segmentId: 'seg_leads' })).toEqual({
+      status: 'sent',
+      contact: 'skipped-existing',
+    });
+    expect(loggedText()).not.toContain('anna@example.com');
   });
 
   it('skips the contact without an email address or without a segment', async () => {
