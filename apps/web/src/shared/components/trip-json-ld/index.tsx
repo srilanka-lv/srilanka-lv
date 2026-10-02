@@ -2,8 +2,12 @@ import type { FunctionComponent } from 'react';
 
 import type { Product } from '@/shared/components/products-page/index.data';
 import { tripPageFaqs } from '@/shared/components/trip-page-faq-section/index.data';
-import { tripPageGalleryImages } from '@/shared/components/trip-page-hero-section/index.data';
 import { tripItineraryDays } from '@/shared/components/trip-page-itinerary-section/index.data';
+import {
+  TRIP_GALLERY_GRID_SIZE,
+  tripGalleryImageSrc,
+  tripGalleryPhotos,
+} from '@/shared/components/trip-page-photo-gallery/index.data';
 import type { GirlsTripBookingPhase } from '@/shared/constants/girls-trip-booking';
 import {
   GIRLS_TRIP_VIDEO_POSTER_SRC,
@@ -43,7 +47,9 @@ export const TripJsonLd: FunctionComponent<TripJsonLdProps> = ({ product, phase 
     }),
     images: [
       ...(product.ogImage ? [product.ogImage.url] : []),
-      ...tripPageGalleryImages.map((image) => image.src),
+      ...tripGalleryPhotos
+        .slice(0, TRIP_GALLERY_GRID_SIZE)
+        .map(({ slug }) => tripGalleryImageSrc(slug, 'lg')),
     ],
     itinerary: tripItineraryDays,
     faqs: tripPageFaqs,

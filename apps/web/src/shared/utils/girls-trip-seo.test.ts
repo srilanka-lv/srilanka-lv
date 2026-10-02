@@ -1,8 +1,12 @@
 import { describe, expect, it } from 'bun:test';
 
 import { tripPageFaqs } from '@/shared/components/trip-page-faq-section/index.data';
-import { tripPageGalleryImages } from '@/shared/components/trip-page-hero-section/index.data';
 import { tripItineraryDays } from '@/shared/components/trip-page-itinerary-section/index.data';
+import {
+  TRIP_GALLERY_GRID_SIZE,
+  tripGalleryImageSrc,
+  tripGalleryPhotos,
+} from '@/shared/components/trip-page-photo-gallery/index.data';
 import type { GirlsTripBookingPhase } from '@/shared/constants/girls-trip-booking';
 import { TODO_GRIETA } from '@/shared/constants/todo-grieta';
 
@@ -36,7 +40,9 @@ const buildRealJsonLd = (phase: GirlsTripBookingPhase) =>
       uploadDate: '2026-09-11',
       thumbnailUrl: 'https://srilanka.lv/images/srilanka-lv_meitenu-celojums_video-poster.webp',
     }),
-    images: tripPageGalleryImages.map((image) => image.src),
+    images: tripGalleryPhotos
+      .slice(0, TRIP_GALLERY_GRID_SIZE)
+      .map(({ slug }) => tripGalleryImageSrc(slug, 'lg')),
     itinerary: tripItineraryDays,
     faqs: tripPageFaqs,
     providerId: 'https://srilanka.lv#organization',
