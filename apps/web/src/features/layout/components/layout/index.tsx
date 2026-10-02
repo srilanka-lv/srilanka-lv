@@ -1,5 +1,6 @@
 import type { FunctionComponent, PropsWithChildren } from 'react';
 
+import { AskGrietaLauncher } from '@/features/ask-grieta/components/ask-grieta-launcher';
 import { AppContextProviders } from '@/shared/components/app-context-providers';
 import { ContactHandoffTracker } from '@/shared/components/contact-handoff-tracker';
 
@@ -18,6 +19,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => (
       <Footer />
       <SubFooter />
       <ContactHandoffTracker />
+      <AskGrietaLauncher />
     </body>
   </AppContextProviders>
 );

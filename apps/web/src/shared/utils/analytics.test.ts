@@ -32,6 +32,23 @@ describe('trackEvent', () => {
     expect(track).toHaveBeenCalledWith('product-cta', { product: 'girls-trip' });
   });
 
+  it('forwards to zaraz by default and skips it when zaraz is off', async () => {
+    const track = mock(() => Promise.resolve());
+    const zarazTrack = mock(() => Promise.resolve());
+    (globalThis as { window?: unknown }).window = {
+      umami: { track },
+      zaraz: { track: zarazTrack },
+    } as unknown as WindowWithUmami;
+
+    await trackEvent('contact', { channel: 'whatsapp' });
+    expect(zarazTrack).toHaveBeenCalledTimes(1);
+
+    await trackEvent('ask-open', { entry: 'floating' }, { zaraz: false });
+    expect(zarazTrack).toHaveBeenCalledTimes(1);
+    expect(track).toHaveBeenCalledTimes(2);
+    expect(track).toHaveBeenLastCalledWith('ask-open', { entry: 'floating' });
+  });
+
   it('swallows umami.track rejections', async () => {
     const track = mock(() => Promise.reject(new Error('blocked')));
     (globalThis as { window?: unknown }).window = {

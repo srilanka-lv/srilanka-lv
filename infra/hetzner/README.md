@@ -112,6 +112,8 @@ appropriate to that environment:
 | `SANITY_API_KEY`                        | Sanity read token                         |
 | `RESEND_API_KEY`                        | Resend API key                            |
 | `RESEND_AUDIENCE_ID`                    | Resend audience                           |
+| `RESEND_LEADS_SEGMENT_ID` (optional)    | Resend segment for Ask Grieta leads       |
+| `LEAD_NOTIFICATION_EMAIL` (optional)    | Lead email inbox (default sveiki@)        |
 | `SERPAPI_API_KEY`                       | SerpAPI key (used by the flights cron)    |
 | `NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID`  | Sanity project ID                         |
 | `KAMAL_PROXY_TLS_CERT`                  | Cloudflare Origin Cert PEM (full chain)   |

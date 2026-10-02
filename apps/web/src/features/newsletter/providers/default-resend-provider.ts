@@ -3,18 +3,23 @@ import { Resend } from 'resend';
 import { NEWSLETTER_REPLY_TO, NEWSLETTER_SENDER } from '../constants/sender';
 import type { NewsletterProviderInterface } from '../interfaces/newsletter-provider-interface';
 import type { NewsletterAddContactResultModel } from '../models/newsletter-add-contact-result-model';
+import type { NewsletterSaveContactInputModel } from '../models/newsletter-save-contact-input-model';
+import type { NewsletterSaveContactResultModel } from '../models/newsletter-save-contact-result-model';
 import type { NewsletterSendEmailInputModel } from '../models/newsletter-send-email-input-model';
 import type { NewsletterSendEmailResultModel } from '../models/newsletter-send-email-result-model';
 
+/** The parts of the Resend SDK this provider uses, so tests can pass a fake. */
+export type ResendClient = Pick<Resend, 'contacts' | 'emails'>;
+
 export class DefaultResendProvider implements NewsletterProviderInterface {
-  private readonly client: Resend;
+  private readonly client: ResendClient;
   private readonly audienceId: string;
 
-  constructor() {
+  constructor(client?: ResendClient) {
     const apiKey = process.env.RESEND_API_KEY;
     const audienceId = process.env.RESEND_AUDIENCE_ID;
 
-    if (!apiKey) {
+    if (!client && !apiKey) {
       throw new Error('RESEND_API_KEY environment variable is not set');
     }
 
@@ -22,7 +27,7 @@ export class DefaultResendProvider implements NewsletterProviderInterface {
       throw new Error('RESEND_AUDIENCE_ID environment variable is not set');
     }
 
-    this.client = new Resend(apiKey);
+    this.client = client ?? new Resend(apiKey);
     this.audienceId = audienceId;
   }
 
@@ -43,17 +48,63 @@ export class DefaultResendProvider implements NewsletterProviderInterface {
     return { id: data.id };
   }
 
+  /**
+   * Creates a new contact in one segment. Contacts are global per email
+   * address in Resend and anyone can type any address, so the address is
+   * looked up first and an existing contact is left untouched. Only a lookup
+   * that reports not found leads to a create; any other lookup error throws.
+   *
+   * Custom properties only exist once they are created in Resend, and Resend
+   * rejects the whole call for an unknown key, so a call with properties
+   * that fails is repeated once without them: the contact matters more.
+   */
+  public async saveContact({
+    email,
+    firstName,
+    lastName,
+    segmentId,
+    properties,
+  }: NewsletterSaveContactInputModel): Promise<NewsletterSaveContactResultModel> {
+    const found = await this.client.contacts.get({ email });
+
+    if (found.data) {
+      return { id: found.data.id, existing: true };
+    }
+
+    if (found.error?.name !== 'not_found') {
+      throw new Error(found.error?.message ?? 'Failed to look up contact');
+    }
+
+    const contact = { email, firstName, lastName };
+    const segments = [{ id: segmentId }];
+
+    let created = await this.client.contacts.create({ ...contact, properties, segments });
+
+    if (created.error && properties) {
+      created = await this.client.contacts.create({ ...contact, segments });
+    }
+
+    if (created.error || !created.data) {
+      throw new Error(created.error?.message ?? 'Failed to save contact');
+    }
+
+    return { id: created.data.id, existing: false };
+  }
+
   public async sendEmail(
     input: NewsletterSendEmailInputModel,
   ): Promise<NewsletterSendEmailResultModel> {
-    const { data, error } = await this.client.emails.send({
-      from: NEWSLETTER_SENDER,
-      replyTo: NEWSLETTER_REPLY_TO,
-      to: input.to,
-      subject: input.subject,
-      html: input.html,
-      text: input.text,
-    });
+    const { data, error } = await this.client.emails.send(
+      {
+        from: NEWSLETTER_SENDER,
+        replyTo: input.replyTo ?? NEWSLETTER_REPLY_TO,
+        to: input.to,
+        subject: input.subject,
+        html: input.html,
+        text: input.text,
+      },
+      input.idempotencyKey ? { idempotencyKey: input.idempotencyKey } : undefined,
+    );
 
     if (error) {
       throw new Error(error.message);

@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, mock } from 'bun:test';
+import { afterEach, describe, expect, it, mock, spyOn } from 'bun:test';
 
 import { MailpitProvider, toMailpitAddress } from './mailpit-provider';
 
@@ -55,5 +55,34 @@ describe('MailpitProvider', () => {
       id: 'mailpit-noop',
     });
     expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it('uses the reply-to address the email asks for', async () => {
+    const fetchMock = mock(async () => Response.json({ ID: 'abc123' }));
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
+
+    await new MailpitProvider().sendEmail({
+      to: 'sveiki@srilanka.lv',
+      subject: 'Tēma',
+      html: '<p>Sveiki</p>',
+      text: 'Sveiki',
+      replyTo: 'anna@example.com',
+    });
+
+    const [, init] = fetchMock.mock.calls[0] as unknown as [string, RequestInit];
+    expect(JSON.parse(init.body as string).ReplyTo).toEqual([{ Email: 'anna@example.com' }]);
+  });
+
+  it('skips saveContact without calling Mailpit or logging the address', async () => {
+    const fetchMock = mock(async () => Response.json({}));
+    globalThis.fetch = fetchMock as unknown as typeof fetch;
+    const info = spyOn(console, 'info').mockImplementation(() => undefined);
+
+    expect(
+      await new MailpitProvider().saveContact({ email: 'anna@example.com', segmentId: 'seg_1' }),
+    ).toEqual({ id: 'mailpit-noop', existing: false });
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(JSON.stringify(info.mock.calls)).not.toContain('anna@example.com');
+    info.mockRestore();
   });
 });

@@ -5,9 +5,11 @@ import { Portal } from '@ark-ui/react/portal';
 import clsx from 'clsx';
 import type { FunctionComponent } from 'react';
 
+import { AskGrietaCta } from '@/features/ask-grieta/components/ask-grieta-cta';
 import { trackEvent } from '@/shared/utils/analytics';
 
 import {
+  askGrietaCtaStyle,
   backdropStyle,
   buttonIconStyle,
   buttonStyles,
@@ -58,6 +60,14 @@ export const TripPageHeroSectionCta: FunctionComponent<TripPageHeroSectionCtaPro
       </svg>
       Rezervēt savu vietu! (400€)
     </button>
+
+    <AskGrietaCta
+      product="girls-trip"
+      placement="trip-hero"
+      className={clsx(buttonStyles({ variant: 'secondary' }), askGrietaCtaStyle)}
+    >
+      Jautā man par ceļojumu
+    </AskGrietaCta>
 
     <Dialog.Root>
       <Dialog.Trigger asChild>

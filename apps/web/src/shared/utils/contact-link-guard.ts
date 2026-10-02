@@ -34,6 +34,12 @@ export function contactLinkGuard(config: ContactLinkGuardConfig): void {
         return;
       }
 
+      // Links that send their own analytics event (the Ask Grieta drawer) opt
+      // out, so one tap is never counted twice.
+      if (anchor.hasAttribute('data-analytics-owner')) {
+        return;
+      }
+
       const userAgent = navigator.userAgent;
       let channel = 'whatsapp';
       let context = 'desktop';
