@@ -2,18 +2,21 @@ import { PAGES } from '@packages/sanity/constants/pages-slugs';
 import type { Metadata } from 'next';
 import type { FunctionComponent } from 'react';
 
-import { ProductJsonLd } from '@/shared/components/product-json-ld';
 import { buildProductPageMetadata } from '@/shared/components/products-page/build-product-page-metadata';
 import { products } from '@/shared/components/products-page/index.data';
+import { TripJsonLd } from '@/shared/components/trip-json-ld';
 import { ProductPageTrip } from '@/shared/components/trip-page';
-import { tripPageFaqs } from '@/shared/components/trip-page-faq-section/index.data';
-import {
-  getGirlsTripBookingPhase,
-  getGirlsTripPriceEur,
-} from '@/shared/constants/girls-trip-booking';
+import { getGirlsTripBookingPhase } from '@/shared/constants/girls-trip-booking';
+import { GIRLS_TRIP_SEO_TITLE, buildGirlsTripDescription } from '@/shared/utils/girls-trip-seo';
 
+// Title and description are authored here: the page has no Sanity document,
+// and Sanity's SEO fields still win if one is ever added. The description
+// names today's price, so it is worked out per (hourly) regeneration.
 export const generateMetadata = (): Promise<Metadata> =>
-  buildProductPageMetadata(PAGES.LV.PRODUCTS_GIRLS_TRIP);
+  buildProductPageMetadata(PAGES.LV.PRODUCTS_GIRLS_TRIP, {
+    title: GIRLS_TRIP_SEO_TITLE,
+    description: buildGirlsTripDescription(getGirlsTripBookingPhase(Date.now())),
+  });
 
 const NextProductPageTrip: FunctionComponent = () => {
   const product = products.find((item) => item.slug === PAGES.LV.PRODUCTS_GIRLS_TRIP);
@@ -24,17 +27,7 @@ const NextProductPageTrip: FunctionComponent = () => {
 
   return (
     <>
-      {product && (
-        <ProductJsonLd
-          product={{
-            ...product,
-            // The offer carries the price the page shows today.
-            priceEur: String(getGirlsTripPriceEur(phase)),
-          }}
-          kind="trip"
-          faqs={tripPageFaqs}
-        />
-      )}
+      {product && <TripJsonLd product={product} phase={phase} />}
       <ProductPageTrip phase={phase} />
     </>
   );

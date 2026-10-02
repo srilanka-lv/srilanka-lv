@@ -6,6 +6,8 @@ export type VideoObjectInput = {
   description: string;
   /** ISO date. Google requires it for VideoObject, so the node is omitted without one. */
   uploadDate?: string;
+  /** Absolute URL of a sharper poster than YouTube's 480x360 default. */
+  thumbnailUrl?: string;
 };
 
 export type VideoObjectNode = {
@@ -30,7 +32,7 @@ export function buildVideoObject(input: VideoObjectInput): VideoObjectNode | nul
     name: input.name,
     description: input.description,
     uploadDate: input.uploadDate,
-    thumbnailUrl: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
+    thumbnailUrl: input.thumbnailUrl ?? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
     contentUrl: input.url,
     embedUrl: `https://www.youtube.com/embed/${id}`,
   };

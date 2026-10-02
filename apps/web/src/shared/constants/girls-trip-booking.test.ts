@@ -3,7 +3,9 @@ import { Temporal } from '@js-temporal/polyfill';
 
 import {
   GIRLS_TRIP_BOOKING_CLOSES_AT,
+  GIRLS_TRIP_BOOKING_LAST_DAY,
   GIRLS_TRIP_EARLY_BIRD_ENDS_AT,
+  GIRLS_TRIP_EARLY_BIRD_LAST_DAY,
   GIRLS_TRIP_EARLY_BIRD_PRICE_EUR,
   GIRLS_TRIP_PRICE_EUR,
   GIRLS_TRIP_TIME_ZONE,
@@ -24,6 +26,20 @@ describe('girls trip cut-offs', () => {
 
   it('close bookings at midnight after 30 November in Riga', () => {
     expect(Date.parse(GIRLS_TRIP_BOOKING_CLOSES_AT)).toBe(riga('2026-12-01T00:00'));
+  });
+});
+
+describe('girls trip last days', () => {
+  it('are the Riga days just before each cut-off', () => {
+    const lastDay = (instant: string) =>
+      Temporal.Instant.from(instant)
+        .subtract({ seconds: 1 })
+        .toZonedDateTimeISO(GIRLS_TRIP_TIME_ZONE)
+        .toPlainDate()
+        .toString();
+
+    expect(lastDay(GIRLS_TRIP_EARLY_BIRD_ENDS_AT)).toBe(GIRLS_TRIP_EARLY_BIRD_LAST_DAY);
+    expect(lastDay(GIRLS_TRIP_BOOKING_CLOSES_AT)).toBe(GIRLS_TRIP_BOOKING_LAST_DAY);
   });
 });
 

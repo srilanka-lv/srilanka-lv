@@ -34,6 +34,10 @@ export const GIRLS_TRIP_EARLY_BIRD_ENDS_AT = '2026-11-01T00:00:00+02:00';
 /** Bookings close at the end of 30 November 2026 in Riga. */
 export const GIRLS_TRIP_BOOKING_CLOSES_AT = '2026-12-01T00:00:00+02:00';
 
+/** The last day of each phase in Riga, as ISO dates for structured data. */
+export const GIRLS_TRIP_EARLY_BIRD_LAST_DAY = '2026-10-31';
+export const GIRLS_TRIP_BOOKING_LAST_DAY = '2026-11-30';
+
 /** The same cut-offs as the page words them. */
 export const GIRLS_TRIP_EARLY_BIRD_LAST_DAY_DISPLAY = '31. oktobrim';
 export const GIRLS_TRIP_BOOKING_LAST_DAY_DISPLAY = '30. novembrim';
