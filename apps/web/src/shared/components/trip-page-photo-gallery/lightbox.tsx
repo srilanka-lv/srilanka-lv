@@ -250,6 +250,11 @@ export const TripPagePhotoLightbox: FunctionComponent<TripPagePhotoLightboxProps
       }}
       lazyMount
       unmountOnExit
+      // The gallery covers the whole screen, so nothing outside it can be
+      // touched; an "outside" focus is the tap that opened it still settling
+      // (WebKit), which would otherwise close it at once. Escape and the close
+      // button still close it.
+      closeOnInteractOutside={false}
       finalFocusEl={returnFocusTo}
     >
       <Portal>
