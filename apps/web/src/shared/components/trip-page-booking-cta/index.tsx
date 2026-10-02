@@ -148,8 +148,8 @@ export const TripPageBookingCta: FunctionComponent<TripPageBookingCtaProps> = ({
                     naktsmājās.
                   </p>
                   <p>
-                    Atlikušo summu varēsi pavisam ērti samaksāt man uz vietas Šrilankā. Tiklīdz
-                    maksājums būs saņemts, es palīdzēšu:
+                    Tiklīdz būs saņemta rezervācijas iemaksa (
+                    {formatEur(GIRLS_TRIP_RESERVATION_EUR)}), es palīdzēšu:
                   </p>
                   <ul>
                     <li>✈️ Atrast pašus izdevīgākos un labākos lidojuma variantus.</li>
@@ -164,6 +164,7 @@ export const TripPageBookingCta: FunctionComponent<TripPageBookingCtaProps> = ({
                       uz mūsu pirmajām naktsmājām.
                     </li>
                   </ul>
+                  <p>Atlikušo summu varēsi pavisam ērti samaksāt man uz vietas Šrilankā.</p>
                 </Dialog.Description>
               </Dialog.Content>
             </Dialog.Positioner>
