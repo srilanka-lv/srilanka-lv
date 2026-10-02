@@ -68,7 +68,7 @@ export const tripGalleryPhotos: TripGalleryPhoto[] = [
   },
   {
     slug: 'pie-serfa-delu-plaukta',
-    alt: 'Izbaudiet sērfošanu, smiltis starp kāju pirkstiem un tropiskos kokosriekstus',
+    alt: 'Izbaudi sērfošanu, smiltis starp kāju pirkstiem un tropiskos kokosriekstus',
     width: 1536,
     height: 2048,
   },
