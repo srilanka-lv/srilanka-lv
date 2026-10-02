@@ -9,8 +9,43 @@ const { spacing, font, border, color, shadow, focus, zIndex, transition } = vars
 const primaryColorVar = createVar();
 const secondaryColorVar = createVar();
 
-export const tripPageHeroSectionCtaStyle = style({
+export const tripPageBookingCtaStyle = style({
+  display: 'flex',
+  flexDirection: 'column',
   gridColumn: 'span 2',
+});
+
+export const closedNoticeStyle = style({
+  margin: 0,
+  marginBottom: spacing[4],
+  padding: spacing[4],
+  borderRadius: border.radius.medium,
+  backgroundColor: `color-mix(in oklch, ${color.foreground} 5%, transparent)`,
+  fontSize: font.size.base,
+  lineHeight: font.lineHeight.normal,
+});
+
+// The dialog trigger is a quiet text link under the two buttons, so the
+// buttons stay the only two things that look clickable.
+export const detailsTriggerStyle = style({
+  alignSelf: 'center',
+  marginTop: spacing[4],
+  padding: 0,
+  border: 'none',
+  background: 'none',
+  color: color.foreground,
+  fontSize: font.size.sm,
+  textDecoration: 'underline',
+  textDecorationStyle: 'dotted',
+  textUnderlineOffset: '0.2em',
+  cursor: 'pointer',
+
+  selectors: {
+    '&:focus-visible': {
+      outline: `${focus.width} solid ${focus.color}`,
+      outlineOffset: focus.offset,
+    },
+  },
 });
 
 export const buttonStyles = recipe({
@@ -35,6 +70,9 @@ export const buttonStyles = recipe({
     transitionDuration: '100ms',
     transitionTimingFunction: 'cubic-bezier(0.675, 0.145, 0.000, 1.015)',
     whiteSpace: 'nowrap',
+    // The ask button is a link: drop the site-wide coral link bar.
+    backgroundImage: 'none',
+    textDecoration: 'none',
 
     vars: {
       [primaryColorVar]: '#20bf6b',
@@ -236,7 +274,9 @@ export const closeTriggerStyle = style({
   },
 });
 
-// Gap between the "Ask Grieta" CTA and the booking-info button below.
-export const askGrietaCtaStyle = style({
-  marginBottom: spacing[2],
+// The ask button at the foot of the booking dialog.
+export const dialogAskStyle = style({
+  marginTop: spacing[6],
+  width: 'auto',
+  alignSelf: 'stretch',
 });

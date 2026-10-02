@@ -23,7 +23,8 @@
     "infra:kamal": "kamal -c infra/kamal/deploy.yml",
     "mailpit:start": "docker compose -f infra/mailpit/compose.yml up -d",
     "mailpit:stop": "docker compose -f infra/mailpit/compose.yml down",
-    "web:indexnow": "bun --elide-lines=0 --filter @srilanka/web indexnow"
+    "web:indexnow": "bun --elide-lines=0 --filter @srilanka/web indexnow",
+    "web:check-placeholders": "bun --elide-lines=0 --filter @srilanka/web check:placeholders"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.14",

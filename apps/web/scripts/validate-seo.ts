@@ -75,6 +75,92 @@ async function validatePage(path: string, checks: [string, string[]][]) {
   }
 }
 
+const metaContent = (html: string, attribute: 'name' | 'property', key: string) =>
+  html.match(new RegExp(`<meta ${attribute}="${key}" content="([^"]*)"`))?.[1];
+
+const decode = (value: string) =>
+  value
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;|&#39;/g, "'");
+
+/**
+ * The girls trip page against Google's rich result requirements, checked
+ * offline: FAQPage questions with answers, a complete VideoObject, a usable
+ * Offer, search-sized title and description, and no unfilled TODO_GRIETA
+ * placeholder anywhere a search engine reads.
+ */
+async function validateGirlsTrip(path: string) {
+  const html = await fetchHtml(path);
+  const nodes = extractLdNodes(html, path);
+
+  const trip = nodes.find((node) => node['@type'] === 'TouristTrip') as LdNode | undefined;
+  const offer = trip?.offers as LdNode | undefined;
+  const offerMissing = ['price', 'priceCurrency', 'availability', 'url', 'validThrough'].filter(
+    (field) => !offer?.[field],
+  );
+  if (!offer || offerMissing.length > 0) {
+    fail(path, `Offer missing fields: ${offerMissing.join(', ') || 'offers'}`);
+  } else {
+    ok(`${path}: Offer ${offer.price} ${offer.priceCurrency}, ${offer.availability}`);
+  }
+
+  const video = trip?.video as LdNode | undefined;
+  const videoMissing = ['name', 'description', 'thumbnailUrl', 'uploadDate'].filter(
+    (field) => !video?.[field],
+  );
+  if (!video?.contentUrl && !video?.embedUrl) {
+    videoMissing.push('contentUrl or embedUrl');
+  }
+  if (videoMissing.length > 0) {
+    fail(path, `VideoObject missing fields: ${videoMissing.join(', ')}`);
+  } else {
+    ok(`${path}: VideoObject (thumbnail ${String(video?.thumbnailUrl).split('/').pop()})`);
+  }
+
+  const faqPage = nodes.find((node) => node['@type'] === 'FAQPage');
+  const questions = (faqPage?.mainEntity ?? []) as LdNode[];
+  const incomplete = questions.filter(
+    (question) => !question.name || !(question.acceptedAnswer as LdNode | undefined)?.text,
+  );
+  if (questions.length === 0 || incomplete.length > 0) {
+    fail(path, `FAQPage has ${questions.length} questions, ${incomplete.length} incomplete`);
+  } else {
+    ok(`${path}: FAQPage with ${questions.length} answered questions`);
+  }
+
+  // Inline SVG icons carry <title>s too; the document title is the one with
+  // the root layout's " | Šrilanka 26/27" suffix.
+  const pageTitle = decode(
+    [...html.matchAll(/<title>([^<]*)<\/title>/g)]
+      .map((match) => match[1])
+      .find((value) => value.includes(' | ')) ?? '',
+  );
+  const description = decode(metaContent(html, 'name', 'description') ?? '');
+  if (pageTitle.length > 60 || description.length === 0 || description.length > 155) {
+    fail(path, `title ${pageTitle.length} chars, description ${description.length} chars`);
+  } else {
+    ok(`${path}: title ${pageTitle.length} chars, description ${description.length} chars`);
+  }
+
+  if (!metaContent(html, 'property', 'og:image')) {
+    fail(path, 'missing og:image');
+  }
+
+  const searchable = [
+    pageTitle,
+    description,
+    metaContent(html, 'property', 'og:title') ?? '',
+    metaContent(html, 'property', 'og:description') ?? '',
+    JSON.stringify(nodes),
+  ].join(' ');
+  if (searchable.includes('TODO_GRIETA:')) {
+    fail(path, 'a TODO_GRIETA placeholder reached the metadata or JSON-LD');
+  } else {
+    ok(`${path}: no placeholder in metadata or JSON-LD`);
+  }
+}
+
 async function firstBlogPath(): Promise<string | null> {
   const xml = await (await fetch(`${BASE}/sitemap.xml`)).text();
   const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
@@ -134,8 +220,9 @@ async function main() {
   }
 
   await validatePage('/produkti/meitenu-celojums-uz-srilanku', [
-    ['TouristTrip', ['name', 'description', 'provider', 'offers']],
+    ['TouristTrip', ['name', 'description', 'provider', 'offers', 'itinerary', 'image']],
   ]);
+  await validateGirlsTrip('/produkti/meitenu-celojums-uz-srilanku');
   await validatePage('/par-mani', [
     ['AboutPage', ['name', 'url', 'mainEntity']],
     ['Person', ['name', 'description']],

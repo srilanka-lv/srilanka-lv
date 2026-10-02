@@ -23,7 +23,12 @@ export type AnalyticsEventName =
   // Girls trip photo gallery (src/shared/components/trip-page-photo-gallery).
   | 'trip-gallery-open'
   | 'trip-gallery-view'
-  | 'trip-gallery-close';
+  | 'trip-gallery-close'
+  // Girls trip page engagement (src/shared/utils/trip-engagement.ts).
+  | 'trip-section-view'
+  | 'trip-section-read'
+  | 'trip-scroll-depth'
+  | 'trip-faq-open';
 
 export type TrackEventOptions = {
   /**
