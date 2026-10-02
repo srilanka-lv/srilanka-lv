@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import type { Metadata } from 'next';
 import type { FunctionComponent } from 'react';
 
+import { AskGrietaCta } from '@/features/ask-grieta/components/ask-grieta-cta';
 import { buildPageMetadata } from '@/features/sanity/utils/build-page-metadata';
 import { FlightMonthPanel } from '@/features/serpapi/components/flight-month-panel';
 import { FlightPriceExplorer } from '@/features/serpapi/components/flight-price-explorer';
@@ -22,7 +23,6 @@ import { buildSectionItems, findNavLabel } from '@/shared/components/breadcrumbs
 import { Button } from '@/shared/components/button';
 import { buttonStyles } from '@/shared/components/button/styles.css';
 import { Card } from '@/shared/components/card';
-import { ContactLink } from '@/shared/components/contact-link';
 import { SectionBlogs } from '@/shared/components/section-blogs';
 
 import {
@@ -91,13 +91,15 @@ const NextFlightCalendarPage: FunctionComponent = () => {
         <Card variant="filled" className={funnelCardStyle}>
           <h2 className={funnelTitleStyle}>{FLIGHT_PAGE_COPY.funnelTitle}</h2>
           <p className={funnelBodyStyle}>{FLIGHT_PAGE_COPY.funnelBody}</p>
-          <ContactLink
+          {/* Was a WhatsApp link; now opens the drawer with the travel plan chosen. */}
+          <AskGrietaCta
+            entry="replaced-whatsapp"
             placement="flight-tickets"
-            role="button"
+            product="travel-plan"
             className={clsx(buttonStyles({ variant: 'primary', size: 'medium' }), ctaLinkStyle)}
           >
             {FLIGHT_PAGE_COPY.funnelCtaLabel}
-          </ContactLink>
+          </AskGrietaCta>
         </Card>
       </div>
       <SectionBlogs sectionTitle="Mani piedzīvojumi Šrilankā" blogsLimit={6} />

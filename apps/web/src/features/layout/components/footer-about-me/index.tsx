@@ -1,17 +1,18 @@
 import Image from 'next/image';
 
+import { AskGrietaCta } from '@/features/ask-grieta/components/ask-grieta-cta';
+import { buttonStyles } from '@/shared/components/button/styles.css';
 import { Heading } from '@/shared/components/heading';
 import { Signature } from '@/shared/components/signature';
 import { Text } from '@/shared/components/text';
-import { WhatsAppButton } from '@/shared/components/whatsapp-button';
 
 import {
+  footerAskStyle,
   footerHeadingStyle,
   footerProfilePictureStyle,
   footerProfileStyle,
   footerSignatureStyle,
   footerTextStyle,
-  whatsAppLinkStyle,
 } from '../footer/styles.css';
 
 export const FooterAboutMe = () => (
@@ -42,6 +43,13 @@ export const FooterAboutMe = () => (
       />
       <Signature className={footerSignatureStyle} />
     </div>
-    <WhatsAppButton className={whatsAppLinkStyle} placement="footer-about-me" />
+    {/* Was the WhatsApp pill; now opens the drawer. */}
+    <AskGrietaCta
+      entry="replaced-whatsapp"
+      placement="footer-about-me"
+      className={`${buttonStyles({ variant: 'primary', size: 'large' })} ${footerAskStyle}`}
+    >
+      Uzraksti man
+    </AskGrietaCta>
   </div>
 );

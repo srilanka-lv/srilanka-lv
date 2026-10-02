@@ -1,6 +1,6 @@
 import type { FunctionComponent } from 'react';
 
-import { ContactLink } from '@/shared/components/contact-link';
+import { AskGrietaCta } from '@/features/ask-grieta/components/ask-grieta-cta';
 
 import { subFooterItemStyle, subFooterLinkStyle, subFooterStyle } from './styles.css';
 
@@ -12,9 +12,16 @@ export const SubFooter: FunctionComponent = () => {
       <li className={subFooterItemStyle}>Copyright © {year} Srilanka.lv. All rights reserved.</li>
       <li className={subFooterItemStyle}>
         WhatsApp:{' '}
-        <ContactLink className={subFooterLinkStyle} placement="sub-footer">
+        {/* Opens the Ask Grieta drawer, whose footer has the direct WhatsApp,
+            Instagram and phone routes (WhatsApp links dead-end in Instagram). */}
+        <AskGrietaCta
+          as="link"
+          entry="replaced-whatsapp"
+          placement="sub-footer"
+          className={subFooterLinkStyle}
+        >
           +64 2902323786
-        </ContactLink>
+        </AskGrietaCta>
       </li>
       <li className={subFooterItemStyle}>
         E-pasts:{' '}

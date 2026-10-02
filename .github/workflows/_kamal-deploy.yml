@@ -58,6 +58,8 @@ jobs:
           HETZNER_HOST: ${{ vars.HETZNER_HOST }}
           NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID: ${{ vars.NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID }}
           RESEND_AUDIENCE_ID: ${{ vars.RESEND_AUDIENCE_ID }}
+          RESEND_LEADS_SEGMENT_ID: ${{ vars.RESEND_LEADS_SEGMENT_ID }}
+          LEAD_NOTIFICATION_EMAIL: ${{ vars.LEAD_NOTIFICATION_EMAIL }}
 
           # Repo-level secrets.
           KAMAL_REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}

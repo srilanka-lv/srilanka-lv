@@ -4,6 +4,7 @@ import { DefaultHttpClientRepository } from '@/features/http-client/repositories
 import { NEWSLETTER_REPLY_TO, NEWSLETTER_SENDER } from '../constants/sender';
 import type { NewsletterProviderInterface } from '../interfaces/newsletter-provider-interface';
 import type { NewsletterAddContactResultModel } from '../models/newsletter-add-contact-result-model';
+import type { NewsletterSaveContactInputModel } from '../models/newsletter-save-contact-input-model';
 import type { NewsletterSendEmailInputModel } from '../models/newsletter-send-email-input-model';
 import type { NewsletterSendEmailResultModel } from '../models/newsletter-send-email-result-model';
 
@@ -27,8 +28,8 @@ export function toMailpitAddress(address: string): MailpitAddress {
 /**
  * Local development provider: hands every email to Mailpit's HTTP send API,
  * so it lands in the local inbox at http://localhost:8025 and never leaves
- * the machine. Audiences are a Resend-only concept, so `addContact` only
- * logs that it was skipped.
+ * the machine. Audiences and segments are a Resend-only concept, so
+ * `addContact` and `saveContact` only log that they were skipped.
  */
 export class MailpitProvider implements NewsletterProviderInterface {
   private readonly client: DefaultHttpClientRepository;
@@ -45,12 +46,23 @@ export class MailpitProvider implements NewsletterProviderInterface {
     return { id: 'mailpit-noop' };
   }
 
+  public async saveContact({
+    segmentId,
+  }: NewsletterSaveContactInputModel): Promise<NewsletterAddContactResultModel> {
+    // No address in the log: this one is a website visitor's.
+    console.info(
+      `[mailpit] saveContact skipped for segment ${segmentId}: segments only exist on Resend`,
+    );
+
+    return { id: 'mailpit-noop' };
+  }
+
   public async sendEmail(
     input: NewsletterSendEmailInputModel,
   ): Promise<NewsletterSendEmailResultModel> {
     const { ID } = await this.client.post<{ ID: string }>('/api/v1/send', {
       From: toMailpitAddress(NEWSLETTER_SENDER),
-      ReplyTo: [toMailpitAddress(NEWSLETTER_REPLY_TO)],
+      ReplyTo: [toMailpitAddress(input.replyTo ?? NEWSLETTER_REPLY_TO)],
       To: [toMailpitAddress(input.to)],
       Subject: input.subject,
       HTML: input.html,

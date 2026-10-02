@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
 
-import { ContactLink } from '@/shared/components/contact-link';
+import { AskGrietaCta } from '@/features/ask-grieta/components/ask-grieta-cta';
 import { GuideAuthor } from '@/shared/components/guide-author';
 import { GuideCallout } from '@/shared/components/guide-callout';
 import { GuideCta } from '@/shared/components/guide-cta';
@@ -769,7 +769,14 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
         actions={
           <>
             <Link href={href.girlsTrip}>Meiteņu ceļojums 2027. gada janvārī</Link>
-            <ContactLink placement="guide-cta">Personalizēts plāns: uzraksti man</ContactLink>
+            <AskGrietaCta
+              as="link"
+              entry="replaced-whatsapp"
+              placement="guide-cta"
+              product="travel-plan"
+            >
+              Personalizēts plāns: uzraksti man
+            </AskGrietaCta>
           </>
         }
       >

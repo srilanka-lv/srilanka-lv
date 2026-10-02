@@ -3,9 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
 
+import { AskGrietaCta } from '@/features/ask-grieta/components/ask-grieta-cta';
+import { PRODUCT_BY_SLUG } from '@/features/ask-grieta/constants/ask-grieta-products';
 import { Breadcrumbs } from '@/shared/components/breadcrumbs';
 import { buildSectionItems } from '@/shared/components/breadcrumbs/build-items';
-import { WhatsAppButton } from '@/shared/components/whatsapp-button';
+import { buttonStyles } from '@/shared/components/button/styles.css';
 
 import { products } from './index.data';
 import {
@@ -34,10 +36,17 @@ export const ProductsPage: FunctionComponent = () => {
             <Component className={productTitleStyle}>{title}</Component>
             <p className={productDescriptionStyle}>{description}</p>
             {product.whatsAppOnly ? (
-              <WhatsAppButton
-                className={productWhatsAppCtaStyle}
+              // Was the WhatsApp pill, a dead end in Instagram's browser.
+              <AskGrietaCta
+                entry="replaced-whatsapp"
                 placement={`products-page-${product.slug}`}
-              />
+                product={PRODUCT_BY_SLUG[product.slug]}
+                className={`${productWhatsAppCtaStyle} ${buttonStyles({ variant: 'primary', size: 'large' })}`}
+              >
+                {PRODUCT_BY_SLUG[product.slug] === 'consultation'
+                  ? 'Jautā man par konsultāciju'
+                  : 'Jautā man par ceļojuma plānu'}
+              </AskGrietaCta>
             ) : (
               <Link className={productLinkStyle} href={productHref}>
                 Vairāk par šo ceļojumu! →

@@ -1,4 +1,4 @@
-import { globalStyle, style } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
 import { inOverridesLayer } from '@/shared/styles/layers/layers';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
@@ -111,19 +111,10 @@ export const footerSignatureStyle = style(
   }),
 );
 
-export const whatsAppLinkStyle = style(
+// The "Uzraksti man" button that opens the Ask Grieta drawer.
+export const footerAskStyle = style(
   inOverridesLayer({
-    display: 'block',
     marginTop: spacing[8],
-    width: '100%',
-    maxWidth: spacing[56],
-    height: 'auto',
-    backgroundImage: 'none',
+    minHeight: '2.75rem',
   }),
 );
-
-globalStyle(`${whatsAppLinkStyle} svg`, {
-  display: 'block',
-  width: '100%',
-  height: 'auto',
-});
