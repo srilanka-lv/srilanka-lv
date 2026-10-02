@@ -39,3 +39,17 @@ export const createRateLimiter = ({ limit, windowMs, maxKeys = 10_000 }: RateLim
     },
   };
 };
+
+/**
+ * The per-visitor check. The site is served through Cloudflare, so only
+ * cf-connecting-ip identifies the visitor; a request without it is never
+ * refused, because losing a real lead is worse than letting one through.
+ */
+export const allowVisitor = (
+  limiter: ReturnType<typeof createRateLimiter>,
+  requestHeaders: Pick<Headers, 'get'>,
+): boolean => {
+  const address = requestHeaders.get('cf-connecting-ip')?.trim();
+
+  return !address || limiter.take(address);
+};

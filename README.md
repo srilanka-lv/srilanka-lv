@@ -23,7 +23,9 @@ Adding a reader to the Resend audience only exists on Resend. In Mailpit mode th
 The "Jautā Grietai" drawer (`apps/web/src/features/ask-grieta`) sends each lead through the `submitAskGrieta` server action:
 
 1. Grieta gets an email at `LEAD_NOTIFICATION_EMAIL` (default `sveiki@srilanka.lv`) from the site's usual sender. The subject starts with `🔔 Jauns pieteikums:`, so an iPhone Mail VIP or notification rule can push it. The email has a one-tap "Atbildēt WhatsApp" link, and when the visitor left an email address, replying to the email reaches them. A failed send is retried once; only an accepted email shows the visitor the success screen.
-2. When the visitor left an email address, they are saved as a contact in the Resend segment `RESEND_LEADS_SEGMENT_ID`, with their name and, once the properties exist, `whatsapp` and `product`. Resend keys contacts by email address, so a lead without one is only in Grieta's inbox and Resend's email log. This step never fails the submission.
+2. When the visitor left an email address that is not yet a Resend contact, they are saved as a new contact in the Resend segment `RESEND_LEADS_SEGMENT_ID`, with their name and, once the properties exist, `whatsapp` and `product`. An existing contact (for example a newsletter reader) is left untouched: anyone can type any address, so a submission never changes someone's name, properties or segments. Resend keys contacts by email address, so a lead without one is only in Grieta's inbox and Resend's email log. This step never fails the submission.
+
+Each visitor can send 5 submissions per 15 minutes, counted by the `cf-connecting-ip` address Cloudflare sets. There is no site-wide cap, and a request without that header is never refused.
 
 Leads are not stored anywhere else.
 

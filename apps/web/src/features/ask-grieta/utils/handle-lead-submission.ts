@@ -19,7 +19,7 @@ export type SubmitAskGrietaResult =
   | { status: 'failed'; reason: 'email' | 'rate-limited' | 'server' };
 
 type HandleLeadSubmissionDeps = {
-  /** False when this visitor (or the whole form) is over its rate limit. */
+  /** False when this visitor is over their rate limit. */
   allow: () => boolean;
   deliver: (lead: AskGrietaLeadModel) => Promise<DeliverLeadResult>;
 };

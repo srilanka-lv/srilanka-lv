@@ -79,33 +79,14 @@ describe('DefaultResendProvider.saveContact', () => {
     ]);
   });
 
-  it('adds an existing contact to the segment and refreshes the name', async () => {
+  it('leaves an existing contact untouched and throws', async () => {
     const { client, provider } = fakeClient({
       create: [fail('Contact already exists'), fail('Contact already exists')],
-      add: [ok('seg_leads')],
-      update: [ok('c_3')],
     });
 
-    expect(await provider.saveContact(lead)).toEqual({ id: 'c_3' });
-    expect(client.contacts.segments.add).toHaveBeenCalledWith({
-      email: 'anna@example.com',
-      segmentId: 'seg_leads',
-    });
-    expect(client.contacts.update).toHaveBeenCalledWith({
-      email: 'anna@example.com',
-      firstName: 'Anna',
-      lastName: 'Bērziņa',
-      properties: { whatsapp: '+37126123456', product: 'girls-trip' },
-    });
-  });
-
-  it('throws when the contact can be neither created nor added', async () => {
-    const { provider } = fakeClient({
-      create: [fail('nope'), fail('nope')],
-      add: [fail('Segment not found')],
-    });
-
-    await expect(provider.saveContact(lead)).rejects.toThrow('Segment not found');
+    await expect(provider.saveContact(lead)).rejects.toThrow('Contact already exists');
+    expect(client.contacts.segments.add).not.toHaveBeenCalled();
+    expect(client.contacts.update).not.toHaveBeenCalled();
   });
 });
 
