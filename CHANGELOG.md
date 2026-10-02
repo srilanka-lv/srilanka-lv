@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.19.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.18.0...v1.19.0) (2026-10-02)
+
+
+### Features
+
+* ✨ catch local email in Mailpit via EMAIL_TRANSPORT=mailpit ([2aace8a](https://github.com/srilanka-lv/srilanka-lv/commit/2aace8aedb17bcb8e213a81bacd6088045bc889a))
+* **about:** 🍱 replace Grieta's helmet profile photo with a new beach portrait ([813188d](https://github.com/srilanka-lv/srilanka-lv/commit/813188dc30634daa04726584cdd9fcfcd31558c8))
+* **contact:** ✨ ask Grieta drawer sends leads by email and saves them in Resend ([1add762](https://github.com/srilanka-lv/srilanka-lv/commit/1add762e30d59205a4088129cb49a97e4bb775a2))
+* **newsletter:** catch local email in Mailpit via EMAIL_TRANSPORT ([2804195](https://github.com/srilanka-lv/srilanka-lv/commit/28041958f2da69a5e67ea1844dc7bcc57331c55b))
+* **web:** add the Ask Grieta contact drawer that emails leads via Resend ([f596d96](https://github.com/srilanka-lv/srilanka-lv/commit/f596d96e64b37ccd9f0cb2ce6e6c75c41c00baec))
+* **web:** replace Grieta's helmet profile photo with a new beach portrait ([69fcd46](https://github.com/srilanka-lv/srilanka-lv/commit/69fcd460c470648129199bfd9faa696afc89963b))
+
+
+### Bug Fixes
+
+* **analytics:** 🐛 count each pageview and event once when Zaraz re-injects Umami ([e197fbc](https://github.com/srilanka-lv/srilanka-lv/commit/e197fbc7e61850cb35d45f074fa049df7cff0c68))
+* **analytics:** count each pageview and event once when Zaraz re-injects Umami ([ab22444](https://github.com/srilanka-lv/srilanka-lv/commit/ab22444acf1e49fdf8c29f3570b9b3837e6c9e24))
+
 ## [1.18.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.17.0...v1.18.0) (2026-09-27)
 
 
