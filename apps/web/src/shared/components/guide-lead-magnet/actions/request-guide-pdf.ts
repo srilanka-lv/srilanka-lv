@@ -1,7 +1,6 @@
 'use server';
 
-import { DefaultResendProvider } from '@/features/newsletter/providers/default-resend-provider';
-import { DefaultNewsletterRepository } from '@/features/newsletter/repositories/default-newsletter-repository';
+import { buildNewsletterRepository } from '@/features/newsletter/utils/build-newsletter-repository';
 
 import { formSchema } from '../constants/form-schema';
 import { buildGuidePdfEmail } from '../constants/guide-pdf-email';
@@ -23,8 +22,7 @@ export async function requestGuidePdf(data: { email: string }): Promise<RequestG
   }
 
   try {
-    const provider = new DefaultResendProvider();
-    const repository = new DefaultNewsletterRepository(provider);
+    const repository = buildNewsletterRepository();
 
     await repository.addContact(parsed.data.email);
     await repository.sendEmail(buildGuidePdfEmail(parsed.data.email));

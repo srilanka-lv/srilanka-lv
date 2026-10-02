@@ -21,6 +21,8 @@
     "repo:lint": "biome check",
     "repo:format": "biome format --write",
     "infra:kamal": "kamal -c infra/kamal/deploy.yml",
+    "mailpit:start": "docker compose -f infra/mailpit/compose.yml up -d",
+    "mailpit:stop": "docker compose -f infra/mailpit/compose.yml down",
     "web:indexnow": "bun --elide-lines=0 --filter @srilanka/web indexnow"
   },
   "devDependencies": {

@@ -1,0 +1,62 @@
+import { DefaultHttpClientProvider } from '@/features/http-client/providers/default-http-client-provider';
+import { DefaultHttpClientRepository } from '@/features/http-client/repositories/default-http-client-repository';
+
+import { NEWSLETTER_REPLY_TO, NEWSLETTER_SENDER } from '../constants/sender';
+import type { NewsletterProviderInterface } from '../interfaces/newsletter-provider-interface';
+import type { NewsletterAddContactResultModel } from '../models/newsletter-add-contact-result-model';
+import type { NewsletterSendEmailInputModel } from '../models/newsletter-send-email-input-model';
+import type { NewsletterSendEmailResultModel } from '../models/newsletter-send-email-result-model';
+
+export const DEFAULT_MAILPIT_URL = 'http://localhost:8025';
+
+type MailpitAddress = { Email: string; Name?: string };
+
+/**
+ * Splits `Name <email>` into the address shape Mailpit's send API takes.
+ */
+export function toMailpitAddress(address: string): MailpitAddress {
+  const match = /^(.*?)\s*<([^>]+)>$/.exec(address.trim());
+
+  if (!match) {
+    return { Email: address.trim() };
+  }
+
+  return { Name: match[1], Email: match[2] };
+}
+
+/**
+ * Local development provider: hands every email to Mailpit's HTTP send API,
+ * so it lands in the local inbox at http://localhost:8025 and never leaves
+ * the machine. Audiences are a Resend-only concept, so `addContact` only
+ * logs that it was skipped.
+ */
+export class MailpitProvider implements NewsletterProviderInterface {
+  private readonly client: DefaultHttpClientRepository;
+
+  constructor(baseUrl: string = process.env.MAILPIT_URL || DEFAULT_MAILPIT_URL) {
+    this.client = new DefaultHttpClientRepository(
+      new DefaultHttpClientProvider({ baseUrl: baseUrl.replace(/\/$/, '') }),
+    );
+  }
+
+  public async addContact(email: string): Promise<NewsletterAddContactResultModel> {
+    console.info(`[mailpit] addContact skipped for ${email}: audiences only exist on Resend`);
+
+    return { id: 'mailpit-noop' };
+  }
+
+  public async sendEmail(
+    input: NewsletterSendEmailInputModel,
+  ): Promise<NewsletterSendEmailResultModel> {
+    const { ID } = await this.client.post<{ ID: string }>('/api/v1/send', {
+      From: toMailpitAddress(NEWSLETTER_SENDER),
+      ReplyTo: [toMailpitAddress(NEWSLETTER_REPLY_TO)],
+      To: [toMailpitAddress(input.to)],
+      Subject: input.subject,
+      HTML: input.html,
+      Text: input.text,
+    });
+
+    return { id: ID };
+  }
+}
