@@ -33,9 +33,9 @@ export function toMailpitAddress(address: string): MailpitAddress {
 export class MailpitProvider implements NewsletterProviderInterface {
   private readonly client: DefaultHttpClientRepository;
 
-  constructor(baseUrl: string = process.env.MAILPIT_URL || DEFAULT_MAILPIT_URL) {
+  constructor() {
     this.client = new DefaultHttpClientRepository(
-      new DefaultHttpClientProvider({ baseUrl: baseUrl.replace(/\/$/, '') }),
+      new DefaultHttpClientProvider({ baseUrl: DEFAULT_MAILPIT_URL }),
     );
   }
 

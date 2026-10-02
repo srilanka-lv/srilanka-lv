@@ -13,7 +13,7 @@ In production the site sends email through Resend. Locally you can catch every e
 How `EMAIL_TRANSPORT` behaves:
 
 - Unset or `resend`: real email goes out through Resend. This is the default, and production uses it.
-- `mailpit`: every email goes to Mailpit (`MAILPIT_URL`, default `http://localhost:8025`) and Resend is never called. When `NODE_ENV=production` the site refuses this setting with an error, so a production build can't quietly send email to Mailpit.
+- `mailpit`: every email goes to Mailpit at `http://localhost:8025` and Resend is never called. When `NODE_ENV=production` the site refuses this setting with an error, so a production build can't quietly send email to Mailpit.
 - Any other value is an error. The site doesn't fall back to Resend.
 
 Adding a reader to the Resend audience only exists on Resend. In Mailpit mode that step is skipped and logged as `[mailpit] addContact skipped …`. As a result, the footer newsletter signup sends no email at all; it only adds the contact. The guide PDF request still sends its email, and that email shows up in Mailpit.

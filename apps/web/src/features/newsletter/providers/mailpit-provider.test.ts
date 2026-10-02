@@ -26,7 +26,7 @@ describe('MailpitProvider', () => {
     const fetchMock = mock(async () => Response.json({ ID: 'abc123' }));
     globalThis.fetch = fetchMock as unknown as typeof fetch;
 
-    const result = await new MailpitProvider('http://localhost:8025/').sendEmail({
+    const result = await new MailpitProvider().sendEmail({
       to: 'lasitaja@example.com',
       subject: 'Tēma',
       html: '<p>Sveiki</p>',
