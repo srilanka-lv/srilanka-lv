@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FunctionComponent } from 'react';
 
-import { ContactLink } from '@/shared/components/contact-link';
+import { AskGrietaCta } from '@/features/ask-grieta/components/ask-grieta-cta';
 import { Signature } from '@/shared/components/signature';
 
 import {
@@ -103,7 +103,15 @@ export const AboutPageStorySection: FunctionComponent = () => (
     <p className={storyParagraphStyle}>
       Šodien es palīdzu latviešiem iepazīt Šrilanku tādu, kādu to pazīstu es, īstu, autentisku un
       drošu. Veidoju{' '}
-      <ContactLink placement="about-story">personalizētus ceļojumu plānus</ContactLink>, organizēju{' '}
+      <AskGrietaCta
+        as="link"
+        entry="replaced-whatsapp"
+        placement="about-story"
+        product="travel-plan"
+      >
+        personalizētus ceļojumu plānus
+      </AskGrietaCta>
+      , organizēju{' '}
       <Link href={`/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`}>grupu braucienus</Link>{' '}
       un sniedzu reālu atbalstu uz vietas, lai ikviens varētu izbaudīt šo salu ar pārliecību un
       mieru.

@@ -49,6 +49,7 @@
         "@vanilla-extract/vite-plugin": "^5.2.6",
         "clsx": "^2.1.1",
         "jotai": "^3.0.0",
+        "libphonenumber-js": "^1.13.14",
         "lucide-react": "^1.47.0",
         "next": "^16.3.5",
         "next-sanity": "^13.3.4",
@@ -2124,6 +2125,8 @@
     "lambda-runtimes": ["lambda-runtimes@3.0.0", "", {}, "sha512-fre88KwPAjsDq8jeenv8GlgkdqbKf4wPGTlnKMXEDA5K12A3IptirNFv1koG47IBcgSykCbWYF9T3wmmKJFJtQ=="],
 
     "leven": ["leven@4.1.0", "", {}, "sha512-KZ9W9nWDT7rF7Dazg8xyLHGLrmpgq2nVNFUckhqdW3szVP6YhCpp/RAnpmVExA9JvrMynjwSLVrEj3AepHR6ew=="],
+
+    "libphonenumber-js": ["libphonenumber-js@1.13.14", "", {}, "sha512-llihgCcx0BFLksecLP+x1J+6JDE1GsXS1RN/LoPF6qcwpeQcnjj0lcvZxY8AzbEpYwyZWPZW/nDuqkqzm3amiw=="],
 
     "lie": ["lie@3.1.1", "", { "dependencies": { "immediate": "~3.0.5" } }, "sha512-RiNhHysUjhrDQntfYSfY4MU24coXXdEOgw9WGcKHNeEwffDYbF//u87M1EWaMGzuFoSbqW0C9C6lEEhDOAswfw=="],
 

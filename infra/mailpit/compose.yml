@@ -1,0 +1,11 @@
+# Local-only mail catcher for development. Nothing sent here leaves the
+# machine. Start with `bun mailpit:start`, read the inbox at
+# http://localhost:8025, stop with `bun mailpit:stop`.
+name: srilanka-mailpit
+
+services:
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:8025:8025' # web UI and HTTP API

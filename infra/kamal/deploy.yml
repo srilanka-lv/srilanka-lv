@@ -31,6 +31,10 @@ env:
     SENTRY_RELEASE: <%= ENV.fetch('SENTRY_RELEASE', ENV.fetch('VERSION')) %>
     NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID: <%= ENV.fetch('NEXT_PUBLIC_SANITY_STUDIO_PROJECT_ID') %>
     RESEND_AUDIENCE_ID: <%= ENV.fetch('RESEND_AUDIENCE_ID') %>
+    # Optional: empty skips saving Ask Grieta leads as Resend contacts, and
+    # empty LEAD_NOTIFICATION_EMAIL sends lead emails to sveiki@srilanka.lv.
+    RESEND_LEADS_SEGMENT_ID: "<%= ENV.fetch('RESEND_LEADS_SEGMENT_ID', '') %>"
+    LEAD_NOTIFICATION_EMAIL: "<%= ENV.fetch('LEAD_NOTIFICATION_EMAIL', '') %>"
   secret:
     - SANITY_API_KEY
     - RESEND_API_KEY

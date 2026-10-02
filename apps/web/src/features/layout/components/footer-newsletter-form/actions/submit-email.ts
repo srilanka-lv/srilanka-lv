@@ -1,7 +1,6 @@
 'use server';
 
-import { DefaultResendProvider } from '@/features/newsletter/providers/default-resend-provider';
-import { DefaultNewsletterRepository } from '@/features/newsletter/repositories/default-newsletter-repository';
+import { buildNewsletterRepository } from '@/features/newsletter/utils/build-newsletter-repository';
 
 import { formSchema } from '../constants/form-schema';
 
@@ -15,8 +14,7 @@ export async function submitEmail(data: { email: string }): Promise<SubmitEmailR
   }
 
   try {
-    const provider = new DefaultResendProvider();
-    const repository = new DefaultNewsletterRepository(provider);
+    const repository = buildNewsletterRepository();
 
     await repository.addContact(parsed.data.email);
 
