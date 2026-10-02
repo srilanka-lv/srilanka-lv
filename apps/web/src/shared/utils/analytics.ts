@@ -24,7 +24,7 @@ export type AnalyticsEventName =
   | 'trip-gallery-open'
   | 'trip-gallery-view'
   | 'trip-gallery-close'
-  // Girls trip engagement (src/shared/utils/trip-engagement.ts).
+  // Girls trip page engagement (src/shared/utils/trip-engagement.ts).
   | 'trip-section-view'
   | 'trip-section-read'
   | 'trip-scroll-depth'
@@ -78,24 +78,4 @@ export const trackEvent = async (
 
   // Tracking must never break the interaction that triggered it.
   await Promise.allSettled(beacons);
-};
-
-/**
- * Umami only, for high-volume engagement signals (sections seen, scroll
- * depth). They have no business reaching the server-side tools behind Zaraz,
- * and skipping zaraz.track also skips its re-evaluation of the trigger that
- * injects Umami. Fire-and-forget: nothing waits on these.
- */
-export const trackUmamiEvent = (name: AnalyticsEventName, data?: UmamiEventData): void => {
-  if (typeof window === 'undefined' || !window.umami) {
-    return;
-  }
-
-  // Tracking must never break the page that triggered it, whether the
-  // tracker throws or rejects.
-  try {
-    Promise.resolve(window.umami.track(name, data)).catch(() => undefined);
-  } catch {
-    // Ignored on purpose, as above.
-  }
 };

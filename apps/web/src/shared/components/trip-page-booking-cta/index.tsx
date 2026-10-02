@@ -3,9 +3,10 @@
 import { Dialog } from '@ark-ui/react/dialog';
 import { Portal } from '@ark-ui/react/portal';
 import clsx from 'clsx';
-import type { FunctionComponent } from 'react';
+import { type FunctionComponent, useEffect, useState } from 'react';
 
 import { AskGrietaCta } from '@/features/ask-grieta/components/ask-grieta-cta';
+import { useAskGrieta } from '@/features/ask-grieta/stores/ask-grieta-store';
 import { useTripPageBookingPhase } from '@/shared/components/trip-page-booking-provider';
 import { GIRLS_TRIP_RESERVATION_EUR, formatEur } from '@/shared/constants/girls-trip-booking';
 import { trackEvent } from '@/shared/utils/analytics';
@@ -19,6 +20,7 @@ import {
   contentStyle,
   descriptionStyle,
   detailsTriggerStyle,
+  dialogAskStyle,
   positionerStyle,
   titleStyle,
   tripPageBookingCtaStyle,
@@ -37,27 +39,25 @@ export const RESERVE_LABEL = `Rezervēt vietu (${formatEur(GIRLS_TRIP_RESERVATIO
 const ASK_LABEL = 'Uzdot jautājumu';
 
 type TripPageAskButtonProps = {
-  /** Where on the page the button sits, reported with the click. Kebab-case. */
+  /** Where on the page the button sits, kebab-case; reported by the drawer's ask-* events. */
   placement: string;
   className?: string;
-  tabIndex?: number;
 };
 
 /**
- * The one "Uzdot jautājumu" entry point on the girls trip page. Opens the Ask
- * Grieta drawer with the girls trip preselected.
+ * Every "Uzdot jautājumu" on the girls trip page: opens the Ask Grieta drawer
+ * with the girls trip preselected. The drawer reports its own ask-cta-view
+ * and ask-open events, so this adds no tracking of its own.
  */
 export const TripPageAskButton: FunctionComponent<TripPageAskButtonProps> = ({
   placement,
   className,
-  tabIndex,
 }) => (
   <AskGrietaCta
     product="girls-trip"
-    placement={`trip-page-ask-${placement}`}
+    placement={`trip-page-${placement}`}
     entry="replaced-whatsapp"
     className={className}
-    tabIndex={tabIndex}
   >
     {ASK_LABEL}
   </AskGrietaCta>
@@ -67,18 +67,15 @@ type TripPageReserveButtonProps = {
   /** Where on the page the button sits, reported with the click. Kebab-case. */
   placement: string;
   className?: string;
-  tabIndex?: number;
 };
 
 export const TripPageReserveButton: FunctionComponent<TripPageReserveButtonProps> = ({
   placement,
   className,
-  tabIndex,
 }) => (
   <button
     type="button"
     className={clsx(buttonStyles({ variant: 'primary' }), className)}
-    tabIndex={tabIndex}
     onClick={async () => {
       // Cap the tracking wait so a hung beacon can never stall the cart redirect.
       await Promise.race([
@@ -112,8 +109,9 @@ type TripPageBookingCtaProps = {
 
 /**
  * The two next steps on the trip page: reserve a place (the 400 € deposit in
- * the partner store), or the softer "ask a question", which opens a chat with
- * Grieta. After the booking deadline only the question stays.
+ * the partner store), or the softer "ask a question", which opens the Ask
+ * Grieta drawer with the girls trip preselected. After the booking deadline
+ * only the question stays.
  */
 export const TripPageBookingCta: FunctionComponent<TripPageBookingCtaProps> = ({
   placement,
@@ -121,6 +119,15 @@ export const TripPageBookingCta: FunctionComponent<TripPageBookingCtaProps> = ({
   className,
 }) => {
   const phase = useTripPageBookingPhase();
+  const [detailsOpen, setDetailsOpen] = useState(false);
+  const { open: askOpen } = useAskGrieta();
+
+  // The dialog's own ask button opens the drawer: step aside for it.
+  useEffect(() => {
+    if (askOpen) {
+      setDetailsOpen(false);
+    }
+  }, [askOpen]);
 
   return (
     <div className={clsx(className, tripPageBookingCtaStyle)}>
@@ -135,7 +142,13 @@ export const TripPageBookingCta: FunctionComponent<TripPageBookingCtaProps> = ({
       <TripPageAskButton className={buttonStyles({ variant: 'secondary' })} placement={placement} />
 
       {withDetails && phase !== 'closed' && (
-        <Dialog.Root>
+        <Dialog.Root
+          open={detailsOpen}
+          onOpenChange={(details) => setDetailsOpen(details.open)}
+          // Handing focus back to the trigger would count as focus leaving the
+          // drawer that just opened, and close it again.
+          restoreFocus={!askOpen}
+        >
           <Dialog.Trigger className={detailsTriggerStyle}>
             Kas notiek, veicot rezervāciju?
           </Dialog.Trigger>
@@ -178,6 +191,10 @@ export const TripPageBookingCta: FunctionComponent<TripPageBookingCtaProps> = ({
                   </ul>
                   <p>Atlikušo summu varēsi pavisam ērti samaksāt man uz vietas Šrilankā.</p>
                 </Dialog.Description>
+                <TripPageAskButton
+                  className={clsx(buttonStyles({ variant: 'secondary' }), dialogAskStyle)}
+                  placement="booking-dialog"
+                />
               </Dialog.Content>
             </Dialog.Positioner>
           </Portal>

@@ -2,7 +2,7 @@
 
 import { type FunctionComponent, useEffect, useRef } from 'react';
 
-import { trackUmamiEvent } from '@/shared/utils/analytics';
+import { trackEvent } from '@/shared/utils/analytics';
 import {
   TRIP_SCROLL_DEPTH_MILESTONES,
   type TripScrollDepth,
@@ -30,7 +30,11 @@ export const TripPageEngagement: FunctionComponent = () => {
 
   useEffect(() => {
     const engagement = createTripEngagement({
-      track: trackUmamiEvent,
+      // Umami only, the same path as the Ask Grieta funnel: no Zaraz tool
+      // needs these, and each zaraz.track re-runs the Umami injection trigger.
+      track: (name, data) => {
+        trackEvent(name, data, { zaraz: false }).catch(() => undefined);
+      },
       clock: {
         now: () => performance.now(),
         setTimeout: (callback, ms) => window.setTimeout(callback, ms),

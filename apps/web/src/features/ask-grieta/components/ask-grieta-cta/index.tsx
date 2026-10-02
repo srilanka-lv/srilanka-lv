@@ -25,7 +25,6 @@ type AskGrietaCtaProps = {
   /** Chat bubble before the label; off for text links and cards. */
   icon?: boolean;
   className?: string;
-  tabIndex?: number;
   children: ReactNode;
 };
 
@@ -41,7 +40,6 @@ export const AskGrietaCta: FunctionComponent<AskGrietaCtaProps> = ({
   as = 'button',
   icon = as === 'button',
   className,
-  tabIndex,
   children,
 }) => {
   const ref = useRef<HTMLButtonElement & HTMLAnchorElement>(null);
@@ -91,7 +89,6 @@ export const AskGrietaCta: FunctionComponent<AskGrietaCtaProps> = ({
       <a
         ref={ref}
         className={className}
-        tabIndex={tabIndex}
         href={product ? `?ask=${DEEP_LINK_ALIAS[product]}` : '?ask'}
         rel="nofollow"
         aria-haspopup="dialog"
@@ -109,7 +106,6 @@ export const AskGrietaCta: FunctionComponent<AskGrietaCtaProps> = ({
       ref={ref}
       type="button"
       className={className}
-      tabIndex={tabIndex}
       aria-haspopup="dialog"
       onPointerEnter={preloadAskGrieta}
       onTouchStart={preloadAskGrieta}

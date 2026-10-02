@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, mock } from 'bun:test';
 
-import { trackEvent, trackUmamiEvent } from './analytics';
+import { trackEvent } from './analytics';
 
 type WindowWithUmami = Window & typeof globalThis;
 
@@ -56,47 +56,5 @@ describe('trackEvent', () => {
     } as unknown as WindowWithUmami;
 
     await expect(trackEvent('contact')).resolves.toBeUndefined();
-  });
-});
-
-describe('trackUmamiEvent', () => {
-  beforeEach(() => {
-    (globalThis as { window?: unknown }).window = undefined;
-  });
-
-  it('sends to umami and never to zaraz', () => {
-    const umami = mock(() => Promise.resolve());
-    const zaraz = mock(() => Promise.resolve());
-    (globalThis as { window?: unknown }).window = {
-      umami: { track: umami },
-      zaraz: { track: zaraz },
-    } as unknown as WindowWithUmami;
-
-    trackUmamiEvent('trip-section-view', { page: 'girls-trip', section: 'faq' });
-
-    expect(umami).toHaveBeenCalledWith('trip-section-view', { page: 'girls-trip', section: 'faq' });
-    expect(zaraz).not.toHaveBeenCalled();
-  });
-
-  it('does nothing without umami or a window', () => {
-    expect(() => trackUmamiEvent('trip-faq-open')).not.toThrow();
-    (globalThis as { window?: unknown }).window = {};
-    expect(() => trackUmamiEvent('trip-faq-open')).not.toThrow();
-  });
-
-  it('survives a tracker that throws or rejects', () => {
-    (globalThis as { window?: unknown }).window = {
-      umami: {
-        track: () => {
-          throw new Error('blocked');
-        },
-      },
-    } as unknown as WindowWithUmami;
-    expect(() => trackUmamiEvent('trip-scroll-depth', { depth: 50 })).not.toThrow();
-
-    (globalThis as { window?: unknown }).window = {
-      umami: { track: () => Promise.reject(new Error('offline')) },
-    } as unknown as WindowWithUmami;
-    expect(() => trackUmamiEvent('trip-scroll-depth', { depth: 75 })).not.toThrow();
   });
 });

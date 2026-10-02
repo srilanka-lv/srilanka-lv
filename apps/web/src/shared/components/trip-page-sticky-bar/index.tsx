@@ -1,6 +1,6 @@
 'use client';
 
-import { type FunctionComponent, useEffect, useState } from 'react';
+import { type FunctionComponent, useEffect, useRef, useState } from 'react';
 
 import { useTripPageBookingPhase } from '@/shared/components/trip-page-booking-provider';
 
@@ -28,6 +28,19 @@ export const TripPageStickyBar: FunctionComponent<TripPageStickyBarProps> = ({
 }) => {
   const phase = useTripPageBookingPhase();
   const [isVisible, setIsVisible] = useState(false);
+  const barRef = useRef<HTMLDivElement>(null);
+
+  // Lift the floating Ask Grieta button above the bar while the bar shows
+  // (only below lg, where the bar exists at all).
+  useEffect(() => {
+    const root = document.documentElement;
+    const height = barRef.current?.offsetHeight ?? 0;
+    root.style.setProperty('--bottom-bar-offset', isVisible && height > 0 ? `${height}px` : '0px');
+
+    return () => {
+      root.style.removeProperty('--bottom-bar-offset');
+    };
+  }, [isVisible]);
 
   useEffect(() => {
     const targets = [
@@ -55,20 +68,18 @@ export const TripPageStickyBar: FunctionComponent<TripPageStickyBarProps> = ({
   }, [hideWhileVisibleIds]);
 
   return (
-    <div className={stickyBarStyles[isVisible ? 'visible' : 'hidden']} aria-hidden={!isVisible}>
+    // `inert` keeps the off-screen bar's buttons out of the tab order and away
+    // from screen readers while it is hidden.
+    <div
+      ref={barRef}
+      className={stickyBarStyles[isVisible ? 'visible' : 'hidden']}
+      inert={!isVisible}
+    >
       <TripPagePrice variant="compact" />
       {phase === 'closed' ? (
-        <TripPageAskButton
-          className={stickyBarActionStyle}
-          placement="sticky-bar"
-          tabIndex={isVisible ? undefined : -1}
-        />
+        <TripPageAskButton className={stickyBarActionStyle} placement="sticky-bar" />
       ) : (
-        <TripPageReserveButton
-          className={stickyBarActionStyle}
-          placement="sticky-bar"
-          tabIndex={isVisible ? undefined : -1}
-        />
+        <TripPageReserveButton className={stickyBarActionStyle} placement="sticky-bar" />
       )}
     </div>
   );

@@ -273,3 +273,10 @@ export const closeTriggerStyle = style({
     },
   },
 });
+
+// The ask button at the foot of the booking dialog.
+export const dialogAskStyle = style({
+  marginTop: spacing[6],
+  width: 'auto',
+  alignSelf: 'stretch',
+});
