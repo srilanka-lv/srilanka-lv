@@ -8,6 +8,7 @@ import type { FunctionComponent, ReactNode } from 'react';
 import { Layout } from '@/features/layout/components/layout';
 import { ContactLinkGuardScript } from '@/shared/components/contact-link-guard-script';
 import { ThemeScript } from '@/shared/components/theme-script';
+import { UmamiSingleInstanceScript } from '@/shared/components/umami-single-instance-script';
 import { DEFAULT_OG_IMAGE } from '@/shared/constants/og-image';
 import { comme } from '@/shared/fonts/fonts';
 import { lightTheme as theme } from '@/shared/styles/themes/theme.light.css';
@@ -130,6 +131,7 @@ const NextRootLayout: FunctionComponent<RootLayoutReturnType> = ({ children }) =
     data-scroll-behavior="smooth"
   >
     <head>
+      <UmamiSingleInstanceScript />
       <ThemeScript />
       <ContactLinkGuardScript />
     </head>

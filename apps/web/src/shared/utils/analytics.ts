@@ -26,7 +26,9 @@ declare global {
 // resolves immediately when the trackers are absent (dev, staging, blocked).
 // Zaraz forwards events to the server-side tools configured in the Cloudflare
 // dashboard (e.g. Meta Conversions API); without a matching trigger there,
-// the zaraz.track call is a no-op.
+// the zaraz.track call is a no-op. Each call also re-evaluates the trigger that
+// injects Umami; UmamiSingleInstanceScript keeps re-injected copies from
+// counting twice.
 export const trackEvent = async (
   name: AnalyticsEventName,
   data?: UmamiEventData,

@@ -172,10 +172,15 @@ Dashboard steps (zone `srilanka.lv` → Zaraz):
    double-count pageviews.
 2. Under Settings, set **Bot Score Threshold** to block "Automated and Likely
    Automated" requests.
-3. Create a trigger `Production pageview`: Match rule,
-   `{{ system.page.url.hostname }}` equals `srilanka.lv`. This keeps
-   staging/development clean; the `data-domains` attribute below is the
-   second guard.
+3. Create a trigger `Production pageview` with two Match rules (a trigger is
+   valid only when all its rules are true):
+   - `{{ system.page.url.hostname }}` equals `srilanka.lv`. This keeps
+     staging/development clean; the `data-domains` attribute below is the
+     second guard.
+   - **Event Name** (`{{ client.__zarazTrack }}`) equals `Pageview`. Without
+     this rule the trigger also matches every `zaraz.track()` call the site
+     makes (see `trackEvent` in `apps/web/src/shared/utils/analytics.ts`), and
+     each tracked event injects another copy of the Umami tracker.
 4. Add a tool → **Custom HTML**, name `Umami Analytics`, fired by the
    `Production pageview` trigger, with this snippet:
 
@@ -190,6 +195,39 @@ Dashboard steps (zone `srilanka.lv` → Zaraz):
 
 5. Publish the Zaraz configuration.
 
+### Required fix: Pageview rule on `Production pageview` (pending)
+
+As of 2026-10-02, `Production pageview` has only the hostname rule. Zaraz
+evaluates triggers on every `zaraz.track()` call, not only on pageviews, so
+every tracked event (`flight-month-select`, `flight-date-expand`,
+`product-cta`, `video-play`, `contact-handoff`) re-ran the `Umami Analytics`
+Custom HTML tool and injected another `cloud.umami.is/script.js`. Each copy
+sent its own pageview, wrapped `history.pushState` again and added its own
+click listener, so later pageviews and contact taps were counted once per copy.
+
+The site now ships an inline guard (`apps/web/src/shared/utils/umami-single-instance.ts`,
+first in the root layout `<head>`) that lets only the first Umami tracker start.
+That alone stops the double counting. The dashboard change below stops Zaraz
+from injecting the dead extra copies at all:
+
+1. Zone `srilanka.lv` → Zaraz → **Tools Configuration** → **Triggers**.
+2. Edit the trigger `Production pageview`.
+   - Old: one Match rule, `{{ system.page.url.hostname }}` equals `srilanka.lv`.
+   - New: keep that rule, select **Add rule**, and add a Match rule with
+     variable **Event Name**, match operation **Equals**, match string
+     `Pageview`.
+3. Save, then check under **Tools** that `Umami Analytics` still uses only
+   `Production pageview` as its firing trigger.
+4. Publish the Zaraz configuration (or **Publish** from **History** if
+   preview mode is on).
+5. Verify on https://srilanka.lv with devtools open: switch a flight month on
+   `/flight-tickets`; the page must still have exactly one
+   `script[src="https://cloud.umami.is/script.js"]`, and the Network tab must
+   show one `api/send` request for the event and no new pageview.
+
+Do not touch any other tool's triggers: tools that should receive the
+`zaraz.track()` events need triggers that match on those event names.
+
 Verification after the next production deploy:
 
 - `view-source:https://development.srilanka.lv` contains no Umami script.
@@ -198,6 +236,9 @@ Verification after the next production deploy:
   `cloud.umami.is/api/send`.
 - Umami realtime shows the visit; client-side navigation adds exactly one
   pageview per route change.
+- After a tracked event (for example switching a flight month), the page
+  still runs one Umami tracker: navigation still adds exactly one pageview and
+  a contact tap records exactly one `contact` event.
 - Click an outbound blog link, a footer social link, the WhatsApp link, the
   reserve CTA, and switch a flight month: events `outbound-link`, `contact`
   (with `channel`), `product-cta`, and `flight-month-select` all appear.
