@@ -55,5 +55,7 @@ docs/seo/semrush/
 .claude/scheduled_tasks.lock
 **/.impeccable/hook.cache.json
 **/.impeccable/live/sessions/
+# impeccable engine binaries: platform-specific, the scripts/impeccable launcher downloads them on first run
+**/skills/impeccable/scripts/bin/
 # sanity dataset backups taken before scripted edits
 docs/seo/backups/
