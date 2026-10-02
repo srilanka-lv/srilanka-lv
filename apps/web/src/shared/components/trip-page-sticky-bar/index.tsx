@@ -2,10 +2,9 @@
 
 import { type FunctionComponent, useEffect, useState } from 'react';
 
-import { ContactLink } from '@/shared/components/contact-link';
 import { useTripPageBookingPhase } from '@/shared/components/trip-page-booking-provider';
 
-import { ASK_LABEL, TripPageReserveButton } from '../trip-page-booking-cta';
+import { TripPageAskButton, TripPageReserveButton } from '../trip-page-booking-cta';
 import { TripPagePrice } from '../trip-page-price';
 import { stickyBarActionStyle, stickyBarStyles } from './styles.css';
 
@@ -59,13 +58,11 @@ export const TripPageStickyBar: FunctionComponent<TripPageStickyBarProps> = ({
     <div className={stickyBarStyles[isVisible ? 'visible' : 'hidden']} aria-hidden={!isVisible}>
       <TripPagePrice variant="compact" />
       {phase === 'closed' ? (
-        <ContactLink
+        <TripPageAskButton
           className={stickyBarActionStyle}
-          placement="trip-page-ask-sticky-bar"
+          placement="sticky-bar"
           tabIndex={isVisible ? undefined : -1}
-        >
-          {ASK_LABEL}
-        </ContactLink>
+        />
       ) : (
         <TripPageReserveButton
           className={stickyBarActionStyle}

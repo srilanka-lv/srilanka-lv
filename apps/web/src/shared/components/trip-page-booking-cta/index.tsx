@@ -3,7 +3,7 @@
 import { Dialog } from '@ark-ui/react/dialog';
 import { Portal } from '@ark-ui/react/portal';
 import clsx from 'clsx';
-import type { FunctionComponent } from 'react';
+import type { ComponentPropsWithoutRef, FunctionComponent } from 'react';
 
 import { ContactLink } from '@/shared/components/contact-link';
 import { useTripPageBookingPhase } from '@/shared/components/trip-page-booking-provider';
@@ -34,7 +34,22 @@ const RESERVATION_CART_URL =
   'https://celoarmariku.lv/cart/add?id=54763870814545&quantity=1&selling_plan=692533133649&return_to=/cart';
 
 export const RESERVE_LABEL = `Rezervēt vietu (${formatEur(GIRLS_TRIP_RESERVATION_EUR)})`;
-export const ASK_LABEL = 'Uzdot jautājumu';
+const ASK_LABEL = 'Uzdot jautājumu';
+
+type TripPageAskButtonProps = Omit<ComponentPropsWithoutRef<typeof ContactLink>, 'children'>;
+
+/**
+ * The one "Uzdot jautājumu" entry point on the girls trip page. Opens a chat
+ * with Grieta today; switch it here when the contact drawer lands.
+ */
+export const TripPageAskButton: FunctionComponent<TripPageAskButtonProps> = ({
+  placement,
+  ...linkProps
+}) => (
+  <ContactLink {...linkProps} placement={`trip-page-ask-${placement}`}>
+    {ASK_LABEL}
+  </ContactLink>
+);
 
 type TripPageReserveButtonProps = {
   /** Where on the page the button sits, reported with the click. Kebab-case. */
@@ -105,12 +120,7 @@ export const TripPageBookingCta: FunctionComponent<TripPageBookingCtaProps> = ({
         <TripPageReserveButton placement={placement} />
       )}
 
-      <ContactLink
-        className={buttonStyles({ variant: 'secondary' })}
-        placement={`trip-page-ask-${placement}`}
-      >
-        {ASK_LABEL}
-      </ContactLink>
+      <TripPageAskButton className={buttonStyles({ variant: 'secondary' })} placement={placement} />
 
       {withDetails && phase !== 'closed' && (
         <Dialog.Root>
