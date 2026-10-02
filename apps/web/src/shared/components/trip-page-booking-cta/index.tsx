@@ -3,9 +3,9 @@
 import { Dialog } from '@ark-ui/react/dialog';
 import { Portal } from '@ark-ui/react/portal';
 import clsx from 'clsx';
-import type { ComponentPropsWithoutRef, FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 
-import { ContactLink } from '@/shared/components/contact-link';
+import { AskGrietaCta } from '@/features/ask-grieta/components/ask-grieta-cta';
 import { useTripPageBookingPhase } from '@/shared/components/trip-page-booking-provider';
 import { GIRLS_TRIP_RESERVATION_EUR, formatEur } from '@/shared/constants/girls-trip-booking';
 import { trackEvent } from '@/shared/utils/analytics';
@@ -36,19 +36,31 @@ const RESERVATION_CART_URL =
 export const RESERVE_LABEL = `Rezervēt vietu (${formatEur(GIRLS_TRIP_RESERVATION_EUR)})`;
 const ASK_LABEL = 'Uzdot jautājumu';
 
-type TripPageAskButtonProps = Omit<ComponentPropsWithoutRef<typeof ContactLink>, 'children'>;
+type TripPageAskButtonProps = {
+  /** Where on the page the button sits, reported with the click. Kebab-case. */
+  placement: string;
+  className?: string;
+  tabIndex?: number;
+};
 
 /**
- * The one "Uzdot jautājumu" entry point on the girls trip page. Opens a chat
- * with Grieta today; switch it here when the contact drawer lands.
+ * The one "Uzdot jautājumu" entry point on the girls trip page. Opens the Ask
+ * Grieta drawer with the girls trip preselected.
  */
 export const TripPageAskButton: FunctionComponent<TripPageAskButtonProps> = ({
   placement,
-  ...linkProps
+  className,
+  tabIndex,
 }) => (
-  <ContactLink {...linkProps} placement={`trip-page-ask-${placement}`}>
+  <AskGrietaCta
+    product="girls-trip"
+    placement={`trip-page-ask-${placement}`}
+    entry="replaced-whatsapp"
+    className={className}
+    tabIndex={tabIndex}
+  >
     {ASK_LABEL}
-  </ContactLink>
+  </AskGrietaCta>
 );
 
 type TripPageReserveButtonProps = {

@@ -273,8 +273,3 @@ export const closeTriggerStyle = style({
     },
   },
 });
-
-// Gap between the "Ask Grieta" CTA and the booking-info button below.
-export const askGrietaCtaStyle = style({
-  marginBottom: spacing[2],
-});
