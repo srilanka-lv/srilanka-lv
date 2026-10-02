@@ -1,5 +1,4 @@
 import { PAGES } from '@packages/sanity/constants/pages-slugs';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { GIRLS_TRIP_DATES_DISPLAY } from '@/shared/constants/girls-trip-dates';
@@ -11,6 +10,7 @@ import {
 import { quietLinkStyle } from '@/shared/styles/quiet-link.css';
 
 import { TripPageHeroSectionCta } from '../trip-page-hero-section-cta';
+import { TripPagePhotoGallery } from '../trip-page-photo-gallery';
 import {
   tripPageHeroSectionDescriptionParagraphStyle,
   tripPageHeroSectionDescriptionStyle,
@@ -18,10 +18,7 @@ import {
   tripPageHeroVideoAnchorStyle,
   tripPageImageGalleryMainImagePriceStyle,
   tripPageImageGalleryMainImagePriceSubtitleStyle,
-  tripPageImageGalleryMainImageStyle,
   tripPageImageGalleryStyle,
-  tripPageImageGalleryThumbnailImageStyle,
-  tripPageImageGalleryThumbnailsContainerStyle,
   tripPageSummaryItemSeparatorStyle,
   tripPageSummaryItemStyle,
   tripPageSummaryItemTitleStyle,
@@ -35,82 +32,14 @@ import {
 export const TripPageHeroSection = () => (
   <section className={tripPageHeroSectionStyle}>
     <div className={tripPageImageGalleryStyle}>
-      <span className={tripPageImageGalleryMainImageStyle}>
+      <TripPagePhotoGallery>
         <span className={tripPageImageGalleryMainImagePriceStyle}>
           <span>{GIRLS_TRIP_PRICE_DISPLAY}</span>
           <span className={tripPageImageGalleryMainImagePriceSubtitleStyle}>
             no personas / 10 dienas
           </span>
         </span>
-        <Image
-          src="/images/srilanka-lv_10-dienu-celojums_apmeklejot-udenskritumu.webp"
-          alt="Laura Grieta no srilanka.lv apmeklē ūdenskritumu Šrilankā"
-          fill
-          objectFit="cover"
-          sizes="(min-width: 1024px) 66vw, 100vw"
-          priority
-          quality={75}
-        />
-      </span>
-      <span className={tripPageImageGalleryThumbnailsContainerStyle}>
-        <span className={tripPageImageGalleryThumbnailImageStyle}>
-          <Image
-            src="/images/srilanka-lv_10-dienu-celojums_latviesu-meitenu-grupa-atpusas-pie-baseina-srilanka.webp"
-            alt="Latviešu meiteņu grupa atpūšas pie baseina Šrilankā"
-            fill
-            sizes="(min-width: 1024px) 22vw, 80vw"
-            priority
-            quality={75}
-          />
-        </span>
-        <span className={tripPageImageGalleryThumbnailImageStyle}>
-          <Image
-            src="/images/srilanka-lv_10-dienu-celojums_rita-joga-srilankas-tropiskaja-atmosfera.webp"
-            alt="Rīta joga Šrilankas tropiskajā atmosfērā"
-            fill
-            sizes="(min-width: 1024px) 22vw, 80vw"
-            priority
-            quality={75}
-          />
-        </span>
-        <span className={tripPageImageGalleryThumbnailImageStyle}>
-          <Image
-            src="/images/srilanka-lv_meitenu-celojums_saulrieta-serfosana.webp"
-            alt="Sērfošana ar meitenēm Šrilankā"
-            fill
-            sizes="(min-width: 1024px) 22vw, 80vw"
-            priority
-            quality={75}
-          />
-        </span>
-        <span className={tripPageImageGalleryThumbnailImageStyle}>
-          <Image
-            src="/images/srilanka-lv_10-dienu-celojums_atputa-pludmale-ar-zilam-debesim-un-skaistu-apkartni.webp"
-            alt="Atpūta pludmalē ar zilām debesīm un skaistu apkārtni"
-            fill
-            sizes="auto"
-            quality={75}
-          />
-        </span>
-        <span className={tripPageImageGalleryThumbnailImageStyle}>
-          <Image
-            src="/images/srilanka-lv_meitenu-celojums_srilankas-okeans.webp"
-            alt="Zilais, tropiskais okeāns Šrilankā"
-            fill
-            sizes="auto"
-            quality={75}
-          />
-        </span>
-        <span className={tripPageImageGalleryThumbnailImageStyle}>
-          <Image
-            src="/images/srilanka-lv_10-dienu-celojums_izbaudiet-serfosanu-smiltis-starp-kaju-pirkstiem-un-tropiskos-kokosriekstus.webp"
-            alt="Izbaudiet sērfošanu, smiltis starp kāju pirkstiem un tropiskos kokosriekstus"
-            fill
-            sizes="auto"
-            quality={75}
-          />
-        </span>
-      </span>
+      </TripPagePhotoGallery>
       <div className={tripPageHeroSectionDescriptionStyle}>
         <p className={tripPageHeroSectionDescriptionParagraphStyle}>
           10 dienu ceļojums pa Šrilanku kopā ar mani, mazā, līdz 7 cilvēku sieviešu grupā. Aktīvs,
