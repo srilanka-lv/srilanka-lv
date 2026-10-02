@@ -1,3 +1,4 @@
+import type { GuideFaqItem } from '@/shared/components/guide-faq';
 import type { Product } from '@/shared/components/products-page/index.data';
 import {
   GIRLS_TRIP_VIDEO_TITLE,
@@ -11,9 +12,11 @@ import { organizationId, organizationNode, personNode } from '@/shared/utils/jso
 type ProductJsonLdProps = {
   product: Product;
   kind: 'trip' | 'service';
+  /** Questions and answers shown on the page, emitted as a FAQPage node. */
+  faqs?: GuideFaqItem[];
 };
 
-export function ProductJsonLd({ product, kind }: ProductJsonLdProps) {
+export function ProductJsonLd({ product, kind, faqs }: ProductJsonLdProps) {
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}${product.href}`;
 
@@ -61,9 +64,22 @@ export function ProductJsonLd({ product, kind }: ProductJsonLdProps) {
           brand: { '@id': organizationId() },
         };
 
+  const faqPage =
+    faqs && faqs.length > 0
+      ? {
+          '@type': 'FAQPage',
+          '@id': `${pageUrl}#faq`,
+          mainEntity: faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+          })),
+        }
+      : null;
+
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@graph': [mainNode, personNode(), organizationNode()],
+    '@graph': [mainNode, ...(faqPage ? [faqPage] : []), personNode(), organizationNode()],
   };
 
   return (

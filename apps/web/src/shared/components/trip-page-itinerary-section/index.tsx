@@ -1,6 +1,6 @@
 import { Heading } from '../heading';
+import { TripPageBookingCta } from '../trip-page-booking-cta';
 import { TripPageExpandable } from '../trip-page-expandable';
-import { TripPageHeroSectionCta } from '../trip-page-hero-section-cta';
 import {
   tripPagePlanItineraryItemSeparatorStyle,
   tripPagePlanItinerarySectionCtaStyle,
@@ -14,21 +14,25 @@ export const TripPageItinerarySection = () => (
   <section className={tripPagePlanItinerarySectionStyle}>
     <div>
       <div className={tripPagePlanItinerarySectionWrapperStyle}>
-        <Heading as="h3" variant="h3" className={tripPageTitleStyle}>
+        <Heading as="h2" variant="h2" className={tripPageTitleStyle}>
           Ceļojuma plāns
         </Heading>
-        <TripPageHeroSectionCta className={tripPagePlanItinerarySectionCtaStyle} />
+        <TripPageBookingCta
+          className={tripPagePlanItinerarySectionCtaStyle}
+          placement="itinerary"
+          withDetails={false}
+        />
       </div>
     </div>
     <div className={tripPagePlanItineraryStyle}>
       <TripPageExpandable
         title="Diena 1"
-        subject="Ielidošana in Colombo, iekārtošanās"
+        subject="Ielidošana Kolombo, iekārtošanās"
         imageSrc="/images/srilanka-lv_10-dienu-celojums_diena-1.webp"
         content={
           <>
             <p>
-              Ielidošana. Sagaidīšu jūs lidostā. Pēc nolaišanās ar privātu transportu dosimies uz
+              Ielidošana. Sagaidīšu Tevi lidostā. Pēc nolaišanās ar privātu transportu dosimies uz
               Pinnavalu, kur atrodas Pinnawala Elephant Orphanage – ziloņu patversme, tur iespējams
               redzēt ziloņu ikdienu, tostarp to barošanu un peldes Ma Oya River.
             </p>
@@ -40,7 +44,7 @@ export const TripPageItinerarySection = () => (
       <hr className={tripPagePlanItineraryItemSeparatorStyle} />
       <TripPageExpandable
         title="Diena 2"
-        subject="Suvenīri in Pinnawala, pastaigas un ziloņi"
+        subject="Suvenīri Pinnavalā, pastaigas un ziloņi"
         imageSrc="/images/srilanka-lv_10-dienu-celojums_diena-2.webp"
         content={
           <>
@@ -98,7 +102,10 @@ export const TripPageItinerarySection = () => (
               tējas plantācijām, kas ir viens no galvenajiem iemesliem, kāpēc šī vieta ir tik
               iecienīta.
             </p>
-            <p>Būs iespēja arī izbaudīt zipline braucienu pāri kalnu ainavām.</p>
+            <p>
+              Būs iespēja arī izbaudīt zipline braucienu pāri kalnu ainavām (pēc izvēles, cenā nav
+              iekļauts).
+            </p>
             <p>
               Vakaru pavadīsim kādā no Little Adam’s Peak apkārtnes kafejnīcām ar panorāmas skatu.
               Būs iespēja atpūsties, nopeldēties baseinā un mierīgi izbaudīt vakaru.
@@ -199,8 +206,8 @@ export const TripPageItinerarySection = () => (
             <p>Rīts pie okeāna – brīvs laiks atpūtai.</p>
             <p>
               Pēc vēlmes būs iespēja apmeklēt jogas nodarbību vai izmēģināt sērfošanu ar vietējiem
-              instruktoriem. Vakarā dosimies izbraucienā pa upi, kur iespējams redzēt krokodilus un
-              citus dzīvniekus.
+              instruktoriem (cenā nav iekļauts). Vakarā dosimies izbraucienā pa upi, kur iespējams
+              redzēt krokodilus un citus dzīvniekus.
             </p>
             <p>Mierīgs dienas noslēgums uz upes.</p>
           </>
@@ -209,9 +216,9 @@ export const TripPageItinerarySection = () => (
       <hr className={tripPagePlanItineraryItemSeparatorStyle} />
       <TripPageExpandable
         title="Diena 10"
-        subject="Brauksim atpakaļ uz Kolombo lidostu, uz lidojums mājās"
+        subject="Atpakaļ uz Kolombo lidostu un lidojums mājās"
         imageSrc="/images/srilanka-lv_10-dienu-celojums_diena-10.webp"
-        content={<span>Brauksim atpakaļ uz Kolombo lidostu, un lidojums mājās.</span>}
+        content={<p>Brauksim atpakaļ uz Kolombo lidostu, un tad lidojums mājās.</p>}
       />
     </div>
   </section>

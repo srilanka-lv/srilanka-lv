@@ -46,11 +46,13 @@ export const tripPageTitleStyle = style({
   },
 });
 
+// Phones and tablets get the sticky bar instead; from lg the bar is gone, so
+// the buttons ride along beside the itinerary.
 export const tripPagePlanItinerarySectionCtaStyle = style({
   display: 'none',
 
   '@media': {
-    [`screen and (min-width: ${breakpoints.xl})`]: {
+    [`screen and (min-width: ${breakpoints.lg})`]: {
       display: 'block',
       marginTop: spacing[8],
       maxWidth: '320px',
