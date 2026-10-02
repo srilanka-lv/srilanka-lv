@@ -45,6 +45,7 @@ const included: Item[] = [
     icon: Sparkles,
     label: 'Aktivitātes: safari, snorkelēšana, gredzenu meistarklase, brauciens pa upi',
   },
+  { icon: Waves, label: 'Aktivitātes pēc izvēles: zipline, sērfošana, joga' },
   { icon: Ticket, label: 'Visas ieejas maksas' },
   { icon: MapIcon, label: 'Ekskursijas un tūres' },
   { icon: Languages, label: 'Es kā Tava latviešu gide visas 10 dienas' },
@@ -65,7 +66,6 @@ const excluded: Item[] = [
   },
   { icon: Utensils, label: 'Pusdienas un vakariņas' },
   { icon: ShieldPlus, label: 'Ceļojuma apdrošināšana' },
-  { icon: Waves, label: 'Aktivitātes pēc izvēles: zipline, sērfošana, joga' },
 ];
 
 const ItemList: FunctionComponent<{ items: Item[]; tone: 'included' | 'excluded' }> = ({

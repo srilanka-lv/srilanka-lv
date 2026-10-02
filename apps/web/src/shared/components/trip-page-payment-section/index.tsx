@@ -60,9 +60,18 @@ export const TripPagePaymentSection = () => {
           <div className={stepBodyStyle}>
             <h3 className={stepTitleStyle}>Atlikumu samaksā uz vietas</h3>
             <p>
-              Atlikušo summu samaksā man, kad ieradīsies Šrilankā, skaidrā naudā. No tās es
-              apmaksāju visu, kas iekļauts cenā: naktsmājas, brokastis, transfērus un transportu,
-              vīzu, aktivitātes, ieejas maksas un ekskursijas.
+              Atlikušo summu samaksā man, kad ieradīsies Šrilankā.{' '}
+              <TodoGrietaMark>
+                {todoGrieta(
+                  'Kā maksā atlikumu uz vietas: skaidrā naudā, ar karti vai ar pārskaitījumu?',
+                )}
+              </TodoGrietaMark>
+            </p>
+            <p>
+              No tās es apmaksāju visu, kas iekļauts cenā: naktsmājas, brokastis, transfērus un
+              transportu, vīzu, aktivitātes (arī zipline, sērfošanu un jogu pēc izvēles), ieejas
+              maksas, ekskursijas un tūres, mani kā Tavu latviešu gidi visas 10 dienas un atbalstu
+              24/7.
             </p>
           </div>
         </li>

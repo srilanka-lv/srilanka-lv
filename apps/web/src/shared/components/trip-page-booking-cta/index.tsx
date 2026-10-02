@@ -138,8 +138,8 @@ export const TripPageBookingCta: FunctionComponent<TripPageBookingCtaProps> = ({
                     naktsmājās.
                   </p>
                   <p>
-                    Atlikušo summu varēsi pavisam ērti samaksāt man uz vietas Šrilankā, skaidrā
-                    naudā. Tiklīdz maksājums būs saņemts, es palīdzēšu:
+                    Atlikušo summu varēsi pavisam ērti samaksāt man uz vietas Šrilankā. Tiklīdz
+                    maksājums būs saņemts, es palīdzēšu:
                   </p>
                   <ul>
                     <li>✈️ Atrast pašus izdevīgākos un labākos lidojuma variantus.</li>

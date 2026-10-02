@@ -73,15 +73,6 @@ export const TripPageCostSection = () => {
         </TodoGrietaMark>
       ),
     },
-    {
-      label: 'Aktivitātes pēc izvēles',
-      note: 'zipline, sērfošana, joga',
-      amount: (
-        <TodoGrietaMark>
-          {todoGrieta('Cik maksā zipline, sērfošanas nodarbība un joga?')}
-        </TodoGrietaMark>
-      ),
-    },
   ];
 
   return (

@@ -102,10 +102,7 @@ export const TripPageItinerarySection = () => (
               tējas plantācijām, kas ir viens no galvenajiem iemesliem, kāpēc šī vieta ir tik
               iecienīta.
             </p>
-            <p>
-              Būs iespēja arī izbaudīt zipline braucienu pāri kalnu ainavām (pēc izvēles, cenā nav
-              iekļauts).
-            </p>
+            <p>Būs iespēja arī izbaudīt zipline braucienu pāri kalnu ainavām (pēc izvēles).</p>
             <p>
               Vakaru pavadīsim kādā no Little Adam’s Peak apkārtnes kafejnīcām ar panorāmas skatu.
               Būs iespēja atpūsties, nopeldēties baseinā un mierīgi izbaudīt vakaru.
@@ -206,8 +203,8 @@ export const TripPageItinerarySection = () => (
             <p>Rīts pie okeāna – brīvs laiks atpūtai.</p>
             <p>
               Pēc vēlmes būs iespēja apmeklēt jogas nodarbību vai izmēģināt sērfošanu ar vietējiem
-              instruktoriem (cenā nav iekļauts). Vakarā dosimies izbraucienā pa upi, kur iespējams
-              redzēt krokodilus un citus dzīvniekus.
+              instruktoriem. Vakarā dosimies izbraucienā pa upi, kur iespējams redzēt krokodilus un
+              citus dzīvniekus.
             </p>
             <p>Mierīgs dienas noslēgums uz upes.</p>
           </>

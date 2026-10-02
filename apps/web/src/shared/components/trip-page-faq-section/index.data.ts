@@ -50,7 +50,7 @@ export const tripPageFaqs: GuideFaqItem[] = [
   },
   {
     question: 'Kā un kad jāmaksā?',
-    answer: `Lai rezervētu vietu, ${formatEur(GIRLS_TRIP_RESERVATION_EUR)} samaksā tiešsaistē, caur Ceļo ar Mariku. Atlikušo summu samaksā man uz vietas Šrilankā, skaidrā naudā. Piesakoties līdz ${GIRLS_TRIP_EARLY_BIRD_LAST_DAY_DISPLAY}, ceļojums maksā ${formatEur(GIRLS_TRIP_EARLY_BIRD_PRICE_EUR)} un atlikums ir ${formatEur(GIRLS_TRIP_EARLY_BIRD_PRICE_EUR - GIRLS_TRIP_RESERVATION_EUR)}. Vēlāk ceļojums maksā ${formatEur(GIRLS_TRIP_PRICE_EUR)} un atlikums ir ${formatEur(GIRLS_TRIP_PRICE_EUR - GIRLS_TRIP_RESERVATION_EUR)}.`,
+    answer: `Lai rezervētu vietu, ${formatEur(GIRLS_TRIP_RESERVATION_EUR)} samaksā tiešsaistē, caur Ceļo ar Mariku. Atlikušo summu samaksā man uz vietas Šrilankā. Piesakoties līdz ${GIRLS_TRIP_EARLY_BIRD_LAST_DAY_DISPLAY}, ceļojums maksā ${formatEur(GIRLS_TRIP_EARLY_BIRD_PRICE_EUR)} un atlikums ir ${formatEur(GIRLS_TRIP_EARLY_BIRD_PRICE_EUR - GIRLS_TRIP_RESERVATION_EUR)}. Vēlāk ceļojums maksā ${formatEur(GIRLS_TRIP_PRICE_EUR)} un atlikums ir ${formatEur(GIRLS_TRIP_PRICE_EUR - GIRLS_TRIP_RESERVATION_EUR)}.`,
   },
   {
     question: 'Kas notiek, ja man jāatceļ brauciens?',

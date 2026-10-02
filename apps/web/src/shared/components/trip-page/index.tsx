@@ -51,9 +51,9 @@ export const ProductPageTrip: FunctionComponent<ProductPageTripProps> = ({ phase
       </Heading>
       <TripPageHeroSection />
       <TripPageIncludedSection />
+      <TripPageVideoSection />
       <TripPageCostSection />
       <TripPagePaymentSection />
-      <TripPageVideoSection />
       <TripPageUspSection />
       <TripPageItinerarySection />
       <TripPageSection id="atsauksmes" title="Ko saka citi ceļotāji">
