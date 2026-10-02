@@ -4,7 +4,7 @@ import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { darkThemeSelector } from '@/shared/styles/themes/theme.dark.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, font, color, border } = vars;
+const { spacing, font, color } = vars;
 
 const hairline = `1px solid color-mix(in oklch, ${color.foreground} 10%, transparent)`;
 
@@ -23,13 +23,14 @@ export const stepsStyle = style({
   },
 });
 
+// The two payments read as a sequence, not as two more cards: a ruled
+// column each, the amount leading.
 export const stepStyle = style({
   display: 'flex',
   flexDirection: 'column',
   gap: spacing[2],
-  padding: spacing[6],
-  borderRadius: border.radius.large,
-  border: `0.5px solid color-mix(in oklch, ${color.foreground} 25%, transparent)`,
+  paddingTop: spacing[4],
+  borderTop: `2px solid ${color.foreground}`,
 });
 
 export const stepAmountStyle = style({

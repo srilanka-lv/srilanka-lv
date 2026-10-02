@@ -23,7 +23,7 @@ import { quietLinkStyle } from '@/shared/styles/quiet-link.css';
 
 import { TripPageSection } from '../trip-page-section';
 import {
-  includedColumnStyle,
+  includedColumnStyles,
   includedColumnsStyle,
   includedIconStyles,
   includedItemStyle,
@@ -85,13 +85,17 @@ const ItemList: FunctionComponent<{ items: Item[]; tone: 'included' | 'excluded'
 
 /** What the trip price covers and what it does not, as two plain lists. */
 export const TripPageIncludedSection = () => (
-  <TripPageSection id={TRIP_PAGE_INCLUDED_SECTION_ID} title="Kas iekļauts cenā">
+  <TripPageSection
+    id={TRIP_PAGE_INCLUDED_SECTION_ID}
+    title="Kas iekļauts cenā"
+    trackingId="included"
+  >
     <div className={includedColumnsStyle}>
-      <div className={includedColumnStyle}>
+      <div className={includedColumnStyles.included}>
         <h3 className={includedSubtitleStyle}>Cenā iekļauts</h3>
         <ItemList items={included} tone="included" />
       </div>
-      <div className={includedColumnStyle}>
+      <div className={includedColumnStyles.excluded}>
         <h3 className={includedSubtitleStyle}>Cenā nav iekļauts</h3>
         <ItemList items={excluded} tone="excluded" />
       </div>

@@ -1,20 +1,31 @@
 import { Heading } from '../heading';
 import { TripPageBookingCta } from '../trip-page-booking-cta';
 import { TripPageExpandable } from '../trip-page-expandable';
+import { tripPageSectionTitleStyle } from '../trip-page-section/styles.css';
 import {
   tripPagePlanItineraryItemSeparatorStyle,
   tripPagePlanItinerarySectionCtaStyle,
   tripPagePlanItinerarySectionStyle,
   tripPagePlanItinerarySectionWrapperStyle,
   tripPagePlanItineraryStyle,
-  tripPageTitleStyle,
+  tripPagePlanItineraryTitleStyle,
 } from './styles.css';
 
+export const TRIP_PAGE_ITINERARY_SECTION_ID = 'celojuma-plans';
+
 export const TripPageItinerarySection = () => (
-  <section className={tripPagePlanItinerarySectionStyle}>
+  <section
+    id={TRIP_PAGE_ITINERARY_SECTION_ID}
+    className={tripPagePlanItinerarySectionStyle}
+    data-trip-section="itinerary"
+  >
     <div>
       <div className={tripPagePlanItinerarySectionWrapperStyle}>
-        <Heading as="h2" variant="h2" className={tripPageTitleStyle}>
+        <Heading
+          as="h2"
+          variant="h2"
+          className={`${tripPageSectionTitleStyle} ${tripPagePlanItineraryTitleStyle}`}
+        >
           Ceļojuma plāns
         </Heading>
         <TripPageBookingCta

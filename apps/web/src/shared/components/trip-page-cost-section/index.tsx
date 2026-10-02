@@ -76,7 +76,11 @@ export const TripPageCostSection = () => {
   ];
 
   return (
-    <TripPageSection id={TRIP_PAGE_COST_SECTION_ID} title="Cik tas izmaksās kopā?">
+    <TripPageSection
+      id={TRIP_PAGE_COST_SECTION_ID}
+      title="Cik tas izmaksās kopā?"
+      trackingId="cost"
+    >
       <p>
         Lai nebūtu pārsteigumu, te ir piemērs, cik ceļojums izmaksās kopā ar visu, kas nav iekļauts
         cenā.

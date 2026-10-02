@@ -1,18 +1,10 @@
 import { GIRLS_TRIP_GUESTS } from '@/shared/constants/girls-trip-booking';
 
-import { Heading } from '../heading';
-import {
-  tripPageUspItemListItemStyle,
-  tripPageUspItemListStyle,
-  tripPageUspSectionStyle,
-  tripPageUspTitleStyle,
-} from './styles.css';
+import { TripPageSection } from '../trip-page-section';
+import { tripPageUspItemListItemStyle, tripPageUspItemListStyle } from './styles.css';
 
 export const TripPageUspSection = () => (
-  <section className={tripPageUspSectionStyle}>
-    <Heading as="h2" variant="h2" className={tripPageUspTitleStyle}>
-      Kāpēc Tev patiks šis ceļojums
-    </Heading>
+  <TripPageSection id="kapec-tev-patiks" title="Kāpēc Tev patiks šis ceļojums">
     <ul className={tripPageUspItemListStyle}>
       <li className={tripPageUspItemListItemStyle}>
         Šādi galamērķi kā Šrilanka ir ārpus komforta zonas mums visām, un tas palīdzēs atklāt puses,
@@ -42,5 +34,5 @@ export const TripPageUspSection = () => (
         visu mūžu.
       </li>
     </ul>
-  </section>
+  </TripPageSection>
 );

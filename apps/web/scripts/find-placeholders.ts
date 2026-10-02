@@ -5,7 +5,9 @@ export type Placeholder = {
   question: string | null;
 };
 
-const MARKER = 'TODO_GRIETA';
+// The marker as it appears in rendered copy (`[TODO_GRIETA: …]`). The bare
+// identifier, as code that imports the constant uses it, is not a placeholder.
+const MARKER = 'TODO_GRIETA:';
 
 // `todoGrieta('…')`, `todoGrieta("…")` or `todoGrieta(`…`)`, possibly wrapped
 // over several lines by the formatter.

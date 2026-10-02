@@ -3,7 +3,7 @@ import { style } from '@vanilla-extract/css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, font, border, color } = vars;
+const { spacing, font, border, color, shadow } = vars;
 
 export const tripPageHeroSectionStyle = style({
   display: 'flex',
@@ -61,11 +61,13 @@ export const tripPageSummaryStyle = style({
   flexDirection: 'column',
   gap: spacing[4],
   height: 'auto',
+  // The site's filled card: the one raised surface on the page, so the price
+  // and the two buttons read as the thing to act on.
   borderRadius: border.radius.large,
-  borderStyle: 'solid',
-  borderWidth: '0.5px',
-  borderColor: `color-mix(in oklch, ${color.foreground} 25%, transparent)`,
-  padding: spacing[4],
+  border: `1px solid color-mix(in oklch, ${color.primary} 10%, transparent)`,
+  backgroundColor: color.surface,
+  boxShadow: shadow.medium,
+  padding: spacing[5],
   textAlign: 'left',
   // Clears the sticky mobile bar's anchor jump and the header.
   scrollMarginTop: spacing[4],
@@ -84,48 +86,38 @@ export const tripPageSummaryStyle = style({
   },
 });
 
+// Label-and-value rows: values never wrap, whatever the column width, and
+// the eye runs down one edge instead of zig-zagging a 2x2 grid.
 export const tripPageSummaryFactsStyle = style({
-  display: 'grid',
-  gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-  gap: `${spacing[3]} ${spacing[4]}`,
+  display: 'flex',
+  flexDirection: 'column',
   margin: 0,
-  paddingBlock: spacing[4],
-  borderTop: `1px solid color-mix(in oklch, ${color.foreground} 7.5%, transparent)`,
-  borderBottom: `1px solid color-mix(in oklch, ${color.foreground} 7.5%, transparent)`,
+  borderTop: `1px solid color-mix(in oklch, ${color.foreground} 10%, transparent)`,
 });
 
 export const tripPageSummaryFactStyle = style({
   display: 'flex',
-  flexDirection: 'column',
-  gap: spacing[1],
-  minWidth: 0,
+  alignItems: 'baseline',
+  justifyContent: 'space-between',
+  gap: spacing[4],
+  paddingBlock: spacing[2],
+  borderBottom: `1px solid color-mix(in oklch, ${color.foreground} 10%, transparent)`,
 });
 
 export const tripPageSummaryItemTitleStyle = style({
-  fontSize: font.size.xs,
-  fontWeight: font.weight.light,
-  color: `color-mix(in oklch, ${color.foreground} 75%, transparent)`,
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xs})`]: {
-      fontSize: font.size.sm,
-    },
-  },
+  fontSize: font.size.sm,
+  color: `color-mix(in oklch, ${color.foreground} 70%, transparent)`,
 });
 
 export const tripPageSummaryItemValueStyle = style({
   margin: 0,
-  fontSize: font.size.sm,
+  fontSize: font.size.base,
   fontWeight: font.weight.medium,
   color: color.foreground,
   fontVariantNumeric: 'tabular-nums',
   lineHeight: font.lineHeight.snug,
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xs})`]: {
-      fontSize: font.size.base,
-    },
-  },
+  textAlign: 'right',
+  whiteSpace: 'nowrap',
 });
 
 export const tripPageHeroHostStyle = style({

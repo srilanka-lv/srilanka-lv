@@ -42,7 +42,7 @@ export const TripPageHeroSection = () => (
   <section className={tripPageHeroSectionStyle}>
     {/* First in the markup so phones see the facts and the buttons on the
         first screen; on wide screens it sits beside the photos. */}
-    <div id={TRIP_PAGE_SUMMARY_ID} className={tripPageSummaryStyle}>
+    <div id={TRIP_PAGE_SUMMARY_ID} className={tripPageSummaryStyle} data-trip-section="facts">
       <TripPagePrice />
       <dl className={tripPageSummaryFactsStyle}>
         {facts.map(({ title, value }) => (

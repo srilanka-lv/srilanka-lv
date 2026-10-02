@@ -46,4 +46,14 @@ describe('findPlaceholders', () => {
 
     expect(findPlaceholders('a.ts', source)).toEqual([{ file: 'a.ts', line: 1, question: null }]);
   });
+
+  it('ignores code that only refers to the marker constant', () => {
+    const source = [
+      "import { TODO_GRIETA } from '@/shared/constants/todo-grieta';",
+      // biome-ignore lint/suspicious/noTemplateCurlyInString: the fixture is source code that uses a template literal.
+      'const pattern = new RegExp(`\\[${TODO_GRIETA}: `);',
+    ].join('\n');
+
+    expect(findPlaceholders('a.tsx', source)).toEqual([]);
+  });
 });

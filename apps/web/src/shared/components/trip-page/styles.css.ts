@@ -25,3 +25,8 @@ export const tripPageTitleStyle = style({
     },
   },
 });
+
+// Positions the scroll-depth markers over the trip content.
+export const tripPageRootStyle = style({
+  position: 'relative',
+});

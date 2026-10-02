@@ -19,7 +19,11 @@ export const TRIP_PAGE_CLOSING_SECTION_ID = 'pieteikties';
 
 /** The end of the page: one last, personal invitation with both next steps. */
 export const TripPageClosingSection = () => (
-  <section id={TRIP_PAGE_CLOSING_SECTION_ID} className={closingSectionStyle}>
+  <section
+    id={TRIP_PAGE_CLOSING_SECTION_ID}
+    className={closingSectionStyle}
+    data-trip-section="closing"
+  >
     <Image
       className={closingPortraitStyle}
       src="/images/srilanka-lv_meitenu-celojums_grieta.webp"

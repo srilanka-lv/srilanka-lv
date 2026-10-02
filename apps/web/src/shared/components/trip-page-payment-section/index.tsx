@@ -42,7 +42,11 @@ export const TripPagePaymentSection = () => {
   const balance = getGirlsTripPriceEur(phase) - GIRLS_TRIP_RESERVATION_EUR;
 
   return (
-    <TripPageSection id={TRIP_PAGE_PAYMENT_SECTION_ID} title="Kā notiek maksājums">
+    <TripPageSection
+      id={TRIP_PAGE_PAYMENT_SECTION_ID}
+      title="Kā notiek maksājums"
+      trackingId="payment"
+    >
       <ol className={stepsStyle}>
         <li className={stepStyle}>
           <span className={stepAmountStyle}>{formatEur(GIRLS_TRIP_RESERVATION_EUR)}</span>

@@ -8,18 +8,15 @@ import {
 } from '@/shared/constants/girls-trip-video';
 import { trackEvent } from '@/shared/utils/analytics';
 
-import { Heading } from '../heading';
-import {
-  tripPageVideoPlayerStyle,
-  tripPageVideoSectionStyle,
-  tripPageVideoTitleStyle,
-} from './styles.css';
+import { TripPageSection } from '../trip-page-section';
+import { tripPageVideoPlayerStyle } from './styles.css';
 
 export const TripPageVideoSection = () => (
-  <section id={GIRLS_TRIP_VIDEO_SECTION_ID} className={tripPageVideoSectionStyle}>
-    <Heading as="h2" variant="h2" className={tripPageVideoTitleStyle}>
-      {GIRLS_TRIP_VIDEO_HEADING}
-    </Heading>
+  <TripPageSection
+    id={GIRLS_TRIP_VIDEO_SECTION_ID}
+    title={GIRLS_TRIP_VIDEO_HEADING}
+    trackingId="video"
+  >
     <div className={tripPageVideoPlayerStyle}>
       {/* Thumbnail mode: the YouTube iframe only loads once the viewer presses play. */}
       <YouTubeEmbed
@@ -30,5 +27,5 @@ export const TripPageVideoSection = () => (
         }}
       />
     </div>
-  </section>
+  </TripPageSection>
 );
