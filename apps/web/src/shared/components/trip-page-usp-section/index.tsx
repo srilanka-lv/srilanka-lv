@@ -4,7 +4,7 @@ import { TripPageSection } from '../trip-page-section';
 import { tripPageUspItemListItemStyle, tripPageUspItemListStyle } from './styles.css';
 
 export const TripPageUspSection = () => (
-  <TripPageSection id="kapec-tev-patiks" title="Kāpēc Tev patiks šis ceļojums">
+  <TripPageSection id="kapec-tev-patiks" title="Kāpēc Tev patiks šis ceļojums" trackingId="why">
     <ul className={tripPageUspItemListStyle}>
       <li className={tripPageUspItemListItemStyle}>
         Šādi galamērķi kā Šrilanka ir ārpus komforta zonas mums visām, un tas palīdzēs atklāt puses,

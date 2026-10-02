@@ -37,6 +37,7 @@ export const TripPageEngagement: FunctionComponent = () => {
         clearTimeout: (handle) => window.clearTimeout(handle as number),
       },
     });
+    engagement.pageVisible(document.visibilityState === 'visible');
 
     const sectionObserver = new IntersectionObserver(
       (entries) => {

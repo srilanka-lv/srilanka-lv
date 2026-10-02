@@ -108,6 +108,21 @@ describe('trip-section-read', () => {
     expect(calls()).toEqual([['trip-section-read', { page: 'girls-trip', section: 'faq' }]]);
   });
 
+  it('does not count time for a page that starts hidden until it becomes visible', () => {
+    const { clock, engagement, calls } = setup();
+
+    engagement.pageVisible(false);
+    engagement.sectionReadable('facts', true);
+    clock.advance(600_000);
+    expect(calls()).toEqual([]);
+
+    engagement.pageVisible(true);
+    clock.advance(TRIP_SECTION_READ_MS - 1);
+    expect(calls()).toEqual([]);
+    clock.advance(1);
+    expect(calls()).toEqual([['trip-section-read', { page: 'girls-trip', section: 'facts' }]]);
+  });
+
   it('stops counting a section that left the viewport while the page was hidden', () => {
     const { clock, engagement, calls } = setup();
 
