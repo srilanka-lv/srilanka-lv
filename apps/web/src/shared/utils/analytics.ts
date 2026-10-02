@@ -19,7 +19,11 @@ export type AnalyticsEventName =
   | 'ask-field-start'
   | 'ask-country-select'
   | 'ask-submit'
-  | 'ask-direct-click';
+  | 'ask-direct-click'
+  // Girls trip photo gallery (src/shared/components/trip-page-photo-gallery).
+  | 'trip-gallery-open'
+  | 'trip-gallery-view'
+  | 'trip-gallery-close';
 
 export type TrackEventOptions = {
   /**

@@ -41,30 +41,6 @@ export const tripPageImageGalleryStyle = style({
   },
 });
 
-export const tripPageImageGalleryMainImageStyle = style({
-  position: 'relative',
-  display: 'block',
-  width: '100%',
-  height: '50svh',
-  overflow: 'hidden',
-  borderTopLeftRadius: border.radius.medium,
-  borderTopRightRadius: border.radius.medium,
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.sm})`]: {
-      height: '60svh',
-    },
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      gridRow: '1 / 2',
-      gridColumn: '1 / 2',
-      gridArea: '1 / 1 / 2 / 4',
-      minHeight: '500px',
-      borderTopLeftRadius: border.radius.large,
-      borderTopRightRadius: border.radius.large,
-    },
-  },
-});
-
 export const tripPageImageGalleryMainImagePriceStyle = style({
   position: 'absolute',
   paddingTop: spacing[2],
@@ -90,58 +66,6 @@ export const tripPageImageGalleryMainImagePriceSubtitleStyle = style({
   fontSize: font.size.sm,
   fontWeight: font.weight.medium,
   lineHeight: font.lineHeight.none,
-});
-
-export const tripPageImageGalleryThumbnailsContainerStyle = style({
-  display: 'grid',
-  gap: spacing[1],
-  gridRow: '2 / 3',
-  gridColumn: '1 / 4',
-  gridTemplateColumns: 'repeat(2, 1fr)',
-  gridTemplateRows: 'repeat(3, min-content)',
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.lg})`]: {
-      gap: spacing[2],
-      gridRow: '2 / 3',
-      gridColumn: '1 / 4',
-      gridTemplateColumns: 'repeat(3, 1fr)',
-      gridTemplateRows: 'repeat(2, min-content)',
-    },
-  },
-});
-
-export const tripPageImageGalleryThumbnailImageStyle = style({
-  position: 'relative',
-  overflow: 'hidden',
-  aspectRatio: '2 / 1.25',
-
-  selectors: {
-    '&:nth-of-type(5)': {
-      borderBottomLeftRadius: border.radius.medium,
-    },
-    '&:nth-of-type(6)': {
-      borderBottomRightRadius: border.radius.medium,
-    },
-  },
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      // minHeight: '100px',
-
-      selectors: {
-        '&:nth-of-type(4)': {
-          borderBottomLeftRadius: border.radius.large,
-        },
-        '&:nth-of-type(5)': {
-          borderBottomLeftRadius: 0,
-        },
-        '&:nth-of-type(6)': {
-          borderBottomRightRadius: border.radius.large,
-        },
-      },
-    },
-  },
 });
 
 export const tripPageHeroSectionDescriptionStyle = style({
