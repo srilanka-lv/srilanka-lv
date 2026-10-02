@@ -1,7 +1,6 @@
 import { PAGES, RETIRED_PAGES } from '@packages/sanity/constants/pages-slugs';
 
 import type { OgImage } from '@/features/sanity/utils/build-page-metadata';
-import { GIRLS_TRIP_PRICE_EUR } from '@/shared/constants/girls-trip-booking';
 import {
   GIRLS_TRIP_DEPARTURE_DATE,
   GIRLS_TRIP_RETURN_DATE,
@@ -19,11 +18,6 @@ export type Product = {
   thumbnailSrc: string;
   /** 1200×630 social preview image; a Sanity Open Graph image takes precedence when set. */
   ogImage?: OgImage;
-  /**
-   * Per-person price in EUR, exposed as the structured-data offer. The trip
-   * page swaps in the current (early-bird or regular) price at render time.
-   */
-  priceEur?: string;
   /** ISO departure date, exposed as the structured-data trip departureTime. */
   departureDate?: string;
   /** ISO return date, exposed as the structured-data trip arrivalTime. */
@@ -45,7 +39,6 @@ export const products: Product[] = [
       height: 630,
       alt: 'Ceļojums Šrilankā tikai meitenēm',
     },
-    priceEur: String(GIRLS_TRIP_PRICE_EUR),
     departureDate: GIRLS_TRIP_DEPARTURE_DATE,
     returnDate: GIRLS_TRIP_RETURN_DATE,
   },

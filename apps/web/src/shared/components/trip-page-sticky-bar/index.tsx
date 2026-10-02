@@ -34,10 +34,25 @@ export const TripPageStickyBar: FunctionComponent<TripPageStickyBarProps> = ({
   // (only below lg, where the bar exists at all).
   useEffect(() => {
     const root = document.documentElement;
-    const height = barRef.current?.offsetHeight ?? 0;
-    root.style.setProperty('--bottom-bar-offset', isVisible && height > 0 ? `${height}px` : '0px');
+    const bar = barRef.current;
+    if (!bar) {
+      return;
+    }
+
+    const update = () => {
+      const height = bar.offsetHeight;
+      root.style.setProperty(
+        '--bottom-bar-offset',
+        isVisible && height > 0 ? `${height}px` : '0px',
+      );
+    };
+
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(bar);
 
     return () => {
+      observer.disconnect();
       root.style.removeProperty('--bottom-bar-offset');
     };
   }, [isVisible]);
