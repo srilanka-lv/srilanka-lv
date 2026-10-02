@@ -76,4 +76,23 @@ describe('startTripGallerySession', () => {
       'trip-gallery-close',
     ]);
   });
+
+  it('sends to Umami and never to Zaraz by default', () => {
+    const umami = mock(() => Promise.resolve());
+    const zaraz = mock(() => Promise.resolve());
+    (globalThis as { window?: unknown }).window = {
+      umami: { track: umami },
+      zaraz: { track: zaraz },
+    };
+
+    startTripGallerySession(slugs, 0, 'photo').close();
+
+    expect(umami.mock.calls.map(([event]) => event)).toEqual([
+      'trip-gallery-open',
+      'trip-gallery-view',
+      'trip-gallery-close',
+    ]);
+    expect(zaraz).not.toHaveBeenCalled();
+    (globalThis as { window?: unknown }).window = undefined;
+  });
 });

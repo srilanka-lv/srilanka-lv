@@ -8,6 +8,13 @@ export type TripGalleryNavigation = 'open' | 'arrow' | 'key' | 'thumbnail' | 'sw
 
 type Track = (name: AnalyticsEventName, data?: UmamiEventData) => unknown;
 
+// Umami only: these are engagement signals no Zaraz tool needs, and each
+// zaraz.track call would re-run the trigger that injects Umami.
+const trackUmamiOnly: Track = (name, data) => {
+  // Tracking must never break the interaction that triggered it.
+  trackEvent(name, data, { zaraz: false }).catch(() => undefined);
+};
+
 export type TripGallerySession = {
   view: (index: number, via: TripGalleryNavigation) => void;
   close: () => void;
@@ -27,7 +34,7 @@ export const startTripGallerySession = (
   slugs: string[],
   startIndex: number,
   source: TripGalleryOpenSource,
-  track: Track = trackEvent,
+  track: Track = trackUmamiOnly,
 ): TripGallerySession => {
   const viewed = new Set<number>();
   let swipes = 0;
