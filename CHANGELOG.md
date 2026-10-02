@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.20.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.19.0...v1.20.0) (2026-10-02)
+
+
+### Features
+
+* **trip:** ✨ open the girls trip photos in a full-screen gallery ([7911e4e](https://github.com/srilanka-lv/srilanka-lv/commit/7911e4e642e4c5b57895af769feb736fde9574f8))
+* **web:** open the girls trip photos in a full-screen gallery ([5a956a6](https://github.com/srilanka-lv/srilanka-lv/commit/5a956a6a0f28581108394d993fadbe16cc479ddd))
+
+
+### Bug Fixes
+
+* **trip:** ✏️ address the reader as Tu in the surfboard photo's alt text ([571ea88](https://github.com/srilanka-lv/srilanka-lv/commit/571ea8834747cd6223bbfdfe390119f44856939e))
+* **trip:** 🐛 keep the gallery open when WebKit settles the opening tap ([3218e40](https://github.com/srilanka-lv/srilanka-lv/commit/3218e40bd12471ee52aeb9d1764df38450638a25))
+* **trip:** 🐛 send the gallery events to Umami only ([b2819f1](https://github.com/srilanka-lv/srilanka-lv/commit/b2819f18ecde01b24165fc1b9fb44fa66e27ce6d))
+
 ## [1.19.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.18.0...v1.19.0) (2026-10-02)
 
 
