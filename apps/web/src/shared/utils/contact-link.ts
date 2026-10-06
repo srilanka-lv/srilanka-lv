@@ -35,7 +35,7 @@ export const isMobileUserAgent = (userAgent: string): boolean => MOBILE_PATTERN.
 export const DEFAULT_CONTACT_LINK: ContactLinkTarget = {
   href: buildWhatsAppUrl(),
   channel: 'whatsapp',
-  title: 'Chat on WhatsApp',
+  title: 'Raksti man WhatsApp',
   target: '_blank',
   context: 'desktop',
 };
@@ -45,7 +45,7 @@ export const resolveContactLink = (userAgent: string): ContactLinkTarget => {
     return {
       href: INSTAGRAM_DM_URL,
       channel: 'instagram',
-      title: 'Message on Instagram',
+      title: 'Raksti man Instagram',
       target: undefined,
       context: INSTAGRAM_APP_PATTERN.test(userAgent) ? 'instagram-app' : 'facebook-app',
     };

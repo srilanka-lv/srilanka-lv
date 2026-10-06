@@ -30,8 +30,9 @@ import { findAskGrietaProduct } from '../../constants/ask-grieta-products';
 import { GRIETA_PHOTO_SRC } from '../../constants/grieta-photo';
 import { ruleFor } from '../../constants/validation-messages';
 import { closeAskGrieta, useAskGrieta } from '../../stores/ask-grieta-store';
+import { getSessionStorage, loadCampaign } from '../../utils/campaign';
 import type { SubmitAskGrietaResult } from '../../utils/handle-lead-submission';
-import { productProp, trackAskGrieta } from '../../utils/track';
+import { productProp, trackAskGrieta, trackLeadSent } from '../../utils/track';
 import { AskGrietaForm, type AskGrietaFormExtras, useAskGrietaForm } from '../ask-grieta-form';
 import type { FormSchema } from '../ask-grieta-form/form-schema';
 import {
@@ -374,6 +375,8 @@ const AskGrietaDrawer: FunctionComponent = () => {
   ): Promise<void> => {
     setSubmitFailed(false);
 
+    const campaign = loadCampaign(getSessionStorage());
+
     let result: SubmitOutcome;
     try {
       result = await submitAskGrieta({
@@ -383,6 +386,7 @@ const AskGrietaDrawer: FunctionComponent = () => {
           entry: request?.entry ?? 'unknown',
           placement: request?.placement ?? 'unknown',
           context: resolveContactLink(navigator.userAgent).context,
+          ...(campaign ? { campaign } : {}),
         },
         website,
       });
@@ -419,8 +423,7 @@ const AskGrietaDrawer: FunctionComponent = () => {
     }
 
     // The lead counts here: the server has accepted Grieta's email.
-    trackAskGrieta('ask-submit', {
-      result: 'sent',
+    const lead = {
       product,
       entry: request?.entry ?? 'unknown',
       placement: request?.placement ?? 'unknown',
@@ -428,7 +431,8 @@ const AskGrietaDrawer: FunctionComponent = () => {
       message: data.message ? 'yes' : 'no',
       country: data.country,
       seconds,
-    });
+    };
+    trackLeadSent(lead, campaign?.campaign);
     setSnapPoint(FULL);
     lastSnapRef.current = FULL;
     setSubmitted(data);

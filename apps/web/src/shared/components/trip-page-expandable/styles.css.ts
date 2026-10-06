@@ -2,6 +2,10 @@ import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
+import {
+  tripDisclosureReducedMotion,
+  tripDisclosureTransition,
+} from '@/shared/styles/trip-disclosure-motion';
 
 const { font, color, spacing, border } = vars;
 
@@ -27,8 +31,7 @@ const tripPagePlanItineraryItemToggleBaseStyle = style({
   width: '100%',
   borderRadius: border.radius.medium,
   transitionProperty: 'padding, background-color',
-  transitionDuration: '325ms',
-  transitionTimingFunction: 'cubic-bezier(0.675, 0.145, 0.000, 1.015)',
+  ...tripDisclosureTransition,
   cursor: 'pointer',
   whiteSpace: 'nowrap',
 
@@ -39,6 +42,7 @@ const tripPagePlanItineraryItemToggleBaseStyle = style({
   },
 
   '@media': {
+    ...tripDisclosureReducedMotion,
     [`screen and (min-width: ${breakpoints.lg})`]: {
       gap: spacing[4],
       padding: spacing[4],
@@ -78,8 +82,9 @@ const tripPagePlanItineraryItemToggleIconBaseStyle = style({
   height: spacing[4],
   marginLeft: 'auto',
   transitionProperty: 'transform',
-  transitionDuration: '325ms',
-  transitionTimingFunction: 'cubic-bezier(0.675, 0.145, 0.000, 1.015)',
+  ...tripDisclosureTransition,
+
+  '@media': tripDisclosureReducedMotion,
 });
 
 export const tripPagePlanItineraryItemToggleIconStyles = styleVariants({
@@ -101,8 +106,9 @@ export const tripPagePlanItineraryItemContentBaseStyle = style({
   display: 'grid',
   gridTemplateColumns: '1fr',
   transitionProperty: 'grid-template-rows',
-  transitionDuration: '325ms',
-  transitionTimingFunction: 'cubic-bezier(0.675, 0.145, 0.000, 1.015)',
+  ...tripDisclosureTransition,
+
+  '@media': tripDisclosureReducedMotion,
 });
 
 export const tripPagePlanItineraryItemContentBaseStyles = styleVariants({
@@ -126,10 +132,11 @@ const tripPagePlanItineraryItemContentTextBaseStyle = style({
   gap: spacing[4],
   minHeight: '0',
   transitionProperty: 'opacity, padding, background-color',
-  transitionDuration: '325ms',
-  transitionTimingFunction: 'cubic-bezier(0.675, 0.145, 0.000, 1.015)',
+  ...tripDisclosureTransition,
   overflow: 'hidden',
   borderRadius: border.radius.large,
+
+  '@media': tripDisclosureReducedMotion,
 });
 
 export const tripPagePlanItineraryItemContentImageStyle = style({

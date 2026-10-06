@@ -46,6 +46,20 @@ export const itemStyle = style(
   }),
 );
 
+// Quotes only: one column, so the words carry the row on their own and set a
+// step larger, with the hairlines keeping the rhythm the portraits gave.
+export const itemWithoutPortraitStyle = style(
+  inComponentsLayer({
+    gridTemplateColumns: 'minmax(0, 1fr)',
+
+    '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        gridTemplateColumns: 'minmax(0, 1fr)',
+      },
+    },
+  }),
+);
+
 export const portraitStyle = style(
   inComponentsLayer({
     display: 'block',
@@ -94,6 +108,21 @@ export const quoteStyle = style(
     '@media': {
       [`screen and (min-width: ${breakpoints.md})`]: {
         fontSize: font.size.lg,
+      },
+    },
+  }),
+);
+
+export const quoteWithoutPortraitStyle = style(
+  inComponentsLayer({
+    maxWidth: '62ch',
+    fontSize: font.size.lg,
+    textWrap: 'pretty',
+
+    '@media': {
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        fontSize: font.size.xl,
+        lineHeight: font.lineHeight.normal,
       },
     },
   }),

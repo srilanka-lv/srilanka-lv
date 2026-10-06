@@ -55,6 +55,22 @@ describe('buildLeadEmail', () => {
     );
   });
 
+  it('names the landing campaign in the Avots line when the visit had one', () => {
+    const tagged = buildLeadEmail(
+      {
+        ...lead,
+        campaign: { source: 'instagram', medium: 'social', campaign: 'girls_trip_sales_post' },
+      },
+      { to: 'sveiki@srilanka.lv', now },
+    );
+    expect(tagged.text).toContain(
+      'Avots: Instagram lietotnē · inline · trip-hero · instagram/social/girls_trip_sales_post',
+    );
+
+    const untagged = buildLeadEmail(lead, { to: 'sveiki@srilanka.lv', now });
+    expect(untagged.text).toContain('Avots: Instagram lietotnē · inline · trip-hero\n');
+  });
+
   it('builds a one-tap wa.me reply with a greeting', () => {
     expect(buildReplyWhatsAppUrl(lead)).toBe(
       `https://wa.me/37126123456?text=${encodeURIComponent('Čau, Anna! Te Grieta no srilanka.lv.')}`,

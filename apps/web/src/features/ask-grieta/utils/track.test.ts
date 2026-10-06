@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, mock } from 'bun:test';
 
-import { createFieldStartTracker, trackAskGrieta } from './track';
+import { createFieldStartTracker, trackAskGrieta, trackLeadSent } from './track';
 
 const install = () => {
   const umami = mock(() => Promise.resolve());
@@ -66,5 +66,32 @@ describe('createFieldStartTracker', () => {
       ['name', 2],
       ['message', 3],
     ]);
+  });
+});
+
+describe('trackLeadSent', () => {
+  const lead = {
+    product: 'girls-trip',
+    entry: 'replaced-whatsapp',
+    placement: 'trip-page-closing',
+  };
+
+  it('sends one ask-submit result=sent and one ask-lead per accepted lead', () => {
+    const track = mock(() => undefined);
+
+    trackLeadSent(lead, 'girls_trip_sales_post', track);
+
+    expect(track.mock.calls).toEqual([
+      ['ask-submit', { result: 'sent', ...lead }],
+      ['ask-lead', { ...lead, campaign: 'girls_trip_sales_post' }],
+    ]);
+  });
+
+  it('leaves the campaign out of ask-lead when the visit had none', () => {
+    const track = mock(() => undefined);
+
+    trackLeadSent(lead, undefined, track);
+
+    expect(track).toHaveBeenLastCalledWith('ask-lead', lead);
   });
 });

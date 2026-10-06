@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+import { campaignSchema } from '../utils/campaign';
+
 /**
  * Where a lead came from, sent along with the form. Codes only, the same
  * ones analytics uses, so Grieta's email and Umami tell the same story.
@@ -9,6 +11,8 @@ export const leadMetaSchema = z.object({
   entry: z.enum(['floating', 'inline', 'replaced-whatsapp', 'deep-link', 'unknown']),
   placement: z.string().regex(/^[a-z0-9-]{1,80}$/),
   context: z.enum(['instagram-app', 'facebook-app', 'mobile', 'desktop', 'unknown']),
+  /** The landing campaign (utm_*), if any. A bad value drops only this field. */
+  campaign: campaignSchema.optional().catch(undefined),
 });
 
 export type LeadMeta = z.infer<typeof leadMetaSchema>;

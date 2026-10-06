@@ -17,6 +17,7 @@ import { GuideTestimonials } from '@/shared/components/guide-testimonials';
 import { GuideToc } from '@/shared/components/guide-toc';
 import { INSTAGRAM_URL } from '@/shared/constants/instagram';
 import { DEFAULT_OG_IMAGE } from '@/shared/constants/og-image';
+import { travellerTestimonials } from '@/shared/constants/traveller-testimonials';
 
 import { GuideJsonLd } from './guide-json-ld';
 import {
@@ -1160,28 +1161,7 @@ const NextSriLankaTravelGuidePage: FunctionComponent = () => (
       </GuideSection>
 
       <GuideSection id={sections.reviews} title="Ko saka citi ceļotāji">
-        <GuideTestimonials
-          items={[
-            {
-              name: 'Inese A.',
-              portraitSrc: '/images/guide/srilanka-lv_inese.webp',
-              quote:
-                'Šrilanka ir pati skaistākā sala! Piedzīvoju tik daudz, ka vajadzēja atvaļinājumu pēc atvaļinājuma. Iesmīlēju šo skaisto vietu tik ļoti, ka meklēju biļetes jau nākamajam gadam.',
-            },
-            {
-              name: 'Elza A.',
-              portraitSrc: '/images/guide/srilanka-lv_elza.webp',
-              quote:
-                'Braucu uz Šrilanku mierīgai atpūtai, bet aizbraucu ar iedvesmu un piepildījumu. Prioritāte bija pludmales! Un tieši to saņēmu. Katru dienu biju citā pieokeāna pilsētiņā, ļoti silts un dzidrs ūdens, baltas smiltis, bruņurupuči pašā okeāna krastā… kaut ko tādu nekad nebiju piedzīvojusi. Un protams nebeidzamas masāžas, jūras veltis, un ārkārtīgi mierīga atmosfēra.',
-            },
-            {
-              name: 'Artūrs B.',
-              portraitSrc: '/images/guide/srilanka-lv_arturs.webp',
-              quote:
-                'Biju visaktīvākajā ceļojumā. Kalni, sērfs, ūdenskritumi, tējas plantācijas, gatavošanas meistarklases un viss perfekti ietilpa manā budžetā. Šrilankai ir tik daudz ko piedāvāt un tiešām sajūta, ka vienmēr atradu ko jaunu apskatīt. Ļoti iemīlēju tradicionālo šrilankiešu ēdienu! Ir ass, bet man ļoti garšo. Tik atšķirīga kultūra un visjaukākie cilvēki. Visu salu pat nepaspēju apceļot, jābrauc vēlreiz.',
-            },
-          ]}
-        />
+        <GuideTestimonials items={travellerTestimonials} />
 
         <GuideFigure
           src="/images/guide/srilanka-lv_meitenu-celojums.webp"
