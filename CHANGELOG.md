@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.21.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.20.0...v1.21.0) (2026-10-04)
+
+
+### Features
+
+* **flights:** ✈️ update flights data 2026-10-04 ([3d83057](https://github.com/srilanka-lv/srilanka-lv/commit/3d830571ab26aa34eecbd09abebbef8b25ab87d1))
+
 ## [1.20.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.19.0...v1.20.0) (2026-10-02)
 
 
