@@ -25,6 +25,21 @@ export const trackAskGrieta = (event: AskGrietaEventName, data: AskGrietaEventDa
   );
 };
 
+/**
+ * A lead the server accepted: `ask-submit result=sent` as before, plus
+ * `ask-lead`, which only real leads get, so Umami Goals and Attribution
+ * (which match an event name, not a property) count leads, not attempts.
+ * One call per accepted lead, one of each event.
+ */
+export const trackLeadSent = (
+  lead: AskGrietaEventData,
+  campaign: string | undefined,
+  track: typeof trackAskGrieta = trackAskGrieta,
+): void => {
+  track('ask-submit', { result: 'sent', ...lead });
+  track('ask-lead', { ...lead, ...(campaign ? { campaign } : {}) });
+};
+
 export const productProp = (product: string | null | undefined): string => product ?? 'none';
 
 /**

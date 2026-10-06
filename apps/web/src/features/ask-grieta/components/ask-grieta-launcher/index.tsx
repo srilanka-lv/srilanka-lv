@@ -7,6 +7,7 @@ import { type FunctionComponent, useEffect, useState } from 'react';
 import { resolveDeepLinkProduct, resolvePageProduct } from '../../constants/ask-grieta-products';
 import { GRIETA_PHOTO_SRC } from '../../constants/grieta-photo';
 import { openAskGrieta, preloadAskGrieta, useAskGrieta } from '../../stores/ask-grieta-store';
+import { getSessionStorage, rememberCampaign } from '../../utils/campaign';
 import {
   avatarStyle,
   avatarWrapStyle,
@@ -101,6 +102,10 @@ export const AskGrietaLauncher: FunctionComponent = () => {
   const collapsed = useCollapsedOnScroll();
 
   useEffect(() => {
+    // The launcher mounts on every page: remember the landing campaign so a
+    // lead sent later in the visit still says where it came from.
+    rememberCampaign(getSessionStorage(), window.location.search);
+
     const params = new URLSearchParams(window.location.search);
 
     if (params.has('ask')) {
