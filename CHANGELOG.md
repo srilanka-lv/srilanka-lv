@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.22.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.21.0...v1.22.0) (2026-10-06)
+
+
+### Features
+
+* **trip:** ✨ clearer girls trip page with booking terms, SEO and tracking ([70f5759](https://github.com/srilanka-lv/srilanka-lv/commit/70f5759ee8d1f31599fa1ec4dad86ee93158d7de))
+* **trip:** make the girls trip page answer price, payment and risk up front ([53df2c1](https://github.com/srilanka-lv/srilanka-lv/commit/53df2c1d46f8768bdaa45be61e7cc493ab333752))
+
 ## [1.21.0](https://github.com/srilanka-lv/srilanka-lv/compare/v1.20.0...v1.21.0) (2026-10-04)
 
 
