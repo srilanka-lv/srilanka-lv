@@ -18,6 +18,9 @@ export const launcherStyle = style(
     position: 'fixed',
     right: `max(${spacing[4]}, calc(env(safe-area-inset-right) + ${spacing[2]}))`,
     bottom: `max(${spacing[4]}, calc(env(safe-area-inset-bottom) + ${spacing[2]}))`,
+    // A page's own bottom bar (the girls trip sticky bar) sets
+    // --bottom-bar-offset while it shows, so the button rides above it.
+    translate: '0 calc(-1 * var(--bottom-bar-offset, 0px))',
     zIndex: 40,
     display: 'flex',
     alignItems: 'center',
@@ -30,7 +33,7 @@ export const launcherStyle = style(
     pointerEvents: 'none',
     outline: 'none',
     WebkitTapHighlightColor: 'transparent',
-    transition: `opacity ${motion}, transform ${motion}, visibility ${motion}`,
+    transition: `opacity ${motion}, transform ${motion}, translate ${motion}, visibility ${motion}`,
     selectors: {
       '&[data-hidden]': {
         opacity: 0,

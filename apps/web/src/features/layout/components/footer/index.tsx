@@ -28,10 +28,18 @@ import { footerColumnsStyle, footerSeamlessStyle, footerStyle } from './styles.c
 // drops the "Mani produkti" cards and the full-bleed hairline band. Both EN
 // (SSR) and LV (client) pathnames are covered for the rewrite duality.
 //
+// The girls trip page drops them too: it ends on its own call to action, and
+// the cards would only list the same trip again.
+//
 // The pillar guide keeps them: someone who reaches the end of 3,500 words is
 // the best-qualified reader on the site, and the cards are the only place all
 // three offers appear with a photo.
-const pathsWithoutProducts = [`/${PAGES.EN.PRODUCTS}`, `/${PAGES.LV.PRODUCTS}`];
+const pathsWithoutProducts = [
+  `/${PAGES.EN.PRODUCTS}`,
+  `/${PAGES.LV.PRODUCTS}`,
+  `/${PAGES.EN.PRODUCTS}/${PAGES.EN.PRODUCTS_GIRLS_TRIP}`,
+  `/${PAGES.LV.PRODUCTS}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
+];
 
 export const Footer: FunctionComponent = () => {
   const pathname = usePathname();

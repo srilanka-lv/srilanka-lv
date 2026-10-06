@@ -14,7 +14,7 @@ Primary: young Latvian women (roughly 20-35) planning a solo or first trip to Sr
 
 srilanka.lv is a Latvian-language guide to traveling Sri Lanka, written by someone who lives there. Free content (blog posts, practical guides on visas, budget, transport, accommodation, timing) builds trust; three paid products monetize that trust:
 
-1. **Girls-only 10-day trip**: small group (max 6 women), fully organized, led by the host in person.
+1. **Girls-only 10-day trip**: small group (7 women plus the host), fully organized, led by the host in person.
 2. **1:1 consultation call**: personalized answers about Sri Lanka travel.
 3. **Personalized holiday plan**: a custom itinerary delivered within 48 hours.
 
@@ -28,7 +28,7 @@ Personal insider guidance from someone who has actually lived in Sri Lanka for ~
 
 - Readers plan trips in Latvian; the public site is entirely Latvian while internal route names are English (Next.js rewrites map LV slugs to EN routes).
 - The site is content-led: homepage hero, FAQ, blog sections; practical guide pages per topic; products page; about and contact pages.
-- Products are personal services fulfilled by the host, not automated goods; capacity is genuinely limited (trip capped at 6 women).
+- Products are personal services fulfilled by the host, not automated goods; capacity is genuinely limited (trip capped at 7 women plus the host).
 
 ## Capabilities and Constraints
 
@@ -48,7 +48,7 @@ Personal insider guidance from someone who has actually lived in Sri Lanka for ~
 
 - Real photography from Sri Lanka taken by Dave and his partner (e.g. `public/images/`), usable across the site.
 - An active Instagram following that can be referenced as social proof.
-- No customer testimonials yet. Design must not fabricate testimonials, review counts, ratings, press mentions, or urgency claims.
+- Three real traveller testimonials, used with permission on the guide and girls trip pages. Design must not fabricate testimonials, review counts, ratings, press mentions, or urgency claims.
 
 ## Product Principles
 

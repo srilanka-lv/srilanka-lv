@@ -1,6 +1,11 @@
-import { beforeEach, describe, expect, it, mock } from 'bun:test';
+import { afterEach, beforeEach, describe, expect, it, mock, setSystemTime } from 'bun:test';
 
-import { trackEvent } from './analytics';
+import {
+  UMAMI_POLL_MS,
+  UMAMI_WAIT_LIMIT_MS,
+  resetPendingUmamiEvents,
+  trackEvent,
+} from './analytics';
 
 type WindowWithUmami = Window & typeof globalThis;
 
@@ -9,6 +14,12 @@ describe('trackEvent', () => {
     // typeof window === 'undefined' is true for a global set to undefined,
     // so assignment isolates tests without needing delete.
     (globalThis as { window?: unknown }).window = undefined;
+    resetPendingUmamiEvents();
+  });
+
+  afterEach(() => {
+    resetPendingUmamiEvents();
+    setSystemTime();
   });
 
   it('resolves silently when window is undefined', async () => {
@@ -56,5 +67,43 @@ describe('trackEvent', () => {
     } as unknown as WindowWithUmami;
 
     await expect(trackEvent('contact')).resolves.toBeUndefined();
+  });
+
+  it('holds events until umami loads, then sends each once, in order', async () => {
+    const win = {} as { umami?: { track: ReturnType<typeof mock> } };
+    (globalThis as { window?: unknown }).window = win;
+
+    await trackEvent('trip-section-view', { section: 'facts' }, { zaraz: false });
+    await trackEvent('ask-cta-view', { placement: 'trip-page-hero' }, { zaraz: false });
+
+    const track = mock(() => Promise.resolve());
+    win.umami = { track };
+    await Bun.sleep(UMAMI_POLL_MS + 50);
+
+    expect(track.mock.calls).toEqual([
+      ['trip-section-view', { section: 'facts' }],
+      ['ask-cta-view', { placement: 'trip-page-hero' }],
+    ]);
+
+    // Nothing left waiting: a later event goes straight out, once.
+    await trackEvent('trip-faq-open', { question: 'safety' }, { zaraz: false });
+    await Bun.sleep(UMAMI_POLL_MS + 50);
+    expect(track).toHaveBeenCalledTimes(3);
+  });
+
+  it('drops waiting events if umami never loads', async () => {
+    const win = {} as { umami?: { track: ReturnType<typeof mock> } };
+    (globalThis as { window?: unknown }).window = win;
+
+    setSystemTime(new Date('2026-10-06T10:00:00Z'));
+    await trackEvent('trip-section-view', { section: 'facts' }, { zaraz: false });
+    setSystemTime(new Date(Date.parse('2026-10-06T10:00:00Z') + UMAMI_WAIT_LIMIT_MS));
+    await Bun.sleep(UMAMI_POLL_MS + 50);
+
+    const track = mock(() => Promise.resolve());
+    win.umami = { track };
+    await Bun.sleep(UMAMI_POLL_MS + 50);
+
+    expect(track).not.toHaveBeenCalled();
   });
 });

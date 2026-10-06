@@ -1,76 +1,72 @@
 import { PAGES } from '@packages/sanity/constants/pages-slugs';
-import Image from 'next/image';
 import type { FunctionComponent } from 'react';
 
 import { Breadcrumbs } from '@/shared/components/breadcrumbs';
 import { buildItems } from '@/shared/components/breadcrumbs/build-items';
-import {
-  GIRLS_TRIP_PARTNER_PRODUCT_CAMPAIGN_URL,
-  GIRLS_TRIP_PARTNER_PRODUCT_URL,
-} from '@/shared/constants/girls-trip-partner-url';
-import { quietLinkStyle } from '@/shared/styles/quiet-link.css';
+import { GuideTestimonials } from '@/shared/components/guide-testimonials';
+import type { GirlsTripBookingPhase } from '@/shared/constants/girls-trip-booking';
+import { travellerTestimonials } from '@/shared/constants/traveller-testimonials';
 
 import { Heading } from '../heading';
-import { TripPageHeroSection } from '../trip-page-hero-section';
+import { TripPageBookingProvider } from '../trip-page-booking-provider';
+import { TRIP_PAGE_CLOSING_SECTION_ID, TripPageClosingSection } from '../trip-page-closing-section';
+import { TripPageCostSection } from '../trip-page-cost-section';
+import { TripPageEngagement } from '../trip-page-engagement';
+import { TripPageFaqSection } from '../trip-page-faq-section';
+import { TRIP_PAGE_SUMMARY_ID, TripPageHeroSection } from '../trip-page-hero-section';
+import { TripPageIncludedSection } from '../trip-page-included-section';
 import { TripPageItinerarySection } from '../trip-page-itinerary-section';
+import { TripPagePaymentSection } from '../trip-page-payment-section';
+import { TripPageSection } from '../trip-page-section';
+import { TripPageStickyBar } from '../trip-page-sticky-bar';
 import { TripPageUspSection } from '../trip-page-usp-section';
 import { TripPageVideoSection } from '../trip-page-video-section';
-import {
-  tripPageCollaborationLinkStyle,
-  tripPageCollaborationLogoStyle,
-  tripPageCollaborationStyle,
-  tripPageTitleStyle,
-} from './styles.css';
+import { tripPageRootStyle, tripPageTitleStyle } from './styles.css';
 
-export const ProductPageTrip: FunctionComponent = () => {
+const stickyBarHideWhileVisibleIds = [TRIP_PAGE_SUMMARY_ID, TRIP_PAGE_CLOSING_SECTION_ID];
+
+type ProductPageTripProps = {
+  /** The booking phase when the page was rendered; the browser re-checks it. */
+  phase: GirlsTripBookingPhase;
+};
+
+/*
+ * Read top to bottom as a careful first-time buyer would: the facts, the
+ * price and both next steps first; then what the price covers and Grieta on
+ * video; then the whole cost and how paying works; then the trip itself;
+ * then other people's words, the open questions, and one last invitation
+ * instead of a product list.
+ */
+export const ProductPageTrip: FunctionComponent<ProductPageTripProps> = ({ phase }) => {
   const productsHref = `/${PAGES.LV.PRODUCTS}`;
 
   return (
-    <>
-      <Breadcrumbs
-        items={buildItems(productsHref, {
-          name: '10 dienu ceļojums Šrilankā (tikai meitenēm)',
-          href: `${productsHref}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
-        })}
-      />
-      <Heading as="h1" variant="h1" className={tripPageTitleStyle}>
-        10 dienu ceļojums Šrilankā tikai meitenēm (2027)
-      </Heading>
-      <div className={tripPageCollaborationStyle}>
-        <a
-          className={tripPageCollaborationLinkStyle}
-          href={GIRLS_TRIP_PARTNER_PRODUCT_CAMPAIGN_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          data-umami-event="outbound-link"
-          data-umami-event-url={GIRLS_TRIP_PARTNER_PRODUCT_URL}
-        >
-          <Image
-            className={tripPageCollaborationLogoStyle}
-            src="/images/srilanka-lv_logo_celoarmariku.png"
-            alt="Ceļo ar Mariku"
-            width={74}
-            height={50}
-          />
-        </a>
-        <span>
-          ☀️ Šī ir sadarbība ar{' '}
-          <a
-            className={quietLinkStyle}
-            href={GIRLS_TRIP_PARTNER_PRODUCT_CAMPAIGN_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-umami-event="outbound-link"
-            data-umami-event-url={GIRLS_TRIP_PARTNER_PRODUCT_URL}
-          >
-            Ceļo ar Mariku
-          </a>
-        </span>
+    <TripPageBookingProvider initialPhase={phase}>
+      <div className={tripPageRootStyle}>
+        <Breadcrumbs
+          items={buildItems(productsHref, {
+            name: '10 dienu ceļojums Šrilankā (tikai meitenēm)',
+            href: `${productsHref}/${PAGES.LV.PRODUCTS_GIRLS_TRIP}`,
+          })}
+        />
+        <Heading as="h1" variant="h1" className={tripPageTitleStyle}>
+          10 dienu ceļojums Šrilankā tikai meitenēm (2027)
+        </Heading>
+        <TripPageHeroSection />
+        <TripPageIncludedSection />
+        <TripPageVideoSection />
+        <TripPageCostSection />
+        <TripPagePaymentSection />
+        <TripPageUspSection />
+        <TripPageItinerarySection />
+        <TripPageSection id="atsauksmes" title="Ko saka citi ceļotāji" trackingId="testimonials">
+          <GuideTestimonials items={travellerTestimonials} withPortraits={false} />
+        </TripPageSection>
+        <TripPageFaqSection />
+        <TripPageClosingSection />
+        <TripPageEngagement />
       </div>
-      <TripPageHeroSection />
-      <TripPageVideoSection />
-      <TripPageUspSection />
-      <TripPageItinerarySection />
-    </>
+      <TripPageStickyBar hideWhileVisibleIds={stickyBarHideWhileVisibleIds} />
+    </TripPageBookingProvider>
   );
 };

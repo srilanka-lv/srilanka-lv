@@ -3,6 +3,7 @@ import type { NewsletterSendEmailInputModel } from '@/features/newsletter/models
 import { findAskGrietaProduct } from '../constants/ask-grieta-products';
 import type { LeadMeta } from '../constants/lead-meta-schema';
 import type { AskGrietaLeadModel } from '../models/ask-grieta-lead-model';
+import { formatCampaign } from './campaign';
 
 /**
  * Every lead email starts with this, so an iPhone Mail VIP or notification
@@ -78,7 +79,12 @@ export function buildLeadEmail(
   } catch {
     // Malformed escapes: show the path as sent.
   }
-  const source = `${CONTEXT_LABEL[lead.context]} · ${lead.entry} · ${lead.placement}`;
+  const source = [
+    CONTEXT_LABEL[lead.context],
+    lead.entry,
+    lead.placement,
+    ...(lead.campaign ? [formatCampaign(lead.campaign)] : []),
+  ].join(' · ');
   const time = formatRigaTime(now);
 
   const rows: [string, string][] = [

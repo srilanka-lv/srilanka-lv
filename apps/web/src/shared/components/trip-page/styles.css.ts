@@ -1,10 +1,9 @@
 import { style } from '@vanilla-extract/css';
 
 import { vars } from '@/shared/styles/themes/theme.contract.css';
-import { darkThemeSelector } from '@/shared/styles/themes/theme.dark.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, font, color } = vars;
+const { spacing, font } = vars;
 
 export const tripPageTitleStyle = style({
   fontSize: font.size['2xl'],
@@ -27,38 +26,7 @@ export const tripPageTitleStyle = style({
   },
 });
 
-export const tripPageCollaborationStyle = style({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  fontSize: font.size['sm'],
-  fontWeight: font.weight.semibold,
-  lineHeight: font.lineHeight.none,
-  gap: spacing[4],
-  marginBottom: spacing[8],
-  paddingTop: spacing[4],
-  paddingBottom: spacing[4],
-  borderTop: `1px dashed ${color.foreground}`,
-  borderBottom: `1px dashed ${color.foreground}`,
-  whiteSpace: 'nowrap',
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.md})`]: {
-      fontSize: font.size['lg'],
-    },
-  },
-});
-
-export const tripPageCollaborationLinkStyle = style({
-  backgroundImage: 'none',
-});
-
-export const tripPageCollaborationLogoStyle = style({
-  selectors: {
-    // The logo artwork is pure black on transparency, so inverting it yields
-    // the white version for dark backgrounds without a second asset.
-    [`${darkThemeSelector} &`]: {
-      filter: 'invert(1)',
-    },
-  },
+// Positions the scroll-depth markers over the trip content.
+export const tripPageRootStyle = style({
+  position: 'relative',
 });

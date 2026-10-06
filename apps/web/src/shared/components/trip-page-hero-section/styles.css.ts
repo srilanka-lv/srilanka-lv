@@ -1,10 +1,9 @@
 import { style } from '@vanilla-extract/css';
 
-import { quietLinkStyle } from '@/shared/styles/quiet-link.css';
 import { vars } from '@/shared/styles/themes/theme.contract.css';
 import { breakpoints } from '@/shared/styles/tokens/breakpoints';
 
-const { spacing, font, border, color, zIndex } = vars;
+const { spacing, font, border, color, shadow } = vars;
 
 export const tripPageHeroSectionStyle = style({
   display: 'flex',
@@ -33,39 +32,13 @@ export const tripPageImageGalleryStyle = style({
   '@media': {
     [`screen and (min-width: ${breakpoints.lg})`]: {
       gridColumn: '1 / 3',
+      gridRow: '1 / 2',
       display: 'grid',
       gridTemplateRows: 'repeat(2, min-content)',
       gridTemplateColumns: 'repeat(3, 1fr)',
       gap: spacing[2],
     },
   },
-});
-
-export const tripPageImageGalleryMainImagePriceStyle = style({
-  position: 'absolute',
-  paddingTop: spacing[2],
-  paddingBottom: spacing[2],
-  width: '340px',
-  top: '34px',
-  right: '-90px',
-  display: 'flex',
-  flexDirection: 'column',
-  backgroundColor: '#20bf6b',
-  color: color.background,
-  padding: spacing[2],
-  borderRadius: border.radius.small,
-  zIndex: zIndex['10'],
-  fontSize: font.size['2xl'],
-  fontWeight: font.weight.medium,
-  lineHeight: font.lineHeight.none,
-  transform: 'rotate(32.5deg)',
-  textAlign: 'center',
-});
-
-export const tripPageImageGalleryMainImagePriceSubtitleStyle = style({
-  fontSize: font.size.sm,
-  fontWeight: font.weight.medium,
-  lineHeight: font.lineHeight.none,
 });
 
 export const tripPageHeroSectionDescriptionStyle = style({
@@ -84,130 +57,95 @@ export const tripPageHeroSectionDescriptionParagraphStyle = style({
 });
 
 export const tripPageSummaryStyle = style({
-  position: 'sticky',
-  display: 'grid',
-  gridTemplateRows: 'repeat(7, min-content)',
-  gridTemplateColumns: '1fr 1fr',
-  gap: spacing[1],
+  display: 'flex',
+  flexDirection: 'column',
+  gap: spacing[4],
   height: 'auto',
-  top: spacing[8],
-  gridColumn: '3 / 4',
-  gridRow: '1 / 2',
+  // The site's filled card: the one raised surface on the page, so the price
+  // and the two buttons read as the thing to act on.
   borderRadius: border.radius.large,
-  borderStyle: 'solid',
-  borderWidth: '0.5px',
-  borderColor: `color-mix(in oklch, ${color.foreground} 25%, transparent)`,
-  padding: spacing[6],
-  alignSelf: 'start',
-  marginLeft: 'auto',
-  marginRight: 'auto',
+  border: `1px solid color-mix(in oklch, ${color.primary} 10%, transparent)`,
+  backgroundColor: color.surface,
+  boxShadow: shadow.medium,
+  padding: spacing[5],
   textAlign: 'left',
+  // Clears the sticky mobile bar's anchor jump and the header.
+  scrollMarginTop: spacing[4],
 
   '@media': {
     [`screen and (min-width: ${breakpoints.xs})`]: {
-      gap: spacing[2],
+      padding: spacing[6],
     },
     [`screen and (min-width: ${breakpoints.lg})`]: {
-      gap: 0,
+      position: 'sticky',
+      top: spacing[8],
+      gridColumn: '3 / 4',
+      gridRow: '1 / 2',
+      alignSelf: 'start',
     },
   },
 });
 
-export const tripPageSummaryItemStyle = style({
+// Label-and-value rows: values never wrap, whatever the column width, and
+// the eye runs down one edge instead of zig-zagging a 2x2 grid.
+export const tripPageSummaryFactsStyle = style({
   display: 'flex',
   flexDirection: 'column',
-  gap: spacing[1],
-  whiteSpace: 'nowrap',
+  margin: 0,
+  borderTop: `1px solid color-mix(in oklch, ${color.foreground} 10%, transparent)`,
+});
+
+export const tripPageSummaryFactStyle = style({
+  display: 'flex',
+  alignItems: 'baseline',
+  justifyContent: 'space-between',
+  gap: spacing[4],
+  paddingBlock: spacing[2],
+  borderBottom: `1px solid color-mix(in oklch, ${color.foreground} 10%, transparent)`,
 });
 
 export const tripPageSummaryItemTitleStyle = style({
-  fontSize: font.size.xs,
-  fontWeight: font.weight.light,
-  color: `color-mix(in oklch, ${color.foreground} 75%, transparent)`,
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xs})`]: {
-      fontSize: font.size.sm,
-    },
-  },
+  fontSize: font.size.sm,
+  color: `color-mix(in oklch, ${color.foreground} 70%, transparent)`,
 });
 
 export const tripPageSummaryItemValueStyle = style({
-  fontSize: font.size.sm,
+  margin: 0,
+  fontSize: font.size.base,
   fontWeight: font.weight.medium,
   color: color.foreground,
   fontVariantNumeric: 'tabular-nums',
-  lineHeight: font.lineHeight.relaxed,
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xs})`]: {
-      fontSize: font.size.base,
-    },
-  },
+  lineHeight: font.lineHeight.snug,
+  textAlign: 'right',
+  whiteSpace: 'nowrap',
 });
 
-export const tripPageSummaryItemValueListStyle = style({
-  fontSize: font.size.sm,
-  fontWeight: font.weight.medium,
-  color: color.foreground,
-  padding: 0,
+export const tripPageHeroHostStyle = style({
+  display: 'grid',
+  gridTemplateColumns: `${spacing[12]} minmax(0, 1fr)`,
+  columnGap: spacing[3],
+  alignItems: 'center',
+});
+
+export const tripPageHeroHostPortraitStyle = style({
+  display: 'block',
+  width: spacing[12],
+  height: spacing[12],
+  borderRadius: '50%',
+  objectFit: 'cover',
+});
+
+export const tripPageHeroHostTextStyle = style({
   margin: 0,
-  listStyle: 'none',
-  listStylePosition: 'inside',
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xs})`]: {
-      fontSize: font.size.base,
-    },
-  },
+  fontSize: font.size.sm,
+  lineHeight: font.lineHeight.snug,
 });
 
-export const tripPageSummaryItemValueListItemIncludedStyle = style({
-  selectors: {
-    '&::before': {
-      color: '#20bf6b',
-      content: '✔',
-      display: 'inline-block',
-      marginRight: spacing[2],
-      fontSize: font.size.xs,
-    },
-  },
+export const tripPageHeroLinksStyle = style({
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+  gap: `${spacing[2]} ${spacing[5]}`,
+  margin: 0,
+  fontSize: font.size.sm,
 });
-
-export const tripPageSummaryItemValueListItemExcludedStyle = style({
-  selectors: {
-    '&::before': {
-      color: 'red',
-      content: '✗',
-      display: 'inline-block',
-      marginRight: spacing[2],
-      fontSize: font.size.xs,
-    },
-  },
-});
-
-export const tripPageSummaryItemSeparatorStyle = style({
-  gridColumn: '1 / 3',
-  height: '1px',
-  backgroundColor: `color-mix(in oklch, ${color.foreground} 7.5%, transparent)`,
-  marginTop: spacing[2],
-  marginBottom: spacing[2],
-
-  '@media': {
-    [`screen and (min-width: ${breakpoints.xs})`]: {
-      marginTop: spacing[4],
-      marginBottom: spacing[4],
-    },
-  },
-});
-
-// Sits under the CTA inside the two-column summary grid, spanning both columns.
-export const tripPageHeroVideoAnchorStyle = style([
-  quietLinkStyle,
-  {
-    gridColumn: '1 / 3',
-    justifySelf: 'center',
-    marginTop: spacing[5],
-    fontSize: font.size.sm,
-  },
-]);

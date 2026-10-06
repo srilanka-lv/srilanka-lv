@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { type FunctionComponent, type ReactElement, useState } from 'react';
 
+import { emitTripEngagement } from '@/shared/utils/trip-engagement';
+
 import {
   tripPagePlanItineraryItemContentBaseStyles,
   tripPagePlanItineraryItemContentImageStyle,
@@ -14,6 +16,8 @@ import {
 } from './styles.css';
 
 type TripPageExpandableProps = {
+  /** The day's number in the plan (1-10), reported when it is opened. */
+  day: number;
   title: string;
   subject: string;
   content: ReactElement;
@@ -25,6 +29,7 @@ export const TripPageExpandable: FunctionComponent<TripPageExpandableProps> = ({
   subject,
   content,
   imageSrc,
+  day,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -35,7 +40,12 @@ export const TripPageExpandable: FunctionComponent<TripPageExpandableProps> = ({
       <button
         type="button"
         className={tripPagePlanItineraryItemToggleStyles[state]}
-        onClick={() => setIsExpanded(!isExpanded)}
+        onClick={(event) => {
+          if (!isExpanded) {
+            emitTripEngagement(event.currentTarget, { type: 'itinerary-open', day });
+          }
+          setIsExpanded(!isExpanded);
+        }}
         aria-expanded={isExpanded}
         aria-controls={`trip-page-expandable-${title}`}
         data-state-expanded={isExpanded}
