@@ -1,16 +1,16 @@
 {
-  "queriedOn": "2026-10-11",
+  "queriedOn": "2026-10-18",
   "months": [
     {
       "month": "2026-10",
       "label": "October 2026",
-      "averagePrice": 524,
-      "lowestPrice": 400,
+      "averagePrice": 608,
+      "lowestPrice": 485,
       "dates": [
         {
-          "date": "2026-10-12",
+          "date": "2026-10-19",
           "cheapestFlight": {
-            "price": 560,
+            "price": 730,
             "totalDuration": 1845,
             "stops": 1,
             "flights": [
@@ -21,12 +21,12 @@
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2026-10-12 20:05"
+                  "time": "2026-10-19 20:05"
                 },
                 "arrivalAirport": {
                   "name": "Istanbul Airport",
                   "id": "IST",
-                  "time": "2026-10-12 23:15"
+                  "time": "2026-10-19 23:15"
                 },
                 "duration": 190,
                 "airplane": "Boeing 737MAX 8 Passenger",
@@ -47,23 +47,23 @@
                 "departureAirport": {
                   "name": "Istanbul Airport",
                   "id": "IST",
-                  "time": "2026-10-13 18:40"
+                  "time": "2026-10-20 18:40"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2026-10-14 05:20"
+                  "time": "2026-10-21 05:20"
                 },
                 "duration": 490,
-                "airplane": "Airbus A330",
+                "airplane": "Airbus A350",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
                 "extensions": [
                   "Average legroom (79 cm)",
                   "Wi-Fi for a fee",
-                  "In-seat power & USB outlets",
+                  "In-seat USB outlet",
                   "On-demand video",
-                  "Carbon emissions estimate: 390 kg"
+                  "Carbon emissions estimate: 383 kg"
                 ],
                 "overnight": true
               }
@@ -76,164 +76,60 @@
               }
             ],
             "carbonEmissions": {
-              "this_flight": 547000,
+              "this_flight": 540000,
               "typical_for_this_route": 609000,
-              "difference_percent": -10
+              "difference_percent": -11
             },
-            "bookingToken": "WyJDalJJY1ZGd0xXeE5lUzF2TFUxQlQyaEtSMUZDUnkwdExTMHRMWFowZDJreU9DMXVNa0ZCUVVGQlIzSk1WemwzU3poNlgxZEJFZ3hVU3pFM056WjhWRXMzTXpBYUN3ajh0QU1RQWhvRFJWVlNPQnh3eGVrRCIsW1siUklYIiwiMjAyNi0xMC0xMiIsIklTVCIsbnVsbCwiVEsiLCIxNzc2Il0sWyJJU1QiLCIyMDI2LTEwLTEzIiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
-          }
-        },
-        {
-          "date": "2026-10-19",
-          "cheapestFlight": {
-            "price": 612,
-            "totalDuration": 1790,
-            "stops": 2,
-            "flights": [
-              {
-                "airline": "Air Baltic",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 273",
-                "departureAirport": {
-                  "name": "Rīgas lidosta",
-                  "id": "RIX",
-                  "time": "2026-10-19 18:40"
-                },
-                "arrivalAirport": {
-                  "name": "Vīnes starptautiskā lidosta",
-                  "id": "VIE",
-                  "time": "2026-10-19 19:40"
-                },
-                "duration": 120,
-                "airplane": "Airbus A220-300 Passenger",
-                "travelClass": "Economy",
-                "legroom": "76 cm",
-                "extensions": [
-                  "Average legroom (76 cm)",
-                  "In-seat USB outlet",
-                  "Carbon emissions estimate: 117 kg"
-                ]
-              },
-              {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 154",
-                "departureAirport": {
-                  "name": "Vīnes starptautiskā lidosta",
-                  "id": "VIE",
-                  "time": "2026-10-20 11:55"
-                },
-                "arrivalAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2026-10-20 19:25"
-                },
-                "duration": 330,
-                "airplane": "Boeing 787-10",
-                "travelClass": "Economy",
-                "legroom": "79 cm",
-                "extensions": [
-                  "Average legroom (79 cm)",
-                  "Wi-Fi for a fee",
-                  "In-seat power & USB outlets",
-                  "On-demand video",
-                  "Carbon emissions estimate: 252 kg"
-                ]
-              },
-              {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 394",
-                "departureAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2026-10-20 20:50"
-                },
-                "arrivalAirport": {
-                  "name": "Bandaranaikes starptautiskā lidosta",
-                  "id": "CMB",
-                  "time": "2026-10-21 03:00"
-                },
-                "duration": 280,
-                "airplane": "Airbus A320",
-                "travelClass": "Economy",
-                "legroom": "76 cm",
-                "extensions": [
-                  "Average legroom (76 cm)",
-                  "In-seat USB outlet",
-                  "Stream media to your device",
-                  "Carbon emissions estimate: 285 kg"
-                ],
-                "overnight": true
-              }
-            ],
-            "layovers": [
-              {
-                "name": "Vīnes starptautiskā lidosta",
-                "id": "VIE",
-                "duration": 975
-              },
-              {
-                "name": "Zayed International Airport",
-                "id": "AUH",
-                "duration": 85
-              }
-            ],
-            "carbonEmissions": {
-              "this_flight": 655000,
-              "typical_for_this_route": 609000,
-              "difference_percent": 8
-            },
-            "bookingToken": "WyJDalJJVTNac2NFTXpSMUF0T1ZWQlVuVmpNRkZDUnkwdExTMHRMUzB0TFMxdmEyVm5ORUZCUVVGQlIzSk1WeTFKU0ZwdFprZEJFaEZDVkRJM00zeEZXVEUxTkh4RldUTTVOQm9MQ09mZEF4QUNHZ05GVlZJNEhIQ2tsd1E9IixbWyJSSVgiLCIyMDI2LTEwLTE5IiwiVklFIixudWxsLCJCVCIsIjI3MyJdLFsiVklFIiwiMjAyNi0xMC0yMCIsIkFVSCIsbnVsbCwiRVkiLCIxNTQiXSxbIkFVSCIsIjIwMjYtMTAtMjAiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJVG5nMVMxcEJSbVpsWlUxQlREVTBUbmRDUnkwdExTMHRMUzB0TFhCcWIyRXhNa0ZCUVVGQlIzSlZaWGwzUldkMWJ6QkJFZ3hVU3pFM056WjhWRXMzTXpBYUN3amt1UVFRQWhvRFJWVlNPQnh3bDRBRiIsW1siUklYIiwiMjAyNi0xMC0xOSIsIklTVCIsbnVsbCwiVEsiLCIxNzc2Il0sWyJJU1QiLCIyMDI2LTEwLTIwIiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
           }
         },
         {
           "date": "2026-10-26",
           "cheapestFlight": {
-            "price": 400,
-            "totalDuration": 2075,
+            "price": 485,
+            "totalDuration": 1390,
             "stops": 2,
             "flights": [
               {
-                "airline": "Air Baltic",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 481",
+                "airline": "Lufthansa",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
+                "flightNumber": "LH 893",
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2026-10-26 12:45"
+                  "time": "2026-10-26 06:05"
                 },
                 "arrivalAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2026-10-26 13:40"
+                  "name": "Frankfurtes pie Mainas lidosta",
+                  "id": "FRA",
+                  "time": "2026-10-26 07:30"
                 },
-                "duration": 115,
-                "airplane": "Airbus A220-300 Passenger",
+                "duration": 145,
+                "airplane": "Airbus A320neo",
                 "travelClass": "Economy",
-                "legroom": "76 cm",
+                "legroom": "74 cm",
                 "extensions": [
-                  "Average legroom (76 cm)",
+                  "Below average legroom (74 cm)",
                   "In-seat USB outlet",
-                  "Carbon emissions estimate: 107 kg"
+                  "Carbon emissions estimate: 104 kg"
                 ]
               },
               {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 156",
+                "airline": "Qatar Airways",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+                "flightNumber": "QR 68",
                 "departureAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2026-10-27 10:20"
+                  "name": "Frankfurtes pie Mainas lidosta",
+                  "id": "FRA",
+                  "time": "2026-10-26 15:00"
                 },
                 "arrivalAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2026-10-27 19:15"
+                  "name": "Hamada Starptautiskā lidosta",
+                  "id": "DOH",
+                  "time": "2026-10-26 23:00"
                 },
-                "duration": 355,
-                "airplane": "Boeing 787-10",
+                "duration": 360,
+                "airplane": "Boeing 787",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
                 "extensions": [
@@ -241,54 +137,54 @@
                   "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 265 kg"
+                  "Carbon emissions estimate: 275 kg"
                 ]
               },
               {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 394",
+                "airline": "Qatar Airways",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+                "flightNumber": "QR 664",
                 "departureAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2026-10-27 20:50"
+                  "name": "Hamada Starptautiskā lidosta",
+                  "id": "DOH",
+                  "time": "2026-10-27 01:30"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2026-10-28 02:50"
+                  "time": "2026-10-27 08:45"
                 },
-                "duration": 270,
-                "airplane": "Airbus A320",
+                "duration": 285,
+                "airplane": "Boeing 787",
                 "travelClass": "Economy",
-                "legroom": "76 cm",
+                "legroom": "79 cm",
                 "extensions": [
-                  "Average legroom (76 cm)",
-                  "In-seat USB outlet",
-                  "Stream media to your device",
-                  "Carbon emissions estimate: 276 kg"
+                  "Average legroom (79 cm)",
+                  "In-seat power & USB outlets",
+                  "On-demand video",
+                  "Carbon emissions estimate: 252 kg"
                 ],
                 "overnight": true
               }
             ],
             "layovers": [
               {
-                "name": "Prāgas Vāclava Havela lidosta",
-                "id": "PRG",
-                "duration": 1240
+                "name": "Frankfurtes pie Mainas lidosta",
+                "id": "FRA",
+                "duration": 450
               },
               {
-                "name": "Zayed International Airport",
-                "id": "AUH",
-                "duration": 95
+                "name": "Hamada Starptautiskā lidosta",
+                "id": "DOH",
+                "duration": 150
               }
             ],
             "carbonEmissions": {
-              "this_flight": 649000,
+              "this_flight": 632000,
               "typical_for_this_route": 609000,
-              "difference_percent": 7
+              "difference_percent": 4
             },
-            "bookingToken": "WyJDalJJVEU5SFpqWjRSMDl4VlRoQlNrWkpXVkZDUnkwdExTMHRMUzB0TFhaM1pXa3lORUZCUVVGQlIzSk1WeTF6UWxSWllsRkJFaE5DVkRRNE1YeEZXVEUxTm54RldUTTVOQ014R2dzSW03Z0NFQUlhQTBWVlVqZ2NjT1BkQWc9PSIsW1siUklYIiwiMjAyNi0xMC0yNiIsIlBSRyIsbnVsbCwiQlQiLCI0ODEiXSxbIlBSRyIsIjIwMjYtMTAtMjciLCJBVUgiLG51bGwsIkVZIiwiMTU2Il0sWyJBVUgiLCIyMDI2LTEwLTI3IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
+            "bookingToken": "WyJDalJJZUU5c2NYbHlUWFZ3VmtsQlRsWmZVMEZDUnkwdExTMHRMWFowZDJneE1TMXVNVUZCUVVGQlIzSlZaWHBKVDBSQ2NVdEJFaEJNU0RnNU0zeFJValk0ZkZGU05qWTBHZ3NJdFBvQ0VBSWFBMFZWVWpnY2NKU3BBdz09IixbWyJSSVgiLCIyMDI2LTEwLTI2IiwiRlJBIixudWxsLCJMSCIsIjg5MyJdLFsiRlJBIiwiMjAyNi0xMC0yNiIsIkRPSCIsbnVsbCwiUVIiLCI2OCJdLFsiRE9IIiwiMjAyNi0xMC0yNyIsIkNNQiIsbnVsbCwiUVIiLCI2NjQiXV1d"
           }
         }
       ]
@@ -296,14 +192,14 @@
     {
       "month": "2026-11",
       "label": "November 2026",
-      "averagePrice": 389,
-      "lowestPrice": 385,
+      "averagePrice": 414,
+      "lowestPrice": 384,
       "dates": [
         {
           "date": "2026-11-02",
           "cheapestFlight": {
-            "price": 385,
-            "totalDuration": 2040,
+            "price": 506,
+            "totalDuration": 1720,
             "stops": 2,
             "flights": [
               {
@@ -336,40 +232,39 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2026-11-03 10:15"
+                  "time": "2026-11-03 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2026-11-03 19:00"
+                  "time": "2026-11-03 19:10"
                 },
-                "duration": 345,
-                "airplane": "Boeing 787",
+                "duration": 340,
+                "airplane": "Airbus A330",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
                 "extensions": [
                   "Average legroom (79 cm)",
-                  "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 271 kg"
+                  "Carbon emissions estimate: 339 kg"
                 ]
               },
               {
                 "airline": "Etihad",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 392",
+                "flightNumber": "EY 394",
                 "departureAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2026-11-04 02:15"
+                  "time": "2026-11-03 20:50"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2026-11-04 08:10"
+                  "time": "2026-11-04 02:50"
                 },
-                "duration": 265,
+                "duration": 270,
                 "airplane": "Airbus A320",
                 "travelClass": "Economy",
                 "legroom": "76 cm",
@@ -386,68 +281,68 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 915
+                "duration": 930
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 435
+                "duration": 100
               }
             ],
             "carbonEmissions": {
-              "this_flight": 629000,
+              "this_flight": 696000,
               "typical_for_this_route": 609000,
-              "difference_percent": 3
+              "difference_percent": 14
             },
-            "bookingToken": "WyJDalJJVm1OUWJYbEhORXBST0ZGQlVsRlNSR2RDUnkwdExTMHRMUzB0TFhaMFptd3hNVUZCUVVGQlIzSk1WeTB3UVZaamNtdEJFaEZNVHpjNE1ueEZXVEUyTUh4RldUTTVNaG9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI2LTExLTAyIiwiV0FXIixudWxsLCJMTyIsIjc4MiJdLFsiV0FXIiwiMjAyNi0xMS0wMyIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjYtMTEtMDQiLCJDTUIiLG51bGwsIkVZIiwiMzkyIl1dXQ=="
+            "bookingToken": "WyJDalJJWkY5TVRsQkdVbkYxWlVsQlRVRkdla0ZDUnkwdExTMHRMUzB0TFMxd2FuQnlNMEZCUVVGQlIzSlZaWHBWVGpRdE9WZEJFaEZNVHpjNE1ueEZXVEUyTUh4RldUTTVOQm9MQ09HS0F4QUNHZ05GVlZJNEhIREV1d009IixbWyJSSVgiLCIyMDI2LTExLTAyIiwiV0FXIixudWxsLCJMTyIsIjc4MiJdLFsiV0FXIiwiMjAyNi0xMS0wMyIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjYtMTEtMDMiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2026-11-09",
           "cheapestFlight": {
-            "price": 396,
-            "totalDuration": 970,
+            "price": 411,
+            "totalDuration": 1100,
             "stops": 2,
             "flights": [
               {
                 "airline": "Air Baltic",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 131",
+                "flightNumber": "BT 619",
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2026-11-09 07:10"
+                  "time": "2026-11-09 17:00"
                 },
                 "arrivalAirport": {
-                  "name": "Kopenhāgenas lidosta",
-                  "id": "CPH",
-                  "time": "2026-11-09 07:40"
+                  "name": "Shiphola",
+                  "id": "AMS",
+                  "time": "2026-11-09 18:25"
                 },
-                "duration": 90,
+                "duration": 145,
                 "airplane": "Airbus A220-300 Passenger",
                 "travelClass": "Economy",
                 "legroom": "76 cm",
                 "extensions": [
                   "Average legroom (76 cm)",
                   "In-seat USB outlet",
-                  "Carbon emissions estimate: 82 kg"
+                  "Carbon emissions estimate: 136 kg"
                 ]
               },
               {
                 "airline": "Etihad",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 178",
+                "flightNumber": "EY 42",
                 "departureAirport": {
-                  "name": "Kopenhāgenas lidosta",
-                  "id": "CPH",
-                  "time": "2026-11-09 10:15"
+                  "name": "Shiphola",
+                  "id": "AMS",
+                  "time": "2026-11-09 21:20"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2026-11-09 19:30"
+                  "time": "2026-11-10 06:50"
                 },
-                "duration": 375,
+                "duration": 390,
                 "airplane": "Boeing 787",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
@@ -456,7 +351,110 @@
                   "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 312 kg"
+                  "Carbon emissions estimate: 300 kg"
+                ],
+                "overnight": true
+              },
+              {
+                "airline": "Etihad",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+                "flightNumber": "EY 390",
+                "departureAirport": {
+                  "name": "Zayed International Airport",
+                  "id": "AUH",
+                  "time": "2026-11-10 08:55"
+                },
+                "arrivalAirport": {
+                  "name": "Bandaranaikes starptautiskā lidosta",
+                  "id": "CMB",
+                  "time": "2026-11-10 14:50"
+                },
+                "duration": 265,
+                "airplane": "Airbus A321",
+                "travelClass": "Economy",
+                "legroom": "76 cm",
+                "extensions": [
+                  "Average legroom (76 cm)",
+                  "Wi-Fi for a fee",
+                  "In-seat USB outlet",
+                  "Stream media to your device",
+                  "Carbon emissions estimate: 289 kg"
+                ]
+              }
+            ],
+            "layovers": [
+              {
+                "name": "Shiphola",
+                "id": "AMS",
+                "duration": 175
+              },
+              {
+                "name": "Zayed International Airport",
+                "id": "AUH",
+                "duration": 125
+              }
+            ],
+            "carbonEmissions": {
+              "this_flight": 727000,
+              "typical_for_this_route": 609000,
+              "difference_percent": 19
+            },
+            "bookingToken": "WyJDalJJTjJkamEyeHdTRE5OZGtGQlRsSlNaRkZDUnkwdExTMHRMWFowZFcweE1TMXVNVUZCUVVGQlIzSlZaWHBqU25CeVJWTkJFaEJDVkRZeE9YeEZXVFF5ZkVWWk16a3dHZ3NJaXNFQ0VBSWFBMFZWVWpnY2NPRG9BZz09IixbWyJSSVgiLCIyMDI2LTExLTA5IiwiQU1TIixudWxsLCJCVCIsIjYxOSJdLFsiQU1TIiwiMjAyNi0xMS0wOSIsIkFVSCIsbnVsbCwiRVkiLCI0MiJdLFsiQVVIIiwiMjAyNi0xMS0xMCIsIkNNQiIsbnVsbCwiRVkiLCIzOTAiXV1d"
+          }
+        },
+        {
+          "date": "2026-11-16",
+          "cheapestFlight": {
+            "price": 384,
+            "totalDuration": 1720,
+            "stops": 2,
+            "flights": [
+              {
+                "airline": "LOT",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/LO.png",
+                "flightNumber": "LO 782",
+                "departureAirport": {
+                  "name": "Rīgas lidosta",
+                  "id": "RIX",
+                  "time": "2026-11-16 18:40"
+                },
+                "arrivalAirport": {
+                  "name": "Varšavas Šopēna lidosta",
+                  "id": "WAW",
+                  "time": "2026-11-16 19:00"
+                },
+                "duration": 80,
+                "airplane": "Embraer 195",
+                "travelClass": "Economy",
+                "legroom": "79 cm",
+                "extensions": [
+                  "Average legroom (79 cm)",
+                  "Carbon emissions estimate: 80 kg"
+                ]
+              },
+              {
+                "airline": "Etihad",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+                "flightNumber": "EY 160",
+                "departureAirport": {
+                  "name": "Varšavas Šopēna lidosta",
+                  "id": "WAW",
+                  "time": "2026-11-17 10:30"
+                },
+                "arrivalAirport": {
+                  "name": "Zayed International Airport",
+                  "id": "AUH",
+                  "time": "2026-11-17 19:10"
+                },
+                "duration": 340,
+                "airplane": "Airbus A330",
+                "travelClass": "Economy",
+                "legroom": "79 cm",
+                "extensions": [
+                  "Average legroom (79 cm)",
+                  "In-seat power & USB outlets",
+                  "On-demand video",
+                  "Carbon emissions estimate: 339 kg"
                 ]
               },
               {
@@ -466,12 +464,12 @@
                 "departureAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2026-11-09 20:50"
+                  "time": "2026-11-17 20:50"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2026-11-10 02:50"
+                  "time": "2026-11-18 02:50"
                 },
                 "duration": 270,
                 "airplane": "Airbus A320",
@@ -488,132 +486,28 @@
             ],
             "layovers": [
               {
-                "name": "Kopenhāgenas lidosta",
-                "id": "CPH",
-                "duration": 155
+                "name": "Varšavas Šopēna lidosta",
+                "id": "WAW",
+                "duration": 930
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 80
+                "duration": 100
               }
             ],
             "carbonEmissions": {
-              "this_flight": 671000,
+              "this_flight": 696000,
               "typical_for_this_route": 609000,
-              "difference_percent": 10
+              "difference_percent": 14
             },
-            "bookingToken": "WyJDalJJT0RWa1RpMWtWakkwZWxGQlRtOUhOWGRDUnkwdExTMHRMUzB0TFhaM1ltbGlPVUZCUVVGQlIzSk1WeTAwUTB4Tk15MUJFaE5DVkRFek1YeEZXVEUzT0h4RldUTTVOQ014R2dzSWtyVUNFQUlhQTBWVlVqZ2NjS3JhQWc9PSIsW1siUklYIiwiMjAyNi0xMS0wOSIsIkNQSCIsbnVsbCwiQlQiLCIxMzEiXSxbIkNQSCIsIjIwMjYtMTEtMDkiLCJBVUgiLG51bGwsIkVZIiwiMTc4Il0sWyJBVUgiLCIyMDI2LTExLTA5IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
-          }
-        },
-        {
-          "date": "2026-11-16",
-          "cheapestFlight": {
-            "price": 396,
-            "totalDuration": 970,
-            "stops": 2,
-            "flights": [
-              {
-                "airline": "Air Baltic",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 131",
-                "departureAirport": {
-                  "name": "Rīgas lidosta",
-                  "id": "RIX",
-                  "time": "2026-11-16 07:10"
-                },
-                "arrivalAirport": {
-                  "name": "Kopenhāgenas lidosta",
-                  "id": "CPH",
-                  "time": "2026-11-16 07:40"
-                },
-                "duration": 90,
-                "airplane": "Airbus A220-300 Passenger",
-                "travelClass": "Economy",
-                "legroom": "76 cm",
-                "extensions": [
-                  "Average legroom (76 cm)",
-                  "In-seat USB outlet",
-                  "Carbon emissions estimate: 82 kg"
-                ]
-              },
-              {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 178",
-                "departureAirport": {
-                  "name": "Kopenhāgenas lidosta",
-                  "id": "CPH",
-                  "time": "2026-11-16 10:15"
-                },
-                "arrivalAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2026-11-16 19:30"
-                },
-                "duration": 375,
-                "airplane": "Boeing 787",
-                "travelClass": "Economy",
-                "legroom": "79 cm",
-                "extensions": [
-                  "Average legroom (79 cm)",
-                  "Wi-Fi for a fee",
-                  "In-seat power & USB outlets",
-                  "On-demand video",
-                  "Carbon emissions estimate: 312 kg"
-                ]
-              },
-              {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 394",
-                "departureAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2026-11-16 20:50"
-                },
-                "arrivalAirport": {
-                  "name": "Bandaranaikes starptautiskā lidosta",
-                  "id": "CMB",
-                  "time": "2026-11-17 02:50"
-                },
-                "duration": 270,
-                "airplane": "Airbus A320",
-                "travelClass": "Economy",
-                "legroom": "76 cm",
-                "extensions": [
-                  "Average legroom (76 cm)",
-                  "In-seat USB outlet",
-                  "Stream media to your device",
-                  "Carbon emissions estimate: 285 kg"
-                ],
-                "overnight": true
-              }
-            ],
-            "layovers": [
-              {
-                "name": "Kopenhāgenas lidosta",
-                "id": "CPH",
-                "duration": 155
-              },
-              {
-                "name": "Zayed International Airport",
-                "id": "AUH",
-                "duration": 80
-              }
-            ],
-            "carbonEmissions": {
-              "this_flight": 680000,
-              "typical_for_this_route": 609000,
-              "difference_percent": 12
-            },
-            "bookingToken": "WyJDalJJY2tWV1dVcGZXRVprUVhOQlQwbFRNSGRDUnkwdExTMHRMWFozY1dveU55MXVNa0ZCUVVGQlIzSk1WMTlCUlU1d1FrOUJFaE5DVkRFek1YeEZXVEUzT0h4RldUTTVOQ014R2dzSWtyVUNFQUlhQTBWVlVqZ2NjS3JhQWc9PSIsW1siUklYIiwiMjAyNi0xMS0xNiIsIkNQSCIsbnVsbCwiQlQiLCIxMzEiXSxbIkNQSCIsIjIwMjYtMTEtMTYiLCJBVUgiLG51bGwsIkVZIiwiMTc4Il0sWyJBVUgiLCIyMDI2LTExLTE2IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
+            "bookingToken": "WyJDalJJUVU1UFNVWjZUSEYxV21OQlRsODFZM2RDUnkwdExTMHRMUzB0TFMxd1ptRjFORUZCUVVGQlIzSlZaWHBuVG14MGFqSkJFaE5NVHpjNE1ueEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNi0xMS0xNiIsIldBVyIsbnVsbCwiTE8iLCI3ODIiXSxbIldBVyIsIjIwMjYtMTEtMTciLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI2LTExLTE3IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         },
         {
           "date": "2026-11-23",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -648,23 +542,22 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2026-11-23 10:15"
+                  "time": "2026-11-23 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2026-11-23 19:00"
+                  "time": "2026-11-23 19:10"
                 },
-                "duration": 345,
-                "airplane": "Boeing 787",
+                "duration": 340,
+                "airplane": "Airbus A330",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
                 "extensions": [
                   "Average legroom (79 cm)",
-                  "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 271 kg"
+                  "Carbon emissions estimate: 339 kg"
                 ]
               },
               {
@@ -698,26 +591,26 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 225
+                "duration": 240
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 110
+                "duration": 100
               }
             ],
             "carbonEmissions": {
-              "this_flight": 619000,
+              "this_flight": 687000,
               "typical_for_this_route": 609000,
-              "difference_percent": 2
+              "difference_percent": 13
             },
-            "bookingToken": "WyJDalJJVGtzek5rUlZOakowYlUxQlRuazRNRUZDUnkwdExTMHRMUzB0TFc5clltcHlOa0ZCUVVGQlIzSk1WMTlOVDNsR1NXbEJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXFxd0NFQUlhQTBWVlVqZ2NjTHZRQWc9PSIsW1siUklYIiwiMjAyNi0xMS0yMyIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjYtMTEtMjMiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI2LTExLTIzIiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
+            "bookingToken": "WyJDalJJVDA5V1RHNU5XbTlqWW10QlJUSklSMEZDUnkwdExTMHRMWFowWW1kdE5pMXVNVUZCUVVGQlIzSlZaWHB2VDBkVFVuVkJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNi0xMS0yMyIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjYtMTEtMjMiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI2LTExLTIzIiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         },
         {
           "date": "2026-11-30",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -752,23 +645,22 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2026-11-30 10:15"
+                  "time": "2026-11-30 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2026-11-30 19:00"
+                  "time": "2026-11-30 19:10"
                 },
-                "duration": 345,
-                "airplane": "Boeing 787",
+                "duration": 340,
+                "airplane": "Airbus A330",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
                 "extensions": [
                   "Average legroom (79 cm)",
-                  "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 271 kg"
+                  "Carbon emissions estimate: 339 kg"
                 ]
               },
               {
@@ -803,20 +695,20 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 225
+                "duration": 240
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 110
+                "duration": 100
               }
             ],
             "carbonEmissions": {
-              "this_flight": 632000,
+              "this_flight": 700000,
               "typical_for_this_route": 609000,
-              "difference_percent": 4
+              "difference_percent": 15
             },
-            "bookingToken": "WyJDalJJVEcwNFlqSXhXbXhsZVhkQlRXWnNRV2RDUnkwdExTMHRMUzB0TFMxMmRISmhORUZCUVVGQlIzSk1WMTlaUVcwdFdXOUJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI2LTExLTMwIiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNi0xMS0zMCIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjYtMTEtMzAiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJVWkxVlZraGhWVlpSWDJOQlQzQjJXbWRDUnkwdExTMHRMUzB0TFMxdmEyRmhOMEZCUVVGQlIzSlZaWHAzVDA0M1lXRkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0xtckFoQUNHZ05GVlZJNEhIQzUwQUk9IixbWyJSSVgiLCIyMDI2LTExLTMwIiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNi0xMS0zMCIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjYtMTEtMzAiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         }
       ]
@@ -824,13 +716,13 @@
     {
       "month": "2026-12",
       "label": "December 2026",
-      "averagePrice": 584,
-      "lowestPrice": 385,
+      "averagePrice": 545,
+      "lowestPrice": 384,
       "dates": [
         {
           "date": "2026-12-07",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -865,23 +757,22 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2026-12-07 10:15"
+                  "time": "2026-12-07 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2026-12-07 19:00"
+                  "time": "2026-12-07 19:10"
                 },
-                "duration": 345,
-                "airplane": "Boeing 787",
+                "duration": 340,
+                "airplane": "Airbus A330",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
                 "extensions": [
                   "Average legroom (79 cm)",
-                  "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 271 kg"
+                  "Carbon emissions estimate: 339 kg"
                 ]
               },
               {
@@ -916,26 +807,26 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 225
+                "duration": 240
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 110
+                "duration": 100
               }
             ],
             "carbonEmissions": {
-              "this_flight": 632000,
+              "this_flight": 700000,
               "typical_for_this_route": 609000,
-              "difference_percent": 4
+              "difference_percent": 15
             },
-            "bookingToken": "WyJDalJJZUdaMlZFRlVRbWxhUkUxQlQyMWxjWGRDUnkwdExTMHRMWFowWW1keE5pMXVNa0ZCUVVGQlIzSk1WMTlqUjA5aU5FMUJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI2LTEyLTA3IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNi0xMi0wNyIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjYtMTItMDciLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJTVdwMlJrWkpjRGxPUVhOQlRVWjJRbmRDUnkwdExTMHRMUzB0ZG5kaWFXWXhNa0ZCUVVGQlIzSlZaWG8wUWxWblgzbEJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNi0xMi0wNyIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjYtMTItMDciLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI2LTEyLTA3IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         },
         {
           "date": "2026-12-14",
           "cheapestFlight": {
-            "price": 457,
+            "price": 423,
             "totalDuration": 2075,
             "stops": 2,
             "flights": [
@@ -1034,83 +925,82 @@
               "typical_for_this_route": 609000,
               "difference_percent": 9
             },
-            "bookingToken": "WyJDalJJYVZwWFZFVndhbFZ4Tm1kQlRqZE1ZMEZDUnkwdExTMHRMWFozYUdFeU55MXVNVUZCUVVGQlIzSk1WMTluVFV4M1pYVkJFaE5DVkRRNE1YeEZXVEUxTm54RldUTTVOQ014R2dzSTMrUUNFQUlhQTBWVlVqZ2NjTlNQQXc9PSIsW1siUklYIiwiMjAyNi0xMi0xNCIsIlBSRyIsbnVsbCwiQlQiLCI0ODEiXSxbIlBSRyIsIjIwMjYtMTItMTUiLCJBVUgiLG51bGwsIkVZIiwiMTU2Il0sWyJBVUgiLCIyMDI2LTEyLTE1IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
+            "bookingToken": "WyJDalJJVDA5V1RHNU5XbTlqWW10QlJUSklkMmRDUnkwdExTMHRMWFowWW1kdE5pMXVNVUZCUVVGQlIzSlZaWG80VFdkdlJGTkJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ0lqS0FoQUNHZ05GVlZJNEhIRHM4Z0k9IixbWyJSSVgiLCIyMDI2LTEyLTE0IiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNi0xMi0xNSIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjYtMTItMTUiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2026-12-21",
           "cheapestFlight": {
-            "price": 763,
-            "totalDuration": 1140,
+            "price": 634,
+            "totalDuration": 1820,
             "stops": 2,
             "flights": [
               {
                 "airline": "Air Baltic",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 213",
+                "flightNumber": "BT 633",
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2026-12-21 18:00"
+                  "time": "2026-12-21 12:05"
                 },
                 "arrivalAirport": {
-                  "name": "Berlīnes Brandenburgas lidosta",
-                  "id": "BER",
-                  "time": "2026-12-21 18:45"
+                  "name": "Romas Fjumičīno lidosta",
+                  "id": "FCO",
+                  "time": "2026-12-21 14:10"
                 },
-                "duration": 105,
+                "duration": 185,
                 "airplane": "Airbus A220-300 Passenger",
                 "travelClass": "Economy",
                 "legroom": "76 cm",
                 "extensions": [
                   "Average legroom (76 cm)",
                   "In-seat USB outlet",
-                  "Carbon emissions estimate: 94 kg"
+                  "Carbon emissions estimate: 181 kg"
                 ]
               },
               {
-                "airline": "Qatar Airways",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
-                "flightNumber": "QR 84",
+                "airline": "Emirates",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                "flightNumber": "EK 98",
                 "departureAirport": {
-                  "name": "Berlīnes Brandenburgas lidosta",
-                  "id": "BER",
-                  "time": "2026-12-21 21:40"
+                  "name": "Romas Fjumičīno lidosta",
+                  "id": "FCO",
+                  "time": "2026-12-21 14:55"
                 },
                 "arrivalAirport": {
-                  "name": "Hamada Starptautiskā lidosta",
-                  "id": "DOH",
-                  "time": "2026-12-22 05:20"
+                  "name": "Dubaijas Starptautiskā lidosta",
+                  "id": "DXB",
+                  "time": "2026-12-21 23:25"
                 },
-                "duration": 340,
-                "airplane": "Boeing 787",
+                "duration": 330,
+                "airplane": "Airbus A380",
                 "travelClass": "Economy",
-                "legroom": "79 cm",
+                "legroom": "81 cm",
                 "extensions": [
-                  "Average legroom (79 cm)",
-                  "Free Wi-Fi",
+                  "Above average legroom (81 cm)",
+                  "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 311 kg"
-                ],
-                "overnight": true
+                  "Carbon emissions estimate: 339 kg"
+                ]
               },
               {
-                "airline": "Qatar Airways",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
-                "flightNumber": "QR 654",
+                "airline": "Emirates",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                "flightNumber": "EK 648",
                 "departureAirport": {
-                  "name": "Hamada Starptautiskā lidosta",
-                  "id": "DOH",
-                  "time": "2026-12-22 09:25"
+                  "name": "Dubaijas Starptautiskā lidosta",
+                  "id": "DXB",
+                  "time": "2026-12-22 16:05"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2026-12-22 16:30"
+                  "time": "2026-12-22 21:55"
                 },
-                "duration": 275,
-                "airplane": "Boeing 777",
+                "duration": 260,
+                "airplane": "Airbus A350",
                 "travelClass": "Economy",
                 "legroom": "81 cm",
                 "extensions": [
@@ -1118,34 +1008,34 @@
                   "Wi-Fi for a fee",
                   "In-seat USB outlet",
                   "On-demand video",
-                  "Carbon emissions estimate: 313 kg"
+                  "Carbon emissions estimate: 220 kg"
                 ]
               }
             ],
             "layovers": [
               {
-                "name": "Berlīnes Brandenburgas lidosta",
-                "id": "BER",
-                "duration": 175
+                "name": "Romas Fjumičīno lidosta",
+                "id": "FCO",
+                "duration": 45
               },
               {
-                "name": "Hamada Starptautiskā lidosta",
-                "id": "DOH",
-                "duration": 245
+                "name": "Dubaijas Starptautiskā lidosta",
+                "id": "DXB",
+                "duration": 1000
               }
             ],
             "carbonEmissions": {
-              "this_flight": 719000,
+              "this_flight": 741000,
               "typical_for_this_route": 609000,
-              "difference_percent": 18
+              "difference_percent": 22
             },
-            "bookingToken": "WyJDalJJUVdZMWVHc3ROemxrWmtGQlNUSlZXVUZDUnkwdExTMHRMWFowZDJjeU5pMXVNa0ZCUVVGQlIzSk1WMTl2VGpkclprZEJFaEJDVkRJeE0zeFJVamcwZkZGU05qVTBHZ3NJNGRNRUVBSWFBMFZWVWpnY2NMZWJCUT09IixbWyJSSVgiLCIyMDI2LTEyLTIxIiwiQkVSIixudWxsLCJCVCIsIjIxMyJdLFsiQkVSIiwiMjAyNi0xMi0yMSIsIkRPSCIsbnVsbCwiUVIiLCI4NCJdLFsiRE9IIiwiMjAyNi0xMi0yMiIsIkNNQiIsbnVsbCwiUVIiLCI2NTQiXV1d"
+            "bookingToken": "WyJDalJJWmkwdFJtbFpYMGhYT1hOQlRETjJVSGRDUnkwdExTMHRMUzB0TFhaMGEya3hNRUZCUVVGQlIzSlZaVEJGU2tkRU5VZEJFaEJDVkRZek0zeEZTems0ZkVWTE5qUTRHZ3NJanU4REVBSWFBMFZWVWpnY2NLU3NCQT09IixbWyJSSVgiLCIyMDI2LTEyLTIxIiwiRkNPIixudWxsLCJCVCIsIjYzMyJdLFsiRkNPIiwiMjAyNi0xMi0yMSIsIkRYQiIsbnVsbCwiRUsiLCI5OCJdLFsiRFhCIiwiMjAyNi0xMi0yMiIsIkNNQiIsbnVsbCwiRUsiLCI2NDgiXV1d"
           }
         },
         {
           "date": "2026-12-28",
           "cheapestFlight": {
-            "price": 729,
+            "price": 740,
             "totalDuration": 1140,
             "stops": 2,
             "flights": [
@@ -1244,7 +1134,7 @@
               "typical_for_this_route": 609000,
               "difference_percent": 18
             },
-            "bookingToken": "WyJDalJJZG0wMlFqRmhaRkE1TlRSQlRsbzVOM2RDUnkwdExTMHRMUzB0ZG5kaWFXRXhNRUZCUVVGQlIzSk1WMTkzVGt4clMwMUJFaEJDVkRJeE0zeFJVamcwZkZGU05qVTBHZ3NJbWJrRUVBSWFBMFZWVWpnY2NOYjlCQT09IixbWyJSSVgiLCIyMDI2LTEyLTI4IiwiQkVSIixudWxsLCJCVCIsIjIxMyJdLFsiQkVSIiwiMjAyNi0xMi0yOCIsIkRPSCIsbnVsbCwiUVIiLCI4NCJdLFsiRE9IIiwiMjAyNi0xMi0yOSIsIkNNQiIsbnVsbCwiUVIiLCI2NTQiXV1d"
+            "bookingToken": "WyJDalJJV0hkUE1sbExkV0ZKTlRSQlRucFNPSGRDUnkwdExTMHRMUzB0YjNsaVluSXlNVUZCUVVGQlIzSlZaVEJOUTBKSWFrMUJFaEJDVkRJeE0zeFJVamcwZkZGU05qVTBHZ3NJM3NFRUVBSWFBMFZWVWpnY2NJK0pCUT09IixbWyJSSVgiLCIyMDI2LTEyLTI4IiwiQkVSIixudWxsLCJCVCIsIjIxMyJdLFsiQkVSIiwiMjAyNi0xMi0yOCIsIkRPSCIsbnVsbCwiUVIiLCI4NCJdLFsiRE9IIiwiMjAyNi0xMi0yOSIsIkNNQiIsbnVsbCwiUVIiLCI2NTQiXV1d"
           }
         }
       ]
@@ -1252,13 +1142,13 @@
     {
       "month": "2027-01",
       "label": "January 2027",
-      "averagePrice": 392,
-      "lowestPrice": 385,
+      "averagePrice": 384,
+      "lowestPrice": 384,
       "dates": [
         {
           "date": "2027-01-04",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -1294,23 +1184,22 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2027-01-04 10:15"
+                  "time": "2027-01-04 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-01-04 19:00"
+                  "time": "2027-01-04 19:10"
                 },
-                "duration": 345,
-                "airplane": "Boeing 787-10",
+                "duration": 340,
+                "airplane": "Airbus A330",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
                 "extensions": [
                   "Average legroom (79 cm)",
-                  "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 254 kg"
+                  "Carbon emissions estimate: 339 kg"
                 ]
               },
               {
@@ -1345,26 +1234,26 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 225
+                "duration": 240
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 110
+                "duration": 100
               }
             ],
             "carbonEmissions": {
-              "this_flight": 604000,
+              "this_flight": 689000,
               "typical_for_this_route": 609000,
-              "difference_percent": -1
+              "difference_percent": 13
             },
-            "bookingToken": "WyJDalJJT0dSbGJqUk5XbFZTT0ZGQlMyWlFVVkZDUnkwdExTMHRMUzB0TFMxNWJHOXNOa0ZCUVVGQlIzSk1WMTgwUTBGVmNGbEJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI3LTAxLTA0IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMS0wNCIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDEtMDQiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJZFhsWmJHZENhRWRJU0UxQlRYUlVUM2RDUnkwdExTMHRMUzB0TFhaM2Jta3hPVUZCUVVGQlIzSlZaVEJSUzNKdFlsZEJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNy0wMS0wNCIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDEtMDQiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTAxLTA0IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         },
         {
           "date": "2027-01-11",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -1398,14 +1287,14 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2027-01-11 10:15"
+                  "time": "2027-01-11 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-01-11 19:00"
+                  "time": "2027-01-11 19:10"
                 },
-                "duration": 345,
+                "duration": 340,
                 "airplane": "Boeing 787-10",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
@@ -1449,12 +1338,12 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 225
+                "duration": 240
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 110
+                "duration": 100
               }
             ],
             "carbonEmissions": {
@@ -1462,56 +1351,55 @@
               "typical_for_this_route": 609000,
               "difference_percent": 3
             },
-            "bookingToken": "WyJDalJJZG0wMlFqRmhaRkE1TlRSQlRsb3RhMmRDUnkwdExTMHRMUzB0ZG5kaWFXRXhNRUZCUVVGQlIzSk1XRUZGUjFkNFdYVkJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXFxd0NFQUlhQTBWVlVqZ2NjTHZRQWc9PSIsW1siUklYIiwiMjAyNy0wMS0xMSIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDEtMTEiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTAxLTExIiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
+            "bookingToken": "WyJDalJJY2s5TVduWnpTMkpJWWpCQlRUQlJOWGRDUnkwdExTMHRMUzB0ZG5kaVpua3hPRUZCUVVGQlIzSlZaVEIzUWsxc05uRkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0xtckFoQUNHZ05GVlZJNEhIQzUwQUk9IixbWyJSSVgiLCIyMDI3LTAxLTExIiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMS0xMSIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDEtMTEiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2027-01-18",
           "cheapestFlight": {
-            "price": 396,
-            "totalDuration": 970,
+            "price": 384,
+            "totalDuration": 1720,
             "stops": 2,
             "flights": [
               {
-                "airline": "Air Baltic",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 131",
+                "airline": "LOT",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/LO.png",
+                "flightNumber": "LO 782",
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-01-18 07:10"
+                  "time": "2027-01-18 18:40"
                 },
                 "arrivalAirport": {
-                  "name": "Kopenhāgenas lidosta",
-                  "id": "CPH",
-                  "time": "2027-01-18 07:40"
+                  "name": "Varšavas Šopēna lidosta",
+                  "id": "WAW",
+                  "time": "2027-01-18 19:00"
                 },
-                "duration": 90,
-                "airplane": "Airbus A220-300 Passenger",
+                "duration": 80,
+                "airplane": "Embraer 195",
                 "travelClass": "Economy",
-                "legroom": "76 cm",
+                "legroom": "79 cm",
                 "extensions": [
-                  "Average legroom (76 cm)",
-                  "In-seat USB outlet",
-                  "Carbon emissions estimate: 82 kg"
+                  "Average legroom (79 cm)",
+                  "Carbon emissions estimate: 80 kg"
                 ]
               },
               {
                 "airline": "Etihad",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 178",
+                "flightNumber": "EY 160",
                 "departureAirport": {
-                  "name": "Kopenhāgenas lidosta",
-                  "id": "CPH",
-                  "time": "2027-01-18 10:15"
+                  "name": "Varšavas Šopēna lidosta",
+                  "id": "WAW",
+                  "time": "2027-01-19 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-01-18 19:30"
+                  "time": "2027-01-19 19:10"
                 },
-                "duration": 375,
-                "airplane": "Boeing 787",
+                "duration": 340,
+                "airplane": "Boeing 787-10",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
                 "extensions": [
@@ -1519,7 +1407,7 @@
                   "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 312 kg"
+                  "Carbon emissions estimate: 254 kg"
                 ]
               },
               {
@@ -1529,12 +1417,12 @@
                 "departureAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-01-18 20:50"
+                  "time": "2027-01-19 20:50"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2027-01-19 02:50"
+                  "time": "2027-01-20 02:50"
                 },
                 "duration": 270,
                 "airplane": "Airbus A321",
@@ -1552,70 +1440,70 @@
             ],
             "layovers": [
               {
-                "name": "Kopenhāgenas lidosta",
-                "id": "CPH",
-                "duration": 155
+                "name": "Varšavas Šopēna lidosta",
+                "id": "WAW",
+                "duration": 930
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 80
+                "duration": 100
               }
             ],
             "carbonEmissions": {
-              "this_flight": 685000,
+              "this_flight": 625000,
               "typical_for_this_route": 609000,
-              "difference_percent": 12
+              "difference_percent": 3
             },
-            "bookingToken": "WyJDalJJWkdOUGFVRkNXbmRGYVZWQlZFTjRja0ZDUnkwdExTMHRMUzB0YjJ0aVoyNHhPRUZCUVVGQlIzSk1XRUZOUjFaMmVHZEJFaEZDVkRFek1YeEZXVEUzT0h4RldUTTVOQm9MQ0pLMUFoQUNHZ05GVlZJNEhIQ3EyZ0k9IixbWyJSSVgiLCIyMDI3LTAxLTE4IiwiQ1BIIixudWxsLCJCVCIsIjEzMSJdLFsiQ1BIIiwiMjAyNy0wMS0xOCIsIkFVSCIsbnVsbCwiRVkiLCIxNzgiXSxbIkFVSCIsIjIwMjctMDEtMTgiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJVlZCRVZHVnRWVTV0YlRSQlREbGxNRkZDUnkwdExTMHRMUzB0TFhaMFltZDBPVUZCUVVGQlIzSlZaVEF3VG1GQlJFZEJFaEZNVHpjNE1ueEZXVEUyTUh4RldUTTVOQm9MQ0xtckFoQUNHZ05GVlZJNEhIQzUwQUk9IixbWyJSSVgiLCIyMDI3LTAxLTE4IiwiV0FXIixudWxsLCJMTyIsIjc4MiJdLFsiV0FXIiwiMjAyNy0wMS0xOSIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDEtMTkiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2027-01-25",
           "cheapestFlight": {
-            "price": 400,
-            "totalDuration": 2075,
+            "price": 384,
+            "totalDuration": 1720,
             "stops": 2,
             "flights": [
               {
-                "airline": "Air Baltic",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 481",
+                "airline": "LOT",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/LO.png",
+                "flightNumber": "LO 782",
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-01-25 12:45"
+                  "time": "2027-01-25 18:40"
                 },
                 "arrivalAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-01-25 13:40"
+                  "name": "Varšavas Šopēna lidosta",
+                  "id": "WAW",
+                  "time": "2027-01-25 19:00"
                 },
-                "duration": 115,
-                "airplane": "Airbus A220-300 Passenger",
+                "duration": 80,
+                "airplane": "Boeing 737MAX 8 Passenger",
                 "travelClass": "Economy",
-                "legroom": "76 cm",
+                "legroom": "74 cm",
                 "extensions": [
-                  "Average legroom (76 cm)",
-                  "In-seat USB outlet",
-                  "Carbon emissions estimate: 107 kg"
+                  "Below average legroom (74 cm)",
+                  "In-seat power & USB outlets",
+                  "Carbon emissions estimate: 60 kg"
                 ]
               },
               {
                 "airline": "Etihad",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 156",
+                "flightNumber": "EY 160",
                 "departureAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-01-26 10:20"
+                  "name": "Varšavas Šopēna lidosta",
+                  "id": "WAW",
+                  "time": "2027-01-26 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-01-26 19:15"
+                  "time": "2027-01-26 19:10"
                 },
-                "duration": 355,
+                "duration": 340,
                 "airplane": "Boeing 787-10",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
@@ -1624,7 +1512,7 @@
                   "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 265 kg"
+                  "Carbon emissions estimate: 254 kg"
                 ]
               },
               {
@@ -1657,22 +1545,22 @@
             ],
             "layovers": [
               {
-                "name": "Prāgas Vāclava Havela lidosta",
-                "id": "PRG",
-                "duration": 1240
+                "name": "Varšavas Šopēna lidosta",
+                "id": "WAW",
+                "duration": 930
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 95
+                "duration": 100
               }
             ],
             "carbonEmissions": {
-              "this_flight": 663000,
+              "this_flight": 604000,
               "typical_for_this_route": 609000,
-              "difference_percent": 9
+              "difference_percent": -1
             },
-            "bookingToken": "WyJDalJJY0U5aWVqZGZhbkpSWDJkQlVVdEdOMUZDUnkwdExTMHRMUzB0TFMxdmVXRjBNa0ZCUVVGQlIzSk1XRUZWUjJzeE5XbEJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ0p1NEFoQUNHZ05GVlZJNEhIRGozUUk9IixbWyJSSVgiLCIyMDI3LTAxLTI1IiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wMS0yNiIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDEtMjYiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJUzB0eFlVa3lYMVpwYVVWQlVGYzBWWGRDUnkwdExTMHRMUzB0TFMxdmEyTnlNa0ZCUVVGQlIzSlZaVEZGUzNOdE9GRkJFaE5NVHpjNE1ueEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNy0wMS0yNSIsIldBVyIsbnVsbCwiTE8iLCI3ODIiXSxbIldBVyIsIjIwMjctMDEtMjYiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTAxLTI2IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         }
       ]
@@ -1680,13 +1568,13 @@
     {
       "month": "2027-02",
       "label": "February 2027",
-      "averagePrice": 385,
-      "lowestPrice": 385,
+      "averagePrice": 384,
+      "lowestPrice": 384,
       "dates": [
         {
           "date": "2027-02-01",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -1720,14 +1608,14 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2027-02-01 10:15"
+                  "time": "2027-02-01 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-02-01 19:00"
+                  "time": "2027-02-01 19:10"
                 },
-                "duration": 345,
+                "duration": 340,
                 "airplane": "Boeing 787-10",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
@@ -1771,12 +1659,12 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 225
+                "duration": 240
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 110
+                "duration": 100
               }
             ],
             "carbonEmissions": {
@@ -1784,13 +1672,13 @@
               "typical_for_this_route": 609000,
               "difference_percent": 4
             },
-            "bookingToken": "WyJDalJJY2xKbk0zTnRNRGszYjJkQlQwcExSMUZDUnkwdExTMHRMUzEyZEhkak1TMXVNVUZCUVVGQlIzSk1XRUZqU0dVeFdYTkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI3LTAyLTAxIiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMi0wMSIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDItMDEiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJZVVob1VTMTVXRGhNYlVsQlNrOVVWMUZDUnkwdExTMHRMUzB0TFMxMmRHRm1PVUZCUVVGQlIzSlZaVEZSUVVjelJtdEJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0xtckFoQUNHZ05GVlZJNEhIQzUwQUk9IixbWyJSSVgiLCIyMDI3LTAyLTAxIiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMi0wMSIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDItMDEiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2027-02-08",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -1888,13 +1776,13 @@
               "typical_for_this_route": 609000,
               "difference_percent": 3
             },
-            "bookingToken": "WyJDalJJVEd0VVFXTkJRbTVJV0ZWQlZYcElTVkZDUnkwdExTMHRMUzB0ZG5kaVoyd3lNRUZCUVVGQlIzSk1XRUZyUjFObFZGRkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI3LTAyLTA4IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMi0wOCIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDItMDgiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJUms5TFJtTm9WMUpOWTAxQlREWkRlV2RDUnkwdExTMHRMUzB0TFhsc1oza3hORUZCUVVGQlIzSlZaVEZWVGtabU5tbEJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNy0wMi0wOCIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDItMDgiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTAyLTA4IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         },
         {
           "date": "2027-02-15",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -1992,13 +1880,13 @@
               "typical_for_this_route": 609000,
               "difference_percent": 3
             },
-            "bookingToken": "WyJDalJJT0RWa1RpMWtWakkwZWxGQlRtOUxNVkZDUnkwdExTMHRMUzB0TFhaM1ltbGlPVUZCUVVGQlIzSk1XRUYzVEhZMVpHTkJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXFxd0NFQUlhQTBWVlVqZ2NjTHZRQWc9PSIsW1siUklYIiwiMjAyNy0wMi0xNSIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDItMTUiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTAyLTE1IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
+            "bookingToken": "WyJDalJJVDI5M1RFNTVkV1JvWDBsQlMxcE5ZV2RDUnkwdExTMHRMUzB0TFMxNWFXOW5NVUZCUVVGQlIzSlZaVEZqU2xrdGNGbEJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0xtckFoQUNHZ05GVlZJNEhIQzUwQUk9IixbWyJSSVgiLCIyMDI3LTAyLTE1IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMi0xNSIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDItMTUiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2027-02-22",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -2032,14 +1920,14 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2027-02-22 10:15"
+                  "time": "2027-02-22 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-02-22 19:00"
+                  "time": "2027-02-22 19:10"
                 },
-                "duration": 345,
+                "duration": 340,
                 "airplane": "Boeing 787-10",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
@@ -2083,12 +1971,12 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 225
+                "duration": 240
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 110
+                "duration": 100
               }
             ],
             "carbonEmissions": {
@@ -2096,7 +1984,7 @@
               "typical_for_this_route": 609000,
               "difference_percent": 3
             },
-            "bookingToken": "WyJDalJJYkVkeVJHdFNkRmhpTlUxQlQyUmxNM2RDUnkwdExTMHRMUzEyZEdoNE15MXVNa0ZCUVVGQlIzSk1XRUpSUjFkSWQzRkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI3LTAyLTIyIiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMi0yMiIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDItMjIiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJY1RWaFJGVkZhMFpTYVRSQlRuSlhPR2RDUnkwdExTMHRMWFozYUdreE5pMXVNa0ZCUVVGQlIzSlZaVEZ6UlZRek9HVkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0xtckFoQUNHZ05GVlZJNEhIQzUwQUk9IixbWyJSSVgiLCIyMDI3LTAyLTIyIiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMi0yMiIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDItMjIiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         }
       ]
@@ -2104,13 +1992,13 @@
     {
       "month": "2027-03",
       "label": "March 2027",
-      "averagePrice": 412,
-      "lowestPrice": 385,
+      "averagePrice": 411,
+      "lowestPrice": 384,
       "dates": [
         {
           "date": "2027-03-01",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -2144,14 +2032,14 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2027-03-01 10:15"
+                  "time": "2027-03-01 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-03-01 19:00"
+                  "time": "2027-03-01 19:10"
                 },
-                "duration": 345,
+                "duration": 340,
                 "airplane": "Boeing 787-10",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
@@ -2195,12 +2083,12 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 225
+                "duration": 240
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 110
+                "duration": 100
               }
             ],
             "carbonEmissions": {
@@ -2208,13 +2096,13 @@
               "typical_for_this_route": 609000,
               "difference_percent": 3
             },
-            "bookingToken": "WyJDalJJVG10NFQwSmtURmxuTTBWQlVHaFdiMUZDUnkwdExTMHRMUzF2ZVdaME5DMXVNa0ZCUVVGQlIzSk1XRUpaUld4R056QkJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXFxd0NFQUlhQTBWVlVqZ2NjTHZRQWc9PSIsW1siUklYIiwiMjAyNy0wMy0wMSIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDMtMDEiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTAzLTAxIiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
+            "bookingToken": "WyJDalJJUzI4eFUyRktOR3h4V2xGQlVIRlZiMUZDUnkwdExTMHRMVzlyZUhNeU9DMXVNa0ZCUVVGQlIzSlZaVEYzU0dkV1JuTkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0xtckFoQUNHZ05GVlZJNEhIQzUwQUk9IixbWyJSSVgiLCIyMDI3LTAzLTAxIiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMy0wMSIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDMtMDEiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2027-03-08",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -2312,13 +2200,13 @@
               "typical_for_this_route": 609000,
               "difference_percent": 3
             },
-            "bookingToken": "WyJDalJJVEcwNFlqSXhXbXhsZVhkQlRXWnliVkZDUnkwdExTMHRMUzB0TFMxMmRISmhORUZCUVVGQlIzSk1XRUpuU0hWbVIwVkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI3LTAzLTA4IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wMy0wOCIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDMtMDgiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJYmtacmJrWnZXakp4ZVRoQlRYbFNPRkZDUnkwdExTMHRMUzB0TFhaM1pIY3hOVUZCUVVGQlIzSlZaVEUwUjFwc1kwdEJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNy0wMy0wOCIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDMtMDgiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTAzLTA4IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         },
         {
           "date": "2027-03-15",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1035,
             "stops": 2,
             "flights": [
@@ -2352,14 +2240,14 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2027-03-15 10:15"
+                  "time": "2027-03-15 10:30"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-03-15 19:00"
+                  "time": "2027-03-15 19:10"
                 },
-                "duration": 345,
+                "duration": 340,
                 "airplane": "Boeing 787-10",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
@@ -2403,12 +2291,12 @@
               {
                 "name": "Varšavas Šopēna lidosta",
                 "id": "WAW",
-                "duration": 225
+                "duration": 240
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 110
+                "duration": 100
               }
             ],
             "carbonEmissions": {
@@ -2416,14 +2304,14 @@
               "typical_for_this_route": 609000,
               "difference_percent": 3
             },
-            "bookingToken": "WyJDalJJVjB0R0xWcGFNMmRYVkRoQlUxUmtiMmRDUnkwdExTMHRMUzB0TFhaM1ltVnlOMEZCUVVGQlIzSk1XRUp2UkV4cE5uRkJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXFxd0NFQUlhQTBWVlVqZ2NjTHZRQWc9PSIsW1siUklYIiwiMjAyNy0wMy0xNSIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDMtMTUiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTAzLTE1IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
+            "bookingToken": "WyJDalJJTmw5c1VHNU5abFpYV0c5QlVWTkxSbEZDUnkwdExTMHRMVzlyZEhjeU5pMXVNa0ZCUVVGQlIzSlZaVEpCU2pScFlrRkJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNy0wMy0xNSIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDMtMTUiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTAzLTE1IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         },
         {
           "date": "2027-03-22",
           "cheapestFlight": {
             "price": 503,
-            "totalDuration": 995,
+            "totalDuration": 880,
             "stops": 1,
             "flights": [
               {
@@ -2455,16 +2343,16 @@
               {
                 "airline": "Turkish Airlines",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
-                "flightNumber": "TK 1130",
+                "flightNumber": "TK 730",
                 "departureAirport": {
                   "name": "Istanbul Airport",
                   "id": "IST",
-                  "time": "2027-03-22 21:10"
+                  "time": "2027-03-22 19:15"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2027-03-23 07:45"
+                  "time": "2027-03-23 05:50"
                 },
                 "duration": 485,
                 "airplane": "Airbus A330",
@@ -2484,7 +2372,7 @@
               {
                 "name": "Istanbul Airport",
                 "id": "IST",
-                "duration": 305
+                "duration": 190
               }
             ],
             "carbonEmissions": {
@@ -2492,13 +2380,13 @@
               "typical_for_this_route": 609000,
               "difference_percent": -7
             },
-            "bookingToken": "WyJDalJJUVdZMWVHc3ROemxrWmtGQlNUSmhMVkZDUnkwdExTMHRMWFowZDJjeU5pMXVNa0ZCUVVGQlIzSk1XRUozUlVVeWN6aEJFZzFVU3pFM05UaDhWRXN4TVRNd0dnc0l1SWdERUFJYUEwVlZVamdjY05PM0F3PT0iLFtbIlJJWCIsIjIwMjctMDMtMjIiLCJJU1QiLG51bGwsIlRLIiwiMTc1OCJdLFsiSVNUIiwiMjAyNy0wMy0yMiIsIkNNQiIsbnVsbCwiVEsiLCIxMTMwIl1dXQ=="
+            "bookingToken": "WyJDalJJYVMxWGVFZG5XVUp4VUVsQlJWUkJkM2RDUnkwdExTMHRMVzk1Wm5NeU5DMXVNa0ZCUVVGQlIzSlZaVEpOUkdGWk0ybEJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3OXJnRCIsW1siUklYIiwiMjAyNy0wMy0yMiIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTAzLTIyIiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
           }
         },
         {
           "date": "2027-03-29",
           "cheapestFlight": {
-            "price": 403,
+            "price": 402,
             "totalDuration": 1385,
             "stops": 2,
             "flights": [
@@ -2597,7 +2485,7 @@
               "typical_for_this_route": 609000,
               "difference_percent": 13
             },
-            "bookingToken": "WyJDalJJTWt0dFMxRkhiVU00TUd0QlRITnNNbWRDUnkwdExTMHRMUzB0TFhsc2Izb3hORUZCUVVGQlIzSk1XRUl3U25Cek9WbEJFaEpDVkRJeE1YeEVSVEkxTlRKOFJWa3pPVElhQ3dpdnVnSVFBaG9EUlZWU09CeHdtT0FDIixbWyJSSVgiLCIyMDI3LTAzLTI5IiwiQkVSIixudWxsLCJCVCIsIjIxMSJdLFsiQkVSIiwiMjAyNy0wMy0yOSIsIkFVSCIsbnVsbCwiREUiLCIyNTUyIl0sWyJBVUgiLCIyMDI3LTAzLTMwIiwiQ01CIixudWxsLCJFWSIsIjM5MiJdXV0="
+            "bookingToken": "WyJDalJJWW5OQk9GcGFhSFk0TFRSQlQzZEJhbmRDUnkwdExTMHRMVzk1Y204eE5TMXVNVUZCUVVGQlIzSlZaVEpSVG5OWldWRkJFaEpDVkRJeE1YeEVSVEkxTlRKOFJWa3pPVElhQ3dpNXVRSVFBaG9EUlZWU09CeHdsdUFDIixbWyJSSVgiLCIyMDI3LTAzLTI5IiwiQkVSIixudWxsLCJCVCIsIjIxMSJdLFsiQkVSIiwiMjAyNy0wMy0yOSIsIkFVSCIsbnVsbCwiREUiLCIyNTUyIl0sWyJBVUgiLCIyMDI3LTAzLTMwIiwiQ01CIixudWxsLCJFWSIsIjM5MiJdXV0="
           }
         }
       ]
@@ -2605,13 +2493,13 @@
     {
       "month": "2027-04",
       "label": "April 2027",
-      "averagePrice": 385,
-      "lowestPrice": 383,
+      "averagePrice": 384,
+      "lowestPrice": 384,
       "dates": [
         {
           "date": "2027-04-05",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1120,
             "stops": 2,
             "flights": [
@@ -2710,13 +2598,13 @@
               "typical_for_this_route": 609000,
               "difference_percent": 2
             },
-            "bookingToken": "WyJDalJJT1RBMlNraDVWRTFSY1dkQlJXWjFOa0ZDUnkwdExTMHRMWGxzYW1neE1DMXVNa0ZCUVVGQlIzSk1XRU5SVEdwS1RGRkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI3LTA0LTA1IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wNC0wNSIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDQtMDUiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJZFhsWmJHZENhRWRJU0UxQlRYUllRa0ZDUnkwdExTMHRMUzB0TFhaM2Jta3hPVUZCUVVGQlIzSlZaVEpaVGxBM1RtdEJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNy0wNC0wNSIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDQtMDUiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTA0LTA1IiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         },
         {
           "date": "2027-04-12",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1455,
             "stops": 2,
             "flights": [
@@ -2815,13 +2703,13 @@
               "typical_for_this_route": 609000,
               "difference_percent": 2
             },
-            "bookingToken": "WyJDalJJWWpWTk9EVXhTMHc0UkRCQlNsZEhhRkZDUnkwdExTMHRMUzB0TFhCcWVYVXhOa0ZCUVVGQlIzSk1XRU5qUlZReWVWRkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVNaG9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI3LTA0LTEyIiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wNC0xMiIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDQtMTMiLCJDTUIiLG51bGwsIkVZIiwiMzkyIl1dXQ=="
+            "bookingToken": "WyJDalJJVGpoUGMyNTJjVmx6VVdkQlVqUTVVMEZDUnkwdExTMHRMUzB0TFc5NVlXSXhNMEZCUVVGQlIzSlZaVEpyUmxNNVlUWkJFaE5NVHpjNU5IeEZXVEUyTUh4RldUTTVNaU14R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNy0wNC0xMiIsIldBVyIsbnVsbCwiTE8iLCI3OTQiXSxbIldBVyIsIjIwMjctMDQtMTIiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTA0LTEzIiwiQ01CIixudWxsLCJFWSIsIjM5MiJdXV0="
           }
         },
         {
           "date": "2027-04-19",
           "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1800,
             "stops": 2,
             "flights": [
@@ -2920,55 +2808,55 @@
               "typical_for_this_route": 609000,
               "difference_percent": 2
             },
-            "bookingToken": "WyJDalJJYVc1cWF6a3lNMVJLTm1kQlUyTjBObWRDUnkwdExTMHRMUzB0TFc5clltMXROa0ZCUVVGQlIzSk1XRU56UWtOaVQwbEJFaEZNVHpjNE1ueEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI3LTA0LTE5IiwiV0FXIixudWxsLCJMTyIsIjc4MiJdLFsiV0FXIiwiMjAyNy0wNC0yMCIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDQtMjAiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJWkVGNmJHVTNUMEZPUlRoQlREWkhja0ZDUnkwdExTMHRMUzB0TFhaMGFYa3hNRUZCUVVGQlIzSlZaVEp6U0Zkc01pMUJFaE5NVHpjNE1ueEZXVEUyTUh4RldUTTVOQ014R2dzSXVhc0NFQUlhQTBWVlVqZ2NjTG5RQWc9PSIsW1siUklYIiwiMjAyNy0wNC0xOSIsIldBVyIsbnVsbCwiTE8iLCI3ODIiXSxbIldBVyIsIjIwMjctMDQtMjAiLCJBVUgiLG51bGwsIkVZIiwiMTYwIl0sWyJBVUgiLCIyMDI3LTA0LTIwIiwiQ01CIixudWxsLCJFWSIsIjM5NCJdXV0="
           }
         },
         {
           "date": "2027-04-26",
           "cheapestFlight": {
-            "price": 383,
-            "totalDuration": 2055,
+            "price": 384,
+            "totalDuration": 1120,
             "stops": 2,
             "flights": [
               {
-                "airline": "Air Baltic",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 481",
+                "airline": "LOT",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/LO.png",
+                "flightNumber": "LO 794",
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-04-26 14:15"
+                  "time": "2027-04-26 05:50"
                 },
                 "arrivalAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-04-26 15:05"
+                  "name": "Varšavas Šopēna lidosta",
+                  "id": "WAW",
+                  "time": "2027-04-26 06:10"
                 },
-                "duration": 110,
-                "airplane": "Airbus A220-300 Passenger",
+                "duration": 80,
+                "airplane": "Embraer 195 E2",
                 "travelClass": "Economy",
-                "legroom": "76 cm",
+                "legroom": "74 cm",
                 "extensions": [
-                  "Average legroom (76 cm)",
-                  "In-seat USB outlet",
-                  "Carbon emissions estimate: 107 kg"
+                  "Below average legroom (74 cm)",
+                  "In-seat power outlet",
+                  "Carbon emissions estimate: 71 kg"
                 ]
               },
               {
                 "airline": "Etihad",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 156",
+                "flightNumber": "EY 160",
                 "departureAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-04-27 11:20"
+                  "name": "Varšavas Šopēna lidosta",
+                  "id": "WAW",
+                  "time": "2027-04-26 11:50"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-04-27 19:05"
+                  "time": "2027-04-26 19:25"
                 },
-                "duration": 345,
+                "duration": 335,
                 "airplane": "Boeing 787-10",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
@@ -2977,7 +2865,7 @@
                   "Wi-Fi for a fee",
                   "In-seat power & USB outlets",
                   "On-demand video",
-                  "Carbon emissions estimate: 270 kg"
+                  "Carbon emissions estimate: 260 kg"
                 ]
               },
               {
@@ -2987,12 +2875,12 @@
                 "departureAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-04-27 20:50"
+                  "time": "2027-04-26 20:50"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2027-04-28 03:00"
+                  "time": "2027-04-27 03:00"
                 },
                 "duration": 280,
                 "airplane": "Airbus A321",
@@ -3010,22 +2898,22 @@
             ],
             "layovers": [
               {
-                "name": "Prāgas Vāclava Havela lidosta",
-                "id": "PRG",
-                "duration": 1215
+                "name": "Varšavas Šopēna lidosta",
+                "id": "WAW",
+                "duration": 340
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 105
+                "duration": 85
               }
             ],
             "carbonEmissions": {
-              "this_flight": 668000,
+              "this_flight": 621000,
               "typical_for_this_route": 609000,
-              "difference_percent": 10
+              "difference_percent": 2
             },
-            "bookingToken": "WyJDalJJYVZrNFpUbG1ZMWt5VkdkQlQzaEROSGRDUnkwdExTMHRMWFowYTNNeU5pMXVNVUZCUVVGQlIzSk1XRU4zU2xSMFpsRkJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ1BlcUFoQUNHZ05GVlZJNEhIRHl6Z0k9IixbWyJSSVgiLCIyMDI3LTA0LTI2IiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNC0yNyIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDQtMjciLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJTjBkcFpFaDNNekZtTnpoQlVtMVNSMEZDUnkwdExTMHRMUzB0TFc5cmRHSXlNVUZCUVVGQlIzSlZaVEl3U2t0M0xXOUJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0xtckFoQUNHZ05GVlZJNEhIQzUwQUk9IixbWyJSSVgiLCIyMDI3LTA0LTI2IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wNC0yNiIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDQtMjYiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         }
       ]
@@ -3033,13 +2921,13 @@
     {
       "month": "2027-05",
       "label": "May 2027",
-      "averagePrice": 407,
-      "lowestPrice": 383,
+      "averagePrice": 405,
+      "lowestPrice": 378,
       "dates": [
         {
           "date": "2027-05-03",
           "cheapestFlight": {
-            "price": 383,
+            "price": 382,
             "totalDuration": 2055,
             "stops": 2,
             "flights": [
@@ -3138,90 +3026,119 @@
               "typical_for_this_route": 609000,
               "difference_percent": 10
             },
-            "bookingToken": "WyJDalJJWmxKdFFqSjNRMnhJVWsxQlUycFNSRkZDUnkwdExTMHRMUzB0TFMxdmVXNW1PRUZCUVVGQlIzSk1XRVJGUTNCbFRWRkJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ1BlcUFoQUNHZ05GVlZJNEhIRHl6Z0k9IixbWyJSSVgiLCIyMDI3LTA1LTAzIiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNS0wNCIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDUtMDQiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJVld4RlpHY3lXWGhwU1RCQlVHSk9ObmRDUnkwdExTMHRMUzB0Y0dwaWMyOHhNMEZCUVVGQlIzSlZaVE52VEZkbFRUWkJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ0lTcUFoQUNHZ05GVlZJNEhIRHR6Z0k9IixbWyJSSVgiLCIyMDI3LTA1LTAzIiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNS0wNCIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDUtMDQiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2027-05-10",
           "cheapestFlight": {
-            "price": 503,
-            "totalDuration": 940,
-            "stops": 1,
+            "price": 382,
+            "totalDuration": 2055,
+            "stops": 2,
             "flights": [
               {
-                "airline": "Turkish Airlines",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
-                "flightNumber": "TK 1758",
+                "airline": "Air Baltic",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+                "flightNumber": "BT 481",
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-05-10 11:00"
+                  "time": "2027-05-10 14:15"
                 },
                 "arrivalAirport": {
-                  "name": "Istanbul Airport",
-                  "id": "IST",
-                  "time": "2027-05-10 14:20"
+                  "name": "Prāgas Vāclava Havela lidosta",
+                  "id": "PRG",
+                  "time": "2027-05-10 15:05"
                 },
-                "duration": 200,
-                "airplane": "Boeing 737MAX 8 Passenger",
+                "duration": 110,
+                "airplane": "Airbus A220-300 Passenger",
+                "travelClass": "Economy",
+                "legroom": "76 cm",
+                "extensions": [
+                  "Average legroom (76 cm)",
+                  "In-seat USB outlet",
+                  "Carbon emissions estimate: 107 kg"
+                ]
+              },
+              {
+                "airline": "Etihad",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+                "flightNumber": "EY 156",
+                "departureAirport": {
+                  "name": "Prāgas Vāclava Havela lidosta",
+                  "id": "PRG",
+                  "time": "2027-05-11 11:20"
+                },
+                "arrivalAirport": {
+                  "name": "Zayed International Airport",
+                  "id": "AUH",
+                  "time": "2027-05-11 19:05"
+                },
+                "duration": 345,
+                "airplane": "Boeing 787-10",
+                "travelClass": "Economy",
+                "legroom": "79 cm",
+                "extensions": [
+                  "Average legroom (79 cm)",
+                  "Wi-Fi for a fee",
+                  "In-seat power & USB outlets",
+                  "On-demand video",
+                  "Carbon emissions estimate: 270 kg"
+                ]
+              },
+              {
+                "airline": "Etihad",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+                "flightNumber": "EY 394",
+                "departureAirport": {
+                  "name": "Zayed International Airport",
+                  "id": "AUH",
+                  "time": "2027-05-11 20:50"
+                },
+                "arrivalAirport": {
+                  "name": "Bandaranaikes starptautiskā lidosta",
+                  "id": "CMB",
+                  "time": "2027-05-12 03:00"
+                },
+                "duration": 280,
+                "airplane": "Airbus A321",
                 "travelClass": "Economy",
                 "legroom": "76 cm",
                 "extensions": [
                   "Average legroom (76 cm)",
                   "Wi-Fi for a fee",
                   "In-seat USB outlet",
-                  "On-demand video",
-                  "Carbon emissions estimate: 159 kg"
-                ]
-              },
-              {
-                "airline": "Turkish Airlines",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
-                "flightNumber": "TK 730",
-                "departureAirport": {
-                  "name": "Istanbul Airport",
-                  "id": "IST",
-                  "time": "2027-05-10 18:45"
-                },
-                "arrivalAirport": {
-                  "name": "Bandaranaikes starptautiskā lidosta",
-                  "id": "CMB",
-                  "time": "2027-05-11 05:10"
-                },
-                "duration": 475,
-                "airplane": "Boeing 787",
-                "travelClass": "Economy",
-                "legroom": "79 cm",
-                "extensions": [
-                  "Average legroom (79 cm)",
-                  "Wi-Fi for a fee",
-                  "In-seat USB outlet",
-                  "On-demand video",
-                  "Carbon emissions estimate: 360 kg"
+                  "Stream media to your device",
+                  "Carbon emissions estimate: 289 kg"
                 ],
                 "overnight": true
               }
             ],
             "layovers": [
               {
-                "name": "Istanbul Airport",
-                "id": "IST",
-                "duration": 265
+                "name": "Prāgas Vāclava Havela lidosta",
+                "id": "PRG",
+                "duration": 1215
+              },
+              {
+                "name": "Zayed International Airport",
+                "id": "AUH",
+                "duration": 105
               }
             ],
             "carbonEmissions": {
-              "this_flight": 520000,
+              "this_flight": 668000,
               "typical_for_this_route": 609000,
-              "difference_percent": -15
+              "difference_percent": 10
             },
-            "bookingToken": "WyJDalJJVEU5SFpqWjRSMDl4VlRoQlNrWlVURkZDUnkwdExTMHRMUzB0TFhaM1pXa3lORUZCUVVGQlIzSk1XRVJSUTBwS05VdEJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3MDdjRCIsW1siUklYIiwiMjAyNy0wNS0xMCIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTA1LTEwIiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
+            "bookingToken": "WyJDalJJT0dOMVRVdGlVbDlPT1dOQlRHeEtORUZDUnkwdExTMHRMUzB0Y0daaVptVXhOVUZCUVVGQlIzSlZaVE0wUTFwUlF6SkJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ0lTcUFoQUNHZ05GVlZJNEhIRHR6Z0k9IixbWyJSSVgiLCIyMDI3LTA1LTEwIiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNS0xMSIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDUtMTEiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2027-05-17",
           "cheapestFlight": {
-            "price": 383,
-            "totalDuration": 2055,
+            "price": 382,
+            "totalDuration": 2390,
             "stops": 2,
             "flights": [
               {
@@ -3277,16 +3194,16 @@
               {
                 "airline": "Etihad",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 394",
+                "flightNumber": "EY 392",
                 "departureAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-05-18 20:50"
+                  "time": "2027-05-19 02:25"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2027-05-19 03:00"
+                  "time": "2027-05-19 08:35"
                 },
                 "duration": 280,
                 "airplane": "Airbus A321",
@@ -3311,7 +3228,7 @@
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 105
+                "duration": 440
               }
             ],
             "carbonEmissions": {
@@ -3319,184 +3236,155 @@
               "typical_for_this_route": 609000,
               "difference_percent": 10
             },
-            "bookingToken": "WyJDalJJYjFOaVNsOVBZbVJxYW5kQlRXTk9hRkZDUnkwdExTMHRMUzB0TFhaMGRuQXhNMEZCUVVGQlIzSk1XRVJ2UjJaaGNUUkJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ1BlcUFoQUNHZ05GVlZJNEhIRHl6Z0k9IixbWyJSSVgiLCIyMDI3LTA1LTE3IiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNS0xOCIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDUtMTgiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJV21aU2NGcHlNSE5ET0hkQlMwZEpZbWRDUnkwdExTMHRMUzB0Y0daaWFYWTBNVUZCUVVGQlIzSlZaVFJaVFc5SmJFMUJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVNaG9MQ0lTcUFoQUNHZ05GVlZJNEhIRHR6Z0k9IixbWyJSSVgiLCIyMDI3LTA1LTE3IiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNS0xOCIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDUtMTkiLCJDTUIiLG51bGwsIkVZIiwiMzkyIl1dXQ=="
           }
         },
         {
           "date": "2027-05-24",
           "cheapestFlight": {
-            "price": 383,
-            "totalDuration": 2055,
-            "stops": 2,
+            "price": 503,
+            "totalDuration": 945,
+            "stops": 1,
             "flights": [
               {
-                "airline": "Air Baltic",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 481",
+                "airline": "Turkish Airlines",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+                "flightNumber": "TK 1758",
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-05-24 14:15"
+                  "time": "2027-05-24 10:55"
                 },
                 "arrivalAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-05-24 15:05"
+                  "name": "Istanbul Airport",
+                  "id": "IST",
+                  "time": "2027-05-24 14:15"
                 },
-                "duration": 110,
-                "airplane": "Airbus A220-300 Passenger",
+                "duration": 200,
+                "airplane": "Boeing 737MAX 8 Passenger",
                 "travelClass": "Economy",
                 "legroom": "76 cm",
                 "extensions": [
                   "Average legroom (76 cm)",
+                  "Wi-Fi for a fee",
                   "In-seat USB outlet",
-                  "Carbon emissions estimate: 107 kg"
+                  "On-demand video",
+                  "Carbon emissions estimate: 159 kg"
                 ]
               },
               {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 156",
+                "airline": "Turkish Airlines",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+                "flightNumber": "TK 730",
                 "departureAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-05-25 11:20"
+                  "name": "Istanbul Airport",
+                  "id": "IST",
+                  "time": "2027-05-24 18:45"
                 },
                 "arrivalAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2027-05-25 19:05"
+                  "name": "Bandaranaikes starptautiskā lidosta",
+                  "id": "CMB",
+                  "time": "2027-05-25 05:10"
                 },
-                "duration": 345,
-                "airplane": "Boeing 787-10",
+                "duration": 475,
+                "airplane": "Boeing 787",
                 "travelClass": "Economy",
                 "legroom": "79 cm",
                 "extensions": [
                   "Average legroom (79 cm)",
                   "Wi-Fi for a fee",
-                  "In-seat power & USB outlets",
-                  "On-demand video",
-                  "Carbon emissions estimate: 270 kg"
-                ]
-              },
-              {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 394",
-                "departureAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2027-05-25 20:50"
-                },
-                "arrivalAirport": {
-                  "name": "Bandaranaikes starptautiskā lidosta",
-                  "id": "CMB",
-                  "time": "2027-05-26 03:00"
-                },
-                "duration": 280,
-                "airplane": "Airbus A321",
-                "travelClass": "Economy",
-                "legroom": "76 cm",
-                "extensions": [
-                  "Average legroom (76 cm)",
-                  "Wi-Fi for a fee",
                   "In-seat USB outlet",
-                  "Stream media to your device",
-                  "Carbon emissions estimate: 289 kg"
+                  "On-demand video",
+                  "Carbon emissions estimate: 360 kg"
                 ],
                 "overnight": true
               }
             ],
             "layovers": [
               {
-                "name": "Prāgas Vāclava Havela lidosta",
-                "id": "PRG",
-                "duration": 1215
-              },
-              {
-                "name": "Zayed International Airport",
-                "id": "AUH",
-                "duration": 105
+                "name": "Istanbul Airport",
+                "id": "IST",
+                "duration": 270
               }
             ],
             "carbonEmissions": {
-              "this_flight": 668000,
+              "this_flight": 521000,
               "typical_for_this_route": 609000,
-              "difference_percent": 10
+              "difference_percent": -14
             },
-            "bookingToken": "WyJDalJJVEcwNFlqSXhXbXhsZVhkQlRXWjZRbWRDUnkwdExTMHRMUzB0TFMxMmRISmhORUZCUVVGQlIzSk1XRVZOUkVWSlRESkJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ1BlcUFoQUNHZ05GVlZJNEhIRHl6Z0k9IixbWyJSSVgiLCIyMDI3LTA1LTI0IiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNS0yNSIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDUtMjUiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJVm5OSU9WSTFORkV3VGxWQlRWZFhkVkZDUnkwdExTMHRMUzB0TFhsc1ptMHhPVUZCUVVGQlIzSlZaVFZSUWsxT04yZEJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3OXJnRCIsW1siUklYIiwiMjAyNy0wNS0yNCIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTA1LTI0IiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
           }
         },
         {
           "date": "2027-05-31",
           "cheapestFlight": {
-            "price": 383,
-            "totalDuration": 2055,
+            "price": 378,
+            "totalDuration": 1380,
             "stops": 2,
             "flights": [
               {
                 "airline": "Air Baltic",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 481",
+                "flightNumber": "BT 131",
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-05-31 14:15"
+                  "time": "2027-05-31 07:05"
                 },
                 "arrivalAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-05-31 15:05"
+                  "name": "Kopenhāgenas lidosta",
+                  "id": "CPH",
+                  "time": "2027-05-31 07:35"
                 },
-                "duration": 110,
+                "duration": 90,
                 "airplane": "Airbus A220-300 Passenger",
                 "travelClass": "Economy",
                 "legroom": "76 cm",
                 "extensions": [
                   "Average legroom (76 cm)",
                   "In-seat USB outlet",
-                  "Carbon emissions estimate: 107 kg"
+                  "Carbon emissions estimate: 82 kg"
                 ]
               },
               {
                 "airline": "Etihad",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 156",
+                "flightNumber": "EY 178",
                 "departureAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-06-01 11:20"
+                  "name": "Kopenhāgenas lidosta",
+                  "id": "CPH",
+                  "time": "2027-05-31 10:55"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-06-01 19:05"
+                  "time": "2027-05-31 19:25"
                 },
-                "duration": 345,
-                "airplane": "Boeing 787-10",
+                "duration": 390,
+                "airplane": "Airbus A321neo",
                 "travelClass": "Economy",
-                "legroom": "79 cm",
+                "legroom": "76 cm",
                 "extensions": [
-                  "Average legroom (79 cm)",
+                  "Average legroom (76 cm)",
                   "Wi-Fi for a fee",
-                  "In-seat power & USB outlets",
+                  "In-seat USB outlet",
                   "On-demand video",
-                  "Carbon emissions estimate: 270 kg"
+                  "Carbon emissions estimate: 419 kg"
                 ]
               },
               {
                 "airline": "Etihad",
                 "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 394",
+                "flightNumber": "EY 392",
                 "departureAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-06-01 20:50"
+                  "time": "2027-06-01 02:25"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2027-06-02 03:00"
+                  "time": "2027-06-01 08:35"
                 },
                 "duration": 280,
                 "airplane": "Airbus A321",
@@ -3514,22 +3402,22 @@
             ],
             "layovers": [
               {
-                "name": "Prāgas Vāclava Havela lidosta",
-                "id": "PRG",
-                "duration": 1215
+                "name": "Kopenhāgenas lidosta",
+                "id": "CPH",
+                "duration": 200
               },
               {
                 "name": "Zayed International Airport",
                 "id": "AUH",
-                "duration": 105
+                "duration": 420
               }
             ],
             "carbonEmissions": {
-              "this_flight": 668000,
+              "this_flight": 792000,
               "typical_for_this_route": 609000,
-              "difference_percent": 10
+              "difference_percent": 30
             },
-            "bookingToken": "WyJDalJJZW5rd1ZqTnVlbk55ZEZWQlNIVlVTVUZDUnkwdExTMHRMUzB0ZVdsaVluVXlNRUZCUVVGQlIzSk1XRVV3UzJSaVgyOUJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ1BlcUFoQUNHZ05GVlZJNEhIRHl6Z0k9IixbWyJSSVgiLCIyMDI3LTA1LTMxIiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNi0wMSIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDYtMDEiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJTFhGWVdIQlRZekZ1Y1ZsQlRVZFlSMmRDUnkwdExTMHRMUzB0TFhCbWIzQXhNa0ZCUVVGQlIzSlZaVFZqVEZJMFdVOUJFaEZDVkRFek1YeEZXVEUzT0h4RldUTTVNaG9MQ1BlbUFoQUNHZ05GVlZJNEhIQ3Z5d0k9IixbWyJSSVgiLCIyMDI3LTA1LTMxIiwiQ1BIIixudWxsLCJCVCIsIjEzMSJdLFsiQ1BIIiwiMjAyNy0wNS0zMSIsIkFVSCIsbnVsbCwiRVkiLCIxNzgiXSxbIkFVSCIsIjIwMjctMDYtMDEiLCJDTUIiLG51bGwsIkVZIiwiMzkyIl1dXQ=="
           }
         }
       ]
@@ -3537,118 +3425,13 @@
     {
       "month": "2027-06",
       "label": "June 2027",
-      "averagePrice": 444,
-      "lowestPrice": 383,
+      "averagePrice": 443,
+      "lowestPrice": 382,
       "dates": [
         {
           "date": "2027-06-07",
           "cheapestFlight": {
-            "price": 383,
-            "totalDuration": 2055,
-            "stops": 2,
-            "flights": [
-              {
-                "airline": "Air Baltic",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
-                "flightNumber": "BT 481",
-                "departureAirport": {
-                  "name": "Rīgas lidosta",
-                  "id": "RIX",
-                  "time": "2027-06-07 14:15"
-                },
-                "arrivalAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-06-07 15:05"
-                },
-                "duration": 110,
-                "airplane": "Airbus A220-300 Passenger",
-                "travelClass": "Economy",
-                "legroom": "76 cm",
-                "extensions": [
-                  "Average legroom (76 cm)",
-                  "In-seat USB outlet",
-                  "Carbon emissions estimate: 107 kg"
-                ]
-              },
-              {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 156",
-                "departureAirport": {
-                  "name": "Prāgas Vāclava Havela lidosta",
-                  "id": "PRG",
-                  "time": "2027-06-08 11:20"
-                },
-                "arrivalAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2027-06-08 19:05"
-                },
-                "duration": 345,
-                "airplane": "Boeing 787-10",
-                "travelClass": "Economy",
-                "legroom": "79 cm",
-                "extensions": [
-                  "Average legroom (79 cm)",
-                  "Wi-Fi for a fee",
-                  "In-seat power & USB outlets",
-                  "On-demand video",
-                  "Carbon emissions estimate: 270 kg"
-                ]
-              },
-              {
-                "airline": "Etihad",
-                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
-                "flightNumber": "EY 394",
-                "departureAirport": {
-                  "name": "Zayed International Airport",
-                  "id": "AUH",
-                  "time": "2027-06-08 20:50"
-                },
-                "arrivalAirport": {
-                  "name": "Bandaranaikes starptautiskā lidosta",
-                  "id": "CMB",
-                  "time": "2027-06-09 03:00"
-                },
-                "duration": 280,
-                "airplane": "Airbus A321",
-                "travelClass": "Economy",
-                "legroom": "76 cm",
-                "extensions": [
-                  "Average legroom (76 cm)",
-                  "Wi-Fi for a fee",
-                  "In-seat USB outlet",
-                  "Stream media to your device",
-                  "Carbon emissions estimate: 289 kg"
-                ],
-                "overnight": true
-              }
-            ],
-            "layovers": [
-              {
-                "name": "Prāgas Vāclava Havela lidosta",
-                "id": "PRG",
-                "duration": 1215
-              },
-              {
-                "name": "Zayed International Airport",
-                "id": "AUH",
-                "duration": 105
-              }
-            ],
-            "carbonEmissions": {
-              "this_flight": 668000,
-              "typical_for_this_route": 609000,
-              "difference_percent": 10
-            },
-            "bookingToken": "WyJDalJJTkRScVowVkdaR28yZFdkQlNFZE5Xa0ZDUnkwdExTMHRMUzB0TFhaMGIzWXlNa0ZCUVVGQlIzSk1XRVpaUzJ3MWFubEJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ1BlcUFoQUNHZ05GVlZJNEhIRHl6Z0k9IixbWyJSSVgiLCIyMDI3LTA2LTA3IiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNi0wOCIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDYtMDgiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
-          }
-        },
-        {
-          "date": "2027-06-14",
-          "cheapestFlight": {
-            "price": 385,
+            "price": 384,
             "totalDuration": 1120,
             "stops": 2,
             "flights": [
@@ -3659,12 +3442,12 @@
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-06-14 05:50"
+                  "time": "2027-06-07 05:50"
                 },
                 "arrivalAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2027-06-14 06:10"
+                  "time": "2027-06-07 06:10"
                 },
                 "duration": 80,
                 "airplane": "Embraer 195 E2",
@@ -3683,12 +3466,12 @@
                 "departureAirport": {
                   "name": "Varšavas Šopēna lidosta",
                   "id": "WAW",
-                  "time": "2027-06-14 11:50"
+                  "time": "2027-06-07 11:50"
                 },
                 "arrivalAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-06-14 19:25"
+                  "time": "2027-06-07 19:25"
                 },
                 "duration": 335,
                 "airplane": "Boeing 787-10",
@@ -3709,12 +3492,12 @@
                 "departureAirport": {
                   "name": "Zayed International Airport",
                   "id": "AUH",
-                  "time": "2027-06-14 20:50"
+                  "time": "2027-06-07 20:50"
                 },
                 "arrivalAirport": {
                   "name": "Bandaranaikes starptautiskā lidosta",
                   "id": "CMB",
-                  "time": "2027-06-15 03:00"
+                  "time": "2027-06-08 03:00"
                 },
                 "duration": 280,
                 "airplane": "Airbus A321",
@@ -3747,14 +3530,119 @@
               "typical_for_this_route": 609000,
               "difference_percent": 2
             },
-            "bookingToken": "WyJDalJJVG10NFQwSmtURmxuTTBWQlVHaG5VVUZDUnkwdExTMHRMUzF2ZVdaME5DMXVNa0ZCUVVGQlIzSk1XRWRSUXpWSlFtTkJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0txc0FoQUNHZ05GVlZJNEhIQzcwQUk9IixbWyJSSVgiLCIyMDI3LTA2LTE0IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wNi0xNCIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDYtMTQiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+            "bookingToken": "WyJDalJJVm5OSU9WSTFORkV3VGxWQlRWZFpabEZDUnkwdExTMHRMUzB0TFhsc1ptMHhPVUZCUVVGQlIzSlZaVFpCUnpkTE5tdEJFaEZNVHpjNU5IeEZXVEUyTUh4RldUTTVOQm9MQ0xtckFoQUNHZ05GVlZJNEhIQzUwQUk9IixbWyJSSVgiLCIyMDI3LTA2LTA3IiwiV0FXIixudWxsLCJMTyIsIjc5NCJdLFsiV0FXIiwiMjAyNy0wNi0wNyIsIkFVSCIsbnVsbCwiRVkiLCIxNjAiXSxbIkFVSCIsIjIwMjctMDYtMDciLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
+          }
+        },
+        {
+          "date": "2027-06-14",
+          "cheapestFlight": {
+            "price": 382,
+            "totalDuration": 2055,
+            "stops": 2,
+            "flights": [
+              {
+                "airline": "Air Baltic",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/BT.png",
+                "flightNumber": "BT 481",
+                "departureAirport": {
+                  "name": "Rīgas lidosta",
+                  "id": "RIX",
+                  "time": "2027-06-14 14:15"
+                },
+                "arrivalAirport": {
+                  "name": "Prāgas Vāclava Havela lidosta",
+                  "id": "PRG",
+                  "time": "2027-06-14 15:05"
+                },
+                "duration": 110,
+                "airplane": "Airbus A220-300 Passenger",
+                "travelClass": "Economy",
+                "legroom": "76 cm",
+                "extensions": [
+                  "Average legroom (76 cm)",
+                  "In-seat USB outlet",
+                  "Carbon emissions estimate: 107 kg"
+                ]
+              },
+              {
+                "airline": "Etihad",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+                "flightNumber": "EY 156",
+                "departureAirport": {
+                  "name": "Prāgas Vāclava Havela lidosta",
+                  "id": "PRG",
+                  "time": "2027-06-15 11:20"
+                },
+                "arrivalAirport": {
+                  "name": "Zayed International Airport",
+                  "id": "AUH",
+                  "time": "2027-06-15 19:05"
+                },
+                "duration": 345,
+                "airplane": "Boeing 787-10",
+                "travelClass": "Economy",
+                "legroom": "79 cm",
+                "extensions": [
+                  "Average legroom (79 cm)",
+                  "Wi-Fi for a fee",
+                  "In-seat power & USB outlets",
+                  "On-demand video",
+                  "Carbon emissions estimate: 270 kg"
+                ]
+              },
+              {
+                "airline": "Etihad",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+                "flightNumber": "EY 394",
+                "departureAirport": {
+                  "name": "Zayed International Airport",
+                  "id": "AUH",
+                  "time": "2027-06-15 20:50"
+                },
+                "arrivalAirport": {
+                  "name": "Bandaranaikes starptautiskā lidosta",
+                  "id": "CMB",
+                  "time": "2027-06-16 03:00"
+                },
+                "duration": 280,
+                "airplane": "Airbus A321",
+                "travelClass": "Economy",
+                "legroom": "76 cm",
+                "extensions": [
+                  "Average legroom (76 cm)",
+                  "Wi-Fi for a fee",
+                  "In-seat USB outlet",
+                  "Stream media to your device",
+                  "Carbon emissions estimate: 289 kg"
+                ],
+                "overnight": true
+              }
+            ],
+            "layovers": [
+              {
+                "name": "Prāgas Vāclava Havela lidosta",
+                "id": "PRG",
+                "duration": 1215
+              },
+              {
+                "name": "Zayed International Airport",
+                "id": "AUH",
+                "duration": 105
+              }
+            ],
+            "carbonEmissions": {
+              "this_flight": 668000,
+              "typical_for_this_route": 609000,
+              "difference_percent": 10
+            },
+            "bookingToken": "WyJDalJJY0RkdmIyOW9WeTE1VmtWQlNscGZiMmRDUnkwdExTMHRMUzB0TFMxNWFXVXlORUZCUVVGQlIzSlZaVFpyU1hoQmRWZEJFaEZDVkRRNE1YeEZXVEUxTm54RldUTTVOQm9MQ0lTcUFoQUNHZ05GVlZJNEhIRHR6Z0k9IixbWyJSSVgiLCIyMDI3LTA2LTE0IiwiUFJHIixudWxsLCJCVCIsIjQ4MSJdLFsiUFJHIiwiMjAyNy0wNi0xNSIsIkFVSCIsbnVsbCwiRVkiLCIxNTYiXSxbIkFVSCIsIjIwMjctMDYtMTUiLCJDTUIiLG51bGwsIkVZIiwiMzk0Il1dXQ=="
           }
         },
         {
           "date": "2027-06-21",
           "cheapestFlight": {
             "price": 503,
-            "totalDuration": 940,
+            "totalDuration": 945,
             "stops": 1,
             "flights": [
               {
@@ -3764,12 +3652,12 @@
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-06-21 11:00"
+                  "time": "2027-06-21 10:55"
                 },
                 "arrivalAirport": {
                   "name": "Istanbul Airport",
                   "id": "IST",
-                  "time": "2027-06-21 14:20"
+                  "time": "2027-06-21 14:15"
                 },
                 "duration": 200,
                 "airplane": "Boeing 737MAX 8 Passenger",
@@ -3815,7 +3703,7 @@
               {
                 "name": "Istanbul Airport",
                 "id": "IST",
-                "duration": 265
+                "duration": 270
               }
             ],
             "carbonEmissions": {
@@ -3823,14 +3711,14 @@
               "typical_for_this_route": 609000,
               "difference_percent": -16
             },
-            "bookingToken": "WyJDalJJT1RBMlNraDVWRTFSY1dkQlJXWXljR2RDUnkwdExTMHRMWGxzYW1neE1DMXVNa0ZCUVVGQlIzSk1XRWN3UlZOdFQwRkJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3MDdjRCIsW1siUklYIiwiMjAyNy0wNi0yMSIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTA2LTIxIiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
+            "bookingToken": "WyJDalJJYkZobUxVcEhWVnBuTjNOQlMwdHhNR2RDUnkwdExTMHRMUzB0YjJ0aWFtWXlNMEZCUVVGQlIzSlZaVGRGVDFoSFZUWkJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3OXJnRCIsW1siUklYIiwiMjAyNy0wNi0yMSIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTA2LTIxIiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
           }
         },
         {
           "date": "2027-06-28",
           "cheapestFlight": {
             "price": 503,
-            "totalDuration": 940,
+            "totalDuration": 945,
             "stops": 1,
             "flights": [
               {
@@ -3840,12 +3728,12 @@
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-06-28 11:00"
+                  "time": "2027-06-28 10:55"
                 },
                 "arrivalAirport": {
                   "name": "Istanbul Airport",
                   "id": "IST",
-                  "time": "2027-06-28 14:20"
+                  "time": "2027-06-28 14:15"
                 },
                 "duration": 200,
                 "airplane": "Boeing 737MAX 8 Passenger",
@@ -3891,7 +3779,7 @@
               {
                 "name": "Istanbul Airport",
                 "id": "IST",
-                "duration": 265
+                "duration": 270
               }
             ],
             "carbonEmissions": {
@@ -3899,7 +3787,7 @@
               "typical_for_this_route": 609000,
               "difference_percent": -16
             },
-            "bookingToken": "WyJDalJJYjBSc1drVmZSVUZqWkZGQlVsaEpZVUZDUnkwdExTMHRMUzB0TFc5NVoyOHlPRUZCUVVGQlIzSk1XRWhCU25jMmIxRkJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3MDdjRCIsW1siUklYIiwiMjAyNy0wNi0yOCIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTA2LTI4IiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
+            "bookingToken": "WyJDalJJVG5nMVMxcEJSbVpsWlUxQlREWk5ia0ZDUnkwdExTMHRMUzB0TFhCcWIyRXhNa0ZCUVVGQlIzSlZaVGRuVG5OdGRVOUJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3OXJnRCIsW1siUklYIiwiMjAyNy0wNi0yOCIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTA2LTI4IiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
           }
         }
       ]
@@ -3914,7 +3802,7 @@
           "date": "2027-07-05",
           "cheapestFlight": {
             "price": 503,
-            "totalDuration": 940,
+            "totalDuration": 945,
             "stops": 1,
             "flights": [
               {
@@ -3924,12 +3812,12 @@
                 "departureAirport": {
                   "name": "Rīgas lidosta",
                   "id": "RIX",
-                  "time": "2027-07-05 11:00"
+                  "time": "2027-07-05 10:55"
                 },
                 "arrivalAirport": {
                   "name": "Istanbul Airport",
                   "id": "IST",
-                  "time": "2027-07-05 14:20"
+                  "time": "2027-07-05 14:15"
                 },
                 "duration": 200,
                 "airplane": "Boeing 737MAX 8 Passenger",
@@ -3975,7 +3863,7 @@
               {
                 "name": "Istanbul Airport",
                 "id": "IST",
-                "duration": 265
+                "duration": 270
               }
             ],
             "carbonEmissions": {
@@ -3983,7 +3871,83 @@
               "typical_for_this_route": 609000,
               "difference_percent": -18
             },
-            "bookingToken": "WyJDalJJY2xKbk0zTnRNRGszYjJkQlQwcGhha0ZDUnkwdExTMHRMUzEyZEhkak1TMXVNVUZCUVVGQlIzSk1XRWhyU0VSNGQyVkJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3MDdjRCIsW1siUklYIiwiMjAyNy0wNy0wNSIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTA3LTA1IiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
+            "bookingToken": "WyJDalJJWTBaMWVGOXRabWRGVFhkQlRYaFNUSGRDUnkwdExTMHRMUzB0TFMxNWJHOW1NVUZCUVVGQlIzSlZaVGhKUTNaVFkyVkJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3OXJnRCIsW1siUklYIiwiMjAyNy0wNy0wNSIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTA3LTA1IiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
+          }
+        },
+        {
+          "date": "2027-07-12",
+          "cheapestFlight": {
+            "price": 503,
+            "totalDuration": 945,
+            "stops": 1,
+            "flights": [
+              {
+                "airline": "Turkish Airlines",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+                "flightNumber": "TK 1758",
+                "departureAirport": {
+                  "name": "Rīgas lidosta",
+                  "id": "RIX",
+                  "time": "2027-07-12 10:55"
+                },
+                "arrivalAirport": {
+                  "name": "Istanbul Airport",
+                  "id": "IST",
+                  "time": "2027-07-12 14:15"
+                },
+                "duration": 200,
+                "airplane": "Boeing 737MAX 8 Passenger",
+                "travelClass": "Economy",
+                "legroom": "76 cm",
+                "extensions": [
+                  "Average legroom (76 cm)",
+                  "Wi-Fi for a fee",
+                  "In-seat USB outlet",
+                  "On-demand video",
+                  "Carbon emissions estimate: 154 kg"
+                ]
+              },
+              {
+                "airline": "Turkish Airlines",
+                "airlineLogo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+                "flightNumber": "TK 730",
+                "departureAirport": {
+                  "name": "Istanbul Airport",
+                  "id": "IST",
+                  "time": "2027-07-12 18:45"
+                },
+                "arrivalAirport": {
+                  "name": "Bandaranaikes starptautiskā lidosta",
+                  "id": "CMB",
+                  "time": "2027-07-13 05:10"
+                },
+                "duration": 475,
+                "airplane": "Boeing 787",
+                "travelClass": "Economy",
+                "legroom": "79 cm",
+                "extensions": [
+                  "Average legroom (79 cm)",
+                  "Wi-Fi for a fee",
+                  "In-seat USB outlet",
+                  "On-demand video",
+                  "Carbon emissions estimate: 347 kg"
+                ],
+                "overnight": true
+              }
+            ],
+            "layovers": [
+              {
+                "name": "Istanbul Airport",
+                "id": "IST",
+                "duration": 270
+              }
+            ],
+            "carbonEmissions": {
+              "this_flight": 502000,
+              "typical_for_this_route": 609000,
+              "difference_percent": -18
+            },
+            "bookingToken": "WyJDalJJV2tSSFpXWm9lSEJRUmtWQlRXMXRiRkZDUnkwdExTMHRMUzB0TFhaM2FYZ3hNRUZCUVVGQlIzSlZaVGhuUWxONVduRkJFZ3hVU3pFM05UaDhWRXMzTXpBYUN3aTRpQU1RQWhvRFJWVlNPQnh3OXJnRCIsW1siUklYIiwiMjAyNy0wNy0xMiIsIklTVCIsbnVsbCwiVEsiLCIxNzU4Il0sWyJJU1QiLCIyMDI3LTA3LTEyIiwiQ01CIixudWxsLCJUSyIsIjczMCJdXV0="
           }
         }
       ]
